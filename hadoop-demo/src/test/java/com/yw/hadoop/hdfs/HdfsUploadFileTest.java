@@ -1,4 +1,4 @@
-package com.yw.hdfs.operate;
+package com.yw.hadoop.hdfs;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.hadoop.conf.Configuration;

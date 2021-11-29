@@ -364,12 +364,15 @@ class FSDirWriteFileOp {
       boolean shouldReplicate, String ecPolicyName, boolean logRetryEntry)
       throws IOException {
     assert fsn.hasWriteLock();
+    // 是否是overwrite覆写文件
     boolean overwrite = flag.contains(CreateFlag.OVERWRITE);
+    // 判断是否采取内存存储策略
     boolean isLazyPersist = flag.contains(CreateFlag.LAZY_PERSIST);
 
     final String src = iip.getPath();
+    // 获取命名空间目录树
     FSDirectory fsd = fsn.getFSDirectory();
-
+    // 获得路径中最后一个INode
     if (iip.getLastINode() != null) {
       if (overwrite) {
         List<INode> toRemoveINodes = new ChunkedArrayList<>();
@@ -390,10 +393,21 @@ class FSDirWriteFileOp {
       }
     }
     fsn.checkFsObjectLimit();
+    /**
+     * 要创建的文件
+     * 假设要创建 /a/b/c/dream.txt，已存在 /a
+     * INodeFile newNode 就是 dream.txt
+     */
     INodeFile newNode = null;
+    /**
+     * 创建要添加文件的父级目录（此方法已经分析过，跳过）
+     * 因为 a、b、c 不存在，所以先创建后，返回 parent = /a/b/c
+     */
     INodesInPath parent =
         FSDirMkdirOp.createAncestorDirectories(fsd, iip, permissions);
     if (parent != null) {
+      // TODO 终于到了正题，添加文件
+      // iip /a/b/c/dream.txt
       iip = addFile(fsd, parent, iip.getLastLocalName(), permissions,
           replication, blockSize, holder, clientMachine, shouldReplicate,
           ecPolicyName);
@@ -402,6 +416,8 @@ class FSDirWriteFileOp {
     if (newNode == null) {
       throw new IOException("Unable to add " + src +  " to namespace");
     }
+    // TODO 添加lease契约
+    // 给dream.txt添加契约
     fsn.leaseManager.addLease(
         newNode.getFileUnderConstructionFeature().getClientName(),
         newNode.getId());
@@ -409,7 +425,10 @@ class FSDirWriteFileOp {
       FSDirEncryptionZoneOp.setFileEncryptionInfo(fsd, iip, feInfo,
           XAttrSetFlag.CREATE);
     }
+    // 设置存储策略
     setNewINodeStoragePolicy(fsd.getBlockManager(), iip, isLazyPersist);
+    // TODO 更新EditLog，把数据同步到磁盘
+    // 具体细节可以看元数据的管理流程
     fsd.getEditLog().logOpenFile(src, newNode, overwrite, logRetryEntry);
     if (NameNode.stateChangeLog.isDebugEnabled()) {
       NameNode.stateChangeLog.debug("DIR* NameSystem.startFile: added " +

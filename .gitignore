@@ -34,3 +34,5 @@ mvnw.cmd
 *.zip
 *.7z
 *.gz
+
+tmp

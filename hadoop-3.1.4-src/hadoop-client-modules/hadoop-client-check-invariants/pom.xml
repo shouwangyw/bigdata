@@ -168,24 +168,24 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>check-jar-contents</id>
-            <phase>integration-test</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>${shell-executable}</executable>
-              <workingDirectory>${project.build.testOutputDirectory}</workingDirectory>
-              <requiresOnline>false</requiresOnline>
-              <arguments>
-                <argument>ensure-jars-have-correct-contents.sh</argument>
-                <argument>${hadoop-client-artifacts}</argument>
-              </arguments>
-            </configuration>
-          </execution>
-        </executions>
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <id>check-jar-contents</id>-->
+<!--            <phase>integration-test</phase>-->
+<!--            <goals>-->
+<!--              <goal>exec</goal>-->
+<!--            </goals>-->
+<!--            <configuration>-->
+<!--              <executable>${shell-executable}</executable>-->
+<!--              <workingDirectory>${project.build.testOutputDirectory}</workingDirectory>-->
+<!--              <requiresOnline>false</requiresOnline>-->
+<!--              <arguments>-->
+<!--                <argument>ensure-jars-have-correct-contents.sh</argument>-->
+<!--                <argument>${hadoop-client-artifacts}</argument>-->
+<!--              </arguments>-->
+<!--            </configuration>-->
+<!--          </execution>-->
+<!--        </executions>-->
       </plugin>
     </plugins>
   </build>

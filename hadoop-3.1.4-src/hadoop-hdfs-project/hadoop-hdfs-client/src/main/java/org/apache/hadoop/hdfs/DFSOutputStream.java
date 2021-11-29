@@ -246,11 +246,17 @@ public class DFSOutputStream extends FSOutputSummer
       DataChecksum checksum, String[] favoredNodes, boolean createStreamer) {
     this(dfsClient, src, flag, progress, stat, checksum);
     this.shouldSyncBlock = flag.contains(CreateFlag.SYNC_BLOCK);
-
+    /**
+     * TODO File -> Block -> packet -> chunk
+     * chunk 512 byte
+     * checksum 4 byte
+     * packet 65536 byte 64Kb
+     */
     computePacketChunkSize(dfsClient.getConf().getWritePacketSize(),
         bytesPerChecksum);
 
     if (createStreamer) {
+      // TODO 实例化DataStreamer线程对象（可以看下类注释）
       streamer = new DataStreamer(stat, null, dfsClient, src, progress,
           checksum, cachingStrategy, byteArrayManager, favoredNodes,
           addBlockFlags);
@@ -270,12 +276,25 @@ public class DFSOutputStream extends FSOutputSummer
       // number of times
       boolean shouldRetry = true;
       int retryCount = CREATE_RETRY_COUNT;
+      // 是否重试，学习代码的结构设计
       while (shouldRetry) {
         shouldRetry = false;
         try {
+          /**
+           * HDFS 原理总结:
+           * 创建目录，就是在目录树上（元数据）添加一个node（INodeDirectory）
+           *
+           * 上传文件：
+           * 1、在目录树上添加一个子Node(INodeFile)
+           * 2、再往文件写入数据
+           *
+           * TODO 往目录树中添加 INodeFile，记录元数据日志和添加契约
+           * 需要跟NameNode服务端(NameNodeRpcServer)进行交互
+           */
           stat = dfsClient.namenode.create(src, masked, dfsClient.clientName,
               new EnumSetWritable<>(flag), createParent, replication,
               blockSize, SUPPORTED_CRYPTO_VERSIONS, ecPolicyName);
+          // 成功，则跳出循环
           break;
         } catch (RemoteException re) {
           IOException e = re.unwrapRemoteException(
@@ -306,13 +325,16 @@ public class DFSOutputStream extends FSOutputSummer
       }
       Preconditions.checkNotNull(stat, "HdfsFileStatus should not be null!");
       final DFSOutputStream out;
+      // TODO
       if(stat.getErasureCodingPolicy() != null) {
         out = new DFSStripedOutputStream(dfsClient, src, stat,
             flag, progress, checksum, favoredNodes);
       } else {
+        // TODO 里边初始化了DataStreamer，DataStreamer是写数据流程中的重要对象
         out = new DFSOutputStream(dfsClient, src, stat,
             flag, progress, checksum, favoredNodes, true);
       }
+      // TODO 里面启动了DataStreamer
       out.start();
       return out;
     }
@@ -420,16 +442,26 @@ public class DFSOutputStream extends FSOutputSummer
   @Override
   protected synchronized void writeChunk(byte[] b, int offset, int len,
       byte[] checksum, int ckoff, int cklen) throws IOException {
+    // TODO 创建一个packet
     writeChunkPrepare(len, ckoff, cklen);
-
+    // TODO 往packet里写checksum 4 byte 的校验和
     currentPacket.writeChecksum(checksum, ckoff, cklen);
+    // TODO 往packet里写一个chunk的数据 512 byte
     currentPacket.writeData(b, offset, len);
+    // TODO 累计一共写了多少个 chunk -> packet 如果写够了 127 个chunk，就是一个完整的packet了
     currentPacket.incNumChunks();
+    // TODO Block -> 由一个个 packet 组成；Block -> 写满 128M 就表示此 block 写完了
     getStreamer().incBytesCurBlock(len);
 
     // If packet is full, enqueue it for transmission
+    /**
+     * TODO 两个条件：
+     * 1、如果写满了一个 packet（127个chunk）
+     * 2、一个文件块写满了 128M = 2048 个packet
+     */
     if (currentPacket.getNumChunks() == currentPacket.getMaxChunks() ||
         getStreamer().getBytesCurBlock() == blockSize) {
+      // TODO 写满了一个packet，加入到dataQueue队列
       enqueueCurrentPacketFull();
     }
   }
@@ -480,6 +512,7 @@ public class DFSOutputStream extends FSOutputSummer
   }
 
   void enqueueCurrentPacket() throws IOException {
+    // TODO 重要代码
     getStreamer().waitAndQueuePacket(currentPacket);
     currentPacket = null;
   }
@@ -489,8 +522,10 @@ public class DFSOutputStream extends FSOutputSummer
             + " appendChunk={}, {}", currentPacket, src, getStreamer()
             .getBytesCurBlock(), blockSize, getStreamer().getAppendChunk(),
         getStreamer());
+    // TODO packet入队列
     enqueueCurrentPacket();
     adjustChunkBoundary();
+    // TODO 重要代码 结束当前block
     endBlock();
   }
 
@@ -777,6 +812,7 @@ public class DFSOutputStream extends FSOutputSummer
   }
 
   protected synchronized void start() {
+    // TODO 调用DataStreamer的run方法
     getStreamer().start();
   }
 
@@ -1078,6 +1114,8 @@ public class DFSOutputStream extends FSOutputSummer
     long localstart = Time.monotonicNow();
     while (true) {
       try {
+        // TODO ClientProtocol namenode 其实是NameNodeRpcServer服务端的代理
+        // 通过 RPC 调用服务端的 addBlock 方法
         return dfsClient.namenode.addBlock(src, dfsClient.clientName, prevBlock,
             excludedNodes, fileId, favoredNodes, allocFlags);
       } catch (RemoteException e) {

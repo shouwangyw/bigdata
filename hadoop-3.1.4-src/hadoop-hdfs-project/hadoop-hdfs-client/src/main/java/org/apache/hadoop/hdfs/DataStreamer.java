@@ -511,8 +511,10 @@ class DataStreamer extends Daemon {
   // appending to existing partial block
   private volatile boolean appendChunk = false;
   // both dataQueue and ackQueue are protected by dataQueue lock
+  // TODO dataQueue 和 ackQueue均被dataQueue锁保护
   protected final LinkedList<DFSPacket> dataQueue = new LinkedList<>();
   private final Map<Long, Long> packetSendTime = new HashMap<>();
+  // TODO 重要
   private final LinkedList<DFSPacket> ackQueue = new LinkedList<>();
   private final AtomicReference<CachingStrategy> cachingStrategy;
   private final ByteArrayManager byteArrayManager;
@@ -650,6 +652,7 @@ class DataStreamer extends Daemon {
   /*
    * streamer thread is the only thread that opens streams to datanode,
    * and closes them. Any error recovery is also done by this thread.
+   * streamer线程是唯一的开启及关闭到datanode流的线程，所有的error恢复，也是由此线程完成
    */
   @Override
   public void run() {
@@ -660,16 +663,21 @@ class DataStreamer extends Daemon {
       if (errorState.hasError()) {
         closeResponder();
       }
-
+      // 一个packet
       DFSPacket one;
       try {
         // process datanode IO errors if any
+        /**
+         * 如果发送packet过程中有错或datanode重启，使得ackQueue中的packet得不到应答，
+         * 就将ackQueue那个的packet移回到dataQueue，用以重新发送
+         */
         boolean doSleep = processDatanodeOrExternalError();
 
         final int halfSocketTimeout = dfsClient.getConf().getSocketTimeout()/2;
         synchronized (dataQueue) {
           // wait for a packet to be sent.
           long now = Time.monotonicNow();
+          // 第一次进来时(初始化的时候)，因为dataQueue中没有packet，所以执行while, wait
           while ((!shouldStop() && dataQueue.size() == 0 &&
               (stage != BlockConstructionStage.DATA_STREAMING ||
                   now - lastPacket < halfSocketTimeout)) || doSleep) {
@@ -678,6 +686,8 @@ class DataStreamer extends Daemon {
             timeout = (stage == BlockConstructionStage.DATA_STREAMING)?
                 timeout : 1000;
             try {
+              //TODO 如果dataQueue里边没有数据，当前线程会阻塞在这里，
+              // 当dataQueue被写入packet后，次线程被唤醒，并继续执行，此时dataQueue.size() != 0 不满足while条件
               dataQueue.wait(timeout);
             } catch (InterruptedException  e) {
               LOG.warn("Caught exception", e);
@@ -689,7 +699,9 @@ class DataStreamer extends Daemon {
             continue;
           }
           // get packet to be sent.
+          // 获得一个待发送的packet
           if (dataQueue.isEmpty()) {
+            // 实在没有数据packet可发，创建一个心跳packet，用以维护socket
             one = createHeartbeatPacket();
           } else {
             try {
@@ -697,6 +709,7 @@ class DataStreamer extends Daemon {
             } catch (InterruptedException e) {
               LOG.warn("Caught exception", e);
             }
+            // TODO 从dataQueue中取出一个packet
             one = dataQueue.getFirst(); // regular data packet
             SpanId[] parents = one.getTraceParents();
             if (parents.length > 0) {
@@ -711,12 +724,25 @@ class DataStreamer extends Daemon {
         if (LOG.isDebugEnabled()) {
           LOG.debug("stage=" + stage + ", " + this);
         }
+        // TODO 建立发送数据的pipeline，向namenode申请block
         if (stage == BlockConstructionStage.PIPELINE_SETUP_CREATE) {
           LOG.debug("Allocating new block: {}", this);
+          /**
+           * TODO STEP1: 建立管道
+           * nextBlockOutputStream() 完成两件事
+           *  1、向NameNode申请block
+           *  2、建立数据管道
+           */
           setPipeline(nextBlockOutputStream());
+          /**
+           * TODO STEP2: 初始化data streaming，启动 ResponseProcessor用来监听一个packet是否发送成功
+           * 接下来还有 STEP3、STEP4、STEP5
+           */
           initDataStreaming();
+          // 数据流是append所建，并考虑最后一个
         } else if (stage == BlockConstructionStage.PIPELINE_SETUP_APPEND) {
           LOG.debug("Append to block {}", block);
+          // 向一个datanode发出WRITE_BLOCK请求，建立pipeline
           setupPipelineForAppendOrRecovery();
           if (streamerClosed) {
             continue;
@@ -748,10 +774,11 @@ class DataStreamer extends Daemon {
           stage = BlockConstructionStage.PIPELINE_CLOSE;
         }
 
-        // send the packet
+        // send the packet 发送packet
         SpanId spanId = SpanId.INVALID;
         synchronized (dataQueue) {
           // move packet from dataQueue to ackQueue
+          // 将packet从dataQueue移到ackQueue
           if (!one.isHeartbeatPacket()) {
             if (scope != null) {
               spanId = scope.getSpanId();
@@ -759,7 +786,9 @@ class DataStreamer extends Daemon {
               one.setTraceScope(scope);
             }
             scope = null;
+            // TODO STEP3: 从dataQueue中，把要发送的packet移除
             dataQueue.removeFirst();
+            // TODO STEP4: 向ackQueue中添加这个packet
             ackQueue.addLast(one);
             packetSendTime.put(one.getSeqno(), Time.monotonicNow());
             dataQueue.notifyAll();
@@ -768,10 +797,13 @@ class DataStreamer extends Daemon {
 
         LOG.debug("{} sending {}", this, one);
 
-        // write out data to remote datanode
+        // write out data to remote datanode  这里才是真正的将数据发送到datanode
         try (TraceScope ignored = dfsClient.getTracer().
             newScope("DataStreamer#writeTo", spanId)) {
+          // TODO STEP5: 这里将one这个packet写出去
+          // one 这个packet可能十数据packet，也有可能是个心跳packet
           one.writeTo(blockStream);
+          // 数据从流中刷出去
           blockStream.flush();
         } catch (IOException e) {
           // HDFS-3398 treat primary DN is down since client is unable to
@@ -913,6 +945,7 @@ class DataStreamer extends Daemon {
     synchronized (dataQueue) {
       try {
         // If queue is full, then wait till we have enough space
+        // 如果队列queue满了，需要wait，直到有足够的空间
         boolean firstWait = true;
         try {
           while (!streamerClosed && dataQueue.size() + ackQueue.size() >
@@ -925,6 +958,7 @@ class DataStreamer extends Daemon {
               firstWait = false;
             }
             try {
+              // TODO 如果队列满了，wait线程阻塞
               dataQueue.wait();
             } catch (InterruptedException e) {
               // If we get interrupted while waiting to queue data, we still need to get rid
@@ -945,6 +979,7 @@ class DataStreamer extends Daemon {
           }
         }
         checkClosed();
+        // TODO 把当前的packet写入dataQueue
         queuePacket(packet);
       } catch (ClosedChannelException ignored) {
       }
@@ -1079,10 +1114,13 @@ class DataStreamer extends Daemon {
       PipelineAck ack = new PipelineAck();
 
       TraceScope scope = null;
+      // TODO
       while (!responderClosed && dfsClient.clientRunning && !isLastPacketInBlock) {
         // process responses from datanodes.
         try {
           // read an ack from the pipeline
+          // TODO blockReplyStream是下游应道ack信息的输入流
+          //  读取下游的packet处理结果
           ack.readFields(blockReplyStream);
           if (ack.getSeqno() != DFSPacket.HEART_BEAT_SEQNO) {
             Long begin = packetSendTime.get(ack.getSeqno());
@@ -1102,13 +1140,14 @@ class DataStreamer extends Daemon {
           }
 
           long seqno = ack.getSeqno();
-          // processes response status from datanodes.
+          // processes response status from datanodes. TODO 处理从datanode发送来的status
           ArrayList<DatanodeInfo> congestedNodesFromAck = new ArrayList<>();
           for (int i = ack.getNumOfReplies()-1; i >=0  && dfsClient.clientRunning; i--) {
             final Status reply = PipelineAck.getStatusFromHeader(ack
                 .getHeaderFlag(i));
             if (PipelineAck.getECNFromHeader(ack.getHeaderFlag(i)) ==
                 PipelineAck.ECN.CONGESTED) {
+              // TODO 如果是拥堵datanode，添加到ArrayList
               congestedNodesFromAck.add(targets[i]);
             }
             // Restart will not be treated differently unless it is
@@ -1146,12 +1185,17 @@ class DataStreamer extends Daemon {
             continue;
           }
 
-          // a success ack for a data packet
+          // a success ack for a data packet // TODO 如果反馈数据packet接收成功
           DFSPacket one;
           synchronized (dataQueue) {
             one = ackQueue.getFirst();
           }
+          // 发送数据包的seqno与拿到ack回应的seqno做对比，如果不一致抛异常
           if (one.getSeqno() != seqno) {
+            /**
+             * packet的收发是有顺序的，比如两个packet，序号为0和1，0先发出去，1后发。
+             * 那么收到的ACK顺序应该也是0，1。不然的话可能是网络或其他原因，导致收发乱序
+             */
             throw new IOException("ResponseProcessor: Expecting seqno " +
                 " for block " + block +
                 one.getSeqno() + " but received " + seqno);
@@ -1167,9 +1211,12 @@ class DataStreamer extends Daemon {
                 "Failing the last packet for testing.");
           }
 
-          // update bytesAcked
+          // update bytesAcked // TODO 更新已经收到ack的字节数
           block.setNumBytes(one.getLastByteOffsetBlock());
-
+          /**
+           * 此ack回复包推断完毕后，会进行对应的packet移除，ackQueue中的packet就被彻底移除掉了
+           * 从最开始增加到dataQueue，到move到ackQueue，到最后回复确认完毕，进行最终的移除
+           */
           synchronized (dataQueue) {
             scope = one.getTraceScope();
             if (scope != null) {
@@ -1178,6 +1225,7 @@ class DataStreamer extends Daemon {
             }
             lastAckedSeqno = seqno;
             pipelineRecoveryCount = 0;
+            // TODO 如果packet发送成功，就会从ackQueue中移除
             ackQueue.removeFirst();
             packetSendTime.remove(seqno);
             dataQueue.notifyAll();
@@ -1203,11 +1251,12 @@ class DataStreamer extends Daemon {
           }
           scope = null;
         }
-      }
+      } // while循环结束
     }
 
     void close() {
       responderClosed = true;
+      // 中断线程
       this.interrupt();
     }
   }
@@ -1660,27 +1709,42 @@ class DataStreamer extends Daemon {
     int count = dfsClient.getConf().getNumBlockWriteRetry();
     boolean success;
     final ExtendedBlock oldBlock = block.getCurrentBlock();
+    /**
+     * 因为申请block或建立管道这些都是重要的操作，务必要求成功，但是分布式环境，涉及到各节点间的网络请求，有可能单次失败
+     * 所以这里进行多次重试，所以我们看到 HDFS 代码里，很多务必需要执行成功的地方，都使用循环
+     */
     do {
       errorState.resetInternalError();
       lastException.clear();
 
       DatanodeInfo[] excluded = getExcludedNodes();
+      // TODO ①向namenode申请一个block
+      /**
+       * 涉及到服务端NameNodeRpcServer的一系列操作
+       * 1、创建一个block，往名字空间目录树里正在写入数据的 INodeFile上，挂载了block信息
+       * 2、在磁盘上记录了元数据新
+       * 3、在BlockManager里记录了block的元数据信息
+       * 此处使用 do {...}while 条件
+       */
       lb = locateFollowingBlock(
           excluded.length > 0 ? excluded : null, oldBlock);
       block.setCurrentBlock(lb.getBlock());
       block.setNumBytes(0);
       bytesSent = 0;
       accessToken = lb.getBlockToken();
+      // 此block要存储在这几个DataNode上
       nodes = lb.getLocations();
       nextStorageTypes = lb.getStorageTypes();
       nextStorageIDs = lb.getStorageIDs();
 
       // Connect to first DataNode in the list.
+      // TODO ②与列表中的第一个datanode建立传输block数据的pipeline
       success = createBlockOutputStream(nodes, nextStorageTypes, nextStorageIDs,
           0L, false);
 
       if (!success) {
         LOG.warn("Abandoning " + block);
+        // TODO ③如果pipeline管道创建不成功，就放弃这个block
         dfsClient.namenode.abandonBlock(block.getCurrentBlock(),
             stat.getFileId(), src, dfsClient.clientName);
         block.setCurrentBlock(null);
@@ -1722,18 +1786,23 @@ class DataStreamer extends Daemon {
       try {
         assert null == s : "Previous socket unclosed";
         assert null == blockReplyStream : "Previous blockReplyStream unclosed";
+        // TODO socket rpc http
         s = createSocketForPipeline(nodes[0], nodes.length, dfsClient);
         long writeTimeout = dfsClient.getDatanodeWriteTimeout(nodes.length);
         long readTimeout = dfsClient.getDatanodeReadTimeout(nodes.length);
-
+        // TODO 创建输出流（肯定是用来将packet数据写到pipeline中的第一个datanode）
         OutputStream unbufOut = NetUtils.getOutputStream(s, writeTimeout);
+        // TODO 创建输入流（肯定是用来读取pipeline中第一个datanode的响应结果）
         InputStream unbufIn = NetUtils.getInputStream(s, readTimeout);
+        // TODO 注意这是一个socket
         IOStreamPair saslStreams = dfsClient.saslClient.socketSend(s,
             unbufOut, unbufIn, dfsClient, accessToken, nodes[0]);
         unbufOut = saslStreams.out;
         unbufIn = saslStreams.in;
+        // TODO 这个输出流将client的数据发送到pipeline的第一个datanode上
         out = new DataOutputStream(new BufferedOutputStream(unbufOut,
             DFSUtilClient.getSmallBufferSize(dfsClient.getConfiguration())));
+        // TODO client通过这个输入流读取pipeline的第一个datanode返回的信息【装饰者模式】
         blockReplyStream = new DataInputStream(unbufIn);
 
         //
@@ -1750,6 +1819,7 @@ class DataStreamer extends Daemon {
 
         boolean[] targetPinnings = getPinnings(nodes);
         // send the request
+        // TODO 发送写数据的socket请求，datanode服务端会启动一个DataXceiver服务接收socket请求
         new Sender(out).writeBlock(blockCopy, nodeStorageTypes[0], accessToken,
             dfsClient.clientName, nodes, nodeStorageTypes, null, bcs,
             nodes.length, block.getNumBytes(), bytesSent, newGS,
@@ -1757,7 +1827,7 @@ class DataStreamer extends Daemon {
             (targetPinnings != null && targetPinnings[0]), targetPinnings,
             nodeStorageIDs[0], nodeStorageIDs);
 
-        // receive ack for connect
+        // receive ack for connect 获得连接的ack
         BlockOpResponseProto resp = BlockOpResponseProto.parseFrom(
             PBHelperClient.vintPrefixed(blockReplyStream));
         Status pipelineStatus = resp.getStatus();
@@ -1863,6 +1933,7 @@ class DataStreamer extends Daemon {
 
   private LocatedBlock locateFollowingBlock(DatanodeInfo[] excluded,
       ExtendedBlock oldBlock) throws IOException {
+    // TODO
     return DFSOutputStream.addBlock(excluded, dfsClient, src, oldBlock,
         stat.getFileId(), favoredNodes, addBlockFlags);
   }
@@ -1949,9 +2020,16 @@ class DataStreamer extends Daemon {
     synchronized (dataQueue) {
       if (packet == null) return;
       packet.addTraceParent(Tracer.getCurrentSpanId());
+      // TODO 将packet添加到dataQueue的末尾
       dataQueue.addLast(packet);
       lastQueuedSeqno = packet.getSeqno();
       LOG.debug("Queued {}, {}", packet, this);
+      /**
+       * TODO 这里之所以notifyAll，是因为之前初始化的时候，启动了DataStreamer，它一直监听dataQueue
+       * 如果dataQueue里没有数据，就一直wait，所以现在向dataNode添加了packet后，需要唤醒等待的线程，
+       * 唤醒DataStreamer后，就从当初wait的代码，继续往下执行
+       * TODO DataStreamer的run方法，wait代码被notifyAll唤醒
+       */
       dataQueue.notifyAll();
     }
   }

@@ -467,6 +467,7 @@ public class DistributedFileSystem extends FileSystem
   public FSDataOutputStream create(Path f, FsPermission permission,
       boolean overwrite, int bufferSize, short replication, long blockSize,
       Progressable progress) throws IOException {
+    // TODO
     return this.create(f, permission,
         overwrite ? EnumSet.of(CreateFlag.CREATE, CreateFlag.OVERWRITE)
             : EnumSet.of(CreateFlag.CREATE), bufferSize, replication,
@@ -528,10 +529,18 @@ public class DistributedFileSystem extends FileSystem
     Path absF = fixRelativePart(f);
     return new FileSystemLinkResolver<FSDataOutputStream>() {
       @Override
+      // TODO absF 作为 doCall 的参数传入
       public FSDataOutputStream doCall(final Path p) throws IOException {
+        /**
+         * TODO 创建了DFSOutputStream对象，做了很多的初始化操作
+         * 1、往文件目录树中添加了 INodeFile
+         * 2、添加了契约管理
+         * 3、启动了DataStreamer（写数据流程的关键服务）
+         */
         final DFSOutputStream dfsos = dfs.create(getPathName(p), permission,
             cflags, replication, blockSize, progress, bufferSize,
             checksumOpt);
+        // TODO HDFSDataOutputStream是对DFSOutputStream进行了再一次的封装【装饰模式】
         return dfs.createWrappedOutputStream(dfsos, statistics);
       }
       @Override
@@ -540,6 +549,7 @@ public class DistributedFileSystem extends FileSystem
         return fs.create(p, permission, cflags, bufferSize,
             replication, blockSize, progress, checksumOpt);
       }
+      // TODO resolve 调用 doCall方法
     }.resolve(this, absF);
   }
 

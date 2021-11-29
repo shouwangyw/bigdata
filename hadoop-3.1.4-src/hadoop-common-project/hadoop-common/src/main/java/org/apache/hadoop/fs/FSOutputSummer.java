@@ -58,6 +58,7 @@ abstract public class FSOutputSummer extends OutputStream {
   
   /* write the data chunk in <code>b</code> staring at <code>offset</code> with
    * a length of <code>len > 0</code>, and its checksum
+   * TODO 看实现类 DFSOutputStream 的此方法
    */
   protected abstract void writeChunk(byte[] b, int bOffset, int bLen,
       byte[] checksum, int checksumOffset, int checksumLen) throws IOException;
@@ -76,6 +77,7 @@ abstract public class FSOutputSummer extends OutputStream {
   public synchronized void write(int b) throws IOException {
     buf[count++] = (byte)b;
     if(count == buf.length) {
+      // TODO 写文件
       flushBuffer();
     }
   }
@@ -142,6 +144,7 @@ abstract public class FSOutputSummer extends OutputStream {
    * the underlying output stream. 
    */
   protected synchronized void flushBuffer() throws IOException {
+    // TODO
     flushBuffer(false, true);
   }
 
@@ -161,6 +164,12 @@ abstract public class FSOutputSummer extends OutputStream {
     int partialLen = bufLen % sum.getBytesPerChecksum();
     int lenToFlush = flushPartial ? bufLen : bufLen - partialLen;
     if (lenToFlush != 0) {
+      /**
+       * TODO 核心代码
+       * Block块 128M
+       * packet 64KB = 127 chunk
+       * 1 chunk 512 byte + checksum 4 buye = 516 byte
+       */
       writeChecksumChunks(buf, 0, lenToFlush);
       if (!flushPartial || keep) {
         count = partialLen;
@@ -208,12 +217,15 @@ abstract public class FSOutputSummer extends OutputStream {
    */
   private void writeChecksumChunks(byte b[], int off, int len)
   throws IOException {
+    // 计算出chunk的校验和
     sum.calculateChunkedSums(b, off, len, checksum, 0);
     TraceScope scope = createWriteTraceScope();
     try {
       for (int i = 0; i < len; i += sum.getBytesPerChecksum()) {
+        // 如果是最后一个chunk，可以小于 512 byte，所以取两者的最小值
         int chunkLen = Math.min(sum.getBytesPerChecksum(), len - i);
         int ckOffset = i / sum.getBytesPerChecksum() * getChecksumSize();
+        // TODO 一个chunk一个chunk的写数据
         writeChunk(b, off + i, chunkLen, checksum, ckOffset,
             getChecksumSize());
       }

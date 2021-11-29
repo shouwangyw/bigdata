@@ -972,6 +972,7 @@ public abstract class FileSystem extends Configured
    * @throws IOException IO failure
    */
   public FSDataOutputStream create(Path f) throws IOException {
+    // TODO
     return create(f, true);
   }
 
@@ -984,6 +985,7 @@ public abstract class FileSystem extends Configured
    */
   public FSDataOutputStream create(Path f, boolean overwrite)
       throws IOException {
+    // TODO
     return create(f, overwrite,
                   getConf().getInt(IO_FILE_BUFFER_SIZE_KEY,
                       IO_FILE_BUFFER_SIZE_DEFAULT),
@@ -1095,6 +1097,7 @@ public abstract class FileSystem extends Configured
       int bufferSize,
       short replication,
       long blockSize) throws IOException {
+    // TODO
     return create(f, overwrite, bufferSize, replication, blockSize, null);
   }
 
@@ -1115,6 +1118,7 @@ public abstract class FileSystem extends Configured
                                             long blockSize,
                                             Progressable progress
                                             ) throws IOException {
+    // TODO
     return this.create(f, FsCreateModes.applyUMask(
         FsPermission.getFileDefault(), FsPermission.getUMask(getConf())),
         overwrite, bufferSize, replication, blockSize, progress);

@@ -774,12 +774,14 @@ public class NameNodeRpcServer implements NamenodeProtocols {
     return namesystem.getServerDefaults();
   }
 
+  // TODO
   @Override // ClientProtocol
   public HdfsFileStatus create(String src, FsPermission masked,
       String clientName, EnumSetWritable<CreateFlag> flag,
       boolean createParent, short replication, long blockSize,
       CryptoProtocolVersion[] supportedVersions, String ecPolicyName)
       throws IOException {
+    // 检查NameNode启动状态
     checkNNStartup();
     String clientMachine = getClientMachine();
     if (stateChangeLog.isDebugEnabled()) {
@@ -800,6 +802,7 @@ public class NameNodeRpcServer implements NamenodeProtocols {
     try {
       PermissionStatus perm = new PermissionStatus(getRemoteUser()
           .getShortUserName(), null, masked);
+      // TODO 创建文件核心代码
       status = namesystem.startFile(src, perm, clientName, clientMachine,
           flag.get(), createParent, replication, blockSize, supportedVersions,
           ecPolicyName, cacheEntry != null);

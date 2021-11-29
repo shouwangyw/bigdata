@@ -101,11 +101,12 @@ import static org.apache.hadoop.util.Time.monotonicNow;
 
 /**
  * Thread for processing incoming/outgoing data stream.
+ * 它是一个用来处理输入、输出数据流的线程
  */
 class DataXceiver extends Receiver implements Runnable {
   public static final Logger LOG = DataNode.LOG;
   static final Log ClientTraceLog = DataNode.ClientTraceLog;
-  
+  // 端到端网络通信中的参与方
   private Peer peer;
   private final String remoteAddress; // address of remote side
   private final String remoteAddressWithoutPort; // only the address, no port
@@ -217,6 +218,7 @@ class DataXceiver extends Receiver implements Runnable {
   
   /**
    * Read/write data from/to the DataXceiverServer.
+   * 从DataXceiverServer读数据，或者向DataXceiverServer写数据
    */
   @Override
   public void run() {
@@ -252,12 +254,15 @@ class DataXceiver extends Receiver implements Runnable {
         }
         return;
       }
-      
+
+      // TODO 用input初始化父类Receiver的in成员，下边代码的readOp()、processOp(op)方法会从in中读取数据
       super.initialize(new DataInputStream(input));
       
       // We process requests in a loop, and stay around for a short timeout.
       // This optimistic behaviour allows the other end to reuse connections.
       // Setting keepalive timeout to 0 disable this behavior.
+      // TODO 使用循环的方式处理请求，并且停留一段时间，这个行为允许其他的end重用连接，
+      //  如果将 keepalive timeout 超时时间设置为 0，那么将禁止用此行为
       do {
         updateCurrentThreadName("Waiting for operation #" + (opsProcessed + 1));
 
@@ -268,6 +273,7 @@ class DataXceiver extends Receiver implements Runnable {
           } else {
             peer.setReadTimeout(dnConf.socketTimeout);
           }
+          // TODO 读取操作
           op = readOp();
         } catch (InterruptedIOException ignored) {
           // Time out while we wait for client rpc
@@ -289,6 +295,7 @@ class DataXceiver extends Receiver implements Runnable {
         }
 
         opStartTime = monotonicNow();
+        // TODO 根据操作类型处理数据
         processOp(op);
         ++opsProcessed;
       } while ((peer != null) &&
@@ -692,7 +699,8 @@ class DataXceiver extends Receiver implements Runnable {
     allowLazyPersist = allowLazyPersist &&
         (dnConf.getAllowNonLocalLazyPersist() || peer.isLocal());
     long size = 0;
-    // reply to upstream datanode or client 
+    // reply to upstream datanode or client
+    // TODO 获得向上游的datanode或客户端反馈的输出流
     final DataOutputStream replyOut = getBufferedOutputStream();
 
     int nst = targetStorageTypes.length;
@@ -760,6 +768,7 @@ class DataXceiver extends Receiver implements Runnable {
       if (isDatanode || 
           stage != BlockConstructionStage.PIPELINE_CLOSE_RECOVERY) {
         // open a block receiver
+        // TODO 创建了BlockReceiver -> getBlockReceiver() 方法
         setCurrentBlockReceiver(getBlockReceiver(block, storageType, in,
             peer.getRemoteAddressString(),
             peer.getLocalAddressString(),
@@ -776,13 +785,14 @@ class DataXceiver extends Receiver implements Runnable {
 
       //
       // Connect to downstream machine, if appropriate
-      //
+      // TODO 如果剩下的目标机器还大于0，继续连接下游的datanode节点发送数据
       if (targets.length > 0) {
         InetSocketAddress mirrorTarget = null;
         // Connect to backup machine
         mirrorNode = targets[0].getXferAddr(connectToDnViaHostname);
         LOG.debug("Connecting to datanode {}", mirrorNode);
         mirrorTarget = NetUtils.createSocketAddr(mirrorNode);
+        // TODO ①mirror是镜像的意思，这代表副本，这里返回与pipeline中的下一个datanode的socket
         mirrorSock = datanode.newSocket();
         try {
 
@@ -827,7 +837,13 @@ class DataXceiver extends Receiver implements Runnable {
             // Older clients may not have provided any targetStorageIds
             targetStorageId = targetStorageIds[0];
           }
+          // TODO
           if (targetPinnings != null && targetPinnings.length > 0) {
+            /**
+             * TODO ②通过socket连接，往下游发送数据
+             * 相当于socket的客户端，即pipeline中的此datanode是socket客户端，
+             * pipeline中的下一个datanode有接收socket请求的服务端DataXceiverServer
+             */
             new Sender(mirrorOut).writeBlock(originalBlock, targetStorageTypes[0],
                 blockToken, clientname, targets, targetStorageTypes,
                 srcDataNode, stage, pipelineSize, minBytesRcvd, maxBytesRcvd,
@@ -842,7 +858,7 @@ class DataXceiver extends Receiver implements Runnable {
                 allowLazyPersist, false, targetPinnings,
                 targetStorageId, targetStorageIds);
           }
-
+          // TODO 真正将数据写出去
           mirrorOut.flush();
 
           DataNodeFaultInjector.get().writeBlockAfterFlush();
@@ -903,14 +919,17 @@ class DataXceiver extends Receiver implements Runnable {
       }
 
       // receive the block and mirror to the next target
+      // TODO 接收block，并将数据发送到pipeline下游的一个datanode
       if (blockReceiver != null) {
         String mirrorAddr = (mirrorSock == null) ? null : mirrorNode;
+        // TODO 接收block，并启动了PacketResponder
         blockReceiver.receiveBlock(mirrorOut, mirrorIn, replyOut,
             mirrorAddr, null, targets, false);
 
         // send close-ack for transfer-RBW/Finalized 
         if (isTransfer) {
           LOG.trace("TRANSFER: send close-ack");
+          // TODO 返回ack响应
           writeResponse(SUCCESS, null, replyOut);
         }
       }
@@ -1309,6 +1328,7 @@ class DataXceiver extends Receiver implements Runnable {
       final boolean allowLazyPersist,
       final boolean pinning,
       final String storageId) throws IOException {
+    // TODO 创建BlockReceiver，看下构造方法
     return new BlockReceiver(block, storageType, in,
         inAddr, myAddr, stage, newGs, minBytesRcvd, maxBytesRcvd,
         clientname, srcDataNode, dn, requestedChecksum,

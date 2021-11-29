@@ -142,6 +142,7 @@ class DataXceiverServer implements Runnable {
     Peer peer = null;
     while (datanode.shouldRun && !datanode.shutdownForUpgrade) {
       try {
+        // TODO 服务端接收socket请求
         peer = peerServer.accept();
 
         // Make sure the xceiver count is not exceeded
@@ -151,10 +152,10 @@ class DataXceiverServer implements Runnable {
               + " exceeds the limit of concurrent xcievers: "
               + maxXceiverCount);
         }
-
+        // TODO 每发送过来一个block，都会启动一个DataXceiver线程去处理这个block
         new Daemon(datanode.threadGroup,
             DataXceiver.create(peer, datanode, this))
-            .start();
+            .start(); // TODO 看下DataXceiver线程类的run方法
       } catch (SocketTimeoutException ignored) {
         // wake up to see if should continue to run
       } catch (AsynchronousCloseException ace) {

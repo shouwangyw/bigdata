@@ -107,6 +107,7 @@ public interface DataTransferProtocol {
    *                  has not been provided.
    * @param targetStorageIDs target StorageIDs corresponding to the target
    *                         datanodes.
+   * TODO DataXceiver 将接收的数据写出去
    */
   void writeBlock(final ExtendedBlock blk,
       final StorageType storageType,

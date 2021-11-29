@@ -2389,6 +2389,7 @@ public class FSNamesystem implements Namesystem, FSNamesystemMBean,
 
     HdfsFileStatus status;
     try {
+      // TODO 重要代码
       status = startFileInt(src, permissions, holder, clientMachine, flag,
           createParent, replication, blockSize, supportedVersions, ecPolicyName,
           logRetryCache);
@@ -2418,6 +2419,7 @@ public class FSNamesystem implements Namesystem, FSNamesystemMBean,
           .append(Arrays.toString(supportedVersions));
       NameNode.stateChangeLog.debug(builder.toString());
     }
+    // 校验
     if (!DFSUtil.isValidName(src) ||
         FSDirectory.isExactReservedName(src) ||
         (FSDirectory.isReservedName(src)
@@ -2444,7 +2446,7 @@ public class FSNamesystem implements Namesystem, FSNamesystemMBean,
     try {
       checkOperation(OperationCategory.WRITE);
       checkNameNodeSafeMode("Cannot create file" + src);
-
+      // 解析路径
       iip = FSDirWriteFileOp.resolvePathForStartFile(
           dir, pc, src, flag, createParent);
 
@@ -2492,6 +2494,7 @@ public class FSNamesystem implements Namesystem, FSNamesystemMBean,
       toRemoveBlocks = new BlocksMapUpdateInfo();
       dir.writeLock();
       try {
+        // TODO
         stat = FSDirWriteFileOp.startFile(this, iip, permissions, holder,
             clientMachine, flag, createParent, replication, blockSize, feInfo,
             toRemoveBlocks, shouldReplicate, ecPolicyName, logRetryCache);
@@ -2506,6 +2509,7 @@ public class FSNamesystem implements Namesystem, FSNamesystemMBean,
       // There might be transactions logged while trying to recover the lease.
       // They need to be sync'ed even when an exception was thrown.
       if (!skipSync) {
+        // TODO 同步日志
         getEditLog().logSync();
         if (toRemoveBlocks != null) {
           removeBlocks(toRemoveBlocks);

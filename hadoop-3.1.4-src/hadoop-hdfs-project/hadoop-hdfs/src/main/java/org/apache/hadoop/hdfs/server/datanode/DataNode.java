@@ -498,6 +498,7 @@ public class DataNode extends ReconfigurableBase
     try {
       hostName = getHostName(conf);
       LOG.info("Configured hostname is {}", hostName);
+      // TODO 启动datanode
       startDataNode(dataDirs, resources);
     } catch (IOException ie) {
       shutdown();
@@ -506,6 +507,7 @@ public class DataNode extends ReconfigurableBase
     final int dncCacheMaxSize =
         conf.getInt(DFS_DATANODE_NETWORK_COUNTS_CACHE_MAX_SIZE_KEY,
             DFS_DATANODE_NETWORK_COUNTS_CACHE_MAX_SIZE_DEFAULT) ;
+    // TODO 构建者设计模式
     datanodeNetworkCounts =
         CacheBuilder.newBuilder()
             .maximumSize(dncCacheMaxSize)
@@ -1133,6 +1135,7 @@ public class DataNode extends ReconfigurableBase
 
   private void initDataXceiver() throws IOException {
     // find free port or use privileged port provided
+    // TODO 接收 TCP 请求
     TcpPeerServer tcpPeerServer;
     if (secureResources != null) {
       tcpPeerServer = new TcpPeerServer(secureResources);
@@ -1150,7 +1153,10 @@ public class DataNode extends ReconfigurableBase
     streamingAddr = tcpPeerServer.getStreamingAddr();
     LOG.info("Opened streaming server at {}", streamingAddr);
     this.threadGroup = new ThreadGroup("dataXceiverServer");
+    // TODO 实例化DataXceiverServer
+    // 此服务是datanode用来接收客户端和其它datanode传过来数据的服务
     xserver = new DataXceiverServer(tcpPeerServer, getConf(), this);
+    // 设置为后台线程
     this.dataXceiverServer = new Daemon(threadGroup, xserver);
     this.threadGroup.setDaemon(true); // auto destroy when empty
 
@@ -1412,12 +1418,14 @@ public class DataNode extends ReconfigurableBase
           + ". Value configured is either less than -1 or >= "
           + "to the number of configured volumes (" + volsConfigured + ").");
     }
-
+    // TODO ①不用钻 Data storage information file
     storage = new DataStorage();
     
     // global DN settings
     registerMXBean();
+    // TODO ②初始化DataXceiver
     initDataXceiver();
+    // TODO ③启动HttpServer服务
     startInfoServer();
     pauseMonitor = new JvmPauseMonitor();
     pauseMonitor.init(getConf());
@@ -1430,6 +1438,7 @@ public class DataNode extends ReconfigurableBase
     dnUserName = UserGroupInformation.getCurrentUser().getUserName();
     LOG.info("dnUserName = {}", dnUserName);
     LOG.info("supergroup = {}", supergroup);
+    // TODO ④初始化rpc服务
     initIpcServer();
 
     metrics = DataNodeMetrics.create(getConf(), getDisplayName());
@@ -1439,8 +1448,13 @@ public class DataNode extends ReconfigurableBase
 
     ecWorker = new ErasureCodingWorker(getConf(), this);
     blockRecoveryWorker = new BlockRecoveryWorker(this);
-
+    /**
+     * TODO ⑤创建BlockPoolManager
+     * 一个名字空间namespace对应一个blockpool，如果是联邦的话，有n个namespace，则有n个blockpool
+     * BlockPoolManager专门用来管理blockpool
+     */
     blockPoolManager = new BlockPoolManager(this);
+    // TODO ⑥重要方法，里面涉及心跳
     blockPoolManager.refreshNamenodes(getConf());
 
     // Create the ReadaheadPool from the DataNode context so we can
@@ -2716,6 +2730,7 @@ public class DataNode extends ReconfigurableBase
     UserGroupInformation.setConfiguration(conf);
     SecurityUtil.login(conf, DFS_DATANODE_KEYTAB_FILE_KEY,
         DFS_DATANODE_KERBEROS_PRINCIPAL_KEY, getHostName(conf));
+    // TODO
     return makeInstance(dataLocations, conf, resources);
   }
 
@@ -2758,8 +2773,10 @@ public class DataNode extends ReconfigurableBase
   @InterfaceAudience.Private
   public static DataNode createDataNode(String args[], Configuration conf,
       SecureResources resources) throws IOException {
+    // TODO 实例化datanode
     DataNode dn = instantiateDataNode(args, conf, resources);
     if (dn != null) {
+      // TODO 启动datanode后台线程
       dn.runDatanodeDaemon();
     }
     return dn;
@@ -2808,6 +2825,7 @@ public class DataNode extends ReconfigurableBase
     DefaultMetricsSystem.initialize("DataNode");
 
     assert locations.size() > 0 : "number of data directories should be > 0";
+    // TODO
     return new DataNode(conf, locations, storageLocationChecker, resources);
   }
 
@@ -2902,8 +2920,10 @@ public class DataNode extends ReconfigurableBase
     int errorCode = 0;
     try {
       StringUtils.startupShutdownMessage(DataNode.class, args, LOG);
+      // TODO 核心代码
       DataNode datanode = createDataNode(args, null, resources);
       if (datanode != null) {
+        // TODO 阻塞起来
         datanode.join();
       } else {
         errorCode = 1;
@@ -2925,7 +2945,7 @@ public class DataNode extends ReconfigurableBase
     if (DFSUtil.parseHelpArgument(args, DataNode.USAGE, System.out, true)) {
       System.exit(0);
     }
-
+    // TODO 核心方法
     secureMain(args, null);
   }
 

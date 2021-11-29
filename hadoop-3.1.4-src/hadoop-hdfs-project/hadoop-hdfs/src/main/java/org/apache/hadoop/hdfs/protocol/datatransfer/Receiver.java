@@ -104,6 +104,7 @@ public abstract class Receiver implements DataTransferProtocol {
       opReadBlock();
       break;
     case WRITE_BLOCK:
+      // TODO 调用这里的代码，通过输入流，读取client传过来的数据
       opWriteBlock(in);
       break;
     case REPLACE_BLOCK:
@@ -170,6 +171,7 @@ public abstract class Receiver implements DataTransferProtocol {
     TraceScope traceScope = continueTraceSpan(proto.getHeader(),
         proto.getClass().getSimpleName());
     try {
+      // TODO 写数据
       writeBlock(PBHelperClient.convert(proto.getHeader().getBaseHeader().getBlock()),
           PBHelperClient.convertStorageType(proto.getStorageType()),
           PBHelperClient.convert(proto.getHeader().getBaseHeader().getToken()),

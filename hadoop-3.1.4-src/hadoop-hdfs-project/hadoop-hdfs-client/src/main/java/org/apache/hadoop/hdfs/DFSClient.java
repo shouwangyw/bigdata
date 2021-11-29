@@ -213,6 +213,7 @@ public class DFSClient implements java.io.Closeable, RemotePeerFactory,
   private final Configuration conf;
   private final Tracer tracer;
   private final DfsClientConf dfsClientConf;
+  // 客户端跟 NameNode 进行交互使用的协议
   final ClientProtocol namenode;
   /* The service used for delegation tokens */
   private Text dtService;
@@ -1131,6 +1132,7 @@ public class DFSClient implements java.io.Closeable, RemotePeerFactory,
       EnumSet<CreateFlag> flag, short replication, long blockSize,
       Progressable progress, int buffersize, ChecksumOpt checksumOpt)
       throws IOException {
+    // TODO
     return create(src, permission, flag, true,
         replication, blockSize, progress, buffersize, checksumOpt, null);
   }
@@ -1193,6 +1195,7 @@ public class DFSClient implements java.io.Closeable, RemotePeerFactory,
       long blockSize, Progressable progress, int buffersize,
       ChecksumOpt checksumOpt, InetSocketAddress[] favoredNodes)
       throws IOException {
+    // TODO
     return create(src, permission, flag, createParent, replication, blockSize,
         progress, buffersize, checksumOpt, favoredNodes, null);
   }
@@ -1214,10 +1217,18 @@ public class DFSClient implements java.io.Closeable, RemotePeerFactory,
     checkOpen();
     final FsPermission masked = applyUMask(permission);
     LOG.debug("{}: masked={}", src, masked);
+    /**
+     * TODO 重要代码
+     * 总结：
+     * 1、往文件目录树里添加文件
+     * 2、添加了契约管理（hdfs的文件一次写入多次读取，一个文件同时只能被一个client或线程写入）
+     * 3、启动DataStreamer线程（一直处于wait的状态）
+     */
     final DFSOutputStream result = DFSOutputStream.newStreamForCreate(this,
         src, masked, flag, createParent, replication, blockSize, progress,
         dfsClientConf.createChecksum(checksumOpt),
         getFavoredNodesStr(favoredNodes), ecPolicyName);
+    // TODO 开启契约(lease)续约，并开启线程定期检查契约是否过期
     beginFileLease(result.getFileId(), result);
     return result;
   }
