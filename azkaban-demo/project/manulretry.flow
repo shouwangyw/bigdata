@@ -1,0 +1,29 @@
+nodes:
+  - name: JobA
+    type: command
+    config:
+      command: echo "This is JobA."
+  - name: JobB
+    type: command
+    dependsOn:
+      - JobA
+    config:
+      command: echo "This is JobB."
+  - name: JobC
+    type: command
+    dependsOn:
+      - JobB
+    config:
+      command: sh /bigdata/install/azkaban-4.0.0/azkaban-exec-server-4.0.0/tmp.sh
+  - name: JobD
+    type: command
+    dependsOn:
+      - JobC
+    config:
+      command: echo "This is JobD."
+  - name: JobE
+    type: command
+    dependsOn:
+      - JobD
+    config:
+      command: echo "This is JobE."

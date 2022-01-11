@@ -1,0 +1,5 @@
+nodes:
+  - name: jobMR
+    type: command
+    config:
+      command: hadoop jar /bigdata/install/hadoop-3.1.4/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.4.jar pi 3 3

@@ -1,0 +1,5 @@
+nodes:
+  - name: jobHive
+    type: command
+    config:
+      command: hive -f 'hive.sql'

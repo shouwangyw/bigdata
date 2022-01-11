@@ -1,0 +1,5 @@
+nodes:
+  - name: jobA
+    type: command
+    config:
+      command: echo "Hello World! This is an flow 2.0 example."

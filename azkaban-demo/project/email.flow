@@ -1,0 +1,5 @@
+nodes:
+  - name: jobA
+    type: command
+    config:
+      command: echo "inform user when job sucessful or failed by sending email."

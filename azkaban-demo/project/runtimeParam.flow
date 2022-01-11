@@ -1,0 +1,12 @@
+nodes:
+  - name: JobA
+    type: command
+    config:
+      command: sh JobA.sh
+  - name: JobB
+    type: command
+    dependsOn:
+      - JobA
+    config:
+      command: sh JobB.sh
+    condition: ${JobA:dayOfTheWeek} == 2 || ${JobA:dayOfTheWeek} == 4

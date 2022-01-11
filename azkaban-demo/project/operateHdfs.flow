@@ -1,0 +1,7 @@
+nodes:
+  - name: jobA
+    type: command
+    config:
+      command: echo "start execute"
+      command.1: hdfs dfs -mkdir /azkaban
+      command.2: hdfs dfs -put /bigdata/install/hadoop-3.1.4/NOTICE.txt  /azkaban

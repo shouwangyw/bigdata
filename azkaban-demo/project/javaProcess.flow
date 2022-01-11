@@ -1,0 +1,8 @@
+nodes:
+  - name: javaProcessJob
+    type: javaprocess
+    config:
+      Xms: 96M
+      Xmx: 200M
+      java.class: com.yw.azkaban.JavaProcessMain
+      main.args: MyAzkaban

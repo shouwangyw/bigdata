@@ -1,0 +1,6 @@
+nodes:
+  - name: jobA
+    type: command
+    config:
+      command: mkdir /bigdata/install/azkaban-4.0.0/azkaban-exec-server-4.0.0/executions/test1
+      command.1: mkdir /bigdata/install/azkaban-4.0.0/azkaban-exec-server-4.0.0/executions/test2

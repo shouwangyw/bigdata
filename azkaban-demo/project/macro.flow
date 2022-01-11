@@ -1,0 +1,17 @@
+nodes:
+  - name: JobA
+    type: command
+    config:
+      command: sh JobA.sh
+  - name: JobB
+    type: command
+    config:
+      command: sh JobB.sh
+  - name: JobC
+    type: command
+    dependsOn:
+      - JobA
+      - JobB
+    config:
+      command: echo 'This is jobC'
+    condition: one_success
