@@ -1,0 +1,368 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>convert - Scala Standard Library 2.11.8 - scala.collection.convert</title>
+          <meta name="description" content="convert - Scala Standard Library 2.11.8 - scala.collection.convert" />
+          <meta name="keywords" content="convert Scala Standard Library 2.11.8 scala.collection.convert" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.collection.convert.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.collection">collection</a></p>
+        <h1>convert</h1><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">convert</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/collection/convert/package.scala#L1" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 230.00 94.00" height="94pt" width="230pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 90)" class="graph" id="graph0"><polygon points="-4,4 -4,-90 226,-90 226,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node object" id="graph1_0"><g id="a_object|graph1_0"><a xlink:title="scala.collection.convert.WrapAsScala" xlink:href="WrapAsScala$.html#inheritance-diagram"><polygon points="105,-25 0,-25 0,-0 105,-0 105,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../lib/object_diagram.png" y="-19.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="31.5" text-anchor="start">WrapAsScala</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="scala.collection.convert.WrapAsScala" xlink:href="WrapAsScala.html#inheritance-diagram"><polygon points="105,-86 0,-86 0,-61 105,-61 105,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-80.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="31.5" text-anchor="start">WrapAsScala</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="WrapAsScala is a subtype of WrapAsScala"><path d="M52.5,-55.6874C52.5,-45.9173 52.5,-33.8534 52.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="50.7501,-55.8435 52.5,-60.8435 54.2501,-55.8435 50.7501,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node object" id="graph1_2"><g id="a_object|graph1_2"><a xlink:title="scala.collection.convert.WrapAsJava" xlink:href="WrapAsJava$.html#inheritance-diagram"><polygon points="222,-25 123,-25 123,-0 222,-0 222,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../lib/object_diagram.png" y="-19.5" x="133.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="154.5" text-anchor="start">WrapAsJava</text></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.collection.convert.WrapAsJava" xlink:href="WrapAsJava.html#inheritance-diagram"><polygon points="222,-86 123,-86 123,-61 222,-61 222,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-80.5" x="133.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="154.5" text-anchor="start">WrapAsJava</text></a></g></g><!-- node3&#45;&gt;node2 --><g class="edge inheritance" id="graph1_3_2"><g id="a_inheritance|graph1_3_2"><a xlink:title="WrapAsJava is a subtype of WrapAsJava"><path d="M172.5,-55.6874C172.5,-45.9173 172.5,-33.8534 172.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="170.75,-55.8435 172.5,-60.8435 174.25,-55.8435 170.75,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.collection.convert"><span>convert</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.collection.convert.DecorateAsJava" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="DecorateAsJavaextendsAnyRef"></a>
+      <a id="DecorateAsJava:DecorateAsJava"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DecorateAsJava.html"><span class="name">DecorateAsJava</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@DecorateAsJavaextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A collection of decorators that allow converting between
+ Scala and Java collections using <code>asScala</code> and <code>asJava</code> methods.</p><div class="fullcomment"><div class="comment cmt"><p>A collection of decorators that allow converting between
+ Scala and Java collections using <code>asScala</code> and <code>asJava</code> methods.</p><p> The following conversions are supported via <code>asJava</code>, <code>asScala</code></p><ul><li><code>scala.collection.Iterable</code> &lt;=&gt; <code>java.lang.Iterable</code></li><li><code>scala.collection.Iterator</code> &lt;=&gt; <code>java.util.Iterator</code></li><li><code>scala.collection.mutable.Buffer</code> &lt;=&gt; <code>java.util.List</code></li><li><code>scala.collection.mutable.Set</code> &lt;=&gt; <code>java.util.Set</code></li><li><code>scala.collection.mutable.Map</code> &lt;=&gt; <code>java.util.Map</code></li><li><code>scala.collection.mutable.concurrent.Map</code> &lt;=&gt; <code>java.util.concurrent.ConcurrentMap</code></li></ul><p> In all cases, converting from a source type to a target type and back
+ again will return the original source object, e.g.</p><pre><span class="kw">import</span> scala.collection.JavaConverters._
+
+<span class="kw">val</span> sl = <span class="kw">new</span> scala.collection.mutable.ListBuffer[<span class="std">Int</span>]
+<span class="kw">val</span> jl : java.util.<span class="std">List</span>[<span class="std">Int</span>] = sl.asJava
+<span class="kw">val</span> sl2 : scala.collection.mutable.Buffer[<span class="std">Int</span>] = jl.asScala
+assert(sl eq sl2)</pre><p> The following conversions are also supported, but the
+ direction from Scala to Java is done by the more specifically named methods:
+ <code>asJavaCollection</code>, <code>asJavaEnumeration</code>, <code>asJavaDictionary</code>.</p><ul><li><code>scala.collection.Iterable</code> &lt;=&gt; <code>java.util.Collection</code></li><li><code>scala.collection.Iterator</code> &lt;=&gt; <code>java.util.Enumeration</code></li><li><code>scala.collection.mutable.Map</code> &lt;=&gt; <code>java.util.Dictionary</code></li></ul><p> In addition, the following one way conversions are provided via <code>asJava</code>:</p><ul><li><code>scala.collection.Seq</code> =&gt; <code>java.util.List</code></li><li><code>scala.collection.mutable.Seq</code> =&gt; <code>java.util.List</code></li><li><code>scala.collection.Set</code> =&gt; <code>java.util.Set</code></li><li><code>scala.collection.Map</code> =&gt; <code>java.util.Map</code></li></ul><p> The following one way conversion is provided via <code>asScala</code>:</p><ul><li><code>java.util.Properties</code> =&gt; <code>scala.collection.mutable.Map</code>
+</li></ul></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8.1</p></dd></dl></div>
+    </li><li name="scala.collection.convert.DecorateAsScala" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DecorateAsScalaextendsAnyRef"></a>
+      <a id="DecorateAsScala:DecorateAsScala"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DecorateAsScala.html"><span class="name">DecorateAsScala</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@DecorateAsScalaextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.convert.WrapAsJava" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WrapAsJavaextendsAnyRef"></a>
+      <a id="WrapAsJava:WrapAsJava"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WrapAsJava.html"><span class="name">WrapAsJava</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@WrapAsJavaextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.convert.WrapAsScala" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WrapAsScalaextendsAnyRef"></a>
+      <a id="WrapAsScala:WrapAsScala"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WrapAsScala.html"><span class="name">WrapAsScala</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@WrapAsScalaextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.collection.convert.WrapAsJava" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WrapAsJava"></a>
+      <a id="WrapAsJava:WrapAsJava"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="WrapAsJava$.html"><span class="name">WrapAsJava</span></a><span class="result"> extends <a href="WrapAsJava.html" class="extype" name="scala.collection.convert.WrapAsJava">WrapAsJava</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@WrapAsJava" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.convert.WrapAsScala" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WrapAsScala"></a>
+      <a id="WrapAsScala:WrapAsScala"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="WrapAsScala$.html"><span class="name">WrapAsScala</span></a><span class="result"> extends <a href="WrapAsScala.html" class="extype" name="scala.collection.convert.WrapAsScala">WrapAsScala</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@WrapAsScala" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.convert.Wrappers" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Wrappers"></a>
+      <a id="Wrappers:Wrappers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Wrappers$.html"><span class="name">Wrappers</span></a><span class="result"> extends <span class="extype" name="scala.collection.convert.Wrappers">Wrappers</span> with <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@Wrappers" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../SerialVersionUID.html" class="extype" name="scala.SerialVersionUID">SerialVersionUID</a></span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.collection.convert#decorateAll" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="decorateAll:scala.collection.convert.DecorateAsJavawithscala.collection.convert.DecorateAsScala"></a>
+      <a id="decorateAll:DecorateAsJavawithDecorateAsScala"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">decorateAll</span><span class="result">: <a href="DecorateAsJava.html" class="extype" name="scala.collection.convert.DecorateAsJava">DecorateAsJava</a> with <a href="DecorateAsScala.html" class="extype" name="scala.collection.convert.DecorateAsScala">DecorateAsScala</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@decorateAll:scala.collection.convert.DecorateAsJavawithscala.collection.convert.DecorateAsScala" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.convert#decorateAsJava" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="decorateAsJava:scala.collection.convert.DecorateAsJava"></a>
+      <a id="decorateAsJava:DecorateAsJava"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">decorateAsJava</span><span class="result">: <a href="DecorateAsJava.html" class="extype" name="scala.collection.convert.DecorateAsJava">DecorateAsJava</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@decorateAsJava:scala.collection.convert.DecorateAsJava" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.convert#decorateAsScala" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="decorateAsScala:scala.collection.convert.DecorateAsScala"></a>
+      <a id="decorateAsScala:DecorateAsScala"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">decorateAsScala</span><span class="result">: <a href="DecorateAsScala.html" class="extype" name="scala.collection.convert.DecorateAsScala">DecorateAsScala</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@decorateAsScala:scala.collection.convert.DecorateAsScala" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.convert#wrapAll" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="wrapAll:scala.collection.convert.WrapAsJavawithscala.collection.convert.WrapAsScala"></a>
+      <a id="wrapAll:WrapAsJavawithWrapAsScala"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wrapAll</span><span class="result">: <a href="WrapAsJava.html" class="extype" name="scala.collection.convert.WrapAsJava">WrapAsJava</a> with <a href="WrapAsScala.html" class="extype" name="scala.collection.convert.WrapAsScala">WrapAsScala</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@wrapAll:scala.collection.convert.WrapAsJavawithscala.collection.convert.WrapAsScala" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.convert#wrapAsJava" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="wrapAsJava:scala.collection.convert.WrapAsJava"></a>
+      <a id="wrapAsJava:WrapAsJava"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wrapAsJava</span><span class="result">: <a href="WrapAsJava.html" class="extype" name="scala.collection.convert.WrapAsJava">WrapAsJava</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@wrapAsJava:scala.collection.convert.WrapAsJava" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.convert#wrapAsScala" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="wrapAsScala:scala.collection.convert.WrapAsScala"></a>
+      <a id="wrapAsScala:WrapAsScala"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wrapAsScala</span><span class="result">: <a href="WrapAsScala.html" class="extype" name="scala.collection.convert.WrapAsScala">WrapAsScala</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.convert.package@wrapAsScala:scala.collection.convert.WrapAsScala" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

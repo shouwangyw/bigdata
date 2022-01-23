@@ -1,0 +1,1767 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>PostfixSelect - Scala Compiler 2.11.8 - scala.tools.nsc.ast.Trees.PostfixSelect</title>
+          <meta name="description" content="PostfixSelect - Scala Compiler 2.11.8 - scala.tools.nsc.ast.Trees.PostfixSelect" />
+          <meta name="keywords" content="PostfixSelect Scala Compiler 2.11.8 scala.tools.nsc.ast.Trees.PostfixSelect" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'scala.tools.nsc.ast.Trees$PostfixSelect';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="scala">scala</a>.<a href="../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="package.html" class="extype" name="scala.tools.nsc.ast">ast</a>.<a href="Trees.html" class="extype" name="scala.tools.nsc.ast.Trees">Trees</a></p>
+        <h1>PostfixSelect</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="Trees.html" class="extype" name="scala.tools.nsc.ast.Trees">package Trees</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PostfixSelect</span><span class="result"> extends <a href="../Global.html#SelectextendsTrees.this.SymTreewithTrees.this.RefTreewithTrees.this.SelectApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Select">Global.Select</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/compiler/scala/tools/nsc/ast/Trees.scala#L1" target="_blank">Trees.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../Global.html#SelectextendsTrees.this.SymTreewithTrees.this.RefTreewithTrees.this.SelectApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Select">Global.Select</a>, <span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">java.io.Serializable</span>, <a href="../Global.html#SelectApiextendsTrees.this.RefTreeApi" class="extmbr" name="scala.tools.nsc.Global.SelectApi">Global.SelectApi</a>, <a href="../Global.html#RefTreeextendsTrees.this.SymTreewithTrees.this.NameTreewithTrees.this.RefTreeApi" class="extmbr" name="scala.tools.nsc.Global.RefTree">Global.RefTree</a>, <a href="../Global.html#RefTreeApiextendsTrees.this.SymTreeApiwithTrees.this.NameTreeApi" class="extmbr" name="scala.tools.nsc.Global.RefTreeApi">Global.RefTreeApi</a>, <a href="../Global.html#NameTreeextendsTrees.this.TreewithTrees.this.NameTreeApi" class="extmbr" name="scala.tools.nsc.Global.NameTree">Global.NameTree</a>, <a href="../Global.html#NameTreeApiextendsTrees.this.TreeApi" class="extmbr" name="scala.tools.nsc.Global.NameTreeApi">Global.NameTreeApi</a>, <a href="../Global.html#SymTreeextendsTrees.this.TreewithTrees.this.SymTreeApi" class="extmbr" name="scala.tools.nsc.Global.SymTree">Global.SymTree</a>, <a href="../Global.html#SymTreeApiextendsTrees.this.TreeApi" class="extmbr" name="scala.tools.nsc.Global.SymTreeApi">Global.SymTreeApi</a>, <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>, <a href="../Global.html#AttachableextendsAnyRef" class="extmbr" name="scala.tools.nsc.Global.Attachable">Global.Attachable</a>, <a href="../Global.html#TreeContextApiImplextendsTrees.this.TreeApi" class="extmbr" name="scala.tools.nsc.Global.TreeContextApiImpl">Global.TreeContextApiImpl</a>, <a href="../Global.html#TreeApiextendsProduct" class="extmbr" name="scala.tools.nsc.Global.TreeApi">Global.TreeApi</a>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 190.00 118.00" height="118pt" width="190pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="graph0"><polygon points="-4,4 -4,-114 186,-114 186,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="scala.tools.nsc.ast.Trees.PostfixSelect (this class)" xlink:href="#inheritance-diagram"><polygon points="157.5,-49 24.5,-49 24.5,-24 157.5,-24 157.5,-49" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../lib/class_diagram.png" y="-43.5" x="35" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-33.5" x="56" text-anchor="start">Global.PostfixSelect</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.tools.nsc.ast.Trees.Select"><polygon points="142.5,-110 39.5,-110 39.5,-85 142.5,-85 142.5,-110" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../lib/class_diagram.png" y="-104.5" x="50" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-94.5" x="71" text-anchor="start">Global.Select</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="Global.PostfixSelect is a subtype of Global.Select"><path d="M91,-79.6874C91,-69.9173 91,-57.8534 91,-49.1323" stroke="#d4d4d4" fill="none"></path><polygon points="89.2501,-79.8435 91,-84.8435 92.7501,-79.8435 89.2501,-79.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.tools.nsc.ast.Trees.PostfixSelect"><span>PostfixSelect</span></li><li class="in" name="scala.reflect.internal.Trees.Select"><span>Select</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.reflect.api.Trees.SelectApi"><span>SelectApi</span></li><li class="in" name="scala.reflect.internal.Trees.RefTree"><span>RefTree</span></li><li class="in" name="scala.reflect.api.Trees.RefTreeApi"><span>RefTreeApi</span></li><li class="in" name="scala.reflect.internal.Trees.NameTree"><span>NameTree</span></li><li class="in" name="scala.reflect.api.Trees.NameTreeApi"><span>NameTreeApi</span></li><li class="in" name="scala.reflect.internal.Trees.SymTree"><span>SymTree</span></li><li class="in" name="scala.reflect.api.Trees.SymTreeApi"><span>SymTreeApi</span></li><li class="in" name="scala.reflect.internal.Trees.Tree"><span>Tree</span></li><li class="in" name="scala.reflect.internal.StdAttachments.Attachable"><span>Attachable</span></li><li class="in" name="scala.reflect.internal.Trees.TreeContextApiImpl"><span>TreeContextApiImpl</span></li><li class="in" name="scala.reflect.api.Trees.TreeApi"><span>TreeApi</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="scala.tools.nsc.ast.Trees.PostfixSelect#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(qual:Trees.this.Tree,name:Trees.this.Name):Trees.this.PostfixSelect"></a>
+      <a id="&lt;init&gt;:Global.PostfixSelect"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PostfixSelect</span><span class="params">(<span name="qual">qual: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="name">name: <a href="../Global.html#NameextendsNames.this.NameApi" class="extmbr" name="scala.tools.nsc.Global.Name">Global.Name</a></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@&lt;init&gt;(qual:Trees.this.Tree,name:Trees.this.Name):Trees.this.PostfixSelect" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@##():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a> to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>] performed by method any2stringadd in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(Global.PostfixSelect,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.reflect.internal.StdAttachments.Attachable#attachments" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="attachments:scala.reflect.macros.Attachments{typePos=StdAttachments.this.Position}"></a>
+      <a id="attachments:Attachments{typePos=Trees.this.Position}"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">attachments</span><span class="result">: <span class="extype" name="scala.reflect.macros.Attachments">Attachments</span> { type Pos = Trees.this.Position }</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@attachments:scala.reflect.macros.Attachments{typePos=StdAttachments.this.Position}" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Attachable</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#canHaveAttrs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="canHaveAttrs:Boolean"></a>
+      <a id="canHaveAttrs:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">canHaveAttrs</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@canHaveAttrs:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#changeOwner" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="changeOwner(pairs:(Trees.this.Symbol,Trees.this.Symbol)*):Trees.this.Tree"></a>
+      <a id="changeOwner((Global.Symbol,Global.Symbol)*):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">changeOwner</span><span class="params">(<span name="pairs">pairs: (<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>, <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>)*</span>)</span><span class="result">: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@changeOwner(pairs:(Trees.this.Symbol,Trees.this.Symbol)*):Trees.this.Tree" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#children" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="children:List[Trees.this.Tree]"></a>
+      <a id="children:List[Global.Tree]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">children</span><span class="result">: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@children:List[Trees.this.Tree]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#clearType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clearType():Tree.this.type"></a>
+      <a id="clearType():PostfixSelect.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clearType</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.Trees.PostfixSelect">PostfixSelect</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@clearType():Tree.this.type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#collect" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="collect[T](pf:PartialFunction[Trees.this.Tree,T]):List[T]"></a>
+      <a id="collect[T](PartialFunction[Global.Tree,T]):List[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">collect</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="pf">pf: <span class="extype" name="scala.PartialFunction">PartialFunction</span>[<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>, <span class="extype" name="scala.reflect.internal.Trees.TreeContextApiImpl.collect.T">T</span>]</span>)</span><span class="result">: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="scala.reflect.internal.Trees.TreeContextApiImpl.collect.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@collect[T](pf:PartialFunction[Trees.this.Tree,T]):List[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#correspondsStructure" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="correspondsStructure(that:Trees.this.Tree)(f:(Trees.this.Tree,Trees.this.Tree)=&gt;Boolean):Boolean"></a>
+      <a id="correspondsStructure(Global.Tree)((Global.Tree,Global.Tree)⇒Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">correspondsStructure</span><span class="params">(<span name="that">that: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="params">(<span name="f">f: (<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>, <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@correspondsStructure(that:Trees.this.Tree)(f:(Trees.this.Tree,Trees.this.Tree)=&gt;Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#defineType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="defineType(tp:Trees.this.Type):Tree.this.type"></a>
+      <a id="defineType(Global.Type):PostfixSelect.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">defineType</span><span class="params">(<span name="tp">tp: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.Trees.PostfixSelect">PostfixSelect</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@defineType(tp:Trees.this.Type):Tree.this.type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#duplicate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="duplicate:Tree.this.type"></a>
+      <a id="duplicate:PostfixSelect.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">duplicate</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.Trees.PostfixSelect">PostfixSelect</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@duplicate:Tree.this.type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree → TreeApi</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((Global.PostfixSelect)⇒Boolean,⇒Any):Global.PostfixSelect"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((Global.PostfixSelect)⇒Boolean):Global.PostfixSelect"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):Global.PostfixSelect"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):Global.PostfixSelect"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(that:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="that">that: <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@equals(that:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt class="param">that</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree → Equals → AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#equalsStructure" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equalsStructure(that:Trees.this.Tree):Boolean"></a>
+      <a id="equalsStructure(Global.Tree):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equalsStructure</span><span class="params">(<span name="that">that: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@equalsStructure(that:Trees.this.Tree):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#exists" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exists(p:Trees.this.Tree=&gt;Boolean):Boolean"></a>
+      <a id="exists((Global.Tree)⇒Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exists</span><span class="params">(<span name="p">p: (<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@exists(p:Trees.this.Tree=&gt;Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#filter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="filter(f:Trees.this.Tree=&gt;Boolean):List[Trees.this.Tree]"></a>
+      <a id="filter((Global.Tree)⇒Boolean):List[Global.Tree]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">filter</span><span class="params">(<span name="f">f: (<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@filter(f:Trees.this.Tree=&gt;Boolean):List[Trees.this.Tree]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl → TreeApi</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#find" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="find(p:Trees.this.Tree=&gt;Boolean):Option[Trees.this.Tree]"></a>
+      <a id="find((Global.Tree)⇒Boolean):Option[Global.Tree]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">find</span><span class="params">(<span name="p">p: (<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@find(p:Trees.this.Tree=&gt;Boolean):Option[Trees.this.Tree]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#forAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="forAll(p:Trees.this.Tree=&gt;Boolean):Boolean"></a>
+      <a id="forAll((Global.Tree)⇒Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">forAll</span><span class="params">(<span name="p">p: (<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@forAll(p:Trees.this.Tree=&gt;Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#foreach" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="foreach(f:Trees.this.Tree=&gt;Unit):Unit"></a>
+      <a id="foreach((Global.Tree)⇒Unit):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">foreach</span><span class="params">(<span name="f">f: (<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@foreach(f:Trees.this.Tree=&gt;Unit):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#foreachPartial" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="foreachPartial(pf:PartialFunction[Trees.this.Tree,Trees.this.Tree]):Unit"></a>
+      <a id="foreachPartial(PartialFunction[Global.Tree,Global.Tree]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">foreachPartial</span><span class="params">(<span name="pf">pf: <span class="extype" name="scala.PartialFunction">PartialFunction</span>[<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>, <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@foreachPartial(pf:PartialFunction[Trees.this.Tree,Trees.this.Tree]):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a> to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>] performed by method StringFormat in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#freeTerms" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="freeTerms:List[Trees.this.FreeTermSymbol]"></a>
+      <a id="freeTerms:List[Global.FreeTermSymbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">freeTerms</span><span class="result">: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#FreeTermSymbolextendsSymbols.this.TermSymbolwithSymbols.this.FreeSymbolwithSymbols.this.FreeTermSymbolApi" class="extmbr" name="scala.tools.nsc.Global.FreeTermSymbol">Global.FreeTermSymbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@freeTerms:List[Trees.this.FreeTermSymbol]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#freeTypes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="freeTypes:List[Trees.this.FreeTypeSymbol]"></a>
+      <a id="freeTypes:List[Global.FreeTypeSymbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">freeTypes</span><span class="result">: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#FreeTypeSymbolextendsSymbols.this.TypeSkolemwithSymbols.this.FreeSymbolwithSymbols.this.FreeTypeSymbolApi" class="extmbr" name="scala.tools.nsc.Global.FreeTypeSymbol">Global.FreeTypeSymbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@freeTypes:List[Trees.this.FreeTypeSymbol]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.NameTree#getterName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getterName:Trees.this.TermName"></a>
+      <a id="getterName:Global.TermName"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getterName</span><span class="result">: <a href="../Global.html#TermNameextendsNames.this.NamewithNames.this.TermNameApi" class="extmbr" name="scala.tools.nsc.Global.TermName">Global.TermName</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@getterName:Trees.this.TermName" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>NameTree</dd></dl></div>
+    </li><li name="scala.reflect.internal.StdAttachments.Attachable#hasAttachment" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hasAttachment[T](implicitevidence$3:scala.reflect.ClassTag[T]):Boolean"></a>
+      <a id="hasAttachment[T](ClassTag[T]):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasAttachment</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="scala.reflect.internal.StdAttachments.Attachable.hasAttachment.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@hasAttachment[T](implicitevidence$3:scala.reflect.ClassTag[T]):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Attachable</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#hasExistingSymbol" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hasExistingSymbol:Boolean"></a>
+      <a id="hasExistingSymbol:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasExistingSymbol</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@hasExistingSymbol:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.SymTree#hasSymbolField" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hasSymbolField:Boolean"></a>
+      <a id="hasSymbolField:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasSymbolField</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@hasSymbolField:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SymTree → Tree</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#hasSymbolWhich" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hasSymbolWhich(f:Trees.this.Symbol=&gt;Boolean):Boolean"></a>
+      <a id="hasSymbolWhich((Global.Symbol)⇒Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasSymbolWhich</span><span class="params">(<span name="f">f: (<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@hasSymbolWhich(f:Trees.this.Symbol=&gt;Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree → AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#id" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="id:Int"></a>
+      <a id="id:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">id</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@id:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#isDef" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isDef:Boolean"></a>
+      <a id="isDef:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isDef</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@isDef:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#isEmpty" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isEmpty:Boolean"></a>
+      <a id="isEmpty:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isEmpty</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@isEmpty:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#isErroneous" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isErroneous:Boolean"></a>
+      <a id="isErroneous:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isErroneous</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@isErroneous:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#isErrorTyped" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isErrorTyped:Boolean"></a>
+      <a id="isErrorTyped:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isErrorTyped</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@isErrorTyped:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#isTerm" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isTerm:Boolean"></a>
+      <a id="isTerm:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isTerm</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@isTerm:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#isType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isType:Boolean"></a>
+      <a id="isType:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isType</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@isType:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#isTyped" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isTyped:Boolean"></a>
+      <a id="isTyped:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isTyped</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@isTyped:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.NameTree#localName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="localName:Trees.this.TermName"></a>
+      <a id="localName:Global.TermName"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">localName</span><span class="result">: <a href="../Global.html#TermNameextendsNames.this.NamewithNames.this.TermNameApi" class="extmbr" name="scala.tools.nsc.Global.TermName">Global.TermName</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@localName:Trees.this.TermName" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>NameTree</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#modifyType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="modifyType(f:Trees.this.Type=&gt;Trees.this.Type):Trees.this.Tree"></a>
+      <a id="modifyType((Global.Type)⇒Global.Type):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">modifyType</span><span class="params">(<span name="f">f: (<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>) ⇒ <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@modifyType(f:Trees.this.Type=&gt;Trees.this.Type):Trees.this.Tree" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Select#name" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="name:Trees.this.Name"></a>
+      <a id="name:Global.Name"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">name</span><span class="result">: <a href="../Global.html#NameextendsNames.this.NameApi" class="extmbr" name="scala.tools.nsc.Global.Name">Global.Name</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@name:Trees.this.Name" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Select → SelectApi → RefTree → RefTreeApi → NameTree → NameTreeApi</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#nonEmpty" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nonEmpty:Boolean"></a>
+      <a id="nonEmpty:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nonEmpty</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@nonEmpty:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree → TreeApi</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#orElse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="orElse(alt:=&gt;Trees.this.Tree):Trees.this.Tree"></a>
+      <a id="orElse(⇒Global.Tree):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">orElse</span><span class="params">(<span name="alt">alt: ⇒ <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@orElse(alt:=&gt;Trees.this.Tree):Trees.this.Tree" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#pos" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="pos:Trees.this.Position"></a>
+      <a id="pos:Global.Position"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pos</span><span class="result">: <a href="../Global.html#Position=scala.reflect.internal.util.Position" class="extmbr" name="scala.tools.nsc.Global.Position">Global.Position</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@pos:Trees.this.Position" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree → Attachable → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.StdAttachments.Attachable#pos_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="pos_=(pos:StdAttachments.this.Position):Unit"></a>
+      <a id="pos_=(Global.Position):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: pos_$eq" class="name">pos_=</span><span class="params">(<span name="pos">pos: <a href="../Global.html#Position=scala.reflect.internal.util.Position" class="extmbr" name="scala.tools.nsc.Global.Position">Global.Position</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@pos_=(pos:StdAttachments.this.Position):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Attachable</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Select#qualifier" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="qualifier:Trees.this.Tree"></a>
+      <a id="qualifier:Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">qualifier</span><span class="result">: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@qualifier:Trees.this.Tree" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Select → SelectApi → RefTree → RefTreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.StdAttachments.Attachable#rawatt" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rawatt:scala.reflect.macros.Attachments{typePos=StdAttachments.this.Position}"></a>
+      <a id="rawatt:Attachments{typePos=Trees.this.Position}"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rawatt</span><span class="result">: <span class="extype" name="scala.reflect.macros.Attachments">Attachments</span> { type Pos = Trees.this.Position }</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@rawatt:scala.reflect.macros.Attachments{typePos=StdAttachments.this.Position}" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Attachable</dd></dl></div>
+    </li><li name="scala.reflect.internal.StdAttachments.Attachable#removeAttachment" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="removeAttachment[T](implicitevidence$2:scala.reflect.ClassTag[T]):Attachable.this.type"></a>
+      <a id="removeAttachment[T](ClassTag[T]):PostfixSelect.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">removeAttachment</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="scala.reflect.internal.StdAttachments.Attachable.removeAttachment.T">T</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.Trees.PostfixSelect">PostfixSelect</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@removeAttachment[T](implicitevidence$2:scala.reflect.ClassTag[T]):Attachable.this.type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Attachable</dd></dl></div>
+    </li><li name="scala.reflect.internal.StdAttachments.Attachable#setAttachments" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setAttachments(attachments:scala.reflect.macros.Attachments{typePos=StdAttachments.this.Position}):Attachable.this.type"></a>
+      <a id="setAttachments(Attachments{typePos=Trees.this.Position}):PostfixSelect.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setAttachments</span><span class="params">(<span name="attachments">attachments: <span class="extype" name="scala.reflect.macros.Attachments">Attachments</span> { type Pos = Trees.this.Position }</span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.Trees.PostfixSelect">PostfixSelect</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@setAttachments(attachments:scala.reflect.macros.Attachments{typePos=StdAttachments.this.Position}):Attachable.this.type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Attachable</dd></dl></div>
+    </li><li name="scala.reflect.internal.StdAttachments.Attachable#setPos" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setPos(newpos:StdAttachments.this.Position):Attachable.this.type"></a>
+      <a id="setPos(Global.Position):PostfixSelect.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setPos</span><span class="params">(<span name="newpos">newpos: <a href="../Global.html#Position=scala.reflect.internal.util.Position" class="extmbr" name="scala.tools.nsc.Global.Position">Global.Position</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.Trees.PostfixSelect">PostfixSelect</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@setPos(newpos:StdAttachments.this.Position):Attachable.this.type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Attachable</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#setSymbol" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setSymbol(sym:Trees.this.Symbol):Tree.this.type"></a>
+      <a id="setSymbol(Global.Symbol):PostfixSelect.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setSymbol</span><span class="params">(<span name="sym">sym: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.Trees.PostfixSelect">PostfixSelect</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@setSymbol(sym:Trees.this.Symbol):Tree.this.type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#setType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setType(tp:Trees.this.Type):Tree.this.type"></a>
+      <a id="setType(Global.Type):PostfixSelect.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setType</span><span class="params">(<span name="tp">tp: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.Trees.PostfixSelect">PostfixSelect</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@setType(tp:Trees.this.Type):Tree.this.type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.NameTree#setterName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setterName:Trees.this.TermName"></a>
+      <a id="setterName:Global.TermName"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setterName</span><span class="result">: <a href="../Global.html#TermNameextendsNames.this.NamewithNames.this.TermNameApi" class="extmbr" name="scala.tools.nsc.Global.TermName">Global.TermName</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@setterName:Trees.this.TermName" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>NameTree</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#shallowDuplicate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="shallowDuplicate:Trees.this.Tree"></a>
+      <a id="shallowDuplicate:Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shallowDuplicate</span><span class="result">: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@shallowDuplicate:Trees.this.Tree" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#shortClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="shortClass:String"></a>
+      <a id="shortClass:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shortClass</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@shortClass:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#substituteSymbols" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="substituteSymbols(from:List[Trees.this.Symbol],to:List[Trees.this.Symbol]):Trees.this.Tree"></a>
+      <a id="substituteSymbols(List[Global.Symbol],List[Global.Symbol]):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">substituteSymbols</span><span class="params">(<span name="from">from: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="to">to: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>)</span><span class="result">: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@substituteSymbols(from:List[Trees.this.Symbol],to:List[Trees.this.Symbol]):Trees.this.Tree" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#substituteThis" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="substituteThis(clazz:Trees.this.Symbol,to:Trees.this.Tree):Trees.this.Tree"></a>
+      <a id="substituteThis(Global.Symbol,Global.Tree):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">substituteThis</span><span class="params">(<span name="clazz">clazz: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="to">to: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@substituteThis(clazz:Trees.this.Symbol,to:Trees.this.Tree):Trees.this.Tree" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#substituteTypes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="substituteTypes(from:List[Trees.this.Symbol],to:List[Trees.this.Type]):Trees.this.Tree"></a>
+      <a id="substituteTypes(List[Global.Symbol],List[Global.Type]):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">substituteTypes</span><span class="params">(<span name="from">from: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="to">to: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>)</span><span class="result">: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@substituteTypes(from:List[Trees.this.Symbol],to:List[Trees.this.Type]):Trees.this.Tree" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#summaryString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="summaryString:String"></a>
+      <a id="summaryString:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">summaryString</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@summaryString:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl</dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.SymTree#symbol" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="symbol:Trees.this.Symbol"></a>
+      <a id="symbol:Global.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">symbol</span><span class="result">: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@symbol:Trees.this.Symbol" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SymTree → SymTreeApi → Tree → TreeApi</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@toString():String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeApi → AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#tpe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tpe:Trees.this.Type"></a>
+      <a id="tpe:Global.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tpe</span><span class="result">: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@tpe:Trees.this.Type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree → TreeApi</dd></dl></div>
+    </li><li name="scala.reflect.internal.StdAttachments.Attachable#updateAttachment" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="updateAttachment[T](attachment:T)(implicitevidence$1:scala.reflect.ClassTag[T]):Attachable.this.type"></a>
+      <a id="updateAttachment[T](T)(ClassTag[T]):PostfixSelect.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">updateAttachment</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="attachment">attachment: <span class="extype" name="scala.reflect.internal.StdAttachments.Attachable.updateAttachment.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="scala.reflect.ClassTag">ClassTag</span>[<span class="extype" name="scala.reflect.internal.StdAttachments.Attachable.updateAttachment.T">T</span>]</span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.Trees.PostfixSelect">PostfixSelect</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@updateAttachment[T](attachment:T)(implicitevidence$1:scala.reflect.ClassTag[T]):Attachable.this.type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Attachable</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.TreeContextApiImpl#withFilter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withFilter(f:Trees.this.Tree=&gt;Boolean):List[Trees.this.Tree]"></a>
+      <a id="withFilter((Global.Tree)⇒Boolean):List[Global.Tree]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withFilter</span><span class="params">(<span name="f">f: (<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@withFilter(f:Trees.this.Tree=&gt;Boolean):List[Trees.this.Tree]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>TreeContextApiImpl → TreeApi</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(Global.PostfixSelect,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="scala.reflect.internal.Trees.Tree#hasSymbol" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hasSymbol:Boolean"></a>
+      <a id="hasSymbol:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use hasSymbolField">hasSymbol</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@hasSymbol:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree</dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use hasSymbolField</p></dd></dl></div>
+    </li><li name="scala.reflect.internal.Trees.Tree#tpe_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tpe_=(t:Trees.this.Type):Unit"></a>
+      <a id="tpe_=(Global.Type):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: tpe_$eq. Deprecated: (Since version 2.11.0) Use setType" class="name deprecated">tpe_=</span><span class="params">(<span name="t">t: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.Trees$PostfixSelect@tpe_=(t:Trees.this.Type):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Tree</dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use setType</p></dd></dl></div>
+    </li></ol>
+            </div>
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.reflect.internal.Trees.Select">
+              <h3>Inherited from <a href="../Global.html#SelectextendsTrees.this.SymTreewithTrees.this.RefTreewithTrees.this.SelectApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Select">Global.Select</a></h3>
+            </div><div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">java.io.Serializable</span></h3>
+            </div><div class="parent" name="scala.reflect.api.Trees.SelectApi">
+              <h3>Inherited from <a href="../Global.html#SelectApiextendsTrees.this.RefTreeApi" class="extmbr" name="scala.tools.nsc.Global.SelectApi">Global.SelectApi</a></h3>
+            </div><div class="parent" name="scala.reflect.internal.Trees.RefTree">
+              <h3>Inherited from <a href="../Global.html#RefTreeextendsTrees.this.SymTreewithTrees.this.NameTreewithTrees.this.RefTreeApi" class="extmbr" name="scala.tools.nsc.Global.RefTree">Global.RefTree</a></h3>
+            </div><div class="parent" name="scala.reflect.api.Trees.RefTreeApi">
+              <h3>Inherited from <a href="../Global.html#RefTreeApiextendsTrees.this.SymTreeApiwithTrees.this.NameTreeApi" class="extmbr" name="scala.tools.nsc.Global.RefTreeApi">Global.RefTreeApi</a></h3>
+            </div><div class="parent" name="scala.reflect.internal.Trees.NameTree">
+              <h3>Inherited from <a href="../Global.html#NameTreeextendsTrees.this.TreewithTrees.this.NameTreeApi" class="extmbr" name="scala.tools.nsc.Global.NameTree">Global.NameTree</a></h3>
+            </div><div class="parent" name="scala.reflect.api.Trees.NameTreeApi">
+              <h3>Inherited from <a href="../Global.html#NameTreeApiextendsTrees.this.TreeApi" class="extmbr" name="scala.tools.nsc.Global.NameTreeApi">Global.NameTreeApi</a></h3>
+            </div><div class="parent" name="scala.reflect.internal.Trees.SymTree">
+              <h3>Inherited from <a href="../Global.html#SymTreeextendsTrees.this.TreewithTrees.this.SymTreeApi" class="extmbr" name="scala.tools.nsc.Global.SymTree">Global.SymTree</a></h3>
+            </div><div class="parent" name="scala.reflect.api.Trees.SymTreeApi">
+              <h3>Inherited from <a href="../Global.html#SymTreeApiextendsTrees.this.TreeApi" class="extmbr" name="scala.tools.nsc.Global.SymTreeApi">Global.SymTreeApi</a></h3>
+            </div><div class="parent" name="scala.reflect.internal.Trees.Tree">
+              <h3>Inherited from <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></h3>
+            </div><div class="parent" name="scala.reflect.internal.StdAttachments.Attachable">
+              <h3>Inherited from <a href="../Global.html#AttachableextendsAnyRef" class="extmbr" name="scala.tools.nsc.Global.Attachable">Global.Attachable</a></h3>
+            </div><div class="parent" name="scala.reflect.internal.Trees.TreeContextApiImpl">
+              <h3>Inherited from <a href="../Global.html#TreeContextApiImplextendsTrees.this.TreeApi" class="extmbr" name="scala.tools.nsc.Global.TreeContextApiImpl">Global.TreeContextApiImpl</a></h3>
+            </div><div class="parent" name="scala.reflect.api.Trees.TreeApi">
+              <h3>Inherited from <a href="../Global.html#TreeApiextendsProduct" class="extmbr" name="scala.tools.nsc.Global.TreeApi">Global.TreeApi</a></h3>
+            </div><div class="parent" name="scala.Product">
+              <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
+            </div><div class="parent" name="scala.Equals">
+              <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="../Global.html#PostfixSelectextendsTrees.this.Select" class="extmbr" name="scala.tools.nsc.ast.Trees.PostfixSelect">Global.PostfixSelect</a>]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

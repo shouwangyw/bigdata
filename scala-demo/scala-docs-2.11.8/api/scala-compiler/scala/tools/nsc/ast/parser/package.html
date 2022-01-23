@@ -1,0 +1,441 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>parser - Scala Compiler 2.11.8 - scala.tools.nsc.ast.parser</title>
+          <meta name="description" content="parser - Scala Compiler 2.11.8 - scala.tools.nsc.ast.parser" />
+          <meta name="keywords" content="parser Scala Compiler 2.11.8 scala.tools.nsc.ast.parser" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'scala.tools.nsc.ast.parser.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.ast">ast</a></p>
+        <h1>parser</h1><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parser</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 790.00 216.00" height="216pt" width="790pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 212)" class="graph" id="graph0"><polygon points="-4,4 -4,-212 786,-212 786,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node class" id="graph1_0"><g id="a_class|graph1_0"><a xlink:title="scala.tools.nsc.ast.parser.Deletion" xlink:href="Deletion.html#inheritance-diagram"><polygon points="80,-147 0,-147 0,-122 80,-122 80,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-141.5" x="10" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="31" text-anchor="start">Deletion</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.tools.nsc.ast.parser.Insertion" xlink:href="Insertion.html#inheritance-diagram"><polygon points="179.5,-147 98.5,-147 98.5,-122 179.5,-122 179.5,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-141.5" x="109" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="130" text-anchor="start">Insertion</text></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="scala.tools.nsc.ast.parser.MarkupParsers" xlink:href="MarkupParsers.html#inheritance-diagram"><polygon points="548.5,-147 437.5,-147 437.5,-122 548.5,-122 548.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="448" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="469" text-anchor="start">MarkupParsers</text></a></g></g><!-- node7 --><g class="node trait" id="graph1_7"><g id="a_trait|graph1_7"><a xlink:title="scala.tools.nsc.ast.parser.Parsers" xlink:href="Parsers.html#inheritance-diagram"><polygon points="400,-86 322,-86 322,-61 400,-61 400,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="332" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="353" text-anchor="start">Parsers</text></a></g></g><!-- node2&#45;&gt;node7 --><g class="edge inheritance" id="graph1_2_7"><g id="a_inheritance|graph1_2_7"><a xlink:title="Parsers is a subtype of MarkupParsers"><path d="M462.497,-119.866C439.691,-109.672 408.834,-95.8805 387.15,-86.1884" stroke="#d4d4d4" fill="none"></path><polygon points="461.957,-121.541 467.236,-121.984 463.385,-118.346 461.957,-121.541" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11 --><g class="node class" id="graph1_11"><g id="a_class|graph1_11"><a xlink:title="scala.tools.nsc.ast.parser.SyntaxAnalyzer" xlink:href="SyntaxAnalyzer.html#inheritance-diagram"><polygon points="418,-25 304,-25 304,-0 418,-0 418,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-19.5" x="314" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="335" text-anchor="start">SyntaxAnalyzer</text></a></g></g><!-- node2&#45;&gt;node11 --><g class="edge inheritance" id="graph1_2_11"><g id="a_inheritance|graph1_2_11"><a xlink:title="SyntaxAnalyzer is a subtype of MarkupParsers"><path d="M476.607,-118.597C449.988,-94.3983 397.92,-47.0633 373.812,-25.1476" stroke="#d4d4d4" fill="none"></path><polygon points="475.466,-119.925 480.343,-121.994 477.821,-117.336 475.466,-119.925" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node class" id="graph1_3"><g id="a_class|graph1_3"><a xlink:title="scala.tools.nsc.ast.parser.Change" xlink:href="Change.html#inheritance-diagram"><polygon points="119,-208 41,-208 41,-183 119,-183 119,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-202.5" x="51" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="72" text-anchor="start">Change</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="Deletion is a subtype of Change"><path d="M69.1499,-178.496C62.4339,-168.59 53.9632,-156.096 47.8863,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="67.843,-179.687 72.0973,-182.843 70.7399,-177.723 67.843,-179.687" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3&#45;&gt;node1 --><g class="edge inheritance" id="graph1_3_1"><g id="a_inheritance|graph1_3_1"><a xlink:title="Insertion is a subtype of Change"><path d="M95.2064,-179.294C105.232,-169.268 118.162,-156.338 127.368,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="93.9546,-178.07 91.6565,-182.843 96.4295,-180.545 93.9546,-178.07" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="scala.tools.nsc.ast.parser.ParsersCommon" xlink:href="ParsersCommon.html#inheritance-diagram"><polygon points="419.5,-147 302.5,-147 302.5,-122 419.5,-122 419.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="313" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="334" text-anchor="start">ParsersCommon</text></a></g></g><!-- node4&#45;&gt;node7 --><g class="edge inheritance" id="graph1_4_7"><g id="a_inheritance|graph1_4_7"><a xlink:title="Parsers is a subtype of ParsersCommon"><path d="M361,-116.687C361,-106.917 361,-94.8534 361,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="359.25,-116.843 361,-121.843 362.75,-116.844 359.25,-116.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node class" id="graph1_5"><g id="a_class|graph1_5"><a xlink:title="scala.tools.nsc.ast.parser.BracePatch" xlink:href="BracePatch.html#inheritance-diagram"><polygon points="663,-147 567,-147 567,-122 663,-122 663,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-141.5" x="577" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="598" text-anchor="start">BracePatch</text></a></g></g><!-- node6 --><g class="node trait" id="graph1_6"><g id="a_trait|graph1_6"><a xlink:title="scala.tools.nsc.ast.parser.Scanners" xlink:href="Scanners.html#inheritance-diagram"><polygon points="284,-147 198,-147 198,-122 284,-122 284,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="208" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="229" text-anchor="start">Scanners</text></a></g></g><!-- node6&#45;&gt;node7 --><g class="edge inheritance" id="graph1_6_7"><g id="a_inheritance|graph1_6_7"><a xlink:title="Parsers is a subtype of Scanners"><path d="M268.99,-119.738C289.697,-109.557 317.597,-95.8399 337.227,-86.1884" stroke="#d4d4d4" fill="none"></path><polygon points="268.137,-118.208 264.422,-121.984 269.681,-121.348 268.137,-118.208" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6&#45;&gt;node11 --><g class="edge inheritance" id="graph1_6_11"><g id="a_inheritance|graph1_6_11"><a xlink:title="SyntaxAnalyzer is a subtype of Scanners"><path d="M256.325,-117.99C270.875,-103.284 293.377,-80.5886 313,-61 325.28,-48.7416 339.404,-34.7811 349.136,-25.1837" stroke="#d4d4d4" fill="none"></path><polygon points="254.713,-117.132 252.441,-121.917 257.202,-119.593 254.713,-117.132" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7&#45;&gt;node11 --><g class="edge inheritance" id="graph1_7_11"><g id="a_inheritance|graph1_7_11"><a xlink:title="SyntaxAnalyzer is a subtype of Parsers"><path d="M361,-55.6874C361,-45.9173 361,-33.8534 361,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="359.25,-55.8435 361,-60.8435 362.75,-55.8435 359.25,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8 --><g class="node trait" id="graph1_8"><g id="a_trait|graph1_8"><a xlink:title="scala.tools.nsc.ast.parser.ScannersCommon" xlink:href="ScannersCommon.html#inheritance-diagram"><polygon points="363.5,-208 238.5,-208 238.5,-183 363.5,-183 363.5,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-202.5" x="249" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="270" text-anchor="start">ScannersCommon</text></a></g></g><!-- node8&#45;&gt;node4 --><g class="edge inheritance" id="graph1_8_4"><g id="a_inheritance|graph1_8_4"><a xlink:title="ParsersCommon is a subtype of ScannersCommon"><path d="M316.464,-179.294C326.66,-169.268 339.809,-156.338 349.171,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="315.192,-178.09 312.854,-182.843 317.646,-180.586 315.192,-178.09" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8&#45;&gt;node6 --><g class="edge inheritance" id="graph1_8_6"><g id="a_inheritance|graph1_8_6"><a xlink:title="Scanners is a subtype of ScannersCommon"><path d="M285.536,-179.294C275.34,-169.268 262.191,-156.338 252.829,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="284.354,-180.586 289.146,-182.843 286.808,-178.09 284.354,-180.586" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node9 --><g class="node class" id="graph1_9"><g id="a_class|graph1_9"><a xlink:title="scala.tools.nsc.ast.parser.Patch" xlink:href="Patch.html#inheritance-diagram"><polygon points="650,-208 580,-208 580,-183 650,-183 650,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-202.5" x="590" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="611" text-anchor="start">Patch</text></a></g></g><!-- node9&#45;&gt;node5 --><g class="edge inheritance" id="graph1_9_5"><g id="a_inheritance|graph1_9_5"><a xlink:title="BracePatch is a subtype of Patch"><path d="M615,-177.687C615,-167.917 615,-155.853 615,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="613.25,-177.843 615,-182.843 616.75,-177.844 613.25,-177.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10 --><g class="node class" id="graph1_10"><g id="a_class|graph1_10"><a xlink:title="scala.tools.nsc.ast.parser.CommonTokens" xlink:href="CommonTokens.html#inheritance-diagram"><polygon points="782,-208 668,-208 668,-183 782,-183 782,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-202.5" x="678" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="699" text-anchor="start">CommonTokens</text></a></g></g><!-- node12 --><g class="node object" id="graph1_12"><g id="a_object|graph1_12"><a xlink:title="scala.tools.nsc.ast.parser.Tokens" xlink:href="Tokens$.html#inheritance-diagram"><polygon points="762.5,-147 687.5,-147 687.5,-122 762.5,-122 762.5,-147" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../../../lib/object_diagram.png" y="-141.5" x="698" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="719" text-anchor="start">Tokens</text></a></g></g><!-- node10&#45;&gt;node12 --><g class="edge inheritance" id="graph1_10_12"><g id="a_inheritance|graph1_10_12"><a xlink:title="Tokens is a subtype of CommonTokens"><path d="M725,-177.687C725,-167.917 725,-155.853 725,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="723.25,-177.843 725,-182.843 726.75,-177.844 723.25,-177.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.tools.nsc.ast.parser.BracePair" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BracePairextendsProductwithSerializable"></a>
+      <a id="BracePair:BracePair"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BracePair.html"><span class="name">BracePair</span></a><span class="params">(<span name="loff">loff: <span class="extype" name="scala.Int">Int</span></span>, <span name="lindent">lindent: <span class="extype" name="scala.Int">Int</span></span>, <span name="roff">roff: <span class="extype" name="scala.Int">Int</span></span>, <span name="rindent">rindent: <span class="extype" name="scala.Int">Int</span></span>, <span name="nested">nested: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="BracePair.html" class="extype" name="scala.tools.nsc.ast.parser.BracePair">BracePair</a>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@BracePairextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A descriptor for a matching pair of braces.</p><div class="fullcomment"><div class="comment cmt"><p>A descriptor for a matching pair of braces.</p></div><dl class="paramcmts block"><dt class="param">loff</dt><dd class="cmt"><p>The offset of the opening brace (-1 means missing)</p></dd><dt class="param">lindent</dt><dd class="cmt"><p>The indentation depth of the line of the opening brace (-1 means missing)</p></dd><dt class="param">roff</dt><dd class="cmt"><p>The offset of the closing brace (-1 means missing)</p></dd><dt class="param">rindent</dt><dd class="cmt"><p>The indentation depth of the line of the closing brace (-1 means missing)</p></dd><dt class="param">nested</dt><dd class="cmt"><p>The brace pairs nested in this one</p></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.BracePatch" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BracePatchextendsPatchwithProductwithSerializable"></a>
+      <a id="BracePatch:BracePatch"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BracePatch.html"><span class="name">BracePatch</span></a><span class="params">(<span name="off">off: <span class="extype" name="scala.Int">Int</span></span>, <span name="inserted">inserted: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result"> extends <a href="Patch.html" class="extype" name="scala.tools.nsc.ast.parser.Patch">Patch</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@BracePatchextendsPatchwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A patch that postulates that a brace needs to be inserted or deleted at a given position.</p><div class="fullcomment"><div class="comment cmt"><p>A patch that postulates that a brace needs to be inserted or deleted at a given position.</p></div><dl class="paramcmts block"><dt class="param">off</dt><dd class="cmt"><p>The offset where the brace needs to be inserted or deleted</p></dd><dt class="param">inserted</dt><dd class="cmt"><p>If true, brace needs to be inserted, otherwise brace needs to be deleted.</p></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.Change" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ChangeextendsAnyRef"></a>
+      <a id="Change:Change"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Change.html"><span class="name">Change</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@ChangeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.ast.parser.CommonTokens" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CommonTokensextendsAnyRef"></a>
+      <a id="CommonTokens:CommonTokens"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CommonTokens.html"><span class="name">CommonTokens</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@CommonTokensextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Common code between Scala's Tokens and JavaTokens.</p>
+    </li><li name="scala.tools.nsc.ast.parser.Deletion" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DeletionextendsChangewithProductwithSerializable"></a>
+      <a id="Deletion:Deletion"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Deletion.html"><span class="name">Deletion</span></a><span class="params">(<span name="nchars">nchars: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="Change.html" class="extype" name="scala.tools.nsc.ast.parser.Change">Change</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@DeletionextendsChangewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.ast.parser.Insertion" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InsertionextendsChangewithProductwithSerializable"></a>
+      <a id="Insertion:Insertion"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Insertion.html"><span class="name">Insertion</span></a><span class="params">(<span name="text">text: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="Change.html" class="extype" name="scala.tools.nsc.ast.parser.Change">Change</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@InsertionextendsChangewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.ast.parser.MarkupParsers" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MarkupParsersextendsAnyRef"></a>
+      <a id="MarkupParsers:MarkupParsers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MarkupParsers.html"><span class="name">MarkupParsers</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@MarkupParsersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.ast.parser.Parsers" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParsersextendsScannerswithMarkupParserswithParsersCommon"></a>
+      <a id="Parsers:Parsers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Parsers.html"><span class="name">Parsers</span></a><span class="result"> extends <a href="Scanners.html" class="extype" name="scala.tools.nsc.ast.parser.Scanners">Scanners</a> with <a href="MarkupParsers.html" class="extype" name="scala.tools.nsc.ast.parser.MarkupParsers">MarkupParsers</a> with <a href="ParsersCommon.html" class="extype" name="scala.tools.nsc.ast.parser.ParsersCommon">ParsersCommon</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@ParsersextendsScannerswithMarkupParserswithParsersCommon" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Performs the following context-free rewritings:</p><div class="fullcomment"><div class="comment cmt"><p>Performs the following context-free rewritings:</p><p> -
+     Places all pattern variables in Bind nodes. In a pattern, for
+     identifiers <code>x</code>:
+<pre>
+                x  => x @ _
+              x:T  => x @ (_ : T)
+</pre></p><ul><li>Removes pattern definitions (PatDef's) as follows:
+     If pattern is a simple (typed) identifier:
+<pre>
+       <b>val</b> x = e     ==>  <b>val</b> x = e
+       <b>val</b> x: T = e  ==>  <b>val</b> x: T = e
+</pre></li></ul><p>     if there are no variables in pattern
+<pre>
+       <b>val</b> p = e  ==>  e match (case p => ())
+</pre></p><p>     if there is exactly one variable in pattern
+<pre>
+       <b>val</b> x_1 = e <b>match</b> (case p => (x_1))
+</pre></p><p>     if there is more than one variable in pattern
+<pre>
+       <b>val</b> p = e  ==>  <b>private synthetic val</b> t$ = e <b>match</b> (case p => (x_1, ..., x_N))
+                       <b>val</b> x_1 = t$._1
+                       ...
+                       <b>val</b> x_N = t$._N
+</pre></p><p> -
+      Removes function types as follows:
+<pre>
+       (argtpes) => restpe   ==>   scala.Function_n[argtpes, restpe]
+</pre></p><p> -
+     Wraps naked case definitions in a match as follows:
+<pre>
+       { cases }   ==>   (x => x.match {cases})<span style="font-family:normal;">, except when already argument to match</span>
+</pre></p></div></div>
+    </li><li name="scala.tools.nsc.ast.parser.ParsersCommon" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParsersCommonextendsScannersCommon"></a>
+      <a id="ParsersCommon:ParsersCommon"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ParsersCommon.html"><span class="name">ParsersCommon</span></a><span class="result"> extends <a href="ScannersCommon.html" class="extype" name="scala.tools.nsc.ast.parser.ScannersCommon">ScannersCommon</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@ParsersCommonextendsScannersCommon" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Historical note: JavaParsers started life as a direct copy of Parsers
+ but at a time when that Parsers had been replaced by a different one.</p><div class="fullcomment"><div class="comment cmt"><p>Historical note: JavaParsers started life as a direct copy of Parsers
+ but at a time when that Parsers had been replaced by a different one.
+ Later it was dropped and the original Parsers reinstated, leaving us with
+ massive duplication between Parsers and JavaParsers.</p><p> This trait and the similar one for Scanners/JavaScanners represents
+ the beginnings of a campaign against this latest incursion by Cutty
+ McPastington and his army of very similar soldiers.
+</p></div></div>
+    </li><li name="scala.tools.nsc.ast.parser.Patch" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PatchextendsAnyRef"></a>
+      <a id="Patch:Patch"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Patch.html"><span class="name">Patch</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@PatchextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.ast.parser.Scanners" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ScannersextendsScannersCommon"></a>
+      <a id="Scanners:Scanners"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Scanners.html"><span class="name">Scanners</span></a><span class="result"> extends <a href="ScannersCommon.html" class="extype" name="scala.tools.nsc.ast.parser.ScannersCommon">ScannersCommon</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@ScannersextendsScannersCommon" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.ast.parser.ScannersCommon" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ScannersCommonextendsAnyRef"></a>
+      <a id="ScannersCommon:ScannersCommon"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ScannersCommon.html"><span class="name">ScannersCommon</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@ScannersCommonextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">See Parsers.scala / ParsersCommon for some explanation of ScannersCommon.</p>
+    </li><li name="scala.tools.nsc.ast.parser.SymbolicXMLBuilder" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SymbolicXMLBuilderextendsAnyRef"></a>
+      <a id="SymbolicXMLBuilder:SymbolicXMLBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SymbolicXMLBuilder.html"><span class="name">SymbolicXMLBuilder</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@SymbolicXMLBuilderextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class builds instance of <code>Tree</code> that represent XML.</p><div class="fullcomment"><div class="comment cmt"><p>This class builds instance of <code>Tree</code> that represent XML.</p><p> Note from martin: This needs to have its position info reworked. I don't
+ understand exactly what's done here. To make validation pass, I set many
+ positions to be transparent. Not sure this is a good idea for navigating
+ XML trees in the IDE but it's the best I can do right now. If someone
+ who understands this part better wants to give it a shot, please do!
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.0</p></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.SyntaxAnalyzer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SyntaxAnalyzerextendsSubComponentwithParserswithMarkupParserswithScannerswithJavaParserswithJavaScanners"></a>
+      <a id="SyntaxAnalyzer:SyntaxAnalyzer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SyntaxAnalyzer.html"><span class="name">SyntaxAnalyzer</span></a><span class="result"> extends <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a> with <a href="Parsers.html" class="extype" name="scala.tools.nsc.ast.parser.Parsers">Parsers</a> with <a href="MarkupParsers.html" class="extype" name="scala.tools.nsc.ast.parser.MarkupParsers">MarkupParsers</a> with <a href="Scanners.html" class="extype" name="scala.tools.nsc.ast.parser.Scanners">Scanners</a> with <a href="../../javac/JavaParsers.html" class="extype" name="scala.tools.nsc.javac.JavaParsers">JavaParsers</a> with <a href="../../javac/JavaScanners.html" class="extype" name="scala.tools.nsc.javac.JavaScanners">JavaScanners</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@SyntaxAnalyzerextendsSubComponentwithParserswithMarkupParserswithScannerswithJavaParserswithJavaScanners" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An nsc sub-component.</p>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TreeBuilderextendsAnyRef"></a>
+      <a id="TreeBuilder:TreeBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="TreeBuilder.html"><span class="name">TreeBuilder</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@TreeBuilderextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Methods for building trees, used in the parser.</p><div class="fullcomment"><div class="comment cmt"><p>Methods for building trees, used in the parser.  All the trees
+ returned by this class must be untyped.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.tools.nsc.ast.parser.Tokens" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Tokens"></a>
+      <a id="Tokens:Tokens"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Tokens$.html"><span class="name">Tokens</span></a><span class="result"> extends <a href="CommonTokens.html" class="extype" name="scala.tools.nsc.ast.parser.CommonTokens">CommonTokens</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@Tokens" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.ast.parser.xml" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="xml"></a>
+      <a id="xml:xml"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="xml/package.html"><span class="name">xml</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.package@xml" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

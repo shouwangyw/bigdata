@@ -1,0 +1,1326 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>JavaScanner - Scala Compiler 2.11.8 - scala.tools.nsc.javac.JavaScanners.JavaScanner</title>
+          <meta name="description" content="JavaScanner - Scala Compiler 2.11.8 - scala.tools.nsc.javac.JavaScanners.JavaScanner" />
+          <meta name="keywords" content="JavaScanner Scala Compiler 2.11.8 scala.tools.nsc.javac.JavaScanners.JavaScanner" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'scala.tools.nsc.javac.JavaScanners$JavaScanner';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="scala">scala</a>.<a href="../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="package.html" class="extype" name="scala.tools.nsc.javac">javac</a>.<a href="JavaScanners.html" class="extype" name="scala.tools.nsc.javac.JavaScanners">JavaScanners</a></p>
+        <h1>JavaScanner</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="JavaScanners.html" class="extype" name="scala.tools.nsc.javac.JavaScanners">package JavaScanners</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">JavaScanner</span><span class="result"> extends <a href="JavaScanners$AbstractJavaScanner.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner">AbstractJavaScanner</a> with <a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a> with <span class="extype" name="scala.Cloneable">Cloneable</span> with <a href="JavaScanners.html#ScannerCommonextendsScannersCommon.this.CommonTokenData" class="extmbr" name="scala.tools.nsc.ast.parser.ScannersCommon.ScannerCommon">ScannerCommon</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A scanner for Java.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/compiler/scala/tools/nsc/javac/JavaScanners.scala#L1" target="_blank">JavaScanners.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="JavaScanners.html#ScannerCommonextendsScannersCommon.this.CommonTokenData" class="extmbr" name="scala.tools.nsc.ast.parser.ScannersCommon.ScannerCommon">JavaScanners.ScannerCommon</a>, <a href="JavaScanners.html#CommonTokenDataextendsAnyRef" class="extmbr" name="scala.tools.nsc.ast.parser.ScannersCommon.CommonTokenData">JavaScanners.CommonTokenData</a>, <span class="extype" name="scala.Cloneable">Cloneable</span>, <span class="extype" name="java.lang.Cloneable">java.lang.Cloneable</span>, <a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a>, <a href="JavaScanners$AbstractJavaScanner.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner">AbstractJavaScanner</a>, <a href="JavaScanners$AbstractJavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaTokenData">AbstractJavaTokenData</a>, <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">Known Subclasses</span>
+            <div class="subClasses hiddenContent"><a href="JavaScanners$JavaUnitScanner.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaUnitScanner">JavaUnitScanner</a></div>
+          </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 515.00 155.00" height="155pt" width="515pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 151)" class="graph" id="graph0"><polygon points="-4,4 -4,-151 511,-151 511,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="scala.tools.nsc.javac.JavaScanners.JavaScanner (this class)" xlink:href="#inheritance-diagram"><polygon points="316.5,-86 217.5,-86 217.5,-61 316.5,-61 316.5,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../lib/class_diagram.png" y="-80.5" x="228" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="249" text-anchor="start">JavaScanner</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.tools.nsc.javac.JavaScanners.JavaUnitScanner" xlink:href="JavaScanners$JavaUnitScanner.html#inheritance-diagram"><polygon points="325.5,-25 208.5,-25 208.5,-0 325.5,-0 325.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../lib/class_diagram.png" y="-19.5" x="219" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="240" text-anchor="start">JavaUnitScanner</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="JavaUnitScanner is a subtype of JavaScanner"><path d="M267,-55.6874C267,-45.9173 267,-33.8534 267,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="265.25,-55.8435 267,-60.8435 268.75,-55.8435 265.25,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner" xlink:href="JavaScanners$AbstractJavaScanner.html#inheritance-diagram"><polygon points="136,-147 0,-147 0,-122 136,-122 136,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../lib/class_diagram.png" y="-141.5" x="10" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="31" text-anchor="start">AbstractJavaScanner</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="JavaScanner is a subtype of AbstractJavaScanner"><path d="M111.86,-120.496C146.548,-110.212 194.533,-95.9851 227.917,-86.0875" stroke="#d4d4d4" fill="none"></path><polygon points="111.138,-118.885 106.842,-121.984 112.133,-122.241 111.138,-118.885" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.tools.nsc.javac.JavaScanners.JavaTokenData" xlink:href="JavaScanners$JavaTokenData.html#inheritance-diagram"><polygon points="263.5,-147 154.5,-147 154.5,-122 263.5,-122 263.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../lib/trait_diagram.png" y="-141.5" x="165" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="186" text-anchor="start">JavaTokenData</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="JavaScanner is a subtype of JavaTokenData"><path d="M224.209,-118.029C234.027,-108.041 246.595,-95.2572 255.565,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="222.716,-117.051 220.459,-121.843 225.212,-119.505 222.716,-117.051" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="scala.Cloneable"><polygon points="368.5,-147 281.5,-147 281.5,-122 368.5,-122 368.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../lib/trait_diagram.png" y="-141.5" x="292" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="313" text-anchor="start">Cloneable</text></a></g></g><!-- node4&#45;&gt;node0 --><g class="edge inheritance" id="graph1_4_0"><g id="a_inheritance|graph1_4_0"><a xlink:title="JavaScanner is a subtype of Cloneable"><path d="M309.791,-118.029C299.973,-108.041 287.405,-95.2572 278.435,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="308.788,-119.505 313.541,-121.843 311.284,-117.051 308.788,-119.505" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="scala.tools.nsc.ast.parser.ScannersCommon.ScannerCommon" xlink:href="../ast/parser/ScannersCommon$ScannerCommon.html#inheritance-diagram"><polygon points="507,-147 387,-147 387,-122 507,-122 507,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../lib/trait_diagram.png" y="-141.5" x="397" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="418" text-anchor="start">ScannerCommon</text></a></g></g><!-- node5&#45;&gt;node0 --><g class="edge inheritance" id="graph1_5_0"><g id="a_inheritance|graph1_5_0"><a xlink:title="JavaScanner is a subtype of ScannerCommon"><path d="M406.941,-120.37C375.596,-110.095 332.424,-95.9445 302.352,-86.0875" stroke="#d4d4d4" fill="none"></path><polygon points="406.571,-122.09 411.867,-121.984 407.661,-118.764 406.571,-122.09" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.tools.nsc.javac.JavaScanners.JavaScanner"><span>JavaScanner</span></li><li class="in" name="scala.tools.nsc.ast.parser.ScannersCommon.ScannerCommon"><span>ScannerCommon</span></li><li class="in" name="scala.tools.nsc.ast.parser.ScannersCommon.CommonTokenData"><span>CommonTokenData</span></li><li class="in" name="scala.Cloneable"><span>Cloneable</span></li><li class="in" name="java.lang.Cloneable"><span>Cloneable</span></li><li class="in" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData"><span>JavaTokenData</span></li><li class="in" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner"><span>AbstractJavaScanner</span></li><li class="in" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaTokenData"><span>AbstractJavaTokenData</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;():JavaScanners.this.JavaScanner"></a>
+      <a id="&lt;init&gt;:JavaScanner"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">JavaScanner</span><span class="params">()</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@&lt;init&gt;():JavaScanners.this.JavaScanner" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.tools.nsc.javac.JavaScanners.JavaTokenData.ScanPosition" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ScanPosition=Int"></a>
+      <a id="ScanPosition:ScanPosition"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ScanPosition</span><span class="result"> = <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@ScanPosition=Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a> → <a href="JavaScanners$AbstractJavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaTokenData">AbstractJavaTokenData</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scala.tools.nsc.ast.parser.ScannersCommon.ScannerCommon#deprecationWarning" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="deprecationWarning(off:ScannersCommon.this.Offset,msg:String):Unit"></a>
+      <a id="deprecationWarning(JavaScanners.Offset,String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">deprecationWarning</span><span class="params">(<span name="off">off: <a href="JavaScanners.html#Offset=Int" class="extmbr" name="scala.tools.nsc.javac.JavaScanners.Offset">JavaScanners.Offset</a></span>, <span name="msg">msg: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@deprecationWarning(off:ScannersCommon.this.Offset,msg:String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../ast/parser/ScannersCommon$ScannerCommon.html" class="extype" name="scala.tools.nsc.ast.parser.ScannersCommon.ScannerCommon">ScannerCommon</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.ScannersCommon.ScannerCommon#error" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="error(off:ScannersCommon.this.Offset,msg:String):Unit"></a>
+      <a id="error(JavaScanners.Offset,String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">error</span><span class="params">(<span name="off">off: <a href="JavaScanners.html#Offset=Int" class="extmbr" name="scala.tools.nsc.javac.JavaScanners.Offset">JavaScanners.Offset</a></span>, <span name="msg">msg: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@error(off:ScannersCommon.this.Offset,msg:String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../ast/parser/ScannersCommon$ScannerCommon.html" class="extype" name="scala.tools.nsc.ast.parser.ScannersCommon.ScannerCommon">ScannerCommon</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner#g2p" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="g2p(pos:AbstractJavaScanner.this.ScanPosition):JavaScanners.this.global.Position"></a>
+      <a id="g2p(ScanPosition):Global.Position"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">g2p</span><span class="params">(<span name="pos">pos: <a href="#ScanPosition=Int" class="extmbr" name="scala.tools.nsc.javac.JavaScanners.JavaScanner.ScanPosition">ScanPosition</a></span>)</span><span class="result">: <a href="../Global.html#Position=scala.reflect.internal.util.Position" class="extmbr" name="scala.tools.nsc.Global.Position">Global.Position</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@g2p(pos:AbstractJavaScanner.this.ScanPosition):JavaScanners.this.global.Position" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="JavaScanners$AbstractJavaScanner.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner">AbstractJavaScanner</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.ScannersCommon.ScannerCommon#incompleteInputError" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="incompleteInputError(off:ScannersCommon.this.Offset,msg:String):Unit"></a>
+      <a id="incompleteInputError(JavaScanners.Offset,String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">incompleteInputError</span><span class="params">(<span name="off">off: <a href="JavaScanners.html#Offset=Int" class="extmbr" name="scala.tools.nsc.javac.JavaScanners.Offset">JavaScanners.Offset</a></span>, <span name="msg">msg: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@incompleteInputError(off:ScannersCommon.this.Offset,msg:String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../ast/parser/ScannersCommon$ScannerCommon.html" class="extype" name="scala.tools.nsc.ast.parser.ScannersCommon.ScannerCommon">ScannerCommon</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@##():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>] performed by method any2stringadd in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(JavaScanner,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaTokenData#NoPos" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NoPos:Int"></a>
+      <a id="NoPos:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">NoPos</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@NoPos:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a> → <a href="JavaScanners$AbstractJavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaTokenData">AbstractJavaTokenData</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaTokenData#base" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="base:Int"></a>
+      <a id="base:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">base</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@base:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">the base of a number</p><div class="fullcomment"><div class="comment cmt"><p>the base of a number</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#cbuf" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cbuf:StringBuilder"></a>
+      <a id="cbuf:collection.mutable.StringBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cbuf</span><span class="result">: <span class="extype" name="scala.collection.mutable.StringBuilder">collection.mutable.StringBuilder</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@cbuf:StringBuilder" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">character buffer for literals
+</p>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaTokenData#copyFrom" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="copyFrom(td:JavaScanners.this.JavaTokenData):Unit"></a>
+      <a id="copyFrom(JavaTokenData):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">copyFrom</span><span class="params">(<span name="td">td: <a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@copyFrom(td:JavaScanners.this.JavaTokenData):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#currentPos" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="currentPos:JavaScanners.this.global.Position"></a>
+      <a id="currentPos:Global.Position"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">currentPos</span><span class="result">: <a href="../Global.html#Position=scala.reflect.internal.util.Position" class="extmbr" name="scala.tools.nsc.Global.Position">Global.Position</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@currentPos:JavaScanners.this.global.Position" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> → <a href="JavaScanners$AbstractJavaScanner.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner">AbstractJavaScanner</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((JavaScanner)⇒Boolean,⇒Any):JavaScanner"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((JavaScanner)⇒Boolean):JavaScanner"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):JavaScanner"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):JavaScanner"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#floatVal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="floatVal(negated:Boolean):Double"></a>
+      <a id="floatVal(Boolean):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">floatVal</span><span class="params">(<span name="negated">negated: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@floatVal(negated:Boolean):Double" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">convert name, base to double value
+</p><div class="fullcomment"><div class="comment cmt"><p>convert name, base to double value
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> → <a href="JavaScanners$AbstractJavaScanner.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner">AbstractJavaScanner</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#floatVal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="floatVal:Double"></a>
+      <a id="floatVal:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">floatVal</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@floatVal:Double" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> → <a href="JavaScanners$AbstractJavaScanner.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner">AbstractJavaScanner</a></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>] performed by method StringFormat in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#getFraction" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getFraction():Unit"></a>
+      <a id="getFraction():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getFraction</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@getFraction():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">read fractional part and exponent of floating point number
+ if one is present.</p><div class="fullcomment"><div class="comment cmt"><p>read fractional part and exponent of floating point number
+ if one is present.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#getNumber" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getNumber():Unit"></a>
+      <a id="getNumber():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getNumber</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@getNumber():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">read a number into name and set base
+</p><div class="fullcomment"><div class="comment cmt"><p>read a number into name and set base
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#getlitch" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getlitch():AnyVal"></a>
+      <a id="getlitch():AnyVal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getlitch</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@getlitch():AnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">read next character in character or string literal:
+</p><div class="fullcomment"><div class="comment cmt"><p>read next character in character or string literal:
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#in" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="in:scala.tools.nsc.util.JavaCharArrayReader"></a>
+      <a id="in:JavaCharArrayReader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">in</span><span class="result">: <a href="../util/JavaCharArrayReader.html" class="extype" name="scala.tools.nsc.util.JavaCharArrayReader">JavaCharArrayReader</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@in:scala.tools.nsc.util.JavaCharArrayReader" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#incompleteInputError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="incompleteInputError(msg:String):Unit"></a>
+      <a id="incompleteInputError(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">incompleteInputError</span><span class="params">(<span name="msg">msg: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@incompleteInputError(msg:String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">signal an error where the input ended in the middle of a token</p>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#init" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="init():Unit"></a>
+      <a id="init():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">init</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@init():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">INIT: read lookahead character and token.</p>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#intVal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="intVal(negated:Boolean):Long"></a>
+      <a id="intVal(Boolean):Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">intVal</span><span class="params">(<span name="negated">negated: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@intVal(negated:Boolean):Long" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">convert name to long value
+</p><div class="fullcomment"><div class="comment cmt"><p>convert name to long value
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> → <a href="JavaScanners$AbstractJavaScanner.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner">AbstractJavaScanner</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#intVal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="intVal:Long"></a>
+      <a id="intVal:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">intVal</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@intVal:Long" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> → <a href="JavaScanners$AbstractJavaScanner.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner">AbstractJavaScanner</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaTokenData#lastPos" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lastPos:Int"></a>
+      <a id="lastPos:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lastPos</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@lastPos:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">the first character position after the previous token</p><div class="fullcomment"><div class="comment cmt"><p>the first character position after the previous token</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#lookaheadToken" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="lookaheadToken:Int"></a>
+      <a id="lookaheadToken:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lookaheadToken</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@lookaheadToken:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaTokenData#name" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="name:JavaScanners.this.global.TermName"></a>
+      <a id="name:Global.TermName"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">name</span><span class="result">: <a href="../Global.html#TermNameextendsNames.this.NamewithNames.this.TermNameApi" class="extmbr" name="scala.tools.nsc.Global.TermName">Global.TermName</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@name:JavaScanners.this.global.TermName" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">the name of an identifier or token</p><div class="fullcomment"><div class="comment cmt"><p>the name of an identifier or token</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a> → <a href="JavaScanners$AbstractJavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaTokenData">AbstractJavaTokenData</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#next" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="next:JavaScanners.this.JavaTokenData"></a>
+      <a id="next:JavaTokenData"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">next</span><span class="result">: <a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@next:JavaScanners.this.JavaTokenData" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">we need one token lookahead
+</p><div class="fullcomment"><div class="comment cmt"><p>we need one token lookahead
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> → <a href="JavaScanners$AbstractJavaScanner.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner">AbstractJavaScanner</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#nextToken" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nextToken():Unit"></a>
+      <a id="nextToken():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nextToken</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@nextToken():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> → <a href="JavaScanners$AbstractJavaScanner.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner">AbstractJavaScanner</a></dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaTokenData#pos" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="pos:Int"></a>
+      <a id="pos:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pos</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@pos:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">the token's position</p><div class="fullcomment"><div class="comment cmt"><p>the token's position</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a> → <a href="JavaScanners$AbstractJavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaTokenData">AbstractJavaTokenData</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#prev" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="prev:JavaScanners.this.JavaTokenData"></a>
+      <a id="prev:JavaTokenData"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">prev</span><span class="result">: <a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@prev:JavaScanners.this.JavaTokenData" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#putChar" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="putChar(c:Char):Unit"></a>
+      <a id="putChar(Char):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">putChar</span><span class="params">(<span name="c">c: <span class="extype" name="scala.Char">Char</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@putChar(c:Char):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">append Unicode character to &quot;lit&quot; buffer
+</p><div class="fullcomment"><div class="comment cmt"><p>append Unicode character to &quot;lit&quot; buffer
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#skipComment" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="skipComment():Boolean"></a>
+      <a id="skipComment():Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">skipComment</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@skipComment():Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#syntaxError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="syntaxError(msg:String):Unit"></a>
+      <a id="syntaxError(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">syntaxError</span><span class="params">(<span name="msg">msg: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@syntaxError(msg:String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">generate an error at the current token position
+</p>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#syntaxError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="syntaxError(pos:Int,msg:String):Unit"></a>
+      <a id="syntaxError(Int,String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">syntaxError</span><span class="params">(<span name="pos">pos: <span class="extype" name="scala.Int">Int</span></span>, <span name="msg">msg: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@syntaxError(pos:Int,msg:String):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">generate an error at the given position
+</p>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaScanner#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@toString():String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> → AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.javac.JavaScanners.JavaTokenData#token" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="token:Int"></a>
+      <a id="token:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">token</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@token:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">the next token</p><div class="fullcomment"><div class="comment cmt"><p>the next token</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a> → <a href="JavaScanners$AbstractJavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaTokenData">AbstractJavaTokenData</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(JavaScanner,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.javac.JavaScanners$JavaScanner@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.tools.nsc.ast.parser.ScannersCommon.ScannerCommon">
+              <h3>Inherited from <a href="JavaScanners.html#ScannerCommonextendsScannersCommon.this.CommonTokenData" class="extmbr" name="scala.tools.nsc.ast.parser.ScannersCommon.ScannerCommon">JavaScanners.ScannerCommon</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.ast.parser.ScannersCommon.CommonTokenData">
+              <h3>Inherited from <a href="JavaScanners.html#CommonTokenDataextendsAnyRef" class="extmbr" name="scala.tools.nsc.ast.parser.ScannersCommon.CommonTokenData">JavaScanners.CommonTokenData</a></h3>
+            </div><div class="parent" name="scala.Cloneable">
+              <h3>Inherited from <span class="extype" name="scala.Cloneable">Cloneable</span></h3>
+            </div><div class="parent" name="java.lang.Cloneable">
+              <h3>Inherited from <span class="extype" name="java.lang.Cloneable">java.lang.Cloneable</span></h3>
+            </div><div class="parent" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">
+              <h3>Inherited from <a href="JavaScanners$JavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaTokenData">JavaTokenData</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner">
+              <h3>Inherited from <a href="JavaScanners$AbstractJavaScanner.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaScanner">AbstractJavaScanner</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaTokenData">
+              <h3>Inherited from <a href="JavaScanners$AbstractJavaTokenData.html" class="extype" name="scala.tools.nsc.javac.JavaScanners.AbstractJavaTokenData">AbstractJavaTokenData</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.javac.JavaScanners.JavaScanner">JavaScanner</a>]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>root - Scala Standard Library 2.11.8 - _root_</title>
+          <meta name="description" content="root - Scala Standard Library 2.11.8 - root " />
+          <meta name="keywords" content="root Scala Standard Library 2.11.8 root " />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="lib/template.js"></script>
+      <script type="text/javascript" src="lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="lib/modernizr.custom.js"></script><script type="text/javascript" src="lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = 'index.html';
+            var hash = 'package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="lib/package_big.png" />
+        
+        <h1>root package</h1><span class="permalink">
+      <a href="index.html#package" title="Permalink" target="_top">
+        <img src="lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">root</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This is the documentation for the Scala standard library.</p><h4> Package structure </h4><p>The <a href="scala/package.html" class="extype" name="scala">scala</a> package contains core types like <a href="scala/Int.html" class="extype" name="scala.Int"><code>Int</code></a>, <a href="scala/Float.html" class="extype" name="scala.Float"><code>Float</code></a>, <a href="scala/Array.html" class="extype" name="scala.Array"><code>Array</code></a>
+or <a href="scala/Option.html" class="extype" name="scala.Option"><code>Option</code></a> which are accessible in all Scala compilation units without explicit qualification or
+imports.</p><p>Notable packages include:</p><ul><li><a href="scala/collection/package.html" class="extype" name="scala.collection"><code>scala.collection</code></a> and its sub-packages contain Scala's collections framework<ul><li><a href="scala/collection/immutable/package.html" class="extype" name="scala.collection.immutable"><code>scala.collection.immutable</code></a> - Immutable, sequential data-structures such as
+      <a href="scala/collection/immutable/Vector.html" class="extype" name="scala.collection.immutable.Vector"><code>Vector</code></a>, <a href="scala/collection/immutable/List.html" class="extype" name="scala.collection.immutable.List"><code>List</code></a>,
+      <a href="scala/collection/immutable/Range.html" class="extype" name="scala.collection.immutable.Range"><code>Range</code></a>, <a href="scala/collection/immutable/HashMap.html" class="extype" name="scala.collection.immutable.HashMap"><code>HashMap</code></a> or
+      <a href="scala/collection/immutable/HashSet.html" class="extype" name="scala.collection.immutable.HashSet"><code>HashSet</code></a></li><li><a href="scala/collection/mutable/package.html" class="extype" name="scala.collection.mutable"><code>scala.collection.mutable</code></a> - Mutable, sequential data-structures such as
+      <a href="scala/collection/mutable/ArrayBuffer.html" class="extype" name="scala.collection.mutable.ArrayBuffer"><code>ArrayBuffer</code></a>,
+      <a href="scala/collection/mutable/StringBuilder.html" class="extype" name="scala.collection.mutable.StringBuilder"><code>StringBuilder</code></a>,
+      <a href="scala/collection/mutable/HashMap.html" class="extype" name="scala.collection.mutable.HashMap"><code>HashMap</code></a> or <a href="scala/collection/mutable/HashSet.html" class="extype" name="scala.collection.mutable.HashSet"><code>HashSet</code></a></li><li><a href="scala/collection/concurrent/package.html" class="extype" name="scala.collection.concurrent"><code>scala.collection.concurrent</code></a> - Mutable, concurrent data-structures such as
+      <a href="scala/collection/concurrent/TrieMap.html" class="extype" name="scala.collection.concurrent.TrieMap"><code>TrieMap</code></a></li><li><a href="scala/collection/parallel/immutable/package.html" class="extype" name="scala.collection.parallel.immutable"><code>scala.collection.parallel.immutable</code></a> - Immutable, parallel
+      data-structures such as <a href="scala/collection/parallel/immutable/ParVector.html" class="extype" name="scala.collection.parallel.immutable.ParVector"><code>ParVector</code></a>,
+      <a href="scala/collection/parallel/immutable/ParRange.html" class="extype" name="scala.collection.parallel.immutable.ParRange"><code>ParRange</code></a>,
+      <a href="scala/collection/parallel/immutable/ParHashMap.html" class="extype" name="scala.collection.parallel.immutable.ParHashMap"><code>ParHashMap</code></a> or
+      <a href="scala/collection/parallel/immutable/ParHashSet.html" class="extype" name="scala.collection.parallel.immutable.ParHashSet"><code>ParHashSet</code></a></li><li><a href="scala/collection/parallel/mutable/package.html" class="extype" name="scala.collection.parallel.mutable"><code>scala.collection.parallel.mutable</code></a> - Mutable, parallel
+      data-structures such as <a href="scala/collection/parallel/mutable/ParArray.html" class="extype" name="scala.collection.parallel.mutable.ParArray"><code>ParArray</code></a>,
+      <a href="scala/collection/parallel/mutable/ParHashMap.html" class="extype" name="scala.collection.parallel.mutable.ParHashMap"><code>ParHashMap</code></a>,
+      <a href="scala/collection/parallel/mutable/ParTrieMap.html" class="extype" name="scala.collection.parallel.mutable.ParTrieMap"><code>ParTrieMap</code></a> or
+      <a href="scala/collection/parallel/mutable/ParHashSet.html" class="extype" name="scala.collection.parallel.mutable.ParHashSet"><code>ParHashSet</code></a></li></ul></li><li><a href="scala/concurrent/package.html" class="extype" name="scala.concurrent"><code>scala.concurrent</code></a> - Primitives for concurrent programming such as
+    <a href="scala/concurrent/Future.html" class="extype" name="scala.concurrent.Future"><code>Futures</code></a> and <a href="scala/concurrent/Promise.html" class="extype" name="scala.concurrent.Promise"><code>Promises</code></a></li><li><a href="scala/io/package.html" class="extype" name="scala.io"><code>scala.io</code></a>     - Input and output operations</li><li><a href="scala/math/package.html" class="extype" name="scala.math"><code>scala.math</code></a>   - Basic math functions and additional numeric types like
+    <a href="scala/math/BigInt.html" class="extype" name="scala.math.BigInt"><code>BigInt</code></a> and <a href="scala/math/BigDecimal.html" class="extype" name="scala.math.BigDecimal"><code>BigDecimal</code></a></li><li><a href="scala/sys/package.html" class="extype" name="scala.sys"><code>scala.sys</code></a>    - Interaction with other processes and the operating system</li><li><a href="scala/util/matching/package.html" class="extype" name="scala.util.matching"><code>scala.util.matching</code></a> - <a href="scala/util/matching/Regex.html" class="extype" name="scala.util.matching.Regex">Regular expressions</a></li></ul><p>Other packages exist.  See the complete list on the left.</p><p>Additional parts of the standard library are shipped as separate libraries. These include:</p><ul><li><a href="scala/reflect/package.html" class="extype" name="scala.reflect"><code>scala.reflect</code></a>   - Scala's reflection API (scala-reflect.jar)</li><li><span class="extype" name="scala.xml"><code>scala.xml</code></span>    - XML parsing, manipulation, and serialization (scala-xml.jar)</li><li><span class="extype" name="scala.swing"><code>scala.swing</code></span>  - A convenient wrapper around Java's GUI framework called Swing (scala-swing.jar)</li><li><span class="extype" name="scala.util.continuations"><code>scala.util.continuations</code></span> - Delimited continuations using continuation-passing-style
+    (scala-continuations-library.jar, scala-continuations-plugin.jar)</li><li><span class="extype" name="scala.util.parsing"><code>scala.util.parsing</code></span> - <span class="extype" name="scala.util.parsing.combinator">Parser combinators</span>, including an
+    example implementation of a <span class="extype" name="scala.util.parsing.json">JSON parser</span> (scala-parser-combinators.jar)</li><li><span class="extype" name="scala.actors"><code>scala.actors</code></span>    - Actor-based concurrency (deprecated and replaced by Akka actors,
+    scala-actors.jar)</li></ul><h4> Automatic imports </h4><p>Identifiers in the scala package and the <a href="scala/Predef$.html" class="extype" name="scala.Predef"><code>scala.Predef</code></a> object are always in scope by default.</p><p>Some of these identifiers are type aliases provided as shortcuts to commonly used classes.  For example, <code>List</code> is an alias for
+<a href="scala/collection/immutable/List.html" class="extype" name="scala.collection.immutable.List"><code>scala.collection.immutable.List</code></a>.</p><p>Other aliases refer to classes provided by the underlying platform.  For example, on the JVM, <code>String</code> is an alias for <code>java.lang.String</code>.</p></div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="_root_.scala" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="scala"></a>
+      <a id="scala:scala"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="scala/package.html"><span class="name">scala</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="index.html#package@scala" title="Permalink" target="_top">
+        <img src="lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Core Scala types.</p><div class="fullcomment"><div class="comment cmt"><p>Core Scala types. They are always available without an explicit import.</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

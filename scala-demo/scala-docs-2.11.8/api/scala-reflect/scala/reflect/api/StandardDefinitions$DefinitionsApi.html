@@ -1,0 +1,1806 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>DefinitionsApi - Scala Reflection Library 2.11.8 - scala.reflect.api.StandardDefinitions.DefinitionsApi</title>
+          <meta name="description" content="DefinitionsApi - Scala Reflection Library 2.11.8 - scala.reflect.api.StandardDefinitions.DefinitionsApi" />
+          <meta name="keywords" content="DefinitionsApi Scala Reflection Library 2.11.8 scala.reflect.api.StandardDefinitions.DefinitionsApi" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.reflect.api.StandardDefinitions$DefinitionsApi';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Trait" src="../../../lib/trait_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.reflect">reflect</a>.<a href="package.html" class="extype" name="scala.reflect.api">api</a>.<a href="StandardDefinitions.html" class="extype" name="scala.reflect.api.StandardDefinitions">StandardDefinitions</a></p>
+        <h1>DefinitionsApi</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="StandardDefinitions.html" class="extype" name="scala.reflect.api.StandardDefinitions">package StandardDefinitions</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DefinitionsApi</span><span class="result"> extends <a href="Universe.html#StandardTypesextendsAnyRef" class="extmbr" name="scala.reflect.api.StandardDefinitions.StandardTypes">Universe.StandardTypes</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Defines standard symbols (and types via its base trait).</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/reflect/scala/reflect/api/StandardDefinitions.scala#L1" target="_blank">StandardDefinitions.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="Universe.html#StandardTypesextendsAnyRef" class="extmbr" name="scala.reflect.api.StandardDefinitions.StandardTypes">Universe.StandardTypes</a>, <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 200.00 118.00" height="118pt" width="200pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="graph0"><polygon points="-4,4 -4,-114 196,-114 196,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="scala.reflect.api.StandardDefinitions.DefinitionsApi (this trait)" xlink:href="#inheritance-diagram"><polygon points="168,-49 24,-49 24,-24 168,-24 168,-49" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-43.5" x="34" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-33.5" x="55" text-anchor="start">Universe.DefinitionsApi</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="scala.reflect.api.StandardDefinitions.StandardTypes" xlink:href="StandardDefinitions$StandardTypes.html#inheritance-diagram"><polygon points="170.5,-110 21.5,-110 21.5,-85 170.5,-85 170.5,-110" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-104.5" x="32" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-94.5" x="53" text-anchor="start">Universe.StandardTypes</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="Universe.DefinitionsApi is a subtype of Universe.StandardTypes"><path d="M96,-79.6874C96,-69.9173 96,-57.8534 96,-49.1323" stroke="#d4d4d4" fill="none"></path><polygon points="94.2501,-79.8435 96,-84.8435 97.7501,-79.8435 94.2501,-79.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.reflect.api.StandardDefinitions.DefinitionsApi"><span>DefinitionsApi</span></li><li class="in" name="scala.reflect.api.StandardDefinitions.StandardTypes"><span>StandardTypes</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi.VarArityClassApi" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="VarArityClassApiextendsInt=&gt;StandardDefinitions.this.Symbol"></a>
+      <a id="VarArityClassApi:VarArityClassApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="StandardDefinitions$DefinitionsApi$VarArityClassApi.html"><span class="name">VarArityClassApi</span></a><span class="result"> extends (<span class="extype" name="scala.Int">Int</span>) ⇒ <a href="Universe.html#Symbol&gt;:Null&lt;:Symbols.this.SymbolApi" class="extmbr" name="scala.reflect.api.Symbols.Symbol">Universe.Symbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@VarArityClassApiextendsInt=&gt;StandardDefinitions.this.Symbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Function-like api that lets you acess symbol
+ of the definition with given arity and also look
+ through all known symbols via <code>seq</code>.</p>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#AnyClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AnyClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="AnyClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AnyClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@AnyClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of core class <code>scala.Any</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#AnyRefClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AnyRefClass:StandardDefinitions.this.TypeSymbol"></a>
+      <a id="AnyRefClass:Universe.TypeSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AnyRefClass</span><span class="result">: <a href="Universe.html#TypeSymbol&gt;:Null&lt;:Symbols.this.TypeSymbolApiwithSymbols.this.Symbol" class="extmbr" name="scala.reflect.api.Symbols.TypeSymbol">Universe.TypeSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@AnyRefClass:StandardDefinitions.this.TypeSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type symbol of core class <code>scala.AnyRef</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#AnyRefTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="AnyRefTpe:StandardDefinitions.this.Type"></a>
+      <a id="AnyRefTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AnyRefTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@AnyRefTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of core type <code>AnyRef</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of core type <code>AnyRef</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#AnyTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="AnyTpe:StandardDefinitions.this.Type"></a>
+      <a id="AnyTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AnyTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@AnyTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of core type <code>Any</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of core type <code>Any</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#AnyValClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AnyValClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="AnyValClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AnyValClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@AnyValClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of core class <code>scala.AnyVal</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#AnyValTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="AnyValTpe:StandardDefinitions.this.Type"></a>
+      <a id="AnyValTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AnyValTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@AnyValTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of core type <code>AnyVal</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of core type <code>AnyVal</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ArrayClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ArrayClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="ArrayClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ArrayClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ArrayClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of class <code>scala.Array</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ArrayModule" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ArrayModule:StandardDefinitions.this.ModuleSymbol"></a>
+      <a id="ArrayModule:Universe.ModuleSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ArrayModule</span><span class="result">: <a href="Universe.html#ModuleSymbol&gt;:Null&lt;:Symbols.this.ModuleSymbolApiwithSymbols.this.TermSymbol" class="extmbr" name="scala.reflect.api.Symbols.ModuleSymbol">Universe.ModuleSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ArrayModule:StandardDefinitions.this.ModuleSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The module symbol of module <code>scala.Array</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ArrayModule_overloadedApply" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ArrayModule_overloadedApply:StandardDefinitions.this.TermSymbol"></a>
+      <a id="ArrayModule_overloadedApply:Universe.TermSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ArrayModule_overloadedApply</span><span class="result">: <a href="Universe.html#TermSymbol&gt;:Null&lt;:Symbols.this.TermSymbolApiwithSymbols.this.Symbol" class="extmbr" name="scala.reflect.api.Symbols.TermSymbol">Universe.TermSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ArrayModule_overloadedApply:StandardDefinitions.this.TermSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The method symbol of method <code>apply</code> in module <code>scala.Array</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#Array_apply" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Array_apply:StandardDefinitions.this.TermSymbol"></a>
+      <a id="Array_apply:Universe.TermSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Array_apply</span><span class="result">: <a href="Universe.html#TermSymbol&gt;:Null&lt;:Symbols.this.TermSymbolApiwithSymbols.this.Symbol" class="extmbr" name="scala.reflect.api.Symbols.TermSymbol">Universe.TermSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@Array_apply:StandardDefinitions.this.TermSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The method symbol of method <code>apply</code> in class <code>scala.Array</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#Array_clone" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Array_clone:StandardDefinitions.this.TermSymbol"></a>
+      <a id="Array_clone:Universe.TermSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Array_clone</span><span class="result">: <a href="Universe.html#TermSymbol&gt;:Null&lt;:Symbols.this.TermSymbolApiwithSymbols.this.Symbol" class="extmbr" name="scala.reflect.api.Symbols.TermSymbol">Universe.TermSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@Array_clone:StandardDefinitions.this.TermSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The method symbol of method <code>clone</code> in class <code>scala.Array</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#Array_length" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Array_length:StandardDefinitions.this.TermSymbol"></a>
+      <a id="Array_length:Universe.TermSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Array_length</span><span class="result">: <a href="Universe.html#TermSymbol&gt;:Null&lt;:Symbols.this.TermSymbolApiwithSymbols.this.Symbol" class="extmbr" name="scala.reflect.api.Symbols.TermSymbol">Universe.TermSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@Array_length:StandardDefinitions.this.TermSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The method symbol of method <code>length</code> in class <code>scala.Array</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#Array_update" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Array_update:StandardDefinitions.this.TermSymbol"></a>
+      <a id="Array_update:Universe.TermSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Array_update</span><span class="result">: <a href="Universe.html#TermSymbol&gt;:Null&lt;:Symbols.this.TermSymbolApiwithSymbols.this.Symbol" class="extmbr" name="scala.reflect.api.Symbols.TermSymbol">Universe.TermSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@Array_update:StandardDefinitions.this.TermSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The method symbol of method <code>update</code> in class <code>scala.Array</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#BooleanClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BooleanClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="BooleanClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BooleanClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@BooleanClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of primitive class <code>scala.Boolean</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#BooleanTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="BooleanTpe:StandardDefinitions.this.Type"></a>
+      <a id="BooleanTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BooleanTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@BooleanTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of primitive type <code>Boolean</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of primitive type <code>Boolean</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ByNameParamClass" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ByNameParamClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="ByNameParamClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ByNameParamClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ByNameParamClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A dummy class symbol that is used to indicate by-name parameters.</p><div class="fullcomment"><div class="comment cmt"><p>A dummy class symbol that is used to indicate by-name parameters.</p><pre>scala&gt; <span class="kw">class</span> C { <span class="kw">def</span> m(x: <span class="kw">=&gt;</span> <span class="std">Int</span>) = ??? }
+defined <span class="kw">class</span> C
+
+scala&gt; <span class="kw">import</span> scala.reflect.runtime.universe._
+<span class="kw">import</span> scala.reflect.runtime.universe._
+
+scala&gt; <span class="kw">val</span> m = typeOf[C].member(TermName(<span class="lit">"m"</span>)).asMethod
+m: reflect.runtime.universe.MethodSymbol = method m
+
+scala&gt; m.params(<span class="num">0</span>)(<span class="num">0</span>).info
+res1: reflect.runtime.universe.Type = <span class="kw">=&gt;</span> scala.<span class="std">Int</span>
+
+scala&gt; showRaw(m.params(<span class="num">0</span>)(<span class="num">0</span>).info)
+res2: <span class="std">String</span> = TypeRef(
+    ThisType(scala),
+    scala.&lt;byname&gt;, <span class="cmt">// <-- ByNameParamClass</span>
+    <span class="std">List</span>(TypeRef(ThisType(scala), scala.<span class="std">Int</span>, <span class="std">List</span>())))</pre></div></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ByteClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ByteClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="ByteClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ByteClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ByteClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of primitive class <code>scala.Byte</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#ByteTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ByteTpe:StandardDefinitions.this.Type"></a>
+      <a id="ByteTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ByteTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ByteTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of primitive type <code>Byte</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of primitive type <code>Byte</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#CharClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CharClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="CharClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CharClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@CharClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of primitive class <code>scala.Char</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#CharTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CharTpe:StandardDefinitions.this.Type"></a>
+      <a id="CharTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CharTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@CharTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of primitive type <code>Char</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of primitive type <code>Char</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ClassClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ClassClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="ClassClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ClassClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ClassClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of class <code>java.lang.Class</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#DoubleClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DoubleClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="DoubleClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DoubleClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@DoubleClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of primitive class <code>scala.Double</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#DoubleTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="DoubleTpe:StandardDefinitions.this.Type"></a>
+      <a id="DoubleTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DoubleTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@DoubleTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of primitive type <code>Double</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of primitive type <code>Double</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#FloatClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FloatClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="FloatClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">FloatClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@FloatClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of primitive class <code>scala.Float</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#FloatTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="FloatTpe:StandardDefinitions.this.Type"></a>
+      <a id="FloatTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">FloatTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@FloatTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of primitive type <code>Float</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of primitive type <code>Float</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#FunctionClass" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="FunctionClass:DefinitionsApi.this.VarArityClassApi"></a>
+      <a id="FunctionClass:VarArityClassApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">FunctionClass</span><span class="result">: <a href="StandardDefinitions$DefinitionsApi$VarArityClassApi.html" class="extype" name="scala.reflect.api.StandardDefinitions.DefinitionsApi.VarArityClassApi">VarArityClassApi</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@FunctionClass:DefinitionsApi.this.VarArityClassApi" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Function-like object that maps arity to symbols for classes <code>scala.FunctionX</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Function-like object that maps arity to symbols for classes <code>scala.FunctionX</code>.</p><ul><li> 0th element is <code>Function0</code></li><li> 1st element is <code>Function1</code></li><li> ...</li><li>22nd element is <code>Function22</code></li><li>23nd element is <code>NoSymbol</code></li><li>...
+</li></ul></div></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#IntClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="IntClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="IntClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">IntClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@IntClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of primitive class <code>scala.Int</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#IntTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="IntTpe:StandardDefinitions.this.Type"></a>
+      <a id="IntTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">IntTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@IntTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of primitive type <code>Int</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of primitive type <code>Int</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#JavaLangPackage" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="JavaLangPackage:StandardDefinitions.this.ModuleSymbol"></a>
+      <a id="JavaLangPackage:Universe.ModuleSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">JavaLangPackage</span><span class="result">: <a href="Universe.html#ModuleSymbol&gt;:Null&lt;:Symbols.this.ModuleSymbolApiwithSymbols.this.TermSymbol" class="extmbr" name="scala.reflect.api.Symbols.ModuleSymbol">Universe.ModuleSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@JavaLangPackage:StandardDefinitions.this.ModuleSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The module symbol of package <code>java.lang</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#JavaLangPackageClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="JavaLangPackageClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="JavaLangPackageClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">JavaLangPackageClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@JavaLangPackageClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The module class symbol of package <code>java.lang</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#JavaRepeatedParamClass" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="JavaRepeatedParamClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="JavaRepeatedParamClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">JavaRepeatedParamClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@JavaRepeatedParamClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A dummy class symbol that is used to indicate repeated parameters
+ compiled by the Java compiler.</p><div class="fullcomment"><div class="comment cmt"><p>A dummy class symbol that is used to indicate repeated parameters
+ compiled by the Java compiler.</p><pre><span class="kw">class</span> C {
+  public void m(<span class="std">Object</span>... x) {}
+}</pre><pre>scala&gt; <span class="kw">import</span> scala.reflect.runtime.universe._
+<span class="kw">import</span> scala.reflect.runtime.universe._
+
+scala&gt; <span class="kw">val</span> m = typeOf[C].member(TermName(<span class="lit">"m"</span>)).asMethod
+m: reflect.runtime.universe.MethodSymbol = method m
+
+scala&gt; m.params(<span class="num">0</span>)(<span class="num">0</span>).info
+res1: reflect.runtime.universe.Type = &lt;repeated...&gt;[<span class="std">Object</span>]
+
+scala&gt; showRaw(m.params(<span class="num">0</span>)(<span class="num">0</span>).info)
+res2: <span class="std">String</span> = TypeRef(
+    ThisType(scala),
+    scala.&lt;repeated...&gt;, <span class="cmt">// <-- JavaRepeatedParamClass</span>
+    <span class="std">List</span>(TypeRef(ThisType(java.lang), <span class="std">Object</span>, <span class="std">List</span>())))</pre></div></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ListClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ListClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="ListClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ListClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ListClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of class <code>scala.List</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ListModule" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ListModule:StandardDefinitions.this.ModuleSymbol"></a>
+      <a id="ListModule:Universe.ModuleSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ListModule</span><span class="result">: <a href="Universe.html#ModuleSymbol&gt;:Null&lt;:Symbols.this.ModuleSymbolApiwithSymbols.this.TermSymbol" class="extmbr" name="scala.reflect.api.Symbols.ModuleSymbol">Universe.ModuleSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ListModule:StandardDefinitions.this.ModuleSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The module symbol of module <code>scala.List</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#List_apply" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="List_apply:StandardDefinitions.this.TermSymbol"></a>
+      <a id="List_apply:Universe.TermSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">List_apply</span><span class="result">: <a href="Universe.html#TermSymbol&gt;:Null&lt;:Symbols.this.TermSymbolApiwithSymbols.this.Symbol" class="extmbr" name="scala.reflect.api.Symbols.TermSymbol">Universe.TermSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@List_apply:StandardDefinitions.this.TermSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The method symbol of method <code>apply</code> in class <code>scala.List</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#LongClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LongClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="LongClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">LongClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@LongClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of primitive class <code>scala.Long</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#LongTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="LongTpe:StandardDefinitions.this.Type"></a>
+      <a id="LongTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">LongTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@LongTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of primitive type <code>Long</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of primitive type <code>Long</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#NilModule" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NilModule:StandardDefinitions.this.ModuleSymbol"></a>
+      <a id="NilModule:Universe.ModuleSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">NilModule</span><span class="result">: <a href="Universe.html#ModuleSymbol&gt;:Null&lt;:Symbols.this.ModuleSymbolApiwithSymbols.this.TermSymbol" class="extmbr" name="scala.reflect.api.Symbols.ModuleSymbol">Universe.ModuleSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@NilModule:StandardDefinitions.this.ModuleSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The module symbol of module <code>scala.collection.immutable.Nil</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#NoneModule" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NoneModule:StandardDefinitions.this.ModuleSymbol"></a>
+      <a id="NoneModule:Universe.ModuleSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">NoneModule</span><span class="result">: <a href="Universe.html#ModuleSymbol&gt;:Null&lt;:Symbols.this.ModuleSymbolApiwithSymbols.this.TermSymbol" class="extmbr" name="scala.reflect.api.Symbols.ModuleSymbol">Universe.ModuleSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@NoneModule:StandardDefinitions.this.ModuleSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The module symbol of module <code>scala.None</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#NothingClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NothingClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="NothingClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">NothingClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@NothingClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of core class <code>scala.Nothing</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#NothingTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="NothingTpe:StandardDefinitions.this.Type"></a>
+      <a id="NothingTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">NothingTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@NothingTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of core type <code>Nothing</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of core type <code>Nothing</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#NullClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NullClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="NullClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">NullClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@NullClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of core class <code>scala.Null</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#NullTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="NullTpe:StandardDefinitions.this.Type"></a>
+      <a id="NullTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">NullTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@NullTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of core type <code>Null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of core type <code>Null</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ObjectClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ObjectClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="ObjectClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ObjectClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ObjectClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of core class <code>java.lang.Object</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#ObjectTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ObjectTpe:StandardDefinitions.this.Type"></a>
+      <a id="ObjectTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ObjectTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ObjectTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of core type <code>Object</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of core type <code>Object</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#OptionClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OptionClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="OptionClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">OptionClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@OptionClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of class <code>scala.Option</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#PredefModule" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PredefModule:StandardDefinitions.this.ModuleSymbol"></a>
+      <a id="PredefModule:Universe.ModuleSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PredefModule</span><span class="result">: <a href="Universe.html#ModuleSymbol&gt;:Null&lt;:Symbols.this.ModuleSymbolApiwithSymbols.this.TermSymbol" class="extmbr" name="scala.reflect.api.Symbols.ModuleSymbol">Universe.ModuleSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@PredefModule:StandardDefinitions.this.ModuleSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The module symbol of module <code>scala.Predef</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ProductClass" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ProductClass:DefinitionsApi.this.VarArityClassApi"></a>
+      <a id="ProductClass:VarArityClassApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ProductClass</span><span class="result">: <a href="StandardDefinitions$DefinitionsApi$VarArityClassApi.html" class="extype" name="scala.reflect.api.StandardDefinitions.DefinitionsApi.VarArityClassApi">VarArityClassApi</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ProductClass:DefinitionsApi.this.VarArityClassApi" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Function-like object that maps arity to symbols for classes <code>scala.ProductX</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Function-like object that maps arity to symbols for classes <code>scala.ProductX</code>.</p><ul><li> 0th element is <code>Unit</code></li><li> 1st element is <code>Product1</code></li><li> ...</li><li>22nd element is <code>Product22</code></li><li>23nd element is <code>NoSymbol</code></li><li>...
+</li></ul></div></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#RepeatedParamClass" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="RepeatedParamClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="RepeatedParamClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">RepeatedParamClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@RepeatedParamClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A dummy class symbol that is used to indicate repeated parameters
+ compiled by the Scala compiler.</p><div class="fullcomment"><div class="comment cmt"><p>A dummy class symbol that is used to indicate repeated parameters
+ compiled by the Scala compiler.</p><pre>scala&gt; <span class="kw">class</span> C { <span class="kw">def</span> m(x: <span class="std">Int</span>*) = ??? }
+defined <span class="kw">class</span> C
+
+scala&gt; <span class="kw">import</span> scala.reflect.runtime.universe._
+<span class="kw">import</span> scala.reflect.runtime.universe._
+
+scala&gt; <span class="kw">val</span> m = typeOf[C].member(TermName(<span class="lit">"m"</span>)).asMethod
+m: reflect.runtime.universe.MethodSymbol = method m
+
+scala&gt; m.params(<span class="num">0</span>)(<span class="num">0</span>).info
+res1: reflect.runtime.universe.Type = scala.<span class="std">Int</span>*
+
+scala&gt; showRaw(m.params(<span class="num">0</span>)(<span class="num">0</span>).info)
+res2: <span class="std">String</span> = TypeRef(
+    ThisType(scala),
+    scala.&lt;repeated&gt;, <span class="cmt">// <-- RepeatedParamClass</span>
+    <span class="std">List</span>(TypeRef(ThisType(scala), scala.<span class="std">Int</span>, <span class="std">List</span>())))</pre></div></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ScalaNumericValueClasses" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ScalaNumericValueClasses:List[StandardDefinitions.this.ClassSymbol]"></a>
+      <a id="ScalaNumericValueClasses:List[Universe.ClassSymbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ScalaNumericValueClasses</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ScalaNumericValueClasses:List[StandardDefinitions.this.ClassSymbol]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Contains Scala numeric value classes:</p><div class="fullcomment"><div class="comment cmt"><p>Contains Scala numeric value classes:</p><ul><li>Byte</li><li>Short</li><li>Int</li><li>Long</li><li>Float</li><li>Double</li><li>Char
+</li></ul></div></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ScalaPackage" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ScalaPackage:StandardDefinitions.this.ModuleSymbol"></a>
+      <a id="ScalaPackage:Universe.ModuleSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ScalaPackage</span><span class="result">: <a href="Universe.html#ModuleSymbol&gt;:Null&lt;:Symbols.this.ModuleSymbolApiwithSymbols.this.TermSymbol" class="extmbr" name="scala.reflect.api.Symbols.ModuleSymbol">Universe.ModuleSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ScalaPackage:StandardDefinitions.this.ModuleSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The module symbol of package <code>scala</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ScalaPackageClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ScalaPackageClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="ScalaPackageClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ScalaPackageClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ScalaPackageClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The module class symbol of package <code>scala</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ScalaPrimitiveValueClasses" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ScalaPrimitiveValueClasses:List[StandardDefinitions.this.ClassSymbol]"></a>
+      <a id="ScalaPrimitiveValueClasses:List[Universe.ClassSymbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ScalaPrimitiveValueClasses</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ScalaPrimitiveValueClasses:List[StandardDefinitions.this.ClassSymbol]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Contains Scala primitive value classes:</p><div class="fullcomment"><div class="comment cmt"><p>Contains Scala primitive value classes:</p><ul><li>Byte</li><li>Short</li><li>Int</li><li>Long</li><li>Float</li><li>Double</li><li>Char</li><li>Boolean</li><li>Unit
+</li></ul></div></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#ShortClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ShortClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="ShortClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ShortClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ShortClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of primitive class <code>scala.Short</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#ShortTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ShortTpe:StandardDefinitions.this.Type"></a>
+      <a id="ShortTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ShortTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ShortTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of primitive type <code>Short</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of primitive type <code>Short</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#SomeModule" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SomeModule:StandardDefinitions.this.ModuleSymbol"></a>
+      <a id="SomeModule:Universe.ModuleSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">SomeModule</span><span class="result">: <a href="Universe.html#ModuleSymbol&gt;:Null&lt;:Symbols.this.ModuleSymbolApiwithSymbols.this.TermSymbol" class="extmbr" name="scala.reflect.api.Symbols.ModuleSymbol">Universe.ModuleSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@SomeModule:StandardDefinitions.this.ModuleSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The module symbol of module <code>scala.Some</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#StringClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="StringClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="StringClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">StringClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@StringClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of class <code>scala.String</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#TupleClass" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TupleClass:DefinitionsApi.this.VarArityClassApi"></a>
+      <a id="TupleClass:VarArityClassApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TupleClass</span><span class="result">: <a href="StandardDefinitions$DefinitionsApi$VarArityClassApi.html" class="extype" name="scala.reflect.api.StandardDefinitions.DefinitionsApi.VarArityClassApi">VarArityClassApi</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@TupleClass:DefinitionsApi.this.VarArityClassApi" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Function-like object that maps arity to symbols for classes <code>scala.TupleX</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Function-like object that maps arity to symbols for classes <code>scala.TupleX</code>.</p><ul><li> 0th element is <code>NoSymbol</code></li><li> 1st element is <code>Tuple1</code></li><li> ...</li><li>22nd element is <code>Tuple22</code></li><li>23nd element is <code>NoSymbol</code></li><li>...
+</li></ul></div></div>
+    </li><li name="scala.reflect.api.StandardDefinitions.DefinitionsApi#UnitClass" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="UnitClass:StandardDefinitions.this.ClassSymbol"></a>
+      <a id="UnitClass:Universe.ClassSymbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">UnitClass</span><span class="result">: <a href="Universe.html#ClassSymbol&gt;:Null&lt;:Symbols.this.ClassSymbolApiwithSymbols.this.TypeSymbol" class="extmbr" name="scala.reflect.api.Symbols.ClassSymbol">Universe.ClassSymbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@UnitClass:StandardDefinitions.this.ClassSymbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The class symbol of primitive class <code>scala.Unit</code>.</p>
+    </li><li name="scala.reflect.api.StandardDefinitions.StandardTypes#UnitTpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="UnitTpe:StandardDefinitions.this.Type"></a>
+      <a id="UnitTpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">UnitTpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@UnitTpe:StandardDefinitions.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of primitive type <code>Unit</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The type of primitive type <code>Unit</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StandardDefinitions$StandardTypes.html" class="extype" name="scala.reflect.api.StandardDefinitions.StandardTypes">StandardTypes</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a> to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>] performed by method any2stringadd in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(Universe.DefinitionsApi,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((Universe.DefinitionsApi)⇒Boolean,⇒Any):Universe.DefinitionsApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((Universe.DefinitionsApi)⇒Boolean):Universe.DefinitionsApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):Universe.DefinitionsApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):Universe.DefinitionsApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a> to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>] performed by method StringFormat in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(Universe.DefinitionsApi,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.StandardDefinitions$DefinitionsApi@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.reflect.api.StandardDefinitions.StandardTypes">
+              <h3>Inherited from <a href="Universe.html#StandardTypesextendsAnyRef" class="extmbr" name="scala.reflect.api.StandardDefinitions.StandardTypes">Universe.StandardTypes</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="Universe.html#DefinitionsApiextendsStandardDefinitions.this.StandardTypes" class="extmbr" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">Universe.DefinitionsApi</a>]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

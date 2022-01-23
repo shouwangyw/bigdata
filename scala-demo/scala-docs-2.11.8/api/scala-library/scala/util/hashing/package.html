@@ -1,0 +1,273 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>hashing - Scala Standard Library 2.11.8 - scala.util.hashing</title>
+          <meta name="description" content="hashing - Scala Standard Library 2.11.8 - scala.util.hashing" />
+          <meta name="keywords" content="hashing Scala Standard Library 2.11.8 scala.util.hashing" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.util.hashing.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.util">util</a></p>
+        <h1>hashing</h1><span class="permalink">
+      <a href="../../../index.html#scala.util.hashing.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashing</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/util/hashing/package.scala#L1" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.util.hashing"><span>hashing</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.util.hashing.ByteswapHashing" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ByteswapHashing[T]extendsHashing[T]"></a>
+      <a id="ByteswapHashing[T]:ByteswapHashing[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ByteswapHashing.html"><span class="name">ByteswapHashing</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Hashing.html" class="extype" name="scala.util.hashing.Hashing">Hashing</a>[<span class="extype" name="scala.util.hashing.ByteswapHashing.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.hashing.package@ByteswapHashing[T]extendsHashing[T]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A fast multiplicative hash by Phil Bagwell.</p>
+    </li><li name="scala.util.hashing.Hashing" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Hashing[T]extendsSerializable"></a>
+      <a id="Hashing[T]:Hashing[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Hashing.html"><span class="name">Hashing</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.hashing.package@Hashing[T]extendsSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><code>Hashing</code> is a trait whose instances each represent a strategy for hashing
+instances of a type.</p><div class="fullcomment"><div class="comment cmt"><p><code>Hashing</code> is a trait whose instances each represent a strategy for hashing
+instances of a type.</p><p><code>Hashing</code>'s companion object defines a default hashing strategy for all
+objects - it calls their <code>##</code> method.</p><p>Note: when using a custom <code>Hashing</code>, make sure to use it with the <code>Equiv</code>
+such that if any two objects are equal, then their hash codes must be equal.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../annotation/implicitNotFound.html" class="extype" name="scala.annotation.implicitNotFound">implicitNotFound</a></span><span class="args">(<span>
+      msg = 
+      <span class="defval" name="&quot;No implicit Hashing defined for ${T}.&quot;">...</span>
+    </span>)</span>
+              
+        </dd><dt>Since</dt><dd><p>2.10</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.util.hashing.ByteswapHashing" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ByteswapHashing"></a>
+      <a id="ByteswapHashing:ByteswapHashing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ByteswapHashing$.html"><span class="name">ByteswapHashing</span></a><span class="result"> extends <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.hashing.package@ByteswapHashing" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.util.hashing.Hashing" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Hashing"></a>
+      <a id="Hashing:Hashing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Hashing$.html"><span class="name">Hashing</span></a><span class="result"> extends <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.hashing.package@Hashing" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.util.hashing.MurmurHash3" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MurmurHash3"></a>
+      <a id="MurmurHash3:MurmurHash3"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MurmurHash3$.html"><span class="name">MurmurHash3</span></a><span class="result"> extends <span class="extype" name="scala.util.hashing.MurmurHash3">MurmurHash3</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.hashing.package@MurmurHash3" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An implementation of Austin Appleby's MurmurHash 3 algorithm
+(MurmurHash3_x86_32).</p><div class="fullcomment"><div class="comment cmt"><p>An implementation of Austin Appleby's MurmurHash 3 algorithm
+(MurmurHash3_x86_32). This object contains methods that hash
+values of various types as well as means to construct <code>Hashing</code>
+objects.</p><p>This algorithm is designed to generate well-distributed non-cryptographic
+hashes. It is designed to hash data in 32 bit chunks (ints).</p><p>The mix method needs to be called at each step to update the intermediate
+hash value. For the last chunk to incorporate into the hash mixLast may
+be used instead, which is slightly faster. Finally finalizeHash needs to
+be called to compute the final hash value.</p><p>This is based on the earlier MurmurHash3 code by Rex Kerr, but the
+MurmurHash3 algorithm was since changed by its creator Austin Appleby
+to remedy some weaknesses and improve performance. This represents the
+latest and supposedly final version of the algorithm (revision 136).
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/aappleby/smhasher" target="_blank">https://github.com/aappleby/smhasher</a></p></span></dd></dl></div>
+    </li><li name="scala.util.hashing#byteswap32" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="byteswap32(v:Int):Int"></a>
+      <a id="byteswap32(Int):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">byteswap32</span><span class="params">(<span name="v">v: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.hashing.package@byteswap32(v:Int):Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Fast multiplicative hash with a nice distribution.</p>
+    </li><li name="scala.util.hashing#byteswap64" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="byteswap64(v:Long):Long"></a>
+      <a id="byteswap64(Long):Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">byteswap64</span><span class="params">(<span name="v">v: <a href="../../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="../../Long.html" class="extype" name="scala.Long">Long</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.hashing.package@byteswap64(v:Long):Long" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Fast multiplicative hash with a nice distribution
+ for 64-bit values.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

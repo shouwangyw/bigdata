@@ -1,0 +1,1822 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>PatternMatching - Scala Compiler 2.11.8 - scala.tools.nsc.transform.patmat.PatternMatching</title>
+          <meta name="description" content="PatternMatching - Scala Compiler 2.11.8 - scala.tools.nsc.transform.patmat.PatternMatching" />
+          <meta name="keywords" content="PatternMatching Scala Compiler 2.11.8 scala.tools.nsc.transform.patmat.PatternMatching" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'scala.tools.nsc.transform.patmat.PatternMatching';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Trait" src="../../../../../lib/trait_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.transform">transform</a>.<a href="package.html" class="extype" name="scala.tools.nsc.transform.patmat">patmat</a></p>
+        <h1>PatternMatching</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="scala.tools.nsc.transform.patmat">package patmat</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PatternMatching</span><span class="result"> extends <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a> with <a href="../Transform.html" class="extype" name="scala.tools.nsc.transform.Transform">Transform</a> with <a href="../TypingTransformers.html" class="extype" name="scala.tools.nsc.transform.TypingTransformers">TypingTransformers</a> with <a href="Debugging.html" class="extype" name="scala.tools.nsc.transform.patmat.Debugging">Debugging</a> with <a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a> with <a href="MatchTranslation.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTranslation">MatchTranslation</a> with <a href="MatchTreeMaking.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTreeMaking">MatchTreeMaking</a> with <a href="MatchCodeGen.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCodeGen">MatchCodeGen</a> with <a href="MatchCps.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCps">MatchCps</a> with <a href="ScalaLogic.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalaLogic">ScalaLogic</a> with <a href="Solving.html" class="extype" name="scala.tools.nsc.transform.patmat.Solving">Solving</a> with <a href="MatchAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchAnalysis">MatchAnalysis</a> with <a href="MatchOptimization.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchOptimization">MatchOptimization</a> with <a href="MatchWarnings.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchWarnings">MatchWarnings</a> with <a href="ScalacPatternExpanders.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders">ScalacPatternExpanders</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Translate pattern matching.</p><p>Either into optimized if/then/else's, or virtualized as method calls (these methods form a zero-plus monad),
+similar in spirit to how for-comprehensions are compiled.</p><p>For each case, express all patterns as extractor calls, guards as 0-ary extractors, and sequence them using <code>flatMap</code>
+(lifting the body of the case into the monad using <code>one</code>).</p><p>Cases are combined into a pattern match using the <code>orElse</code> combinator (the implicit failure case is expressed using the monad's <code>zero</code>).</p><p>TODO:</p><ul><li>DCE (on irrefutable patterns)</li><li>update spec and double check it's implemented correctly (see TODO's)</li></ul><p>(longer-term) TODO:</p><ul><li>user-defined unapplyProd</li><li>recover GADT typing by locally inserting implicit witnesses to type equalities derived from the current case, and considering these witnesses during subtyping (?)</li><li>recover exhaustivity/unreachability of user-defined extractors by partitioning the types they match on using an HList or similar type-level structure
+</li></ul></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/compiler/scala/tools/nsc/transform/patmat/PatternMatching.scala#L1" target="_blank">PatternMatching.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="ScalacPatternExpanders.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders">ScalacPatternExpanders</a>, <a href="MatchWarnings.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchWarnings">MatchWarnings</a>, <a href="MatchOptimization.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchOptimization">MatchOptimization</a>, <a href="MatchAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchAnalysis">MatchAnalysis</a>, <a href="MatchApproximation.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchApproximation">MatchApproximation</a>, <a href="Solving.html" class="extype" name="scala.tools.nsc.transform.patmat.Solving">Solving</a>, <a href="ScalaLogic.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalaLogic">ScalaLogic</a>, <a href="TreeAndTypeAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis">TreeAndTypeAnalysis</a>, <a href="Logic.html" class="extype" name="scala.tools.nsc.transform.patmat.Logic">Logic</a>, <a href="MatchCps.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCps">MatchCps</a>, <a href="MatchTreeMaking.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTreeMaking">MatchTreeMaking</a>, <a href="MatchCodeGen.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCodeGen">MatchCodeGen</a>, <a href="MatchTranslation.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTranslation">MatchTranslation</a>, <a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a>, <a href="../../ast/TreeDSL.html" class="extype" name="scala.tools.nsc.ast.TreeDSL">TreeDSL</a>, <a href="Debugging.html" class="extype" name="scala.tools.nsc.transform.patmat.Debugging">Debugging</a>, <a href="../TypingTransformers.html" class="extype" name="scala.tools.nsc.transform.TypingTransformers">TypingTransformers</a>, <a href="../Transform.html" class="extype" name="scala.tools.nsc.transform.Transform">Transform</a>, <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a>, <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">Known Subclasses</span>
+            <div class="subClasses hiddenContent"><a href="../../Global$patmat$.html" class="extype" name="scala.tools.nsc.Global.patmat">patmat</a></div>
+          </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 1871.00 155.00" height="155pt" width="1871pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 151)" class="graph" id="graph0"><polygon points="-4,4 -4,-151 1867,-151 1867,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="scala.tools.nsc.transform.patmat.PatternMatching (this trait)" xlink:href="#inheritance-diagram"><polygon points="980.5,-86 864.5,-86 864.5,-61 980.5,-61 980.5,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="874.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="895.5" text-anchor="start">PatternMatching</text></a></g></g><!-- node1 --><g class="node object" id="graph1_1"><g id="a_object|graph1_1"><a xlink:title="scala.tools.nsc.Global.patmat" xlink:href="../../Global$patmat$.html#inheritance-diagram"><polygon points="975,-25 870,-25 870,-0 975,-0 975,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../../../lib/object_diagram.png" y="-19.5" x="880.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="901.5" text-anchor="start">Global.patmat</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="Global.patmat is a subtype of PatternMatching"><path d="M922.5,-55.6874C922.5,-45.9173 922.5,-33.8534 922.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="920.75,-55.8435 922.5,-60.8435 924.25,-55.8435 920.75,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.tools.nsc.SubComponent" xlink:href="../../SubComponent.html#inheritance-diagram"><polygon points="111,-147 7.10543e-15,-147 7.10543e-15,-122 111,-122 111,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-141.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="31.5" text-anchor="start">SubComponent</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="PatternMatching is a subtype of SubComponent"><path d="M116.451,-122.377C117.474,-122.246 118.491,-122.12 119.5,-122 397.197,-88.9557 731.788,-78.5434 864.349,-75.5755" stroke="#d4d4d4" fill="none"></path><polygon points="116.01,-120.67 111.289,-123.073 116.478,-124.139 116.01,-120.67" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.tools.nsc.transform.Transform" xlink:href="../Transform.html#inheritance-diagram"><polygon points="216,-147 129,-147 129,-122 216,-122 216,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="139.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="160.5" text-anchor="start">Transform</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="PatternMatching is a subtype of Transform"><path d="M221.123,-122.512C222.258,-122.332 223.385,-122.16 224.5,-122 460.14,-88.1203 744.111,-78.2753 864.278,-75.5215" stroke="#d4d4d4" fill="none"></path><polygon points="220.744,-120.801 216.106,-123.36 221.327,-124.252 220.744,-120.801" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="scala.tools.nsc.transform.TypingTransformers" xlink:href="../TypingTransformers.html#inheritance-diagram"><polygon points="363,-147 234,-147 234,-122 363,-122 363,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="244.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="265.5" text-anchor="start">TypingTransformers</text></a></g></g><!-- node4&#45;&gt;node0 --><g class="edge inheritance" id="graph1_4_0"><g id="a_inheritance|graph1_4_0"><a xlink:title="PatternMatching is a subtype of TypingTransformers"><path d="M368.102,-122.545C369.58,-122.357 371.048,-122.175 372.5,-122 551.145,-100.43 763.584,-84.9498 864.16,-78.2289" stroke="#d4d4d4" fill="none"></path><polygon points="367.77,-120.824 363.038,-123.206 368.222,-124.294 367.77,-120.824" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="scala.tools.nsc.transform.patmat.Debugging" xlink:href="Debugging.html#inheritance-diagram"><polygon points="471.5,-147 381.5,-147 381.5,-122 471.5,-122 471.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="391.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="412.5" text-anchor="start">Debugging</text></a></g></g><!-- node5&#45;&gt;node0 --><g class="edge inheritance" id="graph1_5_0"><g id="a_inheritance|graph1_5_0"><a xlink:title="PatternMatching is a subtype of Debugging"><path d="M476.607,-122.645C477.917,-122.421 479.216,-122.205 480.5,-122 617.299,-100.142 779.565,-85.5835 864.328,-78.8343" stroke="#d4d4d4" fill="none"></path><polygon points="476.132,-120.952 471.516,-123.552 476.746,-124.398 476.132,-120.952" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6 --><g class="node trait" id="graph1_6"><g id="a_trait|graph1_6"><a xlink:title="scala.tools.nsc.transform.patmat.Interface" xlink:href="Interface.html#inheritance-diagram"><polygon points="571,-147 490,-147 490,-122 571,-122 571,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="500.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="521.5" text-anchor="start">Interface</text></a></g></g><!-- node6&#45;&gt;node0 --><g class="edge inheritance" id="graph1_6_0"><g id="a_inheritance|graph1_6_0"><a xlink:title="PatternMatching is a subtype of Interface"><path d="M576.115,-122.648C577.254,-122.424 578.383,-122.208 579.5,-122 678.938,-103.487 795.827,-88.7912 864.277,-80.8915" stroke="#d4d4d4" fill="none"></path><polygon points="575.633,-120.96 571.081,-123.67 576.329,-124.39 575.633,-120.96" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7 --><g class="node trait" id="graph1_7"><g id="a_trait|graph1_7"><a xlink:title="scala.tools.nsc.transform.patmat.MatchTranslation" xlink:href="MatchTranslation.html#inheritance-diagram"><polygon points="708,-147 589,-147 589,-122 708,-122 708,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="599.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="620.5" text-anchor="start">MatchTranslation</text></a></g></g><!-- node7&#45;&gt;node0 --><g class="edge inheritance" id="graph1_7_0"><g id="a_inheritance|graph1_7_0"><a xlink:title="PatternMatching is a subtype of MatchTranslation"><path d="M707.136,-120.874C755.024,-110.562 822.157,-96.1068 868.687,-86.0875" stroke="#d4d4d4" fill="none"></path><polygon points="706.5,-119.221 701.98,-121.984 707.237,-122.642 706.5,-119.221" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8 --><g class="node trait" id="graph1_8"><g id="a_trait|graph1_8"><a xlink:title="scala.tools.nsc.transform.patmat.MatchTreeMaking" xlink:href="MatchTreeMaking.html#inheritance-diagram"><polygon points="848.5,-147 726.5,-147 726.5,-122 848.5,-122 848.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="736.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="757.5" text-anchor="start">MatchTreeMaking</text></a></g></g><!-- node8&#45;&gt;node0 --><g class="edge inheritance" id="graph1_8_0"><g id="a_inheritance|graph1_8_0"><a xlink:title="PatternMatching is a subtype of MatchTreeMaking"><path d="M818.696,-119.866C842.021,-109.672 873.579,-95.8805 895.755,-86.1884" stroke="#d4d4d4" fill="none"></path><polygon points="817.731,-118.378 813.85,-121.984 819.132,-121.585 817.731,-118.378" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node9 --><g class="node trait" id="graph1_9"><g id="a_trait|graph1_9"><a xlink:title="scala.tools.nsc.transform.patmat.MatchCodeGen" xlink:href="MatchCodeGen.html#inheritance-diagram"><polygon points="978.5,-147 866.5,-147 866.5,-122 978.5,-122 978.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="876.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="897.5" text-anchor="start">MatchCodeGen</text></a></g></g><!-- node9&#45;&gt;node0 --><g class="edge inheritance" id="graph1_9_0"><g id="a_inheritance|graph1_9_0"><a xlink:title="PatternMatching is a subtype of MatchCodeGen"><path d="M922.5,-116.687C922.5,-106.917 922.5,-94.8534 922.5,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="920.75,-116.843 922.5,-121.843 924.25,-116.844 920.75,-116.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10 --><g class="node trait" id="graph1_10"><g id="a_trait|graph1_10"><a xlink:title="scala.tools.nsc.transform.patmat.MatchCps" xlink:href="MatchCps.html#inheritance-diagram"><polygon points="1085,-147 996,-147 996,-122 1085,-122 1085,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="1006.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1027.5" text-anchor="start">MatchCps</text></a></g></g><!-- node10&#45;&gt;node0 --><g class="edge inheritance" id="graph1_10_0"><g id="a_inheritance|graph1_10_0"><a xlink:title="PatternMatching is a subtype of MatchCps"><path d="M1012.98,-119.738C992.614,-109.557 965.18,-95.8399 945.877,-86.1884" stroke="#d4d4d4" fill="none"></path><polygon points="1012.21,-121.313 1017.47,-121.984 1013.78,-118.183 1012.21,-121.313" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11 --><g class="node trait" id="graph1_11"><g id="a_trait|graph1_11"><a xlink:title="scala.tools.nsc.transform.patmat.ScalaLogic" xlink:href="ScalaLogic.html#inheritance-diagram"><polygon points="1196,-147 1103,-147 1103,-122 1196,-122 1196,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="1113.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1134.5" text-anchor="start">ScalaLogic</text></a></g></g><!-- node11&#45;&gt;node0 --><g class="edge inheritance" id="graph1_11_0"><g id="a_inheritance|graph1_11_0"><a xlink:title="PatternMatching is a subtype of ScalaLogic"><path d="M1099.95,-120.623C1060.35,-110.329 1005.32,-96.0257 967.082,-86.0875" stroke="#d4d4d4" fill="none"></path><polygon points="1099.91,-122.42 1105.19,-121.984 1100.79,-119.033 1099.91,-122.42" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node12 --><g class="node trait" id="graph1_12"><g id="a_trait|graph1_12"><a xlink:title="scala.tools.nsc.transform.patmat.Solving" xlink:href="Solving.html#inheritance-diagram"><polygon points="1289,-147 1214,-147 1214,-122 1289,-122 1289,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="1224.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1245.5" text-anchor="start">Solving</text></a></g></g><!-- node12&#45;&gt;node0 --><g class="edge inheritance" id="graph1_12_0"><g id="a_inheritance|graph1_12_0"><a xlink:title="PatternMatching is a subtype of Solving"><path d="M1208.88,-122.72C1207.74,-122.473 1206.61,-122.232 1205.5,-122 1128.2,-105.876 1038.14,-91.51 980.744,-82.9055" stroke="#d4d4d4" fill="none"></path><polygon points="1208.64,-124.46 1213.9,-123.844 1209.4,-121.045 1208.64,-124.46" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13 --><g class="node trait" id="graph1_13"><g id="a_trait|graph1_13"><a xlink:title="scala.tools.nsc.transform.patmat.MatchAnalysis" xlink:href="MatchAnalysis.html#inheritance-diagram"><polygon points="1416,-147 1307,-147 1307,-122 1416,-122 1416,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="1317.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1338.5" text-anchor="start">MatchAnalysis</text></a></g></g><!-- node13&#45;&gt;node0 --><g class="edge inheritance" id="graph1_13_0"><g id="a_inheritance|graph1_13_0"><a xlink:title="PatternMatching is a subtype of MatchAnalysis"><path d="M1301.88,-122.529C1300.74,-122.349 1299.62,-122.172 1298.5,-122 1186.33,-104.69 1054.61,-89.1409 980.61,-80.8391" stroke="#d4d4d4" fill="none"></path><polygon points="1301.68,-124.27 1306.9,-123.343 1302.24,-120.815 1301.68,-124.27" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node14 --><g class="node trait" id="graph1_14"><g id="a_trait|graph1_14"><a xlink:title="scala.tools.nsc.transform.patmat.MatchOptimization" xlink:href="MatchOptimization.html#inheritance-diagram"><polygon points="1560.5,-147 1434.5,-147 1434.5,-122 1560.5,-122 1560.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="1444.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1465.5" text-anchor="start">MatchOptimization</text></a></g></g><!-- node14&#45;&gt;node0 --><g class="edge inheritance" id="graph1_14_0"><g id="a_inheritance|graph1_14_0"><a xlink:title="PatternMatching is a subtype of MatchOptimization"><path d="M1429.32,-122.496C1428.04,-122.326 1426.76,-122.16 1425.5,-122 1264.95,-101.62 1074.56,-85.9435 980.724,-78.7768" stroke="#d4d4d4" fill="none"></path><polygon points="1429.13,-124.235 1434.32,-123.173 1429.6,-120.767 1429.13,-124.235" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node15 --><g class="node trait" id="graph1_15"><g id="a_trait|graph1_15"><a xlink:title="scala.tools.nsc.transform.patmat.MatchWarnings" xlink:href="MatchWarnings.html#inheritance-diagram"><polygon points="1692,-147 1579,-147 1579,-122 1692,-122 1692,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="1589.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1610.5" text-anchor="start">MatchWarnings</text></a></g></g><!-- node15&#45;&gt;node0 --><g class="edge inheritance" id="graph1_15_0"><g id="a_inheritance|graph1_15_0"><a xlink:title="PatternMatching is a subtype of MatchWarnings"><path d="M1573.48,-122.51C1572.14,-122.333 1570.81,-122.162 1569.5,-122 1353.21,-95.2835 1094.24,-81.817 980.686,-76.834" stroke="#d4d4d4" fill="none"></path><polygon points="1573.48,-124.277 1578.67,-123.229 1573.96,-120.81 1573.48,-124.277" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node16 --><g class="node trait" id="graph1_16"><g id="a_trait|graph1_16"><a xlink:title="scala.tools.nsc.transform.patmat.ScalacPatternExpanders" xlink:href="ScalacPatternExpanders.html#inheritance-diagram"><polygon points="1863,-147 1710,-147 1710,-122 1863,-122 1863,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="1720.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1741.5" text-anchor="start">ScalacPatternExpanders</text></a></g></g><!-- node16&#45;&gt;node0 --><g class="edge inheritance" id="graph1_16_0"><g id="a_inheritance|graph1_16_0"><a xlink:title="PatternMatching is a subtype of ScalacPatternExpanders"><path d="M1704.52,-122.302C1703.51,-122.199 1702.5,-122.098 1701.5,-122 1432.81,-95.6686 1110.47,-81.5511 980.761,-76.5859" stroke="#d4d4d4" fill="none"></path><polygon points="1704.46,-124.056 1709.62,-122.84 1704.83,-120.575 1704.46,-124.056" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.tools.nsc.transform.patmat.PatternMatching"><span>PatternMatching</span></li><li class="in" name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders"><span>ScalacPatternExpanders</span></li><li class="in" name="scala.tools.nsc.transform.patmat.MatchWarnings"><span>MatchWarnings</span></li><li class="in" name="scala.tools.nsc.transform.patmat.MatchOptimization"><span>MatchOptimization</span></li><li class="in" name="scala.tools.nsc.transform.patmat.MatchAnalysis"><span>MatchAnalysis</span></li><li class="in" name="scala.tools.nsc.transform.patmat.MatchApproximation"><span>MatchApproximation</span></li><li class="in" name="scala.tools.nsc.transform.patmat.Solving"><span>Solving</span></li><li class="in" name="scala.tools.nsc.transform.patmat.ScalaLogic"><span>ScalaLogic</span></li><li class="in" name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis"><span>TreeAndTypeAnalysis</span></li><li class="in" name="scala.tools.nsc.transform.patmat.Logic"><span>Logic</span></li><li class="in" name="scala.tools.nsc.transform.patmat.MatchCps"><span>MatchCps</span></li><li class="in" name="scala.tools.nsc.transform.patmat.MatchTreeMaking"><span>MatchTreeMaking</span></li><li class="in" name="scala.tools.nsc.transform.patmat.MatchCodeGen"><span>MatchCodeGen</span></li><li class="in" name="scala.tools.nsc.transform.patmat.MatchTranslation"><span>MatchTranslation</span></li><li class="in" name="scala.tools.nsc.transform.patmat.Interface"><span>Interface</span></li><li class="in" name="scala.tools.nsc.ast.TreeDSL"><span>TreeDSL</span></li><li class="in" name="scala.tools.nsc.transform.patmat.Debugging"><span>Debugging</span></li><li class="in" name="scala.tools.nsc.transform.TypingTransformers"><span>TypingTransformers</span></li><li class="in" name="scala.tools.nsc.transform.Transform"><span>Transform</span></li><li class="in" name="scala.tools.nsc.SubComponent"><span>SubComponent</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders.AlignedOps" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AlignedOpsextendsAnyRef"></a>
+      <a id="AlignedOps:AlignedOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalacPatternExpanders$AlignedOps.html"><span class="name">AlignedOps</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.ScalacPatternExpanders@AlignedOpsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ScalacPatternExpanders.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders">ScalacPatternExpanders</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.Solving.CNF" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CNFextendsSolving.this.PropositionalLogic"></a>
+      <a id="CNF:CNF"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Solving$CNF.html"><span class="name">CNF</span></a><span class="result"> extends <a href="Solving.html#PropositionalLogicextendsAnyRef" class="extmbr" name="scala.tools.nsc.transform.patmat.Logic.PropositionalLogic">PropositionalLogic</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.Solving@CNFextendsSolving.this.PropositionalLogic" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Solving.html" class="extype" name="scala.tools.nsc.transform.patmat.Solving">Solving</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis.CheckableTreeAndTypeAnalysis" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CheckableTreeAndTypeAnalysisextendsAnyRef"></a>
+      <a id="CheckableTreeAndTypeAnalysis:CheckableTreeAndTypeAnalysis"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="TreeAndTypeAnalysis$CheckableTreeAndTypeAnalysis.html"><span class="name">CheckableTreeAndTypeAnalysis</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis@CheckableTreeAndTypeAnalysisextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeAndTypeAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis">TreeAndTypeAnalysis</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchCodeGen.CodegenCore" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CodegenCoreextendsMatchCodeGen.this.MatchMonadInterface"></a>
+      <a id="CodegenCore:CodegenCore"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchCodeGen$CodegenCore.html"><span class="name">CodegenCore</span></a><span class="result"> extends <a href="MatchCodeGen.html#MatchMonadInterfaceextendsAnyRef" class="extmbr" name="scala.tools.nsc.transform.patmat.Interface.MatchMonadInterface">MatchMonadInterface</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchCodeGen@CodegenCoreextendsMatchCodeGen.this.MatchMonadInterface" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchCodeGen.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCodeGen">MatchCodeGen</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchOptimization.CommonSubconditionElimination" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CommonSubconditionEliminationextendsMatchOptimization.this.OptimizedCodegenwithMatchOptimization.this.MatchApproximator"></a>
+      <a id="CommonSubconditionElimination:CommonSubconditionElimination"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchOptimization$CommonSubconditionElimination.html"><span class="name">CommonSubconditionElimination</span></a><span class="result"> extends <a href="MatchOptimization.html#OptimizedCodegenextendsMatchCodeGen.this.CodegenCorewithMatchCodeGen.this.TypedSubstitutionwithMatchCodeGen.this.MatchMonadInterface" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchCodeGen.OptimizedCodegen">OptimizedCodegen</a> with <a href="MatchOptimization.html#MatchApproximatorextendsMatchApproximation.this.TreeMakerswithMatchApproximation.this.TreesAndTypesDomain" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchApproximation.MatchApproximator">MatchApproximator</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchOptimization@CommonSubconditionEliminationextendsMatchOptimization.this.OptimizedCodegenwithMatchOptimization.this.MatchApproximator" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchOptimization.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchOptimization">MatchOptimization</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchAnalysis.MatchAnalyzer" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MatchAnalyzerextendsMatchAnalysis.this.MatchApproximator"></a>
+      <a id="MatchAnalyzer:MatchAnalyzer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchAnalysis$MatchAnalyzer.html"><span class="name">MatchAnalyzer</span></a><span class="result"> extends <a href="MatchAnalysis.html#MatchApproximatorextendsMatchApproximation.this.TreeMakerswithMatchApproximation.this.TreesAndTypesDomain" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchApproximation.MatchApproximator">MatchApproximator</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchAnalysis@MatchAnalyzerextendsMatchAnalysis.this.MatchApproximator" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchAnalysis">MatchAnalysis</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchApproximation.MatchApproximator" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MatchApproximatorextendsMatchApproximation.this.TreeMakerswithMatchApproximation.this.TreesAndTypesDomain"></a>
+      <a id="MatchApproximator:MatchApproximator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchApproximation$MatchApproximator.html"><span class="name">MatchApproximator</span></a><span class="result"> extends <a href="MatchApproximation.html#TreeMakersextendsMatchTreeMaking.this.TypedSubstitutionwithMatchTreeMaking.this.CodegenCore" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchTreeMaking.TreeMakers">TreeMakers</a> with <a href="MatchApproximation.html#TreesAndTypesDomainextendsScalaLogic.this.PropositionalLogicwithScalaLogic.this.CheckableTreeAndTypeAnalysis" class="extmbr" name="scala.tools.nsc.transform.patmat.ScalaLogic.TreesAndTypesDomain">TreesAndTypesDomain</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchApproximation@MatchApproximatorextendsMatchApproximation.this.TreeMakerswithMatchApproximation.this.TreesAndTypesDomain" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Represent a match as a formula in propositional logic that encodes whether the match matches (abstractly: we only consider types)</p><div class="fullcomment"><div class="comment cmt"><p>Represent a match as a formula in propositional logic that encodes whether the match matches (abstractly: we only consider types)</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchApproximation.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchApproximation">MatchApproximation</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.Interface.MatchMonadInterface" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MatchMonadInterfaceextendsAnyRef"></a>
+      <a id="MatchMonadInterface:MatchMonadInterface"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Interface$MatchMonadInterface.html"><span class="name">MatchMonadInterface</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.Interface@MatchMonadInterfaceextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Interface with user-defined match monad?
+if there's a <code>__match</code> in scope, we use this as the match strategy, assuming it conforms to MatchStrategy as defined below:</code></p><div class="fullcomment"><div class="comment cmt"><p>Interface with user-defined match monad?
+if there's a <code>__match</code> in scope, we use this as the match strategy, assuming it conforms to MatchStrategy as defined below:</p><pre><span class="kw">type</span> Matcher[P[_], M[+_], A] = {
+  <span class="kw">def</span> flatMap[B](f: P[A] <span class="kw">=&gt;</span> M[B]): M[B]
+  <span class="kw">def</span> orElse[B <span class="kw">&gt;:</span> A](alternative: <span class="kw">=&gt;</span> M[B]): M[B]
+}
+
+<span class="kw">abstract</span> <span class="kw">class</span> MatchStrategy[P[_], M[+_]] {
+  <span class="cmt">// runs the matcher on the given input</span>
+  <span class="kw">def</span> runOrElse[T, U](in: P[T])(matcher: P[T] <span class="kw">=&gt;</span> M[U]): P[U]
+
+  <span class="kw">def</span> zero: M[<span class="std">Nothing</span>]
+  <span class="kw">def</span> one[T](x: P[T]): M[T]
+  <span class="kw">def</span> guard[T](cond: P[<span class="std">Boolean</span>], then: <span class="kw">=&gt;</span> P[T]): M[T]
+}</pre><p>P and M are derived from one's signature (<code>def one[T](x: P[T]): M[T]</code>)</p><p>if no <code>__match</code> is found, we assume the following implementation (and generate optimized code accordingly)</p><pre><span class="kw">object</span> __match <span class="kw">extends</span> MatchStrategy[({<span class="kw">type</span> Id[x] = x})#Id, <span class="std">Option</span>] {
+  <span class="kw">def</span> zero = <span class="std">None</span>
+  <span class="kw">def</span> one[T](x: T) = <span class="std">Some</span>(x)
+  <span class="cmt">// NOTE: guard's return type must be of the shape M[T], where M is the monad in which the pattern match should be interpreted</span>
+  <span class="kw">def</span> guard[T](cond: <span class="std">Boolean</span>, then: <span class="kw">=&gt;</span> T): <span class="std">Option</span>[T] = <span class="kw">if</span>(cond) <span class="std">Some</span>(then) <span class="kw">else</span> <span class="std">None</span>
+  <span class="kw">def</span> runOrElse[T, U](x: T)(f: T <span class="kw">=&gt;</span> <span class="std">Option</span>[U]): U = f(x) getOrElse (<span class="kw">throw</span> <span class="kw">new</span> MatchError(x))
+}</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchOptimization.MatchOptimizer" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MatchOptimizerextendsMatchOptimization.this.OptimizedCodegenwithMatchOptimization.this.SwitchEmissionwithMatchOptimization.this.CommonSubconditionElimination"></a>
+      <a id="MatchOptimizer:MatchOptimizer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchOptimization$MatchOptimizer.html"><span class="name">MatchOptimizer</span></a><span class="result"> extends <a href="MatchOptimization.html#OptimizedCodegenextendsMatchCodeGen.this.CodegenCorewithMatchCodeGen.this.TypedSubstitutionwithMatchCodeGen.this.MatchMonadInterface" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchCodeGen.OptimizedCodegen">OptimizedCodegen</a> with <a href="MatchOptimization$SwitchEmission.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchOptimization.SwitchEmission">SwitchEmission</a> with <a href="MatchOptimization$CommonSubconditionElimination.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchOptimization.CommonSubconditionElimination">CommonSubconditionElimination</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchOptimization@MatchOptimizerextendsMatchOptimization.this.OptimizedCodegenwithMatchOptimization.this.SwitchEmissionwithMatchOptimization.this.CommonSubconditionElimination" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchOptimization.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchOptimization">MatchOptimization</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.PatternMatching.MatchTransformer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MatchTransformerextendsPatternMatching.this.TypingTransformer"></a>
+      <a id="MatchTransformer:MatchTransformer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PatternMatching$MatchTransformer.html"><span class="name">MatchTransformer</span></a><span class="result"> extends <a href="#TypingTransformerextendsTypingTransformers.this.global.Transformer" class="extmbr" name="scala.tools.nsc.transform.TypingTransformers.TypingTransformer">TypingTransformer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@MatchTransformerextendsPatternMatching.this.TypingTransformer" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.transform.patmat.MatchTranslation.MatchTranslator" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MatchTranslatorextendsMatchTranslation.this.TreeMakerswithMatchTranslation.this.TreeMakerWarnings"></a>
+      <a id="MatchTranslator:PatternMatching.MatchTranslator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchTranslation$MatchTranslator.html"><span class="name">MatchTranslator</span></a><span class="result"> extends <a href="#TreeMakersextendsMatchTreeMaking.this.TypedSubstitutionwithMatchTreeMaking.this.CodegenCore" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchTreeMaking.TreeMakers">PatternMatching.TreeMakers</a> with <a href="#TreeMakerWarningsextendsAnyRef" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchWarnings.TreeMakerWarnings">PatternMatching.TreeMakerWarnings</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchTranslation@MatchTranslatorextendsMatchTranslation.this.TreeMakerswithMatchTranslation.this.TreeMakerWarnings" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchTranslation.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTranslation">MatchTranslation</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchCodeGen.OptimizedCodegen" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="OptimizedCodegenextendsMatchCodeGen.this.CodegenCorewithMatchCodeGen.this.TypedSubstitutionwithMatchCodeGen.this.MatchMonadInterface"></a>
+      <a id="OptimizedCodegen:OptimizedCodegen"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchCodeGen$OptimizedCodegen.html"><span class="name">OptimizedCodegen</span></a><span class="result"> extends <a href="MatchCodeGen$CodegenCore.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCodeGen.CodegenCore">CodegenCore</a> with <a href="MatchCodeGen.html#TypedSubstitutionextendsInterface.this.MatchMonadInterface" class="extmbr" name="scala.tools.nsc.transform.patmat.Interface.TypedSubstitution">TypedSubstitution</a> with <a href="MatchCodeGen.html#MatchMonadInterfaceextendsAnyRef" class="extmbr" name="scala.tools.nsc.transform.patmat.Interface.MatchMonadInterface">MatchMonadInterface</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchCodeGen@OptimizedCodegenextendsMatchCodeGen.this.CodegenCorewithMatchCodeGen.this.TypedSubstitutionwithMatchCodeGen.this.MatchMonadInterface" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchCodeGen.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCodeGen">MatchCodeGen</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.PatternMatching.OptimizingMatchTranslator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptimizingMatchTranslatorextendsPatternMatching.this.MatchTranslatorwithPatternMatching.this.MatchOptimizerwithPatternMatching.this.MatchAnalyzerwithPatternMatching.this.Solver"></a>
+      <a id="OptimizingMatchTranslator:OptimizingMatchTranslator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PatternMatching$OptimizingMatchTranslator.html"><span class="name">OptimizingMatchTranslator</span></a><span class="result"> extends <a href="#MatchTranslatorextendsMatchTranslation.this.TreeMakerswithMatchTranslation.this.TreeMakerWarnings" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchTranslation.MatchTranslator">MatchTranslator</a> with <a href="#MatchOptimizerextendsMatchOptimization.this.OptimizedCodegenwithMatchOptimization.this.SwitchEmissionwithMatchOptimization.this.CommonSubconditionElimination" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchOptimization.MatchOptimizer">MatchOptimizer</a> with <a href="#MatchAnalyzerextendsMatchAnalysis.this.MatchApproximator" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchAnalysis.MatchAnalyzer">MatchAnalyzer</a> with <a href="#SolverextendsSolving.this.CNF" class="extmbr" name="scala.tools.nsc.transform.patmat.Solving.Solver">Solver</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@OptimizingMatchTranslatorextendsPatternMatching.this.MatchTranslatorwithPatternMatching.this.MatchOptimizerwithPatternMatching.this.MatchAnalyzerwithPatternMatching.this.Solver" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders.PatternAligned" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PatternAligned=ScalacPatternExpanders.this.ScalacPatternExpander#Aligned"></a>
+      <a id="PatternAligned:PatternAligned"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PatternAligned</span><span class="result"> = <a href="ScalacPatternExpanders$ScalacPatternExpander.html#AlignedextendsProductwithSerializable" class="extmbr" name="scala.tools.nsc.transform.patmat.PatternExpander.Aligned">ScalacPatternExpanders.ScalacPatternExpander.Aligned</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@PatternAligned=ScalacPatternExpanders.this.ScalacPatternExpander#Aligned" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ScalacPatternExpanders.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders">ScalacPatternExpanders</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.Transform.Phase" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PhaseextendsTransform.this.StdPhase"></a>
+      <a id="Phase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="../Transform$Phase.html"><span class="name">Phase</span></a><span class="result"> extends <a href="../Transform.html#StdPhaseextendsSubComponent.this.global.GlobalPhase" class="extmbr" name="scala.tools.nsc.SubComponent.StdPhase">StdPhase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.Transform@PhaseextendsTransform.this.StdPhase" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The phase defined by this transform</p><div class="fullcomment"><div class="comment cmt"><p>The phase defined by this transform</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Transform.html" class="extype" name="scala.tools.nsc.transform.Transform">Transform</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.Logic.PropositionalLogic" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="PropositionalLogicextendsAnyRef"></a>
+      <a id="PropositionalLogic:PropositionalLogic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Logic$PropositionalLogic.html"><span class="name">PropositionalLogic</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.Logic@PropositionalLogicextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Logic.html" class="extype" name="scala.tools.nsc.transform.patmat.Logic">Logic</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchCodeGen.PureCodegen" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="PureCodegenextendsMatchCodeGen.this.CodegenCorewithMatchCodeGen.this.PureMatchMonadInterface"></a>
+      <a id="PureCodegen:PureCodegen"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchCodeGen$PureCodegen.html"><span class="name">PureCodegen</span></a><span class="result"> extends <a href="MatchCodeGen$CodegenCore.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCodeGen.CodegenCore">CodegenCore</a> with <a href="MatchCodeGen$PureMatchMonadInterface.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCodeGen.PureMatchMonadInterface">PureMatchMonadInterface</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchCodeGen@PureCodegenextendsMatchCodeGen.this.CodegenCorewithMatchCodeGen.this.PureMatchMonadInterface" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchCodeGen.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCodeGen">MatchCodeGen</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchCodeGen.PureMatchMonadInterface" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="PureMatchMonadInterfaceextendsMatchCodeGen.this.MatchMonadInterface"></a>
+      <a id="PureMatchMonadInterface:PureMatchMonadInterface"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchCodeGen$PureMatchMonadInterface.html"><span class="name">PureMatchMonadInterface</span></a><span class="result"> extends <a href="MatchCodeGen.html#MatchMonadInterfaceextendsAnyRef" class="extmbr" name="scala.tools.nsc.transform.patmat.Interface.MatchMonadInterface">MatchMonadInterface</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchCodeGen@PureMatchMonadInterfaceextendsMatchCodeGen.this.MatchMonadInterface" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchCodeGen.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCodeGen">MatchCodeGen</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.PatternMatching.PureMatchTranslator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PureMatchTranslatorextendsPatternMatching.this.MatchTranslatorwithPatternMatching.this.PureCodegen"></a>
+      <a id="PureMatchTranslator:PureMatchTranslator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PatternMatching$PureMatchTranslator.html"><span class="name">PureMatchTranslator</span></a><span class="result"> extends <a href="#MatchTranslatorextendsMatchTranslation.this.TreeMakerswithMatchTranslation.this.TreeMakerWarnings" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchTranslation.MatchTranslator">MatchTranslator</a> with <a href="#PureCodegenextendsMatchCodeGen.this.CodegenCorewithMatchCodeGen.this.PureMatchMonadInterface" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchCodeGen.PureCodegen">PureCodegen</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@PureMatchTranslatorextendsPatternMatching.this.MatchTranslatorwithPatternMatching.this.PureCodegen" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders.ScalacPatternExpander" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ScalacPatternExpanderextendsPatternExpander[ScalacPatternExpanders.this.global.Tree,ScalacPatternExpanders.this.global.Type]"></a>
+      <a id="ScalacPatternExpander:ScalacPatternExpander"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalacPatternExpanders$ScalacPatternExpander.html"><span class="name">ScalacPatternExpander</span></a><span class="result"> extends <a href="PatternExpander.html" class="extype" name="scala.tools.nsc.transform.patmat.PatternExpander">PatternExpander</a>[<a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>, <a href="../../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.ScalacPatternExpanders@ScalacPatternExpanderextendsPatternExpander[ScalacPatternExpanders.this.global.Tree,ScalacPatternExpanders.this.global.Type]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ScalacPatternExpanders.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders">ScalacPatternExpanders</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.Solving.Solver" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SolverextendsSolving.this.CNF"></a>
+      <a id="Solver:Solver"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Solving$Solver.html"><span class="name">Solver</span></a><span class="result"> extends <a href="Solving$CNF.html" class="extype" name="scala.tools.nsc.transform.patmat.Solving.CNF">CNF</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.Solving@SolverextendsSolving.this.CNF" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Solving.html" class="extype" name="scala.tools.nsc.transform.patmat.Solving">Solving</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent.StdPhase" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="StdPhaseextendsSubComponent.this.global.GlobalPhase"></a>
+      <a id="StdPhase:StdPhase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="../../SubComponent$StdPhase.html"><span class="name">StdPhase</span></a><span class="result"> extends <a href="../../Global$GlobalPhase.html" class="extype" name="scala.tools.nsc.Global.GlobalPhase">GlobalPhase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.SubComponent@StdPhaseextendsSubComponent.this.global.GlobalPhase" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A standard phase template</p><div class="fullcomment"><div class="comment cmt"><p>A standard phase template</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchTreeMaking.Suppression" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SuppressionextendsProductwithSerializable"></a>
+      <a id="Suppression:Suppression"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchTreeMaking$Suppression.html"><span class="name">Suppression</span></a><span class="params">(<span name="suppressExhaustive">suppressExhaustive: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="suppressUnreachable">suppressUnreachable: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchTreeMaking@SuppressionextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchTreeMaking.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTreeMaking">MatchTreeMaking</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchOptimization.SwitchEmission" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SwitchEmissionextendsMatchOptimization.this.TreeMakerswithMatchOptimization.this.MatchMonadInterface"></a>
+      <a id="SwitchEmission:SwitchEmission"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchOptimization$SwitchEmission.html"><span class="name">SwitchEmission</span></a><span class="result"> extends <a href="MatchOptimization.html#TreeMakersextendsMatchTreeMaking.this.TypedSubstitutionwithMatchTreeMaking.this.CodegenCore" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchTreeMaking.TreeMakers">TreeMakers</a> with <a href="MatchOptimization.html#MatchMonadInterfaceextendsAnyRef" class="extmbr" name="scala.tools.nsc.transform.patmat.Interface.MatchMonadInterface">MatchMonadInterface</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchOptimization@SwitchEmissionextendsMatchOptimization.this.TreeMakerswithMatchOptimization.this.MatchMonadInterface" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchOptimization.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchOptimization">MatchOptimization</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchWarnings.TreeMakerWarnings" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TreeMakerWarningsextendsAnyRef"></a>
+      <a id="TreeMakerWarnings:PatternMatching.TreeMakerWarnings"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchWarnings$TreeMakerWarnings.html"><span class="name">TreeMakerWarnings</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchWarnings@TreeMakerWarningsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchWarnings.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchWarnings">MatchWarnings</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchTreeMaking.TreeMakers" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TreeMakersextendsMatchTreeMaking.this.TypedSubstitutionwithMatchTreeMaking.this.CodegenCore"></a>
+      <a id="TreeMakers:TreeMakers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchTreeMaking$TreeMakers.html"><span class="name">TreeMakers</span></a><span class="result"> extends <a href="MatchTreeMaking.html#TypedSubstitutionextendsInterface.this.MatchMonadInterface" class="extmbr" name="scala.tools.nsc.transform.patmat.Interface.TypedSubstitution">TypedSubstitution</a> with <a href="MatchTreeMaking.html#CodegenCoreextendsMatchCodeGen.this.MatchMonadInterface" class="extmbr" name="scala.tools.nsc.transform.patmat.MatchCodeGen.CodegenCore">CodegenCore</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchTreeMaking@TreeMakersextendsMatchTreeMaking.this.TypedSubstitutionwithMatchTreeMaking.this.CodegenCore" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchTreeMaking.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTreeMaking">MatchTreeMaking</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.ScalaLogic.TreesAndTypesDomain" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TreesAndTypesDomainextendsScalaLogic.this.PropositionalLogicwithScalaLogic.this.CheckableTreeAndTypeAnalysis"></a>
+      <a id="TreesAndTypesDomain:TreesAndTypesDomain"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalaLogic$TreesAndTypesDomain.html"><span class="name">TreesAndTypesDomain</span></a><span class="result"> extends <a href="ScalaLogic.html#PropositionalLogicextendsAnyRef" class="extmbr" name="scala.tools.nsc.transform.patmat.Logic.PropositionalLogic">PropositionalLogic</a> with <a href="ScalaLogic.html#CheckableTreeAndTypeAnalysisextendsAnyRef" class="extmbr" name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis.CheckableTreeAndTypeAnalysis">CheckableTreeAndTypeAnalysis</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.ScalaLogic@TreesAndTypesDomainextendsScalaLogic.this.PropositionalLogicwithScalaLogic.this.CheckableTreeAndTypeAnalysis" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ScalaLogic.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalaLogic">ScalaLogic</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.Interface.TypedSubstitution" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TypedSubstitutionextendsInterface.this.MatchMonadInterface"></a>
+      <a id="TypedSubstitution:TypedSubstitution"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Interface$TypedSubstitution.html"><span class="name">TypedSubstitution</span></a><span class="result"> extends <a href="Interface$MatchMonadInterface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface.MatchMonadInterface">MatchMonadInterface</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.Interface@TypedSubstitutionextendsInterface.this.MatchMonadInterface" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.TypingTransformers.TypingTransformer" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TypingTransformerextendsTypingTransformers.this.global.Transformer"></a>
+      <a id="TypingTransformer:TypingTransformer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="../TypingTransformers$TypingTransformer.html"><span class="name">TypingTransformer</span></a><span class="result"> extends <a href="../../Global.html#TransformerextendsTrees.this.Transformer" class="extmbr" name="scala.tools.nsc.ast.Trees.Transformer">Global.Transformer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.TypingTransformers@TypingTransformerextendsTypingTransformers.this.global.Transformer" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../TypingTransformers.html" class="extype" name="scala.tools.nsc.transform.TypingTransformers">TypingTransformers</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders#global" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="global:scala.tools.nsc.Global"></a>
+      <a id="global:Global"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">global</span><span class="result">: <a href="../../Global.html" class="extype" name="scala.tools.nsc.Global">Global</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@global:scala.tools.nsc.Global" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ScalacPatternExpanders.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders">ScalacPatternExpanders</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#runsAfter" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="runsAfter:List[String]"></a>
+      <a id="runsAfter:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runsAfter</span><span class="result">: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@runsAfter:List[String]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Names of phases that must run before this phase.</p><div class="fullcomment"><div class="comment cmt"><p>Names of phases that must run before this phase.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#runsRightAfter" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="runsRightAfter:Option[String]"></a>
+      <a id="runsRightAfter:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runsRightAfter</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@runsRightAfter:Option[String]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Name of the phase that this phase must follow immediately.</p><div class="fullcomment"><div class="comment cmt"><p>Name of the phase that this phase must follow immediately.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@##():Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>] performed by method any2stringadd in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(PatternMatching,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.TreeDSL.CODE" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CODE"></a>
+      <a id="CODE:CODE"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="../../ast/TreeDSL$CODE$.html"><span class="name">CODE</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.ast.TreeDSL@CODE" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../ast/TreeDSL.html" class="extype" name="scala.tools.nsc.ast.TreeDSL">TreeDSL</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchTreeMaking.Suppression" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Suppression"></a>
+      <a id="Suppression:Suppression"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchTreeMaking$Suppression$.html"><span class="name">Suppression</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.MatchTreeMaking@Suppression" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchTreeMaking.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTreeMaking">MatchTreeMaking</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#afterOwnPhase" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="afterOwnPhase[T](op:=&gt;T):T"></a>
+      <a id="afterOwnPhase[T](⇒T):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">afterOwnPhase</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="op">op: ⇒ <span class="extype" name="scala.tools.nsc.SubComponent.afterOwnPhase.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.tools.nsc.SubComponent.afterOwnPhase.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@afterOwnPhase[T](op:=&gt;T):T" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.Logic#alignAcrossRows" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="alignAcrossRows(xss:List[List[Any]],sep:String,lineSep:String):String"></a>
+      <a id="alignAcrossRows(List[List[Any]],String,String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">alignAcrossRows</span><span class="params">(<span name="xss">xss: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../../../Any.html" class="extype" name="scala.Any">Any</a>]]</span>, <span name="sep">sep: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="lineSep">lineSep: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;\n&quot;</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@alignAcrossRows(xss:List[List[Any]],sep:String,lineSep:String):String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Logic.html" class="extype" name="scala.tools.nsc.transform.patmat.Logic">Logic</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders.alignPatterns" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="alignPatterns"></a>
+      <a id="alignPatterns:alignPatterns"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalacPatternExpanders$alignPatterns$.html"><span class="name">alignPatterns</span></a><span class="result"> extends <a href="ScalacPatternExpanders$ScalacPatternExpander.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders.ScalacPatternExpander">ScalacPatternExpander</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.ScalacPatternExpanders@alignPatterns" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ScalacPatternExpanders.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders">ScalacPatternExpanders</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#beforeOwnPhase" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="beforeOwnPhase[T](op:=&gt;T):T"></a>
+      <a id="beforeOwnPhase[T](⇒T):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">beforeOwnPhase</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="op">op: ⇒ <span class="extype" name="scala.tools.nsc.SubComponent.beforeOwnPhase.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.tools.nsc.SubComponent.beforeOwnPhase.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@beforeOwnPhase[T](op:=&gt;T):T" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis#binderTypeImpliedByPattern" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="binderTypeImpliedByPattern(pat:TreeAndTypeAnalysis.this.global.Tree,pt:TreeAndTypeAnalysis.this.global.Type,binder:TreeAndTypeAnalysis.this.global.Symbol):TreeAndTypeAnalysis.this.global.Type"></a>
+      <a id="binderTypeImpliedByPattern(Global.Tree,Global.Type,Global.Symbol):Global.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">binderTypeImpliedByPattern</span><span class="params">(<span name="pat">pat: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="pt">pt: <a href="../../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="binder">binder: <a href="../../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <a href="../../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@binderTypeImpliedByPattern(pat:TreeAndTypeAnalysis.this.global.Tree,pt:TreeAndTypeAnalysis.this.global.Type,binder:TreeAndTypeAnalysis.this.global.Symbol):TreeAndTypeAnalysis.this.global.Type" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compute the type T implied for a value <code>v</code> matched by a pattern <code>pat</code> (with expected type <code>pt</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Compute the type T implied for a value <code>v</code> matched by a pattern <code>pat</code> (with expected type <code>pt</code>).</p><p>Usually, this is the pattern's type because pattern matching implies instance-of checks.</p><p>However, Stable Identifier and Literal patterns are matched using <code>==</code>,
+which does not imply a type for the binder that binds the matched value.</p><p>See SI-1503, SI-5024: don't cast binders to types we're not sure they have</p><p>TODO: update spec as follows (deviation between <code>**</code>):</p><p>  A pattern binder x@p consists of a pattern variable x and a pattern p.
+  The type of the variable x is the static type T **IMPLIED BY** the pattern p.
+  This pattern matches any value v matched by the pattern p
+    **Deleted: , provided the run-time type of v is also an instance of T, **
+  and it binds the variable name to that value.</p><p>  Addition:
+    A pattern <code>p</code> _implies_ a type <code>T</code> if the pattern matches only values of the type <code>T</code>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeAndTypeAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis">TreeAndTypeAnalysis</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.Interface#dealiasWiden" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="dealiasWiden(tp:Interface.this.global.Type):Interface.this.global.Type"></a>
+      <a id="dealiasWiden(Global.Type):Global.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">dealiasWiden</span><span class="params">(<span name="tp">tp: <a href="../../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="../../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@dealiasWiden(tp:Interface.this.global.Type):Interface.this.global.Type" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.Debugging.debug" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="debug"></a>
+      <a id="debug:debug"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Debugging$debug$.html"><span class="name">debug</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.Debugging@debug" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Debugging.html" class="extype" name="scala.tools.nsc.transform.patmat.Debugging">Debugging</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#enabled" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enabled:Boolean"></a>
+      <a id="enabled:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enabled</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@enabled:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Is this component enabled? Default is true.</p><div class="fullcomment"><div class="comment cmt"><p>Is this component enabled? Default is true.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((PatternMatching)⇒Boolean,⇒Any):PatternMatching"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((PatternMatching)⇒Boolean):PatternMatching"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):PatternMatching"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):PatternMatching"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>] performed by method StringFormat in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.Interface#hasStableSymbol" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hasStableSymbol(p:Interface.this.global.Tree):Boolean"></a>
+      <a id="hasStableSymbol(Global.Tree):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasStableSymbol</span><span class="params">(<span name="p">p: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@hasStableSymbol(p:Interface.this.global.Tree):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">SubComponent are added to a HashSet and two phases are the same if they have the same name</p><div class="fullcomment"><div class="comment cmt"><p>SubComponent are added to a HashSet and two phases are the same if they have the same name</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a> → AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#initial" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="initial:Boolean"></a>
+      <a id="initial:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">initial</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@initial:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">True if this phase runs before all other phases.</p><div class="fullcomment"><div class="comment cmt"><p>True if this phase runs before all other phases. Usually, <code>parser</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis#instanceOfTpImplies" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="instanceOfTpImplies(tp:TreeAndTypeAnalysis.this.global.Type,tpImplied:TreeAndTypeAnalysis.this.global.Type):Boolean"></a>
+      <a id="instanceOfTpImplies(Global.Type,Global.Type):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">instanceOfTpImplies</span><span class="params">(<span name="tp">tp: <a href="../../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="tpImplied">tpImplied: <a href="../../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@instanceOfTpImplies(tp:TreeAndTypeAnalysis.this.global.Type,tpImplied:TreeAndTypeAnalysis.this.global.Type):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeAndTypeAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis">TreeAndTypeAnalysis</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#internal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="internal:Boolean"></a>
+      <a id="internal:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">internal</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@internal:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">True if this phase is not provided by a plug-in.</p><div class="fullcomment"><div class="comment cmt"><p>True if this phase is not provided by a plug-in.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.Interface#mkFALSE" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mkFALSE:Interface.this.global.Literal"></a>
+      <a id="mkFALSE:Global.Literal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mkFALSE</span><span class="result">: <a href="../../Global.html#LiteralextendsTrees.this.TreewithTrees.this.TermTreewithTrees.this.LiteralApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Literal">Global.Literal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@mkFALSE:Interface.this.global.Literal" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.Interface#mkTRUE" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mkTRUE:Interface.this.global.Literal"></a>
+      <a id="mkTRUE:Global.Literal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mkTRUE</span><span class="result">: <a href="../../Global.html#LiteralextendsTrees.this.TreewithTrees.this.TermTreewithTrees.this.LiteralApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Literal">Global.Literal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@mkTRUE:Interface.this.global.Literal" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.Transform#newPhase" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="newPhase(prev:tools.nsc.Phase):Transform.this.StdPhase"></a>
+      <a id="newPhase(nsc.Phase):StdPhase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">newPhase</span><span class="params">(<span name="prev">prev: <a href="../../package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">nsc.Phase</a></span>)</span><span class="result">: <a href="#StdPhaseextendsSubComponent.this.global.GlobalPhase" class="extmbr" name="scala.tools.nsc.SubComponent.StdPhase">StdPhase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@newPhase(prev:tools.nsc.Phase):Transform.this.StdPhase" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a new phase which applies transformer</p><div class="fullcomment"><div class="comment cmt"><p>Create a new phase which applies transformer</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Transform.html" class="extype" name="scala.tools.nsc.transform.Transform">Transform</a> → <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.PatternMatching#newTransformer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="newTransformer(unit:PatternMatching.this.global.CompilationUnit):PatternMatching.this.global.Transformer"></a>
+      <a id="newTransformer(Global.CompilationUnit):Global.Transformer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">newTransformer</span><span class="params">(<span name="unit">unit: <a href="../../Global.html#CompilationUnitextendsCompilationUnits.this.CompilationUnitContextApi" class="extmbr" name="scala.tools.nsc.CompilationUnits.CompilationUnit">Global.CompilationUnit</a></span>)</span><span class="result">: <a href="../../Global.html#TransformerextendsTrees.this.Transformer" class="extmbr" name="scala.tools.nsc.ast.Trees.Transformer">Global.Transformer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@newTransformer(unit:PatternMatching.this.global.CompilationUnit):PatternMatching.this.global.Transformer" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The transformer factory</p><div class="fullcomment"><div class="comment cmt"><p>The transformer factory</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> → <a href="../Transform.html" class="extype" name="scala.tools.nsc.transform.Transform">Transform</a></dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#ownPhase" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ownPhase:scala.tools.nsc.Phase"></a>
+      <a id="ownPhase:nsc.Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ownPhase</span><span class="result">: <a href="../../package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">nsc.Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@ownPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The phase corresponding to this subcomponent in the current compiler run</p><div class="fullcomment"><div class="comment cmt"><p>The phase corresponding to this subcomponent in the current compiler run</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.PatternMatching#phaseName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="phaseName:String"></a>
+      <a id="phaseName:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phaseName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@phaseName:String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The name of the phase</p><div class="fullcomment"><div class="comment cmt"><p>The name of the phase</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> → <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#phaseNewFlags" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="phaseNewFlags:Long"></a>
+      <a id="phaseNewFlags:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phaseNewFlags</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@phaseNewFlags:Long" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">New flags defined by the phase which are not valid before</p><div class="fullcomment"><div class="comment cmt"><p>New flags defined by the phase which are not valid before</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#phaseNextFlags" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="phaseNextFlags:Long"></a>
+      <a id="phaseNextFlags:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phaseNextFlags</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@phaseNextFlags:Long" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">New flags defined by the phase which are not valid until immediately after it</p><div class="fullcomment"><div class="comment cmt"><p>New flags defined by the phase which are not valid until immediately after it</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchCps#removeCPSFromPt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="removeCPSFromPt(pt:MatchCps.this.global.Type):MatchCps.this.global.Type"></a>
+      <a id="removeCPSFromPt(Global.Type):Global.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">removeCPSFromPt</span><span class="params">(<span name="pt">pt: <a href="../../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="../../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@removeCPSFromPt(pt:MatchCps.this.global.Type):MatchCps.this.global.Type" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MatchCps.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCps">MatchCps</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#requires" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="requires:List[String]"></a>
+      <a id="requires:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">requires</span><span class="result">: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@requires:List[String]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Names of phases required by this component.</p><div class="fullcomment"><div class="comment cmt"><p>Names of phases required by this component. Default is <code>Nil</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#runsBefore" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="runsBefore:List[String]"></a>
+      <a id="runsBefore:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runsBefore</span><span class="result">: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@runsBefore:List[String]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Names of phases that must run after this phase.</p><div class="fullcomment"><div class="comment cmt"><p>Names of phases that must run after this phase. Default is <code>Nil</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis#sameValue" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="sameValue(a:TreeAndTypeAnalysis.this.global.Tree,b:TreeAndTypeAnalysis.this.global.Tree):Boolean"></a>
+      <a id="sameValue(Global.Tree,Global.Tree):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sameValue</span><span class="params">(<span name="a">a: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="b">b: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@sameValue(a:TreeAndTypeAnalysis.this.global.Tree,b:TreeAndTypeAnalysis.this.global.Tree):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeAndTypeAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis">TreeAndTypeAnalysis</a></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#terminal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="terminal:Boolean"></a>
+      <a id="terminal:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">terminal</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@terminal:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">True if this phase runs after all other phases.</p><div class="fullcomment"><div class="comment cmt"><p>True if this phase runs after all other phases. Usually, <code>terminal</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@toString():String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.patmat.Interface.vpmName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="vpmName"></a>
+      <a id="vpmName:vpmName"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Interface$vpmName$.html"><span class="name">vpmName</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.Interface@vpmName" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(PatternMatching,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.PatternMatching@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders">
+              <h3>Inherited from <a href="ScalacPatternExpanders.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders">ScalacPatternExpanders</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.MatchWarnings">
+              <h3>Inherited from <a href="MatchWarnings.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchWarnings">MatchWarnings</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.MatchOptimization">
+              <h3>Inherited from <a href="MatchOptimization.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchOptimization">MatchOptimization</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.MatchAnalysis">
+              <h3>Inherited from <a href="MatchAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchAnalysis">MatchAnalysis</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.MatchApproximation">
+              <h3>Inherited from <a href="MatchApproximation.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchApproximation">MatchApproximation</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.Solving">
+              <h3>Inherited from <a href="Solving.html" class="extype" name="scala.tools.nsc.transform.patmat.Solving">Solving</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.ScalaLogic">
+              <h3>Inherited from <a href="ScalaLogic.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalaLogic">ScalaLogic</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis">
+              <h3>Inherited from <a href="TreeAndTypeAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis">TreeAndTypeAnalysis</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.Logic">
+              <h3>Inherited from <a href="Logic.html" class="extype" name="scala.tools.nsc.transform.patmat.Logic">Logic</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.MatchCps">
+              <h3>Inherited from <a href="MatchCps.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCps">MatchCps</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.MatchTreeMaking">
+              <h3>Inherited from <a href="MatchTreeMaking.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTreeMaking">MatchTreeMaking</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.MatchCodeGen">
+              <h3>Inherited from <a href="MatchCodeGen.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCodeGen">MatchCodeGen</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.MatchTranslation">
+              <h3>Inherited from <a href="MatchTranslation.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTranslation">MatchTranslation</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.Interface">
+              <h3>Inherited from <a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.ast.TreeDSL">
+              <h3>Inherited from <a href="../../ast/TreeDSL.html" class="extype" name="scala.tools.nsc.ast.TreeDSL">TreeDSL</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.patmat.Debugging">
+              <h3>Inherited from <a href="Debugging.html" class="extype" name="scala.tools.nsc.transform.patmat.Debugging">Debugging</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.TypingTransformers">
+              <h3>Inherited from <a href="../TypingTransformers.html" class="extype" name="scala.tools.nsc.transform.TypingTransformers">TypingTransformers</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.Transform">
+              <h3>Inherited from <a href="../Transform.html" class="extype" name="scala.tools.nsc.transform.Transform">Transform</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.SubComponent">
+              <h3>Inherited from <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.transform.patmat.PatternMatching">PatternMatching</a>]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

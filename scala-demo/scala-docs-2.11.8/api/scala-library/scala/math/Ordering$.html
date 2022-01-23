@@ -1,0 +1,1261 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>Ordering - Scala Standard Library 2.11.8 - scala.math.Ordering</title>
+          <meta name="description" content="Ordering - Scala Standard Library 2.11.8 - scala.math.Ordering" />
+          <meta name="keywords" content="Ordering Scala Standard Library 2.11.8 scala.math.Ordering" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'scala.math.Ordering$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <a href="Ordering.html" title="See companion trait"><img alt="Object/Trait" src="../../lib/object_to_trait_big.png" /></a>
+        <p id="owner"><a href="../package.html" class="extype" name="scala">scala</a>.<a href="package.html" class="extype" name="scala.math">math</a></p>
+        <h1><a href="Ordering.html" title="See companion trait">Ordering</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="Ordering.html" title="See companion trait">trait Ordering</a>
+            | <a href="package.html" class="extype" name="scala.math">package math</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Ordering</span><span class="result"> extends <a href="LowPriorityOrderingImplicits.html" class="extype" name="scala.math.LowPriorityOrderingImplicits">LowPriorityOrderingImplicits</a> with <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This is the companion object for the <a href="Ordering.html" class="extype" name="scala.math.Ordering">scala.math.Ordering</a> trait.</p><p>It contains many implicit orderings as well as well as methods to construct
+new orderings.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/math/Ordering.scala#L1" target="_blank">Ordering.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a>, <span class="extype" name="java.io.Serializable">java.io.Serializable</span>, <a href="LowPriorityOrderingImplicits.html" class="extype" name="scala.math.LowPriorityOrderingImplicits">LowPriorityOrderingImplicits</a>, <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.math.Ordering"><span>Ordering</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.math.LowPriorityOrderingImplicits"><span>LowPriorityOrderingImplicits</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.math.Ordering.BigDecimalOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BigDecimalOrderingextendsOrdering[scala.math.BigDecimal]"></a>
+      <a id="BigDecimalOrdering:BigDecimalOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$BigDecimalOrdering.html"><span class="name">BigDecimalOrdering</span></a><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@BigDecimalOrderingextendsOrdering[scala.math.BigDecimal]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.BigIntOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BigIntOrderingextendsOrdering[scala.math.BigInt]"></a>
+      <a id="BigIntOrdering:BigIntOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$BigIntOrdering.html"><span class="name">BigIntOrdering</span></a><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="BigInt.html" class="extype" name="scala.math.BigInt">BigInt</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@BigIntOrderingextendsOrdering[scala.math.BigInt]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.BooleanOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BooleanOrderingextendsOrdering[Boolean]"></a>
+      <a id="BooleanOrdering:BooleanOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$BooleanOrdering.html"><span class="name">BooleanOrdering</span></a><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@BooleanOrderingextendsOrdering[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.ByteOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ByteOrderingextendsOrdering[Byte]"></a>
+      <a id="ByteOrdering:ByteOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$ByteOrdering.html"><span class="name">ByteOrdering</span></a><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../Byte.html" class="extype" name="scala.Byte">Byte</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@ByteOrderingextendsOrdering[Byte]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.CharOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CharOrderingextendsOrdering[Char]"></a>
+      <a id="CharOrdering:CharOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$CharOrdering.html"><span class="name">CharOrdering</span></a><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../Char.html" class="extype" name="scala.Char">Char</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@CharOrderingextendsOrdering[Char]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.DoubleOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DoubleOrderingextendsOrdering[Double]"></a>
+      <a id="DoubleOrdering:DoubleOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$DoubleOrdering.html"><span class="name">DoubleOrdering</span></a><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../Double.html" class="extype" name="scala.Double">Double</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@DoubleOrderingextendsOrdering[Double]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.ExtraImplicits" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ExtraImplicitsextendsAnyRef"></a>
+      <a id="ExtraImplicits:ExtraImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$ExtraImplicits.html"><span class="name">ExtraImplicits</span></a><span class="result"> extends <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@ExtraImplicitsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.FloatOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FloatOrderingextendsOrdering[Float]"></a>
+      <a id="FloatOrdering:FloatOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$FloatOrdering.html"><span class="name">FloatOrdering</span></a><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../Float.html" class="extype" name="scala.Float">Float</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@FloatOrderingextendsOrdering[Float]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.IntOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="IntOrderingextendsOrdering[Int]"></a>
+      <a id="IntOrdering:IntOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$IntOrdering.html"><span class="name">IntOrdering</span></a><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../Int.html" class="extype" name="scala.Int">Int</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@IntOrderingextendsOrdering[Int]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.LongOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LongOrderingextendsOrdering[Long]"></a>
+      <a id="LongOrdering:LongOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$LongOrdering.html"><span class="name">LongOrdering</span></a><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../Long.html" class="extype" name="scala.Long">Long</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@LongOrderingextendsOrdering[Long]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.OptionOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OptionOrdering[T]extendsOrdering[Option[T]]"></a>
+      <a id="OptionOrdering[T]:OptionOrdering[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$OptionOrdering.html"><span class="name">OptionOrdering</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../Option.html" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.math.Ordering.OptionOrdering.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@OptionOrdering[T]extendsOrdering[Option[T]]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.ShortOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ShortOrderingextendsOrdering[Short]"></a>
+      <a id="ShortOrdering:ShortOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$ShortOrdering.html"><span class="name">ShortOrdering</span></a><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../Short.html" class="extype" name="scala.Short">Short</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@ShortOrderingextendsOrdering[Short]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.StringOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="StringOrderingextendsOrdering[String]"></a>
+      <a id="StringOrdering:StringOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$StringOrdering.html"><span class="name">StringOrdering</span></a><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@StringOrderingextendsOrdering[String]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.UnitOrdering" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="UnitOrderingextendsOrdering[Unit]"></a>
+      <a id="UnitOrdering:UnitOrdering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$UnitOrdering.html"><span class="name">UnitOrdering</span></a><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../Unit.html" class="extype" name="scala.Unit">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@UnitOrderingextendsOrdering[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@##():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.math.Ordering.BigDecimal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BigDecimal"></a>
+      <a id="BigDecimal:BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$BigDecimal$.html"><span class="name">BigDecimal</span></a><span class="result"> extends <a href="Ordering$$BigDecimalOrdering.html" class="extype" name="scala.math.Ordering.BigDecimalOrdering">BigDecimalOrdering</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.BigInt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BigInt"></a>
+      <a id="BigInt:BigInt"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$BigInt$.html"><span class="name">BigInt</span></a><span class="result"> extends <a href="Ordering$$BigIntOrdering.html" class="extype" name="scala.math.Ordering.BigIntOrdering">BigIntOrdering</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@BigInt" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.Boolean" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Boolean"></a>
+      <a id="Boolean:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$Boolean$.html"><span class="name">Boolean</span></a><span class="result"> extends <a href="Ordering$$BooleanOrdering.html" class="extype" name="scala.math.Ordering.BooleanOrdering">BooleanOrdering</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.Byte" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Byte"></a>
+      <a id="Byte:Byte"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$Byte$.html"><span class="name">Byte</span></a><span class="result"> extends <a href="Ordering$$ByteOrdering.html" class="extype" name="scala.math.Ordering.ByteOrdering">ByteOrdering</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Byte" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.Char" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Char"></a>
+      <a id="Char:Char"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$Char$.html"><span class="name">Char</span></a><span class="result"> extends <a href="Ordering$$CharOrdering.html" class="extype" name="scala.math.Ordering.CharOrdering">CharOrdering</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Char" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.Double" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Double"></a>
+      <a id="Double:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$Double$.html"><span class="name">Double</span></a><span class="result"> extends <a href="Ordering$$DoubleOrdering.html" class="extype" name="scala.math.Ordering.DoubleOrdering">DoubleOrdering</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.Float" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Float"></a>
+      <a id="Float:Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$Float$.html"><span class="name">Float</span></a><span class="result"> extends <a href="Ordering$$FloatOrdering.html" class="extype" name="scala.math.Ordering.FloatOrdering">FloatOrdering</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Float" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.Implicits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Implicits"></a>
+      <a id="Implicits:Implicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$Implicits$.html"><span class="name">Implicits</span></a><span class="result"> extends <a href="Ordering$$ExtraImplicits.html" class="extype" name="scala.math.Ordering.ExtraImplicits">ExtraImplicits</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Implicits" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An object containing implicits which are not in the default scope.</p>
+    </li><li name="scala.math.Ordering.Int" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Int"></a>
+      <a id="Int:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$Int$.html"><span class="name">Int</span></a><span class="result"> extends <a href="Ordering$$IntOrdering.html" class="extype" name="scala.math.Ordering.IntOrdering">IntOrdering</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering#Iterable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Iterable[T](implicitord:scala.math.Ordering[T]):scala.math.Ordering[Iterable[T]]"></a>
+      <a id="Iterable[T](Ordering[T]):Ordering[Iterable[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Iterable</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="ord">ord: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Iterable.T">T</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../package.html#Iterable[+A]=Iterable[A]" class="extmbr" name="scala.Iterable">Iterable</a>[<span class="extype" name="scala.math.Ordering.Iterable.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Iterable[T](implicitord:scala.math.Ordering[T]):scala.math.Ordering[Iterable[T]]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.Long" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Long"></a>
+      <a id="Long:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$Long$.html"><span class="name">Long</span></a><span class="result"> extends <a href="Ordering$$LongOrdering.html" class="extype" name="scala.math.Ordering.LongOrdering">LongOrdering</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Long" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering#Option" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Option[T](implicitord:scala.math.Ordering[T]):scala.math.Ordering[Option[T]]"></a>
+      <a id="Option[T](Ordering[T]):Ordering[Option[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Option</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="ord">ord: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Option.T">T</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<a href="../Option.html" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.math.Ordering.Option.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Option[T](implicitord:scala.math.Ordering[T]):scala.math.Ordering[Option[T]]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.Short" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Short"></a>
+      <a id="Short:Short"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$Short$.html"><span class="name">Short</span></a><span class="result"> extends <a href="Ordering$$ShortOrdering.html" class="extype" name="scala.math.Ordering.ShortOrdering">ShortOrdering</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Short" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.String" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="String"></a>
+      <a id="String:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$String$.html"><span class="name">String</span></a><span class="result"> extends <a href="Ordering$$StringOrdering.html" class="extype" name="scala.math.Ordering.StringOrdering">StringOrdering</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering#Tuple2" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Tuple2[T1,T2](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2]):scala.math.Ordering[(T1,T2)]"></a>
+      <a id="Tuple2[T1,T2](Ordering[T1],Ordering[T2]):Ordering[(T1,T2)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Tuple2</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="ord1">ord1: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple2.T1">T1</span>]</span>, <span name="ord2">ord2: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple2.T2">T2</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[(<span class="extype" name="scala.math.Ordering.Tuple2.T1">T1</span>, <span class="extype" name="scala.math.Ordering.Tuple2.T2">T2</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Tuple2[T1,T2](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2]):scala.math.Ordering[(T1,T2)]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering#Tuple3" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Tuple3[T1,T2,T3](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3]):scala.math.Ordering[(T1,T2,T3)]"></a>
+      <a id="Tuple3[T1,T2,T3](Ordering[T1],Ordering[T2],Ordering[T3]):Ordering[(T1,T2,T3)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Tuple3</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="ord1">ord1: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple3.T1">T1</span>]</span>, <span name="ord2">ord2: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple3.T2">T2</span>]</span>, <span name="ord3">ord3: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple3.T3">T3</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[(<span class="extype" name="scala.math.Ordering.Tuple3.T1">T1</span>, <span class="extype" name="scala.math.Ordering.Tuple3.T2">T2</span>, <span class="extype" name="scala.math.Ordering.Tuple3.T3">T3</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Tuple3[T1,T2,T3](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3]):scala.math.Ordering[(T1,T2,T3)]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering#Tuple4" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Tuple4[T1,T2,T3,T4](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3],implicitord4:scala.math.Ordering[T4]):scala.math.Ordering[(T1,T2,T3,T4)]"></a>
+      <a id="Tuple4[T1,T2,T3,T4](Ordering[T1],Ordering[T2],Ordering[T3],Ordering[T4]):Ordering[(T1,T2,T3,T4)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Tuple4</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="ord1">ord1: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple4.T1">T1</span>]</span>, <span name="ord2">ord2: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple4.T2">T2</span>]</span>, <span name="ord3">ord3: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple4.T3">T3</span>]</span>, <span name="ord4">ord4: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple4.T4">T4</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[(<span class="extype" name="scala.math.Ordering.Tuple4.T1">T1</span>, <span class="extype" name="scala.math.Ordering.Tuple4.T2">T2</span>, <span class="extype" name="scala.math.Ordering.Tuple4.T3">T3</span>, <span class="extype" name="scala.math.Ordering.Tuple4.T4">T4</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Tuple4[T1,T2,T3,T4](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3],implicitord4:scala.math.Ordering[T4]):scala.math.Ordering[(T1,T2,T3,T4)]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering#Tuple5" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Tuple5[T1,T2,T3,T4,T5](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3],implicitord4:scala.math.Ordering[T4],implicitord5:scala.math.Ordering[T5]):scala.math.Ordering[(T1,T2,T3,T4,T5)]"></a>
+      <a id="Tuple5[T1,T2,T3,T4,T5](Ordering[T1],Ordering[T2],Ordering[T3],Ordering[T4],Ordering[T5]):Ordering[(T1,T2,T3,T4,T5)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Tuple5</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="ord1">ord1: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple5.T1">T1</span>]</span>, <span name="ord2">ord2: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple5.T2">T2</span>]</span>, <span name="ord3">ord3: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple5.T3">T3</span>]</span>, <span name="ord4">ord4: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple5.T4">T4</span>]</span>, <span name="ord5">ord5: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple5.T5">T5</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[(<span class="extype" name="scala.math.Ordering.Tuple5.T1">T1</span>, <span class="extype" name="scala.math.Ordering.Tuple5.T2">T2</span>, <span class="extype" name="scala.math.Ordering.Tuple5.T3">T3</span>, <span class="extype" name="scala.math.Ordering.Tuple5.T4">T4</span>, <span class="extype" name="scala.math.Ordering.Tuple5.T5">T5</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Tuple5[T1,T2,T3,T4,T5](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3],implicitord4:scala.math.Ordering[T4],implicitord5:scala.math.Ordering[T5]):scala.math.Ordering[(T1,T2,T3,T4,T5)]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering#Tuple6" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Tuple6[T1,T2,T3,T4,T5,T6](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3],implicitord4:scala.math.Ordering[T4],implicitord5:scala.math.Ordering[T5],implicitord6:scala.math.Ordering[T6]):scala.math.Ordering[(T1,T2,T3,T4,T5,T6)]"></a>
+      <a id="Tuple6[T1,T2,T3,T4,T5,T6](Ordering[T1],Ordering[T2],Ordering[T3],Ordering[T4],Ordering[T5],Ordering[T6]):Ordering[(T1,T2,T3,T4,T5,T6)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Tuple6</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="ord1">ord1: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple6.T1">T1</span>]</span>, <span name="ord2">ord2: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple6.T2">T2</span>]</span>, <span name="ord3">ord3: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple6.T3">T3</span>]</span>, <span name="ord4">ord4: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple6.T4">T4</span>]</span>, <span name="ord5">ord5: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple6.T5">T5</span>]</span>, <span name="ord6">ord6: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple6.T6">T6</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[(<span class="extype" name="scala.math.Ordering.Tuple6.T1">T1</span>, <span class="extype" name="scala.math.Ordering.Tuple6.T2">T2</span>, <span class="extype" name="scala.math.Ordering.Tuple6.T3">T3</span>, <span class="extype" name="scala.math.Ordering.Tuple6.T4">T4</span>, <span class="extype" name="scala.math.Ordering.Tuple6.T5">T5</span>, <span class="extype" name="scala.math.Ordering.Tuple6.T6">T6</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Tuple6[T1,T2,T3,T4,T5,T6](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3],implicitord4:scala.math.Ordering[T4],implicitord5:scala.math.Ordering[T5],implicitord6:scala.math.Ordering[T6]):scala.math.Ordering[(T1,T2,T3,T4,T5,T6)]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering#Tuple7" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Tuple7[T1,T2,T3,T4,T5,T6,T7](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3],implicitord4:scala.math.Ordering[T4],implicitord5:scala.math.Ordering[T5],implicitord6:scala.math.Ordering[T6],implicitord7:scala.math.Ordering[T7]):scala.math.Ordering[(T1,T2,T3,T4,T5,T6,T7)]"></a>
+      <a id="Tuple7[T1,T2,T3,T4,T5,T6,T7](Ordering[T1],Ordering[T2],Ordering[T3],Ordering[T4],Ordering[T5],Ordering[T6],Ordering[T7]):Ordering[(T1,T2,T3,T4,T5,T6,T7)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Tuple7</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="ord1">ord1: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple7.T1">T1</span>]</span>, <span name="ord2">ord2: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple7.T2">T2</span>]</span>, <span name="ord3">ord3: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple7.T3">T3</span>]</span>, <span name="ord4">ord4: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple7.T4">T4</span>]</span>, <span name="ord5">ord5: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple7.T5">T5</span>]</span>, <span name="ord6">ord6: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple7.T6">T6</span>]</span>, <span name="ord7">ord7: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple7.T7">T7</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[(<span class="extype" name="scala.math.Ordering.Tuple7.T1">T1</span>, <span class="extype" name="scala.math.Ordering.Tuple7.T2">T2</span>, <span class="extype" name="scala.math.Ordering.Tuple7.T3">T3</span>, <span class="extype" name="scala.math.Ordering.Tuple7.T4">T4</span>, <span class="extype" name="scala.math.Ordering.Tuple7.T5">T5</span>, <span class="extype" name="scala.math.Ordering.Tuple7.T6">T6</span>, <span class="extype" name="scala.math.Ordering.Tuple7.T7">T7</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Tuple7[T1,T2,T3,T4,T5,T6,T7](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3],implicitord4:scala.math.Ordering[T4],implicitord5:scala.math.Ordering[T5],implicitord6:scala.math.Ordering[T6],implicitord7:scala.math.Ordering[T7]):scala.math.Ordering[(T1,T2,T3,T4,T5,T6,T7)]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering#Tuple8" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Tuple8[T1,T2,T3,T4,T5,T6,T7,T8](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3],implicitord4:scala.math.Ordering[T4],implicitord5:scala.math.Ordering[T5],implicitord6:scala.math.Ordering[T6],implicitord7:scala.math.Ordering[T7],implicitord8:scala.math.Ordering[T8]):scala.math.Ordering[(T1,T2,T3,T4,T5,T6,T7,T8)]"></a>
+      <a id="Tuple8[T1,T2,T3,T4,T5,T6,T7,T8](Ordering[T1],Ordering[T2],Ordering[T3],Ordering[T4],Ordering[T5],Ordering[T6],Ordering[T7],Ordering[T8]):Ordering[(T1,T2,T3,T4,T5,T6,T7,T8)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Tuple8</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="ord1">ord1: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple8.T1">T1</span>]</span>, <span name="ord2">ord2: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple8.T2">T2</span>]</span>, <span name="ord3">ord3: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple8.T3">T3</span>]</span>, <span name="ord4">ord4: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple8.T4">T4</span>]</span>, <span name="ord5">ord5: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple8.T5">T5</span>]</span>, <span name="ord6">ord6: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple8.T6">T6</span>]</span>, <span name="ord7">ord7: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple8.T7">T7</span>]</span>, <span name="ord8">ord8: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple8.T8">T8</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[(<span class="extype" name="scala.math.Ordering.Tuple8.T1">T1</span>, <span class="extype" name="scala.math.Ordering.Tuple8.T2">T2</span>, <span class="extype" name="scala.math.Ordering.Tuple8.T3">T3</span>, <span class="extype" name="scala.math.Ordering.Tuple8.T4">T4</span>, <span class="extype" name="scala.math.Ordering.Tuple8.T5">T5</span>, <span class="extype" name="scala.math.Ordering.Tuple8.T6">T6</span>, <span class="extype" name="scala.math.Ordering.Tuple8.T7">T7</span>, <span class="extype" name="scala.math.Ordering.Tuple8.T8">T8</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Tuple8[T1,T2,T3,T4,T5,T6,T7,T8](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3],implicitord4:scala.math.Ordering[T4],implicitord5:scala.math.Ordering[T5],implicitord6:scala.math.Ordering[T6],implicitord7:scala.math.Ordering[T7],implicitord8:scala.math.Ordering[T8]):scala.math.Ordering[(T1,T2,T3,T4,T5,T6,T7,T8)]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering#Tuple9" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Tuple9[T1,T2,T3,T4,T5,T6,T7,T8,T9](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3],implicitord4:scala.math.Ordering[T4],implicitord5:scala.math.Ordering[T5],implicitord6:scala.math.Ordering[T6],implicitord7:scala.math.Ordering[T7],implicitord8:scala.math.Ordering[T8],implicitord9:scala.math.Ordering[T9]):scala.math.Ordering[(T1,T2,T3,T4,T5,T6,T7,T8,T9)]"></a>
+      <a id="Tuple9[T1,T2,T3,T4,T5,T6,T7,T8,T9](Ordering[T1],Ordering[T2],Ordering[T3],Ordering[T4],Ordering[T5],Ordering[T6],Ordering[T7],Ordering[T8],Ordering[T9]):Ordering[(T1,T2,T3,T4,T5,T6,T7,T8,T9)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Tuple9</span><span class="tparams">[<span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="ord1">ord1: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple9.T1">T1</span>]</span>, <span name="ord2">ord2: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple9.T2">T2</span>]</span>, <span name="ord3">ord3: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple9.T3">T3</span>]</span>, <span name="ord4">ord4: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple9.T4">T4</span>]</span>, <span name="ord5">ord5: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple9.T5">T5</span>]</span>, <span name="ord6">ord6: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple9.T6">T6</span>]</span>, <span name="ord7">ord7: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple9.T7">T7</span>]</span>, <span name="ord8">ord8: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple9.T8">T8</span>]</span>, <span name="ord9">ord9: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.Tuple9.T9">T9</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[(<span class="extype" name="scala.math.Ordering.Tuple9.T1">T1</span>, <span class="extype" name="scala.math.Ordering.Tuple9.T2">T2</span>, <span class="extype" name="scala.math.Ordering.Tuple9.T3">T3</span>, <span class="extype" name="scala.math.Ordering.Tuple9.T4">T4</span>, <span class="extype" name="scala.math.Ordering.Tuple9.T5">T5</span>, <span class="extype" name="scala.math.Ordering.Tuple9.T6">T6</span>, <span class="extype" name="scala.math.Ordering.Tuple9.T7">T7</span>, <span class="extype" name="scala.math.Ordering.Tuple9.T8">T8</span>, <span class="extype" name="scala.math.Ordering.Tuple9.T9">T9</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Tuple9[T1,T2,T3,T4,T5,T6,T7,T8,T9](implicitord1:scala.math.Ordering[T1],implicitord2:scala.math.Ordering[T2],implicitord3:scala.math.Ordering[T3],implicitord4:scala.math.Ordering[T4],implicitord5:scala.math.Ordering[T5],implicitord6:scala.math.Ordering[T6],implicitord7:scala.math.Ordering[T7],implicitord8:scala.math.Ordering[T8],implicitord9:scala.math.Ordering[T9]):scala.math.Ordering[(T1,T2,T3,T4,T5,T6,T7,T8,T9)]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering.Unit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Unit"></a>
+      <a id="Unit:Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$$Unit$.html"><span class="name">Unit</span></a><span class="result"> extends <a href="Ordering$$UnitOrdering.html" class="extype" name="scala.math.Ordering.UnitOrdering">UnitOrdering</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply[T](implicitord:scala.math.Ordering[T]):scala.math.Ordering[T]"></a>
+      <a id="apply[T](Ordering[T]):Ordering[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="ord">ord: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.apply.T">T</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.apply.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@apply[T](implicitord:scala.math.Ordering[T]):scala.math.Ordering[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.math.Ordering#by" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="by[T,S](f:T=&gt;S)(implicitord:scala.math.Ordering[S]):scala.math.Ordering[T]"></a>
+      <a id="by[T,S]((T)⇒S)(Ordering[S]):Ordering[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">by</span><span class="tparams">[<span name="T">T</span>, <span name="S">S</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.math.Ordering.by.T">T</span>) ⇒ <span class="extype" name="scala.math.Ordering.by.S">S</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ord">ord: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.by.S">S</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.by.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@by[T,S](f:T=&gt;S)(implicitord:scala.math.Ordering[S]):scala.math.Ordering[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Given f, a function from T into S, creates an Ordering[T] whose compare
+function is equivalent to:</p><div class="fullcomment"><div class="comment cmt"><p>Given f, a function from T into S, creates an Ordering[T] whose compare
+function is equivalent to:</p><pre><span class="kw">def</span> compare(x:T, y:T) = Ordering[S].compare(f(x), f(y))</pre><p>This function is an analogue to Ordering.on where the Ordering[S]
+parameter is passed implicitly.
+</p></div></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@clone():Object" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.math.LowPriorityOrderingImplicits#comparatorToOrdering" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="comparatorToOrdering[A](implicitcmp:java.util.Comparator[A]):scala.math.Ordering[A]"></a>
+      <a id="comparatorToOrdering[A](Comparator[A]):Ordering[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">comparatorToOrdering</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="cmp">cmp: <span class="extype" name="java.util.Comparator">Comparator</span>[<span class="extype" name="scala.math.LowPriorityOrderingImplicits.comparatorToOrdering.A">A</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.LowPriorityOrderingImplicits.comparatorToOrdering.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@comparatorToOrdering[A](implicitcmp:java.util.Comparator[A]):scala.math.Ordering[A]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="LowPriorityOrderingImplicits.html" class="extype" name="scala.math.LowPriorityOrderingImplicits">LowPriorityOrderingImplicits</a></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.math.Ordering#fromLessThan" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fromLessThan[T](cmp:(T,T)=&gt;Boolean):scala.math.Ordering[T]"></a>
+      <a id="fromLessThan[T]((T,T)⇒Boolean):Ordering[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fromLessThan</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="cmp">cmp: (<span class="extype" name="scala.math.Ordering.fromLessThan.T">T</span>, <span class="extype" name="scala.math.Ordering.fromLessThan.T">T</span>) ⇒ <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Ordering.fromLessThan.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@fromLessThan[T](cmp:(T,T)=&gt;Boolean):scala.math.Ordering[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Construct an Ordering[T] given a function <code>lt</code>.</p>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@notify():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.math.LowPriorityOrderingImplicits#ordered" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ordered[A](implicitevidence$1:A=&gt;Comparable[A]):scala.math.Ordering[A]"></a>
+      <a id="ordered[A]((A)⇒Comparable[A]):Ordering[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ordered</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: (<span class="extype" name="scala.math.LowPriorityOrderingImplicits.ordered.A">A</span>) ⇒ <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="scala.math.LowPriorityOrderingImplicits.ordered.A">A</span>]</span>)</span><span class="result">: <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.LowPriorityOrderingImplicits.ordered.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@ordered[A](implicitevidence$1:A=&gt;Comparable[A]):scala.math.Ordering[A]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This would conflict with all the nice implicit Orderings
+ available, but thanks to the magic of prioritized implicits
+ via subclassing we can make <code>Ordered[A] =&gt; Ordering[A]</code> only
+ turn up if nothing else works.</p><div class="fullcomment"><div class="comment cmt"><p>This would conflict with all the nice implicit Orderings
+ available, but thanks to the magic of prioritized implicits
+ via subclassing we can make <code>Ordered[A] =&gt; Ordering[A]</code> only
+ turn up if nothing else works.  Since <code>Ordered[A]</code> extends
+ <code>Comparable[A]</code> anyway, we can throw in some Java interop too.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="LowPriorityOrderingImplicits.html" class="extype" name="scala.math.LowPriorityOrderingImplicits">LowPriorityOrderingImplicits</a></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@toString():String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@wait():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="arg1">arg1: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.Ordering$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">java.io.Serializable</span></h3>
+            </div><div class="parent" name="scala.math.LowPriorityOrderingImplicits">
+              <h3>Inherited from <a href="LowPriorityOrderingImplicits.html" class="extype" name="scala.math.LowPriorityOrderingImplicits">LowPriorityOrderingImplicits</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

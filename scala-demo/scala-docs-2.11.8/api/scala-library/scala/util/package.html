@@ -1,0 +1,521 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>util - Scala Standard Library 2.11.8 - scala.util</title>
+          <meta name="description" content="util - Scala Standard Library 2.11.8 - scala.util" />
+          <meta name="keywords" content="util Scala Standard Library 2.11.8 scala.util" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'scala.util.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="scala">scala</a></p>
+        <h1>util</h1><span class="permalink">
+      <a href="../../index.html#scala.util.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">util</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.util.DynamicVariable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DynamicVariable[T]extendsAnyRef"></a>
+      <a id="DynamicVariable[T]:DynamicVariable[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DynamicVariable.html"><span class="name">DynamicVariable</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@DynamicVariable[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><code>DynamicVariables</code> provide a binding mechanism where the current
+ value is found through dynamic scope, but where access to the
+ variable itself is resolved through static scope.</p><div class="fullcomment"><div class="comment cmt"><p><code>DynamicVariables</code> provide a binding mechanism where the current
+ value is found through dynamic scope, but where access to the
+ variable itself is resolved through static scope.</p><p> The current value can be retrieved with the value method. New values
+ should be pushed using the <code>withValue</code> method. Values pushed via
+ <code>withValue</code> only stay valid while the <code>withValue</code>'s second argument, a
+ parameterless closure, executes. When the second argument finishes,
+ the variable reverts to the previous value.</p><pre>someDynamicVariable.withValue(newValue) {
+  <span class="cmt">// ... code called in here that calls value ...</span>
+  <span class="cmt">// ... will be given back the newValue ...</span>
+}</pre><p> Each thread gets its own stack of bindings.  When a
+ new thread is created, the <code>DynamicVariable</code> gets a copy
+ of the stack of bindings from the parent thread, and
+ from then on the bindings for the new thread
+ are independent of those for the original thread.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.1, 2007-5-21</p></dd></dl></div>
+    </li><li name="scala.util.Either" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Either[+A,+B]extendsAnyRef"></a>
+      <a id="Either[+A,+B]:Either[A,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Either.html"><span class="name">Either</span></a><span class="tparams">[<span name="A">+A</span>, <span name="B">+B</span>]</span><span class="result"> extends <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@Either[+A,+B]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Represents a value of one of two possible types (a disjoint union.)
+ Instances of Either are either an instance of <a href="Left.html" class="extype" name="scala.util.Left">scala.util.Left</a> or <a href="Right.html" class="extype" name="scala.util.Right">scala.util.Right</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Represents a value of one of two possible types (a disjoint union.)
+ Instances of Either are either an instance of <a href="Left.html" class="extype" name="scala.util.Left">scala.util.Left</a> or <a href="Right.html" class="extype" name="scala.util.Right">scala.util.Right</a>.</p><p> A common use of Either is as an alternative to <a href="../Option.html" class="extype" name="scala.Option">scala.Option</a> for dealing
+ with possible missing values.  In this usage, <a href="../None$.html" class="extype" name="scala.None">scala.None</a> is replaced
+ with a <a href="Left.html" class="extype" name="scala.util.Left">scala.util.Left</a> which can contain useful information.
+ <a href="Right.html" class="extype" name="scala.util.Right">scala.util.Right</a> takes the place of <a href="../Some.html" class="extype" name="scala.Some">scala.Some</a>.  Convention dictates
+ that Left is used for failure and Right is used for success.</p><p> For example, you could use <code>Either[String, Int]</code> to detect whether a
+ received input is a String or an Int.</p><pre><span class="kw">val</span> in = <span class="std">Console</span>.readLine(<span class="lit">"Type Either a string or an Int: "</span>)
+<span class="kw">val</span> result: Either[<span class="std">String</span>,<span class="std">Int</span>] = <span class="kw">try</span> {
+    Right(in.toInt)
+  } <span class="kw">catch</span> {
+    <span class="kw">case</span> e: Exception <span class="kw">=&gt;</span>
+      Left(in)
+}
+
+println( result <span class="kw">match</span> {
+  <span class="kw">case</span> Right(x) <span class="kw">=&gt;</span> <span class="lit">"You passed me the Int: "</span> + x + <span class="lit">", which I will increment. "</span> + x + <span class="lit">" + 1 = "</span> + (x+<span class="num">1</span>)
+  <span class="kw">case</span> Left(x) <span class="kw">=&gt;</span> <span class="lit">"You passed me the String: "</span> + x
+})</pre><p> A <i>projection</i> can be used to selectively operate on a value of type Either,
+ depending on whether it is of type Left or Right. For example, to transform an
+ Either using a function, in the case where it's a Left, one can first apply
+ the <code>left</code> projection and invoke <code>map</code> on that projected Either. If a <code>right</code>
+ projection is applied to that Left, the original Left is returned, unmodified.</p><pre><span class="kw">val</span> l: Either[<span class="std">String</span>, <span class="std">Int</span>] = Left(<span class="lit">"flower"</span>)
+<span class="kw">val</span> r: Either[<span class="std">String</span>, <span class="std">Int</span>] = Right(<span class="num">12</span>)
+l.left.map(_.size): Either[<span class="std">Int</span>, <span class="std">Int</span>] <span class="cmt">// Left(6)</span>
+r.left.map(_.size): Either[<span class="std">Int</span>, <span class="std">Int</span>] <span class="cmt">// Right(12)</span>
+l.right.map(_.toDouble): Either[<span class="std">String</span>, <span class="std">Double</span>] <span class="cmt">// Left("flower")</span>
+r.right.map(_.toDouble): Either[<span class="std">String</span>, <span class="std">Double</span>] <span class="cmt">// Right(12.0)</span></pre><p> Like with other types which define a <code>map</code> method, the same can be achieved
+ using a for-comprehension:</p><pre><span class="kw">for</span> (s <span class="kw">&lt;-</span> l.left) <span class="kw">yield</span> s.size <span class="cmt">// Left(6)</span></pre><p> To support multiple projections as generators in for-comprehensions, the Either
+ type also defines a <code>flatMap</code> method.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.0, 11/10/2008</p></dd><dt>Since</dt><dd><p>2.7</p></dd></dl></div>
+    </li><li name="scala.util.Failure" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Failure[+T]extendsTry[T]withProductwithSerializable"></a>
+      <a id="Failure[+T]:Failure[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Failure.html"><span class="name">Failure</span></a><span class="tparams">[<span name="T">+T</span>]</span><span class="params">(<span name="exception">exception: <a href="../package.html#Throwable=Throwable" class="extmbr" name="scala.Throwable">Throwable</a></span>)</span><span class="result"> extends <a href="Try.html" class="extype" name="scala.util.Try">Try</a>[<span class="extype" name="scala.util.Failure.T">T</span>] with <a href="../Product.html" class="extype" name="scala.Product">Product</a> with <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@Failure[+T]extendsTry[T]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.util.Left" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Left[+A,+B]extendsEither[A,B]withProductwithSerializable"></a>
+      <a id="Left[+A,+B]:Left[A,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Left.html"><span class="name">Left</span></a><span class="tparams">[<span name="A">+A</span>, <span name="B">+B</span>]</span><span class="params">(<span name="a">a: <span class="extype" name="scala.util.Left.A">A</span></span>)</span><span class="result"> extends <a href="Either.html" class="extype" name="scala.util.Either">Either</a>[<span class="extype" name="scala.util.Left.A">A</span>, <span class="extype" name="scala.util.Left.B">B</span>] with <a href="../Product.html" class="extype" name="scala.Product">Product</a> with <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@Left[+A,+B]extendsEither[A,B]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The left side of the disjoint union, as opposed to the <a href="Right.html" class="extype" name="scala.util.Right">scala.util.Right</a> side.</p><div class="fullcomment"><div class="comment cmt"><p>The left side of the disjoint union, as opposed to the <a href="Right.html" class="extype" name="scala.util.Right">scala.util.Right</a> side.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.0, 11/10/2008</p></dd></dl></div>
+    </li><li name="scala.util.Random" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RandomextendsSerializable"></a>
+      <a id="Random:Random"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Random.html"><span class="name">Random</span></a><span class="result"> extends <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@RandomextendsSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="scala.util.Right" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Right[+A,+B]extendsEither[A,B]withProductwithSerializable"></a>
+      <a id="Right[+A,+B]:Right[A,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Right.html"><span class="name">Right</span></a><span class="tparams">[<span name="A">+A</span>, <span name="B">+B</span>]</span><span class="params">(<span name="b">b: <span class="extype" name="scala.util.Right.B">B</span></span>)</span><span class="result"> extends <a href="Either.html" class="extype" name="scala.util.Either">Either</a>[<span class="extype" name="scala.util.Right.A">A</span>, <span class="extype" name="scala.util.Right.B">B</span>] with <a href="../Product.html" class="extype" name="scala.Product">Product</a> with <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@Right[+A,+B]extendsEither[A,B]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The right side of the disjoint union, as opposed to the <a href="Left.html" class="extype" name="scala.util.Left">scala.util.Left</a> side.</p><div class="fullcomment"><div class="comment cmt"><p>The right side of the disjoint union, as opposed to the <a href="Left.html" class="extype" name="scala.util.Left">scala.util.Left</a> side.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.0, 11/10/2008</p></dd></dl></div>
+    </li><li name="scala.util.Success" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Success[+T]extendsTry[T]withProductwithSerializable"></a>
+      <a id="Success[+T]:Success[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Success.html"><span class="name">Success</span></a><span class="tparams">[<span name="T">+T</span>]</span><span class="params">(<span name="value">value: <span class="extype" name="scala.util.Success.T">T</span></span>)</span><span class="result"> extends <a href="Try.html" class="extype" name="scala.util.Try">Try</a>[<span class="extype" name="scala.util.Success.T">T</span>] with <a href="../Product.html" class="extype" name="scala.Product">Product</a> with <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@Success[+T]extendsTry[T]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.util.Try" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Try[+T]extendsAnyRef"></a>
+      <a id="Try[+T]:Try[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Try.html"><span class="name">Try</span></a><span class="tparams">[<span name="T">+T</span>]</span><span class="result"> extends <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@Try[+T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The <code>Try</code> type represents a computation that may either result in an exception, or return a
+successfully computed value.</p><div class="fullcomment"><div class="comment cmt"><p>The <code>Try</code> type represents a computation that may either result in an exception, or return a
+successfully computed value. It's similar to, but semantically different from the <a href="Either.html" class="extype" name="scala.util.Either">scala.util.Either</a> type.</p><p>Instances of <code>Try[T]</code>, are either an instance of <a href="Success.html" class="extype" name="scala.util.Success">scala.util.Success</a>[T] or <a href="Failure.html" class="extype" name="scala.util.Failure">scala.util.Failure</a>[T].</p><p>For example, <code>Try</code> can be used to perform division on a user-defined input, without the need to do explicit
+exception-handling in all of the places that an exception might occur.</p><p>Example:</p><pre><span class="kw">import</span> scala.io.StdIn
+<span class="kw">import</span> scala.util.{Try, Success, Failure}
+
+<span class="kw">def</span> divide: Try[<span class="std">Int</span>] = {
+  <span class="kw">val</span> dividend = Try(StdIn.readLine(<span class="lit">"Enter an Int that you'd like to divide:\n"</span>).toInt)
+  <span class="kw">val</span> divisor = Try(StdIn.readLine(<span class="lit">"Enter an Int that you'd like to divide by:\n"</span>).toInt)
+  <span class="kw">val</span> problem = dividend.flatMap(x <span class="kw">=&gt;</span> divisor.map(y <span class="kw">=&gt;</span> x/y))
+  problem <span class="kw">match</span> {
+    <span class="kw">case</span> Success(v) <span class="kw">=&gt;</span>
+      println(<span class="lit">"Result of "</span> + dividend.get + <span class="lit">"/"</span>+ divisor.get +<span class="lit">" is: "</span> + v)
+      Success(v)
+    <span class="kw">case</span> Failure(e) <span class="kw">=&gt;</span>
+      println(<span class="lit">"You must've divided by zero or entered something that's not an Int. Try again!"</span>)
+      println(<span class="lit">"Info from the exception: "</span> + e.getMessage)
+      divide
+  }
+}</pre><p>An important property of <code>Try</code> shown in the above example is its ability to <i>pipeline</i>, or chain, operations,
+catching exceptions along the way. The <code>flatMap</code> and <code>map</code> combinators in the above example each essentially
+pass off either their successfully completed value, wrapped in the <code>Success</code> type for it to be further operated
+upon by the next combinator in the chain, or the exception wrapped in the <code>Failure</code> type usually to be simply
+passed on down the chain. Combinators such as <code>recover</code> and <code>recoverWith</code> are designed to provide some type of
+default behavior in the case of failure.</p><p><i>Note</i>: only non-fatal exceptions are caught by the combinators on <code>Try</code> (see <a href="control/NonFatal$.html" class="extype" name="scala.util.control.NonFatal">scala.util.control.NonFatal</a>).
+Serious system errors, on the other hand, will be thrown.</p><p><i>Note:</i>: all Try combinators will catch exceptions and return failure unless otherwise specified in the documentation.</p><p><code>Try</code> comes to the Scala standard library after years of use as an integral part of Twitter's stack.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.10</p></dd></dl></div>
+    </li><li name="scala.util.MurmurHash" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MurmurHash[T]extendsT=&gt;Unit"></a>
+      <a id="MurmurHash[T]:MurmurHash[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MurmurHash.html"><span class="name deprecated" title="Deprecated: (Since version 2.10.0) Use the object MurmurHash3 instead.">MurmurHash</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends (<span class="extype" name="scala.util.MurmurHash.T">T</span>) ⇒ <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@MurmurHash[T]extendsT=&gt;Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A class designed to generate well-distributed non-cryptographic
+ hashes.</p><div class="fullcomment"><div class="comment cmt"><p>A class designed to generate well-distributed non-cryptographic
+ hashes.  It is designed to be passed to a collection's foreach method,
+ or can take individual hash values with append.  Its own hash code is
+ set equal to the hash code of whatever it is hashing.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> Use the object MurmurHash3 instead.</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.util.Either" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Either"></a>
+      <a id="Either:Either"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Either$.html"><span class="name">Either</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@Either" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.util.Properties" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Properties"></a>
+      <a id="Properties:Properties"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Properties$.html"><span class="name">Properties</span></a><span class="result"> extends <span class="extype" name="scala.util.PropertiesTrait">PropertiesTrait</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@Properties" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Loads <code>library.properties</code> from the jar.</p>
+    </li><li name="scala.util.Random" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Random"></a>
+      <a id="Random:Random"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Random$.html"><span class="name">Random</span></a><span class="result"> extends <a href="Random.html" class="extype" name="scala.util.Random">Random</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@Random" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The object <code>Random</code> offers a default implementation
+ of scala.util.Random and random-related convenience methods.</p><div class="fullcomment"><div class="comment cmt"><p>The object <code>Random</code> offers a default implementation
+ of scala.util.Random and random-related convenience methods.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.util.Sorting" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Sorting"></a>
+      <a id="Sorting:Sorting"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Sorting$.html"><span class="name">Sorting</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@Sorting" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The <code>Sorting</code> object provides convenience wrappers for <code>java.util.Arrays.sort</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The <code>Sorting</code> object provides convenience wrappers for <code>java.util.Arrays.sort</code>.
+Methods that defer to <code>java.util.Arrays.sort</code> say that they do or under what
+conditions that they do.</p><p><code>Sorting</code> also implements a general-purpose quicksort and stable (merge) sort
+for those cases where <code>java.util.Arrays.sort</code> could only be used at the cost
+of a large memory penalty.  If performance rather than memory usage is the
+primary concern, one may wish to find alternate strategies to use
+<code>java.util.Arrays.sort</code> directly e.g. by boxing primitives to use
+a custom ordering on them.</p><p><code>Sorting</code> provides methods where you can provide a comparison function, or
+can request a sort of items that are <a href="../math/Ordered.html" class="extype" name="scala.math.Ordered">scala.math.Ordered</a> or that
+otherwise have an implicit or explicit <a href="../math/Ordering.html" class="extype" name="scala.math.Ordering">scala.math.Ordering</a>.</p><p>Note also that high-performance non-default sorts for numeric types
+are not provided.  If this is required, it is advisable to investigate
+other libraries that cover this use case.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.1</p></dd></dl></div>
+    </li><li name="scala.util.Try" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Try"></a>
+      <a id="Try:Try"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Try$.html"><span class="name">Try</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@Try" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.util.control" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="control"></a>
+      <a id="control:control"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="control/package.html"><span class="name">control</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@control" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.util.hashing" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="hashing"></a>
+      <a id="hashing:hashing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="hashing/package.html"><span class="name">hashing</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@hashing" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.util.matching" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="matching"></a>
+      <a id="matching:matching"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="matching/package.html"><span class="name">matching</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@matching" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="scala.util.MurmurHash" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MurmurHash"></a>
+      <a id="MurmurHash:MurmurHash"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MurmurHash$.html"><span class="name deprecated" title="Deprecated: (Since version 2.10.0) Use the object MurmurHash3 instead.">MurmurHash</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.util.package@MurmurHash" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An object designed to generate well-distributed non-cryptographic
+ hashes.</p><div class="fullcomment"><div class="comment cmt"><p>An object designed to generate well-distributed non-cryptographic
+ hashes.  It is designed to hash a collection of integers; along with
+ the integers to hash, it generates two magic streams of integers to
+ increase the distribution of repetitive input sequences.  Thus,
+ three methods need to be called at each step (to start and to
+ incorporate a new integer) to update the values.  Only one method
+ needs to be called to finalize the hash.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> Use the object MurmurHash3 instead.</p></dd></dl></div>
+    </li></ol>
+            </div>
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

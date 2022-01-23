@@ -1,0 +1,1060 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>DerivedFromValDef - Scala Compiler 2.11.8 - scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef</title>
+          <meta name="description" content="DerivedFromValDef - Scala Compiler 2.11.8 - scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef" />
+          <meta name="keywords" content="DerivedFromValDef Scala Compiler 2.11.8 scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Trait" src="../../../../lib/trait_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="scala">scala</a>.<a href="../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="package.html" class="extype" name="scala.tools.nsc.typechecker">typechecker</a>.<a href="MethodSynthesis.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis">MethodSynthesis</a>.<a href="MethodSynthesis$MethodSynth.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth">MethodSynth</a></p>
+        <h1>DerivedFromValDef</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="MethodSynthesis$MethodSynth.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth">package MethodSynth</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DerivedFromValDef</span><span class="result"> extends <a href="Namers$Namer.html#DerivedFromMemberDefextendsMethodSynth.this.Derived" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromMemberDef">Namers.Namer.DerivedFromMemberDef</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/compiler/scala/tools/nsc/typechecker/MethodSynthesis.scala#L1" target="_blank">MethodSynthesis.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="Namers$Namer.html#DerivedFromMemberDefextendsMethodSynth.this.Derived" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromMemberDef">Namers.Namer.DerivedFromMemberDef</a>, <a href="Namers$Namer.html#DerivedextendsAnyRef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived">Namers.Namer.Derived</a>, <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">Known Subclasses</span>
+            <div class="subClasses hiddenContent"><a href="MethodSynthesis$MethodSynth$AnyBeanGetter.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.AnyBeanGetter">AnyBeanGetter</a>, <a href="MethodSynthesis$MethodSynth$BaseGetter.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.BaseGetter">BaseGetter</a>, <a href="MethodSynthesis$MethodSynth$BeanAccessor.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.BeanAccessor">BeanAccessor</a>, <a href="MethodSynthesis$MethodSynth$BeanGetter.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.BeanGetter">BeanGetter</a>, <a href="MethodSynthesis$MethodSynth$BeanSetter.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.BeanSetter">BeanSetter</a>, <a href="MethodSynthesis$MethodSynth$BooleanBeanGetter.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.BooleanBeanGetter">BooleanBeanGetter</a>, <a href="MethodSynthesis$MethodSynth$DerivedGetter.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedGetter">DerivedGetter</a>, <a href="MethodSynthesis$MethodSynth$DerivedSetter.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedSetter">DerivedSetter</a>, <a href="MethodSynthesis$MethodSynth$Field.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Field">Field</a>, <a href="MethodSynthesis$MethodSynth$Getter.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Getter">Getter</a>, <a href="MethodSynthesis$MethodSynth$LazyValGetter.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.LazyValGetter">LazyValGetter</a>, <a href="MethodSynthesis$MethodSynth$NoSymbolBeanGetter.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.NoSymbolBeanGetter">NoSymbolBeanGetter</a>, <a href="MethodSynthesis$MethodSynth$Param.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Param">Param</a>, <a href="MethodSynthesis$MethodSynth$Setter.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Setter">Setter</a></div>
+          </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 872.50 155.00" height="155pt" width="873pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 151)" class="graph" id="graph0"><polygon points="-4,4 -4,-151 868.5,-151 868.5,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef (this trait)" xlink:href="#inheritance-diagram"><polygon points="566,-86 372,-86 372,-61 566,-61 566,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../lib/trait_diagram.png" y="-80.5" x="382" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="403" text-anchor="start">Namers.Namer.DerivedFromValDef</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.BeanAccessor" xlink:href="MethodSynthesis$MethodSynth$BeanAccessor.html#inheritance-diagram"><polygon points="176,-25 1.42109e-14,-25 1.42109e-14,-0 176,-0 176,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../lib/class_diagram.png" y="-19.5" x="10" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="31" text-anchor="start">Namers.Namer.BeanAccessor</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="Namers.Namer.BeanAccessor is a subtype of Namers.Namer.DerivedFromValDef"><path d="M389.471,-60.1844C322.651,-49.8371 227.867,-35.1591 162.502,-25.0371" stroke="#d4d4d4" fill="none"></path><polygon points="389.426,-61.9483 394.635,-60.9841 389.962,-58.4895 389.426,-61.9483" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedGetter" xlink:href="MethodSynthesis$MethodSynth$DerivedGetter.html#inheritance-diagram"><polygon points="365.5,-25 194.5,-25 194.5,-0 365.5,-0 365.5,-25" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../lib/trait_diagram.png" y="-19.5" x="205" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="226" text-anchor="start">Namers.Namer.DerivedGetter</text></a></g></g><!-- node0&#45;&gt;node2 --><g class="edge inheritance" id="graph1_0_2"><g id="a_inheritance|graph1_0_2"><a xlink:title="Namers.Namer.DerivedGetter is a subtype of Namers.Namer.DerivedFromValDef"><path d="M426.939,-59.3697C394.026,-49.0954 348.695,-34.9445 317.119,-25.0875" stroke="#d4d4d4" fill="none"></path><polygon points="426.816,-61.1646 432.11,-60.9841 427.859,-57.8236 426.816,-61.1646" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedSetter" xlink:href="MethodSynthesis$MethodSynth$DerivedSetter.html#inheritance-diagram"><polygon points="554,-25 384,-25 384,-0 554,-0 554,-25" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../lib/trait_diagram.png" y="-19.5" x="394" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="415" text-anchor="start">Namers.Namer.DerivedSetter</text></a></g></g><!-- node0&#45;&gt;node3 --><g class="edge inheritance" id="graph1_0_3"><g id="a_inheritance|graph1_0_3"><a xlink:title="Namers.Namer.DerivedSetter is a subtype of Namers.Namer.DerivedFromValDef"><path d="M469,-55.6874C469,-45.9173 469,-33.8534 469,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="467.25,-55.8435 469,-60.8435 470.75,-55.8435 467.25,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node class" id="graph1_4"><g id="a_class|graph1_4"><a xlink:title="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Field" xlink:href="MethodSynthesis$MethodSynth$Field.html#inheritance-diagram"><polygon points="705.5,-25 572.5,-25 572.5,-0 705.5,-0 705.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../lib/class_diagram.png" y="-19.5" x="583" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="604" text-anchor="start">Namers.Namer.Field</text></a></g></g><!-- node0&#45;&gt;node4 --><g class="edge inheritance" id="graph1_0_4"><g id="a_inheritance|graph1_0_4"><a xlink:title="Namers.Namer.Field is a subtype of Namers.Namer.DerivedFromValDef"><path d="M507.199,-59.2427C536.772,-48.979 577.328,-34.904 605.612,-25.0875" stroke="#d4d4d4" fill="none"></path><polygon points="506.331,-57.6914 502.181,-60.9841 507.479,-60.998 506.331,-57.6914" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node class" id="graph1_5"><g id="a_class|graph1_5"><a xlink:title="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Param" xlink:href="MethodSynthesis$MethodSynth$Param.html#inheritance-diagram"><polygon points="864.5,-25 723.5,-25 723.5,-0 864.5,-0 864.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../lib/class_diagram.png" y="-19.5" x="734" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="755" text-anchor="start">Namers.Namer.Param</text></a></g></g><!-- node0&#45;&gt;node5 --><g class="edge inheritance" id="graph1_0_5"><g id="a_inheritance|graph1_0_5"><a xlink:title="Namers.Namer.Param is a subtype of Namers.Namer.DerivedFromValDef"><path d="M537.527,-60.0598C594.486,-49.7195 674.915,-35.1186 730.448,-25.0371" stroke="#d4d4d4" fill="none"></path><polygon points="537.042,-58.3691 532.435,-60.9841 537.667,-61.8128 537.042,-58.3691" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6 --><g class="node trait" id="graph1_6"><g id="a_trait|graph1_6"><a xlink:title="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromMemberDef" xlink:href="MethodSynthesis$MethodSynth$DerivedFromMemberDef.html#inheritance-diagram"><polygon points="577,-147 361,-147 361,-122 577,-122 577,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../lib/trait_diagram.png" y="-141.5" x="371" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="392" text-anchor="start">Namers.Namer.DerivedFromMemberDef</text></a></g></g><!-- node6&#45;&gt;node0 --><g class="edge inheritance" id="graph1_6_0"><g id="a_inheritance|graph1_6_0"><a xlink:title="Namers.Namer.DerivedFromValDef is a subtype of Namers.Namer.DerivedFromMemberDef"><path d="M469,-116.687C469,-106.917 469,-94.8534 469,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="467.25,-116.843 469,-121.843 470.75,-116.844 467.25,-116.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef"><span>DerivedFromValDef</span></li><li class="in" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromMemberDef"><span>DerivedFromMemberDef</span></li><li class="in" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived"><span>Derived</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#category" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="category:MethodSynthesis.this.global.Symbol"></a>
+      <a id="category:Global.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">category</span><span class="result">: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@category:MethodSynthesis.this.global.Symbol" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Which meta-annotation is associated with this kind of entity.</p><div class="fullcomment"><div class="comment cmt"><p>Which meta-annotation is associated with this kind of entity.
+ Presently one of: field, getter, setter, beanGetter, beanSetter, param.
+</p></div></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived#flagsExtra" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="flagsExtra:Long"></a>
+      <a id="flagsExtra:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flagsExtra</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@flagsExtra:Long" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The flags that the derived symbol has in addition to those retained from
+ the original symbol</p><div class="fullcomment"><div class="comment cmt"><p>The flags that the derived symbol has in addition to those retained from
+ the original symbol</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MethodSynthesis$MethodSynth$Derived.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived">Derived</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived#flagsMask" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="flagsMask:Long"></a>
+      <a id="flagsMask:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flagsMask</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@flagsMask:Long" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The flags that are retained from the original symbol</p><div class="fullcomment"><div class="comment cmt"><p>The flags that are retained from the original symbol</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MethodSynthesis$MethodSynth$Derived.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived">Derived</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived#name" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="name:MethodSynthesis.this.global.TermName"></a>
+      <a id="name:Global.TermName"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">name</span><span class="result">: <a href="../Global.html#TermNameextendsNames.this.NamewithNames.this.TermNameApi" class="extmbr" name="scala.tools.nsc.Global.TermName">Global.TermName</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@name:MethodSynthesis.this.global.TermName" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The name of the method</p><div class="fullcomment"><div class="comment cmt"><p>The name of the method</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MethodSynthesis$MethodSynth$Derived.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived">Derived</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#tree" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="tree:MethodSynthesis.this.global.ValDef"></a>
+      <a id="tree:Global.ValDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tree</span><span class="result">: <a href="../Global.html#ValDefextendsTrees.this.ValOrDefDefwithTrees.this.ValDefApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.ValDef">Global.ValDef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@tree:MethodSynthesis.this.global.ValDef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The tree from which we are deriving a synthetic member.</p><div class="fullcomment"><div class="comment cmt"><p>The tree from which we are deriving a synthetic member. Typically, that's
+ given as an argument of the instance.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">DerivedFromValDef</a> → <a href="MethodSynthesis$MethodSynth$DerivedFromMemberDef.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromMemberDef">DerivedFromMemberDef</a> → <a href="MethodSynthesis$MethodSynth$Derived.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived">Derived</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@##():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a> to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>] performed by method any2stringadd in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(Namers.Namer.DerivedFromValDef,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromMemberDef#basisSym" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="basisSym:MethodSynthesis.this.global.Symbol"></a>
+      <a id="basisSym:Global.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">basisSym</span><span class="result">: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@basisSym:MethodSynthesis.this.global.Symbol" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MethodSynthesis$MethodSynth$DerivedFromMemberDef.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromMemberDef">DerivedFromMemberDef</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#completer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="completer(sym:MethodSynthesis.this.global.Symbol):MethodSynthesis.this.TypeCompleterwithMethodSynthesis.this.LockingTypeCompleterwithMethodSynthesis.this.global.FlagAgnosticCompleter"></a>
+      <a id="completer(Global.Symbol):Analyzer.TypeCompleterwithAnalyzer.LockingTypeCompleterwithGlobal.FlagAgnosticCompleter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">completer</span><span class="params">(<span name="sym">sym: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <a href="Analyzer.html#TypeCompleterextendsNamers.this.global.LazyType" class="extmbr" name="scala.tools.nsc.typechecker.Namers.TypeCompleter">Analyzer.TypeCompleter</a> with <a href="Analyzer.html#LockingTypeCompleterextendsNamers.this.TypeCompleter" class="extmbr" name="scala.tools.nsc.typechecker.Namers.LockingTypeCompleter">Analyzer.LockingTypeCompleter</a> with <a href="../Global.html#FlagAgnosticCompleterextendsTypes.this.LazyType" class="extmbr" name="scala.tools.nsc.Global.FlagAgnosticCompleter">Global.FlagAgnosticCompleter</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@completer(sym:MethodSynthesis.this.global.Symbol):MethodSynthesis.this.TypeCompleterwithMethodSynthesis.this.LockingTypeCompleterwithMethodSynthesis.this.global.FlagAgnosticCompleter" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">type completer for the synthetic member.</p><div class="fullcomment"><div class="comment cmt"><p>type completer for the synthetic member.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">DerivedFromValDef</a> → <a href="MethodSynthesis$MethodSynth$Derived.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived">Derived</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#createAndEnterSymbol" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="createAndEnterSymbol():MethodSynthesis.this.global.Symbol"></a>
+      <a id="createAndEnterSymbol():Global.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">createAndEnterSymbol</span><span class="params">()</span><span class="result">: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@createAndEnterSymbol():MethodSynthesis.this.global.Symbol" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#derive" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="derive(initial:List[MethodSynthesis.this.global.AnnotationInfo]):MethodSynthesis.this.global.Tree"></a>
+      <a id="derive(List[Global.AnnotationInfo]):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">derive</span><span class="params">(<span name="initial">initial: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#AnnotationInfoextendsAnnotationInfos.this.AnnotationApi" class="extmbr" name="scala.tools.nsc.Global.AnnotationInfo">Global.AnnotationInfo</a>]</span>)</span><span class="result">: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@derive(initial:List[MethodSynthesis.this.global.AnnotationInfo]):MethodSynthesis.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#derivedMods" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="derivedMods:MethodSynthesis.this.global.Modifiers"></a>
+      <a id="derivedMods:Global.Modifiers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">derivedMods</span><span class="result">: <a href="../Global.html#ModifiersextendsTrees.this.ModifiersApiwithHasFlagswithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Modifiers">Global.Modifiers</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@derivedMods:MethodSynthesis.this.global.Modifiers" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#derivedSym" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="derivedSym:MethodSynthesis.this.global.Symbol"></a>
+      <a id="derivedSym:Global.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">derivedSym</span><span class="result">: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@derivedSym:MethodSynthesis.this.global.Symbol" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The derived symbol.</p><div class="fullcomment"><div class="comment cmt"><p>The derived symbol. It is assumed that this symbol already exists and has been
+ entered in the parent scope when derivedSym is called</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">DerivedFromValDef</a> → <a href="MethodSynthesis$MethodSynth$Derived.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived">Derived</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#derivedTree" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="derivedTree:MethodSynthesis.this.global.Tree"></a>
+      <a id="derivedTree:Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">derivedTree</span><span class="result">: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@derivedTree:MethodSynthesis.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The definition tree of the derived symbol.</p><div class="fullcomment"><div class="comment cmt"><p>The definition tree of the derived symbol.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">DerivedFromValDef</a> → <a href="MethodSynthesis$MethodSynth$Derived.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived">Derived</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#enclClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enclClass:MethodSynthesis.this.global.Symbol"></a>
+      <a id="enclClass:Global.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enclClass</span><span class="result">: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@enclClass:MethodSynthesis.this.global.Symbol" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">DerivedFromValDef</a> → <a href="MethodSynthesis$MethodSynth$DerivedFromMemberDef.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromMemberDef">DerivedFromMemberDef</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((Namers.Namer.DerivedFromValDef)⇒Boolean,⇒Any):Namers.Namer.DerivedFromValDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((Namers.Namer.DerivedFromValDef)⇒Boolean):Namers.Namer.DerivedFromValDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):Namers.Namer.DerivedFromValDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):Namers.Namer.DerivedFromValDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#fieldSelection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fieldSelection:MethodSynthesis.this.global.Select"></a>
+      <a id="fieldSelection:Global.Select"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fieldSelection</span><span class="result">: <a href="../Global.html#SelectextendsTrees.this.SymTreewithTrees.this.RefTreewithTrees.this.SelectApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Select">Global.Select</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@fieldSelection:MethodSynthesis.this.global.Select" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a> to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>] performed by method StringFormat in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#isDeferred" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isDeferred:Boolean"></a>
+      <a id="isDeferred:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isDeferred</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@isDeferred:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#isSetter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isSetter:Boolean"></a>
+      <a id="isSetter:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isSetter</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@isSetter:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#keepClean" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="keepClean:Boolean"></a>
+      <a id="keepClean:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">keepClean</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@keepClean:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromMemberDef#mods" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mods:MethodSynthesis.this.global.Modifiers"></a>
+      <a id="mods:Global.Modifiers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mods</span><span class="result">: <a href="../Global.html#ModifiersextendsTrees.this.ModifiersApiwithHasFlagswithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Modifiers">Global.Modifiers</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@mods:MethodSynthesis.this.global.Modifiers" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="MethodSynthesis$MethodSynth$DerivedFromMemberDef.html" class="extype" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromMemberDef">DerivedFromMemberDef</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@toString():String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef#validate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="validate():Unit"></a>
+      <a id="validate():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">validate</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@validate():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(Namers.Namer.DerivedFromValDef,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.MethodSynthesis$MethodSynth$DerivedFromValDef@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromMemberDef">
+              <h3>Inherited from <a href="Namers$Namer.html#DerivedFromMemberDefextendsMethodSynth.this.Derived" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromMemberDef">Namers.Namer.DerivedFromMemberDef</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived">
+              <h3>Inherited from <a href="Namers$Namer.html#DerivedextendsAnyRef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.Derived">Namers.Namer.Derived</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="Namers$Namer.html#DerivedFromValDefextendsMethodSynth.this.DerivedFromMemberDef" class="extmbr" name="scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.DerivedFromValDef">Namers.Namer.DerivedFromValDef</a>]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

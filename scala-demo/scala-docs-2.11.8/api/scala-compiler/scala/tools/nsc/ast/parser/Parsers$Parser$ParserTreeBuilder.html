@@ -1,0 +1,1262 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>ParserTreeBuilder - Scala Compiler 2.11.8 - scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder</title>
+          <meta name="description" content="ParserTreeBuilder - Scala Compiler 2.11.8 - scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder" />
+          <meta name="keywords" content="ParserTreeBuilder Scala Compiler 2.11.8 scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.ast">ast</a>.<a href="package.html" class="extype" name="scala.tools.nsc.ast.parser">parser</a>.<a href="Parsers.html" class="extype" name="scala.tools.nsc.ast.parser.Parsers">Parsers</a>.<a href="Parsers$Parser.html" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser">Parser</a></p>
+        <h1>ParserTreeBuilder</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="Parsers$Parser.html" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser">package Parser</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ParserTreeBuilder</span><span class="result"> extends <a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/compiler/scala/tools/nsc/ast/parser/Parsers.scala#L1" target="_blank">Parsers.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a>, <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 178.00 118.00" height="118pt" width="178pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="graph0"><polygon points="-4,4 -4,-114 174,-114 174,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder (this class)" xlink:href="#inheritance-diagram"><polygon points="146,-49 24,-49 24,-24 146,-24 146,-49" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-43.5" x="34" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-33.5" x="55" text-anchor="start">ParserTreeBuilder</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.tools.nsc.ast.parser.TreeBuilder" xlink:href="TreeBuilder.html#inheritance-diagram"><polygon points="131.5,-110 38.5,-110 38.5,-85 131.5,-85 131.5,-110" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-104.5" x="49" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-94.5" x="70" text-anchor="start">TreeBuilder</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="ParserTreeBuilder is a subtype of TreeBuilder"><path d="M85,-79.6874C85,-69.9173 85,-57.8534 85,-49.1323" stroke="#d4d4d4" fill="none"></path><polygon points="83.2501,-79.8435 85,-84.8435 86.7501,-79.8435 83.2501,-79.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder"><span>ParserTreeBuilder</span></li><li class="in" name="scala.tools.nsc.ast.parser.TreeBuilder"><span>TreeBuilder</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;():Parser.this.ParserTreeBuilder"></a>
+      <a id="&lt;init&gt;:ParserTreeBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ParserTreeBuilder</span><span class="params">()</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@&lt;init&gt;():Parser.this.ParserTreeBuilder" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@##():Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>] performed by method any2stringadd in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(ParserTreeBuilder,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#addEvidenceParams" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="addEvidenceParams(owner:TreeBuilder.this.global.Name,vparamss:List[List[TreeBuilder.this.global.ValDef]],contextBounds:List[TreeBuilder.this.global.Tree]):List[List[TreeBuilder.this.global.ValDef]]"></a>
+      <a id="addEvidenceParams(Global.Name,List[List[Global.ValDef]],List[Global.Tree]):List[List[Global.ValDef]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addEvidenceParams</span><span class="params">(<span name="owner">owner: <a href="../../Global.html#NameextendsNames.this.NameApi" class="extmbr" name="scala.tools.nsc.Global.Name">Global.Name</a></span>, <span name="vparamss">vparamss: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../Global.html#ValDefextendsTrees.this.ValOrDefDefwithTrees.this.ValDefApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.ValDef">Global.ValDef</a>]]</span>, <span name="contextBounds">contextBounds: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>]</span>)</span><span class="result">: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../Global.html#ValDefextendsTrees.this.ValOrDefDefwithTrees.this.ValDefApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.ValDef">Global.ValDef</a>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@addEvidenceParams(owner:TreeBuilder.this.global.Name,vparamss:List[List[TreeBuilder.this.global.ValDef]],contextBounds:List[TreeBuilder.this.global.Tree]):List[List[TreeBuilder.this.global.ValDef]]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Append implicit parameter section if <code>contextBounds</code> nonempty</p><div class="fullcomment"><div class="comment cmt"><p>Append implicit parameter section if <code>contextBounds</code> nonempty</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#byNameApplication" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="byNameApplication(tpe:TreeBuilder.this.global.Tree):TreeBuilder.this.global.Tree"></a>
+      <a id="byNameApplication(Global.Tree):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">byNameApplication</span><span class="params">(<span name="tpe">tpe: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@byNameApplication(tpe:TreeBuilder.this.global.Tree):TreeBuilder.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#convertToTypeName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="convertToTypeName(t:TreeBuilder.this.global.Tree):Option[TreeBuilder.this.global.gen.global.RefTree]"></a>
+      <a id="convertToTypeName(Global.Tree):Option[Global.RefTree]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">convertToTypeName</span><span class="params">(<span name="t">t: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="../../Global.html#RefTreeextendsTrees.this.SymTreewithTrees.this.NameTreewithTrees.this.RefTreeApi" class="extmbr" name="scala.tools.nsc.Global.RefTree">Global.RefTree</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@convertToTypeName(t:TreeBuilder.this.global.Tree):Option[TreeBuilder.this.global.gen.global.RefTree]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((ParserTreeBuilder)⇒Boolean,⇒Any):ParserTreeBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((ParserTreeBuilder)⇒Boolean):ParserTreeBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):ParserTreeBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):ParserTreeBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>] performed by method StringFormat in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#fresh" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fresh:scala.reflect.internal.util.FreshNameCreator"></a>
+      <a id="fresh:FreshNameCreator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fresh</span><span class="result">: <span class="extype" name="scala.reflect.internal.util.FreshNameCreator">FreshNameCreator</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@fresh:scala.reflect.internal.util.FreshNameCreator" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder#global" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="global:Parsers.this.global.type"></a>
+      <a id="global:Parsers.global.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">global</span><span class="result">: <a href="Parsers.html#global:scala.tools.nsc.Global" class="extmbr" name="scala.tools.nsc.ast.parser.Parsers#global">Parsers.global</a>.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@global:Parsers.this.global.type" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> → <a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeAlternative" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeAlternative(ts:List[TreeBuilder.this.global.Tree]):TreeBuilder.this.global.Tree"></a>
+      <a id="makeAlternative(List[Global.Tree]):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeAlternative</span><span class="params">(<span name="ts">ts: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>]</span>)</span><span class="result">: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeAlternative(ts:List[TreeBuilder.this.global.Tree]):TreeBuilder.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create tree for a pattern alternative</p><div class="fullcomment"><div class="comment cmt"><p>Create tree for a pattern alternative</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeAnnotated" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeAnnotated(t:TreeBuilder.this.global.Tree,annot:TreeBuilder.this.global.Tree):TreeBuilder.this.global.Tree"></a>
+      <a id="makeAnnotated(Global.Tree,Global.Tree):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeAnnotated</span><span class="params">(<span name="t">t: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="annot">annot: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeAnnotated(t:TreeBuilder.this.global.Tree,annot:TreeBuilder.this.global.Tree):TreeBuilder.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeBlock" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeBlock(stats:List[TreeBuilder.this.global.Tree]):TreeBuilder.this.global.Tree"></a>
+      <a id="makeBlock(List[Global.Tree]):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeBlock</span><span class="params">(<span name="stats">stats: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>]</span>)</span><span class="result">: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeBlock(stats:List[TreeBuilder.this.global.Tree]):TreeBuilder.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create block of statements <code>stats</code></p><div class="fullcomment"><div class="comment cmt"><p>Create block of statements <code>stats</code></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeCaseDef" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeCaseDef(pat:TreeBuilder.this.global.Tree,guard:TreeBuilder.this.global.Tree,rhs:TreeBuilder.this.global.Tree):TreeBuilder.this.global.CaseDef"></a>
+      <a id="makeCaseDef(Global.Tree,Global.Tree,Global.Tree):Global.CaseDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeCaseDef</span><span class="params">(<span name="pat">pat: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="guard">guard: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="rhs">rhs: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../../Global.html#CaseDefextendsTrees.this.TreewithTrees.this.CaseDefApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.CaseDef">Global.CaseDef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeCaseDef(pat:TreeBuilder.this.global.Tree,guard:TreeBuilder.this.global.Tree,rhs:TreeBuilder.this.global.Tree):TreeBuilder.this.global.CaseDef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create tree for case definition &lt;case pat if guard =&gt; rhs&gt;</p><div class="fullcomment"><div class="comment cmt"><p>Create tree for case definition &lt;case pat if guard =&gt; rhs&gt;</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeCatchFromExpr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeCatchFromExpr(catchExpr:TreeBuilder.this.global.Tree):TreeBuilder.this.global.CaseDef"></a>
+      <a id="makeCatchFromExpr(Global.Tree):Global.CaseDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeCatchFromExpr</span><span class="params">(<span name="catchExpr">catchExpr: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../../Global.html#CaseDefextendsTrees.this.TreewithTrees.this.CaseDefApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.CaseDef">Global.CaseDef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeCatchFromExpr(catchExpr:TreeBuilder.this.global.Tree):TreeBuilder.this.global.CaseDef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates tree representing:
+   { case x: Throwable =&gt;
+       val catchFn = catchExpr
+       if (catchFn isDefinedAt x) catchFn(x) else throw x
+   }
+</p><div class="fullcomment"><div class="comment cmt"><p>Creates tree representing:
+   { case x: Throwable =&gt;
+       val catchFn = catchExpr
+       if (catchFn isDefinedAt x) catchFn(x) else throw x
+   }
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeDoWhile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeDoWhile(lname:TreeBuilder.this.global.TermName,body:TreeBuilder.this.global.Tree,cond:TreeBuilder.this.global.Tree):TreeBuilder.this.global.Tree"></a>
+      <a id="makeDoWhile(Global.TermName,Global.Tree,Global.Tree):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeDoWhile</span><span class="params">(<span name="lname">lname: <a href="../../Global.html#TermNameextendsNames.this.NamewithNames.this.TermNameApi" class="extmbr" name="scala.tools.nsc.Global.TermName">Global.TermName</a></span>, <span name="body">body: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="cond">cond: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeDoWhile(lname:TreeBuilder.this.global.TermName,body:TreeBuilder.this.global.Tree,cond:TreeBuilder.this.global.Tree):TreeBuilder.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create tree representing a do-while loop</p><div class="fullcomment"><div class="comment cmt"><p>Create tree representing a do-while loop</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeFunctionTypeTree" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeFunctionTypeTree(argtpes:List[TreeBuilder.this.global.Tree],restpe:TreeBuilder.this.global.Tree):TreeBuilder.this.global.Tree"></a>
+      <a id="makeFunctionTypeTree(List[Global.Tree],Global.Tree):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeFunctionTypeTree</span><span class="params">(<span name="argtpes">argtpes: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>]</span>, <span name="restpe">restpe: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeFunctionTypeTree(argtpes:List[TreeBuilder.this.global.Tree],restpe:TreeBuilder.this.global.Tree):TreeBuilder.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a tree representing the function type (argtpes) =&gt; restpe</p><div class="fullcomment"><div class="comment cmt"><p>Create a tree representing the function type (argtpes) =&gt; restpe</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeImportSelector" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeImportSelector(name:TreeBuilder.this.global.Name,nameOffset:Int):TreeBuilder.this.global.ImportSelector"></a>
+      <a id="makeImportSelector(Global.Name,Int):Global.ImportSelector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeImportSelector</span><span class="params">(<span name="name">name: <a href="../../Global.html#NameextendsNames.this.NameApi" class="extmbr" name="scala.tools.nsc.Global.Name">Global.Name</a></span>, <span name="nameOffset">nameOffset: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="../../Global.html#ImportSelectorextendsTrees.this.ImportSelectorApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.ImportSelector">Global.ImportSelector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeImportSelector(name:TreeBuilder.this.global.Name,nameOffset:Int):TreeBuilder.this.global.ImportSelector" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeParam" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeParam(pname:TreeBuilder.this.global.TermName,tpe:TreeBuilder.this.global.Tree):TreeBuilder.this.global.ValDef"></a>
+      <a id="makeParam(Global.TermName,Global.Tree):Global.ValDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeParam</span><span class="params">(<span name="pname">pname: <a href="../../Global.html#TermNameextendsNames.this.NamewithNames.this.TermNameApi" class="extmbr" name="scala.tools.nsc.Global.TermName">Global.TermName</a></span>, <span name="tpe">tpe: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../../Global.html#ValDefextendsTrees.this.ValOrDefDefwithTrees.this.ValDefApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.ValDef">Global.ValDef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeParam(pname:TreeBuilder.this.global.TermName,tpe:TreeBuilder.this.global.Tree):TreeBuilder.this.global.ValDef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makePatDef" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makePatDef(mods:TreeBuilder.this.global.Modifiers,pat:TreeBuilder.this.global.Tree,rhs:TreeBuilder.this.global.Tree):List[TreeBuilder.this.global.gen.global.ValDef]"></a>
+      <a id="makePatDef(Global.Modifiers,Global.Tree,Global.Tree):List[Global.ValDef]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makePatDef</span><span class="params">(<span name="mods">mods: <a href="../../Global.html#ModifiersextendsTrees.this.ModifiersApiwithHasFlagswithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Modifiers">Global.Modifiers</a></span>, <span name="pat">pat: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="rhs">rhs: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../Global.html#ValDefextendsTrees.this.ValOrDefDefwithTrees.this.ValDefApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.ValDef">Global.ValDef</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makePatDef(mods:TreeBuilder.this.global.Modifiers,pat:TreeBuilder.this.global.Tree,rhs:TreeBuilder.this.global.Tree):List[TreeBuilder.this.global.gen.global.ValDef]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makePostfixSelect" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makePostfixSelect(start0:Int,end:Int,od:TreeBuilder.this.global.Tree,op:TreeBuilder.this.global.Name):TreeBuilder.this.global.Tree"></a>
+      <a id="makePostfixSelect(Int,Int,Global.Tree,Global.Name):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makePostfixSelect</span><span class="params">(<span name="start0">start0: <span class="extype" name="scala.Int">Int</span></span>, <span name="end">end: <span class="extype" name="scala.Int">Int</span></span>, <span name="od">od: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="op">op: <a href="../../Global.html#NameextendsNames.this.NameApi" class="extmbr" name="scala.tools.nsc.Global.Name">Global.Name</a></span>)</span><span class="result">: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makePostfixSelect(start0:Int,end:Int,od:TreeBuilder.this.global.Tree,op:TreeBuilder.this.global.Name):TreeBuilder.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tree for <code>od op</code>, start is start0 if od.pos is borked.</p><div class="fullcomment"><div class="comment cmt"><p>Tree for <code>od op</code>, start is start0 if od.pos is borked.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeSelfDef" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeSelfDef(name:TreeBuilder.this.global.TermName,tpt:TreeBuilder.this.global.Tree):TreeBuilder.this.global.ValDef"></a>
+      <a id="makeSelfDef(Global.TermName,Global.Tree):Global.ValDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeSelfDef</span><span class="params">(<span name="name">name: <a href="../../Global.html#TermNameextendsNames.this.NamewithNames.this.TermNameApi" class="extmbr" name="scala.tools.nsc.Global.TermName">Global.TermName</a></span>, <span name="tpt">tpt: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../../Global.html#ValDefextendsTrees.this.ValOrDefDefwithTrees.this.ValDefApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.ValDef">Global.ValDef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeSelfDef(name:TreeBuilder.this.global.TermName,tpt:TreeBuilder.this.global.Tree):TreeBuilder.this.global.ValDef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeSyntheticTypeParam" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeSyntheticTypeParam(pname:TreeBuilder.this.global.TypeName,bounds:TreeBuilder.this.global.Tree):TreeBuilder.this.global.TypeDef"></a>
+      <a id="makeSyntheticTypeParam(Global.TypeName,Global.Tree):Global.TypeDef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeSyntheticTypeParam</span><span class="params">(<span name="pname">pname: <a href="../../Global.html#TypeNameextendsNames.this.NamewithNames.this.TypeNameApi" class="extmbr" name="scala.tools.nsc.Global.TypeName">Global.TypeName</a></span>, <span name="bounds">bounds: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../../Global.html#TypeDefextendsTrees.this.MemberDefwithTrees.this.TypeDefApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.TypeDef">Global.TypeDef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeSyntheticTypeParam(pname:TreeBuilder.this.global.TypeName,bounds:TreeBuilder.this.global.Tree):TreeBuilder.this.global.TypeDef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeTupleTerm" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeTupleTerm(elems:List[TreeBuilder.this.global.Tree]):TreeBuilder.this.global.gen.global.Tree"></a>
+      <a id="makeTupleTerm(List[Global.Tree]):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeTupleTerm</span><span class="params">(<span name="elems">elems: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>]</span>)</span><span class="result">: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeTupleTerm(elems:List[TreeBuilder.this.global.Tree]):TreeBuilder.this.global.gen.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeTupleType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeTupleType(elems:List[TreeBuilder.this.global.Tree]):TreeBuilder.this.global.gen.global.Tree"></a>
+      <a id="makeTupleType(List[Global.Tree]):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeTupleType</span><span class="params">(<span name="elems">elems: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>]</span>)</span><span class="result">: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeTupleType(elems:List[TreeBuilder.this.global.Tree]):TreeBuilder.this.global.gen.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#makeWhile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="makeWhile(startPos:Int,cond:TreeBuilder.this.global.Tree,body:TreeBuilder.this.global.Tree):TreeBuilder.this.global.Tree"></a>
+      <a id="makeWhile(Int,Global.Tree,Global.Tree):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeWhile</span><span class="params">(<span name="startPos">startPos: <span class="extype" name="scala.Int">Int</span></span>, <span name="cond">cond: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="body">body: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@makeWhile(startPos:Int,cond:TreeBuilder.this.global.Tree,body:TreeBuilder.this.global.Tree):TreeBuilder.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create tree representing a while loop</p><div class="fullcomment"><div class="comment cmt"><p>Create tree representing a while loop</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#o2p" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="o2p(offset:Int):TreeBuilder.this.global.Position"></a>
+      <a id="o2p(Int):Global.Position"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">o2p</span><span class="params">(<span name="offset">offset: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="../../Global.html#Position=scala.reflect.internal.util.Position" class="extmbr" name="scala.tools.nsc.Global.Position">Global.Position</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@o2p(offset:Int):TreeBuilder.this.global.Position" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#r2p" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="r2p(start:Int,mid:Int,end:Int):TreeBuilder.this.global.Position"></a>
+      <a id="r2p(Int,Int,Int):Global.Position"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">r2p</span><span class="params">(<span name="start">start: <span class="extype" name="scala.Int">Int</span></span>, <span name="mid">mid: <span class="extype" name="scala.Int">Int</span></span>, <span name="end">end: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="../../Global.html#Position=scala.reflect.internal.util.Position" class="extmbr" name="scala.tools.nsc.Global.Position">Global.Position</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@r2p(start:Int,mid:Int,end:Int):TreeBuilder.this.global.Position" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#repeatedApplication" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="repeatedApplication(tpe:TreeBuilder.this.global.Tree):TreeBuilder.this.global.Tree"></a>
+      <a id="repeatedApplication(Global.Tree):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">repeatedApplication</span><span class="params">(<span name="tpe">tpe: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@repeatedApplication(tpe:TreeBuilder.this.global.Tree):TreeBuilder.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#rootScalaDot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rootScalaDot(name:TreeBuilder.this.global.Name):TreeBuilder.this.global.gen.global.Select"></a>
+      <a id="rootScalaDot(Global.Name):Global.Select"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rootScalaDot</span><span class="params">(<span name="name">name: <a href="../../Global.html#NameextendsNames.this.NameApi" class="extmbr" name="scala.tools.nsc.Global.Name">Global.Name</a></span>)</span><span class="result">: <a href="../../Global.html#SelectextendsTrees.this.SymTreewithTrees.this.RefTreewithTrees.this.SelectApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Select">Global.Select</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@rootScalaDot(name:TreeBuilder.this.global.Name):TreeBuilder.this.global.gen.global.Select" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#scalaAnyRefConstr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="scalaAnyRefConstr:TreeBuilder.this.global.gen.global.Select"></a>
+      <a id="scalaAnyRefConstr:Global.Select"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">scalaAnyRefConstr</span><span class="result">: <a href="../../Global.html#SelectextendsTrees.this.SymTreewithTrees.this.RefTreewithTrees.this.SelectApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Select">Global.Select</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@scalaAnyRefConstr:TreeBuilder.this.global.gen.global.Select" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#scalaDot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="scalaDot(name:TreeBuilder.this.global.Name):TreeBuilder.this.global.gen.global.Select"></a>
+      <a id="scalaDot(Global.Name):Global.Select"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">scalaDot</span><span class="params">(<span name="name">name: <a href="../../Global.html#NameextendsNames.this.NameApi" class="extmbr" name="scala.tools.nsc.Global.Name">Global.Name</a></span>)</span><span class="result">: <a href="../../Global.html#SelectextendsTrees.this.SymTreewithTrees.this.RefTreewithTrees.this.SelectApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Select">Global.Select</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@scalaDot(name:TreeBuilder.this.global.Name):TreeBuilder.this.global.gen.global.Select" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.TreeBuilder#scalaUnitConstr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="scalaUnitConstr:TreeBuilder.this.global.gen.global.Select"></a>
+      <a id="scalaUnitConstr:Global.Select"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">scalaUnitConstr</span><span class="result">: <a href="../../Global.html#SelectextendsTrees.this.SymTreewithTrees.this.RefTreewithTrees.this.SelectApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Select">Global.Select</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@scalaUnitConstr:TreeBuilder.this.global.gen.global.Select" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder#source" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="source:scala.reflect.internal.util.SourceFile"></a>
+      <a id="source:SourceFile"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">source</span><span class="result">: <span class="extype" name="scala.reflect.internal.util.SourceFile">SourceFile</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@source:scala.reflect.internal.util.SourceFile" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> → <a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@toString():String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder#unit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unit:Parsers.this.global.CompilationUnit"></a>
+      <a id="unit:Global.CompilationUnit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unit</span><span class="result">: <a href="../../Global.html#CompilationUnitextendsCompilationUnits.this.CompilationUnitContextApi" class="extmbr" name="scala.tools.nsc.CompilationUnits.CompilationUnit">Global.CompilationUnit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@unit:Parsers.this.global.CompilationUnit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> → <a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(ParserTreeBuilder,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.ast.parser.Parsers$Parser$ParserTreeBuilder@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.tools.nsc.ast.parser.TreeBuilder">
+              <h3>Inherited from <a href="TreeBuilder.html" class="extype" name="scala.tools.nsc.ast.parser.TreeBuilder">TreeBuilder</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.ast.parser.Parsers.Parser.ParserTreeBuilder">ParserTreeBuilder</a>]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

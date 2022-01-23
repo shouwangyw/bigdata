@@ -1,0 +1,557 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>sys - Scala Standard Library 2.11.8 - scala.sys</title>
+          <meta name="description" content="sys - Scala Standard Library 2.11.8 - scala.sys" />
+          <meta name="keywords" content="sys Scala Standard Library 2.11.8 scala.sys" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'scala.sys.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="scala">scala</a></p>
+        <h1>sys</h1><span class="permalink">
+      <a href="../../index.html#scala.sys.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sys</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>The package object <code>scala.sys</code> contains methods for reading
+ and altering core aspects of the virtual machine as well as the
+ world outside of it.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/sys/package.scala#L1" target="_blank">package.scala</a></dd><dt>Version</dt><dd><p>2.9</p></dd><dt>Since</dt><dd><p>2.9</p></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.sys"><span>sys</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.sys.BooleanProp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BooleanPropextendsProp[Boolean]"></a>
+      <a id="BooleanProp:BooleanProp"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BooleanProp.html"><span class="name">BooleanProp</span></a><span class="result"> extends <a href="Prop.html" class="extype" name="scala.sys.Prop">Prop</a>[<a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@BooleanPropextendsProp[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A few additional conveniences for Boolean properties.</p>
+    </li><li name="scala.sys.Prop" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Prop[+T]extendsAnyRef"></a>
+      <a id="Prop[+T]:Prop[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Prop.html"><span class="name">Prop</span></a><span class="tparams">[<span name="T">+T</span>]</span><span class="result"> extends <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@Prop[+T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A lightweight interface wrapping a property contained in some
+ unspecified map.</p><div class="fullcomment"><div class="comment cmt"><p>A lightweight interface wrapping a property contained in some
+ unspecified map.  Generally it'll be the system properties but this
+ is not a requirement.</p><p> See <code>scala.sys.SystemProperties</code> for an example usage.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>2.9</p></dd><dt>Since</dt><dd><p>2.9</p></dd></dl></div>
+    </li><li name="scala.sys.ShutdownHookThread" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ShutdownHookThreadextendsThread"></a>
+      <a id="ShutdownHookThread:ShutdownHookThread"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ShutdownHookThread.html"><span class="name">ShutdownHookThread</span></a><span class="result"> extends <span class="extype" name="java.lang.Thread">Thread</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@ShutdownHookThreadextendsThread" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A minimal Thread wrapper to enhance shutdown hooks.</p><div class="fullcomment"><div class="comment cmt"><p>A minimal Thread wrapper to enhance shutdown hooks.  It knows
+ how to unregister itself.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>2.9</p></dd><dt>Since</dt><dd><p>2.9</p></dd></dl></div>
+    </li><li name="scala.sys.SystemProperties" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SystemPropertiesextendsAbstractMap[String,String]withMap[String,String]"></a>
+      <a id="SystemProperties:SystemProperties"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SystemProperties.html"><span class="name">SystemProperties</span></a><span class="result"> extends <a href="../collection/mutable/AbstractMap.html" class="extype" name="scala.collection.mutable.AbstractMap">AbstractMap</a>[<a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>, <a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>] with <a href="../collection/mutable/Map.html" class="extype" name="scala.collection.mutable.Map">Map</a>[<a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>, <a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@SystemPropertiesextendsAbstractMap[String,String]withMap[String,String]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A bidirectional map wrapping the java System properties.</p><div class="fullcomment"><div class="comment cmt"><p>A bidirectional map wrapping the java System properties.
+ Changes to System properties will be immediately visible in the map,
+ and modifications made to the map will be immediately applied to the
+ System properties.  If a security manager is in place which prevents
+ the properties from being read or written, the AccessControlException
+ will be caught and discarded.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.sys.BooleanProp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BooleanProp"></a>
+      <a id="BooleanProp:BooleanProp"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BooleanProp$.html"><span class="name">BooleanProp</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@BooleanProp" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.sys.Prop" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Prop"></a>
+      <a id="Prop:Prop"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Prop$.html"><span class="name">Prop</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@Prop" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.sys.ShutdownHookThread" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ShutdownHookThread"></a>
+      <a id="ShutdownHookThread:ShutdownHookThread"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ShutdownHookThread$.html"><span class="name">ShutdownHookThread</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@ShutdownHookThread" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.sys.SystemProperties" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SystemProperties"></a>
+      <a id="SystemProperties:SystemProperties"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SystemProperties$.html"><span class="name">SystemProperties</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@SystemProperties" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The values in SystemProperties can be used to access and manipulate
+ designated system properties.</p><div class="fullcomment"><div class="comment cmt"><p>The values in SystemProperties can be used to access and manipulate
+ designated system properties.  See <code>scala.sys.Prop</code> for particulars.</p></div><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">if</span> (!headless.isSet) headless.enable()</pre></li></ol>
+            </div></dl></div>
+    </li><li name="scala.sys#addShutdownHook" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="addShutdownHook(body:=&gt;Unit):scala.sys.ShutdownHookThread"></a>
+      <a id="addShutdownHook(⇒Unit):ShutdownHookThread"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addShutdownHook</span><span class="params">(<span name="body">body: ⇒ <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>)</span><span class="result">: <a href="ShutdownHookThread.html" class="extype" name="scala.sys.ShutdownHookThread">ShutdownHookThread</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@addShutdownHook(body:=&gt;Unit):scala.sys.ShutdownHookThread" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Register a shutdown hook to be run when the VM exits.</p><div class="fullcomment"><div class="comment cmt"><p>Register a shutdown hook to be run when the VM exits.
+ The hook is automatically registered: the returned value can be ignored,
+ but is available in case the Thread requires further modification.
+ It can also be unregistered by calling ShutdownHookThread#remove().</p><p> Note that shutdown hooks are NOT guaranteed to be run.
+</p></div><dl class="paramcmts block"><dt class="param">body</dt><dd class="cmt"><p>the body of code to run at shutdown</p></dd><dt>returns</dt><dd class="cmt"><p>the   Thread which will run the shutdown hook.</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="ShutdownHookThread.html" class="extype" name="scala.sys.ShutdownHookThread">scala.sys.ShutdownHookThread</a></p></span></dd></dl></div>
+    </li><li name="scala.sys#allThreads" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="allThreads():IndexedSeq[Thread]"></a>
+      <a id="allThreads():IndexedSeq[Thread]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">allThreads</span><span class="params">()</span><span class="result">: <a href="../package.html#IndexedSeq[+A]=IndexedSeq[A]" class="extmbr" name="scala.IndexedSeq">IndexedSeq</a>[<span class="extype" name="java.lang.Thread">Thread</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@allThreads():IndexedSeq[Thread]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns all active thread in the current thread's thread group and subgroups.</p><div class="fullcomment"><div class="comment cmt"><p>Returns all active thread in the current thread's thread group and subgroups.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>an IndexedSeq containing the threads.</p></dd></dl></div>
+    </li><li name="scala.sys#env" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="env:scala.collection.immutable.Map[String,String]"></a>
+      <a id="env:Map[String,String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">env</span><span class="result">: <a href="../collection/immutable/Map.html" class="extype" name="scala.collection.immutable.Map">Map</a>[<a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>, <a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@env:scala.collection.immutable.Map[String,String]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An immutable Map representing the current system environment.</p><div class="fullcomment"><div class="comment cmt"><p>An immutable Map representing the current system environment.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a Map containing the system environment variables.</p></dd></dl></div>
+    </li><li name="scala.sys#error" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="error(message:String):Nothing"></a>
+      <a id="error(String):Nothing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">error</span><span class="params">(<span name="message">message: <a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="../Nothing.html" class="extype" name="scala.Nothing">Nothing</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@error(message:String):Nothing" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Throw a new RuntimeException with the supplied message.</p><div class="fullcomment"><div class="comment cmt"><p>Throw a new RuntimeException with the supplied message.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Nothing.</p></dd></dl></div>
+    </li><li name="scala.sys#exit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exit(status:Int):Nothing"></a>
+      <a id="exit(Int):Nothing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exit</span><span class="params">(<span name="status">status: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="../Nothing.html" class="extype" name="scala.Nothing">Nothing</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@exit(status:Int):Nothing" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Exit the JVM with the given status code.</p><div class="fullcomment"><div class="comment cmt"><p>Exit the JVM with the given status code.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Nothing.</p></dd></dl></div>
+    </li><li name="scala.sys#exit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exit():Nothing"></a>
+      <a id="exit():Nothing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exit</span><span class="params">()</span><span class="result">: <a href="../Nothing.html" class="extype" name="scala.Nothing">Nothing</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@exit():Nothing" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Exit the JVM with the default status code.</p><div class="fullcomment"><div class="comment cmt"><p>Exit the JVM with the default status code.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Nothing.</p></dd></dl></div>
+    </li><li name="scala.sys.process" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="process"></a>
+      <a id="process:process"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="process/package.html"><span class="name">process</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@process" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This package handles the execution of external processes.</p><div class="fullcomment"><div class="comment cmt"><p>This package handles the execution of external processes.  The contents of
+this package can be divided in three groups, according to their
+responsibilities:</p><ul><li>Indicating what to run and how to run it.</li><li>Handling a process input and output.</li><li>Running the process.</li></ul><p>For simple uses, the only group that matters is the first one. Running an
+external command can be as simple as <code>&quot;ls&quot;.!</code>, or as complex as building a
+pipeline of commands such as this:</p><pre><span class="kw">import</span> scala.sys.process._
+<span class="lit">"ls"</span> #| <span class="lit">"grep .scala"</span> #&amp;&amp; <span class="std">Seq</span>(<span class="lit">"sh"</span>, <span class="lit">"-c"</span>, <span class="lit">"scalac *.scala"</span>) #|| <span class="lit">"echo nothing found"</span> lines</pre><p>We describe below the general concepts and architecture of the package,
+and then take a closer look at each of the categories mentioned above.</p><h4>Concepts and Architecture</h4><p>The underlying basis for the whole package is Java's <code>Process</code> and
+<code>ProcessBuilder</code> classes. While there's no need to use these Java classes,
+they impose boundaries on what is possible. One cannot, for instance,
+retrieve a <i>process id</i> for whatever is executing.</p><p>When executing an external process, one can provide a command's name,
+arguments to it, the directory in which it will be executed and what
+environment variables will be set. For each executing process, one can
+feed its standard input through a <code>java.io.OutputStream</code>, and read from
+its standard output and standard error through a pair of
+<code>java.io.InputStream</code>. One can wait until a process finishes execution and
+then retrieve its return value, or one can kill an executing process.
+Everything else must be built on those features.</p><p>This package provides a DSL for running and chaining such processes,
+mimicking Unix shells ability to pipe output from one process to the input
+of another, or control the execution of further processes based on the
+return status of the previous one.</p><p>In addition to this DSL, this package also provides a few ways of
+controlling input and output of these processes, going from simple and
+easy to use to complex and flexible.</p><p>When processes are composed, a new <code>ProcessBuilder</code> is created which, when
+run, will execute the <code>ProcessBuilder</code> instances it is composed of
+according to the manner of the composition. If piping one process to
+another, they'll be executed simultaneously, and each will be passed a
+<code>ProcessIO</code> that will copy the output of one to the input of the other.</p><h4>What to Run and How</h4><p>The central component of the process execution DSL is the
+<a href="process/ProcessBuilder.html" class="extype" name="scala.sys.process.ProcessBuilder">scala.sys.process.ProcessBuilder</a> trait. It is <code>ProcessBuilder</code> that
+implements the process execution DSL, that creates the
+<a href="process/Process.html" class="extype" name="scala.sys.process.Process">scala.sys.process.Process</a> that will handle the execution, and return
+the results of such execution to the caller. We can see that DSL in the
+introductory example: <code>#|</code>, <code>#&amp;&amp;</code> and <code>#!!</code> are methods on
+<code>ProcessBuilder</code> used to create a new <code>ProcessBuilder</code> through
+composition.</p><p>One creates a <code>ProcessBuilder</code> either through factories on the
+<a href="process/Process.html" class="extype" name="scala.sys.process.Process">scala.sys.process.Process</a>'s companion object, or through implicit
+conversions available in this package object itself.  Implicitly, each
+process is created either out of a <code>String</code>, with arguments separated by
+spaces -- no escaping of spaces is possible -- or out of a
+<a href="../collection/Seq.html" class="extype" name="scala.collection.Seq">scala.collection.Seq</a>, where the first element represents the command
+name, and the remaining elements are arguments to it. In this latter case,
+arguments may contain spaces.</p><p>To further control what how the process will be run, such as specifying
+the directory in which it will be run, see the factories on
+<a href="process/Process.html" class="extype" name="scala.sys.process.Process">scala.sys.process.Process</a>'s object companion.</p><p>Once the desired <code>ProcessBuilder</code> is available, it can be executed in
+different ways, depending on how one desires to control its I/O, and what
+kind of result one wishes for:</p><ul><li>Return status of the process (<code>!</code> methods)</li><li>Output of the process as a <code>String</code> (<code>!!</code> methods)</li><li>Continuous output of the process as a <code>Stream[String]</code> (<code>lines</code> methods)</li><li>The <code>Process</code> representing it (<code>run</code> methods)</li></ul><p>Some simple examples of these methods:</p><pre><span class="kw">import</span> scala.sys.process._
+
+<span class="cmt">// This uses ! to get the exit code</span>
+<span class="kw">def</span> fileExists(name: <span class="std">String</span>) = <span class="std">Seq</span>(<span class="lit">"test"</span>, <span class="lit">"-f"</span>, name).! == <span class="num">0</span>
+
+<span class="cmt">// This uses !! to get the whole result as a string</span>
+<span class="kw">val</span> dirContents = <span class="lit">"ls"</span>.!!
+
+<span class="cmt">// This "fire-and-forgets" the method, which can be lazily read through</span>
+<span class="cmt">// a Stream[String]</span>
+<span class="kw">def</span> sourceFilesAt(baseDir: <span class="std">String</span>): Stream[<span class="std">String</span>] = {
+  <span class="kw">val</span> cmd = <span class="std">Seq</span>(<span class="lit">"find"</span>, baseDir, <span class="lit">"-name"</span>, <span class="lit">"*.scala"</span>, <span class="lit">"-type"</span>, <span class="lit">"f"</span>)
+  cmd.lines
+}</pre><p>We'll see more details about controlling I/O of the process in the next
+section.</p><h4>Handling Input and Output</h4><p>In the underlying Java model, once a <code>Process</code> has been started, one can
+get <code>java.io.InputStream</code> and <code>java.io.OutputStream</code> representing its
+output and input respectively. That is, what one writes to an
+<code>OutputStream</code> is turned into input to the process, and the output of a
+process can be read from an <code>InputStream</code> -- of which there are two, one
+representing normal output, and the other representing error output.</p><p>This model creates a difficulty, which is that the code responsible for
+actually running the external processes is the one that has to take
+decisions about how to handle its I/O.</p><p>This package presents an alternative model: the I/O of a running process
+is controlled by a <a href="process/ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">scala.sys.process.ProcessIO</a> object, which can be
+passed _to_ the code that runs the external process. A <code>ProcessIO</code> will
+have direct access to the java streams associated with the process I/O. It
+must, however, close these streams afterwards.</p><p>Simpler abstractions are available, however. The components of this
+package that handle I/O are:</p><ul><li><a href="process/ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">scala.sys.process.ProcessIO</a>: provides the low level abstraction.</li><li><a href="process/ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">scala.sys.process.ProcessLogger</a>: provides a higher level abstraction
+  for output, and can be created through its object companion</li><li><a href="process/BasicIO$.html" class="extype" name="scala.sys.process.BasicIO">scala.sys.process.BasicIO</a>: a library of helper methods for the
+  creation of <code>ProcessIO</code>.</li><li>This package object itself, with a few implicit conversions.</li></ul><p>Some examples of I/O handling:</p><pre><span class="kw">import</span> scala.sys.process._
+
+<span class="cmt">// An overly complex way of computing size of a compressed file</span>
+<span class="kw">def</span> gzFileSize(name: <span class="std">String</span>) = {
+  <span class="kw">val</span> cat = <span class="std">Seq</span>(<span class="lit">"zcat"</span>, name)
+  <span class="kw">var</span> count = <span class="num">0</span>
+  <span class="kw">def</span> byteCounter(input: java.io.InputStream) = {
+    <span class="kw">while</span>(input.read() != -<span class="num">1</span>) count += <span class="num">1</span>
+    input.close()
+  }
+  <span class="kw">val</span> p = cat run <span class="kw">new</span> ProcessIO(_.close(), byteCounter, _.close())
+  p.exitValue()
+  count
+}
+
+<span class="cmt">// This "fire-and-forgets" the method, which can be lazily read through</span>
+<span class="cmt">// a Stream[String], and accumulates all errors on a StringBuffer</span>
+<span class="kw">def</span> sourceFilesAt(baseDir: <span class="std">String</span>): (Stream[<span class="std">String</span>], StringBuffer) = {
+  <span class="kw">val</span> buffer = <span class="kw">new</span> StringBuffer()
+  <span class="kw">val</span> cmd = <span class="std">Seq</span>(<span class="lit">"find"</span>, baseDir, <span class="lit">"-name"</span>, <span class="lit">"*.scala"</span>, <span class="lit">"-type"</span>, <span class="lit">"f"</span>)
+  <span class="kw">val</span> lines = cmd lines_! ProcessLogger(buffer append _)
+  (lines, buffer)
+}</pre><p>Instances of the java classes <code>java.io.File</code> and <code>java.net.URL</code> can both
+be used directly as input to other processes, and <code>java.io.File</code> can be
+used as output as well. One can even pipe one to the other directly
+without any intervening process, though that's not a design goal or
+recommended usage. For example, the following code will copy a web page to
+a file:</p><pre><span class="kw">import</span> java.io.File
+<span class="kw">import</span> java.net.URL
+<span class="kw">import</span> scala.sys.process._
+<span class="kw">new</span> URL(<span class="lit">"http://www.scala-lang.org/"</span>) #&gt; <span class="kw">new</span> File(<span class="lit">"scala-lang.html"</span>) !</pre><p>More information about the other ways of controlling I/O can be looked at
+in the scaladoc for the associated objects, traits and classes.</p><h4>Running the Process</h4><p>Paradoxically, this is the simplest component of all, and the one least
+likely to be interacted with. It consists solely of
+<a href="process/Process.html" class="extype" name="scala.sys.process.Process">scala.sys.process.Process</a>, and it provides only two methods:</p><ul><li><code>exitValue()</code>: blocks until the process exit, and then returns the exit
+  value. This is what happens when one uses the <code>!</code> method of
+  <code>ProcessBuilder</code>.</li><li><code>destroy()</code>: this will kill the external process and close the streams
+  associated with it.
+</li></ul></div></div>
+    </li><li name="scala.sys#props" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="props:scala.sys.SystemProperties"></a>
+      <a id="props:SystemProperties"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">props</span><span class="result">: <a href="SystemProperties.html" class="extype" name="scala.sys.SystemProperties">SystemProperties</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@props:scala.sys.SystemProperties" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A bidirectional, mutable Map representing the current system Properties.</p><div class="fullcomment"><div class="comment cmt"><p>A bidirectional, mutable Map representing the current system Properties.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a SystemProperties.</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="SystemProperties.html" class="extype" name="scala.sys.SystemProperties">scala.sys.SystemProperties</a></p></span></dd></dl></div>
+    </li><li name="scala.sys#runtime" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="runtime:Runtime"></a>
+      <a id="runtime:Runtime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runtime</span><span class="result">: <span class="extype" name="java.lang.Runtime">Runtime</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.sys.package@runtime:Runtime" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A convenience method to get the current Runtime instance.</p><div class="fullcomment"><div class="comment cmt"><p>A convenience method to get the current Runtime instance.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the result of <code>java.lang.Runtime.getRuntime()</code></p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

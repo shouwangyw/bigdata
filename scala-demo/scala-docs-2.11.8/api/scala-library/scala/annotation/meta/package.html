@@ -1,0 +1,332 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>meta - Scala Standard Library 2.11.8 - scala.annotation.meta</title>
+          <meta name="description" content="meta - Scala Standard Library 2.11.8 - scala.annotation.meta" />
+          <meta name="keywords" content="meta Scala Standard Library 2.11.8 scala.annotation.meta" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.annotation.meta.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.annotation">annotation</a></p>
+        <h1>meta</h1><span class="permalink">
+      <a href="../../../index.html#scala.annotation.meta.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">meta</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>When defining a field, the Scala compiler creates up to four accessors
+for it: a getter, a setter, and if the field is annotated with
+<code>@BeanProperty</code>, a bean getter and a bean setter.</p><p>For instance in the following class definition</p><pre><span class="kw">class</span> C(@myAnnot <span class="ano">@BeanProperty</span> <span class="kw">var</span> c: <span class="std">Int</span>)</pre><p>there are six entities which can carry the annotation <code>@myAnnot</code>: the
+constructor parameter, the generated field and the four accessors.</p><p>By default, annotations on (<code>val</code>-, <code>var</code>- or plain) constructor parameters
+end up on the parameter, not on any other entity. Annotations on fields
+by default only end up on the field.</p><p>The meta-annotations in package <code>scala.annotation.meta</code> are used
+to control where annotations on fields and class parameters are copied.
+This is done by annotating either the annotation type or the annotation
+class with one or several of the meta-annotations in this package.</p><h4>Annotating the annotation type</h4><p>The target meta-annotations can be put on the annotation type when
+instantiating the annotation. In the following example, the annotation
+<code>@Id</code> will be added only to the bean getter <code>getX</code>.</p><pre><span class="kw">import</span> javax.persistence.Id
+<span class="kw">class</span> A {
+  @(Id <span class="ano">@beanGetter</span>) <span class="ano">@BeanProperty</span> <span class="kw">val</span> x = <span class="num">0</span>
+}</pre><p>In order to annotate the field as well, the meta-annotation <code>@field</code>
+would need to be added.</p><p>The syntax can be improved using a type alias:</p><pre><span class="kw">object</span> ScalaJPA {
+  <span class="kw">type</span> Id = javax.persistence.Id <span class="ano">@beanGetter</span>
+}
+<span class="kw">import</span> ScalaJPA.Id
+<span class="kw">class</span> A {
+  @Id <span class="ano">@BeanProperty</span> <span class="kw">val</span> x = <span class="num">0</span>
+}</pre><h4>Annotating the annotation class</h4><p>For annotations defined in Scala, a default target can be specified
+in the annotation class itself, for example</p><pre><span class="ano">@getter</span>
+<span class="kw">class</span> myAnnotation <span class="kw">extends</span> Annotation</pre><p>This only changes the default target for the annotation <code>myAnnotation</code>.
+When instantiating the annotation, the target can still be specified
+as described in the last section.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/annotation/meta/package.scala#L1" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.annotation.meta"><span>meta</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.annotation.meta.beanGetter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="beanGetterextendsAnnotationwithStaticAnnotation"></a>
+      <a id="beanGetter:beanGetter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="beanGetter.html"><span class="name">beanGetter</span></a><span class="result"> extends <a href="../Annotation.html" class="extype" name="scala.annotation.Annotation">Annotation</a> with <a href="../StaticAnnotation.html" class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.annotation.meta.package@beanGetterextendsAnnotationwithStaticAnnotation" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Consult the documentation in package <a href="" class="extype" name="scala.annotation.meta">scala.annotation.meta</a>.</p>
+    </li><li name="scala.annotation.meta.beanSetter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="beanSetterextendsAnnotationwithStaticAnnotation"></a>
+      <a id="beanSetter:beanSetter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="beanSetter.html"><span class="name">beanSetter</span></a><span class="result"> extends <a href="../Annotation.html" class="extype" name="scala.annotation.Annotation">Annotation</a> with <a href="../StaticAnnotation.html" class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.annotation.meta.package@beanSetterextendsAnnotationwithStaticAnnotation" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Consult the documentation in package <a href="" class="extype" name="scala.annotation.meta">scala.annotation.meta</a>.</p>
+    </li><li name="scala.annotation.meta.companionClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="companionClassextendsAnnotationwithStaticAnnotation"></a>
+      <a id="companionClass:companionClass"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="companionClass.html"><span class="name">companionClass</span></a><span class="result"> extends <a href="../Annotation.html" class="extype" name="scala.annotation.Annotation">Annotation</a> with <a href="../StaticAnnotation.html" class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.annotation.meta.package@companionClassextendsAnnotationwithStaticAnnotation" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">When defining an implicit class, the Scala compiler creates an implicit
+conversion method for it.</p><div class="fullcomment"><div class="comment cmt"><p>When defining an implicit class, the Scala compiler creates an implicit
+conversion method for it. Annotations <code>@companionClass</code> and <code>@companionMethod</code>
+control where an annotation on the implicit class will go. By default, annotations
+on an implicit class end up only on the class.</p></div></div>
+    </li><li name="scala.annotation.meta.companionMethod" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="companionMethodextendsAnnotationwithStaticAnnotation"></a>
+      <a id="companionMethod:companionMethod"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="companionMethod.html"><span class="name">companionMethod</span></a><span class="result"> extends <a href="../Annotation.html" class="extype" name="scala.annotation.Annotation">Annotation</a> with <a href="../StaticAnnotation.html" class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.annotation.meta.package@companionMethodextendsAnnotationwithStaticAnnotation" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">When defining an implicit class, the Scala compiler creates an implicit
+conversion method for it.</p><div class="fullcomment"><div class="comment cmt"><p>When defining an implicit class, the Scala compiler creates an implicit
+conversion method for it. Annotations <code>@companionClass</code> and <code>@companionMethod</code>
+control where an annotation on the implicit class will go. By default, annotations
+on an implicit class end up only on the class.</p></div></div>
+    </li><li name="scala.annotation.meta.companionObject" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="companionObjectextendsAnnotationwithStaticAnnotation"></a>
+      <a id="companionObject:companionObject"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="companionObject.html"><span class="name">companionObject</span></a><span class="result"> extends <a href="../Annotation.html" class="extype" name="scala.annotation.Annotation">Annotation</a> with <a href="../StaticAnnotation.html" class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.annotation.meta.package@companionObjectextendsAnnotationwithStaticAnnotation" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Currently unused; intended as an annotation target for classes such as case classes
+that automatically generate a companion object
+</p>
+    </li><li name="scala.annotation.meta.field" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fieldextendsAnnotationwithStaticAnnotation"></a>
+      <a id="field:field"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="field.html"><span class="name">field</span></a><span class="result"> extends <a href="../Annotation.html" class="extype" name="scala.annotation.Annotation">Annotation</a> with <a href="../StaticAnnotation.html" class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.annotation.meta.package@fieldextendsAnnotationwithStaticAnnotation" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Consult the documentation in package <a href="" class="extype" name="scala.annotation.meta">scala.annotation.meta</a>.</p>
+    </li><li name="scala.annotation.meta.getter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getterextendsAnnotationwithStaticAnnotation"></a>
+      <a id="getter:getter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="getter.html"><span class="name">getter</span></a><span class="result"> extends <a href="../Annotation.html" class="extype" name="scala.annotation.Annotation">Annotation</a> with <a href="../StaticAnnotation.html" class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.annotation.meta.package@getterextendsAnnotationwithStaticAnnotation" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Consult the documentation in package <a href="" class="extype" name="scala.annotation.meta">scala.annotation.meta</a>.</p>
+    </li><li name="scala.annotation.meta.languageFeature" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="languageFeatureextendsAnnotationwithStaticAnnotation"></a>
+      <a id="languageFeature:languageFeature"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="languageFeature.html"><span class="name">languageFeature</span></a><span class="result"> extends <a href="../Annotation.html" class="extype" name="scala.annotation.Annotation">Annotation</a> with <a href="../StaticAnnotation.html" class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.annotation.meta.package@languageFeatureextendsAnnotationwithStaticAnnotation" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An annotation giving particulars for a language feature in object <code>scala.language</code>.</p>
+    </li><li name="scala.annotation.meta.param" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="paramextendsAnnotationwithStaticAnnotation"></a>
+      <a id="param:param"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="param.html"><span class="name">param</span></a><span class="result"> extends <a href="../Annotation.html" class="extype" name="scala.annotation.Annotation">Annotation</a> with <a href="../StaticAnnotation.html" class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.annotation.meta.package@paramextendsAnnotationwithStaticAnnotation" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Consult the documentation in package <a href="" class="extype" name="scala.annotation.meta">scala.annotation.meta</a>.</p>
+    </li><li name="scala.annotation.meta.setter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="setterextendsAnnotationwithStaticAnnotation"></a>
+      <a id="setter:setter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="setter.html"><span class="name">setter</span></a><span class="result"> extends <a href="../Annotation.html" class="extype" name="scala.annotation.Annotation">Annotation</a> with <a href="../StaticAnnotation.html" class="extype" name="scala.annotation.StaticAnnotation">StaticAnnotation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.annotation.meta.package@setterextendsAnnotationwithStaticAnnotation" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Consult the documentation in package <a href="" class="extype" name="scala.annotation.meta">scala.annotation.meta</a>.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

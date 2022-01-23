@@ -1,0 +1,1147 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>Annotations - Scala Reflection Library 2.11.8 - scala.reflect.api.Annotations</title>
+          <meta name="description" content="Annotations - Scala Reflection Library 2.11.8 - scala.reflect.api.Annotations" />
+          <meta name="keywords" content="Annotations Scala Reflection Library 2.11.8 scala.reflect.api.Annotations" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.reflect.api.Annotations';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Trait" src="../../../lib/trait_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.reflect">reflect</a>.<a href="package.html" class="extype" name="scala.reflect.api">api</a></p>
+        <h1>Annotations</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="scala.reflect.api">package api</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Annotations</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p> <span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p> This trait provides annotation support for the reflection API.</p><p> In Scala, annotations belong to one of the two categories:</p><ul><li><i>Java annotations</i>: annotations on definitions produced by the Java compiler, i.e., subtypes of <span class="extype" name="java.lang.annotation.Annotation">java.lang.annotation.Annotation</span>
+ attached to program definitions. When read by Scala reflection, the <span class="extype" name="scala.annotation.ClassfileAnnotation">scala.annotation.ClassfileAnnotation</span> trait
+ is automatically added as a subclass to every Java annotation.</li><li><i>Scala annotations</i>: annotations on definitions or types produced by the Scala compiler.</li></ul><p> When a Scala annotation that inherits from <span class="extype" name="scala.annotation.StaticAnnotation">scala.annotation.StaticAnnotation</span> or <span class="extype" name="scala.annotation.ClassfileAnnotation">scala.annotation.ClassfileAnnotation</span> is compiled,
+ it is stored as special attributes in the corresponding classfile, and not as a Java annotation. Note that subclassing
+ just <span class="extype" name="scala.annotation.Annotation">scala.annotation.Annotation</span> is not enough to have the corresponding metadata persisted for runtime reflection.</p><p> Both Java and Scala annotations are represented as typed trees carrying constructor invocations corresponding
+ to the annotation. For instance, the annotation in <code>@ann(1, 2) class C</code> is represented as <code>q&quot;@new ann(1, 2)&quot;</code>.</p><p> Unlike Java reflection, Scala reflection does not support evaluation of constructor invocations stored in annotations
+ into underlying objects. For instance it's impossible to go from <code>@ann(1, 2) class C</code> to <code>ann(1, 2)</code>, so one
+ has to analyze trees representing annotation arguments to manually extract corresponding values. Towards that end,
+ arguments of an annotation can be obtained via <code>annotation.tree.children.tail</code>.</p><p> For more information about <code>Annotation</code>s, see the <a href="http://docs.scala-lang.org/overviews/reflection/annotations-names-scopes.html" target="_blank">Reflection Guide: Annotations, Names, Scopes, and More</a>
+</p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="Universe.html" class="extype" name="scala.reflect.api.Universe">Universe</a></dd><dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/reflect/scala/reflect/api/Annotations.scala#L1" target="_blank">Annotations.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">Known Subclasses</span>
+            <div class="subClasses hiddenContent"><a href="JavaUniverse.html" class="extype" name="scala.reflect.api.JavaUniverse">JavaUniverse</a>, <a href="../macros/Universe.html" class="extype" name="scala.reflect.macros.Universe">Universe</a>, <a href="Universe.html" class="extype" name="scala.reflect.api.Universe">Universe</a></div>
+          </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 152.00 155.00" height="155pt" width="152pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 151)" class="graph" id="graph0"><polygon points="-4,4 -4,-151 148,-151 148,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="scala.reflect.api.Annotations (this trait)" xlink:href="#inheritance-diagram"><polygon points="120,-86 24,-86 24,-61 120,-61 120,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-80.5" x="34" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="55" text-anchor="start">Annotations</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.reflect.api.Universe" xlink:href="Universe.html#inheritance-diagram"><polygon points="112.5,-25 31.5,-25 31.5,-0 112.5,-0 112.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="42" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="63" text-anchor="start">Universe</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="Universe is a subtype of Annotations"><path d="M72,-55.6874C72,-45.9173 72,-33.8534 72,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="70.2501,-55.8435 72,-60.8435 73.7501,-55.8435 70.2501,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.AnyRef" xlink:href="../../AnyRef.html#inheritance-diagram"><polygon points="110,-147 34,-147 34,-122 110,-122 110,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-141.5" x="44" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="65" text-anchor="start">AnyRef</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="Annotations is a subtype of AnyRef"><path d="M72,-116.687C72,-106.917 72,-94.8534 72,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="70.2501,-116.843 72,-121.843 73.7501,-116.844 70.2501,-116.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph2" viewBox="0.00 0.00 505.00 94.00" height="94pt" width="505pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 90)" class="graph" id="graph0"><polygon points="-4,4 -4,-90 501,-90 501,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node type" id="graph2_0"><g id="a_type|graph2_0"><a xlink:title="scala.reflect.api.Annotations.LiteralArgument" xlink:href="Annotations$LiteralArgument.html#inheritance-diagram"><polygon points="153,-25 0,-25 0,-0 153,-0 153,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/type_diagram.png" y="-19.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="31.5" text-anchor="start">Universe.LiteralArgument</text></a></g></g><!-- node1 --><g class="node type" id="graph2_1"><g id="a_type|graph2_1"><a xlink:title="scala.reflect.api.Annotations.ArrayArgument" xlink:href="Annotations$ArrayArgument.html#inheritance-diagram"><polygon points="321.5,-25 171.5,-25 171.5,-0 321.5,-0 321.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/type_diagram.png" y="-19.5" x="181.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="202.5" text-anchor="start">Universe.ArrayArgument</text></a></g></g><!-- node2 --><g class="node type" id="graph2_2"><g id="a_type|graph2_2"><a xlink:title="scala.reflect.api.Annotations.NestedArgument" xlink:href="Annotations$NestedArgument.html#inheritance-diagram"><polygon points="497,-25 340,-25 340,-0 497,-0 497,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/type_diagram.png" y="-19.5" x="350.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="371.5" text-anchor="start">Universe.NestedArgument</text></a></g></g><!-- node3 --><g class="node type" id="graph2_3"><g id="a_type|graph2_3"><a xlink:title="scala.reflect.api.Annotations.JavaArgument" xlink:href="Annotations$JavaArgument.html#inheritance-diagram"><polygon points="319,-86 174,-86 174,-61 319,-61 319,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/type_diagram.png" y="-80.5" x="184.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="205.5" text-anchor="start">Universe.JavaArgument</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph2_3_0"><g id="a_inheritance|graph2_3_0"><a xlink:title="Universe.LiteralArgument is a subtype of Universe.JavaArgument"><path d="M208.301,-59.2427C178.728,-48.979 138.172,-34.904 109.888,-25.0875" stroke="#d4d4d4" fill="none"></path><polygon points="208.021,-60.998 213.319,-60.9841 209.169,-57.6914 208.021,-60.998" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3&#45;&gt;node1 --><g class="edge inheritance" id="graph2_3_1"><g id="a_inheritance|graph2_3_1"><a xlink:title="Universe.ArrayArgument is a subtype of Universe.JavaArgument"><path d="M246.5,-55.6874C246.5,-45.9173 246.5,-33.8534 246.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="244.75,-55.8435 246.5,-60.8435 248.25,-55.8435 244.75,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3&#45;&gt;node2 --><g class="edge inheritance" id="graph2_3_2"><g id="a_inheritance|graph2_3_2"><a xlink:title="Universe.NestedArgument is a subtype of Universe.JavaArgument"><path d="M285.148,-59.2427C315.07,-48.979 356.102,-34.904 384.72,-25.0875" stroke="#d4d4d4" fill="none"></path><polygon points="284.233,-57.7064 280.072,-60.9841 285.369,-61.0171 284.233,-57.7064" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                <li class="group out"><span>Grouped</span></li>
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.reflect.api.Annotations"><span>Annotations</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.reflect.api.Annotations.Annotation" visbl="pub" data-isabs="true" fullComment="no" group="Annotations">
+      <a id="Annotation&gt;:Null&lt;:Annotations.this.AnnotationApi"></a>
+      <a id="Annotation:Universe.Annotation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$Annotation.html"><span class="name">Annotation</span></a><span class="result"> &gt;: <a href="../../Null.html" class="extype" name="scala.Null">Null</a> &lt;: <a href="Universe.html#AnnotationApiextendsAnyRef" class="extmbr" name="scala.reflect.api.Annotations.AnnotationApi">Universe.AnnotationApi</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@Annotation&gt;:Null&lt;:Annotations.this.AnnotationApi" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Information about an annotation.</p>
+    </li><li name="scala.reflect.api.Annotations.AnnotationApi" visbl="pub" data-isabs="true" fullComment="yes" group="API">
+      <a id="AnnotationApiextendsAnyRef"></a>
+      <a id="AnnotationApi:Universe.AnnotationApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$AnnotationApi.html"><span class="name">AnnotationApi</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@AnnotationApiextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The API of <code>Annotation</code> instances.</p><div class="fullcomment"><div class="comment cmt"><p>The API of <code>Annotation</code> instances.
+ The main source of information about annotations is the <a href="" class="extype" name="scala.reflect.api.Annotations">scala.reflect.api.Annotations</a> page.</p></div></div>
+    </li><li name="scala.reflect.api.Annotations.AnnotationExtractor" visbl="pub" data-isabs="true" fullComment="yes" group="Extractors">
+      <a id="AnnotationExtractorextendsAnyRef"></a>
+      <a id="AnnotationExtractor:Universe.AnnotationExtractor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$AnnotationExtractor.html"><span class="name">AnnotationExtractor</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@AnnotationExtractorextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An extractor class to create and pattern match with syntax <code>Annotation(tpe, scalaArgs, javaArgs)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>An extractor class to create and pattern match with syntax <code>Annotation(tpe, scalaArgs, javaArgs)</code>.
+ Here, <code>tpe</code> is the annotation type, <code>scalaArgs</code> the payload of Scala annotations, and <code>javaArgs</code> the payload of Java annotations.</p></div></div>
+    </li><li name="scala.reflect.api.Annotations.ArrayArgument" visbl="pub" data-isabs="true" fullComment="yes" group="Annotations">
+      <a id="ArrayArgument&gt;:Null&lt;:Annotations.this.ArrayArgumentApiwithAnnotations.this.JavaArgument"></a>
+      <a id="ArrayArgument:Universe.ArrayArgument"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$ArrayArgument.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">ArrayArgument</span></a><span class="result"> &gt;: <a href="../../Null.html" class="extype" name="scala.Null">Null</a> &lt;: <a href="Universe.html#ArrayArgumentApiextendsAnyRef" class="extmbr" name="scala.reflect.api.Annotations.ArrayArgumentApi">Universe.ArrayArgumentApi</a> with <a href="Universe.html#JavaArgument&gt;:Null&lt;:Annotations.this.JavaArgumentApi" class="extmbr" name="scala.reflect.api.Annotations.JavaArgument">Universe.JavaArgument</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@ArrayArgument&gt;:Null&lt;:Annotations.this.ArrayArgumentApiwithAnnotations.this.JavaArgument" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An array argument to a Java annotation as in <code>@Target(value={TYPE,FIELD,METHOD,PARAMETER})</code></p><div class="fullcomment"><div class="comment cmt"><p>An array argument to a Java annotation as in <code>@Target(value={TYPE,FIELD,METHOD,PARAMETER})</code></p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations.ArrayArgumentApi" visbl="pub" data-isabs="true" fullComment="yes" group="API">
+      <a id="ArrayArgumentApiextendsAnyRef"></a>
+      <a id="ArrayArgumentApi:Universe.ArrayArgumentApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$ArrayArgumentApi.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">ArrayArgumentApi</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@ArrayArgumentApiextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">API of <code>ArrayArgument</code> instances.</p><div class="fullcomment"><div class="comment cmt"><p>API of <code>ArrayArgument</code> instances.
+ The main source of information about annotations is the <a href="" class="extype" name="scala.reflect.api.Annotations">scala.reflect.api.Annotations</a> page.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations.ArrayArgumentExtractor" visbl="pub" data-isabs="true" fullComment="yes" group="Extractors">
+      <a id="ArrayArgumentExtractorextendsAnyRef"></a>
+      <a id="ArrayArgumentExtractor:Universe.ArrayArgumentExtractor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$ArrayArgumentExtractor.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">ArrayArgumentExtractor</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@ArrayArgumentExtractorextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An extractor class to create and pattern match with syntax <code>ArrayArgument(args)</code>
+ where <code>args</code> is the argument array.</p><div class="fullcomment"><div class="comment cmt"><p>An extractor class to create and pattern match with syntax <code>ArrayArgument(args)</code>
+ where <code>args</code> is the argument array.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations.JavaArgument" visbl="pub" data-isabs="true" fullComment="yes" group="Annotations">
+      <a id="JavaArgument&gt;:Null&lt;:Annotations.this.JavaArgumentApi"></a>
+      <a id="JavaArgument:Universe.JavaArgument"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$JavaArgument.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">JavaArgument</span></a><span class="result"> &gt;: <a href="../../Null.html" class="extype" name="scala.Null">Null</a> &lt;: <a href="Universe.html#JavaArgumentApiextendsAnyRef" class="extmbr" name="scala.reflect.api.Annotations.JavaArgumentApi">Universe.JavaArgumentApi</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@JavaArgument&gt;:Null&lt;:Annotations.this.JavaArgumentApi" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A Java annotation argument</p><div class="fullcomment"><div class="comment cmt"><p>A Java annotation argument</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations.JavaArgumentApi" visbl="pub" data-isabs="true" fullComment="yes" group="API">
+      <a id="JavaArgumentApiextendsAnyRef"></a>
+      <a id="JavaArgumentApi:Universe.JavaArgumentApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$JavaArgumentApi.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">JavaArgumentApi</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@JavaArgumentApiextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Has no special methods.</p><div class="fullcomment"><div class="comment cmt"><p>Has no special methods. Is here to provides erased identity for <code>CompoundType</code>.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations.LiteralArgument" visbl="pub" data-isabs="true" fullComment="yes" group="Annotations">
+      <a id="LiteralArgument&gt;:Null&lt;:Annotations.this.LiteralArgumentApiwithAnnotations.this.JavaArgument"></a>
+      <a id="LiteralArgument:Universe.LiteralArgument"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$LiteralArgument.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">LiteralArgument</span></a><span class="result"> &gt;: <a href="../../Null.html" class="extype" name="scala.Null">Null</a> &lt;: <a href="Universe.html#LiteralArgumentApiextendsAnyRef" class="extmbr" name="scala.reflect.api.Annotations.LiteralArgumentApi">Universe.LiteralArgumentApi</a> with <a href="Universe.html#JavaArgument&gt;:Null&lt;:Annotations.this.JavaArgumentApi" class="extmbr" name="scala.reflect.api.Annotations.JavaArgument">Universe.JavaArgument</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@LiteralArgument&gt;:Null&lt;:Annotations.this.LiteralArgumentApiwithAnnotations.this.JavaArgument" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A literal argument to a Java annotation as <code>&quot;Use X instead&quot;</code> in <code>@Deprecated(&quot;Use X instead&quot;)</code></p><div class="fullcomment"><div class="comment cmt"><p>A literal argument to a Java annotation as <code>&quot;Use X instead&quot;</code> in <code>@Deprecated(&quot;Use X instead&quot;)</code></p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations.LiteralArgumentApi" visbl="pub" data-isabs="true" fullComment="yes" group="API">
+      <a id="LiteralArgumentApiextendsAnyRef"></a>
+      <a id="LiteralArgumentApi:Universe.LiteralArgumentApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$LiteralArgumentApi.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">LiteralArgumentApi</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@LiteralArgumentApiextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The API of <code>LiteralArgument</code> instances.</p><div class="fullcomment"><div class="comment cmt"><p>The API of <code>LiteralArgument</code> instances.
+ The main source of information about annotations is the <a href="" class="extype" name="scala.reflect.api.Annotations">scala.reflect.api.Annotations</a> page.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations.LiteralArgumentExtractor" visbl="pub" data-isabs="true" fullComment="yes" group="Extractors">
+      <a id="LiteralArgumentExtractorextendsAnyRef"></a>
+      <a id="LiteralArgumentExtractor:Universe.LiteralArgumentExtractor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$LiteralArgumentExtractor.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">LiteralArgumentExtractor</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@LiteralArgumentExtractorextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An extractor class to create and pattern match with syntax <code>LiteralArgument(value)</code>
+ where <code>value</code> is the constant argument.</p><div class="fullcomment"><div class="comment cmt"><p>An extractor class to create and pattern match with syntax <code>LiteralArgument(value)</code>
+ where <code>value</code> is the constant argument.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations.NestedArgument" visbl="pub" data-isabs="true" fullComment="yes" group="Annotations">
+      <a id="NestedArgument&gt;:Null&lt;:Annotations.this.NestedArgumentApiwithAnnotations.this.JavaArgument"></a>
+      <a id="NestedArgument:Universe.NestedArgument"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$NestedArgument.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">NestedArgument</span></a><span class="result"> &gt;: <a href="../../Null.html" class="extype" name="scala.Null">Null</a> &lt;: <a href="Universe.html#NestedArgumentApiextendsAnyRef" class="extmbr" name="scala.reflect.api.Annotations.NestedArgumentApi">Universe.NestedArgumentApi</a> with <a href="Universe.html#JavaArgument&gt;:Null&lt;:Annotations.this.JavaArgumentApi" class="extmbr" name="scala.reflect.api.Annotations.JavaArgument">Universe.JavaArgument</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@NestedArgument&gt;:Null&lt;:Annotations.this.NestedArgumentApiwithAnnotations.this.JavaArgument" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A nested annotation argument to a Java annotation as <code>@Nested</code> in <code>@Outer(@Nested)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>A nested annotation argument to a Java annotation as <code>@Nested</code> in <code>@Outer(@Nested)</code>.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations.NestedArgumentApi" visbl="pub" data-isabs="true" fullComment="yes" group="API">
+      <a id="NestedArgumentApiextendsAnyRef"></a>
+      <a id="NestedArgumentApi:Universe.NestedArgumentApi"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$NestedArgumentApi.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">NestedArgumentApi</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@NestedArgumentApiextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">API of <code>NestedArgument</code> instances.</p><div class="fullcomment"><div class="comment cmt"><p>API of <code>NestedArgument</code> instances.
+ The main source of information about annotations is the <a href="" class="extype" name="scala.reflect.api.Annotations">scala.reflect.api.Annotations</a> page.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations.NestedArgumentExtractor" visbl="pub" data-isabs="true" fullComment="yes" group="Extractors">
+      <a id="NestedArgumentExtractorextendsAnyRef"></a>
+      <a id="NestedArgumentExtractor:Universe.NestedArgumentExtractor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations$NestedArgumentExtractor.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">NestedArgumentExtractor</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@NestedArgumentExtractorextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An extractor class to create and pattern match with syntax <code>NestedArgument(annotation)</code>
+ where <code>annotation</code> is the nested annotation.</p><div class="fullcomment"><div class="comment cmt"><p>An extractor class to create and pattern match with syntax <code>NestedArgument(annotation)</code>
+ where <code>annotation</code> is the nested annotation.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scala.reflect.api.Annotations#Annotation" visbl="pub" data-isabs="true" fullComment="no" group="Extractors">
+      <a id="Annotation:Annotations.this.AnnotationExtractor"></a>
+      <a id="Annotation:Universe.AnnotationExtractor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Annotation</span><span class="result">: <a href="Universe.html#AnnotationExtractorextendsAnyRef" class="extmbr" name="scala.reflect.api.Annotations.AnnotationExtractor">Universe.AnnotationExtractor</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@Annotation:Annotations.this.AnnotationExtractor" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The constructor/extractor for <code>Annotation</code> instances.</p>
+    </li><li name="scala.reflect.api.Annotations#annotationToTree" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="annotationToTree(ann:Annotations.this.Annotation):Annotations.this.Tree"></a>
+      <a id="annotationToTree(Universe.Annotation):Universe.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">annotationToTree</span><span class="params">(<span name="ann">ann: <a href="Universe.html#Annotation&gt;:Null&lt;:Annotations.this.AnnotationApi" class="extmbr" name="scala.reflect.api.Annotations.Annotation">Universe.Annotation</a></span>)</span><span class="result">: <a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@annotationToTree(ann:Annotations.this.Annotation):Annotations.this.Tree" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../package.html" class="extype" name="scala">scala</a>] </dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations#treeToAnnotation" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="treeToAnnotation(tree:Annotations.this.Tree):Annotations.this.Annotation"></a>
+      <a id="treeToAnnotation(Universe.Tree):Universe.Annotation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">treeToAnnotation</span><span class="params">(<span name="tree">tree: <a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a></span>)</span><span class="result">: <a href="Universe.html#Annotation&gt;:Null&lt;:Annotations.this.AnnotationApi" class="extmbr" name="scala.reflect.api.Annotations.Annotation">Universe.Annotation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@treeToAnnotation(tree:Annotations.this.Tree):Annotations.this.Annotation" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../package.html" class="extype" name="scala">scala</a>] </dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations#ArrayArgument" visbl="pub" data-isabs="true" fullComment="yes" group="Extractors">
+      <a id="ArrayArgument:Annotations.this.ArrayArgumentExtractor"></a>
+      <a id="ArrayArgument:Universe.ArrayArgumentExtractor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">ArrayArgument</span><span class="result">: <a href="Universe.html#ArrayArgumentExtractorextendsAnyRef" class="extmbr" name="scala.reflect.api.Annotations.ArrayArgumentExtractor">Universe.ArrayArgumentExtractor</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@ArrayArgument:Annotations.this.ArrayArgumentExtractor" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The constructor/extractor for <code>ArrayArgument</code> instances.</p><div class="fullcomment"><div class="comment cmt"><p>The constructor/extractor for <code>ArrayArgument</code> instances.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations#LiteralArgument" visbl="pub" data-isabs="true" fullComment="yes" group="Extractors">
+      <a id="LiteralArgument:Annotations.this.LiteralArgumentExtractor"></a>
+      <a id="LiteralArgument:Universe.LiteralArgumentExtractor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">LiteralArgument</span><span class="result">: <a href="Universe.html#LiteralArgumentExtractorextendsAnyRef" class="extmbr" name="scala.reflect.api.Annotations.LiteralArgumentExtractor">Universe.LiteralArgumentExtractor</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@LiteralArgument:Annotations.this.LiteralArgumentExtractor" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The constructor/extractor for <code>LiteralArgument</code> instances.</p><div class="fullcomment"><div class="comment cmt"><p>The constructor/extractor for <code>LiteralArgument</code> instances.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Annotations#NestedArgument" visbl="pub" data-isabs="true" fullComment="yes" group="Extractors">
+      <a id="NestedArgument:Annotations.this.NestedArgumentExtractor"></a>
+      <a id="NestedArgument:Universe.NestedArgumentExtractor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use Annotation.tree to inspect annotation arguments">NestedArgument</span><span class="result">: <a href="Universe.html#NestedArgumentExtractorextendsAnyRef" class="extmbr" name="scala.reflect.api.Annotations.NestedArgumentExtractor">Universe.NestedArgumentExtractor</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@NestedArgument:Annotations.this.NestedArgumentExtractor" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The constructor/extractor for <code>NestedArgument</code> instances.</p><div class="fullcomment"><div class="comment cmt"><p>The constructor/extractor for <code>NestedArgument</code> instances.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>Annotation.tree</code> to inspect annotation arguments</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a> to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>] performed by method any2stringadd in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(Annotations,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((Annotations)⇒Boolean,⇒Any):Annotations"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((Annotations)⇒Boolean):Annotations"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):Annotations"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):Annotations"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a> to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>] performed by method StringFormat in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(Annotations,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Annotations@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.reflect.api.Annotations">Annotations</a>]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Annotations">
+              <h3>Annotations</h3>
+              
+            </div><div class="group" name="API">
+              <h3>API</h3>
+              <div class="comment cmt"><p>The methods available for each reflection entity, without the implementation. Since the
+                       reflection entities are later overridden by runtime reflection and macros, their API
+                       counterparts guarantee a minimum set of methods that are implemented.</p></div>
+            </div><div class="group" name="Extractors">
+              <h3>Extractors</h3>
+              <div class="comment cmt"><p>Extractors provide the machinery necessary to allow pattern matching and construction of
+                       reflection entities that is similar to case classes, although the entities are only abstract
+                       types that are later overridden.</p></div>
+            </div><div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

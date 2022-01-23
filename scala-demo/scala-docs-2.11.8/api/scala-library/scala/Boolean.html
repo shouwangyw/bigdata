@@ -1,0 +1,968 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>Boolean - Scala Standard Library 2.11.8 - scala.Boolean</title>
+          <meta name="description" content="Boolean - Scala Standard Library 2.11.8 - scala.Boolean" />
+          <meta name="keywords" content="Boolean Scala Standard Library 2.11.8 scala.Boolean" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../lib/template.js"></script>
+      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../lib/modernizr.custom.js"></script><script type="text/javascript" src="../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../index.html';
+            var hash = 'scala.Boolean';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <a href="Boolean$.html" title="See companion object"><img alt="Class/Object" src="../lib/class_to_object_big.png" /></a>
+        <p id="owner"><a href="package.html" class="extype" name="scala">scala</a></p>
+        <h1><a href="Boolean$.html" title="See companion object">Boolean</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="Boolean$.html" title="See companion object">object Boolean</a>
+            | <a href="package.html" class="extype" name="scala">package scala</a>
+          </div></span></h3><span class="permalink">
+      <a href="../index.html#scala.Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Boolean</span><span class="result"> extends <a href="AnyVal.html" class="extype" name="scala.AnyVal">AnyVal</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p><code>Boolean</code> (equivalent to Java's <code>boolean</code> primitive type) is a
+ subtype of <a href="AnyVal.html" class="extype" name="scala.AnyVal">scala.AnyVal</a>. Instances of <code>Boolean</code> are not
+ represented by an object in the underlying runtime system.</p><p> There is an implicit conversion from <a href="" class="extype" name="scala.Boolean">scala.Boolean</a> =&gt; <a href="runtime/RichBoolean.html" class="extype" name="scala.runtime.RichBoolean">scala.runtime.RichBoolean</a>
+ which provides useful non-primitive operations.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/Boolean.scala#L1" target="_blank">Boolean.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="AnyVal.html" class="extype" name="scala.AnyVal">AnyVal</a>, <a href="Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.Boolean"><span>Boolean</span></li><li class="in" name="scala.AnyVal"><span>AnyVal</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.boolean2Boolean" data-hidden="false"><span>by boolean2Boolean</span></li><li class="in" name="scala.LowPriorityImplicits.booleanWrapper" data-hidden="false"><span>by booleanWrapper</span></li><li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scala.Boolean#!=" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="!=(x:Boolean):Boolean"></a>
+      <a id="!=(Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="x">x: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@!=(x:Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compares two Boolean expressions and returns <code>true</code> if they evaluate to a different value.</p><div class="fullcomment"><div class="comment cmt"><p>Compares two Boolean expressions and returns <code>true</code> if they evaluate to a different value.</p><p><code>a != b</code> returns <code>true</code> if and only if</p><ul><li><code>a</code> is <code>true</code> and <code>b</code> is <code>false</code> or</li><li><code>a</code> is <code>false</code> and <code>b</code> is <code>true</code>.
+</li></ul></div></div>
+    </li><li name="scala.Boolean#&amp;" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="&amp;(x:Boolean):Boolean"></a>
+      <a id="&amp;(Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $amp" class="name">&amp;</span><span class="params">(<span name="x">x: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@&amp;(x:Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compares two Boolean expressions and returns <code>true</code> if both of them evaluate to true.</p><div class="fullcomment"><div class="comment cmt"><p>Compares two Boolean expressions and returns <code>true</code> if both of them evaluate to true.</p><p><code>a &amp; b</code> returns <code>true</code> if and only if</p><ul><li><code>a</code> and <code>b</code> are <code>true</code>.
+</li></ul></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>This method evaluates both <code>a</code> and <code>b</code>, even if the result is already determined after evaluating <code>a</code>.</p></span></dd></dl></div>
+    </li><li name="scala.Boolean#&amp;&amp;" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="&amp;&amp;(x:Boolean):Boolean"></a>
+      <a id="&amp;&amp;(Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $amp$amp" class="name">&amp;&amp;</span><span class="params">(<span name="x">x: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@&amp;&amp;(x:Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compares two Boolean expressions and returns <code>true</code> if both of them evaluate to true.</p><div class="fullcomment"><div class="comment cmt"><p>Compares two Boolean expressions and returns <code>true</code> if both of them evaluate to true.</p><p><code>a &amp;&amp; b</code> returns <code>true</code> if and only if</p><ul><li><code>a</code> and <code>b</code> are <code>true</code>.
+</li></ul></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>This method uses 'short-circuit' evaluation and
+      behaves as if it was declared as <code>def &amp;&amp;(x: =&gt; Boolean): Boolean</code>.
+      If <code>a</code> evaluates to <code>false</code>, <code>false</code> is returned without evaluating <code>b</code>.</p></span></dd></dl></div>
+    </li><li name="scala.Boolean#==" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="==(x:Boolean):Boolean"></a>
+      <a id="==(Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="x">x: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@==(x:Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compares two Boolean expressions and returns <code>true</code> if they evaluate to the same value.</p><div class="fullcomment"><div class="comment cmt"><p>Compares two Boolean expressions and returns <code>true</code> if they evaluate to the same value.</p><p><code>a == b</code> returns <code>true</code> if and only if</p><ul><li><code>a</code> and <code>b</code> are <code>true</code> or</li><li><code>a</code> and <code>b</code> are <code>false</code>.
+</li></ul></div></div>
+    </li><li name="scala.Boolean#^" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="^(x:Boolean):Boolean"></a>
+      <a id="^(Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $up" class="name">^</span><span class="params">(<span name="x">x: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@^(x:Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compares two Boolean expressions and returns <code>true</code> if they evaluate to a different value.</p><div class="fullcomment"><div class="comment cmt"><p>Compares two Boolean expressions and returns <code>true</code> if they evaluate to a different value.</p><p><code>a ^ b<code> returns </code>true<code> if and only if</code></code></p><ul><li><code>a</code> is <code>true</code> and <code>b</code> is <code>false</code> or</li><li><code>a</code> is <code>false</code> and <code>b</code> is <code>true</code>.
+</li></ul></div></div>
+    </li><li name="scala.Boolean#unary_!" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="unary_!:Boolean"></a>
+      <a id="unary_!:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: unary_$bang" class="name">unary_!</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@unary_!:Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Negates a Boolean expression.</p><div class="fullcomment"><div class="comment cmt"><p>Negates a Boolean expression.</p><p>- <code>!a</code> results in <code>false</code> if and only if <code>a</code> evaluates to <code>true</code> and
+- <code>!a</code> results in <code>true</code> if and only if <code>a</code> evaluates to <code>false</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the negated expression</p></dd></dl></div>
+    </li><li name="scala.Boolean#|" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="|(x:Boolean):Boolean"></a>
+      <a id="|(Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bar" class="name">|</span><span class="params">(<span name="x">x: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@|(x:Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compares two Boolean expressions and returns <code>true</code> if one or both of them evaluate to true.</p><div class="fullcomment"><div class="comment cmt"><p>Compares two Boolean expressions and returns <code>true</code> if one or both of them evaluate to true.</p><p><code>a | b</code> returns <code>true</code> if and only if</p><ul><li><code>a</code> is <code>true</code> or</li><li><code>b</code> is <code>true</code> or</li><li><code>a</code> and <code>b</code> are <code>true</code>.
+</li></ul></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>This method evaluates both <code>a</code> and <code>b</code>, even if the result is already determined after evaluating <code>a</code>.</p></span></dd></dl></div>
+    </li><li name="scala.Boolean#||" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="||(x:Boolean):Boolean"></a>
+      <a id="||(Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bar$bar" class="name">||</span><span class="params">(<span name="x">x: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@||(x:Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compares two Boolean expressions and returns <code>true</code> if one or both of them evaluate to true.</p><div class="fullcomment"><div class="comment cmt"><p>Compares two Boolean expressions and returns <code>true</code> if one or both of them evaluate to true.</p><p><code>a || b</code> returns <code>true</code> if and only if</p><ul><li><code>a</code> is <code>true</code> or</li><li><code>b</code> is <code>true</code> or</li><li><code>a</code> and <code>b</code> are <code>true</code>.
+</li></ul></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>This method uses 'short-circuit' evaluation and
+      behaves as if it was declared as <code>def ||(x: =&gt; Boolean): Boolean</code>.
+      If <code>a</code> evaluates to <code>true</code>, <code>true</code> is returned without evaluating <code>b</code>.</p></span></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@##():Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <a href="Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@+(other:String):String" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="Predef$$any2stringadd.html" class="extype" name="scala.Predef.any2stringadd">any2stringadd</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>] performed by method any2stringadd in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="Predef$$any2stringadd.html" class="extype" name="scala.Predef.any2stringadd">any2stringadd</a></dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(Boolean,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.Boolean">Boolean</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>] performed by method ArrowAssoc in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="inline.html" class="extype" name="scala.inline">inline</a></span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.LowPriorityImplicits.booleanWrapper#&lt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;(that:A):Boolean"></a>
+      <a id="&lt;(Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less" class="implicit">&lt;</span><span class="params">(<span name="that">that: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@&lt;(that:A):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns true if <code>this</code> is less than <code>that</code>
+</p><div class="fullcomment"><div class="comment cmt"><p>Returns true if <code>this</code> is less than <code>that</code>
+</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="runtime/RichBoolean.html" class="extype" name="scala.runtime.RichBoolean">RichBoolean</a> performed by method booleanWrapper in scala.LowPriorityImplicits.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="math/Ordered.html" class="extype" name="scala.math.Ordered">Ordered</a></dd></dl></div>
+    </li><li name="scala.LowPriorityImplicits.booleanWrapper#&lt;=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;=(that:A):Boolean"></a>
+      <a id="&lt;=(Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less$eq" class="implicit">&lt;=</span><span class="params">(<span name="that">that: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@&lt;=(that:A):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns true if <code>this</code> is less than or equal to <code>that</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns true if <code>this</code> is less than or equal to <code>that</code>.
+</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="runtime/RichBoolean.html" class="extype" name="scala.runtime.RichBoolean">RichBoolean</a> performed by method booleanWrapper in scala.LowPriorityImplicits.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="math/Ordered.html" class="extype" name="scala.math.Ordered">Ordered</a></dd></dl></div>
+    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for equality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for equality.
+ The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.LowPriorityImplicits.booleanWrapper#&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&gt;(that:A):Boolean"></a>
+      <a id="&gt;(Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $greater" class="implicit">&gt;</span><span class="params">(<span name="that">that: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@&gt;(that:A):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns true if <code>this</code> is greater than <code>that</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns true if <code>this</code> is greater than <code>that</code>.
+</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="runtime/RichBoolean.html" class="extype" name="scala.runtime.RichBoolean">RichBoolean</a> performed by method booleanWrapper in scala.LowPriorityImplicits.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="math/Ordered.html" class="extype" name="scala.math.Ordered">Ordered</a></dd></dl></div>
+    </li><li name="scala.LowPriorityImplicits.booleanWrapper#&gt;=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&gt;=(that:A):Boolean"></a>
+      <a id="&gt;=(Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $greater$eq" class="implicit">&gt;=</span><span class="params">(<span name="that">that: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@&gt;=(that:A):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns true if <code>this</code> is greater than or equal to <code>that</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns true if <code>this</code> is greater than or equal to <code>that</code>.
+</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="runtime/RichBoolean.html" class="extype" name="scala.runtime.RichBoolean">RichBoolean</a> performed by method booleanWrapper in scala.LowPriorityImplicits.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="math/Ordered.html" class="extype" name="scala.math.Ordered">Ordered</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.Predef.boolean2Boolean#booleanValue" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="booleanValue():Boolean"></a>
+      <a id="booleanValue():Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">booleanValue</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@booleanValue():Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <span class="extype" name="java.lang.Boolean">java.lang.Boolean</span> performed by method boolean2Boolean in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd>Boolean</dd></dl></div>
+    </li><li name="scala.LowPriorityImplicits.booleanWrapper#compare" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="compare(y:T):Int"></a>
+      <a id="compare(Boolean):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">compare</span><span class="params">(<span name="y">y: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@compare(y:T):Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Result of comparing <code>this</code> with operand <code>that</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Result of comparing <code>this</code> with operand <code>that</code>.</p><p>Implement this method to determine how instances of A will be sorted.</p><p>Returns <code>x</code> where:</p><ul><li><code>x &lt; 0</code> when <code>this &lt; that</code></li><li><code>x == 0</code> when <code>this == that</code></li><li><code>x &gt; 0</code> when  <code>this &gt; that</code></li></ul></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="runtime/RichBoolean.html" class="extype" name="scala.runtime.RichBoolean">RichBoolean</a> performed by method booleanWrapper in scala.LowPriorityImplicits.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="runtime/OrderedProxy.html" class="extype" name="scala.runtime.OrderedProxy">OrderedProxy</a> → <a href="math/Ordered.html" class="extype" name="scala.math.Ordered">Ordered</a></dd></dl></div>
+    </li><li name="scala.Predef.boolean2Boolean#compareTo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="compareTo(x$1:Boolean):Int"></a>
+      <a id="compareTo(java.lang.Boolean):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">compareTo</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="java.lang.Boolean">java.lang.Boolean</span></span>)</span><span class="result">: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@compareTo(x$1:Boolean):Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <span class="extype" name="java.lang.Boolean">java.lang.Boolean</span> performed by method boolean2Boolean in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd>Boolean → Comparable</dd></dl></div>
+    </li><li name="scala.LowPriorityImplicits.booleanWrapper#compareTo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="compareTo(that:A):Int"></a>
+      <a id="compareTo(Boolean):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">compareTo</span><span class="params">(<span name="that">that: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@compareTo(that:A):Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Result of comparing <code>this</code> with operand <code>that</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Result of comparing <code>this</code> with operand <code>that</code>.
+</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="runtime/RichBoolean.html" class="extype" name="scala.runtime.RichBoolean">RichBoolean</a> performed by method booleanWrapper in scala.LowPriorityImplicits.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="math/Ordered.html" class="extype" name="scala.math.Ordered">Ordered</a> → Comparable</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((Boolean)⇒Boolean,⇒Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.Boolean">Boolean</a>) ⇒ <a href="" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>] performed by method Ensuring in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((Boolean)⇒Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.Boolean">Boolean</a>) ⇒ <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>] performed by method Ensuring in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>] performed by method Ensuring in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>] performed by method Ensuring in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Any#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compares the receiver object (<code>this</code>) with the argument object (<code>that</code>) for equivalence.</p><div class="fullcomment"><div class="comment cmt"><p>Compares the receiver object (<code>this</code>) with the argument object (<code>that</code>) for equivalence.</p><p> Any implementation of this method should be an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a>:</p><ul><li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>, <code>x.equals(x)</code> should return <code>true</code>.</li><li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and
+   only if <code>y.equals(x)</code> returns <code>true</code>.</li><li>It is transitive: for any instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>Any</code> if <code>x.equals(y)</code> returns <code>true</code> and
+   <code>y.equals(z)</code> returns <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li></ul><p> If you override this method, you should verify that your implementation remains an equivalence relation.
+ Additionally, when overriding this method it is usually necessary to override <code>hashCode</code> to ensure that
+ objects which are &quot;equal&quot; (<code>o1.equals(o2)</code> returns <code>true</code>) hash to the same <a href="Int.html" class="extype" name="scala.Int">scala.Int</a>.
+ (<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <a href="Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns string formatted according to given <code>format</code> string.</p><div class="fullcomment"><div class="comment cmt"><p>Returns string formatted according to given <code>format</code> string.
+ Format strings are as for <code>String.format</code>
+ (@see java.lang.String.format).
+</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="Predef$$StringFormat.html" class="extype" name="scala.Predef.StringFormat">StringFormat</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>] performed by method StringFormat in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="Predef$$StringFormat.html" class="extype" name="scala.Predef.StringFormat">StringFormat</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="inline.html" class="extype" name="scala.inline">inline</a></span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Boolean#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[Boolean]"></a>
+      <a id="getClass():Class[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <a href="Predef$.html#Class[T]=Class[T]" class="extmbr" name="scala.Predef.Class">Class</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@getClass():Class[Boolean]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the runtime class representation of the object.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the runtime class representation of the object.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a class object corresponding to the runtime type of the receiver.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.Boolean">Boolean</a> → <a href="AnyVal.html" class="extype" name="scala.AnyVal">AnyVal</a> → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@hashCode():Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Calculate a hash code value for the object.</p><div class="fullcomment"><div class="comment cmt"><p>Calculate a hash code value for the object.</p><p> The default hashing algorithm is platform dependent.</p><p> Note that it is allowed for two objects to have identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet
+ not be equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A degenerate implementation could always return <code>0</code>.
+ However, it is required that if two objects are equal (<code>o1.equals(o2)</code> returns <code>true</code>) that they have
+ identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when overriding this method, be sure
+ to verify that the behavior is consistent with the <code>equals</code> method.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.LowPriorityImplicits.booleanWrapper#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="self:Boolean"></a>
+      <a id="self:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">self</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@self:Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="runtime/RichBoolean.html" class="extype" name="scala.runtime.RichBoolean">RichBoolean</a> performed by method booleanWrapper in scala.LowPriorityImplicits.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="runtime/RichBoolean.html" class="extype" name="scala.runtime.RichBoolean">RichBoolean</a> → <a href="Proxy$$Typed.html" class="extype" name="scala.Proxy.Typed">Typed</a> → <a href="Proxy.html" class="extype" name="scala.Proxy">Proxy</a></dd></dl></div>
+    </li><li name="scala.Any#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@toString():String" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a string representation of the object.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a string representation of the object.</p><p> The default representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a string representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(Boolean,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.Boolean">Boolean</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>] performed by method ArrowAssoc in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Shadowed Implicit Value Members</h3>
+              <ol><li name="scala.Predef.boolean2Boolean#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit shadowed">equals</span><span class="params">(<span name="arg0">arg0: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <span class="extype" name="java.lang.Boolean">java.lang.Boolean</span> performed by method boolean2Boolean in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is shadowed by one or more members in this class.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(boolean: java.lang.Boolean).equals(arg0)</pre></div></dd><dt>Definition Classes</dt><dd>Boolean → AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.boolean2Boolean#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit shadowed">hashCode</span><span class="params">()</span><span class="result">: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@hashCode():Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <span class="extype" name="java.lang.Boolean">java.lang.Boolean</span> performed by method boolean2Boolean in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is shadowed by one or more members in this class.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(boolean: java.lang.Boolean).hashCode()</pre></div></dd><dt>Definition Classes</dt><dd>Boolean → AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.boolean2Boolean#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit shadowed">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@toString():String" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <span class="extype" name="java.lang.Boolean">java.lang.Boolean</span> performed by method boolean2Boolean in <a href="Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is shadowed by one or more members in this class.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(boolean: java.lang.Boolean).toString()</pre></div></dd><dt>Definition Classes</dt><dd>Boolean → AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.LowPriorityImplicits.booleanWrapper#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit shadowed">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Boolean@toString():String" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a string representation of the object.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a string representation of the object.</p><p> The default representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a string representation of the object.</p></dd></dl><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.Boolean">Boolean</a> to
+            <a href="runtime/RichBoolean.html" class="extype" name="scala.runtime.RichBoolean">RichBoolean</a> performed by method booleanWrapper in scala.LowPriorityImplicits.
+            
+          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is shadowed by one or more members in this class.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(boolean: RichBoolean).toString()</pre></div></dd><dt>Definition Classes</dt><dd><a href="Proxy.html" class="extype" name="scala.Proxy">Proxy</a> → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyVal">
+              <h3>Inherited from <a href="AnyVal.html" class="extype" name="scala.AnyVal">AnyVal</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.boolean2Boolean">
+              <h3>Inherited by implicit conversion boolean2Boolean from
+                <a href="" class="extype" name="scala.Boolean">Boolean</a> to <span class="extype" name="java.lang.Boolean">java.lang.Boolean</span>
+              </h3>
+            </div><div class="conversion" name="scala.LowPriorityImplicits.booleanWrapper">
+              <h3>Inherited by implicit conversion booleanWrapper from
+                <a href="" class="extype" name="scala.Boolean">Boolean</a> to <a href="runtime/RichBoolean.html" class="extype" name="scala.runtime.RichBoolean">RichBoolean</a>
+              </h3>
+            </div><div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="" class="extype" name="scala.Boolean">Boolean</a> to <a href="Predef$$any2stringadd.html" class="extype" name="scala.Predef.any2stringadd">any2stringadd</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="scala.Boolean">Boolean</a> to <a href="Predef$$StringFormat.html" class="extype" name="scala.Predef.StringFormat">StringFormat</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="" class="extype" name="scala.Boolean">Boolean</a> to <a href="Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="scala.Boolean">Boolean</a> to <a href="Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a>[<a href="" class="extype" name="scala.Boolean">Boolean</a>]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>icode - Scala Compiler 2.11.8 - scala.tools.nsc.backend.icode</title>
+          <meta name="description" content="icode - Scala Compiler 2.11.8 - scala.tools.nsc.backend.icode" />
+          <meta name="keywords" content="icode Scala Compiler 2.11.8 scala.tools.nsc.backend.icode" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'scala.tools.nsc.backend.icode.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.backend">backend</a></p>
+        <h1>icode</h1><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">icode</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 1101.00 94.00" height="94pt" width="1101pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 90)" class="graph" id="graph0"><polygon points="-4,4 -4,-90 1097,-90 1097,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node trait" id="graph1_0"><g id="a_trait|graph1_0"><a xlink:title="scala.tools.nsc.backend.icode.TypeKinds" xlink:href="TypeKinds.html#inheritance-diagram"><polygon points="90,-86 0,-86 0,-61 90,-61 90,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="10" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="31" text-anchor="start">TypeKinds</text></a></g></g><!-- node7 --><g class="node class" id="graph1_7"><g id="a_class|graph1_7"><a xlink:title="scala.tools.nsc.backend.icode.ICodes" xlink:href="ICodes.html#inheritance-diagram"><polygon points="573.5,-25 498.5,-25 498.5,-0 573.5,-0 573.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-19.5" x="509" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="530" text-anchor="start">ICodes</text></a></g></g><!-- node0&#45;&gt;node7 --><g class="edge inheritance" id="graph1_0_7"><g id="a_inheritance|graph1_0_7"><a xlink:title="ICodes is a subtype of TypeKinds"><path d="M95.1078,-61.6474C96.4173,-61.4222 97.7164,-61.2059 99,-61 245.936,-37.4309 422.578,-22.2076 498.417,-16.291" stroke="#d4d4d4" fill="none"></path><polygon points="94.632,-59.9546 90.0171,-62.5557 95.2468,-63.4001 94.632,-59.9546" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="scala.tools.nsc.backend.icode.Repository" xlink:href="Repository.html#inheritance-diagram"><polygon points="199.5,-86 108.5,-86 108.5,-61 199.5,-61 199.5,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="119" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="140" text-anchor="start">Repository</text></a></g></g><!-- node1&#45;&gt;node7 --><g class="edge inheritance" id="graph1_1_7"><g id="a_inheritance|graph1_1_7"><a xlink:title="ICodes is a subtype of Repository"><path d="M204.625,-61.7919C206.098,-61.5197 207.559,-61.255 209,-61 313.221,-42.5527 437.066,-26.0234 498.114,-18.2292" stroke="#d4d4d4" fill="none"></path><polygon points="204.166,-60.0975 199.576,-62.7438 204.814,-63.5369 204.166,-60.0975" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="scala.tools.nsc.backend.icode.Linearizers" xlink:href="Linearizers.html#inheritance-diagram"><polygon points="310,-86 218,-86 218,-61 310,-61 310,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="228" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="249" text-anchor="start">Linearizers</text></a></g></g><!-- node2&#45;&gt;node7 --><g class="edge inheritance" id="graph1_2_7"><g id="a_inheritance|graph1_2_7"><a xlink:title="ICodes is a subtype of Linearizers"><path d="M315.209,-61.3922C368.533,-49.8256 450.791,-31.9828 498.407,-21.6543" stroke="#d4d4d4" fill="none"></path><polygon points="314.656,-59.7212 310.141,-62.4915 315.398,-63.1417 314.656,-59.7212" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.tools.nsc.backend.icode.Opcodes" xlink:href="Opcodes.html#inheritance-diagram"><polygon points="412,-86 328,-86 328,-61 412,-61 412,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="338" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="359" text-anchor="start">Opcodes</text></a></g></g><!-- node3&#45;&gt;node7 --><g class="edge inheritance" id="graph1_3_7"><g id="a_inheritance|graph1_3_7"><a xlink:title="ICodes is a subtype of Opcodes"><path d="M407.3,-59.2427C436.178,-48.979 475.779,-34.904 503.398,-25.0875" stroke="#d4d4d4" fill="none"></path><polygon points="406.526,-57.6606 402.401,-60.9841 407.698,-60.9585 406.526,-57.6606" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="scala.tools.nsc.backend.icode.TypeStacks" xlink:href="TypeStacks.html#inheritance-diagram"><polygon points="526,-86 430,-86 430,-61 526,-61 526,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="440" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="461" text-anchor="start">TypeStacks</text></a></g></g><!-- node4&#45;&gt;node7 --><g class="edge inheritance" id="graph1_4_7"><g id="a_inheritance|graph1_4_7"><a xlink:title="ICodes is a subtype of TypeStacks"><path d="M493.209,-57.0291C503.027,-47.0415 515.595,-34.2572 524.565,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="491.716,-56.051 489.459,-60.8435 494.212,-58.5047 491.716,-56.051" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="scala.tools.nsc.backend.icode.BasicBlocks" xlink:href="BasicBlocks.html#inheritance-diagram"><polygon points="643.5,-86 544.5,-86 544.5,-61 643.5,-61 643.5,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="555" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="576" text-anchor="start">BasicBlocks</text></a></g></g><!-- node5&#45;&gt;node7 --><g class="edge inheritance" id="graph1_5_7"><g id="a_inheritance|graph1_5_7"><a xlink:title="ICodes is a subtype of BasicBlocks"><path d="M578.791,-57.0291C568.973,-47.0415 556.405,-34.2572 547.435,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="577.788,-58.5047 582.541,-60.8435 580.284,-56.051 577.788,-58.5047" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6 --><g class="node trait" id="graph1_6"><g id="a_trait|graph1_6"><a xlink:title="scala.tools.nsc.backend.icode.Primitives" xlink:href="Primitives.html#inheritance-diagram"><polygon points="748.5,-86 661.5,-86 661.5,-61 748.5,-61 748.5,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="672" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="693" text-anchor="start">Primitives</text></a></g></g><!-- node6&#45;&gt;node7 --><g class="edge inheritance" id="graph1_6_7"><g id="a_inheritance|graph1_6_7"><a xlink:title="ICodes is a subtype of Primitives"><path d="M667.026,-59.2427C637.626,-48.979 597.31,-34.904 569.191,-25.0875" stroke="#d4d4d4" fill="none"></path><polygon points="666.716,-60.9883 672.014,-60.9841 667.87,-57.6839 666.716,-60.9883" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8 --><g class="node trait" id="graph1_8"><g id="a_trait|graph1_8"><a xlink:title="scala.tools.nsc.backend.icode.ExceptionHandlers" xlink:href="ExceptionHandlers.html#inheritance-diagram"><polygon points="893,-86 767,-86 767,-61 893,-61 893,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="777" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="798" text-anchor="start">ExceptionHandlers</text></a></g></g><!-- node8&#45;&gt;node7 --><g class="edge inheritance" id="graph1_8_7"><g id="a_inheritance|graph1_8_7"><a xlink:title="ICodes is a subtype of ExceptionHandlers"><path d="M767.368,-59.931C708.567,-48.1308 622.539,-30.8666 573.646,-21.0548" stroke="#d4d4d4" fill="none"></path><polygon points="767.369,-61.7161 772.616,-60.9841 768.058,-58.2845 767.369,-61.7161" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node9 --><g class="node trait" id="graph1_9"><g id="a_trait|graph1_9"><a xlink:title="scala.tools.nsc.backend.icode.Members" xlink:href="Members.html#inheritance-diagram"><polygon points="996.5,-86 911.5,-86 911.5,-61 996.5,-61 996.5,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="922" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="943" text-anchor="start">Members</text></a></g></g><!-- node9&#45;&gt;node7 --><g class="edge inheritance" id="graph1_9_7"><g id="a_inheritance|graph1_9_7"><a xlink:title="ICodes is a subtype of Members"><path d="M906.409,-61.7987C904.924,-61.5213 903.451,-61.2542 902,-61 782.714,-40.1115 640.07,-24.1759 573.575,-17.2653" stroke="#d4d4d4" fill="none"></path><polygon points="906.253,-63.5508 911.494,-62.778 906.915,-60.114 906.253,-63.5508" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10 --><g class="node trait" id="graph1_10"><g id="a_trait|graph1_10"><a xlink:title="scala.tools.nsc.backend.icode.Printers" xlink:href="Printers.html#inheritance-diagram"><polygon points="1093,-86 1015,-86 1015,-61 1093,-61 1093,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="1025" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="1046" text-anchor="start">Printers</text></a></g></g><!-- node10&#45;&gt;node7 --><g class="edge inheritance" id="graph1_10_7"><g id="a_inheritance|graph1_10_7"><a xlink:title="ICodes is a subtype of Printers"><path d="M1009.81,-61.679C1008.53,-61.4402 1007.26,-61.2131 1006,-61 846.505,-33.9604 653.764,-20.3893 573.698,-15.5845" stroke="#d4d4d4" fill="none"></path><polygon points="1009.55,-63.4114 1014.8,-62.6533 1010.22,-59.9764 1009.55,-63.4114" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.tools.nsc.backend.icode.BasicBlocks" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BasicBlocksextendsAnyRef"></a>
+      <a id="BasicBlocks:BasicBlocks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BasicBlocks.html"><span class="name">BasicBlocks</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@BasicBlocksextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.CheckerException" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CheckerExceptionextendsException"></a>
+      <a id="CheckerException:CheckerException"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CheckerException.html"><span class="name">CheckerException</span></a><span class="result"> extends <a href="../../../../package.html#Exception=Exception" class="extmbr" name="scala.Exception">Exception</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@CheckerExceptionextendsException" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.ExceptionHandlers" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ExceptionHandlersextendsAnyRef"></a>
+      <a id="ExceptionHandlers:ExceptionHandlers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ExceptionHandlers.html"><span class="name">ExceptionHandlers</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@ExceptionHandlersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Exception handlers are pieces of code that <code>handle</code> exceptions on
+the covered basic blocks.</p><div class="fullcomment"><div class="comment cmt"><p>Exception handlers are pieces of code that <code>handle</code> exceptions on
+the covered basic blocks. Since Scala's exception handling uses
+pattern matching instead of just class names to identify handlers,
+all our handlers will catch <code>Throwable</code> and rely on proper ordering
+in the generated code to preserve nesting.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.GenICode" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="GenICodeextendsSubComponent"></a>
+      <a id="GenICode:GenICode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenICode.html"><span class="name">GenICode</span></a><span class="result"> extends <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@GenICodeextendsSubComponent" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.0</p></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.ICodeCheckers" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ICodeCheckersextendsAnyRef"></a>
+      <a id="ICodeCheckers:ICodeCheckers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ICodeCheckers.html"><span class="name">ICodeCheckers</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@ICodeCheckersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.ICodes" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ICodesextendsMemberswithBasicBlockswithOpcodeswithTypeStackswithTypeKindswithExceptionHandlerswithPrimitiveswithLinearizerswithPrinterswithRepository"></a>
+      <a id="ICodes:ICodes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ICodes.html"><span class="name">ICodes</span></a><span class="result"> extends <a href="Members.html" class="extype" name="scala.tools.nsc.backend.icode.Members">Members</a> with <a href="BasicBlocks.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks">BasicBlocks</a> with <a href="Opcodes.html" class="extype" name="scala.tools.nsc.backend.icode.Opcodes">Opcodes</a> with <a href="TypeStacks.html" class="extype" name="scala.tools.nsc.backend.icode.TypeStacks">TypeStacks</a> with <a href="TypeKinds.html" class="extype" name="scala.tools.nsc.backend.icode.TypeKinds">TypeKinds</a> with <a href="ExceptionHandlers.html" class="extype" name="scala.tools.nsc.backend.icode.ExceptionHandlers">ExceptionHandlers</a> with <a href="Primitives.html" class="extype" name="scala.tools.nsc.backend.icode.Primitives">Primitives</a> with <a href="Linearizers.html" class="extype" name="scala.tools.nsc.backend.icode.Linearizers">Linearizers</a> with <a href="Printers.html" class="extype" name="scala.tools.nsc.backend.icode.Printers">Printers</a> with <a href="Repository.html" class="extype" name="scala.tools.nsc.backend.icode.Repository">Repository</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@ICodesextendsMemberswithBasicBlockswithOpcodeswithTypeStackswithTypeKindswithExceptionHandlerswithPrimitiveswithLinearizerswithPrinterswithRepository" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Glue together ICode parts.</p>
+    </li><li name="scala.tools.nsc.backend.icode.Linearizers" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LinearizersextendsAnyRef"></a>
+      <a id="Linearizers:Linearizers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Linearizers.html"><span class="name">Linearizers</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@LinearizersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.Members" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MembersextendsAnyRef"></a>
+      <a id="Members:Members"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Members.html"><span class="name">Members</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@MembersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="OpcodesextendsAnyRef"></a>
+      <a id="Opcodes:Opcodes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes.html"><span class="name">Opcodes</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@OpcodesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The ICode intermediate representation.</p><div class="fullcomment"><div class="comment cmt"><p>The ICode intermediate representation. It is a stack-based
+representation, very close to the JVM and .NET. It uses the
+erased types of Scala and references Symbols to refer named entities
+in the source files.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Primitives" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PrimitivesextendsAnyRef"></a>
+      <a id="Primitives:Primitives"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Primitives.html"><span class="name">Primitives</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@PrimitivesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.Printers" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PrintersextendsAnyRef"></a>
+      <a id="Printers:Printers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Printers.html"><span class="name">Printers</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@PrintersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.ReferenceEquality" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReferenceEqualityextendsAnyRef"></a>
+      <a id="ReferenceEquality:ReferenceEquality"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ReferenceEquality.html"><span class="name">ReferenceEquality</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@ReferenceEqualityextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.Repository" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RepositoryextendsAnyRef"></a>
+      <a id="Repository:Repository"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Repository.html"><span class="name">Repository</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@RepositoryextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="scala.tools.nsc.backend.icode.TypeKinds" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TypeKindsextendsAnyRef"></a>
+      <a id="TypeKinds:TypeKinds"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="TypeKinds.html"><span class="name">TypeKinds</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@TypeKindsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.TypeStacks" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TypeStacksextendsAnyRef"></a>
+      <a id="TypeStacks:TypeStacks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="TypeStacks.html"><span class="name">TypeStacks</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@TypeStacksextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait ...</p><div class="fullcomment"><div class="comment cmt"><p>This trait ...
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.0</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.tools.nsc.backend.icode.BBFlags" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BBFlags"></a>
+      <a id="BBFlags:BBFlags"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BBFlags$.html"><span class="name">BBFlags</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@BBFlags" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.analysis" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="analysis"></a>
+      <a id="analysis:analysis"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="analysis/package.html"><span class="name">analysis</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.package@analysis" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

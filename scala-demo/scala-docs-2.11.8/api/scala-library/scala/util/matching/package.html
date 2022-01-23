@@ -1,0 +1,201 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>matching - Scala Standard Library 2.11.8 - scala.util.matching</title>
+          <meta name="description" content="matching - Scala Standard Library 2.11.8 - scala.util.matching" />
+          <meta name="keywords" content="matching Scala Standard Library 2.11.8 scala.util.matching" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.util.matching.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.util">util</a></p>
+        <h1>matching</h1><span class="permalink">
+      <a href="../../../index.html#scala.util.matching.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">matching</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.util.matching.Regex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RegexextendsSerializable"></a>
+      <a id="Regex:Regex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Regex.html"><span class="name">Regex</span></a><span class="result"> extends <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.matching.package@RegexextendsSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A regular expression is used to determine whether a string matches a pattern
+ and, if it does, to extract or transform the parts that match.</p><div class="fullcomment"><div class="comment cmt"><p>A regular expression is used to determine whether a string matches a pattern
+ and, if it does, to extract or transform the parts that match.</p><p> This class delegates to the <span class="extype" name="java.util.regex">java.util.regex</span> package of the Java Platform.
+ See the documentation for <span class="extype" name="java.util.regex.Pattern">java.util.regex.Pattern</span> for details about
+ the regular expression syntax for pattern strings.</p><p> An instance of <code>Regex</code> represents a compiled regular expression pattern.
+ Since compilation is expensive, frequently used <code>Regex</code>es should be constructed
+ once, outside of loops and perhaps in a companion object.</p><p> The canonical way to create a <code>Regex</code> is by using the method <code>r</code>, provided
+ implicitly for strings:</p><pre><span class="kw">val</span> date = <span class="lit">""</span><span class="lit">"(\d\d\d\d)-(\d\d)-(\d\d)"</span><span class="lit">""</span>.r</pre><p> Since escapes are not processed in multi-line string literals, using triple quotes
+ avoids having to escape the backslash character, so that <code>&quot;\\d&quot;</code> can be written <code>&quot;&quot;&quot;\d&quot;&quot;&quot;</code>.</p><p> To extract the capturing groups when a <code>Regex</code> is matched, use it as
+ an extractor in a pattern match:</p><pre><span class="lit">"2004-01-20"</span> <span class="kw">match</span> {
+  <span class="kw">case</span> date(year, month, day) <span class="kw">=&gt;</span> s<span class="lit">"$year was a good year for PLs."</span>
+}</pre><p> To check only whether the <code>Regex</code> matches, ignoring any groups,
+ use a sequence wildcard:</p><pre><span class="lit">"2004-01-20"</span> <span class="kw">match</span> {
+  <span class="kw">case</span> date(_*) <span class="kw">=&gt;</span> <span class="lit">"It's a date!"</span>
+}</pre><p> That works because a <code>Regex</code> extractor produces a sequence of strings.
+ Extracting only the year from a date could also be expressed with
+ a sequence wildcard:</p><pre><span class="lit">"2004-01-20"</span> <span class="kw">match</span> {
+  <span class="kw">case</span> date(year, _*) <span class="kw">=&gt;</span> s<span class="lit">"$year was a good year for PLs."</span>
+}</pre><p> In a pattern match, <code>Regex</code> normally matches the entire input.
+ However, an unanchored <code>Regex</code> finds the pattern anywhere
+ in the input.</p><pre><span class="kw">val</span> embeddedDate = date.unanchored
+<span class="lit">"Date: 2004-01-20 17:25:18 GMT (10 years, 28 weeks, 5 days, 17 hours and 51 minutes ago)"</span> <span class="kw">match</span> {
+  <span class="kw">case</span> embeddedDate(<span class="lit">"2004"</span>, <span class="lit">"01"</span>, <span class="lit">"20"</span>) <span class="kw">=&gt;</span> <span class="lit">"A Scala is born."</span>
+}</pre><p> To find or replace matches of the pattern, use the various find and replace methods.
+ There is a flavor of each method that produces matched strings and
+ another that produces <code>Match</code> objects.</p><p> For example, pattern matching with an unanchored <code>Regex</code>, as in the previous example,
+ is the same as using <code>findFirstMatchIn</code>, except that the findFirst methods return an <code>Option</code>,
+ or <code>None</code> for no match:</p><pre><span class="kw">val</span> dates = <span class="lit">"Important dates in history: 2004-01-20, 1958-09-05, 2010-10-06, 2011-07-15"</span>
+<span class="kw">val</span> firstDate = date findFirstIn dates getOrElse <span class="lit">"No date found."</span>
+<span class="kw">val</span> firstYear = <span class="kw">for</span> (m <span class="kw">&lt;-</span> date findFirstMatchIn dates) <span class="kw">yield</span> m group <span class="num">1</span></pre><p> To find all matches:</p><pre><span class="kw">val</span> allYears = <span class="kw">for</span> (m <span class="kw">&lt;-</span> date findAllMatchIn dates) <span class="kw">yield</span> m group <span class="num">1</span></pre><p> But <code>findAllIn</code> returns a special iterator of strings that can be queried for the <code>MatchData</code>
+ of the last match:</p><pre><span class="kw">val</span> mi = date findAllIn dates
+<span class="kw">val</span> oldies = mi filter (_ <span class="kw">=&gt;</span> (mi group <span class="num">1</span>).toInt &lt; <span class="num">1960</span>) map (s <span class="kw">=&gt;</span> s<span class="lit">"$s: An oldie but goodie."</span>)</pre><p> Note that <code>findAllIn</code> finds matches that don't overlap. (See <a href="Regex.html#findAllIn(source:CharSequence):scala.util.matching.Regex.MatchIterator" class="extmbr" name="scala.util.matching.Regex#findAllIn">findAllIn</a> for more examples.)</p><pre><span class="kw">val</span> num = <span class="lit">""</span><span class="lit">"(\d+)"</span><span class="lit">""</span>.r
+<span class="kw">val</span> all = (num findAllIn <span class="lit">"123"</span>).toList  <span class="cmt">// List("123"), not List("123", "23", "3")</span></pre><p> Text replacement can be performed unconditionally or as a function of the current match:</p><pre><span class="kw">val</span> redacted    = date replaceAllIn (dates, <span class="lit">"XXXX-XX-XX"</span>)
+<span class="kw">val</span> yearsOnly   = date replaceAllIn (dates, m <span class="kw">=&gt;</span> m group <span class="num">1</span>)
+<span class="kw">val</span> months      = (<span class="num">0</span> to <span class="num">11</span>) map { i <span class="kw">=&gt;</span> <span class="kw">val</span> c = Calendar.getInstance; c.set(<span class="num">2014</span>, i, <span class="num">1</span>); f<span class="lit">"$c%tb"</span> }
+<span class="kw">val</span> reformatted = date replaceAllIn (dates, _ <span class="kw">match</span> { <span class="kw">case</span> date(y,m,d) <span class="kw">=&gt;</span> f<span class="lit">"${months(m.toInt - 1)} $d, $y"</span> })</pre><p> Pattern matching the <code>Match</code> against the <code>Regex</code> that created it does not reapply the <code>Regex</code>.
+ In the expression for <code>reformatted</code>, each <code>date</code> match is computed once. But it is possible to apply a
+ <code>Regex</code> to a <code>Match</code> resulting from a different pattern:</p><pre><span class="kw">val</span> docSpree = <span class="lit">""</span><span class="lit">"2011(?:-\d{2}){2}"</span><span class="lit">""</span>.r
+<span class="kw">val</span> docView  = date replaceAllIn (dates, _ <span class="kw">match</span> {
+  <span class="kw">case</span> docSpree() <span class="kw">=&gt;</span> <span class="lit">"Historic doc spree!"</span>
+  <span class="kw">case</span> _          <span class="kw">=&gt;</span> <span class="lit">"Something else happened"</span>
+})</pre></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../SerialVersionUID.html" class="extype" name="scala.SerialVersionUID">SerialVersionUID</a></span><span class="args">()</span>
+              
+        </dd><dt>Version</dt><dd><p>1.1, 29/01/2008</p></dd><dt>See also</dt><dd><span class="cmt"><p><span class="extype" name="java.util.regex.Pattern">java.util.regex.Pattern</span></p></span></dd></dl></div>
+    </li><li name="scala.util.matching.UnanchoredRegex" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="UnanchoredRegexextendsRegex"></a>
+      <a id="UnanchoredRegex:UnanchoredRegex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="UnanchoredRegex.html"><span class="name">UnanchoredRegex</span></a><span class="result"> extends <a href="Regex.html" class="extype" name="scala.util.matching.Regex">Regex</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.matching.package@UnanchoredRegexextendsRegex" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A <a href="Regex.html" class="extype" name="scala.util.matching.Regex">Regex</a> that finds the first match when used in a pattern match.</p><div class="fullcomment"><div class="comment cmt"><p>A <a href="Regex.html" class="extype" name="scala.util.matching.Regex">Regex</a> that finds the first match when used in a pattern match.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="Regex.html#unanchored:scala.util.matching.UnanchoredRegex" class="extmbr" name="scala.util.matching.Regex#unanchored">Regex#unanchored</a></p></span></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.util.matching.Regex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Regex"></a>
+      <a id="Regex:Regex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Regex$.html"><span class="name">Regex</span></a><span class="result"> extends <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.matching.package@Regex" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This object defines inner classes that describe
+ regex matches and helper objects.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

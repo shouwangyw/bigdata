@@ -1,0 +1,580 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>Parallelizable - Scala Standard Library 2.11.8 - scala.collection.Parallelizable</title>
+          <meta name="description" content="Parallelizable - Scala Standard Library 2.11.8 - scala.collection.Parallelizable" />
+          <meta name="keywords" content="Parallelizable Scala Standard Library 2.11.8 scala.collection.Parallelizable" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'scala.collection.Parallelizable';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Trait" src="../../lib/trait_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="scala">scala</a>.<a href="package.html" class="extype" name="scala.collection">collection</a></p>
+        <h1>Parallelizable</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="scala.collection">package collection</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Parallelizable</span><span class="tparams">[<span name="A">+A</span>, <span name="ParRepr">+ParRepr &lt;: <a href="Parallel.html" class="extype" name="scala.collection.Parallel">Parallel</a></span>]</span><span class="result"> extends <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This trait describes collections which can be turned into parallel collections
+ by invoking the method <code>par</code>. Parallelizable collections may be parametrized with
+ a target type different than their own.
+</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>the type of the elements in the collection</p></dd><dt class="tparam">ParRepr</dt><dd class="cmt"><p>the actual type of the collection, which has to be parallel</p></dd></dl><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/collection/Parallelizable.scala#L1" target="_blank">Parallelizable.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">Known Subclasses</span>
+            <div class="subClasses hiddenContent"><a href="immutable/$colon$colon.html" class="extype" name="scala.collection.immutable.::">::</a>, <a href="mutable/AbstractBuffer.html" class="extype" name="scala.collection.mutable.AbstractBuffer">AbstractBuffer</a>, <a href="mutable/AbstractIterable.html" class="extype" name="scala.collection.mutable.AbstractIterable">AbstractIterable</a>, <a href="AbstractIterable.html" class="extype" name="scala.collection.AbstractIterable">AbstractIterable</a>, <a href="AbstractMap.html" class="extype" name="scala.collection.AbstractMap">AbstractMap</a>, <a href="immutable/AbstractMap.html" class="extype" name="scala.collection.immutable.AbstractMap">AbstractMap</a>, <a href="mutable/AbstractMap.html" class="extype" name="scala.collection.mutable.AbstractMap">AbstractMap</a>, <a href="mutable/AbstractSeq.html" class="extype" name="scala.collection.mutable.AbstractSeq">AbstractSeq</a>, <a href="AbstractSeq.html" class="extype" name="scala.collection.AbstractSeq">AbstractSeq</a>, <a href="mutable/AbstractSet.html" class="extype" name="scala.collection.mutable.AbstractSet">AbstractSet</a>, <a href="AbstractSet.html" class="extype" name="scala.collection.AbstractSet">AbstractSet</a>, <a href="AbstractTraversable.html" class="extype" name="scala.collection.AbstractTraversable">AbstractTraversable</a>, <a href="mutable/AnyRefMap.html" class="extype" name="scala.collection.mutable.AnyRefMap">AnyRefMap</a>, <a href="TraversableViewLike$Appended.html" class="extype" name="scala.collection.TraversableViewLike.Appended">Appended</a>, <a href="SeqViewLike$Appended.html" class="extype" name="scala.collection.SeqViewLike.Appended">Appended</a>, <a href="IterableViewLike$Appended.html" class="extype" name="scala.collection.IterableViewLike.Appended">Appended</a>, <a href="immutable/StreamViewLike$Appended.html" class="extype" name="scala.collection.immutable.StreamViewLike.Appended">Appended</a>, <a href="mutable/ArrayBuffer.html" class="extype" name="scala.collection.mutable.ArrayBuffer">ArrayBuffer</a>, <a href="mutable/ArrayLike.html" class="extype" name="scala.collection.mutable.ArrayLike">ArrayLike</a>, <a href="mutable/ArrayOps.html" class="extype" name="scala.collection.mutable.ArrayOps">ArrayOps</a>, <a href="mutable/ArraySeq.html" class="extype" name="scala.collection.mutable.ArraySeq">ArraySeq</a>, <a href="mutable/ArrayStack.html" class="extype" name="scala.collection.mutable.ArrayStack">ArrayStack</a>, <a href="mutable/BitSet.html" class="extype" name="scala.collection.mutable.BitSet">BitSet</a>, <a href="BitSet.html" class="extype" name="scala.collection.BitSet">BitSet</a>, <a href="immutable/BitSet.html" class="extype" name="scala.collection.immutable.BitSet">BitSet</a>, <a href="immutable/BitSet$$BitSet1.html" class="extype" name="scala.collection.immutable.BitSet.BitSet1">BitSet1</a>, <a href="immutable/BitSet$$BitSet2.html" class="extype" name="scala.collection.immutable.BitSet.BitSet2">BitSet2</a>, <a href="BitSetLike.html" class="extype" name="scala.collection.BitSetLike">BitSetLike</a>, <a href="immutable/BitSet$$BitSetN.html" class="extype" name="scala.collection.immutable.BitSet.BitSetN">BitSetN</a>, <a href="mutable/Buffer.html" class="extype" name="scala.collection.mutable.Buffer">Buffer</a>, <a href="mutable/BufferLike.html" class="extype" name="scala.collection.mutable.BufferLike">BufferLike</a>, <a href="mutable/BufferProxy.html" class="extype" name="scala.collection.mutable.BufferProxy">BufferProxy</a>, <a href="immutable/Stream$$Cons.html" class="extype" name="scala.collection.immutable.Stream.Cons">Cons</a>, <a href="CustomParallelizable.html" class="extype" name="scala.collection.CustomParallelizable">CustomParallelizable</a>, <a href="mutable/LinkedHashMap$DefaultKeySet.html" class="extype" name="scala.collection.mutable.LinkedHashMap.DefaultKeySet">DefaultKeySet</a>, <a href="MapLike$DefaultKeySet.html" class="extype" name="scala.collection.MapLike.DefaultKeySet">DefaultKeySet</a>, <a href="parallel/ParMapLike$DefaultKeySet.html" class="extype" name="scala.collection.parallel.ParMapLike.DefaultKeySet">DefaultKeySet</a>, <a href="immutable/SortedMap$DefaultKeySortedSet.html" class="extype" name="scala.collection.immutable.SortedMap.DefaultKeySortedSet">DefaultKeySortedSet</a>, <a href="SortedMapLike$DefaultKeySortedSet.html" class="extype" name="scala.collection.SortedMapLike.DefaultKeySortedSet">DefaultKeySortedSet</a>, <a href="DefaultMap.html" class="extype" name="scala.collection.DefaultMap">DefaultMap</a>, <a href="immutable/DefaultMap.html" class="extype" name="scala.collection.immutable.DefaultMap">DefaultMap</a>, <a href="mutable/DefaultMapModel.html" class="extype" name="scala.collection.mutable.DefaultMapModel">DefaultMapModel</a>, <a href="parallel/ParMapLike$DefaultValuesIterable.html" class="extype" name="scala.collection.parallel.ParMapLike.DefaultValuesIterable">DefaultValuesIterable</a>, <a href="MapLike$DefaultValuesIterable.html" class="extype" name="scala.collection.MapLike.DefaultValuesIterable">DefaultValuesIterable</a>, <a href="mutable/DoubleLinkedList.html" class="extype" name="scala.collection.mutable.DoubleLinkedList">DoubleLinkedList</a>, <a href="mutable/DoubleLinkedListLike.html" class="extype" name="scala.collection.mutable.DoubleLinkedListLike">DoubleLinkedListLike</a>, <a href="IterableViewLike$DroppedWhile.html" class="extype" name="scala.collection.IterableViewLike.DroppedWhile">DroppedWhile</a>, <a href="mutable/IndexedSeqView$DroppedWhile.html" class="extype" name="scala.collection.mutable.IndexedSeqView.DroppedWhile">DroppedWhile</a>, <a href="immutable/StreamViewLike$DroppedWhile.html" class="extype" name="scala.collection.immutable.StreamViewLike.DroppedWhile">DroppedWhile</a>, <a href="SeqViewLike$DroppedWhile.html" class="extype" name="scala.collection.SeqViewLike.DroppedWhile">DroppedWhile</a>, <a href="TraversableViewLike$DroppedWhile.html" class="extype" name="scala.collection.TraversableViewLike.DroppedWhile">DroppedWhile</a>, <a href="immutable/Stream$$Empty$.html" class="extype" name="scala.collection.immutable.Stream.Empty">Empty</a>, <a href="IterableViewLike$EmptyView.html" class="extype" name="scala.collection.IterableViewLike.EmptyView">EmptyView</a>, <a href="TraversableViewLike$EmptyView.html" class="extype" name="scala.collection.TraversableViewLike.EmptyView">EmptyView</a>, <a href="SeqViewLike$EmptyView.html" class="extype" name="scala.collection.SeqViewLike.EmptyView">EmptyView</a>, <a href="immutable/StreamViewLike$EmptyView.html" class="extype" name="scala.collection.immutable.StreamViewLike.EmptyView">EmptyView</a>, <a href="immutable/NumericRange$$Exclusive.html" class="extype" name="scala.collection.immutable.NumericRange.Exclusive">Exclusive</a>, <a href="mutable/IndexedSeqView$Filtered.html" class="extype" name="scala.collection.mutable.IndexedSeqView.Filtered">Filtered</a>, <a href="immutable/StreamViewLike$Filtered.html" class="extype" name="scala.collection.immutable.StreamViewLike.Filtered">Filtered</a>, <a href="IterableViewLike$Filtered.html" class="extype" name="scala.collection.IterableViewLike.Filtered">Filtered</a>, <a href="SeqViewLike$Filtered.html" class="extype" name="scala.collection.SeqViewLike.Filtered">Filtered</a>, <a href="TraversableViewLike$Filtered.html" class="extype" name="scala.collection.TraversableViewLike.Filtered">Filtered</a>, <a href="mutable/LinkedHashMap$FilteredKeys.html" class="extype" name="scala.collection.mutable.LinkedHashMap.FilteredKeys">FilteredKeys</a>, <a href="MapLike$FilteredKeys.html" class="extype" name="scala.collection.MapLike.FilteredKeys">FilteredKeys</a>, <a href="immutable/StreamViewLike$FlatMapped.html" class="extype" name="scala.collection.immutable.StreamViewLike.FlatMapped">FlatMapped</a>, <a href="TraversableViewLike$FlatMapped.html" class="extype" name="scala.collection.TraversableViewLike.FlatMapped">FlatMapped</a>, <a href="SeqViewLike$FlatMapped.html" class="extype" name="scala.collection.SeqViewLike.FlatMapped">FlatMapped</a>, <a href="IterableViewLike$FlatMapped.html" class="extype" name="scala.collection.IterableViewLike.FlatMapped">FlatMapped</a>, <a href="TraversableViewLike$Forced.html" class="extype" name="scala.collection.TraversableViewLike.Forced">Forced</a>, <a href="IterableViewLike$Forced.html" class="extype" name="scala.collection.IterableViewLike.Forced">Forced</a>, <a href="SeqViewLike$Forced.html" class="extype" name="scala.collection.SeqViewLike.Forced">Forced</a>, <a href="immutable/StreamViewLike$Forced.html" class="extype" name="scala.collection.immutable.StreamViewLike.Forced">Forced</a>, <a href="GenIterable.html" class="extype" name="scala.collection.GenIterable">GenIterable</a>, <a href="GenIterableLike.html" class="extype" name="scala.collection.GenIterableLike">GenIterableLike</a>, <a href="GenMap.html" class="extype" name="scala.collection.GenMap">GenMap</a>, <a href="GenMapLike.html" class="extype" name="scala.collection.GenMapLike">GenMapLike</a>, <a href="GenSeq.html" class="extype" name="scala.collection.GenSeq">GenSeq</a>, <a href="GenSeqLike.html" class="extype" name="scala.collection.GenSeqLike">GenSeqLike</a>, <a href="GenSet.html" class="extype" name="scala.collection.GenSet">GenSet</a>, <a href="GenSetLike.html" class="extype" name="scala.collection.GenSetLike">GenSetLike</a>, <a href="GenTraversable.html" class="extype" name="scala.collection.GenTraversable">GenTraversable</a>, <a href="GenTraversableLike.html" class="extype" name="scala.collection.GenTraversableLike">GenTraversableLike</a>, <a href="mutable/HashMap.html" class="extype" name="scala.collection.mutable.HashMap">HashMap</a>, <a href="immutable/HashMap.html" class="extype" name="scala.collection.immutable.HashMap">HashMap</a>, <a href="immutable/HashMap$$HashMap1.html" class="extype" name="scala.collection.immutable.HashMap.HashMap1">HashMap1</a>, <a href="mutable/HashSet.html" class="extype" name="scala.collection.mutable.HashSet">HashSet</a>, <a href="immutable/HashSet.html" class="extype" name="scala.collection.immutable.HashSet">HashSet</a>, <a href="immutable/HashMap$$HashTrieMap.html" class="extype" name="scala.collection.immutable.HashMap.HashTrieMap">HashTrieMap</a>, <a href="immutable/HashSet$$HashTrieSet.html" class="extype" name="scala.collection.immutable.HashSet.HashTrieSet">HashTrieSet</a>, <a href="mutable/History.html" class="extype" name="scala.collection.mutable.History">History</a>, <a href="immutable/MapLike$ImmutableDefaultKeySet.html" class="extype" name="scala.collection.immutable.MapLike.ImmutableDefaultKeySet">ImmutableDefaultKeySet</a>, <a href="mutable/ImmutableMapAdaptor.html" class="extype" name="scala.collection.mutable.ImmutableMapAdaptor">ImmutableMapAdaptor</a>, <a href="mutable/ImmutableSetAdaptor.html" class="extype" name="scala.collection.mutable.ImmutableSetAdaptor">ImmutableSetAdaptor</a>, <a href="immutable/IndexedSeq$$Impl.html" class="extype" name="scala.collection.immutable.IndexedSeq.Impl">Impl</a>, <a href="immutable/NumericRange$$Inclusive.html" class="extype" name="scala.collection.immutable.NumericRange.Inclusive">Inclusive</a>, <a href="immutable/Range$$Inclusive.html" class="extype" name="scala.collection.immutable.Range.Inclusive">Inclusive</a>, <a href="IndexedSeq.html" class="extype" name="scala.collection.IndexedSeq">IndexedSeq</a>, <a href="immutable/IndexedSeq.html" class="extype" name="scala.collection.immutable.IndexedSeq">IndexedSeq</a>, <a href="mutable/IndexedSeq.html" class="extype" name="scala.collection.mutable.IndexedSeq">IndexedSeq</a>, <a href="mutable/IndexedSeqLike.html" class="extype" name="scala.collection.mutable.IndexedSeqLike">IndexedSeqLike</a>, <a href="IndexedSeqLike.html" class="extype" name="scala.collection.IndexedSeqLike">IndexedSeqLike</a>, <a href="IndexedSeqOptimized.html" class="extype" name="scala.collection.IndexedSeqOptimized">IndexedSeqOptimized</a>, <a href="mutable/IndexedSeqOptimized.html" class="extype" name="scala.collection.mutable.IndexedSeqOptimized">IndexedSeqOptimized</a>, <a href="mutable/IndexedSeqView.html" class="extype" name="scala.collection.mutable.IndexedSeqView">IndexedSeqView</a>, <a href="immutable/IntMap.html" class="extype" name="scala.collection.immutable.IntMap">IntMap</a>, <a href="Iterable.html" class="extype" name="scala.collection.Iterable">Iterable</a>, <a href="immutable/Iterable.html" class="extype" name="scala.collection.immutable.Iterable">Iterable</a>, <a href="mutable/Iterable.html" class="extype" name="scala.collection.mutable.Iterable">Iterable</a>, <a href="generic/IterableForwarder.html" class="extype" name="scala.collection.generic.IterableForwarder">IterableForwarder</a>, <a href="IterableLike.html" class="extype" name="scala.collection.IterableLike">IterableLike</a>, <a href="IterableProxy.html" class="extype" name="scala.collection.IterableProxy">IterableProxy</a>, <a href="IterableProxyLike.html" class="extype" name="scala.collection.IterableProxyLike">IterableProxyLike</a>, <a href="IterableView.html" class="extype" name="scala.collection.IterableView">IterableView</a>, <a href="IterableViewLike.html" class="extype" name="scala.collection.IterableViewLike">IterableViewLike</a>, <a href="mutable/LinearSeq.html" class="extype" name="scala.collection.mutable.LinearSeq">LinearSeq</a>, <a href="immutable/LinearSeq.html" class="extype" name="scala.collection.immutable.LinearSeq">LinearSeq</a>, <a href="LinearSeq.html" class="extype" name="scala.collection.LinearSeq">LinearSeq</a>, <a href="LinearSeqLike.html" class="extype" name="scala.collection.LinearSeqLike">LinearSeqLike</a>, <a href="LinearSeqOptimized.html" class="extype" name="scala.collection.LinearSeqOptimized">LinearSeqOptimized</a>, <a href="mutable/LinkedHashMap.html" class="extype" name="scala.collection.mutable.LinkedHashMap">LinkedHashMap</a>, <a href="mutable/LinkedHashSet.html" class="extype" name="scala.collection.mutable.LinkedHashSet">LinkedHashSet</a>, <a href="mutable/LinkedList.html" class="extype" name="scala.collection.mutable.LinkedList">LinkedList</a>, <a href="mutable/LinkedListLike.html" class="extype" name="scala.collection.mutable.LinkedListLike">LinkedListLike</a>, <a href="immutable/List.html" class="extype" name="scala.collection.immutable.List">List</a>, <a href="mutable/ListBuffer.html" class="extype" name="scala.collection.mutable.ListBuffer">ListBuffer</a>, <a href="mutable/ListMap.html" class="extype" name="scala.collection.mutable.ListMap">ListMap</a>, <a href="immutable/ListMap.html" class="extype" name="scala.collection.immutable.ListMap">ListMap</a>, <a href="immutable/ListSet.html" class="extype" name="scala.collection.immutable.ListSet">ListSet</a>, <a href="mutable/LongMap.html" class="extype" name="scala.collection.mutable.LongMap">LongMap</a>, <a href="immutable/LongMap.html" class="extype" name="scala.collection.immutable.LongMap">LongMap</a>, <a href="immutable/Map.html" class="extype" name="scala.collection.immutable.Map">Map</a>, <a href="Map.html" class="extype" name="scala.collection.Map">Map</a>, <a href="concurrent/Map.html" class="extype" name="scala.collection.concurrent.Map">Map</a>, <a href="mutable/Map.html" class="extype" name="scala.collection.mutable.Map">Map</a>, <a href="immutable/Map$$Map1.html" class="extype" name="scala.collection.immutable.Map.Map1">Map1</a>, <a href="immutable/Map$$Map2.html" class="extype" name="scala.collection.immutable.Map.Map2">Map2</a>, <a href="immutable/Map$$Map3.html" class="extype" name="scala.collection.immutable.Map.Map3">Map3</a>, <a href="immutable/Map$$Map4.html" class="extype" name="scala.collection.immutable.Map.Map4">Map4</a>, <a href="mutable/MapLike.html" class="extype" name="scala.collection.mutable.MapLike">MapLike</a>, <a href="immutable/MapLike.html" class="extype" name="scala.collection.immutable.MapLike">MapLike</a>, <a href="MapLike.html" class="extype" name="scala.collection.MapLike">MapLike</a>, <a href="immutable/MapProxy.html" class="extype" name="scala.collection.immutable.MapProxy">MapProxy</a>, <a href="mutable/MapProxy.html" class="extype" name="scala.collection.mutable.MapProxy">MapProxy</a>, <a href="MapProxy.html" class="extype" name="scala.collection.MapProxy">MapProxy</a>, <a href="MapProxyLike.html" class="extype" name="scala.collection.MapProxyLike">MapProxyLike</a>, <a href="SeqViewLike$Mapped.html" class="extype" name="scala.collection.SeqViewLike.Mapped">Mapped</a>, <a href="TraversableViewLike$Mapped.html" class="extype" name="scala.collection.TraversableViewLike.Mapped">Mapped</a>, <a href="immutable/StreamViewLike$Mapped.html" class="extype" name="scala.collection.immutable.StreamViewLike.Mapped">Mapped</a>, <a href="IterableViewLike$Mapped.html" class="extype" name="scala.collection.IterableViewLike.Mapped">Mapped</a>, <a href="MapLike$MappedValues.html" class="extype" name="scala.collection.MapLike.MappedValues">MappedValues</a>, <a href="mutable/LinkedHashMap$MappedValues.html" class="extype" name="scala.collection.mutable.LinkedHashMap.MappedValues">MappedValues</a>, <a href="mutable/MultiMap.html" class="extype" name="scala.collection.mutable.MultiMap">MultiMap</a>, <a href="mutable/MutableList.html" class="extype" name="scala.collection.mutable.MutableList">MutableList</a>, <a href="immutable/Nil$.html" class="extype" name="scala.collection.immutable.Nil">Nil</a>, <a href="immutable/ListMap$Node.html" class="extype" name="scala.collection.immutable.ListMap.Node">Node</a>, <a href="immutable/ListSet$Node.html" class="extype" name="scala.collection.immutable.ListSet.Node">Node</a>, <a href="immutable/NumericRange.html" class="extype" name="scala.collection.immutable.NumericRange">NumericRange</a>, <a href="mutable/ObservableBuffer.html" class="extype" name="scala.collection.mutable.ObservableBuffer">ObservableBuffer</a>, <a href="mutable/ObservableMap.html" class="extype" name="scala.collection.mutable.ObservableMap">ObservableMap</a>, <a href="mutable/ObservableSet.html" class="extype" name="scala.collection.mutable.ObservableSet">ObservableSet</a>, <a href="mutable/OpenHashMap.html" class="extype" name="scala.collection.mutable.OpenHashMap">OpenHashMap</a>, <a href="immutable/PagedSeq.html" class="extype" name="scala.collection.immutable.PagedSeq">PagedSeq</a>, <a href="parallel/mutable/ParArray.html" class="extype" name="scala.collection.parallel.mutable.ParArray">ParArray</a>, <a href="parallel/mutable/ParHashMap.html" class="extype" name="scala.collection.parallel.mutable.ParHashMap">ParHashMap</a>, <a href="parallel/immutable/ParHashMap.html" class="extype" name="scala.collection.parallel.immutable.ParHashMap">ParHashMap</a>, <a href="parallel/mutable/ParHashSet.html" class="extype" name="scala.collection.parallel.mutable.ParHashSet">ParHashSet</a>, <a href="parallel/immutable/ParHashSet.html" class="extype" name="scala.collection.parallel.immutable.ParHashSet">ParHashSet</a>, <a href="parallel/ParIterable.html" class="extype" name="scala.collection.parallel.ParIterable">ParIterable</a>, <a href="parallel/immutable/ParIterable.html" class="extype" name="scala.collection.parallel.immutable.ParIterable">ParIterable</a>, <a href="parallel/mutable/ParIterable.html" class="extype" name="scala.collection.parallel.mutable.ParIterable">ParIterable</a>, <a href="parallel/ParIterableLike.html" class="extype" name="scala.collection.parallel.ParIterableLike">ParIterableLike</a>, <a href="parallel/immutable/ParMap.html" class="extype" name="scala.collection.parallel.immutable.ParMap">ParMap</a>, <a href="parallel/mutable/ParMap.html" class="extype" name="scala.collection.parallel.mutable.ParMap">ParMap</a>, <a href="parallel/ParMap.html" class="extype" name="scala.collection.parallel.ParMap">ParMap</a>, <a href="parallel/mutable/ParMapLike.html" class="extype" name="scala.collection.parallel.mutable.ParMapLike">ParMapLike</a>, <a href="parallel/ParMapLike.html" class="extype" name="scala.collection.parallel.ParMapLike">ParMapLike</a>, <a href="parallel/immutable/ParRange.html" class="extype" name="scala.collection.parallel.immutable.ParRange">ParRange</a>, <a href="parallel/mutable/ParSeq.html" class="extype" name="scala.collection.parallel.mutable.ParSeq">ParSeq</a>, <a href="parallel/immutable/ParSeq.html" class="extype" name="scala.collection.parallel.immutable.ParSeq">ParSeq</a>, <a href="parallel/ParSeq.html" class="extype" name="scala.collection.parallel.ParSeq">ParSeq</a>, <a href="parallel/ParSeqLike.html" class="extype" name="scala.collection.parallel.ParSeqLike">ParSeqLike</a>, <a href="parallel/immutable/ParSet.html" class="extype" name="scala.collection.parallel.immutable.ParSet">ParSet</a>, <a href="parallel/mutable/ParSet.html" class="extype" name="scala.collection.parallel.mutable.ParSet">ParSet</a>, <a href="parallel/ParSet.html" class="extype" name="scala.collection.parallel.ParSet">ParSet</a>, <a href="parallel/mutable/ParSetLike.html" class="extype" name="scala.collection.parallel.mutable.ParSetLike">ParSetLike</a>, <a href="parallel/ParSetLike.html" class="extype" name="scala.collection.parallel.ParSetLike">ParSetLike</a>, <a href="parallel/mutable/ParTrieMap.html" class="extype" name="scala.collection.parallel.mutable.ParTrieMap">ParTrieMap</a>, <a href="parallel/immutable/ParVector.html" class="extype" name="scala.collection.parallel.immutable.ParVector">ParVector</a>, <a href="immutable/StreamViewLike$Patched.html" class="extype" name="scala.collection.immutable.StreamViewLike.Patched">Patched</a>, <a href="SeqViewLike$Patched.html" class="extype" name="scala.collection.SeqViewLike.Patched">Patched</a>, <a href="SeqViewLike$Prepended.html" class="extype" name="scala.collection.SeqViewLike.Prepended">Prepended</a>, <a href="immutable/StreamViewLike$Prepended.html" class="extype" name="scala.collection.immutable.StreamViewLike.Prepended">Prepended</a>, <a href="mutable/PriorityQueue.html" class="extype" name="scala.collection.mutable.PriorityQueue">PriorityQueue</a>, <a href="mutable/PriorityQueueProxy.html" class="extype" name="scala.collection.mutable.PriorityQueueProxy">PriorityQueueProxy</a>, <a href="mutable/Queue.html" class="extype" name="scala.collection.mutable.Queue">Queue</a>, <a href="immutable/Queue.html" class="extype" name="scala.collection.immutable.Queue">Queue</a>, <a href="mutable/QueueProxy.html" class="extype" name="scala.collection.mutable.QueueProxy">QueueProxy</a>, <a href="immutable/Range.html" class="extype" name="scala.collection.immutable.Range">Range</a>, <a href="mutable/ResizableArray.html" class="extype" name="scala.collection.mutable.ResizableArray">ResizableArray</a>, <a href="mutable/IndexedSeqView$Reversed.html" class="extype" name="scala.collection.mutable.IndexedSeqView.Reversed">Reversed</a>, <a href="immutable/StreamViewLike$Reversed.html" class="extype" name="scala.collection.immutable.StreamViewLike.Reversed">Reversed</a>, <a href="SeqViewLike$Reversed.html" class="extype" name="scala.collection.SeqViewLike.Reversed">Reversed</a>, <a href="mutable/RevertibleHistory.html" class="extype" name="scala.collection.mutable.RevertibleHistory">RevertibleHistory</a>, <a href="script/Script.html" class="extype" name="scala.collection.script.Script">Script</a>, <a href="mutable/Seq.html" class="extype" name="scala.collection.mutable.Seq">Seq</a>, <a href="Seq.html" class="extype" name="scala.collection.Seq">Seq</a>, <a href="immutable/Seq.html" class="extype" name="scala.collection.immutable.Seq">Seq</a>, <a href="generic/SeqForwarder.html" class="extype" name="scala.collection.generic.SeqForwarder">SeqForwarder</a>, <a href="mutable/SeqLike.html" class="extype" name="scala.collection.mutable.SeqLike">SeqLike</a>, <a href="SeqLike.html" class="extype" name="scala.collection.SeqLike">SeqLike</a>, <a href="SeqProxy.html" class="extype" name="scala.collection.SeqProxy">SeqProxy</a>, <a href="SeqProxyLike.html" class="extype" name="scala.collection.SeqProxyLike">SeqProxyLike</a>, <a href="SeqView.html" class="extype" name="scala.collection.SeqView">SeqView</a>, <a href="SeqViewLike.html" class="extype" name="scala.collection.SeqViewLike">SeqViewLike</a>, <a href="mutable/Set.html" class="extype" name="scala.collection.mutable.Set">Set</a>, <a href="Set.html" class="extype" name="scala.collection.Set">Set</a>, <a href="immutable/Set.html" class="extype" name="scala.collection.immutable.Set">Set</a>, <a href="immutable/Set$$Set1.html" class="extype" name="scala.collection.immutable.Set.Set1">Set1</a>, <a href="immutable/Set$$Set2.html" class="extype" name="scala.collection.immutable.Set.Set2">Set2</a>, <a href="immutable/Set$$Set3.html" class="extype" name="scala.collection.immutable.Set.Set3">Set3</a>, <a href="immutable/Set$$Set4.html" class="extype" name="scala.collection.immutable.Set.Set4">Set4</a>, <a href="SetLike.html" class="extype" name="scala.collection.SetLike">SetLike</a>, <a href="mutable/SetLike.html" class="extype" name="scala.collection.mutable.SetLike">SetLike</a>, <a href="immutable/SetProxy.html" class="extype" name="scala.collection.immutable.SetProxy">SetProxy</a>, <a href="mutable/SetProxy.html" class="extype" name="scala.collection.mutable.SetProxy">SetProxy</a>, <a href="SetProxy.html" class="extype" name="scala.collection.SetProxy">SetProxy</a>, <a href="SetProxyLike.html" class="extype" name="scala.collection.SetProxyLike">SetProxyLike</a>, <a href="SeqViewLike$Sliced.html" class="extype" name="scala.collection.SeqViewLike.Sliced">Sliced</a>, <a href="mutable/IndexedSeqView$Sliced.html" class="extype" name="scala.collection.mutable.IndexedSeqView.Sliced">Sliced</a>, <a href="immutable/StreamViewLike$Sliced.html" class="extype" name="scala.collection.immutable.StreamViewLike.Sliced">Sliced</a>, <a href="IterableViewLike$Sliced.html" class="extype" name="scala.collection.IterableViewLike.Sliced">Sliced</a>, <a href="TraversableViewLike$Sliced.html" class="extype" name="scala.collection.TraversableViewLike.Sliced">Sliced</a>, <a href="SortedMap.html" class="extype" name="scala.collection.SortedMap">SortedMap</a>, <a href="immutable/SortedMap.html" class="extype" name="scala.collection.immutable.SortedMap">SortedMap</a>, <a href="SortedMapLike.html" class="extype" name="scala.collection.SortedMapLike">SortedMapLike</a>, <a href="mutable/SortedSet.html" class="extype" name="scala.collection.mutable.SortedSet">SortedSet</a>, <a href="SortedSet.html" class="extype" name="scala.collection.SortedSet">SortedSet</a>, <a href="immutable/SortedSet.html" class="extype" name="scala.collection.immutable.SortedSet">SortedSet</a>, <a href="SortedSetLike.html" class="extype" name="scala.collection.SortedSetLike">SortedSetLike</a>, <a href="mutable/Stack.html" class="extype" name="scala.collection.mutable.Stack">Stack</a>, <a href="immutable/Stack.html" class="extype" name="scala.collection.immutable.Stack">Stack</a>, <a href="mutable/StackProxy.html" class="extype" name="scala.collection.mutable.StackProxy">StackProxy</a>, <a href="immutable/Stream.html" class="extype" name="scala.collection.immutable.Stream">Stream</a>, <a href="immutable/StreamView.html" class="extype" name="scala.collection.immutable.StreamView">StreamView</a>, <a href="immutable/StreamViewLike.html" class="extype" name="scala.collection.immutable.StreamViewLike">StreamViewLike</a>, <a href="mutable/StringBuilder.html" class="extype" name="scala.collection.mutable.StringBuilder">StringBuilder</a>, <a href="immutable/StringLike.html" class="extype" name="scala.collection.immutable.StringLike">StringLike</a>, <a href="immutable/StringOps.html" class="extype" name="scala.collection.immutable.StringOps">StringOps</a>, <a href="mutable/SynchronizedBuffer.html" class="extype" name="scala.collection.mutable.SynchronizedBuffer">SynchronizedBuffer</a>, <a href="mutable/SynchronizedMap.html" class="extype" name="scala.collection.mutable.SynchronizedMap">SynchronizedMap</a>, <a href="mutable/SynchronizedPriorityQueue.html" class="extype" name="scala.collection.mutable.SynchronizedPriorityQueue">SynchronizedPriorityQueue</a>, <a href="mutable/SynchronizedQueue.html" class="extype" name="scala.collection.mutable.SynchronizedQueue">SynchronizedQueue</a>, <a href="mutable/SynchronizedSet.html" class="extype" name="scala.collection.mutable.SynchronizedSet">SynchronizedSet</a>, <a href="mutable/SynchronizedStack.html" class="extype" name="scala.collection.mutable.SynchronizedStack">SynchronizedStack</a>, <a href="../sys/SystemProperties.html" class="extype" name="scala.sys.SystemProperties">SystemProperties</a>, <a href="mutable/IndexedSeqView$TakenWhile.html" class="extype" name="scala.collection.mutable.IndexedSeqView.TakenWhile">TakenWhile</a>, <a href="IterableViewLike$TakenWhile.html" class="extype" name="scala.collection.IterableViewLike.TakenWhile">TakenWhile</a>, <a href="SeqViewLike$TakenWhile.html" class="extype" name="scala.collection.SeqViewLike.TakenWhile">TakenWhile</a>, <a href="TraversableViewLike$TakenWhile.html" class="extype" name="scala.collection.TraversableViewLike.TakenWhile">TakenWhile</a>, <a href="immutable/StreamViewLike$TakenWhile.html" class="extype" name="scala.collection.immutable.StreamViewLike.TakenWhile">TakenWhile</a>, <a href="mutable/IndexedSeqView$Transformed.html" class="extype" name="scala.collection.mutable.IndexedSeqView.Transformed">Transformed</a>, <a href="immutable/StreamViewLike$Transformed.html" class="extype" name="scala.collection.immutable.StreamViewLike.Transformed">Transformed</a>, <a href="IterableViewLike$Transformed.html" class="extype" name="scala.collection.IterableViewLike.Transformed">Transformed</a>, <a href="SeqViewLike$Transformed.html" class="extype" name="scala.collection.SeqViewLike.Transformed">Transformed</a>, <a href="TraversableViewLike$Transformed.html" class="extype" name="scala.collection.TraversableViewLike.Transformed">Transformed</a>, <a href="immutable/Traversable.html" class="extype" name="scala.collection.immutable.Traversable">Traversable</a>, <a href="Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>, <a href="mutable/Traversable.html" class="extype" name="scala.collection.mutable.Traversable">Traversable</a>, <a href="generic/TraversableForwarder.html" class="extype" name="scala.collection.generic.TraversableForwarder">TraversableForwarder</a>, <a href="TraversableLike.html" class="extype" name="scala.collection.TraversableLike">TraversableLike</a>, <a href="TraversableProxy.html" class="extype" name="scala.collection.TraversableProxy">TraversableProxy</a>, <a href="TraversableProxyLike.html" class="extype" name="scala.collection.TraversableProxyLike">TraversableProxyLike</a>, <a href="TraversableView.html" class="extype" name="scala.collection.TraversableView">TraversableView</a>, <a href="TraversableViewLike.html" class="extype" name="scala.collection.TraversableViewLike">TraversableViewLike</a>, <a href="immutable/TreeMap.html" class="extype" name="scala.collection.immutable.TreeMap">TreeMap</a>, <a href="immutable/TreeSet.html" class="extype" name="scala.collection.immutable.TreeSet">TreeSet</a>, <a href="mutable/TreeSet.html" class="extype" name="scala.collection.mutable.TreeSet">TreeSet</a>, <a href="concurrent/TrieMap.html" class="extype" name="scala.collection.concurrent.TrieMap">TrieMap</a>, <a href="mutable/UnrolledBuffer.html" class="extype" name="scala.collection.mutable.UnrolledBuffer">UnrolledBuffer</a>, <a href="../Enumeration$ValueSet.html" class="extype" name="scala.Enumeration.ValueSet">ValueSet</a>, <a href="immutable/Vector.html" class="extype" name="scala.collection.immutable.Vector">Vector</a>, <a href="mutable/Map$$WithDefault.html" class="extype" name="scala.collection.mutable.Map.WithDefault">WithDefault</a>, <a href="parallel/immutable/ParMap$$WithDefault.html" class="extype" name="scala.collection.parallel.immutable.ParMap.WithDefault">WithDefault</a>, <a href="parallel/ParMap$$WithDefault.html" class="extype" name="scala.collection.parallel.ParMap.WithDefault">WithDefault</a>, <a href="parallel/mutable/ParMap$$WithDefault.html" class="extype" name="scala.collection.parallel.mutable.ParMap.WithDefault">WithDefault</a>, <a href="immutable/Map$$WithDefault.html" class="extype" name="scala.collection.immutable.Map.WithDefault">WithDefault</a>, <a href="Map$$WithDefault.html" class="extype" name="scala.collection.Map.WithDefault">WithDefault</a>, <a href="mutable/WrappedArray.html" class="extype" name="scala.collection.mutable.WrappedArray">WrappedArray</a>, <a href="immutable/WrappedString.html" class="extype" name="scala.collection.immutable.WrappedString">WrappedString</a>, <a href="immutable/StreamViewLike$Zipped.html" class="extype" name="scala.collection.immutable.StreamViewLike.Zipped">Zipped</a>, <a href="IterableViewLike$Zipped.html" class="extype" name="scala.collection.IterableViewLike.Zipped">Zipped</a>, <a href="SeqViewLike$Zipped.html" class="extype" name="scala.collection.SeqViewLike.Zipped">Zipped</a>, <a href="immutable/StreamViewLike$ZippedAll.html" class="extype" name="scala.collection.immutable.StreamViewLike.ZippedAll">ZippedAll</a>, <a href="IterableViewLike$ZippedAll.html" class="extype" name="scala.collection.IterableViewLike.ZippedAll">ZippedAll</a>, <a href="SeqViewLike$ZippedAll.html" class="extype" name="scala.collection.SeqViewLike.ZippedAll">ZippedAll</a>, <a href="mutable/WrappedArray$$ofBoolean.html" class="extype" name="scala.collection.mutable.WrappedArray.ofBoolean">ofBoolean</a>, <a href="mutable/ArrayOps$$ofBoolean.html" class="extype" name="scala.collection.mutable.ArrayOps.ofBoolean">ofBoolean</a>, <a href="mutable/WrappedArray$$ofByte.html" class="extype" name="scala.collection.mutable.WrappedArray.ofByte">ofByte</a>, <a href="mutable/ArrayOps$$ofByte.html" class="extype" name="scala.collection.mutable.ArrayOps.ofByte">ofByte</a>, <a href="mutable/ArrayOps$$ofChar.html" class="extype" name="scala.collection.mutable.ArrayOps.ofChar">ofChar</a>, <a href="mutable/WrappedArray$$ofChar.html" class="extype" name="scala.collection.mutable.WrappedArray.ofChar">ofChar</a>, <a href="mutable/ArrayOps$$ofDouble.html" class="extype" name="scala.collection.mutable.ArrayOps.ofDouble">ofDouble</a>, <a href="mutable/WrappedArray$$ofDouble.html" class="extype" name="scala.collection.mutable.WrappedArray.ofDouble">ofDouble</a>, <a href="mutable/ArrayOps$$ofFloat.html" class="extype" name="scala.collection.mutable.ArrayOps.ofFloat">ofFloat</a>, <a href="mutable/WrappedArray$$ofFloat.html" class="extype" name="scala.collection.mutable.WrappedArray.ofFloat">ofFloat</a>, <a href="mutable/WrappedArray$$ofInt.html" class="extype" name="scala.collection.mutable.WrappedArray.ofInt">ofInt</a>, <a href="mutable/ArrayOps$$ofInt.html" class="extype" name="scala.collection.mutable.ArrayOps.ofInt">ofInt</a>, <a href="mutable/ArrayOps$$ofLong.html" class="extype" name="scala.collection.mutable.ArrayOps.ofLong">ofLong</a>, <a href="mutable/WrappedArray$$ofLong.html" class="extype" name="scala.collection.mutable.WrappedArray.ofLong">ofLong</a>, <a href="mutable/WrappedArray$$ofRef.html" class="extype" name="scala.collection.mutable.WrappedArray.ofRef">ofRef</a>, <a href="mutable/ArrayOps$$ofRef.html" class="extype" name="scala.collection.mutable.ArrayOps.ofRef">ofRef</a>, <a href="mutable/ArrayOps$$ofShort.html" class="extype" name="scala.collection.mutable.ArrayOps.ofShort">ofShort</a>, <a href="mutable/WrappedArray$$ofShort.html" class="extype" name="scala.collection.mutable.WrappedArray.ofShort">ofShort</a>, <a href="mutable/WrappedArray$$ofUnit.html" class="extype" name="scala.collection.mutable.WrappedArray.ofUnit">ofUnit</a>, <a href="mutable/ArrayOps$$ofUnit.html" class="extype" name="scala.collection.mutable.ArrayOps.ofUnit">ofUnit</a></div>
+          </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.collection.Parallelizable"><span>Parallelizable</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scala.Any#getClass" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the runtime class representation of the object.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the runtime class representation of the object.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a class object corresponding to the runtime type of the receiver.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.collection.Parallelizable#parCombiner" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="parCombiner:scala.collection.parallel.Combiner[A,ParRepr]"></a>
+      <a id="parCombiner:Combiner[A,ParRepr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parCombiner</span><span class="result">: <a href="parallel/Combiner.html" class="extype" name="scala.collection.parallel.Combiner">Combiner</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@parCombiner:scala.collection.parallel.Combiner[A,ParRepr]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The default <code>par</code> implementation uses the combiner provided by this method
+ to create a new parallel collection.</p><div class="fullcomment"><div class="comment cmt"><p>The default <code>par</code> implementation uses the combiner provided by this method
+ to create a new parallel collection.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a combiner for the parallel collection of type <code>ParRepr</code></p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[this] </dd></dl></div>
+    </li><li name="scala.collection.Parallelizable#seq" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="seq:scala.collection.TraversableOnce[A]"></a>
+      <a id="seq:TraversableOnce[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">seq</span><span class="result">: <a href="TraversableOnce.html" class="extype" name="scala.collection.TraversableOnce">TraversableOnce</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@seq:scala.collection.TraversableOnce[A]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@##():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>] to
+            <a href="../Predef$$any2stringadd.html" class="extype" name="scala.Predef.any2stringadd">any2stringadd</a>[<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]] performed by method any2stringadd in <a href="../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../Predef$$any2stringadd.html" class="extype" name="scala.Predef.any2stringadd">any2stringadd</a></dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(Parallelizable[A,ParRepr],B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>], <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>] to
+            <a href="../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a>[<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]] performed by method ArrowAssoc in <a href="../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../inline.html" class="extype" name="scala.inline">inline</a></span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for equality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for equality.
+ The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((Parallelizable[A,ParRepr])⇒Boolean,⇒Any):Parallelizable[A,ParRepr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]) ⇒ <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>] to
+            <a href="../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]] performed by method Ensuring in <a href="../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((Parallelizable[A,ParRepr])⇒Boolean):Parallelizable[A,ParRepr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]) ⇒ <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>] to
+            <a href="../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]] performed by method Ensuring in <a href="../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):Parallelizable[A,ParRepr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>] to
+            <a href="../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]] performed by method Ensuring in <a href="../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):Parallelizable[A,ParRepr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>] to
+            <a href="../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]] performed by method Ensuring in <a href="../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Any#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compares the receiver object (<code>this</code>) with the argument object (<code>that</code>) for equivalence.</p><div class="fullcomment"><div class="comment cmt"><p>Compares the receiver object (<code>this</code>) with the argument object (<code>that</code>) for equivalence.</p><p> Any implementation of this method should be an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a>:</p><ul><li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>, <code>x.equals(x)</code> should return <code>true</code>.</li><li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and
+   only if <code>y.equals(x)</code> returns <code>true</code>.</li><li>It is transitive: for any instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>Any</code> if <code>x.equals(y)</code> returns <code>true</code> and
+   <code>y.equals(z)</code> returns <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li></ul><p> If you override this method, you should verify that your implementation remains an equivalence relation.
+ Additionally, when overriding this method it is usually necessary to override <code>hashCode</code> to ensure that
+ objects which are &quot;equal&quot; (<code>o1.equals(o2)</code> returns <code>true</code>) hash to the same <a href="../Int.html" class="extype" name="scala.Int">scala.Int</a>.
+ (<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns string formatted according to given <code>format</code> string.</p><div class="fullcomment"><div class="comment cmt"><p>Returns string formatted according to given <code>format</code> string.
+ Format strings are as for <code>String.format</code>
+ (@see java.lang.String.format).
+</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>] to
+            <a href="../Predef$$StringFormat.html" class="extype" name="scala.Predef.StringFormat">StringFormat</a>[<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]] performed by method StringFormat in <a href="../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../Predef$$StringFormat.html" class="extype" name="scala.Predef.StringFormat">StringFormat</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../inline.html" class="extype" name="scala.inline">inline</a></span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Any#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Calculate a hash code value for the object.</p><div class="fullcomment"><div class="comment cmt"><p>Calculate a hash code value for the object.</p><p> The default hashing algorithm is platform dependent.</p><p> Note that it is allowed for two objects to have identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet
+ not be equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A degenerate implementation could always return <code>0</code>.
+ However, it is required that if two objects are equal (<code>o1.equals(o2)</code> returns <code>true</code>) that they have
+ identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when overriding this method, be sure
+ to verify that the behavior is consistent with the <code>equals</code> method.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.collection.Parallelizable#par" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="par:ParRepr"></a>
+      <a id="par:ParRepr"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">par</span><span class="result">: <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@par:ParRepr" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a parallel implementation of this collection.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a parallel implementation of this collection.</p><p> For most collection types, this method creates a new parallel collection by copying
+ all the elements. For these collection, <code>par</code> takes linear time. Mutable collections
+ in this category do not produce a mutable parallel collection that has the same
+ underlying dataset, so changes in one collection will not be reflected in the other one.</p><p> Specific collections (e.g. <code>ParArray</code> or <code>mutable.ParHashMap</code>) override this default
+ behaviour by creating a parallel collection which shares the same underlying dataset.
+ For these collections, <code>par</code> takes constant or sublinear time.</p><p> All parallel collections return a reference to themselves.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a parallel implementation of this collection</p></dd></dl></div>
+    </li><li name="scala.Any#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@toString():String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a string representation of the object.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a string representation of the object.</p><p> The default representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a string representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(Parallelizable[A,ParRepr],B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>], <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.collection.Parallelizable@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>] to
+            <a href="../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a>[<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]] performed by method ArrowAssoc in <a href="../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>] to <a href="../Predef$$any2stringadd.html" class="extype" name="scala.Predef.any2stringadd">any2stringadd</a>[<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>] to <a href="../Predef$$StringFormat.html" class="extype" name="scala.Predef.StringFormat">StringFormat</a>[<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>] to <a href="../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>] to <a href="../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a>[<a href="" class="extype" name="scala.collection.Parallelizable">Parallelizable</a>[<span class="extype" name="scala.collection.Parallelizable.A">A</span>, <span class="extype" name="scala.collection.Parallelizable.ParRepr">ParRepr</span>]]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

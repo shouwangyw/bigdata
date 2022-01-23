@@ -1,0 +1,536 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>analysis - Scala Compiler 2.11.8 - scala.tools.nsc.backend.jvm.analysis</title>
+          <meta name="description" content="analysis - Scala Compiler 2.11.8 - scala.tools.nsc.backend.jvm.analysis" />
+          <meta name="keywords" content="analysis Scala Compiler 2.11.8 scala.tools.nsc.backend.jvm.analysis" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../../index.html';
+            var hash = 'scala.tools.nsc.backend.jvm.analysis.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc.backend">backend</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.backend.jvm">jvm</a></p>
+        <h1>analysis</h1><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">analysis</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 1355.00 94.00" height="94pt" width="1355pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 90)" class="graph" id="graph0"><polygon points="-4,4 -4,-90 1351,-90 1351,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node object" id="graph1_0"><g id="a_object|graph1_0"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.Unknown" xlink:href="Unknown$.html#inheritance-diagram"><polygon points="84,-25 7.10543e-15,-25 7.10543e-15,-0 84,-0 84,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../../../../lib/object_diagram.png" y="-19.5" x="10" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="31" text-anchor="start">Unknown</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.ExceptionProducer" xlink:href="ExceptionProducer.html#inheritance-diagram"><polygon points="403.5,-25 276.5,-25 276.5,-0 403.5,-0 403.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../../lib/class_diagram.png" y="-19.5" x="287" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="308" text-anchor="start">ExceptionProducer</text></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.Nullness" xlink:href="Nullness.html#inheritance-diagram"><polygon points="174,-86 92,-86 92,-61 174,-61 174,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../../lib/trait_diagram.png" y="-80.5" x="102" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="123" text-anchor="start">Nullness</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="Unknown is a subtype of Nullness"><path d="M110.757,-58.0789C95.1365,-47.9511 74.5135,-34.5802 59.9413,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="109.874,-59.5918 115.021,-60.8435 111.778,-56.655 109.874,-59.5918" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node object" id="graph1_5"><g id="a_object|graph1_5"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.Null" xlink:href="Null$.html#inheritance-diagram"><polygon points="163.5,-25 102.5,-25 102.5,-0 163.5,-0 163.5,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../../../../lib/object_diagram.png" y="-19.5" x="113" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="134" text-anchor="start">Null</text></a></g></g><!-- node2&#45;&gt;node5 --><g class="edge inheritance" id="graph1_2_5"><g id="a_inheritance|graph1_2_5"><a xlink:title="Null is a subtype of Nullness"><path d="M133,-55.6874C133,-45.9173 133,-33.8534 133,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="131.25,-55.8435 133,-60.8435 134.75,-55.8435 131.25,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node12 --><g class="node object" id="graph1_12"><g id="a_object|graph1_12"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.NotNull" xlink:href="NotNull$.html#inheritance-diagram"><polygon points="258,-25 182,-25 182,-0 258,-0 258,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../../../../lib/object_diagram.png" y="-19.5" x="192" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="213" text-anchor="start">NotNull</text></a></g></g><!-- node2&#45;&gt;node12 --><g class="edge inheritance" id="graph1_2_12"><g id="a_inheritance|graph1_2_12"><a xlink:title="NotNull is a subtype of Nullness"><path d="M154.649,-57.8185C169.536,-47.7228 189.035,-34.4995 202.847,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="153.344,-56.5887 150.188,-60.8435 155.309,-59.4855 153.344,-56.5887" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node class" id="graph1_3"><g id="a_class|graph1_3"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.ParameterProducer" xlink:href="ParameterProducer.html#inheritance-diagram"><polygon points="550.5,-25 421.5,-25 421.5,-0 550.5,-0 550.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../../lib/class_diagram.png" y="-19.5" x="432" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="453" text-anchor="start">ParameterProducer</text></a></g></g><!-- node4 --><g class="node object" id="graph1_4"><g id="a_object|graph1_4"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.UnknownValue2" xlink:href="UnknownValue2$.html#inheritance-diagram"><polygon points="860,-25 746,-25 746,-0 860,-0 860,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../../../../lib/object_diagram.png" y="-19.5" x="756" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="777" text-anchor="start">UnknownValue2</text></a></g></g><!-- node6 --><g class="node class" id="graph1_6"><g id="a_class|graph1_6"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.AliasingFrame" xlink:href="AliasingFrame.html#inheritance-diagram"><polygon points="1347,-86 1227,-86 1227,-61 1347,-61 1347,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../../lib/class_diagram.png" y="-80.5" x="1237" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="1258" text-anchor="start">AliasingFrame[V]</text></a></g></g><!-- node7 --><g class="node class" id="graph1_7"><g id="a_class|graph1_7"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.NullnessFrame" xlink:href="NullnessFrame.html#inheritance-diagram"><polygon points="1342,-25 1232,-25 1232,-0 1342,-0 1342,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../../lib/class_diagram.png" y="-19.5" x="1242" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="1263" text-anchor="start">NullnessFrame</text></a></g></g><!-- node6&#45;&gt;node7 --><g class="edge inheritance" id="graph1_6_7"><g id="a_inheritance|graph1_6_7"><a xlink:title="NullnessFrame is a subtype of AliasingFrame[V]"><path d="M1287,-55.6874C1287,-45.9173 1287,-33.8534 1287,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1285.25,-55.8435 1287,-60.8435 1288.75,-55.8435 1285.25,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8 --><g class="node trait" id="graph1_8"><g id="a_trait|graph1_8"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.NullnessValue" xlink:href="NullnessValue.html#inheritance-diagram"><polygon points="1050,-86 944,-86 944,-61 1050,-61 1050,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../../lib/trait_diagram.png" y="-80.5" x="954" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="975" text-anchor="start">NullnessValue</text></a></g></g><!-- node8&#45;&gt;node4 --><g class="edge inheritance" id="graph1_8_4"><g id="a_inheritance|graph1_8_4"><a xlink:title="UnknownValue2 is a subtype of NullnessValue"><path d="M954.242,-59.4964C920.426,-49.2119 873.646,-34.9851 841.101,-25.0875" stroke="#d4d4d4" fill="none"></path><polygon points="953.841,-61.2035 959.134,-60.9841 954.86,-57.855 953.841,-61.2035" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node9 --><g class="node object" id="graph1_9"><g id="a_object|graph1_9"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.UnknownValue1" xlink:href="UnknownValue1$.html#inheritance-diagram"><polygon points="992,-25 878,-25 878,-0 992,-0 992,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../../../../lib/object_diagram.png" y="-19.5" x="888" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="909" text-anchor="start">UnknownValue1</text></a></g></g><!-- node8&#45;&gt;node9 --><g class="edge inheritance" id="graph1_8_9"><g id="a_inheritance|graph1_8_9"><a xlink:title="UnknownValue1 is a subtype of NullnessValue"><path d="M981.02,-57.2936C970.485,-47.268 956.898,-34.338 947.224,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="979.922,-58.6644 984.751,-60.8435 982.335,-56.1289 979.922,-58.6644" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13 --><g class="node object" id="graph1_13"><g id="a_object|graph1_13"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.NotNullValue" xlink:href="NotNullValue$.html#inheritance-diagram"><polygon points="1110,-25 1010,-25 1010,-0 1110,-0 1110,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../../../../lib/object_diagram.png" y="-19.5" x="1020" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="1041" text-anchor="start">NotNullValue</text></a></g></g><!-- node8&#45;&gt;node13 --><g class="edge inheritance" id="graph1_8_13"><g id="a_inheritance|graph1_8_13"><a xlink:title="NotNullValue is a subtype of NullnessValue"><path d="M1013.24,-57.2936C1023.94,-47.268 1037.75,-34.338 1047.58,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1011.9,-56.1484 1009.45,-60.8435 1014.29,-58.703 1011.9,-56.1484" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node14 --><g class="node object" id="graph1_14"><g id="a_object|graph1_14"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.NullValue" xlink:href="NullValue$.html#inheritance-diagram"><polygon points="1213.5,-25 1128.5,-25 1128.5,-0 1213.5,-0 1213.5,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../../../../lib/object_diagram.png" y="-19.5" x="1139" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="1160" text-anchor="start">NullValue</text></a></g></g><!-- node8&#45;&gt;node14 --><g class="edge inheritance" id="graph1_8_14"><g id="a_inheritance|graph1_8_14"><a xlink:title="NullValue is a subtype of NullnessValue"><path d="M1035.72,-59.3697C1066.02,-49.0954 1107.76,-34.9445 1136.83,-25.0875" stroke="#d4d4d4" fill="none"></path><polygon points="1035.14,-57.7211 1030.96,-60.9841 1036.26,-61.0358 1035.14,-57.7211" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10 --><g class="node class" id="graph1_10"><g id="a_class|graph1_10"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.UninitializedLocalProducer" xlink:href="UninitializedLocalProducer.html#inheritance-diagram"><polygon points="727.5,-25 568.5,-25 568.5,-0 727.5,-0 727.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../../lib/class_diagram.png" y="-19.5" x="579" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="600" text-anchor="start">UninitializedLocalProducer</text></a></g></g><!-- node11 --><g class="node class" id="graph1_11"><g id="a_class|graph1_11"><a xlink:title="scala.tools.nsc.backend.jvm.analysis.InitialProducer" xlink:href="InitialProducer.html#inheritance-diagram"><polygon points="539,-86 433,-86 433,-61 539,-61 539,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../../lib/class_diagram.png" y="-80.5" x="443" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="464" text-anchor="start">InitialProducer</text></a></g></g><!-- node11&#45;&gt;node1 --><g class="edge inheritance" id="graph1_11_1"><g id="a_inheritance|graph1_11_1"><a xlink:title="ExceptionProducer is a subtype of InitialProducer"><path d="M452.578,-58.9941C427.323,-48.788 393.008,-34.921 368.924,-25.1884" stroke="#d4d4d4" fill="none"></path><polygon points="452.212,-60.7332 457.503,-60.9841 453.523,-57.4882 452.212,-60.7332" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node3 --><g class="edge inheritance" id="graph1_11_3"><g id="a_inheritance|graph1_11_3"><a xlink:title="ParameterProducer is a subtype of InitialProducer"><path d="M486,-55.6874C486,-45.9173 486,-33.8534 486,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="484.25,-55.8435 486,-60.8435 487.75,-55.8435 484.25,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node10 --><g class="edge inheritance" id="graph1_11_10"><g id="a_inheritance|graph1_11_10"><a xlink:title="UninitializedLocalProducer is a subtype of InitialProducer"><path d="M522.401,-59.2427C550.583,-48.979 589.23,-34.904 616.184,-25.0875" stroke="#d4d4d4" fill="none"></path><polygon points="521.719,-57.6287 517.62,-60.9841 522.917,-60.9174 521.719,-57.6287" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.tools.nsc.backend.jvm.analysis.AliasingAnalyzer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AliasingAnalyzer[V&lt;:scala.tools.asm.tree.analysis.Value]extendsAnalyzer[V]"></a>
+      <a id="AliasingAnalyzer[V&lt;:Value]:AliasingAnalyzer[V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AliasingAnalyzer.html"><span class="name">AliasingAnalyzer</span></a><span class="tparams">[<span name="V">V &lt;: <span class="extype" name="scala.tools.asm.tree.analysis.Value">Value</span></span>]</span><span class="result"> extends <span class="extype" name="scala.tools.asm.tree.analysis.Analyzer">Analyzer</span>[<span class="extype" name="scala.tools.nsc.backend.jvm.analysis.AliasingAnalyzer.V">V</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@AliasingAnalyzer[V&lt;:scala.tools.asm.tree.analysis.Value]extendsAnalyzer[V]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An analyzer that uses AliasingFrames instead of bare Frames.</p><div class="fullcomment"><div class="comment cmt"><p>An analyzer that uses AliasingFrames instead of bare Frames. This can be used when an analysis
+needs to track aliases, but doesn't require a more specific Frame subclass.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.AliasingFrame" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AliasingFrame[V&lt;:scala.tools.asm.tree.analysis.Value]extendsFrame[V]"></a>
+      <a id="AliasingFrame[V&lt;:Value]:AliasingFrame[V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AliasingFrame.html"><span class="name">AliasingFrame</span></a><span class="tparams">[<span name="V">V &lt;: <span class="extype" name="scala.tools.asm.tree.analysis.Value">Value</span></span>]</span><span class="result"> extends <span class="extype" name="scala.tools.asm.tree.analysis.Frame">Frame</span>[<span class="extype" name="scala.tools.nsc.backend.jvm.analysis.AliasingFrame.V">V</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@AliasingFrame[V&lt;:scala.tools.asm.tree.analysis.Value]extendsFrame[V]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.ExceptionProducer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ExceptionProducerextendsInitialProducerwithProductwithSerializable"></a>
+      <a id="ExceptionProducer:ExceptionProducer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ExceptionProducer.html"><span class="name">ExceptionProducer</span></a><span class="params">(<span name="handlerFrame">handlerFrame: <span class="extype" name="scala.tools.asm.tree.analysis.Frame">Frame</span>[_ &lt;: <span class="extype" name="scala.tools.asm.tree.analysis.Value">Value</span>]</span>)</span><span class="result"> extends <a href="InitialProducer.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.InitialProducer">InitialProducer</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@ExceptionProducerextendsInitialProducerwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.InitialProducer" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="InitialProducerextendsAbstractInsnNode"></a>
+      <a id="InitialProducer:InitialProducer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="InitialProducer.html"><span class="name">InitialProducer</span></a><span class="result"> extends <span class="extype" name="scala.tools.asm.tree.AbstractInsnNode">AbstractInsnNode</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@InitialProducerextendsAbstractInsnNode" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A class for pseudo-instructions representing the initial producers of local values that have
+no producer instruction in the method:</p><div class="fullcomment"><div class="comment cmt"><p>A class for pseudo-instructions representing the initial producers of local values that have
+no producer instruction in the method:</p><ul><li>parameters, including <code>this</code></li><li>uninitialized local variables</li><li>exception values in handlers</li></ul><p>The ASM built-in SourceValue analysis yields an empty producers set for such values. This leads
+to ambiguities. Example (in Java one can re-assign parameter):</p><p>  void foo(int a) {
+    if (a == 0) a = 1;
+    return a;
+  }</p><p>In the first frame of the method, the SoruceValue for parameter <code>a</code> gives an empty set of
+producer instructions.</p><p>In the frame of the <code>IRETURN</code> instruction, the SoruceValue for parameter <code>a</code> lists a single
+producer instruction: the <code>ISTORE 1</code>. This makes it look as if there was a single producer for
+<code>a</code>, where in fact it might still hold the parameter's initial value.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.InitialProducerSourceInterpreter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InitialProducerSourceInterpreterextendsSourceInterpreter"></a>
+      <a id="InitialProducerSourceInterpreter:InitialProducerSourceInterpreter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="InitialProducerSourceInterpreter.html"><span class="name">InitialProducerSourceInterpreter</span></a><span class="result"> extends <span class="extype" name="scala.tools.asm.tree.analysis.SourceInterpreter">SourceInterpreter</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@InitialProducerSourceInterpreterextendsSourceInterpreter" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.Nullness" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NullnessextendsAnyRef"></a>
+      <a id="Nullness:Nullness"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Nullness.html"><span class="name">Nullness</span></a><span class="result"> extends <a href="../../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@NullnessextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Type to represent nullness of values.</p>
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.NullnessAnalyzer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NullnessAnalyzerextendsAnalyzer[scala.tools.nsc.backend.jvm.analysis.NullnessValue]"></a>
+      <a id="NullnessAnalyzer:NullnessAnalyzer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="NullnessAnalyzer.html"><span class="name">NullnessAnalyzer</span></a><span class="result"> extends <span class="extype" name="scala.tools.asm.tree.analysis.Analyzer">Analyzer</span>[<a href="NullnessValue.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.NullnessValue">NullnessValue</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@NullnessAnalyzerextendsAnalyzer[scala.tools.nsc.backend.jvm.analysis.NullnessValue]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class is required to override the <code>newFrame</code> methods, which makes makes sure the analyzer
+uses NullnessFrames.</p>
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.NullnessFrame" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NullnessFrameextendsAliasingFrame[scala.tools.nsc.backend.jvm.analysis.NullnessValue]"></a>
+      <a id="NullnessFrame:NullnessFrame"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="NullnessFrame.html"><span class="name">NullnessFrame</span></a><span class="result"> extends <a href="AliasingFrame.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.AliasingFrame">AliasingFrame</a>[<a href="NullnessValue.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.NullnessValue">NullnessValue</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@NullnessFrameextendsAliasingFrame[scala.tools.nsc.backend.jvm.analysis.NullnessValue]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.NullnessInterpreter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NullnessInterpreterextendsInterpreter[scala.tools.nsc.backend.jvm.analysis.NullnessValue]"></a>
+      <a id="NullnessInterpreter:NullnessInterpreter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="NullnessInterpreter.html"><span class="name">NullnessInterpreter</span></a><span class="result"> extends <span class="extype" name="scala.tools.asm.tree.analysis.Interpreter">Interpreter</span>[<a href="NullnessValue.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.NullnessValue">NullnessValue</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@NullnessInterpreterextendsInterpreter[scala.tools.nsc.backend.jvm.analysis.NullnessValue]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.NullnessValue" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="NullnessValueextendsValue"></a>
+      <a id="NullnessValue:NullnessValue"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="NullnessValue.html"><span class="name">NullnessValue</span></a><span class="result"> extends <span class="extype" name="scala.tools.asm.tree.analysis.Value">Value</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@NullnessValueextendsValue" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Represents the nullness state for a local variable or stack value.</p><div class="fullcomment"><div class="comment cmt"><p>Represents the nullness state for a local variable or stack value.</p><p>Note that nullness of primitive values is not tracked, it will be always <a href="Unknown$.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.Unknown">Unknown</a>.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.ParameterProducer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ParameterProducerextendsInitialProducerwithProductwithSerializable"></a>
+      <a id="ParameterProducer:ParameterProducer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ParameterProducer.html"><span class="name">ParameterProducer</span></a><span class="params">(<span name="local">local: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="InitialProducer.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.InitialProducer">InitialProducer</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@ParameterProducerextendsInitialProducerwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.ProdConsAnalyzer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ProdConsAnalyzerextendsAnyRef"></a>
+      <a id="ProdConsAnalyzer:ProdConsAnalyzer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ProdConsAnalyzer.html"><span class="name">ProdConsAnalyzer</span></a><span class="result"> extends <a href="../../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@ProdConsAnalyzerextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class provides additional queries over ASM's built-in <code>SourceValue</code> analysis.</p><div class="fullcomment"><div class="comment cmt"><p>This class provides additional queries over ASM's built-in <code>SourceValue</code> analysis.</p><p>The analysis computes for each value in a frame a set of source instructions, which are the
+potential producers. Most instructions produce either nothing or a stack value. For example,
+a <code>LOAD</code> instruction is the producer of the value pushed onto the stack. The exception are
+<code>STORE</code> instructions, which produce a new value for a local variable slot, so they are used
+as producers for the value they stored.</p><p>Note that pseudo-instructions are used as initial producers for parameters and local variables.
+See the documentation on class InitialProducer.</p><p>This class implements the following queries over the data computed by the SourceValue analysis:</p><ul><li>producersForValueAt(insn, slot)</li><li>consumersOfValueAt(insn, slot)</li><li>producersForInputsOf(insn)</li><li>consumersOfOutputsFrom(insn)</li><li>initialProducersForValueAt(insn, slot)</li><li>ultimateConsumersOfValueAt(insn, slot)</li><li>initialProducersForInputsOf(insn)</li><li>ultimateConsumersOfOutputsFrom(insn)</li></ul><p>The following operations are considered as copying operations:</p><ul><li>xLOAD, xSTORE</li><li>DUP, DUP2, DUP_X1, DUP_X2, DUP2_X1, DUP2_X2</li><li>SWAP</li><li>CHECKCAST</li></ul><p>If ever needed, we could introduce a mode where primitive conversions (l2i) are considered as
+copying operations.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.UninitializedLocalProducer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UninitializedLocalProducerextendsInitialProducerwithProductwithSerializable"></a>
+      <a id="UninitializedLocalProducer:UninitializedLocalProducer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="UninitializedLocalProducer.html"><span class="name">UninitializedLocalProducer</span></a><span class="params">(<span name="local">local: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="InitialProducer.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.InitialProducer">InitialProducer</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@UninitializedLocalProducerextendsInitialProducerwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.tools.nsc.backend.jvm.analysis.AliasingFrame" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AliasingFrame"></a>
+      <a id="AliasingFrame:AliasingFrame"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AliasingFrame$.html"><span class="name">AliasingFrame</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@AliasingFrame" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.InstructionStackEffect" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InstructionStackEffect"></a>
+      <a id="InstructionStackEffect:InstructionStackEffect"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="InstructionStackEffect$.html"><span class="name">InstructionStackEffect</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@InstructionStackEffect" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.NotNull" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotNull"></a>
+      <a id="NotNull:NotNull"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NotNull$.html"><span class="name">NotNull</span></a><span class="result"> extends <a href="Nullness.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.Nullness">Nullness</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@NotNull" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.NotNullValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NotNullValue"></a>
+      <a id="NotNullValue:NotNullValue"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NotNullValue$.html"><span class="name">NotNullValue</span></a><span class="result"> extends <a href="NullnessValue.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.NullnessValue">NullnessValue</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@NotNullValue" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.Null" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Null"></a>
+      <a id="Null:Null"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Null$.html"><span class="name">Null</span></a><span class="result"> extends <a href="Nullness.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.Nullness">Nullness</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@Null" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.NullValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NullValue"></a>
+      <a id="NullValue:NullValue"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NullValue$.html"><span class="name">NullValue</span></a><span class="result"> extends <a href="NullnessValue.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.NullnessValue">NullnessValue</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@NullValue" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.NullnessValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NullnessValue"></a>
+      <a id="NullnessValue:NullnessValue"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NullnessValue$.html"><span class="name">NullnessValue</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@NullnessValue" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.ProdConsAnalyzer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ProdConsAnalyzer"></a>
+      <a id="ProdConsAnalyzer:ProdConsAnalyzer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ProdConsAnalyzer$.html"><span class="name">ProdConsAnalyzer</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@ProdConsAnalyzer" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.Unknown" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Unknown"></a>
+      <a id="Unknown:Unknown"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Unknown$.html"><span class="name">Unknown</span></a><span class="result"> extends <a href="Nullness.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.Nullness">Nullness</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@Unknown" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.UnknownValue1" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UnknownValue1"></a>
+      <a id="UnknownValue1:UnknownValue1"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UnknownValue1$.html"><span class="name">UnknownValue1</span></a><span class="result"> extends <a href="NullnessValue.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.NullnessValue">NullnessValue</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@UnknownValue1" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis.UnknownValue2" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UnknownValue2"></a>
+      <a id="UnknownValue2:UnknownValue2"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UnknownValue2$.html"><span class="name">UnknownValue2</span></a><span class="result"> extends <a href="NullnessValue.html" class="extype" name="scala.tools.nsc.backend.jvm.analysis.NullnessValue">NullnessValue</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.analysis.package@UnknownValue2" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

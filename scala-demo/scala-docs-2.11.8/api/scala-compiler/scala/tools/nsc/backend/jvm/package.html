@@ -1,0 +1,588 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>jvm - Scala Compiler 2.11.8 - scala.tools.nsc.backend.jvm</title>
+          <meta name="description" content="jvm - Scala Compiler 2.11.8 - scala.tools.nsc.backend.jvm" />
+          <meta name="keywords" content="jvm Scala Compiler 2.11.8 scala.tools.nsc.backend.jvm" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'scala.tools.nsc.backend.jvm.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.backend">backend</a></p>
+        <h1>jvm</h1><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jvm</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 795.50 338.00" height="338pt" width="796pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 334)" class="graph" id="graph0"><polygon points="-4,4 -4,-334 791.5,-334 791.5,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node class" id="graph1_0"><g id="a_class|graph1_0"><a xlink:title="scala.tools.nsc.backend.jvm.BCodeSyncAndTry" xlink:href="BCodeSyncAndTry.html#inheritance-diagram"><polygon points="245,-86 118,-86 118,-61 245,-61 245,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-80.5" x="128.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="149.5" text-anchor="start">BCodeSyncAndTry</text></a></g></g><!-- node7 --><g class="node class" id="graph1_7"><g id="a_class|graph1_7"><a xlink:title="scala.tools.nsc.backend.jvm.GenBCode" xlink:href="GenBCode.html#inheritance-diagram"><polygon points="227.5,-25 135.5,-25 135.5,-0 227.5,-0 227.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-19.5" x="145.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="166.5" text-anchor="start">GenBCode</text></a></g></g><!-- node0&#45;&gt;node7 --><g class="edge inheritance" id="graph1_0_7"><g id="a_inheritance|graph1_0_7"><a xlink:title="GenBCode is a subtype of BCodeSyncAndTry"><path d="M181.5,-55.6874C181.5,-45.9173 181.5,-33.8534 181.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="179.75,-55.8435 181.5,-60.8435 183.25,-55.8435 179.75,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="scala.tools.nsc.backend.jvm.BytecodeWriters" xlink:href="BytecodeWriters.html#inheritance-diagram"><polygon points="117,-330 -7.10543e-15,-330 -7.10543e-15,-305 117,-305 117,-330" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-324.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-314.5" x="31.5" text-anchor="start">BytecodeWriters</text></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.tools.nsc.backend.jvm.GenASM" xlink:href="GenASM.html#inheritance-diagram"><polygon points="100.5,-269 16.5,-269 16.5,-244 100.5,-244 100.5,-269" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-263.5" x="26.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="47.5" text-anchor="start">GenASM</text></a></g></g><!-- node1&#45;&gt;node2 --><g class="edge inheritance" id="graph1_1_2"><g id="a_inheritance|graph1_1_2"><a xlink:title="GenASM is a subtype of BytecodeWriters"><path d="M58.5,-299.687C58.5,-289.917 58.5,-277.853 58.5,-269.132" stroke="#d4d4d4" fill="none"></path><polygon points="56.7501,-299.843 58.5,-304.843 60.2501,-299.844 56.7501,-299.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6 --><g class="node class" id="graph1_6"><g id="a_class|graph1_6"><a xlink:title="scala.tools.nsc.backend.jvm.BCodeHelpers" xlink:href="BCodeHelpers.html#inheritance-diagram"><polygon points="235,-269 128,-269 128,-244 235,-244 235,-269" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-263.5" x="138.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="159.5" text-anchor="start">BCodeHelpers</text></a></g></g><!-- node1&#45;&gt;node6 --><g class="edge inheritance" id="graph1_1_6"><g id="a_inheritance|graph1_1_6"><a xlink:title="BCodeHelpers is a subtype of BytecodeWriters"><path d="M87.19,-302.738C108.415,-292.557 137.012,-278.84 157.133,-269.188" stroke="#d4d4d4" fill="none"></path><polygon points="86.2589,-301.244 82.5076,-304.984 87.7727,-304.399 86.2589,-301.244" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.tools.nsc.backend.jvm.CoreBTypesProxyGlobalIndependent" xlink:href="CoreBTypesProxyGlobalIndependent.html#inheritance-diagram"><polygon points="494.5,-330 266.5,-330 266.5,-305 494.5,-305 494.5,-330" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-324.5" x="276.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-314.5" x="297.5" text-anchor="start">CoreBTypesProxyGlobalIndependent[BTS]</text></a></g></g><!-- node9 --><g class="node class" id="graph1_9"><g id="a_class|graph1_9"><a xlink:title="scala.tools.nsc.backend.jvm.CoreBTypesProxy" xlink:href="CoreBTypesProxy.html#inheritance-diagram"><polygon points="457,-269 304,-269 304,-244 457,-244 457,-269" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-263.5" x="314.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="335.5" text-anchor="start">CoreBTypesProxy[BTFS]</text></a></g></g><!-- node3&#45;&gt;node9 --><g class="edge inheritance" id="graph1_3_9"><g id="a_inheritance|graph1_3_9"><a xlink:title="CoreBTypesProxy[BTFS] is a subtype of CoreBTypesProxyGlobalIndependent[BTS]"><path d="M380.5,-299.687C380.5,-289.917 380.5,-277.853 380.5,-269.132" stroke="#d4d4d4" fill="none"></path><polygon points="378.75,-299.843 380.5,-304.843 382.25,-299.844 378.75,-299.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node class" id="graph1_4"><g id="a_class|graph1_4"><a xlink:title="scala.tools.nsc.backend.jvm.BTypesFromSymbols" xlink:href="BTypesFromSymbols.html#inheritance-diagram"><polygon points="627,-269 476,-269 476,-244 627,-244 627,-269" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-263.5" x="486.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="507.5" text-anchor="start">BTypesFromSymbols[G]</text></a></g></g><!-- node5 --><g class="node class" id="graph1_5"><g id="a_class|graph1_5"><a xlink:title="scala.tools.nsc.backend.jvm.BCodeIdiomatic" xlink:href="BCodeIdiomatic.html#inheritance-diagram"><polygon points="248,-330 135,-330 135,-305 248,-305 248,-330" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-324.5" x="145.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-314.5" x="166.5" text-anchor="start">BCodeIdiomatic</text></a></g></g><!-- node5&#45;&gt;node6 --><g class="edge inheritance" id="graph1_5_6"><g id="a_inheritance|graph1_5_6"><a xlink:title="BCodeHelpers is a subtype of BCodeIdiomatic"><path d="M188.65,-299.687C186.994,-289.917 184.95,-277.853 183.472,-269.132" stroke="#d4d4d4" fill="none"></path><polygon points="186.963,-300.206 189.524,-304.843 190.414,-299.621 186.963,-300.206" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8 --><g class="node class" id="graph1_8"><g id="a_class|graph1_8"><a xlink:title="scala.tools.nsc.backend.jvm.BCodeSkelBuilder" xlink:href="BCodeSkelBuilder.html#inheritance-diagram"><polygon points="243,-208 120,-208 120,-183 243,-183 243,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-202.5" x="130.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="151.5" text-anchor="start">BCodeSkelBuilder</text></a></g></g><!-- node6&#45;&gt;node8 --><g class="edge inheritance" id="graph1_6_8"><g id="a_inheritance|graph1_6_8"><a xlink:title="BCodeSkelBuilder is a subtype of BCodeHelpers"><path d="M181.5,-238.687C181.5,-228.917 181.5,-216.853 181.5,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="179.75,-238.843 181.5,-243.843 183.25,-238.844 179.75,-238.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10 --><g class="node class" id="graph1_10"><g id="a_class|graph1_10"><a xlink:title="scala.tools.nsc.backend.jvm.BCodeBodyBuilder" xlink:href="BCodeBodyBuilder.html#inheritance-diagram"><polygon points="244.5,-147 118.5,-147 118.5,-122 244.5,-122 244.5,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-141.5" x="128.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="149.5" text-anchor="start">BCodeBodyBuilder</text></a></g></g><!-- node8&#45;&gt;node10 --><g class="edge inheritance" id="graph1_8_10"><g id="a_inheritance|graph1_8_10"><a xlink:title="BCodeBodyBuilder is a subtype of BCodeSkelBuilder"><path d="M181.5,-177.687C181.5,-167.917 181.5,-155.853 181.5,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="179.75,-177.843 181.5,-182.843 183.25,-177.844 179.75,-177.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10&#45;&gt;node0 --><g class="edge inheritance" id="graph1_10_0"><g id="a_inheritance|graph1_10_0"><a xlink:title="BCodeSyncAndTry is a subtype of BCodeBodyBuilder"><path d="M181.5,-116.687C181.5,-106.917 181.5,-94.8534 181.5,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="179.75,-116.843 181.5,-121.843 183.25,-116.844 179.75,-116.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11 --><g class="node class" id="graph1_11"><g id="a_class|graph1_11"><a xlink:title="scala.tools.nsc.backend.jvm.BTypes" xlink:href="BTypes.html#inheritance-diagram"><polygon points="590,-330 513,-330 513,-305 590,-305 590,-330" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-324.5" x="523.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-314.5" x="544.5" text-anchor="start">BTypes</text></a></g></g><!-- node11&#45;&gt;node4 --><g class="edge inheritance" id="graph1_11_4"><g id="a_inheritance|graph1_11_4"><a xlink:title="BTypesFromSymbols[G] is a subtype of BTypes"><path d="M551.5,-299.687C551.5,-289.917 551.5,-277.853 551.5,-269.132" stroke="#d4d4d4" fill="none"></path><polygon points="549.75,-299.843 551.5,-304.843 553.25,-299.844 549.75,-299.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node12 --><g class="node class" id="graph1_12"><g id="a_class|graph1_12"><a xlink:title="scala.tools.nsc.backend.jvm.BackendReportingImpl" xlink:href="BackendReportingImpl.html#inheritance-diagram"><polygon points="787.5,-269 645.5,-269 645.5,-244 787.5,-244 787.5,-269" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-263.5" x="655.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="676.5" text-anchor="start">BackendReportingImpl</text></a></g></g><!-- node13 --><g class="node class" id="graph1_13"><g id="a_class|graph1_13"><a xlink:title="scala.tools.nsc.backend.jvm.BackendReporting" xlink:href="BackendReporting.html#inheritance-diagram"><polygon points="778.5,-330 654.5,-330 654.5,-305 778.5,-305 778.5,-330" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-324.5" x="664.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-314.5" x="685.5" text-anchor="start">BackendReporting</text></a></g></g><!-- node13&#45;&gt;node12 --><g class="edge inheritance" id="graph1_13_12"><g id="a_inheritance|graph1_13_12"><a xlink:title="BackendReportingImpl is a subtype of BackendReporting"><path d="M716.5,-299.687C716.5,-289.917 716.5,-277.853 716.5,-269.132" stroke="#d4d4d4" fill="none"></path><polygon points="714.75,-299.843 716.5,-304.843 718.25,-299.844 714.75,-299.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.tools.nsc.backend.jvm.BCodeAsmCommon" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BCodeAsmCommon[G&lt;:scala.tools.nsc.Global]extendsAnyRef"></a>
+      <a id="BCodeAsmCommon[G&lt;:Global]:BCodeAsmCommon[G]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BCodeAsmCommon.html"><span class="name">BCodeAsmCommon</span></a><span class="tparams">[<span name="G">G &lt;: <a href="../../Global.html" class="extype" name="scala.tools.nsc.Global">Global</a></span>]</span><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BCodeAsmCommon[G&lt;:scala.tools.nsc.Global]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait contains code shared between GenBCode and GenASM that depends on types defined in
+the compiler cake (Global).</p>
+    </li><li name="scala.tools.nsc.backend.jvm.BCodeBodyBuilder" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BCodeBodyBuilderextendsBCodeSkelBuilder"></a>
+      <a id="BCodeBodyBuilder:BCodeBodyBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BCodeBodyBuilder.html"><span class="name">BCodeBodyBuilder</span></a><span class="result"> extends <a href="BCodeSkelBuilder.html" class="extype" name="scala.tools.nsc.backend.jvm.BCodeSkelBuilder">BCodeSkelBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BCodeBodyBuilderextendsBCodeSkelBuilder" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.BCodeHelpers" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BCodeHelpersextendsBCodeIdiomaticwithBytecodeWriters"></a>
+      <a id="BCodeHelpers:BCodeHelpers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BCodeHelpers.html"><span class="name">BCodeHelpers</span></a><span class="result"> extends <a href="BCodeIdiomatic.html" class="extype" name="scala.tools.nsc.backend.jvm.BCodeIdiomatic">BCodeIdiomatic</a> with <a href="BytecodeWriters.html" class="extype" name="scala.tools.nsc.backend.jvm.BytecodeWriters">BytecodeWriters</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BCodeHelpersextendsBCodeIdiomaticwithBytecodeWriters" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.BCodeICodeCommon" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BCodeICodeCommon[G&lt;:scala.tools.nsc.Global]extendsAnyRef"></a>
+      <a id="BCodeICodeCommon[G&lt;:Global]:BCodeICodeCommon[G]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BCodeICodeCommon.html"><span class="name">BCodeICodeCommon</span></a><span class="tparams">[<span name="G">G &lt;: <a href="../../Global.html" class="extype" name="scala.tools.nsc.Global">Global</a></span>]</span><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BCodeICodeCommon[G&lt;:scala.tools.nsc.Global]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait contains code shared between GenBCode and GenICode that depends on types defined in
+the compiler cake (Global).</p>
+    </li><li name="scala.tools.nsc.backend.jvm.BCodeIdiomatic" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BCodeIdiomaticextendsSubComponent"></a>
+      <a id="BCodeIdiomatic:BCodeIdiomatic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BCodeIdiomatic.html"><span class="name">BCodeIdiomatic</span></a><span class="result"> extends <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BCodeIdiomaticextendsSubComponent" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.BCodeSkelBuilder" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BCodeSkelBuilderextendsBCodeHelpers"></a>
+      <a id="BCodeSkelBuilder:BCodeSkelBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BCodeSkelBuilder.html"><span class="name">BCodeSkelBuilder</span></a><span class="result"> extends <a href="BCodeHelpers.html" class="extype" name="scala.tools.nsc.backend.jvm.BCodeHelpers">BCodeHelpers</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BCodeSkelBuilderextendsBCodeHelpers" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.BCodeSyncAndTry" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BCodeSyncAndTryextendsBCodeBodyBuilder"></a>
+      <a id="BCodeSyncAndTry:BCodeSyncAndTry"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BCodeSyncAndTry.html"><span class="name">BCodeSyncAndTry</span></a><span class="result"> extends <a href="BCodeBodyBuilder.html" class="extype" name="scala.tools.nsc.backend.jvm.BCodeBodyBuilder">BCodeBodyBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BCodeSyncAndTryextendsBCodeBodyBuilder" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.BTypes" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="BTypesextendsAnyRef"></a>
+      <a id="BTypes:BTypes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BTypes.html"><span class="name">BTypes</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BTypesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The BTypes component defines The BType class hierarchy.</p><div class="fullcomment"><div class="comment cmt"><p>The BTypes component defines The BType class hierarchy. A BType stores all type information
+that is required after building the ASM nodes. This includes optimizations, generation of
+InnerClass attributes and generation of stack map frames.</p><p>The representation is immutable and independent of the compiler data structures, hence it can
+be queried by concurrent threads.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.BTypesFromSymbols" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BTypesFromSymbols[G&lt;:scala.tools.nsc.Global]extendsBTypes"></a>
+      <a id="BTypesFromSymbols[G&lt;:Global]:BTypesFromSymbols[G]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BTypesFromSymbols.html"><span class="name">BTypesFromSymbols</span></a><span class="tparams">[<span name="G">G &lt;: <a href="../../Global.html" class="extype" name="scala.tools.nsc.Global">Global</a></span>]</span><span class="result"> extends <a href="BTypes.html" class="extype" name="scala.tools.nsc.backend.jvm.BTypes">BTypes</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BTypesFromSymbols[G&lt;:scala.tools.nsc.Global]extendsBTypes" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class mainly contains the method classBTypeFromSymbol, which extracts the necessary
+information from a symbol and its type to create the corresponding ClassBType.</p><div class="fullcomment"><div class="comment cmt"><p>This class mainly contains the method classBTypeFromSymbol, which extracts the necessary
+information from a symbol and its type to create the corresponding ClassBType. It requires
+access to the compiler (global parameter).</p><p>The mixin CoreBTypes defines core BTypes that are used in the backend. Building these BTypes
+uses classBTypeFromSymbol, hence requires access to the compiler (global).</p><p>BTypesFromSymbols extends BTypes because the implementation of BTypes requires access to some
+of the core btypes. They are declared in BTypes as abstract members. Note that BTypes does
+not have access to the compiler instance.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.BackendReporting" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="BackendReportingextendsAnyRef"></a>
+      <a id="BackendReporting:BackendReporting"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BackendReporting.html"><span class="name">BackendReporting</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BackendReportingextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Interface for emitting inline warnings.</p><div class="fullcomment"><div class="comment cmt"><p>Interface for emitting inline warnings. The interface is required because the implementation
+depends on Global, which is not available in BTypes (only in BTypesFromSymbols).
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.BackendReportingImpl" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BackendReportingImplextendsBackendReporting"></a>
+      <a id="BackendReportingImpl:BackendReportingImpl"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BackendReportingImpl.html"><span class="name">BackendReportingImpl</span></a><span class="result"> extends <a href="BackendReporting.html" class="extype" name="scala.tools.nsc.backend.jvm.BackendReporting">BackendReporting</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BackendReportingImplextendsBackendReporting" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.BytecodeWriters" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="BytecodeWritersextendsAnyRef"></a>
+      <a id="BytecodeWriters:BytecodeWriters"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BytecodeWriters.html"><span class="name">BytecodeWriters</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BytecodeWritersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">For the last mile: turning generated bytecode in memory into
+ something you can use.</p><div class="fullcomment"><div class="comment cmt"><p>For the last mile: turning generated bytecode in memory into
+ something you can use.  Has implementations for writing to class
+ files, jars, and disassembled/javap output.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CoreBTypes[BTFS&lt;:scala.tools.nsc.backend.jvm.BTypesFromSymbols[_&lt;:scala.tools.nsc.Global]]extendsAnyRef"></a>
+      <a id="CoreBTypes[BTFS&lt;:BTypesFromSymbols[_&lt;:Global]]:CoreBTypes[BTFS]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CoreBTypes.html"><span class="name">CoreBTypes</span></a><span class="tparams">[<span name="BTFS">BTFS &lt;: <a href="BTypesFromSymbols.html" class="extype" name="scala.tools.nsc.backend.jvm.BTypesFromSymbols">BTypesFromSymbols</a>[_ &lt;: <a href="../../Global.html" class="extype" name="scala.tools.nsc.Global">Global</a>]</span>]</span><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@CoreBTypes[BTFS&lt;:scala.tools.nsc.backend.jvm.BTypesFromSymbols[_&lt;:scala.tools.nsc.Global]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Core BTypes and some other definitions.</p><div class="fullcomment"><div class="comment cmt"><p>Core BTypes and some other definitions. The initialization of these definitions requires access
+to symbols / types (global).</p><p>The symbols used to initialize the ClassBTypes may change from one compiler run to the next. To
+make sure the definitions are consistent with the symbols in the current run, the
+<code>intializeCoreBTypes</code> method in BTypesFromSymbols creates a new instance of CoreBTypes in each
+compiler run.</p><p>The class BTypesFromSymbols does not directly reference CoreBTypes, but CoreBTypesProxy. The
+reason is that having a <code>var bTypes: CoreBTypes</code> would not allow <code>import bTypes._</code>. Instead, the
+proxy class holds a <code>CoreBTypes</code> in a variable field and forwards to this instance.</p><p>The definitions in <code>CoreBTypes</code> need to be lazy vals to break an initialization cycle. When
+creating a new instance to assign to the proxy, the <code>classBTypeFromSymbol</code> invoked in the
+constructor will actually go through the proxy. The lazy vals make sure the instance is assigned
+in the proxy before the fields are initialized.</p><p>Note: if we did not re-create the core BTypes on each compiler run, BType.classBTypeFromInternalNameMap
+could not be a perRunCache anymore: the classes defined here need to be in that map, they are
+added when the ClassBTypes are created. The per run cache removes them, so they would be missing
+in the second run.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypesProxy" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CoreBTypesProxy[BTFS&lt;:scala.tools.nsc.backend.jvm.BTypesFromSymbols[_&lt;:scala.tools.nsc.Global]]extendsCoreBTypesProxyGlobalIndependent[BTFS]"></a>
+      <a id="CoreBTypesProxy[BTFS&lt;:BTypesFromSymbols[_&lt;:Global]]:CoreBTypesProxy[BTFS]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CoreBTypesProxy.html"><span class="name">CoreBTypesProxy</span></a><span class="tparams">[<span name="BTFS">BTFS &lt;: <a href="BTypesFromSymbols.html" class="extype" name="scala.tools.nsc.backend.jvm.BTypesFromSymbols">BTypesFromSymbols</a>[_ &lt;: <a href="../../Global.html" class="extype" name="scala.tools.nsc.Global">Global</a>]</span>]</span><span class="result"> extends <a href="CoreBTypesProxyGlobalIndependent.html" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypesProxyGlobalIndependent">CoreBTypesProxyGlobalIndependent</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypesProxy.BTFS">BTFS</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@CoreBTypesProxy[BTFS&lt;:scala.tools.nsc.backend.jvm.BTypesFromSymbols[_&lt;:scala.tools.nsc.Global]]extendsCoreBTypesProxyGlobalIndependent[BTFS]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">See comment in class <a href="CoreBTypes.html" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>.</p>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypesProxyGlobalIndependent" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CoreBTypesProxyGlobalIndependent[BTS&lt;:scala.tools.nsc.backend.jvm.BTypes]extendsAnyRef"></a>
+      <a id="CoreBTypesProxyGlobalIndependent[BTS&lt;:BTypes]:CoreBTypesProxyGlobalIndependent[BTS]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CoreBTypesProxyGlobalIndependent.html"><span class="name">CoreBTypesProxyGlobalIndependent</span></a><span class="tparams">[<span name="BTS">BTS &lt;: <a href="BTypes.html" class="extype" name="scala.tools.nsc.backend.jvm.BTypes">BTypes</a></span>]</span><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@CoreBTypesProxyGlobalIndependent[BTS&lt;:scala.tools.nsc.backend.jvm.BTypes]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait make some core BTypes available that don't depend on a Global instance.</p><div class="fullcomment"><div class="comment cmt"><p>This trait make some core BTypes available that don't depend on a Global instance. Some core
+BTypes are required to be accessible in the BTypes trait, which does not have access to Global.</p><p>BTypes cannot refer to CoreBTypesProxy because some of its members depend on global, for example
+the type Symbol in
+  def primitiveTypeMap: Map[Symbol, PrimitiveBType]
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.FileConflictException" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FileConflictExceptionextendsIOException"></a>
+      <a id="FileConflictException:FileConflictException"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="FileConflictException.html"><span class="name">FileConflictException</span></a><span class="result"> extends <span class="extype" name="java.io.IOException">IOException</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@FileConflictExceptionextendsIOException" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Can't output a file due to the state of the file system.</p>
+    </li><li name="scala.tools.nsc.backend.jvm.GenASM" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GenASMextendsSubComponentwithBytecodeWriters"></a>
+      <a id="GenASM:GenASM"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenASM.html"><span class="name">GenASM</span></a><span class="result"> extends <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a> with <a href="BytecodeWriters.html" class="extype" name="scala.tools.nsc.backend.jvm.BytecodeWriters">BytecodeWriters</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@GenASMextendsSubComponentwithBytecodeWriters" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="scala.tools.nsc.backend.jvm.GenBCode" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GenBCodeextendsBCodeSyncAndTry"></a>
+      <a id="GenBCode:GenBCode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenBCode.html"><span class="name">GenBCode</span></a><span class="result"> extends <a href="BCodeSyncAndTry.html" class="extype" name="scala.tools.nsc.backend.jvm.BCodeSyncAndTry">BCodeSyncAndTry</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@GenBCodeextendsBCodeSyncAndTry" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.tools.nsc.backend.jvm.AsmUtils" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AsmUtils"></a>
+      <a id="AsmUtils:AsmUtils"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AsmUtils$.html"><span class="name">AsmUtils</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@AsmUtils" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.BCodeAsmCommon" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BCodeAsmCommon"></a>
+      <a id="BCodeAsmCommon:BCodeAsmCommon"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BCodeAsmCommon$.html"><span class="name">BCodeAsmCommon</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BCodeAsmCommon" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.BTypes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BTypes"></a>
+      <a id="BTypes:BTypes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BTypes$.html"><span class="name">BTypes</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BTypes" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.BackendReporting" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BackendReporting"></a>
+      <a id="BackendReporting:BackendReporting"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BackendReporting$.html"><span class="name">BackendReporting</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BackendReporting" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Utilities for error reporting.</p><div class="fullcomment"><div class="comment cmt"><p>Utilities for error reporting.</p><p>Defines some tools to make error reporting with Either easier. Would be subsumed by a right-biased
+Either in the standard library (or scalaz \/) (Validation is different, it accumulates multiple
+errors).
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.BackendStats" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BackendStats"></a>
+      <a id="BackendStats:BackendStats"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BackendStats$.html"><span class="name">BackendStats</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@BackendStats" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.GenBCode" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GenBCode"></a>
+      <a id="GenBCode:GenBCode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GenBCode$.html"><span class="name">GenBCode</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@GenBCode" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.analysis" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="analysis"></a>
+      <a id="analysis:analysis"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="analysis/package.html"><span class="name">analysis</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@analysis" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.opt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="opt"></a>
+      <a id="opt:opt"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="opt/package.html"><span class="name">opt</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.package@opt" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,920 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>ParMapFactory - Scala Standard Library 2.11.8 - scala.collection.generic.ParMapFactory</title>
+          <meta name="description" content="ParMapFactory - Scala Standard Library 2.11.8 - scala.collection.generic.ParMapFactory" />
+          <meta name="keywords" content="ParMapFactory Scala Standard Library 2.11.8 scala.collection.generic.ParMapFactory" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.collection.generic.ParMapFactory';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../lib/class_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.collection">collection</a>.<a href="package.html" class="extype" name="scala.collection.generic">generic</a></p>
+        <h1>ParMapFactory</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="scala.collection.generic">package generic</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ParMapFactory</span><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>, <span name="Y">Y</span>]</span> &lt;: <a href="../parallel/ParMap.html" class="extype" name="scala.collection.parallel.ParMap">ParMap</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.CC.Y">Y</span>] with <a href="../parallel/ParMapLike.html" class="extype" name="scala.collection.parallel.ParMapLike">ParMapLike</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.CC.Y">Y</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.CC.Y">Y</span>], _]</span>]</span><span class="result"> extends <a href="GenMapFactory.html" class="extype" name="scala.collection.generic.GenMapFactory">GenMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] with <a href="GenericParMapCompanion.html" class="extype" name="scala.collection.generic.GenericParMapCompanion">GenericParMapCompanion</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A template class for companion objects of <code>ParMap</code> and subclasses thereof.
+ This class extends <code>TraversableFactory</code> and provides a set of operations
+ to create <code><code>ParMap</code></code> objects.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/collection/generic/ParMapFactory.scala#L1" target="_blank">ParMapFactory.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="GenericParMapCompanion.html" class="extype" name="scala.collection.generic.GenericParMapCompanion">GenericParMapCompanion</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>], <a href="GenMapFactory.html" class="extype" name="scala.collection.generic.GenMapFactory">GenMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>], <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">Known Subclasses</span>
+            <div class="subClasses hiddenContent"><a href="../parallel/mutable/ParHashMap$.html" class="extype" name="scala.collection.parallel.mutable.ParHashMap">ParHashMap</a>, <a href="../parallel/immutable/ParHashMap$.html" class="extype" name="scala.collection.parallel.immutable.ParHashMap">ParHashMap</a>, <a href="../parallel/immutable/ParMap$.html" class="extype" name="scala.collection.parallel.immutable.ParMap">ParMap</a>, <a href="../parallel/ParMap$.html" class="extype" name="scala.collection.parallel.ParMap">ParMap</a>, <a href="../parallel/mutable/ParMap$.html" class="extype" name="scala.collection.parallel.mutable.ParMap">ParMap</a>, <a href="../parallel/mutable/ParTrieMap$.html" class="extype" name="scala.collection.parallel.mutable.ParTrieMap">ParTrieMap</a></div>
+          </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 760.50 169.00" height="169pt" width="761pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 165)" class="graph" id="graph0"><polygon points="-4,4 -4,-165 756.5,-165 756.5,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><g class="cluster" id="clust3"></g><!-- node9 --><g class="node implicit-outgoing class" id="graph1_9"><g id="a_implicit-outgoing class|graph1_9"><a xlink:title="scala.collection.generic.ParMapFactory can be implicitly converted to CollectionsHaveToParArray[ParMapFactory[CC], T] by the implicit method CollectionsHaveToParArray in package scala.collection.parallel" xlink:href="../parallel/package$$CollectionsHaveToParArray.html#inheritance-diagram"><polygon points="728,-93 463,-93 463,-68 728,-68 728,-93" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-87.5" x="473.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-77.5" x="494.5" text-anchor="start">CollectionsHaveToParArray[ParMapFactory[CC], T]</text></a></g></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="scala.collection.generic.ParMapFactory (this class)" xlink:href="#inheritance-diagram"><polygon points="391,-93 260,-93 260,-68 391,-68 391,-93" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-87.5" x="270.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-77.5" x="291.5" text-anchor="start">ParMapFactory[CC]</text></a></g></g><!-- node0&#45;&gt;node9 --><g class="edge implicit-outgoing" id="0_9"><g id="a_implicit-outgoing|0_9"><a xlink:title="ParMapFactory[CC] can be implicitly converted to CollectionsHaveToParArray[ParMapFactory[CC], T]"><path d="M399.302,-80.5C415.046,-80.5 432.197,-80.5 449.592,-80.5" stroke="#d4d4d4" fill="none"></path><polygon points="449.792,-82.2501 454.791,-80.5 449.791,-78.7501 449.792,-82.2501" stroke="#d4d4d4" fill="#d4d4d4"></polygon></a></g><text fill="#aaaaaa" font-size="10.00" font-family="Arial" y="-86.5" x="427" text-anchor="middle">implicitly</text></g><!-- node1 --><g class="node object" id="graph1_1"><g id="a_object|graph1_1"><a xlink:title="scala.collection.parallel.immutable.ParHashMap" xlink:href="../parallel/immutable/ParHashMap$.html#inheritance-diagram"><polygon points="101,-25 0,-25 0,-0 101,-0 101,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../lib/object_diagram.png" y="-19.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="31.5" text-anchor="start">ParHashMap</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="ParHashMap is a subtype of ParMapFactory[CC]"><path d="M272.191,-66.7059C221.904,-54.637 147.191,-36.7058 98.6607,-25.0586" stroke="#d4d4d4" fill="none"></path><polygon points="272.014,-68.4629 277.284,-67.9282 272.83,-65.0595 272.014,-68.4629" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node object" id="graph1_2"><g id="a_object|graph1_2"><a xlink:title="scala.collection.parallel.mutable.ParHashMap" xlink:href="../parallel/mutable/ParHashMap$.html#inheritance-diagram"><polygon points="220,-25 119,-25 119,-0 220,-0 220,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../lib/object_diagram.png" y="-19.5" x="129.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="150.5" text-anchor="start">ParHashMap</text></a></g></g><!-- node0&#45;&gt;node2 --><g class="edge inheritance" id="graph1_0_2"><g id="a_inheritance|graph1_0_2"><a xlink:title="ParHashMap is a subtype of ParMapFactory[CC]"><path d="M293.155,-65.8155C264.658,-53.7592 223.615,-36.3947 196.755,-25.0311" stroke="#d4d4d4" fill="none"></path><polygon points="292.683,-67.5159 297.969,-67.8525 294.046,-64.2925 292.683,-67.5159" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node object" id="graph1_3"><g id="a_object|graph1_3"><a xlink:title="scala.collection.parallel.ParMap" xlink:href="../parallel/ParMap$.html#inheritance-diagram"><polygon points="316.5,-25 238.5,-25 238.5,-0 316.5,-0 316.5,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../lib/object_diagram.png" y="-19.5" x="248.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="269.5" text-anchor="start">ParMap</text></a></g></g><!-- node0&#45;&gt;node3 --><g class="edge inheritance" id="graph1_0_3"><g id="a_inheritance|graph1_0_3"><a xlink:title="ParMap is a subtype of ParMapFactory[CC]"><path d="M313.894,-63.5424C305.293,-51.7156 293.764,-35.8637 286.007,-25.1973" stroke="#d4d4d4" fill="none"></path><polygon points="312.562,-64.6861 316.919,-67.7005 315.393,-62.6275 312.562,-64.6861" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node object" id="graph1_4"><g id="a_object|graph1_4"><a xlink:title="scala.collection.parallel.immutable.ParMap" xlink:href="../parallel/immutable/ParMap$.html#inheritance-diagram"><polygon points="412.5,-25 334.5,-25 334.5,-0 412.5,-0 412.5,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../lib/object_diagram.png" y="-19.5" x="344.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="365.5" text-anchor="start">ParMap</text></a></g></g><!-- node0&#45;&gt;node4 --><g class="edge inheritance" id="graph1_0_4"><g id="a_inheritance|graph1_0_4"><a xlink:title="ParMap is a subtype of ParMapFactory[CC]"><path d="M337.106,-63.5424C345.707,-51.7156 357.236,-35.8637 364.993,-25.1973" stroke="#d4d4d4" fill="none"></path><polygon points="335.607,-62.6275 334.081,-67.7005 338.438,-64.6861 335.607,-62.6275" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node object" id="graph1_5"><g id="a_object|graph1_5"><a xlink:title="scala.collection.parallel.mutable.ParMap" xlink:href="../parallel/mutable/ParMap$.html#inheritance-diagram"><polygon points="508.5,-25 430.5,-25 430.5,-0 508.5,-0 508.5,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../lib/object_diagram.png" y="-19.5" x="440.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="461.5" text-anchor="start">ParMap</text></a></g></g><!-- node0&#45;&gt;node5 --><g class="edge inheritance" id="graph1_0_5"><g id="a_inheritance|graph1_0_5"><a xlink:title="ParMap is a subtype of ParMapFactory[CC]"><path d="M355.684,-65.6658C381.975,-53.6158 419.65,-36.3477 444.341,-25.0311" stroke="#d4d4d4" fill="none"></path><polygon points="354.729,-64.1783 350.913,-67.8525 356.187,-67.36 354.729,-64.1783" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6 --><g class="node object" id="graph1_6"><g id="a_object|graph1_6"><a xlink:title="scala.collection.parallel.mutable.ParTrieMap" xlink:href="../parallel/mutable/ParTrieMap$.html#inheritance-diagram"><polygon points="620.5,-25 526.5,-25 526.5,-0 620.5,-0 620.5,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../lib/object_diagram.png" y="-19.5" x="536.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="557.5" text-anchor="start">ParTrieMap</text></a></g></g><!-- node0&#45;&gt;node6 --><g class="edge inheritance" id="graph1_0_6"><g id="a_inheritance|graph1_0_6"><a xlink:title="ParTrieMap is a subtype of ParMapFactory[CC]"><path d="M373.85,-66.6327C419.197,-54.5645 486.391,-36.6822 530.068,-25.0586" stroke="#d4d4d4" fill="none"></path><polygon points="373.364,-64.9511 368.982,-67.9282 374.264,-68.3333 373.364,-64.9511" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7 --><g class="node class" id="graph1_7"><g id="a_class|graph1_7"><a xlink:title="scala.collection.generic.GenMapFactory" xlink:href="GenMapFactory.html#inheritance-diagram"><polygon points="305.5,-161 171.5,-161 171.5,-136 305.5,-136 305.5,-161" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-155.5" x="181.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-145.5" x="202.5" text-anchor="start">GenMapFactory[CC]</text></a></g></g><!-- node7&#45;&gt;node0 --><g class="edge inheritance" id="graph1_7_0"><g id="a_inheritance|graph1_7_0"><a xlink:title="ParMapFactory[CC] is a subtype of GenMapFactory[CC]"><path d="M258.315,-132.468C274.02,-120.553 295.651,-104.144 310.081,-93.1973" stroke="#d4d4d4" fill="none"></path><polygon points="256.98,-131.284 254.054,-135.701 259.095,-134.073 256.98,-131.284" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8 --><g class="node trait" id="graph1_8"><g id="a_trait|graph1_8"><a xlink:title="scala.collection.generic.GenericParMapCompanion" xlink:href="GenericParMapCompanion.html#inheritance-diagram"><polygon points="503.5,-161 323.5,-161 323.5,-136 503.5,-136 503.5,-161" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-155.5" x="333.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-145.5" x="354.5" text-anchor="start">GenericParMapCompanion[CC]</text></a></g></g><!-- node8&#45;&gt;node0 --><g class="edge inheritance" id="graph1_8_0"><g id="a_inheritance|graph1_8_0"><a xlink:title="ParMapFactory[CC] is a subtype of GenericParMapCompanion[CC]"><path d="M393.457,-132.468C377.571,-120.553 355.693,-104.144 341.096,-93.1973" stroke="#d4d4d4" fill="none"></path><polygon points="392.717,-134.1 397.767,-135.701 394.817,-131.3 392.717,-134.1" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.collection.generic.ParMapFactory"><span>ParMapFactory</span></li><li class="in" name="scala.collection.generic.GenericParMapCompanion"><span>GenericParMapCompanion</span></li><li class="in" name="scala.collection.generic.GenMapFactory"><span>GenMapFactory</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.collection.parallel.CollectionsHaveToParArray" data-hidden="false"><span>by CollectionsHaveToParArray</span></li><li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="scala.collection.generic.ParMapFactory#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;():scala.collection.generic.ParMapFactory[CC]"></a>
+      <a id="&lt;init&gt;:ParMapFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ParMapFactory</span><span class="params">()</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@&lt;init&gt;():scala.collection.generic.ParMapFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.collection.generic.ParMapFactory.CanCombineFromMap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CanCombineFromMap[K,V]extendsCanCombineFrom[CC[_,_],(K,V),CC[K,V]]"></a>
+      <a id="CanCombineFromMap[K,V]:CanCombineFromMap[K,V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ParMapFactory$CanCombineFromMap.html"><span class="name">CanCombineFromMap</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="result"> extends <a href="CanCombineFrom.html" class="extype" name="scala.collection.generic.CanCombineFrom">CanCombineFrom</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>[_, _], (<span class="extype" name="scala.collection.generic.ParMapFactory.CanCombineFromMap.K">K</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.CanCombineFromMap.V">V</span>), <span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.ParMapFactory.CanCombineFromMap.K">K</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.CanCombineFromMap.V">V</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@CanCombineFromMap[K,V]extendsCanCombineFrom[CC[_,_],(K,V),CC[K,V]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.GenMapFactory.Coll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Coll=CC[_,_]"></a>
+      <a id="Coll:Coll"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Coll</span><span class="result"> = <span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>[_, _]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@Coll=CC[_,_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type constructor of the collection that can be built by this factory</p><div class="fullcomment"><div class="comment cmt"><p>The type constructor of the collection that can be built by this factory</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="GenMapFactory.html" class="extype" name="scala.collection.generic.GenMapFactory">GenMapFactory</a></dd></dl></div>
+    </li><li name="scala.collection.generic.GenMapFactory.MapCanBuildFrom" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MapCanBuildFrom[A,B]extendsCanBuildFrom[GenMapFactory.this.Coll,(A,B),CC[A,B]]"></a>
+      <a id="MapCanBuildFrom[A,B]:MapCanBuildFrom[A,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenMapFactory$MapCanBuildFrom.html"><span class="name">MapCanBuildFrom</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="CanBuildFrom.html" class="extype" name="scala.collection.generic.CanBuildFrom">CanBuildFrom</a>[<a href="GenMapFactory.html#Coll=CC[_,_]" class="extmbr" name="scala.collection.generic.GenMapFactory.Coll">Coll</a>, (<span class="extype" name="scala.collection.generic.GenMapFactory.MapCanBuildFrom.A">A</span>, <span class="extype" name="scala.collection.generic.GenMapFactory.MapCanBuildFrom.B">B</span>), <span class="extype" name="scala.collection.generic.GenMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.GenMapFactory.MapCanBuildFrom.A">A</span>, <span class="extype" name="scala.collection.generic.GenMapFactory.MapCanBuildFrom.B">B</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.GenMapFactory@MapCanBuildFrom[A,B]extendsCanBuildFrom[GenMapFactory.this.Coll,(A,B),CC[A,B]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The standard <code>CanBuildFrom</code> class for maps.</p><div class="fullcomment"><div class="comment cmt"><p>The standard <code>CanBuildFrom</code> class for maps.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="GenMapFactory.html" class="extype" name="scala.collection.generic.GenMapFactory">GenMapFactory</a></dd></dl></div>
+    </li><li name="scala.collection.generic.ParMapFactory.MapColl" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MapColl=CC[_,_]"></a>
+      <a id="MapColl:MapColl"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MapColl</span><span class="result"> = <span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>[_, _]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@MapColl=CC[_,_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scala.collection.generic.GenMapFactory#empty" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="empty[A,B]:CC[A,B]"></a>
+      <a id="empty[A,B]:CC[A,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">empty</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result">: <span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.GenMapFactory.empty.A">A</span>, <span class="extype" name="scala.collection.generic.GenMapFactory.empty.B">B</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@empty[A,B]:CC[A,B]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An empty <code>Map</code></p><div class="fullcomment"><div class="comment cmt"><p>An empty <code>Map</code></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="GenMapFactory.html" class="extype" name="scala.collection.generic.GenMapFactory">GenMapFactory</a></dd></dl></div>
+    </li><li name="scala.collection.generic.ParMapFactory#newCombiner" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="newCombiner[K,V]:scala.collection.parallel.Combiner[(K,V),CC[K,V]]"></a>
+      <a id="newCombiner[K,V]:Combiner[(K,V),CC[K,V]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">newCombiner</span><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="result">: <a href="../parallel/Combiner.html" class="extype" name="scala.collection.parallel.Combiner">Combiner</a>[(<span class="extype" name="scala.collection.generic.ParMapFactory.newCombiner.K">K</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.newCombiner.V">V</span>), <span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.ParMapFactory.newCombiner.K">K</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.newCombiner.V">V</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@newCombiner[K,V]:scala.collection.parallel.Combiner[(K,V),CC[K,V]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The default combiner for <code>ParMap</code> objects.</p><div class="fullcomment"><div class="comment cmt"><p>The default combiner for <code>ParMap</code> objects.</p></div><dl class="paramcmts block"><dt class="tparam">K</dt><dd class="cmt"><p>the type of the keys</p></dd><dt class="tparam">V</dt><dd class="cmt"><p>the type of the associated values</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a> → <a href="GenericParMapCompanion.html" class="extype" name="scala.collection.generic.GenericParMapCompanion">GenericParMapCompanion</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to
+            <a href="../../Predef$$any2stringadd.html" class="extype" name="scala.Predef.any2stringadd">any2stringadd</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]] performed by method any2stringadd in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$any2stringadd.html" class="extype" name="scala.Predef.any2stringadd">any2stringadd</a></dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(ParMapFactory[CC],B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>], <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to
+            <a href="../../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]] performed by method ArrowAssoc in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../inline.html" class="extype" name="scala.inline">inline</a></span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.collection.generic.GenMapFactory#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply[A,B](elems:(A,B)*):CC[A,B]"></a>
+      <a id="apply[A,B]((A,B)*):CC[A,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="params">(<span name="elems">elems: (<span class="extype" name="scala.collection.generic.GenMapFactory.apply.A">A</span>, <span class="extype" name="scala.collection.generic.GenMapFactory.apply.B">B</span>)*</span>)</span><span class="result">: <span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.GenMapFactory.apply.A">A</span>, <span class="extype" name="scala.collection.generic.GenMapFactory.apply.B">B</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@apply[A,B](elems:(A,B)*):CC[A,B]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A collection of type <code>Map</code> that contains given key/value bindings.</p><div class="fullcomment"><div class="comment cmt"><p>A collection of type <code>Map</code> that contains given key/value bindings.</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>the type of the keys</p></dd><dt class="tparam">B</dt><dd class="cmt"><p>the type of the associated values</p></dd><dt class="param">elems</dt><dd class="cmt"><p>the key/value pairs that make up the map</p></dd><dt>returns</dt><dd class="cmt"><p>a new map consisting key/value pairs given by <code>elems</code>.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="GenMapFactory.html" class="extype" name="scala.collection.generic.GenMapFactory">GenMapFactory</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((ParMapFactory[CC])⇒Boolean,⇒Any):ParMapFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]) ⇒ <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to
+            <a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]] performed by method Ensuring in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((ParMapFactory[CC])⇒Boolean):ParMapFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]) ⇒ <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to
+            <a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]] performed by method Ensuring in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):ParMapFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to
+            <a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]] performed by method Ensuring in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):ParMapFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to
+            <a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]] performed by method Ensuring in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns string formatted according to given <code>format</code> string.</p><div class="fullcomment"><div class="comment cmt"><p>Returns string formatted according to given <code>format</code> string.
+ Format strings are as for <code>String.format</code>
+ (@see java.lang.String.format).
+</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to
+            <a href="../../Predef$$StringFormat.html" class="extype" name="scala.Predef.StringFormat">StringFormat</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]] performed by method StringFormat in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$StringFormat.html" class="extype" name="scala.Predef.StringFormat">StringFormat</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../inline.html" class="extype" name="scala.inline">inline</a></span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.collection.generic.ParMapFactory#newBuilder" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="newBuilder[K,V]:scala.collection.mutable.Builder[(K,V),CC[K,V]]"></a>
+      <a id="newBuilder[K,V]:Builder[(K,V),CC[K,V]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">newBuilder</span><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="result">: <a href="../mutable/Builder.html" class="extype" name="scala.collection.mutable.Builder">Builder</a>[(<span class="extype" name="scala.collection.generic.ParMapFactory.newBuilder.K">K</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.newBuilder.V">V</span>), <span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.ParMapFactory.newBuilder.K">K</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.newBuilder.V">V</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@newBuilder[K,V]:scala.collection.mutable.Builder[(K,V),CC[K,V]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The default builder for <code>ParMap</code> objects.</p><div class="fullcomment"><div class="comment cmt"><p>The default builder for <code>ParMap</code> objects.</p></div><dl class="paramcmts block"><dt class="tparam">K</dt><dd class="cmt"><p>the type of the keys</p></dd><dt class="tparam">V</dt><dd class="cmt"><p>the type of the associated values</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a> → <a href="GenMapFactory.html" class="extype" name="scala.collection.generic.GenMapFactory">GenMapFactory</a></dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.collection.parallel.CollectionsHaveToParArray#toParArray" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toParArray:scala.collection.parallel.mutable.ParArray[T]"></a>
+      <a id="toParArray:ParArray[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">toParArray</span><span class="result">: <a href="../parallel/mutable/ParArray.html" class="extype" name="scala.collection.parallel.mutable.ParArray">ParArray</a>[<span class="extype" name="scala.collection.parallel.CollectionsHaveToParArray.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@toParArray:scala.collection.parallel.mutable.ParArray[T]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to
+            <a href="../parallel/package$$CollectionsHaveToParArray.html" class="extype" name="scala.collection.parallel.CollectionsHaveToParArray">CollectionsHaveToParArray</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>], <span class="extype" name="scala.collection.parallel.CollectionsHaveToParArray.T">T</span>] performed by method CollectionsHaveToParArray in <a href="../parallel/package.html" class="extype" name="scala.collection.parallel">scala.collection.parallel</a>.
+            This conversion will take place only if an implicit value of type (<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]) ⇒ <a href="../GenTraversableOnce.html" class="extype" name="scala.collection.GenTraversableOnce">GenTraversableOnce</a>[<span class="extype" name="scala.collection.parallel.CollectionsHaveToParArray.T">T</span>] is in scope.
+          </dd><dt>Definition Classes</dt><dd><a href="../parallel/package$$CollectionsHaveToParArray.html" class="extype" name="scala.collection.parallel.CollectionsHaveToParArray">CollectionsHaveToParArray</a></dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="../../Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="arg1">arg1: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="../../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(ParMapFactory[CC],B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>], <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.ParMapFactory@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to
+            <a href="../../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]] performed by method ArrowAssoc in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.collection.generic.GenericParMapCompanion">
+              <h3>Inherited from <a href="GenericParMapCompanion.html" class="extype" name="scala.collection.generic.GenericParMapCompanion">GenericParMapCompanion</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]</h3>
+            </div><div class="parent" name="scala.collection.generic.GenMapFactory">
+              <h3>Inherited from <a href="GenMapFactory.html" class="extype" name="scala.collection.generic.GenMapFactory">GenMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]</h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.collection.parallel.CollectionsHaveToParArray">
+              <h3>Inherited by implicit conversion CollectionsHaveToParArray from
+                <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to <a href="../parallel/package$$CollectionsHaveToParArray.html" class="extype" name="scala.collection.parallel.CollectionsHaveToParArray">CollectionsHaveToParArray</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>], <span class="extype" name="scala.collection.parallel.CollectionsHaveToParArray.T">T</span>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to <a href="../../Predef$$any2stringadd.html" class="extype" name="scala.Predef.any2stringadd">any2stringadd</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to <a href="../../Predef$$StringFormat.html" class="extype" name="scala.Predef.StringFormat">StringFormat</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to <a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] to <a href="../../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a>[<a href="" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,1611 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>CoreBTypes - Scala Compiler 2.11.8 - scala.tools.nsc.backend.jvm.CoreBTypes</title>
+          <meta name="description" content="CoreBTypes - Scala Compiler 2.11.8 - scala.tools.nsc.backend.jvm.CoreBTypes" />
+          <meta name="keywords" content="CoreBTypes Scala Compiler 2.11.8 scala.tools.nsc.backend.jvm.CoreBTypes" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'scala.tools.nsc.backend.jvm.CoreBTypes';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.backend">backend</a>.<a href="package.html" class="extype" name="scala.tools.nsc.backend.jvm">jvm</a></p>
+        <h1>CoreBTypes</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="scala.tools.nsc.backend.jvm">package jvm</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CoreBTypes</span><span class="tparams">[<span name="BTFS">BTFS &lt;: <a href="BTypesFromSymbols.html" class="extype" name="scala.tools.nsc.backend.jvm.BTypesFromSymbols">BTypesFromSymbols</a>[_ &lt;: <a href="../../Global.html" class="extype" name="scala.tools.nsc.Global">Global</a>]</span>]</span><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Core BTypes and some other definitions. The initialization of these definitions requires access
+to symbols / types (global).</p><p>The symbols used to initialize the ClassBTypes may change from one compiler run to the next. To
+make sure the definitions are consistent with the symbols in the current run, the
+<code>intializeCoreBTypes</code> method in BTypesFromSymbols creates a new instance of CoreBTypes in each
+compiler run.</p><p>The class BTypesFromSymbols does not directly reference CoreBTypes, but CoreBTypesProxy. The
+reason is that having a <code>var bTypes: CoreBTypes</code> would not allow <code>import bTypes._</code>. Instead, the
+proxy class holds a <code>CoreBTypes</code> in a variable field and forwards to this instance.</p><p>The definitions in <code>CoreBTypes</code> need to be lazy vals to break an initialization cycle. When
+creating a new instance to assign to the proxy, the <code>classBTypeFromSymbol</code> invoked in the
+constructor will actually go through the proxy. The lazy vals make sure the instance is assigned
+in the proxy before the fields are initialized.</p><p>Note: if we did not re-create the core BTypes on each compiler run, BType.classBTypeFromInternalNameMap
+could not be a perRunCache anymore: the classes defined here need to be in that map, they are
+added when the ClassBTypes are created. The per run cache removes them, so they would be missing
+in the second run.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/compiler/scala/tools/nsc/backend/jvm/CoreBTypes.scala#L1" target="_blank">CoreBTypes.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 184.00 118.00" height="118pt" width="184pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="graph0"><polygon points="-4,4 -4,-114 180,-114 180,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="scala.tools.nsc.backend.jvm.CoreBTypes (this class)" xlink:href="#inheritance-diagram"><polygon points="152,-49 24,-49 24,-24 152,-24 152,-49" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-43.5" x="34" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-33.5" x="55" text-anchor="start">CoreBTypes[BTFS]</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.AnyRef" xlink:href="../../../../AnyRef.html#inheritance-diagram"><polygon points="126,-110 50,-110 50,-85 126,-85 126,-110" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-104.5" x="60" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-94.5" x="81" text-anchor="start">AnyRef</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="CoreBTypes[BTFS] is a subtype of AnyRef"><path d="M88,-79.6874C88,-69.9173 88,-57.8534 88,-49.1323" stroke="#d4d4d4" fill="none"></path><polygon points="86.2501,-79.8435 88,-84.8435 89.7501,-79.8435 86.2501,-79.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.tools.nsc.backend.jvm.CoreBTypes"><span>CoreBTypes</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="scala.tools.nsc.backend.jvm.CoreBTypes#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(bTypes:BTFS):scala.tools.nsc.backend.jvm.CoreBTypes[BTFS]"></a>
+      <a id="&lt;init&gt;:CoreBTypes[BTFS]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CoreBTypes</span><span class="params">(<span name="bTypes">bTypes: <span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@&lt;init&gt;(bTypes:BTFS):scala.tools.nsc.backend.jvm.CoreBTypes[BTFS]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@##():Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>] to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]] performed by method any2stringadd in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(CoreBTypes[BTFS],B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>], <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>] to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#AbstractFunctionArityMap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AbstractFunctionArityMap:Map[CoreBTypes.this.bTypes.ClassBType,Int]"></a>
+      <a id="AbstractFunctionArityMap:Map[BTFS.ClassBType,Int]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AbstractFunctionArityMap</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span>, <span class="extype" name="scala.Int">Int</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@AbstractFunctionArityMap:Map[CoreBTypes.this.bTypes.ClassBType,Int]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#AbstractFunctionReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AbstractFunctionReference:Vector[CoreBTypes.this.bTypes.ClassBType]"></a>
+      <a id="AbstractFunctionReference:Vector[BTFS.ClassBType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AbstractFunctionReference</span><span class="result">: <a href="../../../../package.html#Vector[+A]=scala.collection.immutable.Vector[A]" class="extmbr" name="scala.Vector">Vector</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@AbstractFunctionReference:Vector[CoreBTypes.this.bTypes.ClassBType]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#AbstractPartialFunctionReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AbstractPartialFunctionReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="AbstractPartialFunctionReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AbstractPartialFunctionReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@AbstractPartialFunctionReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#AndroidCreatorClass" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AndroidCreatorClass:CoreBTypes.this.bTypes.global.Symbol"></a>
+      <a id="AndroidCreatorClass:BTFS._$1.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AndroidCreatorClass</span><span class="result">: <span class="extype" name="scala.reflect.internal.Symbols.Symbol">BTFS._$1.Symbol</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@AndroidCreatorClass:CoreBTypes.this.bTypes.global.Symbol" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#AndroidParcelableInterface" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AndroidParcelableInterface:CoreBTypes.this.bTypes.global.Symbol"></a>
+      <a id="AndroidParcelableInterface:BTFS._$1.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AndroidParcelableInterface</span><span class="result">: <span class="extype" name="scala.reflect.internal.Symbols.Symbol">BTFS._$1.Symbol</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@AndroidParcelableInterface:CoreBTypes.this.bTypes.global.Symbol" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#BOXED_BOOLEAN" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BOXED_BOOLEAN:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="BOXED_BOOLEAN:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BOXED_BOOLEAN</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@BOXED_BOOLEAN:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#BOXED_BYTE" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BOXED_BYTE:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="BOXED_BYTE:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BOXED_BYTE</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@BOXED_BYTE:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#BOXED_CHAR" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BOXED_CHAR:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="BOXED_CHAR:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BOXED_CHAR</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@BOXED_CHAR:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#BOXED_DOUBLE" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BOXED_DOUBLE:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="BOXED_DOUBLE:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BOXED_DOUBLE</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@BOXED_DOUBLE:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#BOXED_FLOAT" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BOXED_FLOAT:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="BOXED_FLOAT:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BOXED_FLOAT</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@BOXED_FLOAT:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#BOXED_INT" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BOXED_INT:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="BOXED_INT:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BOXED_INT</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@BOXED_INT:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#BOXED_LONG" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BOXED_LONG:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="BOXED_LONG:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BOXED_LONG</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@BOXED_LONG:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#BOXED_SHORT" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BOXED_SHORT:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="BOXED_SHORT:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BOXED_SHORT</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@BOXED_SHORT:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#BOXED_UNIT" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BOXED_UNIT:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="BOXED_UNIT:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BOXED_UNIT</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@BOXED_UNIT:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#BeanInfoAttr" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BeanInfoAttr:CoreBTypes.this.bTypes.global.Symbol"></a>
+      <a id="BeanInfoAttr:BTFS._$1.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BeanInfoAttr</span><span class="result">: <span class="extype" name="scala.reflect.internal.Symbols.Symbol">BTFS._$1.Symbol</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@BeanInfoAttr:CoreBTypes.this.bTypes.global.Symbol" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#BoxesRunTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BoxesRunTime:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="BoxesRunTime:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BoxesRunTime</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@BoxesRunTime:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#FunctionReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FunctionReference:Vector[CoreBTypes.this.bTypes.ClassBType]"></a>
+      <a id="FunctionReference:Vector[BTFS.ClassBType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">FunctionReference</span><span class="result">: <a href="../../../../package.html#Vector[+A]=scala.collection.immutable.Vector[A]" class="extmbr" name="scala.Vector">Vector</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@FunctionReference:Vector[CoreBTypes.this.bTypes.ClassBType]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#ObjectReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ObjectReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="ObjectReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ObjectReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@ObjectReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#PartialFunctionReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PartialFunctionReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="PartialFunctionReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PartialFunctionReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@PartialFunctionReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#RT_NOTHING" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RT_NOTHING:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="RT_NOTHING:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">RT_NOTHING</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@RT_NOTHING:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#RT_NULL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RT_NULL:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="RT_NULL:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">RT_NULL</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@RT_NULL:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#StringBuilderReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StringBuilderReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="StringBuilderReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">StringBuilderReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@StringBuilderReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#StringReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StringReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="StringReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">StringReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@StringReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#String_valueOf" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="String_valueOf:CoreBTypes.this.bTypes.global.Symbol"></a>
+      <a id="String_valueOf:BTFS._$1.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">String_valueOf</span><span class="result">: <span class="extype" name="scala.reflect.internal.Symbols.Symbol">BTFS._$1.Symbol</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@String_valueOf:CoreBTypes.this.bTypes.global.Symbol" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#ThrowableReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ThrowableReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="ThrowableReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ThrowableReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@ThrowableReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#asmBoxTo" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="asmBoxTo:Map[CoreBTypes.this.bTypes.BType,CoreBTypes.this.bTypes.MethodNameAndType]"></a>
+      <a id="asmBoxTo:Map[BTFS.BType,BTFS.MethodNameAndType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asmBoxTo</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.BType">BTFS.BType</span>, <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.MethodNameAndType">BTFS.MethodNameAndType</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@asmBoxTo:Map[CoreBTypes.this.bTypes.BType,CoreBTypes.this.bTypes.MethodNameAndType]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Methods in scala.runtime.BoxesRuntime
+</p>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#asmUnboxTo" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="asmUnboxTo:Map[CoreBTypes.this.bTypes.BType,CoreBTypes.this.bTypes.MethodNameAndType]"></a>
+      <a id="asmUnboxTo:Map[BTFS.BType,BTFS.MethodNameAndType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asmUnboxTo</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.BType">BTFS.BType</span>, <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.MethodNameAndType">BTFS.MethodNameAndType</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@asmUnboxTo:Map[CoreBTypes.this.bTypes.BType,CoreBTypes.this.bTypes.MethodNameAndType]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#bTypes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="bTypes:BTFS"></a>
+      <a id="bTypes:BTFS"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">bTypes</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@bTypes:BTFS" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#boxResultType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="boxResultType:Map[CoreBTypes.this.bTypes.global.Symbol,CoreBTypes.this.bTypes.ClassBType]"></a>
+      <a id="boxResultType:Map[BTFS._$1.Symbol,BTFS.ClassBType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">boxResultType</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.reflect.internal.Symbols.Symbol">BTFS._$1.Symbol</span>, <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@boxResultType:Map[CoreBTypes.this.bTypes.global.Symbol,CoreBTypes.this.bTypes.ClassBType]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Maps the method symbol for a box method to the boxed type of the result.</p><div class="fullcomment"><div class="comment cmt"><p>Maps the method symbol for a box method to the boxed type of the result. For example, the
+method symbol for <code>Byte.box()</code> is mapped to the ClassBType <code>java/lang/Byte</code>.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#boxedClassOfPrimitive" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="boxedClassOfPrimitive:Map[CoreBTypes.this.bTypes.PrimitiveBType,CoreBTypes.this.bTypes.ClassBType]"></a>
+      <a id="boxedClassOfPrimitive:Map[BTFS.PrimitiveBType,BTFS.ClassBType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">boxedClassOfPrimitive</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.PrimitiveBType">BTFS.PrimitiveBType</span>, <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@boxedClassOfPrimitive:Map[CoreBTypes.this.bTypes.PrimitiveBType,CoreBTypes.this.bTypes.ClassBType]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Map from primitive types to their boxed class type.</p><div class="fullcomment"><div class="comment cmt"><p>Map from primitive types to their boxed class type. Useful when pushing class literals onto the
+operand stack (ldc instruction taking a class literal), see genConstant.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#boxedClasses" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="boxedClasses:Set[CoreBTypes.this.bTypes.ClassBType]"></a>
+      <a id="boxedClasses:Set[BTFS.ClassBType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">boxedClasses</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@boxedClasses:Set[CoreBTypes.this.bTypes.ClassBType]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#classCastExceptionReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="classCastExceptionReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="classCastExceptionReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">classCastExceptionReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@classCastExceptionReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((CoreBTypes[BTFS])⇒Boolean,⇒Any):CoreBTypes[BTFS]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>] to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((CoreBTypes[BTFS])⇒Boolean):CoreBTypes[BTFS]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>] to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):CoreBTypes[BTFS]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>] to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):CoreBTypes[BTFS]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>] to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>] to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]] performed by method StringFormat in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#hashMethodSym" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="hashMethodSym:CoreBTypes.this.bTypes.global.Symbol"></a>
+      <a id="hashMethodSym:BTFS._$1.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashMethodSym</span><span class="result">: <span class="extype" name="scala.reflect.internal.Symbols.Symbol">BTFS._$1.Symbol</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@hashMethodSym:CoreBTypes.this.bTypes.global.Symbol" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#javaUtilHashMapReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="javaUtilHashMapReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="javaUtilHashMapReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">javaUtilHashMapReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@javaUtilHashMapReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#javaUtilMapReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="javaUtilMapReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="javaUtilMapReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">javaUtilMapReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@javaUtilMapReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#jioSerializableReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="jioSerializableReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="jioSerializableReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jioSerializableReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@jioSerializableReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#jlCloneableReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="jlCloneableReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="jlCloneableReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jlCloneableReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@jlCloneableReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#jlNPEReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="jlNPEReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="jlNPEReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">jlNPEReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@jlNPEReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#objArrayReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="objArrayReference:CoreBTypes.this.bTypes.ArrayBType"></a>
+      <a id="objArrayReference:BTFS.ArrayBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">objArrayReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ArrayBType">BTFS.ArrayBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@objArrayReference:CoreBTypes.this.bTypes.ArrayBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#primitiveTypeMap" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="primitiveTypeMap:Map[CoreBTypes.this.bTypes.global.Symbol,CoreBTypes.this.bTypes.PrimitiveBType]"></a>
+      <a id="primitiveTypeMap:Map[BTFS._$1.Symbol,BTFS.PrimitiveBType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">primitiveTypeMap</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.reflect.internal.Symbols.Symbol">BTFS._$1.Symbol</span>, <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.PrimitiveBType">BTFS.PrimitiveBType</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@primitiveTypeMap:Map[CoreBTypes.this.bTypes.global.Symbol,CoreBTypes.this.bTypes.PrimitiveBType]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Maps primitive types to their corresponding PrimitiveBType.</p><div class="fullcomment"><div class="comment cmt"><p>Maps primitive types to their corresponding PrimitiveBType. The map is defined lexically above
+the first use of <code>classBTypeFromSymbol</code> because that method looks at the map.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#scalaSerializableReference" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="scalaSerializableReference:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="scalaSerializableReference:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">scalaSerializableReference</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@scalaSerializableReference:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#srBooleanRef" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="srBooleanRef:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="srBooleanRef:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">srBooleanRef</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@srBooleanRef:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#srByteRef" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="srByteRef:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="srByteRef:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">srByteRef</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@srByteRef:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#srCharRef" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="srCharRef:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="srCharRef:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">srCharRef</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@srCharRef:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#srDoubleRef" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="srDoubleRef:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="srDoubleRef:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">srDoubleRef</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@srDoubleRef:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#srFloatRef" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="srFloatRef:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="srFloatRef:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">srFloatRef</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@srFloatRef:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#srIntRef" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="srIntRef:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="srIntRef:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">srIntRef</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@srIntRef:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#srLongRef" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="srLongRef:CoreBTypes.this.bTypes.ClassBType"></a>
+      <a id="srLongRef:BTFS.ClassBType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">srLongRef</span><span class="result">: <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.ClassBType">BTFS.ClassBType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@srLongRef:CoreBTypes.this.bTypes.ClassBType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@toString():String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#typeOfArrayOp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="typeOfArrayOp:Map[Int,CoreBTypes.this.bTypes.BType]"></a>
+      <a id="typeOfArrayOp:Map[Int,BTFS.BType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">typeOfArrayOp</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.BType">BTFS.BType</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@typeOfArrayOp:Map[Int,CoreBTypes.this.bTypes.BType]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.CoreBTypes#unboxResultType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unboxResultType:Map[CoreBTypes.this.bTypes.global.Symbol,CoreBTypes.this.bTypes.PrimitiveBType]"></a>
+      <a id="unboxResultType:Map[BTFS._$1.Symbol,BTFS.PrimitiveBType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unboxResultType</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.reflect.internal.Symbols.Symbol">BTFS._$1.Symbol</span>, <span class="extype" name="scala.tools.nsc.backend.jvm.BTypes.PrimitiveBType">BTFS.PrimitiveBType</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@unboxResultType:Map[CoreBTypes.this.bTypes.global.Symbol,CoreBTypes.this.bTypes.PrimitiveBType]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Maps the method symbol for an unbox method to the primitive type of the result.</p><div class="fullcomment"><div class="comment cmt"><p>Maps the method symbol for an unbox method to the primitive type of the result.
+For example, the method symbol for <code>Byte.unbox()</code>) is mapped to the PrimitiveBType BYTE.</p></div></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(CoreBTypes[BTFS],B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>], <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.jvm.CoreBTypes@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>] to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>] to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>] to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>] to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>] to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes">CoreBTypes</a>[<span class="extype" name="scala.tools.nsc.backend.jvm.CoreBTypes.BTFS">BTFS</span>]]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

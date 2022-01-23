@@ -1,0 +1,629 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>duration - Scala Standard Library 2.11.8 - scala.concurrent.duration</title>
+          <meta name="description" content="duration - Scala Standard Library 2.11.8 - scala.concurrent.duration" />
+          <meta name="keywords" content="duration Scala Standard Library 2.11.8 scala.concurrent.duration" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.concurrent.duration.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.concurrent">concurrent</a></p>
+        <h1>duration</h1><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">duration</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/concurrent/duration/package.scala#L1" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 471.00 94.00" height="94pt" width="471pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 90)" class="graph" id="graph0"><polygon points="-4,4 -4,-90 467,-90 467,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node class" id="graph1_0"><g id="a_class|graph1_0"><a xlink:title="scala.concurrent.duration.DurationDouble" xlink:href="package$$DurationDouble.html#inheritance-diagram"><polygon points="111,-25 7.10543e-15,-25 7.10543e-15,-0 111,-0 111,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="31.5" text-anchor="start">DurationDouble</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.concurrent.duration.DurationLong" xlink:href="package$$DurationLong.html#inheritance-diagram"><polygon points="230.5,-25 128.5,-25 128.5,-0 230.5,-0 230.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="138.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="159.5" text-anchor="start">DurationLong</text></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.concurrent.duration.DurationInt" xlink:href="package$$DurationInt.html#inheritance-diagram"><polygon points="340,-25 249,-25 249,-0 340,-0 340,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="259.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="280.5" text-anchor="start">DurationInt</text></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.concurrent.duration.DurationConversions" xlink:href="DurationConversions.html#inheritance-diagram"><polygon points="246,-86 113,-86 113,-61 246,-61 246,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-80.5" x="123.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="144.5" text-anchor="start">DurationConversions</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="DurationDouble is a subtype of DurationConversions"><path d="M150.577,-58.7381C129.179,-48.5571 100.35,-34.8399 80.0656,-25.1884" stroke="#d4d4d4" fill="none"></path><polygon points="150.03,-60.4161 155.297,-60.9841 151.534,-57.2556 150.03,-60.4161" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3&#45;&gt;node1 --><g class="edge inheritance" id="graph1_3_1"><g id="a_inheritance|graph1_3_1"><a xlink:title="DurationLong is a subtype of DurationConversions"><path d="M179.5,-55.6874C179.5,-45.9173 179.5,-33.8534 179.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="177.75,-55.8435 179.5,-60.8435 181.25,-55.8435 177.75,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3&#45;&gt;node2 --><g class="edge inheritance" id="graph1_3_2"><g id="a_inheritance|graph1_3_2"><a xlink:title="DurationInt is a subtype of DurationConversions"><path d="M206.574,-58.6096C226.393,-48.4419 252.984,-34.7994 271.717,-25.1884" stroke="#d4d4d4" fill="none"></path><polygon points="205.596,-57.1447 201.946,-60.9841 207.194,-60.2588 205.596,-57.1447" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node class" id="graph1_4"><g id="a_class|graph1_4"><a xlink:title="scala.concurrent.duration.FiniteDuration" xlink:href="FiniteDuration.html#inheritance-diagram"><polygon points="463,-25 358,-25 358,-0 463,-0 463,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="368.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="389.5" text-anchor="start">FiniteDuration</text></a></g></g><!-- node5 --><g class="node class" id="graph1_5"><g id="a_class|graph1_5"><a xlink:title="scala.concurrent.duration.Duration" xlink:href="Duration.html#inheritance-diagram"><polygon points="451,-86 370,-86 370,-61 451,-61 451,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-80.5" x="380.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="401.5" text-anchor="start">Duration</text></a></g></g><!-- node5&#45;&gt;node4 --><g class="edge inheritance" id="graph1_5_4"><g id="a_inheritance|graph1_5_4"><a xlink:title="FiniteDuration is a subtype of Duration"><path d="M410.5,-55.6874C410.5,-45.9173 410.5,-33.8534 410.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="408.75,-55.8435 410.5,-60.8435 412.25,-55.8435 408.75,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.concurrent.duration"><span>duration</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.concurrent.duration.Deadline" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DeadlineextendsOrdered[scala.concurrent.duration.Deadline]withProductwithSerializable"></a>
+      <a id="Deadline:Deadline"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Deadline.html"><span class="name">Deadline</span></a><span class="result"> extends <a href="../../package.html#Ordered[T]=scala.math.Ordered[T]" class="extmbr" name="scala.Ordered">Ordered</a>[<a href="Deadline.html" class="extype" name="scala.concurrent.duration.Deadline">Deadline</a>] with <a href="../../Product.html" class="extype" name="scala.Product">Product</a> with <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@DeadlineextendsOrdered[scala.concurrent.duration.Deadline]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class stores a deadline, as obtained via <code>Deadline.now</code> or the
+duration DSL:</p><div class="fullcomment"><div class="comment cmt"><p>This class stores a deadline, as obtained via <code>Deadline.now</code> or the
+duration DSL:</p><pre><span class="kw">import</span> scala.concurrent.duration._
+<span class="num">3.</span>seconds.fromNow</pre><p>Its main purpose is to manage repeated attempts to achieve something (like
+awaiting a condition) by offering the methods <code>hasTimeLeft</code> and <code>timeLeft</code>.  All
+durations are measured according to <code>System.nanoTime</code> aka wall-time; this
+does not take into account changes to the system clock (such as leap
+seconds).
+</p></div></div>
+    </li><li name="scala.concurrent.duration.DoubleMult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DoubleMultextendsAnyVal"></a>
+      <a id="DoubleMult:DoubleMult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$DoubleMult.html"><span class="name">DoubleMult</span></a><span class="result"> extends <a href="../../AnyVal.html" class="extype" name="scala.AnyVal">AnyVal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@DoubleMultextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration.Duration" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="DurationextendsSerializablewithOrdered[scala.concurrent.duration.Duration]"></a>
+      <a id="Duration:Duration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Duration.html"><span class="name">Duration</span></a><span class="result"> extends <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a> with <a href="../../package.html#Ordered[T]=scala.math.Ordered[T]" class="extmbr" name="scala.Ordered">Ordered</a>[<a href="Duration.html" class="extype" name="scala.concurrent.duration.Duration">Duration</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@DurationextendsSerializablewithOrdered[scala.concurrent.duration.Duration]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><b><i>This class is not meant as a general purpose representation of time, it is
+optimized for the needs of <code>scala.concurrent</code>.</i></b></p><div class="fullcomment"><div class="comment cmt"><h4> Utility for working with java.util.concurrent.TimeUnit durations. </h4><p><b><i>This class is not meant as a general purpose representation of time, it is
+optimized for the needs of <code>scala.concurrent</code>.</i></b></p><h4> Basic Usage </h4><p>Examples:</p><pre><span class="kw">import</span> scala.concurrent.duration._
+
+<span class="kw">val</span> duration = Duration(<span class="num">100</span>, MILLISECONDS)
+<span class="kw">val</span> duration = Duration(<span class="num">100</span>, <span class="lit">"millis"</span>)
+
+duration.toNanos
+duration &lt; <span class="num">1.</span>second
+duration &lt;= Duration.Inf</pre><p><b><i>Invoking inexpressible conversions (like calling <code>toSeconds</code> on an infinite duration) will throw an IllegalArgumentException.</i></b></p><p>Implicits are also provided for Int, Long and Double. Example usage:</p><pre><span class="kw">import</span> scala.concurrent.duration._
+
+<span class="kw">val</span> duration = <span class="num">100</span> millis</pre><p><b><i>The DSL provided by the implicit conversions always allows construction of finite durations, even for infinite Double inputs; use Duration.Inf instead.</i></b></p><p>Extractors, parsing and arithmetic are also included:</p><pre><span class="kw">val</span> d = Duration(<span class="lit">"1.2 µs"</span>)
+<span class="kw">val</span> Duration(length, unit) = <span class="num">5</span> millis
+<span class="kw">val</span> d2 = d * <span class="num">2.5</span>
+<span class="kw">val</span> d3 = d2 + <span class="num">1.</span>millisecond</pre><h4> Handling of Time Units </h4><p>Calculations performed on finite durations always retain the more precise unit of either operand, no matter
+whether a coarser unit would be able to exactly express the same duration. This means that Duration can be
+used as a lossless container for a (length, unit) pair if it is constructed using the corresponding methods
+and no arithmetic is performed on it; adding/subtracting durations should in that case be done with care.</p><h4> Correspondence to Double Semantics </h4><p>The semantics of arithmetic operations on Duration are two-fold:</p><ul><li>exact addition/subtraction with nanosecond resolution for finite durations, independent of the summands' magnitude</li><li>isomorphic to <code>java.lang.Double</code> when it comes to infinite or undefined values</li></ul><p>The conversion between Duration and Double is done using <a href="Duration.html#toUnit(unit:scala.concurrent.duration.TimeUnit):Double" class="extmbr" name="scala.concurrent.duration.Duration#toUnit">Duration.toUnit</a> (with unit NANOSECONDS)
+and <a href="Duration$.html#fromNanos(nanos:Double):scala.concurrent.duration.Duration" class="extmbr" name="scala.concurrent.duration.Duration#fromNanos">Duration.fromNanos(Double)</a></p><h4> Ordering </h4><p>The default ordering is consistent with the ordering of Double numbers, which means that Undefined is
+considered greater than all other durations, including <a href="Duration$.html#Inf:scala.concurrent.duration.Duration.Infinite" class="extmbr" name="scala.concurrent.duration.Duration#Inf">Duration.Inf</a>.</p></div></div>
+    </li><li name="scala.concurrent.duration.DurationConversions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DurationConversionsextendsAny"></a>
+      <a id="DurationConversions:DurationConversions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DurationConversions.html"><span class="name">DurationConversions</span></a><span class="result"> extends <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@DurationConversionsextendsAny" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration.DurationDouble" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DurationDoubleextendsAnyValwithDurationConversions"></a>
+      <a id="DurationDouble:DurationDouble"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$DurationDouble.html"><span class="name">DurationDouble</span></a><span class="result"> extends <a href="../../AnyVal.html" class="extype" name="scala.AnyVal">AnyVal</a> with <a href="DurationConversions.html" class="extype" name="scala.concurrent.duration.DurationConversions">DurationConversions</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@DurationDoubleextendsAnyValwithDurationConversions" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration.DurationInt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DurationIntextendsAnyValwithDurationConversions"></a>
+      <a id="DurationInt:DurationInt"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$DurationInt.html"><span class="name">DurationInt</span></a><span class="result"> extends <a href="../../AnyVal.html" class="extype" name="scala.AnyVal">AnyVal</a> with <a href="DurationConversions.html" class="extype" name="scala.concurrent.duration.DurationConversions">DurationConversions</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@DurationIntextendsAnyValwithDurationConversions" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration.DurationLong" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DurationLongextendsAnyValwithDurationConversions"></a>
+      <a id="DurationLong:DurationLong"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$DurationLong.html"><span class="name">DurationLong</span></a><span class="result"> extends <a href="../../AnyVal.html" class="extype" name="scala.AnyVal">AnyVal</a> with <a href="DurationConversions.html" class="extype" name="scala.concurrent.duration.DurationConversions">DurationConversions</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@DurationLongextendsAnyValwithDurationConversions" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration.FiniteDuration" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="FiniteDurationextendsDuration"></a>
+      <a id="FiniteDuration:FiniteDuration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="FiniteDuration.html"><span class="name">FiniteDuration</span></a><span class="result"> extends <a href="Duration.html" class="extype" name="scala.concurrent.duration.Duration">Duration</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@FiniteDurationextendsDuration" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a finite duration.</p><div class="fullcomment"><div class="comment cmt"><p>This class represents a finite duration. Its addition and subtraction operators are overloaded to retain
+this guarantee statically. The range of this class is limited to +-(2^63-1)ns, which is roughly 292 years.
+</p></div></div>
+    </li><li name="scala.concurrent.duration.IntMult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IntMultextendsAnyVal"></a>
+      <a id="IntMult:IntMult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$IntMult.html"><span class="name">IntMult</span></a><span class="result"> extends <a href="../../AnyVal.html" class="extype" name="scala.AnyVal">AnyVal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@IntMultextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration.LongMult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LongMultextendsAnyVal"></a>
+      <a id="LongMult:LongMult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$LongMult.html"><span class="name">LongMult</span></a><span class="result"> extends <a href="../../AnyVal.html" class="extype" name="scala.AnyVal">AnyVal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@LongMultextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration.TimeUnit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TimeUnit=java.util.concurrent.TimeUnit"></a>
+      <a id="TimeUnit:TimeUnit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TimeUnit</span><span class="result"> = <span class="extype" name="java.util.concurrent.TimeUnit">java.util.concurrent.TimeUnit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@TimeUnit=java.util.concurrent.TimeUnit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.concurrent.duration#DAYS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DAYS:java.util.concurrent.TimeUnit(DAYS)"></a>
+      <a id="DAYS:java.util.concurrent.TimeUnit(DAYS)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DAYS</span><span class="result">: java.util.concurrent.TimeUnit(DAYS)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@DAYS:java.util.concurrent.TimeUnit(DAYS)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration.Deadline" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Deadline"></a>
+      <a id="Deadline:Deadline"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Deadline$.html"><span class="name">Deadline</span></a><span class="result"> extends <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@Deadline" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration.Duration" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Duration"></a>
+      <a id="Duration:Duration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Duration$.html"><span class="name">Duration</span></a><span class="result"> extends <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@Duration" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration.DurationConversions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DurationConversions"></a>
+      <a id="DurationConversions:DurationConversions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DurationConversions$.html"><span class="name">DurationConversions</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@DurationConversions" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This object just holds some cogs which make the DSL machine work, not for direct consumption.</p>
+    </li><li name="scala.concurrent.duration.FiniteDuration" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FiniteDuration"></a>
+      <a id="FiniteDuration:FiniteDuration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FiniteDuration$.html"><span class="name">FiniteDuration</span></a><span class="result"> extends <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@FiniteDuration" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration#HOURS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HOURS:java.util.concurrent.TimeUnit(HOURS)"></a>
+      <a id="HOURS:java.util.concurrent.TimeUnit(HOURS)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">HOURS</span><span class="result">: java.util.concurrent.TimeUnit(HOURS)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@HOURS:java.util.concurrent.TimeUnit(HOURS)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration#MICROSECONDS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MICROSECONDS:java.util.concurrent.TimeUnit(MICROSECONDS)"></a>
+      <a id="MICROSECONDS:java.util.concurrent.TimeUnit(MICROSECONDS)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MICROSECONDS</span><span class="result">: java.util.concurrent.TimeUnit(MICROSECONDS)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@MICROSECONDS:java.util.concurrent.TimeUnit(MICROSECONDS)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration#MILLISECONDS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MILLISECONDS:java.util.concurrent.TimeUnit(MILLISECONDS)"></a>
+      <a id="MILLISECONDS:java.util.concurrent.TimeUnit(MILLISECONDS)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MILLISECONDS</span><span class="result">: java.util.concurrent.TimeUnit(MILLISECONDS)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@MILLISECONDS:java.util.concurrent.TimeUnit(MILLISECONDS)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration#MINUTES" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MINUTES:java.util.concurrent.TimeUnit(MINUTES)"></a>
+      <a id="MINUTES:java.util.concurrent.TimeUnit(MINUTES)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MINUTES</span><span class="result">: java.util.concurrent.TimeUnit(MINUTES)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@MINUTES:java.util.concurrent.TimeUnit(MINUTES)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration#NANOSECONDS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NANOSECONDS:java.util.concurrent.TimeUnit(NANOSECONDS)"></a>
+      <a id="NANOSECONDS:java.util.concurrent.TimeUnit(NANOSECONDS)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">NANOSECONDS</span><span class="result">: java.util.concurrent.TimeUnit(NANOSECONDS)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@NANOSECONDS:java.util.concurrent.TimeUnit(NANOSECONDS)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration#SECONDS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SECONDS:java.util.concurrent.TimeUnit(SECONDS)"></a>
+      <a id="SECONDS:java.util.concurrent.TimeUnit(SECONDS)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">SECONDS</span><span class="result">: java.util.concurrent.TimeUnit(SECONDS)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@SECONDS:java.util.concurrent.TimeUnit(SECONDS)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration#durationToPair" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="durationToPair(d:scala.concurrent.duration.Duration):(Long,scala.concurrent.duration.package.TimeUnit)"></a>
+      <a id="durationToPair(Duration):(Long,TimeUnit)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">durationToPair</span><span class="params">(<span name="d">d: <a href="Duration.html" class="extype" name="scala.concurrent.duration.Duration">Duration</a></span>)</span><span class="result">: (<a href="../../Long.html" class="extype" name="scala.Long">Long</a>, <a href="#TimeUnit=java.util.concurrent.TimeUnit" class="extmbr" name="scala.concurrent.duration.TimeUnit">TimeUnit</a>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@durationToPair(d:scala.concurrent.duration.Duration):(Long,scala.concurrent.duration.package.TimeUnit)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration.fromNow" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fromNow"></a>
+      <a id="fromNow:fromNow"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$fromNow$.html"><span class="name">fromNow</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@fromNow" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This object can be used as closing token for declaring a deadline at some future point
+in time:</p><div class="fullcomment"><div class="comment cmt"><p>This object can be used as closing token for declaring a deadline at some future point
+in time:</p><pre><span class="kw">import</span> scala.concurrent.duration._
+
+<span class="kw">val</span> deadline = <span class="num">3</span> seconds fromNow</pre></div></div>
+    </li><li name="scala.concurrent.duration#pairIntToDuration" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="pairIntToDuration(p:(Int,scala.concurrent.duration.package.TimeUnit)):scala.concurrent.duration.Duration"></a>
+      <a id="pairIntToDuration((Int,TimeUnit)):Duration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pairIntToDuration</span><span class="params">(<span name="p">p: (<a href="../../Int.html" class="extype" name="scala.Int">Int</a>, <a href="#TimeUnit=java.util.concurrent.TimeUnit" class="extmbr" name="scala.concurrent.duration.TimeUnit">TimeUnit</a>)</span>)</span><span class="result">: <a href="Duration.html" class="extype" name="scala.concurrent.duration.Duration">Duration</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@pairIntToDuration(p:(Int,scala.concurrent.duration.package.TimeUnit)):scala.concurrent.duration.Duration" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration#pairLongToDuration" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="pairLongToDuration(p:(Long,scala.concurrent.duration.package.TimeUnit)):scala.concurrent.duration.FiniteDuration"></a>
+      <a id="pairLongToDuration((Long,TimeUnit)):FiniteDuration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pairLongToDuration</span><span class="params">(<span name="p">p: (<a href="../../Long.html" class="extype" name="scala.Long">Long</a>, <a href="#TimeUnit=java.util.concurrent.TimeUnit" class="extmbr" name="scala.concurrent.duration.TimeUnit">TimeUnit</a>)</span>)</span><span class="result">: <a href="FiniteDuration.html" class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@pairLongToDuration(p:(Long,scala.concurrent.duration.package.TimeUnit)):scala.concurrent.duration.FiniteDuration" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.concurrent.duration.span" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="span"></a>
+      <a id="span:span"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$span$.html"><span class="name">span</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.concurrent.duration.package@span" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This object can be used as closing token if you prefer dot-less style but do not want
+to enable language.postfixOps:</p><div class="fullcomment"><div class="comment cmt"><p>This object can be used as closing token if you prefer dot-less style but do not want
+to enable language.postfixOps:</p><pre><span class="kw">import</span> scala.concurrent.duration._
+
+<span class="kw">val</span> duration = <span class="num">2</span> seconds span</pre></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

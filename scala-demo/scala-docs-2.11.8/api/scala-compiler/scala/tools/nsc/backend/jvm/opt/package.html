@@ -1,0 +1,337 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>opt - Scala Compiler 2.11.8 - scala.tools.nsc.backend.jvm.opt</title>
+          <meta name="description" content="opt - Scala Compiler 2.11.8 - scala.tools.nsc.backend.jvm.opt" />
+          <meta name="keywords" content="opt Scala Compiler 2.11.8 scala.tools.nsc.backend.jvm.opt" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../../index.html';
+            var hash = 'scala.tools.nsc.backend.jvm.opt.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc.backend">backend</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.backend.jvm">jvm</a></p>
+        <h1>opt</h1><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">opt</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 169.00 94.00" height="94pt" width="169pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 90)" class="graph" id="graph0"><polygon points="-4,4 -4,-90 165,-90 165,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node class" id="graph1_0"><g id="a_class|graph1_0"><a xlink:title="scala.tools.nsc.backend.jvm.opt.InlineInfoAttribute" xlink:href="InlineInfoAttribute.html#inheritance-diagram"><polygon points="140,-86 21,-86 21,-61 140,-61 140,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../../lib/class_diagram.png" y="-80.5" x="31.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="52.5" text-anchor="start">InlineInfoAttribute</text></a></g></g><!-- node1 --><g class="node object" id="graph1_1"><g id="a_object|graph1_1"><a xlink:title="scala.tools.nsc.backend.jvm.opt.InlineInfoAttributePrototype" xlink:href="InlineInfoAttributePrototype$.html#inheritance-diagram"><polygon points="161,-25 0,-25 0,-0 161,-0 161,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../../../../lib/object_diagram.png" y="-19.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="31.5" text-anchor="start">InlineInfoAttributePrototype</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="InlineInfoAttributePrototype is a subtype of InlineInfoAttribute"><path d="M80.5,-55.6874C80.5,-45.9173 80.5,-33.8534 80.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="78.7501,-55.8435 80.5,-60.8435 82.2501,-55.8435 78.7501,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.tools.nsc.backend.jvm.opt.ByteCodeRepository" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ByteCodeRepositoryextendsAnyRef"></a>
+      <a id="ByteCodeRepository:ByteCodeRepository"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ByteCodeRepository.html"><span class="name">ByteCodeRepository</span></a><span class="result"> extends <a href="../../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package@ByteCodeRepositoryextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The ByteCodeRepository provides utilities to read the bytecode of classfiles from the compilation
+classpath.</p><div class="fullcomment"><div class="comment cmt"><p>The ByteCodeRepository provides utilities to read the bytecode of classfiles from the compilation
+classpath. Parsed classes are cached in the <code>classes</code> map.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.opt.CallGraph" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CallGraph[BT&lt;:scala.tools.nsc.backend.jvm.BTypes]extendsAnyRef"></a>
+      <a id="CallGraph[BT&lt;:BTypes]:CallGraph[BT]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CallGraph.html"><span class="name">CallGraph</span></a><span class="tparams">[<span name="BT">BT &lt;: <a href="../BTypes.html" class="extype" name="scala.tools.nsc.backend.jvm.BTypes">BTypes</a></span>]</span><span class="result"> extends <a href="../../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package@CallGraph[BT&lt;:scala.tools.nsc.backend.jvm.BTypes]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.opt.ClosureOptimizer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ClosureOptimizer[BT&lt;:scala.tools.nsc.backend.jvm.BTypes]extendsAnyRef"></a>
+      <a id="ClosureOptimizer[BT&lt;:BTypes]:ClosureOptimizer[BT]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ClosureOptimizer.html"><span class="name">ClosureOptimizer</span></a><span class="tparams">[<span name="BT">BT &lt;: <a href="../BTypes.html" class="extype" name="scala.tools.nsc.backend.jvm.BTypes">BTypes</a></span>]</span><span class="result"> extends <a href="../../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package@ClosureOptimizer[BT&lt;:scala.tools.nsc.backend.jvm.BTypes]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.opt.InlineInfoAttribute" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="InlineInfoAttributeextendsAttributewithProductwithSerializable"></a>
+      <a id="InlineInfoAttribute:InlineInfoAttribute"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="InlineInfoAttribute.html"><span class="name">InlineInfoAttribute</span></a><span class="params">(<span name="inlineInfo">inlineInfo: <a href="../BTypes$$InlineInfo.html" class="extype" name="scala.tools.nsc.backend.jvm.BTypes.InlineInfo">InlineInfo</a></span>)</span><span class="result"> extends <span class="extype" name="scala.tools.asm.Attribute">Attribute</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package@InlineInfoAttributeextendsAttributewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This attribute stores the InlineInfo for a ClassBType as an independent classfile attribute.</p><div class="fullcomment"><div class="comment cmt"><p>This attribute stores the InlineInfo for a ClassBType as an independent classfile attribute.
+The compiler does so for every class being compiled.</p><p>The reason is that a precise InlineInfo can only be obtained if the symbol for a class is available.
+For example, we need to know if a method is final in Scala's terms, or if it has the @inline annotation.
+Looking up a class symbol for a given class filename is brittle (name-mangling).</p><p>The attribute is also helpful for inlining mixin methods. The mixin phase only adds mixin method
+symbols to classes that are being compiled. For all other class symbols, there are no mixin members.
+However, the inliner requires an InlineInfo for inlining mixin members. That problem is solved by
+reading the InlineInfo from this attribute.</p><p>In principle we could encode the InlineInfo into a Java annotation (instead of a classfile attribute).
+However, an attribute allows us to save many bits. In particular, note that the strings in an
+InlineInfo are serialized as references to constants in the constant pool, and those strings
+(traitImplClassSelfType, method names, method signatures) would exist in there anyway. So the
+ScalaInlineAttribute remains relatively compact.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.jvm.opt.Inliner" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Inliner[BT&lt;:scala.tools.nsc.backend.jvm.BTypes]extendsAnyRef"></a>
+      <a id="Inliner[BT&lt;:BTypes]:Inliner[BT]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Inliner.html"><span class="name">Inliner</span></a><span class="tparams">[<span name="BT">BT &lt;: <a href="../BTypes.html" class="extype" name="scala.tools.nsc.backend.jvm.BTypes">BTypes</a></span>]</span><span class="result"> extends <a href="../../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package@Inliner[BT&lt;:scala.tools.nsc.backend.jvm.BTypes]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.opt.LocalOpt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LocalOpt[BT&lt;:scala.tools.nsc.backend.jvm.BTypes]extendsAnyRef"></a>
+      <a id="LocalOpt[BT&lt;:BTypes]:LocalOpt[BT]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalOpt.html"><span class="name">LocalOpt</span></a><span class="tparams">[<span name="BT">BT &lt;: <a href="../BTypes.html" class="extype" name="scala.tools.nsc.backend.jvm.BTypes">BTypes</a></span>]</span><span class="result"> extends <a href="../../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package@LocalOpt[BT&lt;:scala.tools.nsc.backend.jvm.BTypes]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Optimizations within a single method.</p><div class="fullcomment"><div class="comment cmt"><p>Optimizations within a single method.</p><p>unreachable code</p><ul><li>removes instructions of basic blocks to which no branch instruction points
+  + enables eliminating some exception handlers and local variable descriptors
+    &gt; eliminating them is required for correctness, as explained in <code>removeUnreachableCode</code></li></ul><p>empty exception handlers</p><ul><li>removes exception handlers whose try block is empty
+  + eliminating a handler where the try block is empty and reachable will turn the catch block
+    unreachable. in this case &quot;unreachable code&quot; is invoked recursively until reaching a fixpoint.
+    &gt; for try blocks that are unreachable, &quot;unreachable code&quot; removes also the instructions of the
+      catch block, and the recursive invocation is not necessary.</li></ul><p>simplify jumps</p><ul><li>various simplifications, see doc comments of individual optimizations
+  + changing or eliminating jumps may render some code unreachable, therefore &quot;simplify jumps&quot; is
+    executed in a loop with &quot;unreachable code&quot;</li></ul><p>empty local variable descriptors</p><ul><li>removes entries from the local variable table where the variable is not actually used
+  + enables eliminating labels that the entry points to (if they are not otherwise referenced)</li></ul><p>empty line numbers</p><ul><li>eliminates line number nodes that describe no executable instructions
+  + enables eliminating the label of the line number node (if it's not otherwise referenced)</li></ul><p>stale labels</p><ul><li>eliminate labels that are not referenced, merge sequences of label definitions.
+</li></ul></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.tools.nsc.backend.jvm.opt.ByteCodeRepository" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ByteCodeRepository"></a>
+      <a id="ByteCodeRepository:ByteCodeRepository"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ByteCodeRepository$.html"><span class="name">ByteCodeRepository</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package@ByteCodeRepository" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.opt.BytecodeUtils" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BytecodeUtils"></a>
+      <a id="BytecodeUtils:BytecodeUtils"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BytecodeUtils$.html"><span class="name">BytecodeUtils</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package@BytecodeUtils" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.opt.InlineInfoAttribute" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InlineInfoAttribute"></a>
+      <a id="InlineInfoAttribute:InlineInfoAttribute"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="InlineInfoAttribute$.html"><span class="name">InlineInfoAttribute</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package@InlineInfoAttribute" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.opt.InlineInfoAttributePrototype" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InlineInfoAttributePrototype"></a>
+      <a id="InlineInfoAttributePrototype:InlineInfoAttributePrototype"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="InlineInfoAttributePrototype$.html"><span class="name">InlineInfoAttributePrototype</span></a><span class="result"> extends <a href="InlineInfoAttribute.html" class="extype" name="scala.tools.nsc.backend.jvm.opt.InlineInfoAttribute">InlineInfoAttribute</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package@InlineInfoAttributePrototype" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">In order to instruct the ASM framework to de-serialize the ScalaInlineInfo attribute, we need
+to pass a prototype instance when running the class reader.</p>
+    </li><li name="scala.tools.nsc.backend.jvm.opt.InstructionResultSize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InstructionResultSize"></a>
+      <a id="InstructionResultSize:InstructionResultSize"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="InstructionResultSize$.html"><span class="name">InstructionResultSize</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package@InstructionResultSize" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.jvm.opt.LocalOptImpls" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LocalOptImpls"></a>
+      <a id="LocalOptImpls:LocalOptImpls"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalOptImpls$.html"><span class="name">LocalOptImpls</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.jvm.opt.package@LocalOptImpls" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

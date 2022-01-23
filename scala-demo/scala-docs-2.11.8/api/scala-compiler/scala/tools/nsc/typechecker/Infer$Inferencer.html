@@ -1,0 +1,1572 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>Inferencer - Scala Compiler 2.11.8 - scala.tools.nsc.typechecker.Infer.Inferencer</title>
+          <meta name="description" content="Inferencer - Scala Compiler 2.11.8 - scala.tools.nsc.typechecker.Infer.Inferencer" />
+          <meta name="keywords" content="Inferencer Scala Compiler 2.11.8 scala.tools.nsc.typechecker.Infer.Inferencer" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'scala.tools.nsc.typechecker.Infer$Inferencer';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="scala">scala</a>.<a href="../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="package.html" class="extype" name="scala.tools.nsc.typechecker">typechecker</a>.<a href="Infer.html" class="extype" name="scala.tools.nsc.typechecker.Infer">Infer</a></p>
+        <h1>Inferencer</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="Infer.html" class="extype" name="scala.tools.nsc.typechecker.Infer">package Infer</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Inferencer</span><span class="result"> extends <a href="Analyzer.html#InferencerContextErrorsextendsAnyRef" class="extmbr" name="scala.tools.nsc.typechecker.ContextErrors.InferencerContextErrors">Analyzer.InferencerContextErrors</a> with <a href="Analyzer.html#InferCheckableextendsAnyRef" class="extmbr" name="scala.tools.nsc.typechecker.Checkable.InferCheckable">Analyzer.InferCheckable</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>The context-dependent inferencer part</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/compiler/scala/tools/nsc/typechecker/Infer.scala#L1" target="_blank">Infer.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="Analyzer.html#InferCheckableextendsAnyRef" class="extmbr" name="scala.tools.nsc.typechecker.Checkable.InferCheckable">Analyzer.InferCheckable</a>, <a href="Analyzer.html#InferencerContextErrorsextendsAnyRef" class="extmbr" name="scala.tools.nsc.typechecker.ContextErrors.InferencerContextErrors">Analyzer.InferencerContextErrors</a>, <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 362.00 118.00" height="118pt" width="362pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="graph0"><polygon points="-4,4 -4,-114 358,-114 358,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="scala.tools.nsc.typechecker.Infer.Inferencer (this class)" xlink:href="#inheritance-diagram"><polygon points="250,-49 123,-49 123,-24 250,-24 250,-49" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../lib/class_diagram.png" y="-43.5" x="133.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-33.5" x="154.5" text-anchor="start">Analyzer.Inferencer</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="scala.tools.nsc.typechecker.ContextErrors.InferencerContextErrors" xlink:href="ContextErrors$InferencerContextErrors.html#inheritance-diagram"><polygon points="187,-110 1.42109e-14,-110 1.42109e-14,-85 187,-85 187,-110" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../lib/trait_diagram.png" y="-104.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-94.5" x="31.5" text-anchor="start">Analyzer.InferencerContextErrors</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="Analyzer.Inferencer is a subtype of Analyzer.InferencerContextErrors"><path d="M116.232,-82.0789C132.196,-71.9511 153.272,-58.5802 168.164,-49.1323" stroke="#d4d4d4" fill="none"></path><polygon points="115.158,-80.6872 111.874,-84.8435 117.033,-83.6427 115.158,-80.6872" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="scala.tools.nsc.typechecker.Checkable.InferCheckable" xlink:href="Checkable$InferCheckable.html#inheritance-diagram"><polygon points="354,-110 205,-110 205,-85 354,-85 354,-110" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../lib/trait_diagram.png" y="-104.5" x="215.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-94.5" x="236.5" text-anchor="start">Analyzer.InferCheckable</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="Analyzer.Inferencer is a subtype of Analyzer.InferCheckable"><path d="M256.768,-82.0789C240.804,-71.9511 219.728,-58.5802 204.836,-49.1323" stroke="#d4d4d4" fill="none"></path><polygon points="255.967,-83.6427 261.126,-84.8435 257.842,-80.6872 255.967,-83.6427" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.tools.nsc.typechecker.Infer.Inferencer"><span>Inferencer</span></li><li class="in" name="scala.tools.nsc.typechecker.Checkable.InferCheckable"><span>InferCheckable</span></li><li class="in" name="scala.tools.nsc.typechecker.ContextErrors.InferencerContextErrors"><span>InferencerContextErrors</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="scala.tools.nsc.typechecker.Infer.Inferencer#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;():Infer.this.Inferencer"></a>
+      <a id="&lt;init&gt;:Analyzer.Inferencer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Inferencer</span><span class="params">()</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@&lt;init&gt;():Infer.this.Inferencer" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scala.tools.nsc.typechecker.Infer.Inferencer#context" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="context:Infer.this.Context"></a>
+      <a id="context:Analyzer.Context"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">context</span><span class="result">: <a href="Analyzer.html#ContextextendsAnyRef" class="extmbr" name="scala.tools.nsc.typechecker.Contexts.Context">Analyzer.Context</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@context:Infer.this.Context" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@##():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a> to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>] performed by method any2stringadd in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(Analyzer.Inferencer,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer.AdjustedTypeArgs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AdjustedTypeArgs"></a>
+      <a id="AdjustedTypeArgs:AdjustedTypeArgs"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Infer$Inferencer$AdjustedTypeArgs$.html"><span class="name">AdjustedTypeArgs</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@AdjustedTypeArgs" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">[Martin] Can someone comment this please? I have no idea what it's for
+ and the code is not exactly readable.</p>
+    </li><li name="scala.tools.nsc.typechecker.ContextErrors.InferencerContextErrors.InferErrorGen" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="InferErrorGen"></a>
+      <a id="InferErrorGen:InferErrorGen"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ContextErrors$InferencerContextErrors$InferErrorGen$.html"><span class="name">InferErrorGen</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.ContextErrors$InferencerContextErrors@InferErrorGen" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ContextErrors$InferencerContextErrors.html" class="extype" name="scala.tools.nsc.typechecker.ContextErrors.InferencerContextErrors">InferencerContextErrors</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#adjustTypeArgs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="adjustTypeArgs(tparams:List[Infer.this.global.Symbol],tvars:List[Infer.this.global.TypeVar],targs:List[Infer.this.global.Type],restpe:Infer.this.global.Type):Inferencer.this.AdjustedTypeArgs.Result"></a>
+      <a id="adjustTypeArgs(List[Global.Symbol],List[Global.TypeVar],List[Global.Type],Global.Type):Result"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">adjustTypeArgs</span><span class="params">(<span name="tparams">tparams: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="tvars">tvars: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeVarextendsTypes.this.TypewithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.TypeVar">Global.TypeVar</a>]</span>, <span name="targs">targs: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>, <span name="restpe">restpe: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a> = <span class="symbol"><span class="name"><a href="Analyzer.html#global:scala.tools.nsc.Global">WildcardType</a></span></span></span>)</span><span class="result">: <a href="Infer$Inferencer$AdjustedTypeArgs$.html#Result=scala.collection.mutable.LinkedHashMap[Infer.this.global.Symbol,Option[Infer.this.global.Type]]" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer.AdjustedTypeArgs.Result">Result</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@adjustTypeArgs(tparams:List[Infer.this.global.Symbol],tvars:List[Infer.this.global.TypeVar],targs:List[Infer.this.global.Type],restpe:Infer.this.global.Type):Inferencer.this.AdjustedTypeArgs.Result" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Retract arguments that were inferred to Nothing because inference failed.</p><div class="fullcomment"><div class="comment cmt"><p>Retract arguments that were inferred to Nothing because inference failed. Correct types for repeated params.</p><p>We detect Nothing-due-to-failure by only retracting a parameter if either:</p><ul><li>it occurs in an invariant/contravariant position in <code>restpe</code></li><li><code>restpe == WildcardType</code></li></ul><p>Retracted parameters are mapped to None.
+ TODO:</p><ul><li>make sure the performance hit of storing these in a map is acceptable (it's going to be a small map in 90% of the cases, I think)</li><li>refactor further up the callstack so that we don't have to do this post-factum adjustment?</li></ul><p>Rewrite for repeated param types:  Map T* entries to Seq[T].</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>map from tparams to inferred arg, if inference was successful, tparams that map to None are considered left undetermined
+   type parameters that are inferred as <code>scala.Nothing</code> and that are not covariant in <code>restpe</code> are taken to be undetermined</p></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer.approximateAbstracts" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="approximateAbstracts"></a>
+      <a id="approximateAbstracts:approximateAbstracts"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Infer$Inferencer$approximateAbstracts$.html"><span class="name">approximateAbstracts</span></a><span class="result"> extends <a href="../Global.html#TypeMapextendsTypeMaps.this.Type=&gt;TypeMaps.this.Type" class="extmbr" name="scala.tools.nsc.Global.TypeMap">Global.TypeMap</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@approximateAbstracts" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#checkAccessible" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="checkAccessible(tree:Infer.this.global.Tree,sym:Infer.this.global.Symbol,pre:Infer.this.global.Type,site:Infer.this.global.Tree):Infer.this.global.Tree"></a>
+      <a id="checkAccessible(Global.Tree,Global.Symbol,Global.Type,Global.Tree):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">checkAccessible</span><span class="params">(<span name="tree">tree: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="sym">sym: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="pre">pre: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="site">site: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>)</span><span class="result">: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@checkAccessible(tree:Infer.this.global.Tree,sym:Infer.this.global.Symbol,pre:Infer.this.global.Type,site:Infer.this.global.Tree):Infer.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Check that <code>sym</code> is defined and accessible as a member of
+ tree <code>site</code> with type <code>pre</code> in current context.</p>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#checkBounds" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="checkBounds(tree:Infer.this.global.Tree,pre:Infer.this.global.Type,owner:Infer.this.global.Symbol,tparams:List[Infer.this.global.Symbol],targs:List[Infer.this.global.Type],prefix:String):Boolean"></a>
+      <a id="checkBounds(Global.Tree,Global.Type,Global.Symbol,List[Global.Symbol],List[Global.Type],String):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">checkBounds</span><span class="params">(<span name="tree">tree: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="pre">pre: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="owner">owner: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="tparams">tparams: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="targs">targs: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>, <span name="prefix">prefix: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@checkBounds(tree:Infer.this.global.Tree,pre:Infer.this.global.Type,owner:Infer.this.global.Symbol,tparams:List[Infer.this.global.Symbol],targs:List[Infer.this.global.Type],prefix:String):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">error if arguments not within bounds.</p>
+    </li><li name="scala.tools.nsc.typechecker.Checkable.InferCheckable#checkCheckable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="checkCheckable(tree:Checkable.this.global.Tree,P0:Checkable.this.global.Type,X0:Checkable.this.global.Type,inPattern:Boolean,canRemedy:Boolean):Unit"></a>
+      <a id="checkCheckable(Global.Tree,Global.Type,Global.Type,Boolean,Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">checkCheckable</span><span class="params">(<span name="tree">tree: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="P0">P0: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="X0">X0: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="inPattern">inPattern: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="canRemedy">canRemedy: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@checkCheckable(tree:Checkable.this.global.Tree,P0:Checkable.this.global.Type,X0:Checkable.this.global.Type,inPattern:Boolean,canRemedy:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">TODO: much better error positions.</p><div class="fullcomment"><div class="comment cmt"><p>TODO: much better error positions.
+ Kind of stuck right now because they just pass us the one tree.
+ TODO: Eliminate inPattern, canRemedy, which have no place here.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Checkable$InferCheckable.html" class="extype" name="scala.tools.nsc.typechecker.Checkable.InferCheckable">InferCheckable</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#checkKindBounds" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="checkKindBounds(tparams:List[Infer.this.global.Symbol],targs:List[Infer.this.global.Type],pre:Infer.this.global.Type,owner:Infer.this.global.Symbol):List[String]"></a>
+      <a id="checkKindBounds(List[Global.Symbol],List[Global.Type],Global.Type,Global.Symbol):List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">checkKindBounds</span><span class="params">(<span name="tparams">tparams: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="targs">targs: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>, <span name="pre">pre: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="owner">owner: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@checkKindBounds(tparams:List[Infer.this.global.Symbol],targs:List[Infer.this.global.Type],pre:Infer.this.global.Type,owner:Infer.this.global.Symbol):List[String]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#eligibleForTupleConversion" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="eligibleForTupleConversion(formals:List[Infer.this.global.Type],argsCount:Int):Boolean"></a>
+      <a id="eligibleForTupleConversion(List[Global.Type],Int):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eligibleForTupleConversion</span><span class="params">(<span name="formals">formals: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>, <span name="argsCount">argsCount: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@eligibleForTupleConversion(formals:List[Infer.this.global.Type],argsCount:Int):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#eligibleForTupleConversion" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="eligibleForTupleConversion(paramsCount:Int,argsCount:Int,varargsTarget:Boolean):Boolean"></a>
+      <a id="eligibleForTupleConversion(Int,Int,Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eligibleForTupleConversion</span><span class="params">(<span name="paramsCount">paramsCount: <span class="extype" name="scala.Int">Int</span></span>, <span name="argsCount">argsCount: <span class="extype" name="scala.Int">Int</span></span>, <span name="varargsTarget">varargsTarget: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@eligibleForTupleConversion(paramsCount:Int,argsCount:Int,varargsTarget:Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">True if the given parameter list can accept a tupled argument list,
+ and the argument list can be tupled (based on its length.)
+</p>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#ensureFullyDefined" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ensureFullyDefined(tp:Infer.this.global.Type):Infer.this.global.Type"></a>
+      <a id="ensureFullyDefined(Global.Type):Global.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ensureFullyDefined</span><span class="params">(<span name="tp">tp: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@ensureFullyDefined(tp:Infer.this.global.Type):Infer.this.global.Type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((Analyzer.Inferencer)⇒Boolean,⇒Any):Analyzer.Inferencer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((Analyzer.Inferencer)⇒Boolean):Analyzer.Inferencer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):Analyzer.Inferencer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):Analyzer.Inferencer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#explainTypes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="explainTypes(tp1:Infer.this.global.Type,tp2:Infer.this.global.Type):Unit"></a>
+      <a id="explainTypes(Global.Type,Global.Type):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">explainTypes</span><span class="params">(<span name="tp1">tp1: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="tp2">tp2: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@explainTypes(tp1:Infer.this.global.Type,tp2:Infer.this.global.Type):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a> to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>] performed by method StringFormat in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#freeTypeParamsOfTerms" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="freeTypeParamsOfTerms(tp:Infer.this.global.Type):List[Infer.this.global.Symbol]"></a>
+      <a id="freeTypeParamsOfTerms(Global.Type):List[Global.Symbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">freeTypeParamsOfTerms</span><span class="params">(<span name="tp">tp: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@freeTypeParamsOfTerms(tp:Infer.this.global.Type):List[Infer.this.global.Symbol]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Collects type parameters referred to in a type.</p>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#getContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getContext:Infer.this.Context"></a>
+      <a id="getContext:Analyzer.Context"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getContext</span><span class="result">: <a href="Analyzer.html#ContextextendsAnyRef" class="extmbr" name="scala.tools.nsc.typechecker.Contexts.Context">Analyzer.Context</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@getContext:Infer.this.Context" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#inferArgumentInstance" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inferArgumentInstance(tree:Infer.this.global.Tree,undetparams:List[Infer.this.global.Symbol],strictPt:Infer.this.global.Type,lenientPt:Infer.this.global.Type):Unit"></a>
+      <a id="inferArgumentInstance(Global.Tree,List[Global.Symbol],Global.Type,Global.Type):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inferArgumentInstance</span><span class="params">(<span name="tree">tree: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="undetparams">undetparams: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="strictPt">strictPt: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="lenientPt">lenientPt: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@inferArgumentInstance(tree:Infer.this.global.Tree,undetparams:List[Infer.this.global.Symbol],strictPt:Infer.this.global.Type,lenientPt:Infer.this.global.Type):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Substitute free type variables <code>undetparams</code> of polymorphic argument
+ expression <code>tree</code>, given two prototypes <code>strictPt</code>, and <code>lenientPt</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Substitute free type variables <code>undetparams</code> of polymorphic argument
+ expression <code>tree</code>, given two prototypes <code>strictPt</code>, and <code>lenientPt</code>.
+ <code>strictPt</code> is the first attempt prototype where type parameters
+ are left unchanged. <code>lenientPt</code> is the fall-back prototype where type
+ parameters are replaced by <code>WildcardType</code>s. We try to instantiate
+ first to <code>strictPt</code> and then, if this fails, to <code>lenientPt</code>. If both
+ attempts fail, an error is produced.
+</p></div></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#inferConstructorInstance" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inferConstructorInstance(tree:Infer.this.global.Tree,undetparams:List[Infer.this.global.Symbol],pt0:Infer.this.global.Type):Unit"></a>
+      <a id="inferConstructorInstance(Global.Tree,List[Global.Symbol],Global.Type):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inferConstructorInstance</span><span class="params">(<span name="tree">tree: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="undetparams">undetparams: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="pt0">pt0: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@inferConstructorInstance(tree:Infer.this.global.Tree,undetparams:List[Infer.this.global.Symbol],pt0:Infer.this.global.Type):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Substitute free type variables <code>undetparams</code> of type constructor
+ <code>tree</code> in pattern, given prototype <code>pt</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Substitute free type variables <code>undetparams</code> of type constructor
+ <code>tree</code> in pattern, given prototype <code>pt</code>.
+</p></div><dl class="paramcmts block"><dt class="param">tree</dt><dd class="cmt"><p>the constructor that needs to be instantiated</p></dd><dt class="param">undetparams</dt><dd class="cmt"><p>the undetermined type parameters</p></dd><dt class="param">pt0</dt><dd class="cmt"><p>the expected result type of the instance</p></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#inferExprAlternative" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inferExprAlternative(tree:Infer.this.global.Tree,pt:Infer.this.global.Type):Infer.this.global.Tree"></a>
+      <a id="inferExprAlternative(Global.Tree,Global.Type):Global.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inferExprAlternative</span><span class="params">(<span name="tree">tree: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="pt">pt: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@inferExprAlternative(tree:Infer.this.global.Tree,pt:Infer.this.global.Type):Infer.this.global.Tree" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Assign <code>tree</code> the symbol and type of the alternative which
+ matches prototype <code>pt</code>, if it exists.</p><div class="fullcomment"><div class="comment cmt"><p>Assign <code>tree</code> the symbol and type of the alternative which
+ matches prototype <code>pt</code>, if it exists.
+ If several alternatives match <code>pt</code>, take parameterless one.
+ If no alternative matches <code>pt</code>, take the parameterless one anyway.
+</p></div></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#inferExprInstance" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inferExprInstance(tree:Infer.this.global.Tree,tparams:List[Infer.this.global.Symbol],pt:Infer.this.global.Type,treeTp0:Infer.this.global.Type,keepNothings:Boolean,useWeaklyCompatible:Boolean):List[Infer.this.global.Symbol]"></a>
+      <a id="inferExprInstance(Global.Tree,List[Global.Symbol],Global.Type,Global.Type,Boolean,Boolean):List[Global.Symbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inferExprInstance</span><span class="params">(<span name="tree">tree: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="tparams">tparams: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="pt">pt: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a> = <span class="symbol"><span class="name"><a href="Analyzer.html#global:scala.tools.nsc.Global">WildcardType</a></span></span></span>, <span name="treeTp0">treeTp0: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a> = <span class="symbol">null</span></span>, <span name="keepNothings">keepNothings: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="useWeaklyCompatible">useWeaklyCompatible: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@inferExprInstance(tree:Infer.this.global.Tree,tparams:List[Infer.this.global.Symbol],pt:Infer.this.global.Type,treeTp0:Infer.this.global.Type,keepNothings:Boolean,useWeaklyCompatible:Boolean):List[Infer.this.global.Symbol]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Infer type arguments <code>targs</code> for <code>tparams</code> of polymorphic expression in <code>tree</code>, given prototype <code>pt</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Infer type arguments <code>targs</code> for <code>tparams</code> of polymorphic expression in <code>tree</code>, given prototype <code>pt</code>.</p><p>Substitute <code>tparams</code> to <code>targs</code> in <code>tree</code>, after adjustment by <code>adjustTypeArgs</code>, returning the type parameters that were not determined
+If passed, infers against specified type <code>treeTp</code> instead of <code>tree.tp</code>.
+</p></div></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#inferMethodAlternative" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inferMethodAlternative(tree:Infer.this.global.Tree,undetparams:List[Infer.this.global.Symbol],argtpes0:List[Infer.this.global.Type],pt0:Infer.this.global.Type):Unit"></a>
+      <a id="inferMethodAlternative(Global.Tree,List[Global.Symbol],List[Global.Type],Global.Type):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inferMethodAlternative</span><span class="params">(<span name="tree">tree: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="undetparams">undetparams: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="argtpes0">argtpes0: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>, <span name="pt0">pt0: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@inferMethodAlternative(tree:Infer.this.global.Tree,undetparams:List[Infer.this.global.Symbol],argtpes0:List[Infer.this.global.Type],pt0:Infer.this.global.Type):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Assign <code>tree</code> the type of an alternative which is applicable
+ to <code>argtpes</code>, and whose result type is compatible with <code>pt</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Assign <code>tree</code> the type of an alternative which is applicable
+ to <code>argtpes</code>, and whose result type is compatible with <code>pt</code>.
+ If several applicable alternatives exist, drop the alternatives which use
+ default arguments, then select the most specialized one.
+ If no applicable alternative exists, and pt != WildcardType, try again
+ with pt = WildcardType.
+ Otherwise, if there is no best alternative, error.
+</p></div><dl class="paramcmts block"><dt class="param">argtpes0</dt><dd class="cmt"><p>contains the argument types. If an argument is named, as
+   &quot;a = 3&quot;, the corresponding type is <code>NamedType(&quot;a&quot;, Int)</code>. If the name
+   of some NamedType does not exist in an alternative's parameter names,
+   the type is replaces by <code>Unit</code>, i.e. the argument is treated as an
+   assignment expression.</p></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#inferMethodInstance" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inferMethodInstance(fn:Infer.this.global.Tree,undetparams:List[Infer.this.global.Symbol],args:List[Infer.this.global.Tree],pt0:Infer.this.global.Type):List[Infer.this.global.Symbol]"></a>
+      <a id="inferMethodInstance(Global.Tree,List[Global.Symbol],List[Global.Tree],Global.Type):List[Global.Symbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inferMethodInstance</span><span class="params">(<span name="fn">fn: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="undetparams">undetparams: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="args">args: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a>]</span>, <span name="pt0">pt0: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@inferMethodInstance(fn:Infer.this.global.Tree,undetparams:List[Infer.this.global.Symbol],args:List[Infer.this.global.Tree],pt0:Infer.this.global.Type):List[Infer.this.global.Symbol]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Substitute free type variables <code>undetparams</code> of application
+ <code>fn(args)</code>, given prototype <code>pt</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Substitute free type variables <code>undetparams</code> of application
+ <code>fn(args)</code>, given prototype <code>pt</code>.
+</p></div><dl class="paramcmts block"><dt class="param">fn</dt><dd class="cmt"><p>fn: the function that needs to be instantiated.</p></dd><dt class="param">undetparams</dt><dd class="cmt"><p>the parameters that need to be determined</p></dd><dt class="param">args</dt><dd class="cmt"><p>the actual arguments supplied in the call.</p></dd><dt class="param">pt0</dt><dd class="cmt"><p>the expected type of the function application</p></dd><dt>returns</dt><dd class="cmt"><p>The type parameters that remain uninstantiated,
+                    and that thus have not been substituted.</p></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#inferModulePattern" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="inferModulePattern(pat:Infer.this.global.Tree,pt:Infer.this.global.Type):Unit"></a>
+      <a id="inferModulePattern(Global.Tree,Global.Type):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inferModulePattern</span><span class="params">(<span name="pat">pat: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="pt">pt: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@inferModulePattern(pat:Infer.this.global.Tree,pt:Infer.this.global.Type):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#inferPolyAlternatives" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inferPolyAlternatives(tree:Infer.this.global.Tree,argtypes:List[Infer.this.global.Type]):Unit"></a>
+      <a id="inferPolyAlternatives(Global.Tree,List[Global.Type]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inferPolyAlternatives</span><span class="params">(<span name="tree">tree: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="argtypes">argtypes: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@inferPolyAlternatives(tree:Infer.this.global.Tree,argtypes:List[Infer.this.global.Type]):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Assign <code>tree</code> the type of all polymorphic alternatives
+ which have the same number of type parameters as does <code>argtypes</code>
+ with all argtypes are within the corresponding type parameter bounds.</p><div class="fullcomment"><div class="comment cmt"><p>Assign <code>tree</code> the type of all polymorphic alternatives
+ which have the same number of type parameters as does <code>argtypes</code>
+ with all argtypes are within the corresponding type parameter bounds.
+ If no such polymorphic alternative exist, error.
+</p></div></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#inferTypedPattern" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="inferTypedPattern(tree0:Infer.this.global.Tree,pattp:Infer.this.global.Type,pt0:Infer.this.global.Type,canRemedy:Boolean):Infer.this.global.Type"></a>
+      <a id="inferTypedPattern(Global.Tree,Global.Type,Global.Type,Boolean):Global.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inferTypedPattern</span><span class="params">(<span name="tree0">tree0: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>, <span name="pattp">pattp: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="pt0">pt0: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="canRemedy">canRemedy: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@inferTypedPattern(tree0:Infer.this.global.Tree,pattp:Infer.this.global.Type,pt0:Infer.this.global.Type,canRemedy:Boolean):Infer.this.global.Type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#instBounds" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="instBounds(tvar:Infer.this.global.TypeVar):Infer.this.global.TypeBounds"></a>
+      <a id="instBounds(Global.TypeVar):Global.TypeBounds"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">instBounds</span><span class="params">(<span name="tvar">tvar: <a href="../Global.html#TypeVarextendsTypes.this.TypewithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.TypeVar">Global.TypeVar</a></span>)</span><span class="result">: <a href="../Global.html#TypeBoundsextendsTypes.this.SubTypewithTypes.this.TypeBoundsApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.TypeBounds">Global.TypeBounds</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@instBounds(tvar:Infer.this.global.TypeVar):Infer.this.global.TypeBounds" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#instantiateTypeVar" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="instantiateTypeVar(tvar:Infer.this.global.TypeVar):Unit"></a>
+      <a id="instantiateTypeVar(Global.TypeVar):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">instantiateTypeVar</span><span class="params">(<span name="tvar">tvar: <a href="../Global.html#TypeVarextendsTypes.this.TypewithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.TypeVar">Global.TypeVar</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@instantiateTypeVar(tvar:Infer.this.global.TypeVar):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#intersect" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="intersect(tp1:Infer.this.global.Type,tp2:Infer.this.global.Type):Infer.this.global.Type"></a>
+      <a id="intersect(Global.Type,Global.Type):Global.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">intersect</span><span class="params">(<span name="tp1">tp1: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="tp2">tp2: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@intersect(tp1:Infer.this.global.Type,tp2:Infer.this.global.Type):Infer.this.global.Type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Type intersection of simple type tp1 with general type tp2.</p><div class="fullcomment"><div class="comment cmt"><p>Type intersection of simple type tp1 with general type tp2.
+ The result eliminates some redundancies.
+</p></div></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#isAsSpecific" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isAsSpecific(ftpe1:Infer.this.global.Type,ftpe2:Infer.this.global.Type):Boolean"></a>
+      <a id="isAsSpecific(Global.Type,Global.Type):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isAsSpecific</span><span class="params">(<span name="ftpe1">ftpe1: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="ftpe2">ftpe2: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@isAsSpecific(ftpe1:Infer.this.global.Type,ftpe2:Infer.this.global.Type):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Is type <code>ftpe1</code> strictly more specific than type <code>ftpe2</code>
+ when both are alternatives in an overloaded function?</p><div class="fullcomment"><div class="comment cmt"><p>Is type <code>ftpe1</code> strictly more specific than type <code>ftpe2</code>
+ when both are alternatives in an overloaded function?</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>SLS (sec:overloading-resolution)</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Checkable.InferCheckable#isCheckable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isCheckable(P0:Checkable.this.global.Type):Boolean"></a>
+      <a id="isCheckable(Global.Type):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isCheckable</span><span class="params">(<span name="P0">P0: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@isCheckable(P0:Checkable.this.global.Type):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Checkable$InferCheckable.html" class="extype" name="scala.tools.nsc.typechecker.Checkable.InferCheckable">InferCheckable</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#isCoercible" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isCoercible(tp:Infer.this.global.Type,pt:Infer.this.global.Type):Boolean"></a>
+      <a id="isCoercible(Global.Type,Global.Type):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isCoercible</span><span class="params">(<span name="tp">tp: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="pt">pt: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@isCoercible(tp:Infer.this.global.Type,pt:Infer.this.global.Type):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#isCompatibleArgs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isCompatibleArgs(tps:List[Infer.this.global.Type],pts:List[Infer.this.global.Type]):Boolean"></a>
+      <a id="isCompatibleArgs(List[Global.Type],List[Global.Type]):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isCompatibleArgs</span><span class="params">(<span name="tps">tps: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>, <span name="pts">pts: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@isCompatibleArgs(tps:List[Infer.this.global.Type],pts:List[Infer.this.global.Type]):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#isConservativelyCompatible" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isConservativelyCompatible(tp:Infer.this.global.Type,pt:Infer.this.global.Type):Boolean"></a>
+      <a id="isConservativelyCompatible(Global.Type,Global.Type):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isConservativelyCompatible</span><span class="params">(<span name="tp">tp: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="pt">pt: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@isConservativelyCompatible(tp:Infer.this.global.Type,pt:Infer.this.global.Type):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#isInProperSubClassOrObject" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isInProperSubClassOrObject(sym1:Infer.this.global.Symbol,sym2:Infer.this.global.Symbol):Boolean"></a>
+      <a id="isInProperSubClassOrObject(Global.Symbol,Global.Symbol):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInProperSubClassOrObject</span><span class="params">(<span name="sym1">sym1: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="sym2">sym2: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@isInProperSubClassOrObject(sym1:Infer.this.global.Symbol,sym2:Infer.this.global.Symbol):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">is symbol <code>sym1</code> defined in a proper subclass of symbol <code>sym2</code>?
+</p>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#isInstantiatable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isInstantiatable(tvars:List[Infer.this.global.TypeVar]):Boolean"></a>
+      <a id="isInstantiatable(List[Global.TypeVar]):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstantiatable</span><span class="params">(<span name="tvars">tvars: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeVarextendsTypes.this.TypewithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.TypeVar">Global.TypeVar</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@isInstantiatable(tvars:List[Infer.this.global.TypeVar]):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#isProperSubClassOrObject" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isProperSubClassOrObject(sym1:Infer.this.global.Symbol,sym2:Infer.this.global.Symbol):Boolean"></a>
+      <a id="isProperSubClassOrObject(Global.Symbol,Global.Symbol):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isProperSubClassOrObject</span><span class="params">(<span name="sym1">sym1: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="sym2">sym2: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@isProperSubClassOrObject(sym1:Infer.this.global.Symbol,sym2:Infer.this.global.Symbol):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Is sym1 (or its companion class in case it is a module) a subclass of
+ sym2 (or its companion class in case it is a module)?
+</p>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#isStrictlyMoreSpecific" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isStrictlyMoreSpecific(ftpe1:Infer.this.global.Type,ftpe2:Infer.this.global.Type,sym1:Infer.this.global.Symbol,sym2:Infer.this.global.Symbol):Boolean"></a>
+      <a id="isStrictlyMoreSpecific(Global.Type,Global.Type,Global.Symbol,Global.Symbol):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isStrictlyMoreSpecific</span><span class="params">(<span name="ftpe1">ftpe1: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="ftpe2">ftpe2: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="sym1">sym1: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="sym2">sym2: <a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@isStrictlyMoreSpecific(ftpe1:Infer.this.global.Type,ftpe2:Infer.this.global.Type,sym1:Infer.this.global.Symbol,sym2:Infer.this.global.Symbol):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.Checkable.InferCheckable#isUncheckable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isUncheckable(P0:Checkable.this.global.Type):Boolean"></a>
+      <a id="isUncheckable(Global.Type):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isUncheckable</span><span class="params">(<span name="P0">P0: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@isUncheckable(P0:Checkable.this.global.Type):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Checkable$InferCheckable.html" class="extype" name="scala.tools.nsc.typechecker.Checkable.InferCheckable">InferCheckable</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#isWeaklyCompatible" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="isWeaklyCompatible(tp:Infer.this.global.Type,pt:Infer.this.global.Type):Boolean"></a>
+      <a id="isWeaklyCompatible(Global.Type,Global.Type):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isWeaklyCompatible</span><span class="params">(<span name="tp">tp: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="pt">pt: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@isWeaklyCompatible(tp:Infer.this.global.Type,pt:Infer.this.global.Type):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#makeFullyDefined" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="makeFullyDefined(tp:Infer.this.global.Type):Infer.this.global.Type"></a>
+      <a id="makeFullyDefined(Global.Type):Global.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeFullyDefined</span><span class="params">(<span name="tp">tp: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@makeFullyDefined(tp:Infer.this.global.Type):Infer.this.global.Type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Replace any (possibly bounded) wildcard types in type <code>tp</code>
+ by existentially bound variables.</p>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#methTypeArgs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="methTypeArgs(tparams:List[Infer.this.global.Symbol],formals:List[Infer.this.global.Type],restpe:Infer.this.global.Type,argtpes:List[Infer.this.global.Type],pt:Infer.this.global.Type):Inferencer.this.AdjustedTypeArgs.Result"></a>
+      <a id="methTypeArgs(List[Global.Symbol],List[Global.Type],Global.Type,List[Global.Type],Global.Type):Result"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">methTypeArgs</span><span class="params">(<span name="tparams">tparams: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="formals">formals: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>, <span name="restpe">restpe: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="argtpes">argtpes: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>, <span name="pt">pt: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="Infer$Inferencer$AdjustedTypeArgs$.html#Result=scala.collection.mutable.LinkedHashMap[Infer.this.global.Symbol,Option[Infer.this.global.Type]]" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer.AdjustedTypeArgs.Result">Result</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@methTypeArgs(tparams:List[Infer.this.global.Symbol],formals:List[Infer.this.global.Type],restpe:Infer.this.global.Type,argtpes:List[Infer.this.global.Type],pt:Infer.this.global.Type):Inferencer.this.AdjustedTypeArgs.Result" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return inferred type arguments, given type parameters, formal parameters,
+ argument types, result type and expected result type.</p><div class="fullcomment"><div class="comment cmt"><p>Return inferred type arguments, given type parameters, formal parameters,
+ argument types, result type and expected result type.
+ If this is not possible, throw a <code>NoInstance</code> exception.
+ Undetermined type arguments are represented by <code>definitions.NothingTpe</code>.
+ No check that inferred parameters conform to their bounds is made here.
+</p></div><dl class="paramcmts block"><dt class="param">tparams</dt><dd class="cmt"><p>the type parameters of the method</p></dd><dt class="param">formals</dt><dd class="cmt"><p>the value parameter types of the method</p></dd><dt class="param">restpe</dt><dd class="cmt"><p>the result type of the method</p></dd><dt class="param">argtpes</dt><dd class="cmt"><p>the argument types of the application</p></dd><dt class="param">pt</dt><dd class="cmt"><p>the expected return type of the application</p></dd><dt>returns</dt><dd class="cmt"><p>@see adjustTypeArgs</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt"></span></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#protoTypeArgs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="protoTypeArgs(tparams:List[Infer.this.global.Symbol],formals:List[Infer.this.global.Type],restpe:Infer.this.global.Type,pt:Infer.this.global.Type):List[Infer.this.global.Type]"></a>
+      <a id="protoTypeArgs(List[Global.Symbol],List[Global.Type],Global.Type,Global.Type):List[Global.Type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">protoTypeArgs</span><span class="params">(<span name="tparams">tparams: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="formals">formals: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>, <span name="restpe">restpe: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>, <span name="pt">pt: <a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@protoTypeArgs(tparams:List[Infer.this.global.Symbol],formals:List[Infer.this.global.Type],restpe:Infer.this.global.Type,pt:Infer.this.global.Type):List[Infer.this.global.Type]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return inferred proto-type arguments of function, given
+ its type and value parameters and result type, and a
+ prototype <code>pt</code> for the function result.</p><div class="fullcomment"><div class="comment cmt"><p>Return inferred proto-type arguments of function, given
+ its type and value parameters and result type, and a
+ prototype <code>pt</code> for the function result.
+ Type arguments need to be either determined precisely by
+ the prototype, or they are maximized, if they occur only covariantly
+ in the value parameter list.
+ If instantiation of a type parameter fails,
+ take WildcardType for the proto-type argument.
+</p></div></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#setError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="setError[T&lt;:Infer.this.global.Tree](tree:T):T"></a>
+      <a id="setError[T&lt;:Global.Tree](T):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setError</span><span class="tparams">[<span name="T">T &lt;: <a href="../Global.html#TreeextendsTrees.this.TreeContextApiImplwithTrees.this.AttachablewithProduct" class="extmbr" name="scala.tools.nsc.Global.Tree">Global.Tree</a></span>]</span><span class="params">(<span name="tree">tree: <span class="extype" name="scala.tools.nsc.typechecker.Infer.Inferencer.setError.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.tools.nsc.typechecker.Infer.Inferencer.setError.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@setError[T&lt;:Infer.this.global.Tree](tree:T):T" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer.toOrigin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="toOrigin"></a>
+      <a id="toOrigin:toOrigin"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Infer$Inferencer$toOrigin$.html"><span class="name">toOrigin</span></a><span class="result"> extends <a href="../Global.html#TypeMapextendsTypeMaps.this.Type=&gt;TypeMaps.this.Type" class="extmbr" name="scala.tools.nsc.Global.TypeMap">Global.TypeMap</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@toOrigin" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@toString():String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.typechecker.Infer.Inferencer#tupleIfNecessary" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tupleIfNecessary(formals:List[Infer.this.global.Type],argtpes:List[Infer.this.global.Type]):List[Infer.this.global.Type]"></a>
+      <a id="tupleIfNecessary(List[Global.Type],List[Global.Type]):List[Global.Type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tupleIfNecessary</span><span class="params">(<span name="formals">formals: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>, <span name="argtpes">argtpes: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>)</span><span class="result">: <a href="../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@tupleIfNecessary(formals:List[Infer.this.global.Type],argtpes:List[Infer.this.global.Type]):List[Infer.this.global.Type]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">If the argument list needs to be tupled for the parameter list,
+ a list containing the type of the tuple.</p><div class="fullcomment"><div class="comment cmt"><p>If the argument list needs to be tupled for the parameter list,
+ a list containing the type of the tuple.  Otherwise, the original
+ argument list.
+</p></div></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(Analyzer.Inferencer,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.typechecker.Infer$Inferencer@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.tools.nsc.typechecker.Checkable.InferCheckable">
+              <h3>Inherited from <a href="Analyzer.html#InferCheckableextendsAnyRef" class="extmbr" name="scala.tools.nsc.typechecker.Checkable.InferCheckable">Analyzer.InferCheckable</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.typechecker.ContextErrors.InferencerContextErrors">
+              <h3>Inherited from <a href="Analyzer.html#InferencerContextErrorsextendsAnyRef" class="extmbr" name="scala.tools.nsc.typechecker.ContextErrors.InferencerContextErrors">Analyzer.InferencerContextErrors</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="Analyzer.html#InferencerextendsInfer.this.InferencerContextErrorswithInfer.this.InferCheckable" class="extmbr" name="scala.tools.nsc.typechecker.Infer.Inferencer">Analyzer.Inferencer</a>]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

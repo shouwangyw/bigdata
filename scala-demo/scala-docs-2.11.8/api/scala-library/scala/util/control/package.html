@@ -1,0 +1,315 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>control - Scala Standard Library 2.11.8 - scala.util.control</title>
+          <meta name="description" content="control - Scala Standard Library 2.11.8 - scala.util.control" />
+          <meta name="keywords" content="control Scala Standard Library 2.11.8 scala.util.control" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.util.control.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.util">util</a></p>
+        <h1>control</h1><span class="permalink">
+      <a href="../../../index.html#scala.util.control.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">control</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.util.control.Breaks" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BreaksextendsAnyRef"></a>
+      <a id="Breaks:Breaks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Breaks.html"><span class="name">Breaks</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.control.package@BreaksextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A class that can be instantiated for the break control abstraction.</p><div class="fullcomment"><div class="comment cmt"><p>A class that can be instantiated for the break control abstraction.
+ Example usage:</p><pre><span class="kw">val</span> mybreaks = <span class="kw">new</span> Breaks
+<span class="kw">import</span> mybreaks.{break, breakable}
+
+breakable {
+  <span class="kw">for</span> (...) {
+    <span class="kw">if</span> (...) break()
+  }
+}</pre><p> Calls to break from one instantiation of <code>Breaks</code> will never
+ target breakable objects of some other instantiation.
+</p></div></div>
+    </li><li name="scala.util.control.ControlThrowable" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ControlThrowableextendsThrowablewithNoStackTrace"></a>
+      <a id="ControlThrowable:ControlThrowable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ControlThrowable.html"><span class="name">ControlThrowable</span></a><span class="result"> extends <a href="../../package.html#Throwable=Throwable" class="extmbr" name="scala.Throwable">Throwable</a> with <a href="NoStackTrace.html" class="extype" name="scala.util.control.NoStackTrace">NoStackTrace</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.control.package@ControlThrowableextendsThrowablewithNoStackTrace" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A marker trait indicating that the <code>Throwable</code> it is mixed into is
+ intended for flow control.</p><div class="fullcomment"><div class="comment cmt"><p>A marker trait indicating that the <code>Throwable</code> it is mixed into is
+ intended for flow control.</p><p> Note that <code>Throwable</code> subclasses which extend this trait may extend any
+ other <code>Throwable</code> subclass (eg. <code>RuntimeException</code>) and are not required
+ to extend <code>Throwable</code> directly.</p><p> Instances of <code>Throwable</code> subclasses marked in this way should not normally
+ be caught. Where catch-all behaviour is required <code>ControlThrowable</code>
+ should be propagated, for example:</p><pre><span class="kw">import</span> scala.util.control.ControlThrowable
+
+<span class="kw">try</span> {
+  <span class="cmt">// Body might throw arbitrarily</span>
+} <span class="kw">catch</span> {
+  <span class="kw">case</span> c: ControlThrowable <span class="kw">=&gt;</span> <span class="kw">throw</span> c <span class="cmt">// propagate</span>
+  <span class="kw">case</span> t: Exception        <span class="kw">=&gt;</span> log(t)  <span class="cmt">// log and suppress</span>
+}</pre></div></div>
+    </li><li name="scala.util.control.NoStackTrace" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="NoStackTraceextendsThrowable"></a>
+      <a id="NoStackTrace:NoStackTrace"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="NoStackTrace.html"><span class="name">NoStackTrace</span></a><span class="result"> extends <a href="../../package.html#Throwable=Throwable" class="extmbr" name="scala.Throwable">Throwable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.control.package@NoStackTraceextendsThrowable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A trait for exceptions which, for efficiency reasons, do not
+ fill in the stack trace.</p><div class="fullcomment"><div class="comment cmt"><p>A trait for exceptions which, for efficiency reasons, do not
+ fill in the stack trace.  Stack trace suppression can be disabled
+ on a global basis via a system property wrapper in
+ <a href="../../sys/SystemProperties.html" class="extype" name="scala.sys.SystemProperties">scala.sys.SystemProperties</a>.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.util.control.Breaks" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Breaks"></a>
+      <a id="Breaks:Breaks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Breaks$.html"><span class="name">Breaks</span></a><span class="result"> extends <a href="Breaks.html" class="extype" name="scala.util.control.Breaks">Breaks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.control.package@Breaks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An object that can be used for the break control abstraction.</p><div class="fullcomment"><div class="comment cmt"><p>An object that can be used for the break control abstraction.
+ Example usage:</p><pre><span class="kw">import</span> Breaks.{break, breakable}
+
+breakable {
+  <span class="kw">for</span> (...) {
+    <span class="kw">if</span> (...) break
+  }
+}</pre></div></div>
+    </li><li name="scala.util.control.Exception" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Exception"></a>
+      <a id="Exception:Exception"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Exception$.html"><span class="name">Exception</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.control.package@Exception" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Classes representing the components of exception handling.</p><div class="fullcomment"><div class="comment cmt"><p>Classes representing the components of exception handling.
+ Each class is independently composable.  Some example usages:</p><pre><span class="kw">import</span> scala.util.control.Exception._
+<span class="kw">import</span> java.net._
+
+<span class="kw">val</span> s = <span class="lit">"http://www.scala-lang.org/"</span>
+<span class="kw">val</span> x1 = catching(classOf[MalformedURLException]) opt <span class="kw">new</span> URL(s)
+<span class="kw">val</span> x2 = catching(classOf[MalformedURLException], classOf[NullPointerException]) either <span class="kw">new</span> URL(s)</pre><p> This class differs from <code>scala.util.Try</code> in that it focuses on composing exception handlers rather than
+ composing behavior.   All behavior should be composed first and fed to a <code>Catch</code> object using one of the
+ <code>opt</code> or <code>either</code> methods.
+</p></div></div>
+    </li><li name="scala.util.control.NoStackTrace" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NoStackTrace"></a>
+      <a id="NoStackTrace:NoStackTrace"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NoStackTrace$.html"><span class="name">NoStackTrace</span></a><span class="result"> extends <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.control.package@NoStackTrace" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.util.control.NonFatal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NonFatal"></a>
+      <a id="NonFatal:NonFatal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NonFatal$.html"><span class="name">NonFatal</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.control.package@NonFatal" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Extractor of non-fatal Throwables.</p><div class="fullcomment"><div class="comment cmt"><p>Extractor of non-fatal Throwables. Will not match fatal errors like <code>VirtualMachineError</code>
+(for example, <code>OutOfMemoryError</code> and <code>StackOverflowError</code>, subclasses of <code>VirtualMachineError</code>), <code>ThreadDeath</code>,
+<code>LinkageError</code>, <code>InterruptedException</code>, <code>ControlThrowable</code>.</p><p>Note that <a href="ControlThrowable.html" class="extype" name="scala.util.control.ControlThrowable">scala.util.control.ControlThrowable</a>, an internal Throwable, is not matched by
+<code>NonFatal</code> (and would therefore be thrown).</p><p>For example, all harmless Throwables can be caught by:</p><pre><span class="kw">try</span> {
+  <span class="cmt">// dangerous stuff</span>
+} <span class="kw">catch</span> {
+  <span class="kw">case</span> NonFatal(e) <span class="kw">=&gt;</span> log.error(e, <span class="lit">"Something not that bad."</span>)
+ <span class="cmt">// or</span>
+  <span class="kw">case</span> e <span class="kw">if</span> NonFatal(e) <span class="kw">=&gt;</span> log.error(e, <span class="lit">"Something not that bad."</span>)
+}</pre></div></div>
+    </li><li name="scala.util.control.TailCalls" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TailCalls"></a>
+      <a id="TailCalls:TailCalls"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TailCalls$.html"><span class="name">TailCalls</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.util.control.package@TailCalls" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Methods exported by this object implement tail calls via trampolining.</p><div class="fullcomment"><div class="comment cmt"><p>Methods exported by this object implement tail calls via trampolining.
+ Tail calling methods have to return their result using <code>done</code> or call the
+ next method using <code>tailcall</code>. Both return a <code>TailRec</code> object. The result
+ of evaluating a tailcalling function can be retrieved from a <code>Tailrec</code>
+ value using method <code>result</code>.
+ Implemented as described in &quot;Stackless Scala with Free Monads&quot;
+ http://blog.higher-order.com/assets/trampolines.pdf</p><p> Here's a usage example:</p><pre><span class="kw">import</span> scala.util.control.TailCalls._
+
+<span class="kw">def</span> isEven(xs: <span class="std">List</span>[<span class="std">Int</span>]): TailRec[<span class="std">Boolean</span>] =
+  <span class="kw">if</span> (xs.isEmpty) done(<span class="kw">true</span>) <span class="kw">else</span> tailcall(isOdd(xs.tail))
+
+<span class="kw">def</span> isOdd(xs: <span class="std">List</span>[<span class="std">Int</span>]): TailRec[<span class="std">Boolean</span>] =
+ <span class="kw">if</span> (xs.isEmpty) done(<span class="kw">false</span>) <span class="kw">else</span> tailcall(isEven(xs.tail))
+
+isEven((<span class="num">1</span> to <span class="num">100000</span>).toList).result
+
+<span class="kw">def</span> fib(n: <span class="std">Int</span>): TailRec[<span class="std">Int</span>] =
+  <span class="kw">if</span> (n &lt; <span class="num">2</span>) done(n) <span class="kw">else</span> <span class="kw">for</span> {
+    x <span class="kw">&lt;-</span> tailcall(fib(n - <span class="num">1</span>))
+    y <span class="kw">&lt;-</span> tailcall(fib(n - <span class="num">2</span>))
+  } <span class="kw">yield</span> (x + y)
+
+fib(<span class="num">40</span>).result</pre></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

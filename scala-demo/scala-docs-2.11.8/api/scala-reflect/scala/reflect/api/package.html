@@ -1,0 +1,1060 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>api - Scala Reflection Library 2.11.8 - scala.reflect.api</title>
+          <meta name="description" content="api - Scala Reflection Library 2.11.8 - scala.reflect.api" />
+          <meta name="keywords" content="api Scala Reflection Library 2.11.8 scala.reflect.api" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.reflect.api.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.reflect">reflect</a></p>
+        <h1>api</h1><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">api</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p>The Scala Reflection API (located in scala-reflect.jar).</p><p>In Scala 2.10.0, the Scala Reflection API and its implementation have an &quot;experimental&quot; status.
+This means that the API and the docs are not complete and can be changed in binary- and source-incompatible
+manner in 2.10.1. This also means that the implementation has some known issues.</p><p>The following types are the backbone of the Scala Reflection API, and serve as a good starting point
+for information about Scala Reflection:</p><ul><li><a href="Symbols.html" class="extype" name="scala.reflect.api.Symbols">scala.reflect.api.Symbols</a></li><li><a href="Types.html" class="extype" name="scala.reflect.api.Types">scala.reflect.api.Types</a></li><li><a href="Mirrors.html" class="extype" name="scala.reflect.api.Mirrors">scala.reflect.api.Mirrors</a></li><li><a href="Universe.html" class="extype" name="scala.reflect.api.Universe">scala.reflect.api.Universe</a></li></ul><p> For more information about Scala Reflection, see the
+<a href="http://docs.scala-lang.org/overviews/reflection/overview.html" target="_blank">Reflection Guide</a>
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/reflect/scala/reflect/api/package.scala#L1" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 2111.50 155.00" height="155pt" width="2112pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 151)" class="graph" id="graph0"><polygon points="-4,4 -4,-151 2107.5,-151 2107.5,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node trait" id="graph1_0"><g id="a_trait|graph1_0"><a xlink:title="scala.reflect.api.JavaUniverse" xlink:href="JavaUniverse.html#inheritance-diagram"><polygon points="1116.5,-25 1016.5,-25 1016.5,-0 1116.5,-0 1116.5,-25" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-19.5" x="1026.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="1047.5" text-anchor="start">JavaUniverse</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="scala.reflect.api.Trees" xlink:href="Trees.html#inheritance-diagram"><polygon points="69,-147 0,-147 0,-122 69,-122 69,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="31.5" text-anchor="start">Trees</text></a></g></g><!-- node10 --><g class="node class" id="graph1_10"><g id="a_class|graph1_10"><a xlink:title="scala.reflect.api.Universe" xlink:href="Universe.html#inheritance-diagram"><polygon points="1107,-86 1026,-86 1026,-61 1107,-61 1107,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-80.5" x="1036.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="1057.5" text-anchor="start">Universe</text></a></g></g><!-- node1&#45;&gt;node10 --><g class="edge inheritance" id="graph1_1_10"><g id="a_inheritance|graph1_1_10"><a xlink:title="Universe is a subtype of Trees"><path d="M74.564,-122.66C75.8879,-122.42 77.2025,-122.199 78.5,-122 265.756,-93.3461 864.066,-78.8014 1025.84,-75.3289" stroke="#d4d4d4" fill="none"></path><polygon points="73.9947,-120.988 69.4274,-123.672 74.6715,-124.422 73.9947,-120.988" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="scala.reflect.api.Exprs" xlink:href="Exprs.html#inheritance-diagram"><polygon points="157.5,-147 87.5,-147 87.5,-122 157.5,-122 157.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="97.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="118.5" text-anchor="start">Exprs</text></a></g></g><!-- node2&#45;&gt;node10 --><g class="edge inheritance" id="graph1_2_10"><g id="a_inheritance|graph1_2_10"><a xlink:title="Universe is a subtype of Exprs"><path d="M163.042,-122.581C164.205,-122.372 165.359,-122.177 166.5,-122 335.703,-95.7024 873.468,-79.6506 1025.88,-75.548" stroke="#d4d4d4" fill="none"></path><polygon points="162.482,-120.908 157.912,-123.585 163.155,-124.342 162.482,-120.908" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.reflect.api.Names" xlink:href="Names.html#inheritance-diagram"><polygon points="251,-147 176,-147 176,-122 251,-122 251,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="186.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="207.5" text-anchor="start">Names</text></a></g></g><!-- node3&#45;&gt;node10 --><g class="edge inheritance" id="graph1_3_10"><g id="a_inheritance|graph1_3_10"><a xlink:title="Universe is a subtype of Names"><path d="M256.095,-122.559C257.239,-122.359 258.376,-122.172 259.5,-122 550.835,-77.407 907.239,-74.0111 1025.92,-74.2304" stroke="#d4d4d4" fill="none"></path><polygon points="255.63,-120.865 251.04,-123.51 256.277,-124.305 255.63,-120.865" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="scala.reflect.api.StandardDefinitions" xlink:href="StandardDefinitions.html#inheritance-diagram"><polygon points="398,-147 269,-147 269,-122 398,-122 398,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="279.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="300.5" text-anchor="start">StandardDefinitions</text></a></g></g><!-- node4&#45;&gt;node10 --><g class="edge inheritance" id="graph1_4_10"><g id="a_inheritance|graph1_4_10"><a xlink:title="Universe is a subtype of StandardDefinitions"><path d="M403.468,-122.356C404.485,-122.234 405.496,-122.115 406.5,-122 640.188,-95.2322 922.26,-80.8973 1025.83,-76.2305" stroke="#d4d4d4" fill="none"></path><polygon points="403.085,-120.64 398.34,-122.995 403.518,-124.113 403.085,-120.64" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="scala.reflect.api.Positions" xlink:href="Positions.html#inheritance-diagram"><polygon points="501,-147 416,-147 416,-122 501,-122 501,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="426.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="447.5" text-anchor="start">Positions</text></a></g></g><!-- node5&#45;&gt;node10 --><g class="edge inheritance" id="graph1_5_10"><g id="a_inheritance|graph1_5_10"><a xlink:title="Universe is a subtype of Positions"><path d="M506.446,-122.493C507.472,-122.321 508.491,-122.156 509.5,-122 701.325,-92.3358 933.389,-80.0302 1025.74,-76.066" stroke="#d4d4d4" fill="none"></path><polygon points="505.889,-120.814 501.271,-123.41 506.5,-124.26 505.889,-120.814" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6 --><g class="node trait" id="graph1_6"><g id="a_trait|graph1_6"><a xlink:title="scala.reflect.api.Constants" xlink:href="Constants.html#inheritance-diagram"><polygon points="608,-147 519,-147 519,-122 608,-122 608,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="529.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="550.5" text-anchor="start">Constants</text></a></g></g><!-- node6&#45;&gt;node10 --><g class="edge inheritance" id="graph1_6_10"><g id="a_inheritance|graph1_6_10"><a xlink:title="Universe is a subtype of Constants"><path d="M613.183,-122.552C614.298,-122.36 615.405,-122.176 616.5,-122 766.584,-97.8692 946.879,-83.0795 1025.97,-77.2963" stroke="#d4d4d4" fill="none"></path><polygon points="612.869,-120.83 608.255,-123.432 613.484,-124.275 612.869,-120.83" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7 --><g class="node trait" id="graph1_7"><g id="a_trait|graph1_7"><a xlink:title="scala.reflect.api.StandardLiftables" xlink:href="StandardLiftables.html#inheritance-diagram"><polygon points="745.5,-147 625.5,-147 625.5,-122 745.5,-122 745.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="635.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="656.5" text-anchor="start">StandardLiftables</text></a></g></g><!-- node7&#45;&gt;node10 --><g class="edge inheritance" id="graph1_7_10"><g id="a_inheritance|graph1_7_10"><a xlink:title="Universe is a subtype of StandardLiftables"><path d="M750.687,-122.61C751.969,-122.404 753.241,-122.201 754.5,-122 851.623,-106.514 965.938,-89.3917 1025.59,-80.5413" stroke="#d4d4d4" fill="none"></path><polygon points="750.36,-120.89 745.703,-123.415 750.918,-124.346 750.36,-120.89" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8 --><g class="node trait" id="graph1_8"><g id="a_trait|graph1_8"><a xlink:title="scala.reflect.api.Annotations" xlink:href="Annotations.html#inheritance-diagram"><polygon points="859.5,-147 763.5,-147 763.5,-122 859.5,-122 859.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="773.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="794.5" text-anchor="start">Annotations</text></a></g></g><!-- node8&#45;&gt;node10 --><g class="edge inheritance" id="graph1_8_10"><g id="a_inheritance|graph1_8_10"><a xlink:title="Universe is a subtype of Annotations"><path d="M864.924,-121.139C912.943,-110.029 982.422,-93.9534 1025.99,-83.8723" stroke="#d4d4d4" fill="none"></path><polygon points="864.24,-119.501 859.763,-122.333 865.029,-122.911 864.24,-119.501" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node9 --><g class="node trait" id="graph1_9"><g id="a_trait|graph1_9"><a xlink:title="scala.reflect.api.Internals" xlink:href="Internals.html#inheritance-diagram"><polygon points="959,-147 878,-147 878,-122 959,-122 959,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="888.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="909.5" text-anchor="start">Internals</text></a></g></g><!-- node9&#45;&gt;node10 --><g class="edge inheritance" id="graph1_9_10"><g id="a_inheritance|graph1_9_10"><a xlink:title="Universe is a subtype of Internals"><path d="M952.075,-120.115C977.794,-109.863 1012.91,-95.8634 1037.43,-86.0875" stroke="#d4d4d4" fill="none"></path><polygon points="951.384,-118.507 947.387,-121.984 952.68,-121.758 951.384,-118.507" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10&#45;&gt;node0 --><g class="edge inheritance" id="graph1_10_0"><g id="a_inheritance|graph1_10_0"><a xlink:title="JavaUniverse is a subtype of Universe"><path d="M1066.5,-55.6874C1066.5,-45.9173 1066.5,-33.8534 1066.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1064.75,-55.8435 1066.5,-60.8435 1068.25,-55.8435 1064.75,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11 --><g class="node trait" id="graph1_11"><g id="a_trait|graph1_11"><a xlink:title="scala.reflect.api.Mirrors" xlink:href="Mirrors.html#inheritance-diagram"><polygon points="1052,-147 977,-147 977,-122 1052,-122 1052,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="987.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1008.5" text-anchor="start">Mirrors</text></a></g></g><!-- node11&#45;&gt;node10 --><g class="edge inheritance" id="graph1_11_10"><g id="a_inheritance|graph1_11_10"><a xlink:title="Universe is a subtype of Mirrors"><path d="M1028.14,-118.029C1036.94,-108.041 1048.21,-95.2572 1056.25,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1026.77,-116.935 1024.77,-121.843 1029.39,-119.25 1026.77,-116.935" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node12 --><g class="node trait" id="graph1_12"><g id="a_trait|graph1_12"><a xlink:title="scala.reflect.api.ImplicitTags" xlink:href="ImplicitTags.html#inheritance-diagram"><polygon points="1166.5,-147 1070.5,-147 1070.5,-122 1166.5,-122 1166.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1080.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1101.5" text-anchor="start">ImplicitTags</text></a></g></g><!-- node12&#45;&gt;node10 --><g class="edge inheritance" id="graph1_12_10"><g id="a_inheritance|graph1_12_10"><a xlink:title="Universe is a subtype of ImplicitTags"><path d="M1104.86,-118.029C1096.06,-108.041 1084.79,-95.2572 1076.75,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1103.61,-119.25 1108.23,-121.843 1106.23,-116.935 1103.61,-119.25" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13 --><g class="node trait" id="graph1_13"><g id="a_trait|graph1_13"><a xlink:title="scala.reflect.api.Liftables" xlink:href="Liftables.html#inheritance-diagram"><polygon points="1266,-147 1185,-147 1185,-122 1266,-122 1266,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1195.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1216.5" text-anchor="start">Liftables</text></a></g></g><!-- node13&#45;&gt;node10 --><g class="edge inheritance" id="graph1_13_10"><g id="a_inheritance|graph1_13_10"><a xlink:title="Universe is a subtype of Liftables"><path d="M1189.77,-120.243C1162.11,-109.979 1124.18,-95.904 1097.73,-86.0875" stroke="#d4d4d4" fill="none"></path><polygon points="1189.17,-121.885 1194.47,-121.984 1190.39,-118.604 1189.17,-121.885" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node14 --><g class="node trait" id="graph1_14"><g id="a_trait|graph1_14"><a xlink:title="scala.reflect.api.Types" xlink:href="Types.html#inheritance-diagram"><polygon points="1354.5,-147 1284.5,-147 1284.5,-122 1354.5,-122 1354.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1294.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1315.5" text-anchor="start">Types</text></a></g></g><!-- node14&#45;&gt;node10 --><g class="edge inheritance" id="graph1_14_10"><g id="a_inheritance|graph1_14_10"><a xlink:title="Universe is a subtype of Types"><path d="M1279.38,-122.956C1278.07,-122.631 1276.78,-122.311 1275.5,-122 1217.12,-107.741 1149.22,-92.5687 1107.05,-83.3102" stroke="#d4d4d4" fill="none"></path><polygon points="1279.19,-124.712 1284.46,-124.234 1280.04,-121.318 1279.19,-124.712" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node15 --><g class="node trait" id="graph1_15"><g id="a_trait|graph1_15"><a xlink:title="scala.reflect.api.StandardNames" xlink:href="StandardNames.html#inheritance-diagram"><polygon points="1486.5,-147 1372.5,-147 1372.5,-122 1486.5,-122 1486.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1382.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1403.5" text-anchor="start">StandardNames</text></a></g></g><!-- node15&#45;&gt;node10 --><g class="edge inheritance" id="graph1_15_10"><g id="a_inheritance|graph1_15_10"><a xlink:title="Universe is a subtype of StandardNames"><path d="M1367.3,-122.638C1366.02,-122.422 1364.75,-122.21 1363.5,-122 1272.08,-106.726 1164.65,-89.7971 1107.36,-80.8513" stroke="#d4d4d4" fill="none"></path><polygon points="1367.05,-124.37 1372.27,-123.478 1367.63,-120.919 1367.05,-124.37" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node16 --><g class="node trait" id="graph1_16"><g id="a_trait|graph1_16"><a xlink:title="scala.reflect.api.FlagSets" xlink:href="FlagSets.html#inheritance-diagram"><polygon points="1588.5,-147 1504.5,-147 1504.5,-122 1588.5,-122 1588.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1514.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1535.5" text-anchor="start">FlagSets</text></a></g></g><!-- node16&#45;&gt;node10 --><g class="edge inheritance" id="graph1_16_10"><g id="a_inheritance|graph1_16_10"><a xlink:title="Universe is a subtype of FlagSets"><path d="M1499.3,-122.662C1498.02,-122.431 1496.75,-122.21 1495.5,-122 1353.79,-98.2536 1183.68,-83.4312 1107.22,-77.4868" stroke="#d4d4d4" fill="none"></path><polygon points="1499.03,-124.393 1504.27,-123.597 1499.68,-120.953 1499.03,-124.393" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node17 --><g class="node trait" id="graph1_17"><g id="a_trait|graph1_17"><a xlink:title="scala.reflect.api.Symbols" xlink:href="Symbols.html#inheritance-diagram"><polygon points="1690,-147 1607,-147 1607,-122 1690,-122 1690,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1617.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1638.5" text-anchor="start">Symbols</text></a></g></g><!-- node17&#45;&gt;node10 --><g class="edge inheritance" id="graph1_17_10"><g id="a_inheritance|graph1_17_10"><a xlink:title="Universe is a subtype of Symbols"><path d="M1601.84,-122.719C1600.38,-122.465 1598.93,-122.224 1597.5,-122 1415.77,-93.5105 1196.16,-80.6272 1107.02,-76.2897" stroke="#d4d4d4" fill="none"></path><polygon points="1601.6,-124.455 1606.84,-123.633 1602.23,-121.012 1601.6,-124.455" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node18 --><g class="node trait" id="graph1_18"><g id="a_trait|graph1_18"><a xlink:title="scala.reflect.api.TypeTags" xlink:href="TypeTags.html#inheritance-diagram"><polygon points="1793,-147 1708,-147 1708,-122 1793,-122 1793,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1718.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1739.5" text-anchor="start">TypeTags</text></a></g></g><!-- node18&#45;&gt;node10 --><g class="edge inheritance" id="graph1_18_10"><g id="a_inheritance|graph1_18_10"><a xlink:title="Universe is a subtype of TypeTags"><path d="M1702.56,-122.479C1701.53,-122.311 1700.51,-122.151 1699.5,-122 1477.42,-88.8134 1207.87,-78.364 1107.09,-75.4811" stroke="#d4d4d4" fill="none"></path><polygon points="1702.51,-124.246 1707.73,-123.378 1703.11,-120.798 1702.51,-124.246" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node19 --><g class="node trait" id="graph1_19"><g id="a_trait|graph1_19"><a xlink:title="scala.reflect.api.Scopes" xlink:href="Scopes.html#inheritance-diagram"><polygon points="1889.5,-147 1811.5,-147 1811.5,-122 1889.5,-122 1889.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1821.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1842.5" text-anchor="start">Scopes</text></a></g></g><!-- node19&#45;&gt;node10 --><g class="edge inheritance" id="graph1_19_10"><g id="a_inheritance|graph1_19_10"><a xlink:title="Universe is a subtype of Scopes"><path d="M1806.32,-122.618C1805.04,-122.397 1803.76,-122.19 1802.5,-122 1539.47,-82.3005 1218.64,-75.7531 1107.05,-74.6952" stroke="#d4d4d4" fill="none"></path><polygon points="1806.08,-124.353 1811.31,-123.536 1806.71,-120.911 1806.08,-124.353" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node20 --><g class="node trait" id="graph1_20"><g id="a_trait|graph1_20"><a xlink:title="scala.reflect.api.Quasiquotes" xlink:href="Quasiquotes.html#inheritance-diagram"><polygon points="2007,-147 1908,-147 1908,-122 2007,-122 2007,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1918.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1939.5" text-anchor="start">Quasiquotes</text></a></g></g><!-- node20&#45;&gt;node10 --><g class="edge inheritance" id="graph1_20_10"><g id="a_inheritance|graph1_20_10"><a xlink:title="Universe is a subtype of Quasiquotes"><path d="M1902.48,-122.528C1901.14,-122.341 1899.81,-122.165 1898.5,-122 1596.32,-84.1011 1228.55,-76.4124 1107.37,-74.8765" stroke="#d4d4d4" fill="none"></path><polygon points="1902.48,-124.297 1907.68,-123.298 1902.99,-120.835 1902.48,-124.297" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node21 --><g class="node trait" id="graph1_21"><g id="a_trait|graph1_21"><a xlink:title="scala.reflect.api.Printers" xlink:href="Printers.html#inheritance-diagram"><polygon points="2103.5,-147 2025.5,-147 2025.5,-122 2103.5,-122 2103.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="2035.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="2056.5" text-anchor="start">Printers</text></a></g></g><!-- node21&#45;&gt;node10 --><g class="edge inheritance" id="graph1_21_10"><g id="a_inheritance|graph1_21_10"><a xlink:title="Universe is a subtype of Printers"><path d="M2020.33,-122.594C2019.04,-122.38 2017.76,-122.181 2016.5,-122 1836.79,-96.2072 1264.98,-79.6805 1107.18,-75.5298" stroke="#d4d4d4" fill="none"></path><polygon points="2020.09,-124.33 2025.32,-123.489 2020.71,-120.885 2020.09,-124.33" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                <li class="group out"><span>Grouped</span></li>
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.reflect.api"><span>api</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.reflect.api.Annotations" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="AnnotationsextendsAnyRef"></a>
+      <a id="Annotations:Annotations"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Annotations.html"><span class="name">Annotations</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@AnnotationsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"> <span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></span></p><div class="fullcomment"><div class="comment cmt"><p> <span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p> This trait provides annotation support for the reflection API.</p><p> In Scala, annotations belong to one of the two categories:</p><ul><li><i>Java annotations</i>: annotations on definitions produced by the Java compiler, i.e., subtypes of <span class="extype" name="java.lang.annotation.Annotation">java.lang.annotation.Annotation</span>
+ attached to program definitions. When read by Scala reflection, the <span class="extype" name="scala.annotation.ClassfileAnnotation">scala.annotation.ClassfileAnnotation</span> trait
+ is automatically added as a subclass to every Java annotation.</li><li><i>Scala annotations</i>: annotations on definitions or types produced by the Scala compiler.</li></ul><p> When a Scala annotation that inherits from <span class="extype" name="scala.annotation.StaticAnnotation">scala.annotation.StaticAnnotation</span> or <span class="extype" name="scala.annotation.ClassfileAnnotation">scala.annotation.ClassfileAnnotation</span> is compiled,
+ it is stored as special attributes in the corresponding classfile, and not as a Java annotation. Note that subclassing
+ just <span class="extype" name="scala.annotation.Annotation">scala.annotation.Annotation</span> is not enough to have the corresponding metadata persisted for runtime reflection.</p><p> Both Java and Scala annotations are represented as typed trees carrying constructor invocations corresponding
+ to the annotation. For instance, the annotation in <code>@ann(1, 2) class C</code> is represented as <code>q&quot;@new ann(1, 2)&quot;</code>.</p><p> Unlike Java reflection, Scala reflection does not support evaluation of constructor invocations stored in annotations
+ into underlying objects. For instance it's impossible to go from <code>@ann(1, 2) class C</code> to <code>ann(1, 2)</code>, so one
+ has to analyze trees representing annotation arguments to manually extract corresponding values. Towards that end,
+ arguments of an annotation can be obtained via <code>annotation.tree.children.tail</code>.</p><p> For more information about <code>Annotation</code>s, see the <a href="http://docs.scala-lang.org/overviews/reflection/annotations-names-scopes.html" target="_blank">Reflection Guide: Annotations, Names, Scopes, and More</a>
+</p></div></div>
+    </li><li name="scala.reflect.api.Constants" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="ConstantsextendsAnyRef"></a>
+      <a id="Constants:Constants"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Constants.html"><span class="name">Constants</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@ConstantsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p> According to the section 6.24 &quot;Constant Expressions&quot; of the Scala language specification,
+ certain expressions (dubbed <i>constant expressions</i>) can be evaluated by the Scala compiler at compile-time.</p><p> <a href="Constants$Constant.html" class="extype" name="scala.reflect.api.Constants.Constant">scala.reflect.api.Constants#Constant</a> instances represent certain kinds of these expressions
+ (with values stored in the <code>value</code> field and its strongly-typed views named <code>booleanValue</code>, <code>intValue</code> etc.), namely:</p><ol class="decimal"><li>Literals of primitive value classes (bytes, shorts, ints, longs, floats, doubles, chars, booleans and voids).</li><li>String literals.</li><li>References to classes (typically constructed with <span class="extype" name="scala.Predef#classOf">scala.Predef#classOf</span>).</li><li>References to enumeration values.</li></ol><p> Such constants are used to represent literals in abstract syntax trees (the <a href="Trees$Literal.html" class="extype" name="scala.reflect.api.Trees.Literal">scala.reflect.api.Trees#Literal</a> node)
+ and literal arguments for Java class file annotations (the <a href="Annotations$LiteralArgument.html" class="extype" name="scala.reflect.api.Annotations.LiteralArgument">scala.reflect.api.Annotations#LiteralArgument</a> class).</p><h5> Example </h5><p> The <code>value</code> field deserves some explanation. Primitive and string values are represented as themselves, whereas
+ references to classes and enums are a bit roundabout.</p><p> Class references are represented as instances of <a href="Types$Type.html" class="extype" name="scala.reflect.api.Types.Type">scala.reflect.api.Types#Type</a>
+ (because when the Scala compiler processes a class reference, the underlying runtime class might not yet have been compiled).
+ To convert such a reference to a runtime class, one should use the <code>runtimeClass</code> method of a mirror such as <a href="Mirrors$RuntimeMirror.html" class="extype" name="scala.reflect.api.Mirrors.RuntimeMirror">scala.reflect.api.Mirrors#RuntimeMirror</a>
+ (the simplest way to get such a mirror is using <a href="../runtime/package.html#currentMirror:scala.reflect.runtime.package.universe.Mirror" class="extmbr" name="scala.reflect.runtime#currentMirror">scala.reflect.runtime.package#currentMirror</a>).</p><p> Enumeration value references are represented as instances of <a href="Symbols$Symbol.html" class="extype" name="scala.reflect.api.Symbols.Symbol">scala.reflect.api.Symbols#Symbol</a>, which on JVM point to methods
+ that return underlying enum values. To inspect an underlying enumeration or to get runtime value of a reference to an enum,
+ one should use a <a href="Mirrors$RuntimeMirror.html" class="extype" name="scala.reflect.api.Mirrors.RuntimeMirror">scala.reflect.api.Mirrors#RuntimeMirror</a> (the simplest way to get such a mirror is again <a href="../runtime/package.html#currentMirror:scala.reflect.runtime.package.universe.Mirror" class="extmbr" name="scala.reflect.runtime#currentMirror">scala.reflect.runtime.package#currentMirror</a>).</p><pre>enum JavaSimpleEnumeration { FOO, BAR }
+
+<span class="kw">import</span> java.lang.annotation.*;
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.TYPE})
+public @interface JavaSimpleAnnotation {
+  <span class="std">Class</span>&lt;?&gt; classRef();
+  JavaSimpleEnumeration enumRef();
+}
+
+@JavaSimpleAnnotation(
+  classRef = JavaAnnottee.<span class="kw">class</span>,
+  enumRef = JavaSimpleEnumeration.BAR
+)
+public <span class="kw">class</span> JavaAnnottee {}</pre><pre><span class="kw">import</span> scala.reflect.runtime.universe._
+<span class="kw">import</span> scala.reflect.runtime.{currentMirror <span class="kw">=&gt;</span> cm}
+
+<span class="kw">object</span> Test <span class="kw">extends</span> <span class="std">App</span> {
+  <span class="kw">val</span> jann = typeOf[JavaAnnottee].typeSymbol.annotations(<span class="num">0</span>).javaArgs
+  <span class="kw">def</span> jarg(name: <span class="std">String</span>) = jann(TermName(name)).asInstanceOf[LiteralArgument].value
+
+  <span class="kw">val</span> classRef = jarg(<span class="lit">"classRef"</span>).typeValue
+  println(showRaw(classRef))             <span class="cmt">// TypeRef(ThisType(<empty>), JavaAnnottee, List())</span>
+  println(cm.runtimeClass(classRef))     <span class="cmt">// class JavaAnnottee</span>
+
+  <span class="kw">val</span> enumRef = jarg(<span class="lit">"enumRef"</span>).symbolValue
+  println(enumRef)                       <span class="cmt">// value BAR</span>
+
+  <span class="kw">val</span> siblings = enumRef.owner.info.decls
+  <span class="kw">val</span> enumValues = siblings.filter(sym <span class="kw">=&gt;</span> sym.isVal &amp;&amp; sym.isPublic)
+  println(enumValues)                    <span class="cmt">// Scope{</span>
+                                         <span class="cmt">//   final val FOO: JavaSimpleEnumeration;</span>
+                                         <span class="cmt">//   final val BAR: JavaSimpleEnumeration</span>
+                                         <span class="cmt">// }</span>
+
+  <span class="cmt">// doesn't work because of https://issues.scala-lang.org/browse/SI-6459</span>
+  <span class="cmt">// val enumValue = mirror.reflectField(enumRef.asTerm).get</span>
+  <span class="kw">val</span> enumClass = cm.runtimeClass(enumRef.owner.asClass)
+  <span class="kw">val</span> enumValue = enumClass.getDeclaredField(enumRef.name.toString).get(<span class="kw">null</span>)
+  println(enumValue)                     <span class="cmt">// BAR</span>
+}</pre></div></div>
+    </li><li name="scala.reflect.api.Exprs" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="ExprsextendsAnyRef"></a>
+      <a id="Exprs:Exprs"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Exprs.html"><span class="name">Exprs</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@ExprsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p>A trait that defines strongly-typed tree wrappers and operations on them for use in Scala Reflection.</p><p> <code>Expr</code> wraps an abstract syntax tree (<a href="Trees$Tree.html" class="extype" name="scala.reflect.api.Trees.Tree">scala.reflect.api.Trees#Tree</a>) and tags it with its type (<a href="Types$Type.html" class="extype" name="scala.reflect.api.Types.Type">scala.reflect.api.Types#Type</a>).</p><p> Usually <code>Expr</code>s are created via <a href="Universe.html#reify[T](expr:T):Universe.this.Expr[T]" class="extmbr" name="scala.reflect.api.Universe#reify">scala.reflect.api.Universe#reify</a>, in which case a compiler
+ produces a <a href="TreeCreator.html" class="extype" name="scala.reflect.api.TreeCreator">scala.reflect.api.TreeCreator</a> for the provided expression and also
+ creates a complementary <a href="TypeTags$WeakTypeTag.html" class="extype" name="scala.reflect.api.TypeTags.WeakTypeTag">scala.reflect.api.TypeTags#WeakTypeTag</a> that corresponds to the type of that expression.</p><p><code>Expr</code>s can also be created manually via the <code>Expr</code> companion object, but then the burden of providing a <code>TreeCreator</code> lies on the programmer.
+ Compile-time reflection via macros, as described in <a href="../macros/Aliases.html" class="extype" name="scala.reflect.macros.Aliases">scala.reflect.macros.Aliases</a>, provides an easier way to instantiate exprs manually.
+ Manual creation, however, is very rarely needed when working with runtime reflection.</p><p> <code>Expr</code> can be migrated from one mirror to another by using the <code>in</code> method. Migration means that all symbolic references
+ to classes/objects/packages in the expression are re-resolved within the new mirror
+ (typically using that mirror's classloader). The default universe of an <code>Expr</code> is typically
+ <a href="../runtime/package.html#universe:scala.reflect.api.JavaUniverse" class="extmbr" name="scala.reflect.runtime#universe">scala.reflect.runtime#universe</a>, the default mirror is typically <a href="../runtime/package.html#currentMirror:scala.reflect.runtime.package.universe.Mirror" class="extmbr" name="scala.reflect.runtime#currentMirror">scala.reflect.runtime#currentMirror</a>.
+</p></div></div>
+    </li><li name="scala.reflect.api.FlagSets" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="FlagSetsextendsAnyRef"></a>
+      <a id="FlagSets:FlagSets"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FlagSets.html"><span class="name">FlagSets</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@FlagSetsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p>The trait that defines flag sets and operations on them.</p><p><code>Flag</code>s are used to provide modifiers for abstract syntax trees that represent definitions
+via the <code>flags</code> field of <a href="Trees.html#Modifiers&gt;:Null&lt;:Trees.this.ModifiersApi" class="extmbr" name="scala.reflect.api.Trees.Modifiers">scala.reflect.api.Trees#Modifiers</a>. Trees that accept modifiers are:</p><ul><li><b><a href="Trees$ClassDef.html" class="extype" name="scala.reflect.api.Trees.ClassDef">scala.reflect.api.Trees#ClassDef</a></b>. Classes and traits.</li><li><b><a href="Trees$ModuleDef.html" class="extype" name="scala.reflect.api.Trees.ModuleDef">scala.reflect.api.Trees#ModuleDef</a></b>. Objects.</li><li><b><a href="Trees$ValDef.html" class="extype" name="scala.reflect.api.Trees.ValDef">scala.reflect.api.Trees#ValDef</a></b>. Vals, vars, parameters and self-type annotations.</li><li><b><a href="Trees$DefDef.html" class="extype" name="scala.reflect.api.Trees.DefDef">scala.reflect.api.Trees#DefDef</a></b>. Methods and constructors.</li><li><b><a href="Trees$TypeDef.html" class="extype" name="scala.reflect.api.Trees.TypeDef">scala.reflect.api.Trees#TypeDef</a></b>. Type aliases, abstract type members and type parameters.</li></ul><p>For example, to create a class named <code>C</code> one would write something like:</p><pre>ClassDef(Modifiers(NoFlags), TypeName(<span class="lit">"C"</span>), Nil, ...)</pre><p>Here, the flag set is empty.</p><p>To make <code>C</code> private, one would write something like:</p><pre>ClassDef(Modifiers(PRIVATE), TypeName(<span class="lit">"C"</span>), Nil, ...)</pre><p>Flags can also be combined with the vertical bar operator (<code>|</code>).
+For example, a private final class is written something like:</p><pre>ClassDef(Modifiers(PRIVATE | FINAL), TypeName(<span class="lit">"C"</span>), Nil, ...)</pre><p>The list of all available flags is defined in <a href="FlagSets$FlagValues.html" class="extype" name="scala.reflect.api.FlagSets.FlagValues">scala.reflect.api.FlagSets#FlagValues</a>, available via
+<a href="FlagSets.html#Flag:FlagSets.this.FlagValues" class="extmbr" name="scala.reflect.api.FlagSets#Flag">scala.reflect.api.FlagSets#Flag</a>. (Typically one writes a wildcard import for this, e.g.
+<code>import scala.reflect.runtime.universe.Flag._</code>).</p><p>Definition trees are compiled down to symbols, so flags on modifiers of these trees are transformed into flags
+on the resulting symbols. Unlike trees, symbols don't expose flags, but rather provide <code>isXXX</code> test methods
+(e.g. <code>isFinal</code> can be used to test finality). These test methods might require an upcast with <code>asTerm</code>,
+<code>asType</code> or <code>asClass</code> as some flags only make sense for certain kinds of symbols.</p><p><i>Of Note:</i> This part of the Reflection API is being considered as a candidate for redesign. It is
+quite possible that in future releases of the reflection API, flag sets could be replaced with something else.</p><p>For more details about <code>FlagSet</code>s and other aspects of Scala reflection, see the
+<a href="http://docs.scala-lang.org/overviews/reflection/overview.html" target="_blank">Reflection Guide</a>
+</p></div></div>
+    </li><li name="scala.reflect.api.ImplicitTags" visbl="pub" data-isabs="true" fullComment="yes" group="Tags">
+      <a id="ImplicitTagsextendsAnyRef"></a>
+      <a id="ImplicitTags:ImplicitTags"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ImplicitTags.html"><span class="name">ImplicitTags</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@ImplicitTagsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tags which preserve the identity of abstract types in the face of erasure.</p><div class="fullcomment"><div class="comment cmt"><p>Tags which preserve the identity of abstract types in the face of erasure.
+ Can be used for pattern matching, instance tests, serialization and the like.</p></div></div>
+    </li><li name="scala.reflect.api.Internals" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="InternalsextendsAnyRef"></a>
+      <a id="Internals:Internals"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Internals.html"><span class="name">Internals</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@InternalsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"> <span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></span></p><div class="fullcomment"><div class="comment cmt"><p> <span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p> This trait assembles APIs occasionally necessary for performing low-level operations on reflection artifacts.
+ See <a href="Internals$InternalApi.html" class="extype" name="scala.reflect.api.Internals.InternalApi">Internals#InternalApi</a> for more information about nature, usefulness and compatibility guarantees of these APIs.
+</p></div></div>
+    </li><li name="scala.reflect.api.JavaUniverse" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="JavaUniverseextendsUniverse"></a>
+      <a id="JavaUniverse:JavaUniverse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="JavaUniverse.html"><span class="name">JavaUniverse</span></a><span class="result"> extends <a href="Universe.html" class="extype" name="scala.reflect.api.Universe">Universe</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@JavaUniverseextendsUniverse" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"> <span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></span></p><div class="fullcomment"><div class="comment cmt"><p> <span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p> A refinement of <a href="Universe.html" class="extype" name="scala.reflect.api.Universe">scala.reflect.api.Universe</a> for runtime reflection using JVM classloaders.</p><p> This refinement equips mirrors with reflection capabilities for the JVM. <code>JavaMirror</code> can
+ convert Scala reflection artifacts (symbols and types) into Java reflection artifacts (classes)
+ and vice versa. It can also perform reflective invocations (getting/setting field values,
+ calling methods, etc).</p><p> See the <a href="http://docs.scala-lang.org/overviews/reflection/overview.html" target="_blank">Reflection Guide</a> for details on how to use runtime reflection.
+</p></div></div>
+    </li><li name="scala.reflect.api.Liftables" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LiftablesextendsAnyRef"></a>
+      <a id="Liftables:Liftables"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Liftables.html"><span class="name">Liftables</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@LiftablesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.reflect.api.Mirror" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="Mirror[U&lt;:scala.reflect.api.UniversewithSingleton]extendsAnyRef"></a>
+      <a id="Mirror[U&lt;:UniversewithSingleton]:Mirror[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Mirror.html"><span class="name">Mirror</span></a><span class="tparams">[<span name="U">U &lt;: <a href="Universe.html" class="extype" name="scala.reflect.api.Universe">Universe</a> with <span class="extype" name="scala.Singleton">Singleton</span></span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@Mirror[U&lt;:scala.reflect.api.UniversewithSingleton]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p>The base class for all mirrors.</p><p>See <a href="Mirrors.html" class="extype" name="scala.reflect.api.Mirrors">scala.reflect.api.Mirrors</a> or <span class="extype" name="docs.scala-lang.org/overviews/reflection/overview.html">Reflection Guide</span>
+for a complete overview of <code>Mirror</code>s.
+</p></div><dl class="paramcmts block"><dt class="tparam">U</dt><dd class="cmt"><p>the type of the universe this mirror belongs to.</p></dd></dl></div>
+    </li><li name="scala.reflect.api.Mirrors" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="MirrorsextendsAnyRef"></a>
+      <a id="Mirrors:Mirrors"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Mirrors.html"><span class="name">Mirrors</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@MirrorsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p>This trait provides support for Mirrors in the Scala Reflection API.</p><p><code>Mirror</code>s are a central part of Scala Reflection. All information provided by
+reflection is made accessible through <code>Mirror</code>s. Depending on the type of information
+to be obtained, or the reflective action to be taken, different flavors of mirrors
+must be used. &quot;Classloader&quot; mirrors can be used to obtain representations of types
+and members. From a classloader <code>Mirror</code>, it's possible to obtain more specialized
+&quot;invoker&quot; <code>Mirror</code>s (the most commonly-used mirrors), which implement reflective
+invocations, such as method/constructor calls and field accesses.</p><p>The two flavors of mirrors:</p><ul><li><b>“Classloader” mirrors</b>. These mirrors translate names to symbols
+(via methods <code>staticClass</code>/<code>staticModule</code>/<code>staticPackage</code>).</li><li><b>&quot;Invoker” mirrors</b>. These mirrors implement reflective invocations
+(via methods <code>MethodMirror.apply</code>, <code>FieldMirror.get</code>, etc). These &quot;invoker&quot;
+mirrors are the types of mirrors that are most commonly used.</li></ul><h5> Compile-time Mirrors </h5><p>Compile-time <code>Mirror</code>s make use of only classloader <code>Mirror</code>s to load <code>Symbol</code>s
+by name.</p><p>The entry point to classloader <code>Mirror</code>s is via <a href="../macros/blackbox/Context.html#mirror:Context.this.universe.Mirror" class="extmbr" name="scala.reflect.macros.blackbox.Context#mirror">scala.reflect.macros.blackbox.Context#mirror</a> or <a href="../macros/whitebox/Context.html#mirror:Context.this.universe.Mirror" class="extmbr" name="scala.reflect.macros.whitebox.Context#mirror">scala.reflect.macros.whitebox.Context#mirror</a>.
+Typical methods which use classloader <code>Mirror</code>s include <a href="Mirror.html#staticClass(fullName:String):U#ClassSymbol" class="extmbr" name="scala.reflect.api.Mirror#staticClass">scala.reflect.api.Mirror#staticClass</a>,
+<a href="Mirror.html#staticModule(fullName:String):U#ModuleSymbol" class="extmbr" name="scala.reflect.api.Mirror#staticModule">scala.reflect.api.Mirror#staticModule</a>, and <a href="Mirror.html#staticPackage(fullName:String):U#ModuleSymbol" class="extmbr" name="scala.reflect.api.Mirror#staticPackage">scala.reflect.api.Mirror#staticPackage</a>. For
+example:</p><pre><span class="kw">import</span> scala.reflect.macros.blackbox.Context
+
+<span class="kw">case</span> <span class="kw">class</span> Location(filename: <span class="std">String</span>, line: <span class="std">Int</span>, column: <span class="std">Int</span>)
+
+<span class="kw">object</span> Macros {
+  <span class="kw">def</span> currentLocation: Location = macro impl
+
+  <span class="kw">def</span> impl(c: Context): c.Expr[Location] = {
+    <span class="kw">import</span> c.universe._
+    <span class="kw">val</span> pos = c.macroApplication.pos
+    <span class="kw">val</span> clsLocation = c.mirror.staticModule(<span class="lit">"Location"</span>) <span class="cmt">// get symbol of "Location" object</span>
+    c.Expr(Apply(Ident(clsLocation), <span class="std">List</span>(Literal(Constant(pos.source.path)), Literal(Constant(pos.line)), Literal(Constant(pos.column)))))
+  }
+}</pre><p><i>Of Note:</i> There are several high-level alternatives that one can use to avoid having to manually
+lookup symbols. For example, <code>typeOf[Location.type].termSymbol</code> (or <code>typeOf[Location].typeSymbol</code>
+if we needed a <code>ClassSymbol</code>), which are type safe since we don’t have to use <code>String</code>s to lookup
+the <code>Symbol</code>.</p><h5> Runtime Mirrors </h5><p>Runtime <code>Mirror</code>s make use of both classloader and invoker <code>Mirror</code>s.</p><p>The entry point to <code>Mirror</code>s for use at runtime is via <code>ru.runtimeMirror(&lt;classloader&gt;)</code>, where
+<code>ru</code> is <a href="../runtime/package.html#universe:scala.reflect.api.JavaUniverse" class="extmbr" name="scala.reflect.runtime#universe">scala.reflect.runtime.universe</a>.</p><p>The result of a <a href="JavaUniverse.html#runtimeMirror(cl:ClassLoader):JavaUniverse.this.Mirror" class="extmbr" name="scala.reflect.api.JavaUniverse#runtimeMirror">scala.reflect.api.JavaUniverse#runtimeMirror</a> call is a classloader mirror,
+of type <a href="Mirrors$ReflectiveMirror.html" class="extype" name="scala.reflect.api.Mirrors.ReflectiveMirror">scala.reflect.api.Mirrors#ReflectiveMirror</a>, which can load symbols by names as
+discussed above (in the “Compile-time” section).</p><p>A classloader mirror can create invoker mirrors, which include: <a href="Mirrors$InstanceMirror.html" class="extype" name="scala.reflect.api.Mirrors.InstanceMirror">scala.reflect.api.Mirrors#InstanceMirror</a>,
+<a href="Mirrors$MethodMirror.html" class="extype" name="scala.reflect.api.Mirrors.MethodMirror">scala.reflect.api.Mirrors#MethodMirror</a>, <a href="Mirrors$FieldMirror.html" class="extype" name="scala.reflect.api.Mirrors.FieldMirror">scala.reflect.api.Mirrors#FieldMirror</a>,
+<a href="Mirrors$ClassMirror.html" class="extype" name="scala.reflect.api.Mirrors.ClassMirror">scala.reflect.api.Mirrors#ClassMirror</a> and <a href="Mirrors$ModuleMirror.html" class="extype" name="scala.reflect.api.Mirrors.ModuleMirror">scala.reflect.api.Mirrors#ModuleMirror</a>.</p><p>Examples of how these two types of <code>Mirror</code>s interact are available below.</p><h5> Types of Mirrors, Their Use Cases &amp; Examples </h5><p><b><a href="Mirrors$ReflectiveMirror.html" class="extype" name="scala.reflect.api.Mirrors.ReflectiveMirror">scala.reflect.api.Mirrors#ReflectiveMirror</a></b>. Used for loading <code>Symbol</code>s by name, and
+as an entry point into invoker mirrors. Entry point: <code>val m = ru.runtimeMirror(&lt;classloader&gt;)</code>.
+Example:</p><pre>scala&gt; <span class="kw">val</span> ru = scala.reflect.runtime.universe
+ru: scala.reflect.api.JavaUniverse = ...
+
+scala&gt; <span class="kw">val</span> m = ru.runtimeMirror(getClass.getClassLoader)
+m: reflect.runtime.universe.Mirror = JavaMirror ...</pre><p><b><a href="Mirrors$InstanceMirror.html" class="extype" name="scala.reflect.api.Mirrors.InstanceMirror">scala.reflect.api.Mirrors#InstanceMirror</a></b>. Used for creating invoker <code>Mirror</code>s for methods
+and fields and for inner classes and inner objects (modules). Entry point: <code>val im = m.reflect(&lt;value&gt;)</code>.
+Example:</p><pre>scala&gt; <span class="kw">class</span> C { <span class="kw">def</span> x = <span class="num">2</span> }
+defined <span class="kw">class</span> C
+
+scala&gt; <span class="kw">val</span> im = m.reflect(<span class="kw">new</span> C)
+im: reflect.runtime.universe.InstanceMirror = instance mirror <span class="kw">for</span> C@<span class="num">3442299</span>e</pre><p><b><a href="Mirrors$MethodMirror.html" class="extype" name="scala.reflect.api.Mirrors.MethodMirror">scala.reflect.api.Mirrors#MethodMirror</a></b>. Used for invoking instance methods (Scala only has
+instance methods-- methods of objects are instance methods of object instances, obtainable
+via <code>ModuleMirror.instance</code>). Entry point: <code>val mm = im.reflectMethod(&lt;method symbol&gt;)</code>.
+Example:</p><pre>scala&gt; <span class="kw">val</span> methodX = typeOf[C].declaration(TermName(<span class="lit">"x"</span>)).asMethod
+methodX: reflect.runtime.universe.MethodSymbol = method x
+
+scala&gt; <span class="kw">val</span> mm = im.reflectMethod(methodX)
+mm: reflect.runtime.universe.MethodMirror = method mirror <span class="kw">for</span> C.x: scala.<span class="std">Int</span> (bound to C@<span class="num">3442299</span>e)
+
+scala&gt; mm()
+res0: <span class="std">Any</span> = <span class="num">2</span></pre><p><b><a href="Mirrors$FieldMirror.html" class="extype" name="scala.reflect.api.Mirrors.FieldMirror">scala.reflect.api.Mirrors#FieldMirror</a></b>. Used for getting/setting instance fields
+(Scala only has instance fields-- fields of objects are instance methods of object instances
+obtainable via ModuleMirror.instance). Entry point:
+<code>val fm = im.reflectMethod(&lt;field or accessor symbol&gt;)</code>.
+Example:</p><pre>scala&gt; <span class="kw">class</span> C { <span class="kw">val</span> x = <span class="num">2</span>; <span class="kw">val</span> y = <span class="num">3</span> }
+defined <span class="kw">class</span> C
+
+scala&gt; <span class="kw">val</span> m = ru.runtimeMirror(getClass.getClassLoader)
+m: reflect.runtime.universe.Mirror = JavaMirror ...
+
+scala&gt; <span class="kw">val</span> im = m.reflect(<span class="kw">new</span> C)
+im: reflect.runtime.universe.InstanceMirror = instance mirror <span class="kw">for</span> C@<span class="num">5</span>f0c8ac1
+
+scala&gt; <span class="kw">val</span> fieldX = typeOf[C].declaration(TermName(<span class="lit">"x"</span>)).asTerm.accessed.asTerm
+fieldX: reflect.runtime.universe.TermSymbol = value x
+scala&gt; <span class="kw">val</span> fmX = im.reflectField(fieldX)
+fmX: reflect.runtime.universe.FieldMirror = field mirror <span class="kw">for</span> C.x (bound to C@<span class="num">5</span>f0c8ac1)
+
+scala&gt; fmX.get
+res0: <span class="std">Any</span> = <span class="num">2</span>
+
+scala&gt; fmX.set(<span class="num">3</span>) <span class="cmt">// NOTE: can set an underlying value of an immutable field!</span>
+
+scala&gt; <span class="kw">val</span> fieldY = typeOf[C].declaration(TermName(<span class="lit">"y"</span>)).asTerm.accessed.asTerm
+fieldY: reflect.runtime.universe.TermSymbol = variable y
+
+scala&gt; <span class="kw">val</span> fmY = im.reflectField(fieldY)
+fmY: reflect.runtime.universe.FieldMirror = field mirror <span class="kw">for</span> C.y (bound to C@<span class="num">5</span>f0c8ac1)
+
+scala&gt; fmY.get
+res1: <span class="std">Any</span> = <span class="num">3</span>
+
+scala&gt; fmY.set(<span class="num">4</span>)
+
+scala&gt; fmY.get
+res2: <span class="std">Any</span> = <span class="num">4</span></pre><p><b><a href="Mirrors$ClassMirror.html" class="extype" name="scala.reflect.api.Mirrors.ClassMirror">scala.reflect.api.Mirrors#ClassMirror</a></b>. Used for creating invoker mirrors for constructors.
+Entry points: for <i>static classes</i> <code>val cm1 = m.reflectClass(&lt;class symbol&gt;)</code>,
+for <i>inner classes</i> <code>val mm2 = im.reflectClass(&lt;class symbol&gt;)</code>.
+Example:</p><pre>scala&gt; <span class="kw">case</span> <span class="kw">class</span> C(x: <span class="std">Int</span>)
+defined <span class="kw">class</span> C
+
+scala&gt; <span class="kw">val</span> m = ru.runtimeMirror(getClass.getClassLoader)
+m: reflect.runtime.universe.Mirror = JavaMirror ...
+
+scala&gt; <span class="kw">val</span> classC = typeOf[C].typeSymbol.asClass
+
+classC: reflect.runtime.universe.<span class="std">Symbol</span> = <span class="kw">class</span> C
+
+scala&gt; <span class="kw">val</span> cm = m.reflectClass(classC)
+cm: reflect.runtime.universe.ClassMirror = <span class="kw">class</span> mirror <span class="kw">for</span> C (bound to <span class="kw">null</span>)
+
+scala&gt; <span class="kw">val</span> ctorC = typeOf[C].declaration(ru.nme.CONSTRUCTOR).asMethod
+ctorC: reflect.runtime.universe.MethodSymbol = constructor C
+
+scala&gt; <span class="kw">val</span> ctorm = cm.reflectConstructor(ctorC)
+ctorm: reflect.runtime.universe.MethodMirror = constructor mirror <span class="kw">for</span> C.&lt;init&gt;(x: scala.<span class="std">Int</span>): C (bound to <span class="kw">null</span>)
+
+scala&gt; ctorm(<span class="num">2</span>)
+res0: <span class="std">Any</span> = C(<span class="num">2</span>)</pre><p><b><a href="Mirrors$ModuleMirror.html" class="extype" name="scala.reflect.api.Mirrors.ModuleMirror">scala.reflect.api.Mirrors#ModuleMirror</a></b>. Used for getting singleton instances of objects.
+Entry points: for <i>static objects (modules)</i> <code>val mm1 = m.reflectModule(&lt;module symbol&gt;)</code>,
+for <i>inner objects (modules)</i> <code>val mm2 = im.reflectModule(&lt;module symbol&gt;)</code>.
+Example:</p><pre>scala&gt; <span class="kw">object</span> C { <span class="kw">def</span> x = <span class="num">2</span> }
+defined module C
+
+scala&gt; <span class="kw">val</span> m = ru.runtimeMirror(getClass.getClassLoader)
+m: reflect.runtime.universe.Mirror = JavaMirror ...
+
+scala&gt; <span class="kw">val</span> objectC = typeOf[C.<span class="kw">type</span>].termSymbol.asModule
+objectC: reflect.runtime.universe.ModuleSymbol = <span class="kw">object</span> C
+
+scala&gt; <span class="kw">val</span> mm = m.reflectModule(objectC)
+mm: reflect.runtime.universe.ModuleMirror = module mirror <span class="kw">for</span> C (bound to <span class="kw">null</span>)
+
+scala&gt; <span class="kw">val</span> obj = mm.instance
+obj: <span class="std">Any</span> = C$@<span class="num">1005</span>ec04</pre><p>For more information about <code>Mirrors</code>s, see the
+<a href="http://docs.scala-lang.org/overviews/reflection/environment-universes-mirrors.html" target="_blank">Reflection Guide: Mirrors</a>
+</p></div></div>
+    </li><li name="scala.reflect.api.Names" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="NamesextendsAnyRef"></a>
+      <a id="Names:Names"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Names.html"><span class="name">Names</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@NamesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p>This trait defines <code>Name</code>s in Scala Reflection, and operations on them.</p><p> Names are simple wrappers for strings. <a href="Names.html#Name&gt;:Null&lt;:Names.this.NameApi" class="extmbr" name="scala.reflect.api.Names.Name">Name</a> has two subtypes
+ <a href="Names.html#TermName&gt;:Null&lt;:Names.this.TermNameApiwithNames.this.Name" class="extmbr" name="scala.reflect.api.Names.TermName">TermName</a> and <a href="Names.html#TypeName&gt;:Null&lt;:Names.this.TypeNameApiwithNames.this.Name" class="extmbr" name="scala.reflect.api.Names.TypeName">TypeName</a>
+ which distinguish names of terms (like objects or members) and types. A term and a type of the
+ same name can co-exist in an object.</p><p> To search for the <code>map</code> method (which is a term) declared in the <code>List</code> class, one can do:</p><pre>scala&gt; typeOf[<span class="std">List</span>[_]].member(TermName(<span class="lit">"map"</span>))
+res0: reflect.runtime.universe.<span class="std">Symbol</span> = method map</pre><p> To search for a type member, one can follow the same procedure, using <code>TypeName</code> instead.</p><p> For more information about creating and using <code>Name</code>s, see the <a href="http://docs.scala-lang.org/overviews/reflection/annotations-names-scopes.html" target="_blank">Reflection Guide: Annotations, Names, Scopes, and More</a>
+</p></div></div>
+    </li><li name="scala.reflect.api.Position" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="PositionextendsAttachments"></a>
+      <a id="Position:Position"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Position.html"><span class="name">Position</span></a><span class="result"> extends <a href="../macros/Attachments.html" class="extype" name="scala.reflect.macros.Attachments">Attachments</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@PositionextendsAttachments" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"> <span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></span></p><div class="fullcomment"><div class="comment cmt"><p> <span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p> Position tracks the origin of <a href="Symbols$Symbol.html" class="extype" name="scala.reflect.api.Symbols.Symbol">symbols</a> and <a href="Trees$Tree.html" class="extype" name="scala.reflect.api.Trees.Tree">tree nodes</a>. They are commonly used when
+ displaying warnings and errors, to indicate the incorrect point in the program.</p><p> Every non-empty position refers to a SourceFile and three character
+ offsets within it: start, end, and point. The point is where the ^ belongs when
+ issuing an error message, usually a Name. A range position can be designated
+ as transparent, which excuses it from maintaining the invariants to follow. If
+ a transparent position has opaque children, those are considered as if they were
+ the direct children of the transparent position's parent.</p><p> Note: some of these invariants actually apply to the trees which carry
+ the positions, but they are phrased as if the positions themselves were
+ the parent/children for conciseness.</p><p> Invariant 1: in a focused/offset position, start == point == end
+ Invariant 2: in a range position,          start &lt;= point &lt;  end
+ Invariant 3: an offset position never has a child with a range position
+ Invariant 4: every range position child of a range position parent is contained within its parent
+ Invariant 5: opaque range position siblings overlap at most at a single point</p><p> The following tests are useful on positions:</p><p> pos.isDefined     true if position is not an UndefinedPosition (those being NoPosition and FakePos)
+ pos.isRange       true if position is a range (opaque or transparent) which implies start &lt; end
+ pos.isOpaqueRange true if position is an opaque range</p><p> The following accessor methods are provided - an exception will be thrown if
+ point/start/end are attempted on an UndefinedPosition.</p><p> pos.source       The source file of the position, or NoSourceFile if unavailable
+ pos.point        The offset of the point
+ pos.start        The (inclusive) start offset, or the point of an offset position
+ pos.end          The (exclusive) end offset, or the point of an offset position</p><p> The following conversion methods are often used:</p><p> pos.focus           Converts a range position to an offset position focused on the point
+ pos.makeTransparent Convert an opaque range into a transparent range</p><p> For more information about <code>Position</code>s, see the <a href="http://docs.scala-lang.org/overviews/reflection/annotations-names-scopes.html" target="_blank">Reflection Guide: Annotations, Names, Scopes, and More</a>
+</p></div></div>
+    </li><li name="scala.reflect.api.Positions" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="PositionsextendsAnyRef"></a>
+      <a id="Positions:Positions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Positions.html"><span class="name">Positions</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@PositionsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p>This trait defines the concept of positions and operations on them.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="Position.html" class="extype" name="scala.reflect.api.Position">scala.reflect.api.Position</a></p></span></dd></dl></div>
+    </li><li name="scala.reflect.api.Printers" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="PrintersextendsAnyRef"></a>
+      <a id="Printers:Printers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Printers.html"><span class="name">Printers</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@PrintersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p>Utilities for nicely printing <a href="Trees.html" class="extype" name="scala.reflect.api.Trees">scala.reflect.api.Trees</a> and <a href="Types.html" class="extype" name="scala.reflect.api.Types">scala.reflect.api.Types</a>.</p><h5> Printing Trees </h5><p>The method <code>show</code> displays the &quot;prettified&quot; representation of reflection artifacts.
+This representation provides one with the desugared Java representation of Scala code.
+For example:</p><pre>scala&gt; <span class="kw">import</span> scala.reflect.runtime.universe._
+<span class="kw">import</span> scala.reflect.runtime.universe._
+
+scala&gt; <span class="kw">def</span> tree = reify{ <span class="kw">final</span> <span class="kw">class</span> C { <span class="kw">def</span> x = <span class="num">2</span> } }.tree
+tree: reflect.runtime.universe.Tree
+
+scala&gt; show(tree)
+res0: <span class="std">String</span> =
+{
+  <span class="kw">final</span> <span class="kw">class</span> C <span class="kw">extends</span> <span class="std">AnyRef</span> {
+    <span class="kw">def</span> &lt;init&gt;() = {
+      <span class="kw">super</span>.&lt;init&gt;();
+      ()
+    };
+    <span class="kw">def</span> x = <span class="num">2</span>
+  };
+  ()
+}</pre><p>The method <code>showRaw</code> displays internal structure of a given reflection object
+as a Scala abstract syntax tree (AST), the representation that the Scala typechecker
+operates on.</p><p>Note, that while this representation appears to generate correct trees that one
+might think would be possible to use in a macro implementation, this is not usually
+the case. Symbols aren't fully represented (only their names are). Thus, this method
+is best-suited for use simply inspecting ASTs given some valid Scala code.</p><pre>scala&gt; showRaw(tree)
+res1: <span class="std">String</span> = Block(<span class="std">List</span>(
+  ClassDef(Modifiers(FINAL), TypeName(<span class="lit">"C"</span>), <span class="std">List</span>(), Template(
+    <span class="std">List</span>(Ident(TypeName(<span class="lit">"AnyRef"</span>))),
+    noSelfType,
+    <span class="std">List</span>(
+      DefDef(Modifiers(), nme.CONSTRUCTOR, <span class="std">List</span>(), <span class="std">List</span>(<span class="std">List</span>()), TypeTree(),
+        Block(<span class="std">List</span>(
+          Apply(Select(Super(This(tpnme.EMPTY), tpnme.EMPTY), nme.CONSTRUCTOR), <span class="std">List</span>())),
+          Literal(Constant(())))),
+      DefDef(Modifiers(), TermName(<span class="lit">"x"</span>), <span class="std">List</span>(), <span class="std">List</span>(), TypeTree(),
+        Literal(Constant(<span class="num">2</span>))))))),
+  Literal(Constant(())))</pre><p>The method <code>showRaw</code> can also print <a href="Types.html" class="extype" name="scala.reflect.api.Types">scala.reflect.api.Types</a> next to the artifacts
+being inspected</p><pre>scala&gt; <span class="kw">import</span> scala.tools.reflect.ToolBox <span class="cmt">// requires scala-compiler.jar</span>
+<span class="kw">import</span> scala.tools.reflect.ToolBox
+
+scala&gt; <span class="kw">import</span> scala.reflect.runtime.{currentMirror <span class="kw">=&gt;</span> cm}
+<span class="kw">import</span> scala.reflect.runtime.{currentMirror<span class="kw">=&gt;</span>cm}
+
+scala&gt; showRaw(cm.mkToolBox().typecheck(tree), printTypes = <span class="kw">true</span>)
+res2: <span class="std">String</span> = Block[<span class="num">1</span>](<span class="std">List</span>(
+  ClassDef[<span class="num">2</span>](Modifiers(FINAL), TypeName(<span class="lit">"C"</span>), <span class="std">List</span>(), Template[<span class="num">3</span>](
+    <span class="std">List</span>(Ident[<span class="num">4</span>](TypeName(<span class="lit">"AnyRef"</span>))),
+    noSelfType,
+    <span class="std">List</span>(
+      DefDef[<span class="num">2</span>](Modifiers(), nme.CONSTRUCTOR, <span class="std">List</span>(), <span class="std">List</span>(<span class="std">List</span>()), TypeTree[<span class="num">3</span>](),
+        Block[<span class="num">1</span>](<span class="std">List</span>(
+          Apply[<span class="num">4</span>](Select[<span class="num">5</span>](Super[<span class="num">6</span>](This[<span class="num">3</span>](TypeName(<span class="lit">"C"</span>)), tpnme.EMPTY), ...))),
+          Literal[<span class="num">1</span>](Constant(())))),
+      DefDef[<span class="num">2</span>](Modifiers(), TermName(<span class="lit">"x"</span>), <span class="std">List</span>(), <span class="std">List</span>(), TypeTree[<span class="num">7</span>](),
+        Literal[<span class="num">8</span>](Constant(<span class="num">2</span>))))))),
+  Literal[<span class="num">1</span>](Constant(())))
+[<span class="num">1</span>] TypeRef(ThisType(scala), scala.<span class="std">Unit</span>, <span class="std">List</span>())
+[<span class="num">2</span>] NoType
+[<span class="num">3</span>] TypeRef(NoPrefix, TypeName(<span class="lit">"C"</span>), <span class="std">List</span>())
+[<span class="num">4</span>] TypeRef(ThisType(java.lang), java.lang.<span class="std">Object</span>, <span class="std">List</span>())
+[<span class="num">5</span>] MethodType(<span class="std">List</span>(), TypeRef(ThisType(java.lang), java.lang.<span class="std">Object</span>, <span class="std">List</span>()))
+[<span class="num">6</span>] SuperType(ThisType(TypeName(<span class="lit">"C"</span>)), TypeRef(... java.lang.<span class="std">Object</span> ...))
+[<span class="num">7</span>] TypeRef(ThisType(scala), scala.<span class="std">Int</span>, <span class="std">List</span>())
+[<span class="num">8</span>] ConstantType(Constant(<span class="num">2</span>))</pre><h5> Printing Types </h5><p>The method <code>show</code></p><pre>scala&gt; <span class="kw">import</span> scala.reflect.runtime.universe._
+<span class="kw">import</span> scala.reflect.runtime.universe._
+
+scala&gt; <span class="kw">def</span> tpe = typeOf[{ <span class="kw">def</span> x: <span class="std">Int</span>; <span class="kw">val</span> y: <span class="std">List</span>[<span class="std">Int</span>] }]
+tpe: reflect.runtime.universe.Type
+
+scala&gt; show(tpe)
+res0: <span class="std">String</span> = scala.<span class="std">AnyRef</span>{<span class="kw">def</span> x: <span class="std">Int</span>; <span class="kw">val</span> y: scala.<span class="std">List</span>[<span class="std">Int</span>]}</pre><p>Like the method <code>showRaw</code> for <a href="Trees.html" class="extype" name="scala.reflect.api.Trees">scala.reflect.api.Trees</a>, <code>showRaw</code>
+for <a href="Types.html" class="extype" name="scala.reflect.api.Types">scala.reflect.api.Types</a> provides a visualization of the Scala
+AST operated on by the Scala typechecker.</p><pre><span class="cmt">// showRaw has already been discussed above</span>
+scala&gt; showRaw(tpe)
+res1: <span class="std">String</span> = RefinedType(
+  <span class="std">List</span>(TypeRef(ThisType(scala), TypeName(<span class="lit">"AnyRef"</span>), <span class="std">List</span>())),
+  Scope(
+    TermName(<span class="lit">"x"</span>),
+    TermName(<span class="lit">"y"</span>)))</pre><p><code>printIds</code> and/or <code>printKinds</code> can additionally be supplied as arguments in a call to
+<code>showRaw</code> which additionally shows the unique identifiers of symbols.</p><pre>scala&gt; showRaw(tpe, printIds = <span class="kw">true</span>, printKinds = <span class="kw">true</span>)
+res2: <span class="std">String</span> = RefinedType(
+  <span class="std">List</span>(TypeRef(ThisType(scala#<span class="num">2043</span>#PK), TypeName(<span class="lit">"AnyRef"</span>)#<span class="num">691</span>#TPE, <span class="std">List</span>())),
+  Scope(
+    TermName(<span class="lit">"x"</span>)#<span class="num">2540</span>#METH,
+    TermName(<span class="lit">"y"</span>)#<span class="num">2541</span>#GET))</pre><p>For more details about <code>Printer</code>s and other aspects of Scala reflection, see the
+<a href="http://docs.scala-lang.org/overviews/reflection/overview.html" target="_blank">Reflection Guide</a>
+</p></div></div>
+    </li><li name="scala.reflect.api.Quasiquotes" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QuasiquotesextendsAnyRef"></a>
+      <a id="Quasiquotes:Quasiquotes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Quasiquotes.html"><span class="name">Quasiquotes</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@QuasiquotesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.reflect.api.Scopes" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="ScopesextendsAnyRef"></a>
+      <a id="Scopes:Scopes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Scopes.html"><span class="name">Scopes</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@ScopesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p>This trait provides support for scopes in the reflection API.</p><p>A scope object generally maps names to symbols available in a corresponding lexical scope.
+Scopes can be nested. The base type exposed to the reflection API, however,
+only exposes a minimal interface, representing a scope as an iterable of symbols.</p><p>For rare occasions when it is necessary to create a scope manually,
+e.g., to populate members of <a href="Types$RefinedType.html" class="extype" name="scala.reflect.api.Types.RefinedType">scala.reflect.api.Types#RefinedType</a>,
+there is the <code>newScopeWith</code> function.</p><p>Additional functionality is exposed in member scopes that are returned by
+<code>members</code> and <code>decls</code> defined in <a href="Types$TypeApi.html" class="extype" name="scala.reflect.api.Types.TypeApi">scala.reflect.api.Types#TypeApi</a>.
+Such scopes support the <code>sorted</code> method, which sorts members in declaration order.
+</p></div></div>
+    </li><li name="scala.reflect.api.StandardDefinitions" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="StandardDefinitionsextendsAnyRef"></a>
+      <a id="StandardDefinitions:StandardDefinitions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="StandardDefinitions.html"><span class="name">StandardDefinitions</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@StandardDefinitionsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p>All Scala standard symbols and types.</p><p>These standard definitions can accessed to using <code>definitions</code>.
+They're typically imported with a wildcard import, <code>import definitions._</code>, and are
+listed in <a href="StandardDefinitions$DefinitionsApi.html" class="extype" name="scala.reflect.api.StandardDefinitions.DefinitionsApi">scala.reflect.api.StandardDefinitions#DefinitionsApi</a>.
+</p></div></div>
+    </li><li name="scala.reflect.api.StandardLiftables" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="StandardLiftablesextendsAnyRef"></a>
+      <a id="StandardLiftables:StandardLiftables"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="StandardLiftables.html"><span class="name">StandardLiftables</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@StandardLiftablesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.reflect.api.StandardNames" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="StandardNamesextendsAnyRef"></a>
+      <a id="StandardNames:StandardNames"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="StandardNames.html"><span class="name">StandardNames</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@StandardNamesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p> Standard names are names that are essential to creating trees or to reflecting Scala artifacts.
+ For example, <code>CONSTRUCTOR</code> (aka <code>&lt;init&gt;</code> on JVM) is necessary to create and invoke constructors.</p><p> These standard names can be referred to using <a href="StandardNames.html#nme:StandardNames.this.TermNamesApi" class="extmbr" name="scala.reflect.api.StandardNames#nme"><code>nme</code></a> for term names and <a href="StandardNames.html#tpnme:StandardNames.this.TypeNamesApi" class="extmbr" name="scala.reflect.api.StandardNames#tpnme"><code>tpnme</code></a> for type names
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="Names.html" class="extype" name="scala.reflect.api.Names">Names</a>
+ The API for names in Scala reflection.</p></span></dd></dl></div>
+    </li><li name="scala.reflect.api.Symbols" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="SymbolsextendsAnyRef"></a>
+      <a id="Symbols:Symbols"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Symbols.html"><span class="name">Symbols</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@SymbolsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p> This trait defines symbols and operations on them.</p><p> Symbols are used to establish bindings between a name and the entity it refers to, such as a class or a method.
+ Anything you define and can give a name to in Scala has an associated symbol.</p><p> Symbols contain all available information about the declaration of an entity (class/object/trait etc.) or a
+ member (vals/vars/defs etc.), and as such are an integral abstraction central to both runtime
+ reflection and macros.</p><p> A symbol can provide a wealth of information ranging from the basic <code>name</code> method available on all symbols to
+ other, more involved, concepts such as getting the <code>baseClasses</code> from <code>ClassSymbol</code>. Other common use cases of
+ symbols include inspecting members' signatures, getting type parameters of a class, getting the parameter type
+ of a method or finding out the type of a field.</p><p> Example usage of runtime reflection; getting a method's type signature:</p><pre>scala&gt; <span class="kw">import</span> scala.reflect.runtime.universe._
+<span class="kw">import</span> scala.reflect.runtime.universe._
+
+scala&gt; <span class="kw">class</span> C[T] { <span class="kw">def</span> test[U](x: T)(y: U): <span class="std">Int</span> = ??? }
+defined <span class="kw">class</span> C
+
+scala&gt; <span class="kw">val</span> test = typeOf[C[<span class="std">Int</span>]].member(TermName(<span class="lit">"test"</span>)).asMethod
+test: reflect.runtime.universe.MethodSymbol = method test
+
+scala&gt; test.info
+res0: reflect.runtime.universe.Type = [U](x: T)(y: U)scala.<span class="std">Int</span></pre><p> Symbols are organized in a hierarchy. For example, a symbol that represents a parameter of a method is owned by
+ the corresponding method symbol, a method symbol is owned by its enclosing class, a class is owned by a
+ containing package and so on.</p><p> Certain types of tree nodes, such as <a href="Trees$Ident.html" class="extype" name="scala.reflect.api.Trees.Ident">Ident</a> (references to identifiers) and
+ <a href="Trees$Select.html" class="extype" name="scala.reflect.api.Trees.Select">Select</a> (references to members) expose method <a href="Trees$SymTreeApi.html#symbol:Trees.this.Symbol" class="extmbr" name="scala.reflect.api.Trees.SymTreeApi#symbol"><code>symbol</code></a>
+ to obtain the symbol that represents their declaration. During the typechecking phase, the compiler looks up the
+ symbol based on the name and scope and sets the <a href="Trees$SymTreeApi.html#symbol:Trees.this.Symbol" class="extmbr" name="scala.reflect.api.Trees.SymTreeApi#symbol"><code>symbol</code> field</a> of tree nodes.</p><p> For more information about <code>Symbol</code> usage and attached intricacies, see the <a href="http://docs.scala-lang.org/overviews/reflection/symbols-trees-types.html" target="_blank">Reflection Guide: Symbols</a>
+</p></div></div>
+    </li><li name="scala.reflect.api.TreeCreator" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="TreeCreatorextendsSerializable"></a>
+      <a id="TreeCreator:TreeCreator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="TreeCreator.html"><span class="name">TreeCreator</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@TreeCreatorextendsSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A mirror-aware factory for trees.</p><div class="fullcomment"><div class="comment cmt"><p>A mirror-aware factory for trees.</p><p>This class is used internally by Scala Reflection, and is not recommended for use in client code.
+</p></div></div>
+    </li><li name="scala.reflect.api.Trees" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="TreesextendsAnyRef"></a>
+      <a id="Trees:Trees"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Trees.html"><span class="name">Trees</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@TreesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p>This trait defines the node types used in Scala abstract syntax trees (AST) and operations on them.</p><p>Trees are the basis for Scala's abstract syntax that is used to represent programs. They are also called
+abstract syntax trees and commonly abbreviated as ASTs.</p><p>In Scala reflection, APIs that produce or use <code>Tree</code>s are:</p><ul><li><b>Annotations</b> which use trees to represent their arguments, exposed in <span class="extype" name="scala.reflect.api.Annotations#scalaArgs">Annotation.scalaArgs</span>.</li><li><b><a href="Universe.html#reify[T](expr:T):Universe.this.Expr[T]" class="extmbr" name="scala.reflect.api.Universe#reify">reify</a></b>, a special method on <a href="Universe.html" class="extype" name="scala.reflect.api.Universe">scala.reflect.api.Universe</a> that takes an expression and returns an AST which represents the expression.</li><li><b>Macros and runtime compilation with toolboxes</b> which both use trees as their program representation medium.</li></ul><p> Trees are immutable, except for three fields
+ <a href="Trees$TreeApi.html#pos:Trees.this.Position" class="extmbr" name="scala.reflect.api.Trees.TreeApi#pos">pos</a>, <a href="Trees$TreeApi.html#symbol:Trees.this.Symbol" class="extmbr" name="scala.reflect.api.Trees.TreeApi#symbol">symbol</a>, and <a href="Trees$TreeApi.html#tpe:Trees.this.Type" class="extmbr" name="scala.reflect.api.Trees.TreeApi#tpe">tpe</a>, which are assigned when a tree is typechecked
+ to attribute it with the information gathered by the typechecker.</p><h5> Examples </h5><p> The following creates an AST representing a literal 5 in Scala source code:</p><pre>Literal(Constant(<span class="num">5</span>))</pre><p> The following creates an AST representing <code>print(&quot;Hello World&quot;)</code>:</p><pre>Apply(Select(Select(This(TypeName(<span class="lit">"scala"</span>)), TermName(<span class="lit">"Predef"</span>)), TermName(<span class="lit">"print"</span>)), <span class="std">List</span>(Literal(Constant(<span class="lit">"Hello World"</span>))))</pre><p> The following creates an AST from a literal 5, and then uses <code>showRaw</code> to print it in a readable format.</p><pre><span class="kw">import</span> scala.reflect.runtime.universe.{ reify, showRaw }
+print( showRaw( reify{<span class="num">5</span>}.tree ) )` <span class="cmt">// prints Literal(Constant(5))</span></pre><p> For more information about <code>Tree</code>s, see the <a href="http://docs.scala-lang.org/overviews/reflection/symbols-trees-types.html" target="_blank">Reflection Guide: Symbols, Trees, Types</a>.
+</p></div></div>
+    </li><li name="scala.reflect.api.TypeCreator" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="TypeCreatorextendsSerializable"></a>
+      <a id="TypeCreator:TypeCreator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="TypeCreator.html"><span class="name">TypeCreator</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@TypeCreatorextendsSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A mirror-aware factory for types.</p><div class="fullcomment"><div class="comment cmt"><p>A mirror-aware factory for types.</p><p>This class is used internally by Scala Reflection, and is not recommended for use in client code.
+</p></div></div>
+    </li><li name="scala.reflect.api.TypeTags" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="TypeTagsextendsAnyRef"></a>
+      <a id="TypeTags:TypeTags"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="TypeTags.html"><span class="name">TypeTags</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@TypeTagsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A <code>TypeTag[T]</code> encapsulates the runtime type representation of some type <code>T</code>.</p><div class="fullcomment"><div class="comment cmt"><p>A <code>TypeTag[T]</code> encapsulates the runtime type representation of some type <code>T</code>.
+Like <span class="extype" name="scala.reflect.Manifest">scala.reflect.Manifest</span>, the prime use case of <code>TypeTag</code>s is to give access
+to erased types. However, <code>TypeTag</code>s should be considered to be a richer
+replacement of the pre-2.10 notion of a <span class="extype" name="scala.reflect.Manifest">Manifest</span>, that
+are, in addition, fully integrated with Scala reflection.</p><p>There exist three different types of <code>TypeTags</code>:</p><ul><li><a href="TypeTags$TypeTag.html" class="extype" name="scala.reflect.api.TypeTags.TypeTag">scala.reflect.api.TypeTags#TypeTag</a>. <br/>A full type descriptor of a Scala type.
+ For example, a <code>TypeTag[List[String]]</code> contains all type information,
+ in this case, of type <code>scala.List[String]</code>.</li><li><span class="extype" name="scala.reflect.ClassTag">scala.reflect.ClassTag</span>. <br/>A partial type descriptor of a Scala type. For
+ example, a <code>ClassTag[List[String]]</code> contains only the erased class
+ type information, in this case, of type <code>scala.collection.immutable.List</code>.
+ <code>ClassTag</code>s provide access only to the runtime class of a type.
+ Analogous to <a href="../package.html#ClassManifest[T]=scala.reflect.ClassTag[T]" class="extmbr" name="scala.reflect.ClassManifest">scala.reflect.ClassManifest</a></li><li><a href="TypeTags$WeakTypeTag.html" class="extype" name="scala.reflect.api.TypeTags.WeakTypeTag">scala.reflect.api.TypeTags#WeakTypeTag</a>. <br/>A type descriptor for abstract
+ types (see description below).</li></ul><p>Like <span class="extype" name="scala.reflect.Manifest">Manifest</span>s, <code>TypeTag</code>s are always generated by the
+compiler, and can be obtained in three ways:</p><h5> #1 Via the methods <a href="TypeTags.html#typeTag[T](implicitttag:TypeTags.this.TypeTag[T]):TypeTags.this.TypeTag[T]" class="extmbr" name="scala.reflect.api.TypeTags#typeTag">typeTag</a>,
+<a href="../package.html#classTag[T](implicitctag:scala.reflect.ClassTag[T]):scala.reflect.ClassTag[T]" class="extmbr" name="scala.reflect#classTag">classTag</a>, or <a href="TypeTags.html#weakTypeTag[T](implicitattag:TypeTags.this.WeakTypeTag[T]):TypeTags.this.WeakTypeTag[T]" class="extmbr" name="scala.reflect.api.TypeTags#weakTypeTag">weakTypeTag</a> </h5><p>For example:</p><pre><span class="kw">import</span> scala.reflect.runtime.universe._
+<span class="kw">val</span> tt = typeTag[<span class="std">Int</span>]
+
+<span class="kw">import</span> scala.reflect._
+<span class="kw">val</span> ct = classTag[<span class="std">String</span>]</pre><p>Each of these methods constructs a <code>TypeTag[T]</code> or <code>ClassTag[T]</code> for the given
+type argument <code>T</code>.</p><h5> #2 Using an implicit parameter of type <code>TypeTag[T]</code>, <code>ClassTag[T]</code>, or <code>WeakTypeTag[T]</code></h5><p>For example:</p><pre><span class="kw">import</span> scala.reflect.runtime.universe._
+
+<span class="kw">def</span> paramInfo[T](x: T)(<span class="kw">implicit</span> tag: <span class="std">TypeTag</span>[T]): <span class="std">Unit</span> = {
+  <span class="kw">val</span> targs = tag.tpe <span class="kw">match</span> { <span class="kw">case</span> TypeRef(_, _, args) <span class="kw">=&gt;</span> args }
+  println(s<span class="lit">"type of $x has type arguments $targs"</span>)
+}
+
+scala&gt; paramInfo(<span class="num">42</span>)
+<span class="kw">type</span> of <span class="num">42</span> has <span class="kw">type</span> arguments <span class="std">List</span>()
+
+scala&gt; paramInfo(<span class="std">List</span>(<span class="num">1</span>, <span class="num">2</span>))
+<span class="kw">type</span> of <span class="std">List</span>(<span class="num">1</span>, <span class="num">2</span>) has <span class="kw">type</span> arguments <span class="std">List</span>(<span class="std">Int</span>)</pre><h5> #3 Context bound of a type parameter </h5><p>...on methods or classes. The above example can be implemented as follows:</p><pre><span class="kw">import</span> scala.reflect.runtime.universe._
+
+<span class="kw">def</span> paramInfo[T: <span class="std">TypeTag</span>](x: T): <span class="std">Unit</span> = {
+  <span class="kw">val</span> targs = typeOf[T] <span class="kw">match</span> { <span class="kw">case</span> TypeRef(_, _, args) <span class="kw">=&gt;</span> args }
+  println(s<span class="lit">"type of $x has type arguments $targs"</span>)
+}
+
+scala&gt; paramInfo(<span class="num">42</span>)
+<span class="kw">type</span> of <span class="num">42</span> has <span class="kw">type</span> arguments <span class="std">List</span>()
+
+scala&gt; paramInfo(<span class="std">List</span>(<span class="num">1</span>, <span class="num">2</span>))
+<span class="kw">type</span> of <span class="std">List</span>(<span class="num">1</span>, <span class="num">2</span>) has <span class="kw">type</span> arguments <span class="std">List</span>(<span class="std">Int</span>)</pre><h5> <code>WeakTypeTag</code>s </h5><p><code>WeakTypeTag[T]</code> generalizes <code>TypeTag[T]</code>. Unlike a regular <code>TypeTag</code>, components of
+its type representation can be references to type parameters or abstract types.
+However, <code>WeakTypeTag[T]</code> tries to be as concrete as possible, i.e. if type tags
+are available for the referenced type arguments or abstract types, they are used to
+embed the concrete types into the <code>WeakTypeTag[T]</code>.</p><p>Continuing the example above:</p><pre><span class="kw">def</span> weakParamInfo[T](x: T)(<span class="kw">implicit</span> tag: WeakTypeTag[T]): <span class="std">Unit</span> = {
+  <span class="kw">val</span> targs = tag.tpe <span class="kw">match</span> { <span class="kw">case</span> TypeRef(_, _, args) <span class="kw">=&gt;</span> args }
+  println(s<span class="lit">"type of $x has type arguments $targs"</span>)
+}
+
+scala&gt; <span class="kw">def</span> foo[T] = weakParamInfo(<span class="std">List</span>[T]())
+foo: [T]<span class="kw">=&gt;</span> <span class="std">Unit</span>
+
+scala&gt; foo[<span class="std">Int</span>]
+<span class="kw">type</span> of <span class="std">List</span>() has <span class="kw">type</span> arguments <span class="std">List</span>(T)</pre><h5> TypeTags and Manifests </h5><p><code>TypeTag</code>s correspond loosely to the pre-2.10 notion of
+<span class="extype" name="scala.reflect.Manifest">scala.reflect.Manifest</span>s. While <span class="extype" name="scala.reflect.ClassTag">scala.reflect.ClassTag</span> corresponds to
+<a href="../package.html#ClassManifest[T]=scala.reflect.ClassTag[T]" class="extmbr" name="scala.reflect.ClassManifest">scala.reflect.ClassManifest</a> and <a href="TypeTags$TypeTag.html" class="extype" name="scala.reflect.api.TypeTags.TypeTag">scala.reflect.api.TypeTags#TypeTag</a> mostly
+corresponds to <span class="extype" name="scala.reflect.Manifest">scala.reflect.Manifest</span>, other pre-2.10 <code>Manifest</code> types do not
+have a direct correspondence with a 2.10 &quot;<code>Tag</code>&quot; type.</p><ul><li><b><span class="extype" name="scala.reflect.OptManifest">scala.reflect.OptManifest</span> is not supported.</b> <br/>This is because <code>Tag</code>s
+can reify arbitrary types, so they are always available.
+ -</li><li><b>There is no equivalent for <span class="extype" name="scala.reflect.AnyValManifest">scala.reflect.AnyValManifest</span>.</b> <br/>Instead, one
+can compare their <code>Tag</code> with one of the base <code>Tag</code>s (defined in the corresponding
+companion objects) in order to find out whether or not it represents a primitive
+value class. Additionally, it's possible to simply use
+<code>&lt;tag&gt;.tpe.typeSymbol.isPrimitiveValueClass</code>.</li><li><b>There are no replacement for factory methods defined in the <code>Manifest</code>
+companion objects</b>. <br/>Instead, one could generate corresponding types using the
+reflection APIs provided by Java (for classes) and Scala (for types).</li><li><b>Certain manifest operations(i.e., &lt;:&lt;, &gt;:&gt; and typeArguments) are not
+supported.</b> <br/>Instead, one could use the reflection APIs provided by Java (for
+classes) and Scala (for types).</li></ul><p>In Scala 2.10, <a href="../package.html#ClassManifest[T]=scala.reflect.ClassTag[T]" class="extmbr" name="scala.reflect.ClassManifest">scala.reflect.ClassManifest</a>s are deprecated, and it is planned
+to deprecate <span class="extype" name="scala.reflect.Manifest">scala.reflect.Manifest</span> in favor of <code>TypeTag</code>s and <code>ClassTag</code>s in
+an upcoming point release. Thus, it is advisable to migrate any <code>Manifest</code>-based
+APIs to use <code>Tag</code>s.</p><p>For more information about <code>TypeTag</code>s, see the
+<a href="http://docs.scala-lang.org/overviews/reflection/typetags-manifests.html" target="_blank">Reflection Guide: TypeTags</a>
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><span class="extype" name="scala.reflect.ClassTag">scala.reflect.ClassTag</span>, <a href="TypeTags$TypeTag.html" class="extype" name="scala.reflect.api.TypeTags.TypeTag">scala.reflect.api.TypeTags#TypeTag</a>, <a href="TypeTags$WeakTypeTag.html" class="extype" name="scala.reflect.api.TypeTags.WeakTypeTag">scala.reflect.api.TypeTags#WeakTypeTag</a></p></span></dd></dl></div>
+    </li><li name="scala.reflect.api.Types" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="TypesextendsAnyRef"></a>
+      <a id="Types:Types"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Types.html"><span class="name">Types</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@TypesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"> <span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></span></p><div class="fullcomment"><div class="comment cmt"><p> <span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p> A trait that defines types and operations on them.</p><p> Type instances represent information about the type of a corresponding symbol. This includes its members
+ (methods, fields, type parameters, nested classes, traits, etc.) either declared directly or inherited, its base types,
+ its erasure and so on. Types also provide operations to test for type conformance or equivalence or for widening.</p><p> To instantiate a type, most of the time, the <a href="TypeTags.html#typeOf[T](implicitttag:TypeTags.this.TypeTag[T]):TypeTags.this.Type" class="extmbr" name="scala.reflect.api.TypeTags#typeOf">scala.reflect.api.TypeTags#typeOf</a> method can be used. It takes
+ a type argument and produces a <code>Type</code> instance which represents that argument. For example:</p><pre>scala&gt; typeOf[<span class="std">List</span>[<span class="std">Int</span>]]
+res0: reflect.runtime.universe.Type = scala.<span class="std">List</span>[<span class="std">Int</span>]</pre><p> In this example, a <a href="Types$TypeRef.html" class="extype" name="scala.reflect.api.Types.TypeRef">scala.reflect.api.Types#TypeRef</a> is returned, which corresponds to the type constructor <code>List</code>
+ applied to the type argument <code>Int</code>.</p><p> <i>Note:</i> Method <code>typeOf</code> does not work for types with type parameters, such as <code>typeOf[List[A]]</code> where <code>A</code> is
+ a type parameter. In this case, use <a href="TypeTags.html#weakTypeOf[T](implicitattag:TypeTags.this.WeakTypeTag[T]):TypeTags.this.Type" class="extmbr" name="scala.reflect.api.TypeTags#weakTypeOf">scala.reflect.api.TypeTags#weakTypeOf</a> instead.</p><p> For other ways to instantiate types, see the <a href="http://docs.scala-lang.org/overviews/reflection/symbols-trees-types.html" target="_blank">corresponding section of the Reflection Guide</a>.</p><h5> Common Operations on Types </h5><p> Types are typically used for type conformance tests or are queried for declarations of members or inner types.</p><ul><li><b>Subtyping Relationships</b> can be tested using <code>&lt;:&lt;</code> and <code>weak_&lt;:&lt;</code>.</li><li><b>Type Equality</b> can be checked with <code>=:=</code>. It's important to note that <code>==</code> should not be used to compare types for equality-- <code>==</code> can't check for type equality in the presence of type aliases, while <code>=:=</code> can.</li></ul><p> Types can be queried for members and declarations by using the <code>members</code> and <code>declarations</code> methods (along with
+ their singular counterparts <code>member</code> and <code>declaration</code>), which provide the list of definitions associated with that type.
+ For example, to look up the <code>map</code> method of <code>List</code>, one can do:</p><pre>scala&gt; typeOf[<span class="std">List</span>[_]].member(<span class="lit">"map"</span>: TermName)
+res1: reflect.runtime.universe.<span class="std">Symbol</span> = method map</pre><p>For more information about <code>Type</code>s, see the <a href="http://docs.scala-lang.org/overviews/reflection/symbols-trees-types.html" target="_blank">Reflection Guide: Symbols, Trees, and Types</a>
+</p></div></div>
+    </li><li name="scala.reflect.api.Universe" visbl="pub" data-isabs="true" fullComment="yes" group="ReflectionAPI">
+      <a id="UniverseextendsSymbolswithTypeswithFlagSetswithScopeswithNameswithTreeswithConstantswithAnnotationswithPositionswithExprswithTypeTagswithImplicitTagswithStandardDefinitionswithStandardNameswithStandardLiftableswithMirrorswithPrinterswithLiftableswithQuasiquoteswithInternals"></a>
+      <a id="Universe:Universe"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Universe.html"><span class="name">Universe</span></a><span class="result"> extends <a href="Symbols.html" class="extype" name="scala.reflect.api.Symbols">Symbols</a> with <a href="Types.html" class="extype" name="scala.reflect.api.Types">Types</a> with <a href="FlagSets.html" class="extype" name="scala.reflect.api.FlagSets">FlagSets</a> with <a href="Scopes.html" class="extype" name="scala.reflect.api.Scopes">Scopes</a> with <a href="Names.html" class="extype" name="scala.reflect.api.Names">Names</a> with <a href="Trees.html" class="extype" name="scala.reflect.api.Trees">Trees</a> with <a href="Constants.html" class="extype" name="scala.reflect.api.Constants">Constants</a> with <a href="Annotations.html" class="extype" name="scala.reflect.api.Annotations">Annotations</a> with <a href="Positions.html" class="extype" name="scala.reflect.api.Positions">Positions</a> with <a href="Exprs.html" class="extype" name="scala.reflect.api.Exprs">Exprs</a> with <a href="TypeTags.html" class="extype" name="scala.reflect.api.TypeTags">TypeTags</a> with <a href="ImplicitTags.html" class="extype" name="scala.reflect.api.ImplicitTags">ImplicitTags</a> with <a href="StandardDefinitions.html" class="extype" name="scala.reflect.api.StandardDefinitions">StandardDefinitions</a> with <a href="StandardNames.html" class="extype" name="scala.reflect.api.StandardNames">StandardNames</a> with <a href="StandardLiftables.html" class="extype" name="scala.reflect.api.StandardLiftables">StandardLiftables</a> with <a href="Mirrors.html" class="extype" name="scala.reflect.api.Mirrors">Mirrors</a> with <a href="Printers.html" class="extype" name="scala.reflect.api.Printers">Printers</a> with <a href="Liftables.html" class="extype" name="scala.reflect.api.Liftables">Liftables</a> with <a href="Quasiquotes.html" class="extype" name="scala.reflect.api.Quasiquotes">Quasiquotes</a> with <a href="Internals.html" class="extype" name="scala.reflect.api.Internals">Internals</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.package@UniverseextendsSymbolswithTypeswithFlagSetswithScopeswithNameswithTreeswithConstantswithAnnotationswithPositionswithExprswithTypeTagswithImplicitTagswithStandardDefinitionswithStandardNameswithStandardLiftableswithMirrorswithPrinterswithLiftableswithQuasiquoteswithInternals" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p><code>Universe</code> provides a complete set of reflection operations which make it possible for one
+to reflectively inspect Scala type relations, such as membership or subtyping.</p><p><a href="Universe.html" class="extype" name="scala.reflect.api.Universe">scala.reflect.api.Universe</a> has two specialized sub-universes for different scenarios.
+<a href="JavaUniverse.html" class="extype" name="scala.reflect.api.JavaUniverse">scala.reflect.api.JavaUniverse</a> adds operations that link symbols and types to the underlying
+classes and runtime values of a JVM instance-- this can be thought of as the <code>Universe</code> that
+should be used for all typical use-cases of Scala reflection. <a href="../macros/Universe.html" class="extype" name="scala.reflect.macros.Universe">scala.reflect.macros.Universe</a>
+adds operations which allow macros to access selected compiler data structures and operations--
+this type of <code>Universe</code> should only ever exist within the implementation of a Scala macro.</p><p><code>Universe</code> can be thought of as the entry point to Scala reflection. It mixes-in, and thus provides
+an interface to the following main types:</p><ul><li><a href="Types$Type.html" class="extype" name="scala.reflect.api.Types.Type">Types</a> represent types</li><li><a href="Symbols$Symbol.html" class="extype" name="scala.reflect.api.Symbols.Symbol">Symbols</a> represent definitions</li><li><a href="Trees$Tree.html" class="extype" name="scala.reflect.api.Trees.Tree">Trees</a> represent abstract syntax trees</li><li><a href="Names.html#Name&gt;:Null&lt;:Names.this.NameApi" class="extmbr" name="scala.reflect.api.Names.Name">Names</a> represent term and type names</li><li><a href="Annotations$Annotation.html" class="extype" name="scala.reflect.api.Annotations.Annotation">Annotations</a> represent annotations</li><li><a href="Positions.html#Position&gt;:Null&lt;:scala.reflect.api.Position{typePos=Positions.this.Position}" class="extmbr" name="scala.reflect.api.Positions.Position">Positions</a> represent source positions of tree nodes</li><li><a href="FlagSets$FlagSet.html" class="extype" name="scala.reflect.api.FlagSets.FlagSet">FlagSet</a> represent sets of flags that apply to symbols and
+    definition trees</li><li><a href="Constants$Constant.html" class="extype" name="scala.reflect.api.Constants.Constant">Constants</a> represent compile-time constants.</li></ul><p>To obtain a <code>Universe</code> to use with Scala runtime reflection, simply make sure to use or import
+<code>scala.reflect.runtime.universe._</code></p><pre>scala&gt; <span class="kw">import</span> scala.reflect.runtime.universe._
+<span class="kw">import</span> scala.reflect.runtime.universe._
+
+scala&gt; typeOf[<span class="std">List</span>[<span class="std">Int</span>]]
+res0: reflect.runtime.universe.Type = scala.<span class="std">List</span>[<span class="std">Int</span>]
+
+scala&gt; typeOf[Either[<span class="std">String</span>, <span class="std">Int</span>]]
+res1: reflect.runtime.universe.Type = scala.Either[<span class="std">String</span>,<span class="std">Int</span>]</pre><p>To obtain a <code>Universe</code> for use within a Scala macro, use <a href="../macros/blackbox/Context.html#universe:scala.reflect.macros.Universe" class="extmbr" name="scala.reflect.macros.blackbox.Context#universe">scala.reflect.macros.blackbox.Context#universe</a>.
+or <a href="../macros/whitebox/Context.html#universe:scala.reflect.macros.Universe" class="extmbr" name="scala.reflect.macros.whitebox.Context#universe">scala.reflect.macros.whitebox.Context#universe</a>. For example:</p><pre><span class="kw">def</span> printf(format: <span class="std">String</span>, params: <span class="std">Any</span>*): <span class="std">Unit</span> = macro impl
+<span class="kw">def</span> impl(c: Context)(format: c.Expr[<span class="std">String</span>], params: c.Expr[<span class="std">Any</span>]*): c.Expr[<span class="std">Unit</span>] = {
+  <span class="kw">import</span> c.universe._
+  ...
+}</pre><p>For more information about <code>Universe</code>s, see the <a href="http://docs.scala-lang.org/overviews/reflection/environment-universes-mirrors.html" target="_blank">Reflection Guide: Universes</a>
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="ReflectionAPI">
+              <h3>Scala Reflection API</h3>
+              
+            </div><div class="group" name="Tags">
+              <h3>Tags</h3>
+              <div class="comment cmt"><p>Implicit values that provide <span class="extype" name="scala.reflect.ClassTag"><code>ClassTags</code></span> for the reflection
+                       classes. These are abstract in the interface but are later filled in to provide ClassTags
+                       for the either the runtime reflection or macros entities, depending on the use.</p></div>
+            </div><div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

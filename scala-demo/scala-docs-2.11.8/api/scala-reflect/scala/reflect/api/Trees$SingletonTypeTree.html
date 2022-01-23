@@ -1,0 +1,1008 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>SingletonTypeTree - Scala Reflection Library 2.11.8 - scala.reflect.api.Trees.SingletonTypeTree</title>
+          <meta name="description" content="SingletonTypeTree - Scala Reflection Library 2.11.8 - scala.reflect.api.Trees.SingletonTypeTree" />
+          <meta name="keywords" content="SingletonTypeTree Scala Reflection Library 2.11.8 scala.reflect.api.Trees.SingletonTypeTree" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.reflect.api.Trees$SingletonTypeTree';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <a href="Trees$SingletonTypeTreeExtractor.html" title="See companion class"><img alt="Type/Class" src="../../../lib/type_to_class_big.png" /></a>
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.reflect">reflect</a>.<a href="package.html" class="extype" name="scala.reflect.api">api</a>.<a href="Trees.html" class="extype" name="scala.reflect.api.Trees">Trees</a></p>
+        <h1><a href="Trees$SingletonTypeTreeExtractor.html" title="See companion class">SingletonTypeTree</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="Trees$SingletonTypeTreeExtractor.html" title="See companion class">class SingletonTypeTreeExtractor</a>
+            | <a href="Trees.html" class="extype" name="scala.reflect.api.Trees">package Trees</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">SingletonTypeTree</span><span class="result"> &gt;: <a href="../../Null.html" class="extype" name="scala.Null">Null</a> &lt;: <a href="Universe.html#SingletonTypeTreeApiextendsTrees.this.TypTreeApi" class="extmbr" name="scala.reflect.api.Trees.SingletonTypeTreeApi">Universe.SingletonTypeTreeApi</a> with <a href="Universe.html#TypTree&gt;:Null&lt;:Trees.this.TypTreeApiwithTrees.this.Tree" class="extmbr" name="scala.reflect.api.Trees.TypTree">Universe.TypTree</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Singleton type, eliminated by RefCheck</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/reflect/scala/reflect/api/Trees.scala#L1" target="_blank">Trees.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.reflect.api.Trees.&lt;refinement&gt;">Universe.&lt;refinement&gt;</span>, <span class="extype" name="scala.reflect.api.Trees.&lt;refinement&gt;">Universe.&lt;refinement&gt;</span>, <a href="Universe.html#SingletonTypeTreeApiextendsTrees.this.TypTreeApi" class="extmbr" name="scala.reflect.api.Trees.SingletonTypeTreeApi">Universe.SingletonTypeTreeApi</a>, <a href="Universe.html#TypTreeApiextendsTrees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.TypTreeApi">Universe.TypTreeApi</a>, <a href="Universe.html#TreeApiextendsProduct" class="extmbr" name="scala.reflect.api.Trees.TreeApi">Universe.TreeApi</a>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.reflect.api.Trees.SingletonTypeTree"><span>SingletonTypeTree</span></li><li class="in" name="scala.reflect.api.Trees.&lt;refinement&gt;"><span>&lt;refinement&gt;</span></li><li class="in" name="scala.reflect.api.Trees.&lt;refinement&gt;"><span>&lt;refinement&gt;</span></li><li class="in" name="scala.reflect.api.Trees.SingletonTypeTreeApi"><span>SingletonTypeTreeApi</span></li><li class="in" name="scala.reflect.api.Trees.TypTreeApi"><span>TypTreeApi</span></li><li class="in" name="scala.reflect.api.Trees.TreeApi"><span>TreeApi</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scala.Equals#canEqual" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="canEqual(that:Any):Boolean"></a>
+      <a id="canEqual(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">canEqual</span><span class="params">(<span name="that">that: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@canEqual(that:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Equals</dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#canHaveAttrs" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="canHaveAttrs:Boolean"></a>
+      <a id="canHaveAttrs:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">canHaveAttrs</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@canHaveAttrs:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Can this tree carry attributes (i.e.</p><div class="fullcomment"><div class="comment cmt"><p>Can this tree carry attributes (i.e. symbols, types or positions)?
+ Typically the answer is yes, except for the <code>EmptyTree</code> null object and
+ two special singletons: <code>noSelfType</code> and <code>pendingSuperCall</code>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#children" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="children:List[Trees.this.Tree]"></a>
+      <a id="children:List[Universe.Tree]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">children</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@children:List[Trees.this.Tree]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The direct child trees of this tree.</p><div class="fullcomment"><div class="comment cmt"><p>The direct child trees of this tree.
+ EmptyTrees are always omitted.  Lists are flattened.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#collect" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="collect[T](pf:PartialFunction[Trees.this.Tree,T]):List[T]"></a>
+      <a id="collect[T](PartialFunction[Universe.Tree,T]):List[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">collect</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="pf">pf: <span class="extype" name="scala.PartialFunction">PartialFunction</span>[<a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a>, <span class="extype" name="scala.reflect.api.Trees.TreeApi.collect.T">T</span>]</span>)</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="scala.reflect.api.Trees.TreeApi.collect.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@collect[T](pf:PartialFunction[Trees.this.Tree,T]):List[T]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Apply <code>pf</code> to each subtree on which the function is defined and collect the results.</p><div class="fullcomment"><div class="comment cmt"><p>Apply <code>pf</code> to each subtree on which the function is defined and collect the results.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#duplicate" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="duplicate:TreeApi.this.type"></a>
+      <a id="duplicate:TreeApi.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">duplicate</span><span class="result">: <a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@duplicate:TreeApi.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Make a copy of this tree, keeping all attributes,
+ except that all positions are focused (so nothing
+ in this tree will be found when searching by position).</p><div class="fullcomment"><div class="comment cmt"><p>Make a copy of this tree, keeping all attributes,
+ except that all positions are focused (so nothing
+ in this tree will be found when searching by position).
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#equalsStructure" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="equalsStructure(that:Trees.this.Tree):Boolean"></a>
+      <a id="equalsStructure(Universe.Tree):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equalsStructure</span><span class="params">(<span name="that">that: <a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@equalsStructure(that:Trees.this.Tree):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether two trees are structurally equal.</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether two trees are structurally equal.
+ Note that <code>==</code> on trees is reference equality.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#exists" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="exists(p:Trees.this.Tree=&gt;Boolean):Boolean"></a>
+      <a id="exists((Universe.Tree)⇒Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exists</span><span class="params">(<span name="p">p: (<a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@exists(p:Trees.this.Tree=&gt;Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Is there exists a part of this tree which satisfies predicate <code>p</code>?</p><div class="fullcomment"><div class="comment cmt"><p>Is there exists a part of this tree which satisfies predicate <code>p</code>?</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#filter" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="filter(f:Trees.this.Tree=&gt;Boolean):List[Trees.this.Tree]"></a>
+      <a id="filter((Universe.Tree)⇒Boolean):List[Universe.Tree]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">filter</span><span class="params">(<span name="f">f: (<a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@filter(f:Trees.this.Tree=&gt;Boolean):List[Trees.this.Tree]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Find all subtrees matching predicate <code>p</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Find all subtrees matching predicate <code>p</code>. Same as <code>withFilter</code></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#find" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="find(p:Trees.this.Tree=&gt;Boolean):Option[Trees.this.Tree]"></a>
+      <a id="find((Universe.Tree)⇒Boolean):Option[Universe.Tree]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">find</span><span class="params">(<span name="p">p: (<a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@find(p:Trees.this.Tree=&gt;Boolean):Option[Trees.this.Tree]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns optionally first tree (in a preorder traversal) which satisfies predicate <code>p</code>,
+ or None if none exists.</p><div class="fullcomment"><div class="comment cmt"><p>Returns optionally first tree (in a preorder traversal) which satisfies predicate <code>p</code>,
+ or None if none exists.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#forAll" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="forAll(p:Trees.this.Tree=&gt;Boolean):Boolean"></a>
+      <a id="forAll((Universe.Tree)⇒Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">forAll</span><span class="params">(<span name="p">p: (<a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@forAll(p:Trees.this.Tree=&gt;Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Do all parts of this tree satisfy predicate <code>p</code>?</p><div class="fullcomment"><div class="comment cmt"><p>Do all parts of this tree satisfy predicate <code>p</code>?</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#foreach" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="foreach(f:Trees.this.Tree=&gt;Unit):Unit"></a>
+      <a id="foreach((Universe.Tree)⇒Unit):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">foreach</span><span class="params">(<span name="f">f: (<a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@foreach(f:Trees.this.Tree=&gt;Unit):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Apply <code>f</code> to each subtree</p><div class="fullcomment"><div class="comment cmt"><p>Apply <code>f</code> to each subtree</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#isDef" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="isDef:Boolean"></a>
+      <a id="isDef:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isDef</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@isDef:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Does this tree represent a definition? (of a method, of a class, etc)</p><div class="fullcomment"><div class="comment cmt"><p>Does this tree represent a definition? (of a method, of a class, etc)</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#isEmpty" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="isEmpty:Boolean"></a>
+      <a id="isEmpty:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isEmpty</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@isEmpty:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Is this tree one of the empty trees?</p><div class="fullcomment"><div class="comment cmt"><p>Is this tree one of the empty trees?</p><p> Empty trees are: the <code>EmptyTree</code> null object and <code>TypeTree</code> instances that don't carry a type.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd><dt>See also</dt><dd><span class="cmt"><p><code>canHaveAttrs</code></p></span></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#isTerm" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="isTerm:Boolean"></a>
+      <a id="isTerm:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isTerm</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@isTerm:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The canonical way to test if a Tree represents a term.</p><div class="fullcomment"><div class="comment cmt"><p>The canonical way to test if a Tree represents a term.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#isType" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="isType:Boolean"></a>
+      <a id="isType:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isType</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@isType:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The canonical way to test if a Tree represents a type.</p><div class="fullcomment"><div class="comment cmt"><p>The canonical way to test if a Tree represents a type.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#nonEmpty" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="nonEmpty:Boolean"></a>
+      <a id="nonEmpty:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nonEmpty</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@nonEmpty:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Is this tree not an empty tree?
+</p><div class="fullcomment"><div class="comment cmt"><p>Is this tree not an empty tree?
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd><dt>See also</dt><dd><span class="cmt"><p><code>isEmpty</code></p></span></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#orElse" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="orElse(alt:=&gt;Trees.this.Tree):Trees.this.Tree"></a>
+      <a id="orElse(⇒Universe.Tree):Universe.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">orElse</span><span class="params">(<span name="alt">alt: ⇒ <a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a></span>)</span><span class="result">: <a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@orElse(alt:=&gt;Trees.this.Tree):Trees.this.Tree" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides an alternate if tree is empty</p><div class="fullcomment"><div class="comment cmt"><p>Provides an alternate if tree is empty</p></div><dl class="paramcmts block"><dt class="param">alt</dt><dd class="cmt"><p>The alternate tree</p></dd><dt>returns</dt><dd class="cmt"><p>If this tree is non empty, this tree, otherwise <code>alt</code>.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#pos" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="pos:Trees.this.Position"></a>
+      <a id="pos:Universe.Position"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pos</span><span class="result">: <a href="Universe.html#Position&gt;:Null&lt;:scala.reflect.api.Position{typePos=Positions.this.Position}" class="extmbr" name="scala.reflect.api.Universe.Position">Universe.Position</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@pos:Trees.this.Position" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Position of the tree.</p><div class="fullcomment"><div class="comment cmt"><p>Position of the tree.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.Product#productArity" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="productArity:Int"></a>
+      <a id="productArity:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">productArity</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@productArity:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Product</dd></dl></div>
+    </li><li name="scala.Product#productElement" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="productElement(n:Int):Any"></a>
+      <a id="productElement(Int):Any"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">productElement</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@productElement(n:Int):Any" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Product</dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.SingletonTypeTreeApi#ref" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ref:Trees.this.Tree"></a>
+      <a id="ref:Universe.Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ref</span><span class="result">: <a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@ref:Trees.this.Tree" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The underlying reference.</p><div class="fullcomment"><div class="comment cmt"><p>The underlying reference.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$SingletonTypeTreeApi.html" class="extype" name="scala.reflect.api.Trees.SingletonTypeTreeApi">SingletonTypeTreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#symbol" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="symbol:Trees.this.Symbol"></a>
+      <a id="symbol:Universe.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">symbol</span><span class="result">: <a href="Universe.html#Symbol&gt;:Null&lt;:Symbols.this.SymbolApi" class="extmbr" name="scala.reflect.api.Symbols.Symbol">Universe.Symbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@symbol:Trees.this.Symbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Symbol of the tree.</p><div class="fullcomment"><div class="comment cmt"><p>Symbol of the tree.</p><p> For most trees symbol is <code>null</code>. In <code>SymTree</code>s,
+ it is overridden and implemented with a var, initialized to <code>NoSymbol</code>.</p><p> Trees which are not <code>SymTree</code>s but which carry symbols do so by
+ overriding <code>def symbol</code> to forward it elsewhere.  Examples:</p><ul><li><code>Super(qual, _)</code>              has <code>qual</code>'s symbol,</li><li><code>Apply(fun, args)</code>            has <code>fun</code>'s symbol,</li><li><code>TypeApply(fun, args)</code>        has <code>fun</code>'s symbol,</li><li><code>AppliedTypeTree(tpt, args)</code>  has <code>tpt</code>'s symbol,</li><li><code>TypeTree(tpe)</code>               has <code>tpe</code>'s <code>typeSymbol</code>, if <code>tpe != null</code>.
+</li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#tpe" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="tpe:Trees.this.Type"></a>
+      <a id="tpe:Universe.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tpe</span><span class="result">: <a href="Universe.html#Type&gt;:Null&lt;:Types.this.TypeApi" class="extmbr" name="scala.reflect.api.Types.Type">Universe.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@tpe:Trees.this.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Type of the tree.</p><div class="fullcomment"><div class="comment cmt"><p>Type of the tree.</p><p> Upon creation most trees have their <code>tpe</code> set to <code>null</code>.
+ Types are typically assigned to trees during typechecking.
+ Some node factory methods set <code>tpe</code> immediately after creation.</p><p> When the typechecker encounters a tree with a non-null tpe,
+ it will assume it to be correct and not check it again. This means one has
+ to be careful not to erase the <code>tpe</code> field of subtrees.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#withFilter" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="withFilter(f:Trees.this.Tree=&gt;Boolean):List[Trees.this.Tree]"></a>
+      <a id="withFilter((Universe.Tree)⇒Boolean):List[Universe.Tree]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withFilter</span><span class="params">(<span name="f">f: (<a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Universe.html#Tree&gt;:Null&lt;:Trees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.Tree">Universe.Tree</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@withFilter(f:Trees.this.Tree=&gt;Boolean):List[Trees.this.Tree]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Find all subtrees matching predicate <code>p</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Find all subtrees matching predicate <code>p</code>. Same as <code>filter</code></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Product#productIterator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="productIterator:Iterator[Any]"></a>
+      <a id="productIterator:Iterator[Any]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">productIterator</span><span class="result">: <a href="../../package.html#Iterator[+A]=Iterator[A]" class="extmbr" name="scala.Iterator">Iterator</a>[<a href="../../Any.html" class="extype" name="scala.Any">Any</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@productIterator:Iterator[Any]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Product</dd></dl></div>
+    </li><li name="scala.Product#productPrefix" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="productPrefix:String"></a>
+      <a id="productPrefix:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">productPrefix</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@productPrefix:String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Product</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.reflect.api.Trees.TreeApi#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Obtains string representation of a tree</p><div class="fullcomment"><div class="comment cmt"><p>Obtains string representation of a tree</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Trees$TreeApi.html" class="extype" name="scala.reflect.api.Trees.TreeApi">TreeApi</a> → AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.reflect.api.Trees$SingletonTypeTree@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.reflect.api.Trees.&lt;refinement&gt;">
+              <h3>Inherited from <span class="extype" name="scala.reflect.api.Trees.&lt;refinement&gt;">Universe.&lt;refinement&gt;</span></h3>
+            </div><div class="parent" name="scala.reflect.api.Trees.&lt;refinement&gt;">
+              <h3>Inherited from <span class="extype" name="scala.reflect.api.Trees.&lt;refinement&gt;">Universe.&lt;refinement&gt;</span></h3>
+            </div><div class="parent" name="scala.reflect.api.Trees.SingletonTypeTreeApi">
+              <h3>Inherited from <a href="Universe.html#SingletonTypeTreeApiextendsTrees.this.TypTreeApi" class="extmbr" name="scala.reflect.api.Trees.SingletonTypeTreeApi">Universe.SingletonTypeTreeApi</a></h3>
+            </div><div class="parent" name="scala.reflect.api.Trees.TypTreeApi">
+              <h3>Inherited from <a href="Universe.html#TypTreeApiextendsTrees.this.TreeApi" class="extmbr" name="scala.reflect.api.Trees.TypTreeApi">Universe.TypTreeApi</a></h3>
+            </div><div class="parent" name="scala.reflect.api.Trees.TreeApi">
+              <h3>Inherited from <a href="Universe.html#TreeApiextendsProduct" class="extmbr" name="scala.reflect.api.Trees.TreeApi">Universe.TreeApi</a></h3>
+            </div><div class="parent" name="scala.Product">
+              <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
+            </div><div class="parent" name="scala.Equals">
+              <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

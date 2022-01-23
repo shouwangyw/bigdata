@@ -1,0 +1,863 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>BasicIO - Scala Standard Library 2.11.8 - scala.sys.process.BasicIO</title>
+          <meta name="description" content="BasicIO - Scala Standard Library 2.11.8 - scala.sys.process.BasicIO" />
+          <meta name="keywords" content="BasicIO Scala Standard Library 2.11.8 scala.sys.process.BasicIO" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.sys.process.BasicIO$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Object" src="../../../lib/object_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.sys">sys</a>.<a href="package.html" class="extype" name="scala.sys.process">process</a></p>
+        <h1>BasicIO</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="scala.sys.process">package process</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BasicIO</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This object contains factories for <a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">scala.sys.process.ProcessIO</a>,
+which can be used to control the I/O of a <a href="Process.html" class="extype" name="scala.sys.process.Process">scala.sys.process.Process</a>
+when a <a href="ProcessBuilder.html" class="extype" name="scala.sys.process.ProcessBuilder">scala.sys.process.ProcessBuilder</a> is started with the <code>run</code>
+command.</p><p>It also contains some helper methods that can be used to in the creation of
+<code>ProcessIO</code>.</p><p>It is used by other classes in the package in the implementation of various
+features, but can also be used by client code.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/sys/process/BasicIO.scala#L1" target="_blank">BasicIO.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.sys.process.BasicIO"><span>BasicIO</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.sys.process.BasicIO#BufferSize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BufferSize:Int(8192)"></a>
+      <a id="BufferSize:Int(8192)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BufferSize</span><span class="result">: Int(8192)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@BufferSize:Int(8192)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Size of the buffer used in all the functions that copy data</p>
+    </li><li name="scala.sys.process.BasicIO#Newline" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Newline:String"></a>
+      <a id="Newline:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Newline</span><span class="result">: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@Newline:String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Used to separate lines in the <code>processFully</code> function that takes <code>Appendable</code>.</p>
+    </li><li name="scala.sys.process.BasicIO#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(withIn:Boolean,log:scala.sys.process.ProcessLogger):scala.sys.process.ProcessIO"></a>
+      <a id="apply(Boolean,ProcessLogger):ProcessIO"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="withIn">withIn: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="log">log: <a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a></span>)</span><span class="result">: <a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">ProcessIO</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@apply(withIn:Boolean,log:scala.sys.process.ProcessLogger):scala.sys.process.ProcessIO" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a <code>ProcessIO</code> from a <code>ProcessLogger</code> .</p><div class="fullcomment"><div class="comment cmt"><p>Creates a <code>ProcessIO</code> from a <code>ProcessLogger</code> . It can attach the
+process input to stdin.
+</p></div><dl class="paramcmts block"><dt class="param">withIn</dt><dd class="cmt"><p>True if the process input should be attached to stdin.</p></dd><dt class="param">log</dt><dd class="cmt"><p>A <code>ProcessLogger</code> to receive all output, normal and error.</p></dd><dt>returns</dt><dd class="cmt"><p>A <code>ProcessIO</code> with the characteristics above.</p></dd></dl></div>
+    </li><li name="scala.sys.process.BasicIO#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(withIn:Boolean,buffer:StringBuffer,log:Option[scala.sys.process.ProcessLogger]):scala.sys.process.ProcessIO"></a>
+      <a id="apply(Boolean,StringBuffer,Option[ProcessLogger]):ProcessIO"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="withIn">withIn: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="buffer">buffer: <span class="extype" name="java.lang.StringBuffer">StringBuffer</span></span>, <span name="log">log: <a href="../../Option.html" class="extype" name="scala.Option">Option</a>[<a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a>]</span>)</span><span class="result">: <a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">ProcessIO</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@apply(withIn:Boolean,buffer:StringBuffer,log:Option[scala.sys.process.ProcessLogger]):scala.sys.process.ProcessIO" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a <code>ProcessIO</code> that appends its output to a <code>StringBuffer</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a <code>ProcessIO</code> that appends its output to a <code>StringBuffer</code>. It can
+attach the process input to stdin, and it will either send the error
+stream to stderr, or to a <code>ProcessLogger</code>.</p><p>For example, the <code>ProcessIO</code> created by the function below will store the
+normal output on the buffer provided, and print all error on stderr. The
+input will be read from stdin.</p><pre><span class="kw">import</span> scala.sys.process.{BasicIO, ProcessLogger}
+<span class="kw">val</span> printer = ProcessLogger(println(_))
+<span class="kw">def</span> appendToBuffer(b: StringBuffer) = BasicIO(<span class="kw">true</span>, b, <span class="std">Some</span>(printer))</pre></div><dl class="paramcmts block"><dt class="param">withIn</dt><dd class="cmt"><p>True if the process input should be attached to stdin.</p></dd><dt class="param">buffer</dt><dd class="cmt"><p>A <code>StringBuffer</code> which will receive the process normal
+              output.</p></dd><dt class="param">log</dt><dd class="cmt"><p>An optional <code>ProcessLogger</code> to which the output should be
+              sent. If <code>None</code>, output will be sent to stderr.</p></dd><dt>returns</dt><dd class="cmt"><p>A <code>ProcessIO</code> with the characteristics above.</p></dd></dl></div>
+    </li><li name="scala.sys.process.BasicIO#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(withIn:Boolean,output:String=&gt;Unit,log:Option[scala.sys.process.ProcessLogger]):scala.sys.process.ProcessIO"></a>
+      <a id="apply(Boolean,(String)⇒Unit,Option[ProcessLogger]):ProcessIO"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="withIn">withIn: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="output">output: (<a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>) ⇒ <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>, <span name="log">log: <a href="../../Option.html" class="extype" name="scala.Option">Option</a>[<a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a>]</span>)</span><span class="result">: <a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">ProcessIO</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@apply(withIn:Boolean,output:String=&gt;Unit,log:Option[scala.sys.process.ProcessLogger]):scala.sys.process.ProcessIO" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a <code>ProcessIO</code> from a function <code>String =&gt; Unit</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a <code>ProcessIO</code> from a function <code>String =&gt; Unit</code>. It can attach the
+process input to stdin, and it will either send the error stream to
+stderr, or to a <code>ProcessLogger</code>.</p><p>For example, the <code>ProcessIO</code> created below will print all normal output
+while ignoring all error output. No input will be provided.</p><pre><span class="kw">import</span> scala.sys.process.BasicIO
+<span class="kw">val</span> errToDevNull = BasicIO(<span class="kw">false</span>, println(_), <span class="std">None</span>)</pre></div><dl class="paramcmts block"><dt class="param">withIn</dt><dd class="cmt"><p>True if the process input should be attached to stdin.</p></dd><dt class="param">output</dt><dd class="cmt"><p>A function that will be called with the process output.</p></dd><dt class="param">log</dt><dd class="cmt"><p>An optional <code>ProcessLogger</code> to which the output should be
+              sent. If <code>None</code>, output will be sent to stderr.</p></dd><dt>returns</dt><dd class="cmt"><p>A <code>ProcessIO</code> with the characteristics above.</p></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.sys.process.BasicIO#close" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="close(c:scala.sys.process.processInternal.Closeable):Unit"></a>
+      <a id="close(Closeable):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">close</span><span class="params">(<span name="c">c: <span class="extype" name="scala.sys.process.processInternal.Closeable">Closeable</span></span>)</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@close(c:scala.sys.process.processInternal.Closeable):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Closes a <code>Closeable</code> without throwing an exception</p>
+    </li><li name="scala.sys.process.BasicIO#connectToIn" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="connectToIn(o:scala.sys.process.processInternal.OutputStream):Unit"></a>
+      <a id="connectToIn(OutputStream):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">connectToIn</span><span class="params">(<span name="o">o: <span class="extype" name="scala.sys.process.processInternal.OutputStream">OutputStream</span></span>)</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@connectToIn(o:scala.sys.process.processInternal.OutputStream):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Copy contents of stdin to the <code>OutputStream</code>.</p>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.sys.process.BasicIO#getErr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getErr(log:Option[scala.sys.process.ProcessLogger]):scala.sys.process.processInternal.InputStream=&gt;Unit"></a>
+      <a id="getErr(Option[ProcessLogger]):(InputStream)⇒Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getErr</span><span class="params">(<span name="log">log: <a href="../../Option.html" class="extype" name="scala.Option">Option</a>[<a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a>]</span>)</span><span class="result">: (<span class="extype" name="scala.sys.process.processInternal.InputStream">InputStream</span>) ⇒ <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@getErr(log:Option[scala.sys.process.ProcessLogger]):scala.sys.process.processInternal.InputStream=&gt;Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a function <code>InputStream =&gt; Unit</code> given an optional
+<code>ProcessLogger</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a function <code>InputStream =&gt; Unit</code> given an optional
+<code>ProcessLogger</code>. If no logger is passed, the function will send the output
+to stderr. This function can be used to create a
+<a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">scala.sys.process.ProcessIO</a>.
+</p></div><dl class="paramcmts block"><dt class="param">log</dt><dd class="cmt"><p>An optional <code>ProcessLogger</code> to which the contents of
+           the <code>InputStream</code> will be sent.</p></dd><dt>returns</dt><dd class="cmt"><p>A function <code>InputStream =&gt; Unit</code> (used by
+         <a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">scala.sys.process.ProcessIO</a>) which will send the data to
+         either the provided <code>ProcessLogger</code> or, if <code>None</code>, to stderr.</p></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.sys.process.BasicIO#input" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="input(connect:Boolean):scala.sys.process.processInternal.OutputStream=&gt;Unit"></a>
+      <a id="input(Boolean):(OutputStream)⇒Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">input</span><span class="params">(<span name="connect">connect: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: (<span class="extype" name="scala.sys.process.processInternal.OutputStream">OutputStream</span>) ⇒ <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@input(connect:Boolean):scala.sys.process.processInternal.OutputStream=&gt;Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a function <code>OutputStream =&gt; Unit</code> that either reads the content
+from stdin or does nothing.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a function <code>OutputStream =&gt; Unit</code> that either reads the content
+from stdin or does nothing. This function can be used by
+<a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">scala.sys.process.ProcessIO</a>.
+</p></div></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.sys.process.BasicIO#processFully" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="processFully(processLine:String=&gt;Unit):scala.sys.process.processInternal.InputStream=&gt;Unit"></a>
+      <a id="processFully((String)⇒Unit):(InputStream)⇒Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">processFully</span><span class="params">(<span name="processLine">processLine: (<a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>) ⇒ <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>)</span><span class="result">: (<span class="extype" name="scala.sys.process.processInternal.InputStream">InputStream</span>) ⇒ <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@processFully(processLine:String=&gt;Unit):scala.sys.process.processInternal.InputStream=&gt;Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a function <code>InputStream =&gt; Unit</code> that will call the passed
+function with all data read.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a function <code>InputStream =&gt; Unit</code> that will call the passed
+function with all data read. This function can be used to create a
+<a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">scala.sys.process.ProcessIO</a>. The <code>processLine</code> function will be called
+with each line read, and <code>Newline</code> will be appended after each line.
+</p></div><dl class="paramcmts block"><dt class="param">processLine</dt><dd class="cmt"><p>A function that will be called with all data read from
+                   the stream.</p></dd><dt>returns</dt><dd class="cmt"><p>A function <code>InputStream =&gt; Unit</code> (used by
+         <a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">scala.sys.process.ProcessIO</a> which will call <code>processLine</code>
+         with all data read from the stream.</p></dd></dl></div>
+    </li><li name="scala.sys.process.BasicIO#processFully" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="processFully(buffer:Appendable):scala.sys.process.processInternal.InputStream=&gt;Unit"></a>
+      <a id="processFully(Appendable):(InputStream)⇒Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">processFully</span><span class="params">(<span name="buffer">buffer: <span class="extype" name="java.lang.Appendable">Appendable</span></span>)</span><span class="result">: (<span class="extype" name="scala.sys.process.processInternal.InputStream">InputStream</span>) ⇒ <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@processFully(buffer:Appendable):scala.sys.process.processInternal.InputStream=&gt;Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a function <code>InputStream =&gt; Unit</code> that appends all data read to the
+provided <code>Appendable</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a function <code>InputStream =&gt; Unit</code> that appends all data read to the
+provided <code>Appendable</code>. This function can be used to create a
+<a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">scala.sys.process.ProcessIO</a>. The buffer will be appended line by line.
+</p></div><dl class="paramcmts block"><dt class="param">buffer</dt><dd class="cmt"><p>An <code>Appendable</code> such as <code>StringBuilder</code> or <code>StringBuffer</code>.</p></dd><dt>returns</dt><dd class="cmt"><p>A function <code>InputStream =&gt; Unit</code> (used by
+         <a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">scala.sys.process.ProcessIO</a> which will append all data read
+         from the stream to the buffer.</p></dd></dl></div>
+    </li><li name="scala.sys.process.BasicIO#processLinesFully" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="processLinesFully(processLine:String=&gt;Unit)(readLine:()=&gt;String):Unit"></a>
+      <a id="processLinesFully((String)⇒Unit)(()⇒String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">processLinesFully</span><span class="params">(<span name="processLine">processLine: (<a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>) ⇒ <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>)</span><span class="params">(<span name="readLine">readLine: () ⇒ <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@processLinesFully(processLine:String=&gt;Unit)(readLine:()=&gt;String):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Calls <code>processLine</code> with the result of <code>readLine</code> until the latter returns
+ <code>null</code> or the current thread is interrupted.</p>
+    </li><li name="scala.sys.process.BasicIO#standard" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="standard(in:scala.sys.process.processInternal.OutputStream=&gt;Unit):scala.sys.process.ProcessIO"></a>
+      <a id="standard((OutputStream)⇒Unit):ProcessIO"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">standard</span><span class="params">(<span name="in">in: (<span class="extype" name="scala.sys.process.processInternal.OutputStream">OutputStream</span>) ⇒ <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>)</span><span class="result">: <a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">ProcessIO</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@standard(in:scala.sys.process.processInternal.OutputStream=&gt;Unit):scala.sys.process.ProcessIO" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a <code>ProcessIO</code> connected to stdout, stderr and the provided <code>in</code></p>
+    </li><li name="scala.sys.process.BasicIO#standard" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="standard(connectInput:Boolean):scala.sys.process.ProcessIO"></a>
+      <a id="standard(Boolean):ProcessIO"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">standard</span><span class="params">(<span name="connectInput">connectInput: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">ProcessIO</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@standard(connectInput:Boolean):scala.sys.process.ProcessIO" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a <code>ProcessIO</code> connected to stdout and stderr, and, optionally, stdin.</p>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.sys.process.BasicIO#toStdErr" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="toStdErr:scala.sys.process.processInternal.InputStream=&gt;Unit"></a>
+      <a id="toStdErr:(InputStream)⇒Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toStdErr</span><span class="result">: (<span class="extype" name="scala.sys.process.processInternal.InputStream">InputStream</span>) ⇒ <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@toStdErr:scala.sys.process.processInternal.InputStream=&gt;Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Send all the input from the stream to stderr, and closes the input stream
+afterwards.</p>
+    </li><li name="scala.sys.process.BasicIO#toStdOut" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="toStdOut:scala.sys.process.processInternal.InputStream=&gt;Unit"></a>
+      <a id="toStdOut:(InputStream)⇒Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toStdOut</span><span class="result">: (<span class="extype" name="scala.sys.process.processInternal.InputStream">InputStream</span>) ⇒ <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@toStdOut:scala.sys.process.processInternal.InputStream=&gt;Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Send all the input from the stream to stdout, and closes the input stream
+afterwards.</p>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.sys.process.BasicIO#transferFully" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="transferFully(in:scala.sys.process.processInternal.InputStream,out:scala.sys.process.processInternal.OutputStream):Unit"></a>
+      <a id="transferFully(InputStream,OutputStream):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">transferFully</span><span class="params">(<span name="in">in: <span class="extype" name="scala.sys.process.processInternal.InputStream">InputStream</span></span>, <span name="out">out: <span class="extype" name="scala.sys.process.processInternal.OutputStream">OutputStream</span></span>)</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@transferFully(in:scala.sys.process.processInternal.InputStream,out:scala.sys.process.processInternal.OutputStream):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Copy all input from the input stream to the output stream.</p><div class="fullcomment"><div class="comment cmt"><p>Copy all input from the input stream to the output stream. Closes the
+input stream once it's all read.
+</p></div></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="../../Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="arg1">arg1: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="../../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.BasicIO$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

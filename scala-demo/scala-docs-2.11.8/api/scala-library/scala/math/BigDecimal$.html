@@ -1,0 +1,1424 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>BigDecimal - Scala Standard Library 2.11.8 - scala.math.BigDecimal</title>
+          <meta name="description" content="BigDecimal - Scala Standard Library 2.11.8 - scala.math.BigDecimal" />
+          <meta name="keywords" content="BigDecimal Scala Standard Library 2.11.8 scala.math.BigDecimal" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'scala.math.BigDecimal$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <a href="BigDecimal.html" title="See companion class"><img alt="Object/Class" src="../../lib/object_to_class_big.png" /></a>
+        <p id="owner"><a href="../package.html" class="extype" name="scala">scala</a>.<a href="package.html" class="extype" name="scala.math">math</a></p>
+        <h1><a href="BigDecimal.html" title="See companion class">BigDecimal</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="BigDecimal.html" title="See companion class">class BigDecimal</a>
+            | <a href="package.html" class="extype" name="scala.math">package math</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BigDecimal</span><span class="result"> extends <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/math/BigDecimal.scala#L1" target="_blank">BigDecimal.scala</a></dd><dt>Version</dt><dd><p>1.1</p></dd><dt>Since</dt><dd><p>2.7</p></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a>, <span class="extype" name="java.io.Serializable">java.io.Serializable</span>, <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.math.BigDecimal"><span>BigDecimal</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@##():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.math.BigDecimal.RoundingMode" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RoundingMode"></a>
+      <a id="RoundingMode:RoundingMode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BigDecimal$$RoundingMode$.html"><span class="name">RoundingMode</span></a><span class="result"> extends <a href="../Enumeration.html" class="extype" name="scala.Enumeration">Enumeration</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@RoundingMode" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(bd:java.math.BigDecimal):scala.math.BigDecimal"></a>
+      <a id="apply(java.math.BigDecimal):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="bd">bd: <span class="extype" name="java.math.BigDecimal">java.math.BigDecimal</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(bd:java.math.BigDecimal):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> from a <code>java.math.BigDecimal</code>.</p>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(unscaledVal:scala.math.BigInt,scale:Int,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="apply(BigInt,Int,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="unscaledVal">unscaledVal: <a href="BigInt.html" class="extype" name="scala.math.BigInt">BigInt</a></span>, <span name="scale">scale: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(unscaledVal:scala.math.BigInt,scale:Int,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> whose unscaled value is equal to that
+ of the specified <code>BigInt</code> value.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> whose unscaled value is equal to that
+ of the specified <code>BigInt</code> value.
+</p></div><dl class="paramcmts block"><dt class="param">unscaledVal</dt><dd class="cmt"><p>the specified <code>BigInt</code> value</p></dd><dt class="param">scale</dt><dd class="cmt"><p>the scale</p></dd><dt class="param">mc</dt><dd class="cmt"><p>the precision and rounding mode for creation of this value and future operations on it</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(unscaledVal:scala.math.BigInt,scale:Int):scala.math.BigDecimal"></a>
+      <a id="apply(BigInt,Int):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="unscaledVal">unscaledVal: <a href="BigInt.html" class="extype" name="scala.math.BigInt">BigInt</a></span>, <span name="scale">scale: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(unscaledVal:scala.math.BigInt,scale:Int):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> whose unscaled value is equal to that
+ of the specified <code>BigInt</code> value.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> whose unscaled value is equal to that
+ of the specified <code>BigInt</code> value.
+</p></div><dl class="paramcmts block"><dt class="param">unscaledVal</dt><dd class="cmt"><p>the specified <code>BigInt</code> value</p></dd><dt class="param">scale</dt><dd class="cmt"><p>the scale</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(x:scala.math.BigInt,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="apply(BigInt,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="BigInt.html" class="extype" name="scala.math.BigInt">BigInt</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(x:scala.math.BigInt,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified <code>BigInt</code> value, rounding if necessary.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified <code>BigInt</code> value, rounding if necessary.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>the specified <code>BigInt</code> value</p></dd><dt class="param">mc</dt><dd class="cmt"><p>the precision and rounding mode for creation of this value and future operations on it</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(x:scala.math.BigInt):scala.math.BigDecimal"></a>
+      <a id="apply(BigInt):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="BigInt.html" class="extype" name="scala.math.BigInt">BigInt</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(x:scala.math.BigInt):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified <code>BigInt</code> value.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified <code>BigInt</code> value.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>the specified <code>BigInt</code> value</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:String,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="apply(String,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(x:String,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Translates the decimal String representation of a <code>BigDecimal</code>
+ into a <code>BigDecimal</code>, rounding if necessary.</p>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:String):scala.math.BigDecimal"></a>
+      <a id="apply(String):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(x:String):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Translates the decimal String representation of a <code>BigDecimal</code>
+ into a <code>BigDecimal</code>.</p>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:Array[Char],mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="apply(Array[Char],MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="../Array.html" class="extype" name="scala.Array">Array</a>[<a href="../Char.html" class="extype" name="scala.Char">Char</a>]</span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(x:Array[Char],mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Translates a character array representation of a <code>BigDecimal</code>
+ into a <code>BigDecimal</code>, rounding if necessary.</p>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:Array[Char]):scala.math.BigDecimal"></a>
+      <a id="apply(Array[Char]):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="../Array.html" class="extype" name="scala.Array">Array</a>[<a href="../Char.html" class="extype" name="scala.Char">Char</a>]</span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(x:Array[Char]):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Translates a character array representation of a <code>BigDecimal</code>
+ into a <code>BigDecimal</code>.</p>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(d:Double,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="apply(Double,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="d">d: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(d:Double,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified double value, but rounded if necessary.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified double value, but rounded if necessary.  Equivalent to
+ <code>BigDecimal.decimal</code>.
+</p></div><dl class="paramcmts block"><dt class="param">d</dt><dd class="cmt"><p>the specified <code>Double</code> value</p></dd><dt class="param">mc</dt><dd class="cmt"><p>the precision and rounding mode for creation of this value and future operations on it</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(d:Double):scala.math.BigDecimal"></a>
+      <a id="apply(Double):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="d">d: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(d:Double):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified double value.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified double value.  Equivalent to <code>BigDecimal.decimal</code>.
+</p></div><dl class="paramcmts block"><dt class="param">d</dt><dd class="cmt"><p>the specified <code>Double</code> value</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(unscaledVal:Long,scale:Int,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="apply(Long,Int,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="unscaledVal">unscaledVal: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="scale">scale: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(unscaledVal:Long,scale:Int,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> whose unscaled value is equal to that
+ of the specified long value, but rounded if necessary.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> whose unscaled value is equal to that
+ of the specified long value, but rounded if necessary.
+</p></div><dl class="paramcmts block"><dt class="param">unscaledVal</dt><dd class="cmt"><p>the value</p></dd><dt class="param">scale</dt><dd class="cmt"><p>the scale</p></dd><dt class="param">mc</dt><dd class="cmt"><p>the precision and rounding mode for creation of this value and future operations on it</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(unscaledVal:Long,scale:Int):scala.math.BigDecimal"></a>
+      <a id="apply(Long,Int):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="unscaledVal">unscaledVal: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="scale">scale: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(unscaledVal:Long,scale:Int):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> whose unscaled value is equal to that
+ of the specified long value.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> whose unscaled value is equal to that
+ of the specified long value.
+</p></div><dl class="paramcmts block"><dt class="param">unscaledVal</dt><dd class="cmt"><p>the value</p></dd><dt class="param">scale</dt><dd class="cmt"><p>the scale</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(l:Long,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="apply(Long,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="l">l: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(l:Long,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified long value, but rounded if necessary.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified long value, but rounded if necessary.
+</p></div><dl class="paramcmts block"><dt class="param">l</dt><dd class="cmt"><p>the specified long value</p></dd><dt class="param">mc</dt><dd class="cmt"><p>the precision and rounding mode for creation of this value and future operations on it</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(l:Long):scala.math.BigDecimal"></a>
+      <a id="apply(Long):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="l">l: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(l:Long):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified long value.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified long value.
+</p></div><dl class="paramcmts block"><dt class="param">l</dt><dd class="cmt"><p>the specified long value</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(i:Int,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="apply(Int,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="i">i: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(i:Int,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified <code>Integer</code> value, rounding if necessary.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified <code>Integer</code> value, rounding if necessary.
+</p></div><dl class="paramcmts block"><dt class="param">i</dt><dd class="cmt"><p>the specified integer value</p></dd><dt class="param">mc</dt><dd class="cmt"><p>the precision and rounding mode for creation of this value and future operations on it</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(i:Int):scala.math.BigDecimal"></a>
+      <a id="apply(Int):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="i">i: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(i:Int):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified <code>Integer</code> value.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> whose value is equal to that of the
+ specified <code>Integer</code> value.
+</p></div><dl class="paramcmts block"><dt class="param">i</dt><dd class="cmt"><p>the specified integer value</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#binary" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="binary(d:Double):scala.math.BigDecimal"></a>
+      <a id="binary(Double):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">binary</span><span class="params">(<span name="d">d: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@binary(d:Double):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> by expanding the binary fraction
+ contained by <code>Double</code> value <code>d</code> into a decimal representation.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> by expanding the binary fraction
+ contained by <code>Double</code> value <code>d</code> into a decimal representation.
+ Note: this also works correctly on converted <code>Float</code>s.
+</p></div></div>
+    </li><li name="scala.math.BigDecimal#binary" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="binary(d:Double,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="binary(Double,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">binary</span><span class="params">(<span name="d">d: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@binary(d:Double,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> by expanding the binary fraction
+ contained by <code>Double</code> value <code>d</code> into a decimal representation,
+ rounding if necessary.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> by expanding the binary fraction
+ contained by <code>Double</code> value <code>d</code> into a decimal representation,
+ rounding if necessary.  When a <code>Float</code> is converted to a
+ <code>Double</code>, the binary fraction is preserved, so this method
+ also works for converted <code>Float</code>s.
+</p></div></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@clone():Object" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#decimal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="decimal(bd:java.math.BigDecimal,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="decimal(java.math.BigDecimal,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">decimal</span><span class="params">(<span name="bd">bd: <span class="extype" name="java.math.BigDecimal">java.math.BigDecimal</span></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@decimal(bd:java.math.BigDecimal,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> using a <code>java.math.BigDecimal</code>, rounding if necessary.</p>
+    </li><li name="scala.math.BigDecimal#decimal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="decimal(l:Long):scala.math.BigDecimal"></a>
+      <a id="decimal(Long):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">decimal</span><span class="params">(<span name="l">l: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@decimal(l:Long):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> from a <code>Long</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> from a <code>Long</code>.  This is identical to <code>BigDecimal(l)</code>.</p></div></div>
+    </li><li name="scala.math.BigDecimal#decimal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="decimal(l:Long,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="decimal(Long,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">decimal</span><span class="params">(<span name="l">l: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@decimal(l:Long,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> from a <code>Long</code>, rounding if necessary.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> from a <code>Long</code>, rounding if necessary.  This is identical to <code>BigDecimal(l, mc)</code>.</p></div></div>
+    </li><li name="scala.math.BigDecimal#decimal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="decimal(f:Float):scala.math.BigDecimal"></a>
+      <a id="decimal(Float):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">decimal</span><span class="params">(<span name="f">f: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@decimal(f:Float):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> using the decimal text representation of <code>Float</code> value <code>f</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> using the decimal text representation of <code>Float</code> value <code>f</code>.
+ Note that <code>BigDecimal.decimal(0.1f) != 0.1f</code> since equality agrees with the <code>Double</code> representation, and
+ <code>0.1 != 0.1f</code>.
+</p></div></div>
+    </li><li name="scala.math.BigDecimal#decimal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="decimal(f:Float,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="decimal(Float,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">decimal</span><span class="params">(<span name="f">f: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@decimal(f:Float,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> using the decimal text representation of <code>Float</code> value <code>f</code>, rounding if necessary.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> using the decimal text representation of <code>Float</code> value <code>f</code>, rounding if necessary.
+ Note that <code>BigDecimal.decimal(0.1f) != 0.1f</code> since equality agrees with the <code>Double</code> representation, and
+ <code>0.1 != 0.1f</code>.
+</p></div></div>
+    </li><li name="scala.math.BigDecimal#decimal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="decimal(d:Double):scala.math.BigDecimal"></a>
+      <a id="decimal(Double):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">decimal</span><span class="params">(<span name="d">d: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@decimal(d:Double):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> using the decimal text representation of <code>Double</code> value <code>d</code>.</p>
+    </li><li name="scala.math.BigDecimal#decimal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="decimal(d:Double,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="decimal(Double,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">decimal</span><span class="params">(<span name="d">d: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@decimal(d:Double,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> using the decimal text representation of <code>Double</code> value <code>d</code>, rounding if necessary.</p>
+    </li><li name="scala.math.BigDecimal#defaultMathContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="defaultMathContext:java.math.MathContext"></a>
+      <a id="defaultMathContext:MathContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">defaultMathContext</span><span class="result">: <span class="extype" name="java.math.MathContext">MathContext</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@defaultMathContext:java.math.MathContext" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.BigDecimal#double2bigDecimal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="double2bigDecimal(d:Double):scala.math.BigDecimal"></a>
+      <a id="double2bigDecimal(Double):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">double2bigDecimal</span><span class="params">(<span name="d">d: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@double2bigDecimal(d:Double):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implicit conversion from <code>Double</code> to <code>BigDecimal</code>.</p>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#exact" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="exact(cs:Array[Char]):scala.math.BigDecimal"></a>
+      <a id="exact(Array[Char]):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exact</span><span class="params">(<span name="cs">cs: <a href="../Array.html" class="extype" name="scala.Array">Array</a>[<a href="../Char.html" class="extype" name="scala.Char">Char</a>]</span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@exact(cs:Array[Char]):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> that exactly represents the number
+ specified in base 10 in a character array.</p>
+    </li><li name="scala.math.BigDecimal#exact" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="exact(s:String):scala.math.BigDecimal"></a>
+      <a id="exact(String):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exact</span><span class="params">(<span name="s">s: <a href="../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@exact(s:String):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> that exactly represents the number
+ specified in a <code>String</code>.</p>
+    </li><li name="scala.math.BigDecimal#exact" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exact(l:Long):scala.math.BigDecimal"></a>
+      <a id="exact(Long):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exact</span><span class="params">(<span name="l">l: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@exact(l:Long):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> that exactly represents a <code>Long</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> that exactly represents a <code>Long</code>.  Note that
+ all creation methods for <code>BigDecimal</code> that do not take a <code>MathContext</code>
+ represent a <code>Long</code>; this is equivalent to <code>apply</code>, <code>valueOf</code>, etc..
+</p></div></div>
+    </li><li name="scala.math.BigDecimal#exact" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="exact(bi:scala.math.BigInt):scala.math.BigDecimal"></a>
+      <a id="exact(BigInt):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exact</span><span class="params">(<span name="bi">bi: <a href="BigInt.html" class="extype" name="scala.math.BigInt">BigInt</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@exact(bi:scala.math.BigInt):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> that exactly represents a <code>BigInt</code>.</p>
+    </li><li name="scala.math.BigDecimal#exact" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exact(d:Double):scala.math.BigDecimal"></a>
+      <a id="exact(Double):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exact</span><span class="params">(<span name="d">d: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@exact(d:Double):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> by fully expanding the binary fraction
+ contained by <code>Double</code> value <code>d</code>, adjusting the precision as
+ necessary.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> by fully expanding the binary fraction
+ contained by <code>Double</code> value <code>d</code>, adjusting the precision as
+ necessary.  Note: this works correctly on converted <code>Float</code>s also.
+</p></div></div>
+    </li><li name="scala.math.BigDecimal#exact" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exact(repr:java.math.BigDecimal):scala.math.BigDecimal"></a>
+      <a id="exact(java.math.BigDecimal):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exact</span><span class="params">(<span name="repr">repr: <span class="extype" name="java.math.BigDecimal">java.math.BigDecimal</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@exact(repr:java.math.BigDecimal):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> from a <code>java.math.BigDecimal</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> from a <code>java.math.BigDecimal</code>.  The
+ precision is the default for <code>BigDecimal</code> or enough to represent
+ the <code>java.math.BigDecimal</code> exactly, whichever is greater.
+</p></div></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#int2bigDecimal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="int2bigDecimal(i:Int):scala.math.BigDecimal"></a>
+      <a id="int2bigDecimal(Int):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">int2bigDecimal</span><span class="params">(<span name="i">i: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@int2bigDecimal(i:Int):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implicit conversion from <code>Int</code> to <code>BigDecimal</code>.</p>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#javaBigDecimal2bigDecimal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="javaBigDecimal2bigDecimal(x:java.math.BigDecimal):scala.math.BigDecimal"></a>
+      <a id="javaBigDecimal2bigDecimal(java.math.BigDecimal):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">javaBigDecimal2bigDecimal</span><span class="params">(<span name="x">x: <span class="extype" name="java.math.BigDecimal">java.math.BigDecimal</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@javaBigDecimal2bigDecimal(x:java.math.BigDecimal):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implicit conversion from <code>java.math.BigDecimal</code> to <code>scala.BigDecimal</code>.</p>
+    </li><li name="scala.math.BigDecimal#long2bigDecimal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="long2bigDecimal(l:Long):scala.math.BigDecimal"></a>
+      <a id="long2bigDecimal(Long):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">long2bigDecimal</span><span class="params">(<span name="l">l: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@long2bigDecimal(l:Long):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implicit conversion from <code>Long</code> to <code>BigDecimal</code>.</p>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@notify():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@toString():String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#valueOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="valueOf(x:Long):scala.math.BigDecimal"></a>
+      <a id="valueOf(Long):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">valueOf</span><span class="params">(<span name="x">x: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@valueOf(x:Long):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> using the java BigDecimal static
+ valueOf constructor.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> using the java BigDecimal static
+ valueOf constructor.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>the specified <code>Long</code> value</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#valueOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="valueOf(d:Double):scala.math.BigDecimal"></a>
+      <a id="valueOf(Double):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">valueOf</span><span class="params">(<span name="d">d: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@valueOf(d:Double):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> using the java BigDecimal static
+ valueOf constructor.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> using the java BigDecimal static
+ valueOf constructor.  Equivalent to <code>BigDecimal.decimal</code>.
+</p></div><dl class="paramcmts block"><dt class="param">d</dt><dd class="cmt"><p>the specified double value</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@wait():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="arg1">arg1: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(bd:java.math.BigDecimal,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="apply(java.math.BigDecimal,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11) This method appears to round a java.math.BigDecimal but actually doesn't.  Use new BigDecimal(bd, mc) instead for no rounding, or BigDecimal.decimal(bd, mc) for rounding.">apply</span><span class="params">(<span name="bd">bd: <span class="extype" name="java.math.BigDecimal">java.math.BigDecimal</span></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(bd:java.math.BigDecimal,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11)</i> This method appears to round a java.math.BigDecimal but actually doesn't.  Use new BigDecimal(bd, mc) instead for no rounding, or BigDecimal.decimal(bd, mc) for rounding.</p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(x:Float,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="apply(Float,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11) The default conversion from Float may not do what you want.  Use BigDecimal.decimal for a String representation, or explicitly convert the Float with .toDouble.">apply</span><span class="params">(<span name="x">x: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(x:Float,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11)</i> The default conversion from Float may not do what you want.  Use BigDecimal.decimal for a String representation, or explicitly convert the Float with .toDouble.</p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(x:Float):scala.math.BigDecimal"></a>
+      <a id="apply(Float):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11) The default conversion from Float may not do what you want.  Use BigDecimal.decimal for a String representation, or explicitly convert the Float with .toDouble.">apply</span><span class="params">(<span name="x">x: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@apply(x:Float):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11)</i> The default conversion from Float may not do what you want.  Use BigDecimal.decimal for a String representation, or explicitly convert the Float with .toDouble.</p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#valueOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="valueOf(f:Float,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="valueOf(Float,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11) Float arguments to valueOf may not do what you wish.  Use decimal or valueOf(f.toDouble).">valueOf</span><span class="params">(<span name="f">f: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@valueOf(f:Float,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> using the java BigDecimal static
+ valueOf constructor.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> using the java BigDecimal static
+ valueOf constructor.  This is unlikely to do what you want;
+ use <code>valueOf(f.toDouble)</code> or <code>decimal(f)</code> instead.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11)</i> Float arguments to valueOf may not do what you wish.  Use decimal or valueOf(f.toDouble).</p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#valueOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="valueOf(f:Float):scala.math.BigDecimal"></a>
+      <a id="valueOf(Float):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11) Float arguments to valueOf may not do what you wish.  Use decimal or valueOf(f.toDouble).">valueOf</span><span class="params">(<span name="f">f: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@valueOf(f:Float):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> using the java BigDecimal static
+ valueOf constructor.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> using the java BigDecimal static
+ valueOf constructor.  This is unlikely to do what you want;
+ use <code>valueOf(f.toDouble)</code> or <code>decimal(f)</code> instead.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11)</i> Float arguments to valueOf may not do what you wish.  Use decimal or valueOf(f.toDouble).</p></dd></dl></div>
+    </li><li name="scala.math.BigDecimal#valueOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="valueOf(d:Double,mc:java.math.MathContext):scala.math.BigDecimal"></a>
+      <a id="valueOf(Double,MathContext):BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11) MathContext is not applied to Doubles in valueOf.  Use BigDecimal.decimal to use rounding, or java.math.BigDecimal.valueOf to avoid it.">valueOf</span><span class="params">(<span name="d">d: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>, <span name="mc">mc: <span class="extype" name="java.math.MathContext">MathContext</span></span>)</span><span class="result">: <a href="BigDecimal.html" class="extype" name="scala.math.BigDecimal">BigDecimal</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.BigDecimal$@valueOf(d:Double,mc:java.math.MathContext):scala.math.BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a <code>BigDecimal</code> using the java BigDecimal static
+ valueOf constructor, specifying a <code>MathContext</code> that is
+ used for computations but isn't used for rounding.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a <code>BigDecimal</code> using the java BigDecimal static
+ valueOf constructor, specifying a <code>MathContext</code> that is
+ used for computations but isn't used for rounding.  Use
+ <code>BigDecimal.decimal</code> to use <code>MathContext</code> for rounding,
+ or <code>BigDecimal(java.math.BigDecimal.valueOf(d), mc)</code> for
+ no rounding.
+</p></div><dl class="paramcmts block"><dt class="param">d</dt><dd class="cmt"><p>the specified double value</p></dd><dt class="param">mc</dt><dd class="cmt"><p>the <code>MathContext</code> used for future computations</p></dd><dt>returns</dt><dd class="cmt"><p>the constructed <code>BigDecimal</code></p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11)</i> MathContext is not applied to Doubles in valueOf.  Use BigDecimal.decimal to use rounding, or java.math.BigDecimal.valueOf to avoid it.</p></dd></dl></div>
+    </li></ol>
+            </div>
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">java.io.Serializable</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

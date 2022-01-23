@@ -1,0 +1,1254 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>opcodes - Scala Compiler 2.11.8 - scala.tools.nsc.backend.icode.Opcodes.opcodes</title>
+          <meta name="description" content="opcodes - Scala Compiler 2.11.8 - scala.tools.nsc.backend.icode.Opcodes.opcodes" />
+          <meta name="keywords" content="opcodes Scala Compiler 2.11.8 scala.tools.nsc.backend.icode.Opcodes.opcodes" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'scala.tools.nsc.backend.icode.Opcodes$opcodes$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Object" src="../../../../../lib/object_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.backend">backend</a>.<a href="package.html" class="extype" name="scala.tools.nsc.backend.icode">icode</a>.<a href="Opcodes.html" class="extype" name="scala.tools.nsc.backend.icode.Opcodes">Opcodes</a></p>
+        <h1>opcodes</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="Opcodes.html" class="extype" name="scala.tools.nsc.backend.icode.Opcodes">package Opcodes</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">opcodes</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/compiler/scala/tools/nsc/backend/icode/Opcodes.scala#L1" target="_blank">Opcodes.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 285.00 94.00" height="94pt" width="285pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 90)" class="graph" id="graph0"><polygon points="-4,4 -4,-90 281,-90 281,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node class" id="graph1_0"><g id="a_class|graph1_0"><a xlink:title="scala.tools.nsc.backend.icode.Opcodes.opcodes.SuperCall" xlink:href="Opcodes$opcodes$$SuperCall.html#inheritance-diagram"><polygon points="87,-25 0,-25 0,-0 87,-0 87,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-19.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="31.5" text-anchor="start">SuperCall</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="scala.tools.nsc.backend.icode.Opcodes.opcodes.Static" xlink:href="Opcodes$opcodes$$Static.html#inheritance-diagram"><polygon points="175.5,-25 105.5,-25 105.5,-0 175.5,-0 175.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-19.5" x="115.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="136.5" text-anchor="start">Static</text></a></g></g><!-- node2 --><g class="node object" id="graph1_2"><g id="a_object|graph1_2"><a xlink:title="scala.tools.nsc.backend.icode.Opcodes.opcodes.Dynamic" xlink:href="Opcodes$opcodes$$Dynamic$.html#inheritance-diagram"><polygon points="277,-25 194,-25 194,-0 277,-0 277,-25" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../../../lib/object_diagram.png" y="-19.5" x="204.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="225.5" text-anchor="start">Dynamic</text></a></g></g><!-- node3 --><g class="node class" id="graph1_3"><g id="a_class|graph1_3"><a xlink:title="scala.tools.nsc.backend.icode.Opcodes.opcodes.InvokeStyle" xlink:href="Opcodes$opcodes$$InvokeStyle.html#inheritance-diagram"><polygon points="187.5,-86 93.5,-86 93.5,-61 187.5,-61 187.5,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../lib/class_diagram.png" y="-80.5" x="103.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="124.5" text-anchor="start">InvokeStyle</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="SuperCall is a subtype of InvokeStyle"><path d="M116.791,-58.0789C100.14,-47.9511 78.1573,-34.5802 62.6243,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="116.155,-59.7403 121.336,-60.8435 117.973,-56.75 116.155,-59.7403" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3&#45;&gt;node1 --><g class="edge inheritance" id="graph1_3_1"><g id="a_inheritance|graph1_3_1"><a xlink:title="Static is a subtype of InvokeStyle"><path d="M140.5,-55.6874C140.5,-45.9173 140.5,-33.8534 140.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="138.75,-55.8435 140.5,-60.8435 142.25,-55.8435 138.75,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3&#45;&gt;node2 --><g class="edge inheritance" id="graph1_3_2"><g id="a_inheritance|graph1_3_2"><a xlink:title="Dynamic is a subtype of InvokeStyle"><path d="M163.72,-58.0789C180.028,-47.9511 201.557,-34.5802 216.77,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="162.593,-56.7189 159.269,-60.8435 164.44,-59.6922 162.593,-56.7189" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.tools.nsc.backend.icode.Opcodes.opcodes"><span>opcodes</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.BOX" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BOXextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="BOX:BOX"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$BOX.html"><span class="name">BOX</span></a><span class="params">(<span name="boxType">boxType: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@BOXextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.CALL_METHOD" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CALL_METHODextendsOpcodes.this.InstructionwithReferenceEqualitywithProductwithSerializable"></a>
+      <a id="CALL_METHOD:CALL_METHOD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$CALL_METHOD.html"><span class="name">CALL_METHOD</span></a><span class="params">(<span name="method">method: <a href="../../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="style">style: <a href="Opcodes$opcodes$$InvokeStyle.html" class="extype" name="scala.tools.nsc.backend.icode.Opcodes.opcodes.InvokeStyle">InvokeStyle</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <a href="ReferenceEquality.html" class="extype" name="scala.tools.nsc.backend.icode.ReferenceEquality">ReferenceEquality</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@CALL_METHODextendsOpcodes.this.InstructionwithReferenceEqualitywithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a CALL_METHOD instruction
+STYLE: dynamic / static(StaticInstance)
+Stack: ...:ref:arg1:arg2:...:argn
+   -&gt;: ...:result</p><div class="fullcomment"><div class="comment cmt"><p>This class represents a CALL_METHOD instruction
+STYLE: dynamic / static(StaticInstance)
+Stack: ...:ref:arg1:arg2:...:argn
+   -&gt;: ...:result</p><p>STYLE: static(StaticClass)
+Stack: ...:arg1:arg2:...:argn
+   -&gt;: ...:result</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.CALL_PRIMITIVE" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CALL_PRIMITIVEextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="CALL_PRIMITIVE:CALL_PRIMITIVE"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$CALL_PRIMITIVE.html"><span class="name">CALL_PRIMITIVE</span></a><span class="params">(<span name="primitive">primitive: <a href="ICodes.html#PrimitiveextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.Primitives.Primitive">ICodes.Primitive</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@CALL_PRIMITIVEextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Call a primitive function.</p><div class="fullcomment"><div class="comment cmt"><p>Call a primitive function.
+Stack: ...:arg1:arg2:...:argn
+   -&gt;: ...:result
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.CHECK_CAST" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CHECK_CASTextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="CHECK_CAST:CHECK_CAST"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$CHECK_CAST.html"><span class="name">CHECK_CAST</span></a><span class="params">(<span name="typ">typ: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@CHECK_CASTextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a CHECK_CAST instruction
+Stack: ...:ref(oldtype)
+   -&gt;: ...:ref(typ &lt;=: oldtype)
+</p>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.CJUMP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CJUMPextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="CJUMP:CJUMP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$CJUMP.html"><span class="name">CJUMP</span></a><span class="params">(<span name="successBlock">successBlock: <a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a></span>, <span name="failureBlock">failureBlock: <a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a></span>, <span name="cond">cond: <a href="ICodes.html#TestOpextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.Primitives.TestOp">ICodes.TestOp</a></span>, <span name="kind">kind: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@CJUMPextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a CJUMP instruction
+It compares the two values on the stack with the 'cond' test operator
+Stack: ...:value1:value2
+   -&gt;: ...</p>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.CONSTANT" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CONSTANTextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="CONSTANT:CONSTANT"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$CONSTANT.html"><span class="name">CONSTANT</span></a><span class="params">(<span name="constant">constant: <a href="../../Global.html#ConstantextendsConstants.this.ConstantApiwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.Global.Constant">Global.Constant</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@CONSTANTextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Loads a constant on the stack.</p><div class="fullcomment"><div class="comment cmt"><p>Loads a constant on the stack.
+Stack: ...
+   -&gt;: ...:constant
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.CREATE_ARRAY" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CREATE_ARRAYextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="CREATE_ARRAY:CREATE_ARRAY"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$CREATE_ARRAY.html"><span class="name">CREATE_ARRAY</span></a><span class="params">(<span name="elem">elem: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>, <span name="dims">dims: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@CREATE_ARRAYextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a CREATE_ARRAY instruction
+Stack: ...:size_1:size_2:..:size_n
+   -&gt;: ...:arrayref
+</p>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.CZJUMP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CZJUMPextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="CZJUMP:CZJUMP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$CZJUMP.html"><span class="name">CZJUMP</span></a><span class="params">(<span name="successBlock">successBlock: <a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a></span>, <span name="failureBlock">failureBlock: <a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a></span>, <span name="cond">cond: <a href="ICodes.html#TestOpextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.Primitives.TestOp">ICodes.TestOp</a></span>, <span name="kind">kind: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@CZJUMPextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a CZJUMP instruction
+It compares the one value on the stack and zero with the 'cond' test operator
+Stack: ...:value:
+   -&gt;: ...</p>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.DROP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DROPextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="DROP:DROP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$DROP.html"><span class="name">DROP</span></a><span class="params">(<span name="typ">typ: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@DROPextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a DROP instruction
+Stack: ...:something
+   -&gt;: ...</p>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.DUP" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DUPextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="DUP:DUP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$DUP.html"><span class="name">DUP</span></a><span class="params">(<span name="typ">typ: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@DUPextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a DUP instruction
+Stack: ...:something
+   -&gt;: ...:something:something
+</p>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.INVOKE_DYNAMIC" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="INVOKE_DYNAMICextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="INVOKE_DYNAMIC:INVOKE_DYNAMIC"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$INVOKE_DYNAMIC.html"><span class="name">INVOKE_DYNAMIC</span></a><span class="params">(<span name="poolEntry">poolEntry: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@INVOKE_DYNAMICextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A place holder entry that allows us to parse class files with invoke dynamic
+instructions.</p><div class="fullcomment"><div class="comment cmt"><p>A place holder entry that allows us to parse class files with invoke dynamic
+instructions. Because the compiler doesn't yet really understand the
+behavior of invokeDynamic, this op acts as a poison pill. Any attempt to analyze
+this instruction will cause a failure. The only optimization that
+should ever look at non-Scala generated icode is the inliner, and it
+has been modified to not examine any method with invokeDynamic
+instructions. So if this poison pill ever causes problems then
+there's been a serious misunderstanding
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.IS_INSTANCE" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IS_INSTANCEextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="IS_INSTANCE:IS_INSTANCE"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$IS_INSTANCE.html"><span class="name">IS_INSTANCE</span></a><span class="params">(<span name="typ">typ: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@IS_INSTANCEextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a IS_INSTANCE instruction
+Stack: ...:ref
+   -&gt;: ...:result(boolean)
+</p>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.InvokeStyle" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="InvokeStyleextendsAnyRef"></a>
+      <a id="InvokeStyle:InvokeStyle"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$InvokeStyle.html"><span class="name">InvokeStyle</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@InvokeStyleextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a method invocation style.</p>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.JUMP" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="JUMPextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="JUMP:JUMP"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$JUMP.html"><span class="name">JUMP</span></a><span class="params">(<span name="whereto">whereto: <a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@JUMPextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a JUMP instruction
+Stack: ...</p><div class="fullcomment"><div class="comment cmt"><p>This class represents a JUMP instruction
+Stack: ...
+   -&gt;: ...
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.LOAD_ARRAY_ITEM" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LOAD_ARRAY_ITEMextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="LOAD_ARRAY_ITEM:LOAD_ARRAY_ITEM"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$LOAD_ARRAY_ITEM.html"><span class="name">LOAD_ARRAY_ITEM</span></a><span class="params">(<span name="kind">kind: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@LOAD_ARRAY_ITEMextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Loads an element of an array.</p><div class="fullcomment"><div class="comment cmt"><p>Loads an element of an array. The array and the index should
+be on top of the stack.
+Stack: ...:array[a](Ref):index(Int)
+   -&gt;: ...:element(a)
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.LOAD_EXCEPTION" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LOAD_EXCEPTIONextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="LOAD_EXCEPTION:LOAD_EXCEPTION"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$LOAD_EXCEPTION.html"><span class="name">LOAD_EXCEPTION</span></a><span class="params">(<span name="clasz">clasz: <a href="../../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@LOAD_EXCEPTIONextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Fake instruction.</p><div class="fullcomment"><div class="comment cmt"><p>Fake instruction. It designates the VM who pushes an exception
+ on top of the /empty/ stack at the beginning of each exception handler.
+ Note: Unlike other instructions, it consumes all elements on the stack!
+       then pushes one exception instance.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.LOAD_FIELD" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LOAD_FIELDextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="LOAD_FIELD:LOAD_FIELD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$LOAD_FIELD.html"><span class="name">LOAD_FIELD</span></a><span class="params">(<span name="field">field: <a href="../../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="isStatic">isStatic: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@LOAD_FIELDextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Load a field on the stack.</p><div class="fullcomment"><div class="comment cmt"><p>Load a field on the stack. The object to which it refers should be
+on the stack.
+Stack: ...:ref       (assuming isStatic = false)
+   -&gt;: ...:value
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.LOAD_LOCAL" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LOAD_LOCALextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="LOAD_LOCAL:LOAD_LOCAL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$LOAD_LOCAL.html"><span class="name">LOAD_LOCAL</span></a><span class="params">(<span name="local">local: <a href="ICodes.html#LocalextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.Members.Local">ICodes.Local</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@LOAD_LOCALextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Load a local variable on the stack.</p><div class="fullcomment"><div class="comment cmt"><p>Load a local variable on the stack. It can be a method argument.
+Stack: ...
+   -&gt;: ...:value
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.LOAD_MODULE" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LOAD_MODULEextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="LOAD_MODULE:LOAD_MODULE"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$LOAD_MODULE.html"><span class="name">LOAD_MODULE</span></a><span class="params">(<span name="module">module: <a href="../../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@LOAD_MODULEextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.MONITOR_ENTER" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MONITOR_ENTERextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="MONITOR_ENTER:MONITOR_ENTER"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$MONITOR_ENTER.html"><span class="name">MONITOR_ENTER</span></a><span class="params">()</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@MONITOR_ENTERextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a MONITOR_ENTER instruction
+Stack: ...:object(ref)
+   -&gt;: ...:
+</p>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.MONITOR_EXIT" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MONITOR_EXITextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="MONITOR_EXIT:MONITOR_EXIT"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$MONITOR_EXIT.html"><span class="name">MONITOR_EXIT</span></a><span class="params">()</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@MONITOR_EXITextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a MONITOR_EXIT instruction
+Stack: ...:object(ref)
+   -&gt;: ...:
+</p>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.NEW" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NEWextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="NEW:NEW"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$NEW.html"><span class="name">NEW</span></a><span class="params">(<span name="kind">kind: <a href="ICodes.html#REFERENCEextendsTypeKinds.this.TypeKindwithProductwithSerializable" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.REFERENCE">ICodes.REFERENCE</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@NEWextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a new instance of a class through the specified constructor
+Stack: ...:arg1:arg2:...:argn
+   -&gt;: ...:ref
+</p>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.RETURN" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RETURNextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="RETURN:RETURN"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$RETURN.html"><span class="name">RETURN</span></a><span class="params">(<span name="kind">kind: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@RETURNextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a RETURN instruction
+Stack: ...</p><div class="fullcomment"><div class="comment cmt"><p>This class represents a RETURN instruction
+Stack: ...
+   -&gt;: ...
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.SCOPE_ENTER" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SCOPE_ENTERextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="SCOPE_ENTER:SCOPE_ENTER"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$SCOPE_ENTER.html"><span class="name">SCOPE_ENTER</span></a><span class="params">(<span name="lv">lv: <a href="ICodes.html#LocalextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.Members.Local">ICodes.Local</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@SCOPE_ENTERextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A local variable becomes visible at this point in code.</p><div class="fullcomment"><div class="comment cmt"><p>A local variable becomes visible at this point in code.
+ Used only for generating precise local variable tables as
+ debugging information.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.SCOPE_EXIT" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SCOPE_EXITextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="SCOPE_EXIT:SCOPE_EXIT"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$SCOPE_EXIT.html"><span class="name">SCOPE_EXIT</span></a><span class="params">(<span name="lv">lv: <a href="ICodes.html#LocalextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.Members.Local">ICodes.Local</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@SCOPE_EXITextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A local variable leaves its scope at this point in code.</p><div class="fullcomment"><div class="comment cmt"><p>A local variable leaves its scope at this point in code.
+ Used only for generating precise local variable tables as
+ debugging information.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.STORE_ARRAY_ITEM" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="STORE_ARRAY_ITEMextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="STORE_ARRAY_ITEM:STORE_ARRAY_ITEM"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$STORE_ARRAY_ITEM.html"><span class="name">STORE_ARRAY_ITEM</span></a><span class="params">(<span name="kind">kind: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@STORE_ARRAY_ITEMextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Store a value into an array at a specified index.</p><div class="fullcomment"><div class="comment cmt"><p>Store a value into an array at a specified index.
+Stack: ...:array[a](Ref):index(Int):value(a)
+   -&gt;: ...
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.STORE_FIELD" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="STORE_FIELDextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="STORE_FIELD:STORE_FIELD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$STORE_FIELD.html"><span class="name">STORE_FIELD</span></a><span class="params">(<span name="field">field: <a href="../../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="isStatic">isStatic: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@STORE_FIELDextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Store a value into a field.</p><div class="fullcomment"><div class="comment cmt"><p>Store a value into a field.
+Stack: ...:ref:value   (assuming isStatic=false)
+   -&gt;: ...
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.STORE_LOCAL" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="STORE_LOCALextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="STORE_LOCAL:STORE_LOCAL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$STORE_LOCAL.html"><span class="name">STORE_LOCAL</span></a><span class="params">(<span name="local">local: <a href="ICodes.html#LocalextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.Members.Local">ICodes.Local</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@STORE_LOCALextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Store a value into a local variable.</p><div class="fullcomment"><div class="comment cmt"><p>Store a value into a local variable. It can be an argument.
+Stack: ...:value
+   -&gt;: ...
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.STORE_THIS" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="STORE_THISextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="STORE_THIS:STORE_THIS"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$STORE_THIS.html"><span class="name">STORE_THIS</span></a><span class="params">(<span name="kind">kind: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@STORE_THISextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Store a value into the 'this' pointer.</p><div class="fullcomment"><div class="comment cmt"><p>Store a value into the 'this' pointer.
+Stack: ...:ref
+   -&gt;: ...
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.SWITCH" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SWITCHextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="SWITCH:SWITCH"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$SWITCH.html"><span class="name">SWITCH</span></a><span class="params">(<span name="tags">tags: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="scala.Int">Int</span>]]</span>, <span name="labels">labels: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a>]</span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@SWITCHextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a SWITCH instruction
+Stack: ...:index(int)
+   -&gt;: ...:</p><div class="fullcomment"><div class="comment cmt"><p>This class represents a SWITCH instruction
+Stack: ...:index(int)
+   -&gt;: ...:</p><p>The tags array contains one entry per label, each entry consisting of
+an array of ints, any of which will trigger the jump to the corresponding label.
+labels should contain an extra label, which is the 'default' jump.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.Static" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="StaticextendsOpcodes.opcodes.InvokeStylewithProductwithSerializable"></a>
+      <a id="Static:Static"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$Static.html"><span class="name">Static</span></a><span class="params">(<span name="onInstance">onInstance: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result"> extends <a href="Opcodes$opcodes$$InvokeStyle.html" class="extype" name="scala.tools.nsc.backend.icode.Opcodes.opcodes.InvokeStyle">InvokeStyle</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@StaticextendsOpcodes.opcodes.InvokeStylewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Special invoke:
+  Static(true)  is used for calls to private members, ie <code>invokespecial</code> on JVM.</p><div class="fullcomment"><div class="comment cmt"><p>Special invoke:
+  Static(true)  is used for calls to private members, ie <code>invokespecial</code> on JVM.
+  Static(false) is used for calls to class-level instance-less static methods, ie <code>invokestatic</code> on JVM.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.SuperCall" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SuperCallextendsOpcodes.opcodes.InvokeStylewithProductwithSerializable"></a>
+      <a id="SuperCall:SuperCall"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$SuperCall.html"><span class="name">SuperCall</span></a><span class="params">(<span name="mix">mix: <a href="../../Global.html#NameextendsNames.this.NameApi" class="extmbr" name="scala.tools.nsc.Global.Name">Global.Name</a></span>)</span><span class="result"> extends <a href="Opcodes$opcodes$$InvokeStyle.html" class="extype" name="scala.tools.nsc.backend.icode.Opcodes.opcodes.InvokeStyle">InvokeStyle</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@SuperCallextendsOpcodes.opcodes.InvokeStylewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Call through super[mix].</p><div class="fullcomment"><div class="comment cmt"><p>Call through super[mix].
+ On JVM, translated to <code>invokespecial</code>.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.THIS" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="THISextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="THIS:THIS"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$THIS.html"><span class="name">THIS</span></a><span class="params">(<span name="clasz">clasz: <a href="../../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@THISextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Loads &quot;this&quot; on top of the stack.</p><div class="fullcomment"><div class="comment cmt"><p>Loads &quot;this&quot; on top of the stack.
+Stack: ...
+   -&gt;: ...:ref
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.THROW" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="THROWextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="THROW:THROW"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$THROW.html"><span class="name">THROW</span></a><span class="params">(<span name="clasz">clasz: <a href="../../Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@THROWextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents a THROW instruction
+Stack: ...:Throwable(Ref)
+   -&gt;: ...:
+</p>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.UNBOX" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UNBOXextendsOpcodes.this.InstructionwithProductwithSerializable"></a>
+      <a id="UNBOX:UNBOX"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$UNBOX.html"><span class="name">UNBOX</span></a><span class="params">(<span name="boxType">boxType: <a href="ICodes.html#TypeKindextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.TypeKinds.TypeKind">ICodes.TypeKind</a></span>)</span><span class="result"> extends <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@UNBOXextendsOpcodes.this.InstructionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@##():Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.Opcodes.opcodes.Dynamic" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Dynamic"></a>
+      <a id="Dynamic:Dynamic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Opcodes$opcodes$$Dynamic$.html"><span class="name">Dynamic</span></a><span class="result"> extends <a href="Opcodes$opcodes$$InvokeStyle.html" class="extype" name="scala.tools.nsc.backend.icode.Opcodes.opcodes.InvokeStyle">InvokeStyle</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@Dynamic" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Virtual calls.</p><div class="fullcomment"><div class="comment cmt"><p>Virtual calls.
+ On JVM, translated to either <code>invokeinterface</code> or <code>invokevirtual</code>.
+</p></div></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@toString():String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.Opcodes$opcodes$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>opt - Scala Compiler 2.11.8 - scala.tools.nsc.backend.opt</title>
+          <meta name="description" content="opt - Scala Compiler 2.11.8 - scala.tools.nsc.backend.opt" />
+          <meta name="keywords" content="opt Scala Compiler 2.11.8 scala.tools.nsc.backend.opt" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'scala.tools.nsc.backend.opt.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.backend">backend</a></p>
+        <h1>opt</h1><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.opt.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">opt</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.tools.nsc.backend.opt.ClosureElimination" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ClosureEliminationextendsSubComponent"></a>
+      <a id="ClosureElimination:ClosureElimination"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ClosureElimination.html"><span class="name">ClosureElimination</span></a><span class="result"> extends <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.opt.package@ClosureEliminationextendsSubComponent" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="scala.tools.nsc.backend.opt.ConstantOptimization" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ConstantOptimizationextendsSubComponent"></a>
+      <a id="ConstantOptimization:ConstantOptimization"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ConstantOptimization.html"><span class="name">ConstantOptimization</span></a><span class="result"> extends <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.opt.package@ConstantOptimizationextendsSubComponent" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">ConstantOptimization uses abstract interpretation to approximate for
+each instruction what constants a variable or stack slot might hold
+or cannot hold.</p><div class="fullcomment"><div class="comment cmt"><p>ConstantOptimization uses abstract interpretation to approximate for
+each instruction what constants a variable or stack slot might hold
+or cannot hold. From this it will eliminate unreachable conditionals
+where only one branch is reachable, e.g. to eliminate unnecessary
+null checks.</p><p>With some more work it could be extended to
+- cache stable values (final fields, modules) in locals
+- replace the copy propagation in ClosureElimination
+- fold constants
+- eliminate unnecessary stores and loads
+- propagate knowledge gathered from conditionals for further optimization
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.opt.DeadCodeElimination" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DeadCodeEliminationextendsSubComponent"></a>
+      <a id="DeadCodeElimination:DeadCodeElimination"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DeadCodeElimination.html"><span class="name">DeadCodeElimination</span></a><span class="result"> extends <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.opt.package@DeadCodeEliminationextendsSubComponent" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="scala.tools.nsc.backend.opt.InlineExceptionHandlers" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="InlineExceptionHandlersextendsSubComponent"></a>
+      <a id="InlineExceptionHandlers:InlineExceptionHandlers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="InlineExceptionHandlers.html"><span class="name">InlineExceptionHandlers</span></a><span class="result"> extends <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.opt.package@InlineExceptionHandlersextendsSubComponent" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This optimization phase inlines the exception handlers so that further phases can optimize the code better</p><div class="fullcomment"><div class="comment cmt"><p>This optimization phase inlines the exception handlers so that further phases can optimize the code better</p><pre><span class="kw">try</span> {
+  ...
+  <span class="kw">if</span> (condition)
+    <span class="kw">throw</span> IllegalArgumentException(<span class="lit">"sth"</span>)
+} <span class="kw">catch</span> {
+  <span class="kw">case</span> e: IllegalArgumentException <span class="kw">=&gt;</span> &lt;handler code&gt;
+  <span class="kw">case</span> e: ... <span class="kw">=&gt;</span> ...
+}</pre><p>will inline the exception handler code to:</p><pre><span class="kw">try</span> {
+  ...
+  <span class="kw">if</span> (condition)
+    &lt;handler code&gt; <span class="cmt">// + jump to the end of the catch statement</span>
+} <span class="kw">catch</span> {
+  <span class="kw">case</span> e: IllegalArgumentException <span class="kw">=&gt;</span> &lt;handler code&gt;
+  <span class="kw">case</span> e: ... <span class="kw">=&gt;</span> ...
+}</pre><p>Q: How does the inlining work, ICode level?
+A: if a block contains a THROW(A) instruction AND there is a handler that takes A or a superclass of A we do:</p><ol class="decimal"><li>We duplicate the handler code such that we can transform THROW into a JUMP
+   2. We analyze the handler to see what local it expects the exception to be placed in
+   3. We place the exception that is thrown in the correct &quot;local variable&quot; slot and clean up the stack
+   4. We finally JUMP to the duplicate handler
+   All the above logic is implemented in InlineExceptionHandlersPhase.apply(bblock: BasicBlock)</li></ol><p>Q: Why do we need to duplicate the handler?
+A: An exception might be thrown in a method that we invoke in the function and we cannot see that THROW command
+directly. In order to catch such exceptions, we keep the exception handler in place and duplicate it in order
+to inline its code.
+</p></div></div>
+    </li><li name="scala.tools.nsc.backend.opt.Inliners" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="InlinersextendsSubComponent"></a>
+      <a id="Inliners:Inliners"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Inliners.html"><span class="name">Inliners</span></a><span class="result"> extends <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.opt.package@InlinersextendsSubComponent" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Inliner balances two competing goals:
+  (a) aggressive inlining of:
+      (a.1) the apply methods of anonymous closures, so that their anon-classes can be eliminated;
+      (a.2) higher-order-methods defined in an external library, e.g.</p><div class="fullcomment"><div class="comment cmt"><p>Inliner balances two competing goals:
+  (a) aggressive inlining of:
+      (a.1) the apply methods of anonymous closures, so that their anon-classes can be eliminated;
+      (a.2) higher-order-methods defined in an external library, e.g. <code>Range.foreach()</code> among many others.
+  (b) circumventing the barrier to inter-library inlining that private accesses in the callee impose.</p><p>Summing up the discussion in SI-5442 and SI-5891,
+the current implementation achieves to a large degree both goals above, and
+overcomes a problem exhibited by previous versions:</p><p>  (1) Problem: Attempting to access a private member <code>p</code> at runtime resulting in an <code>IllegalAccessError</code>,
+               where <code>p</code> is defined in a library L, and is accessed from a library C (for Client),
+               where C was compiled against L', an optimized version of L where the inliner made <code>p</code> public at the bytecode level.
+               The only such members are fields, either synthetic or isParamAccessor, and thus having a dollar sign in their name
+               (the accessibility of methods and constructors isn't touched by the inliner).</p><p>Thus we add one more goal to our list:
+  (c) Compile C (either optimized or not) against any of L or L',
+      so that it runs with either L or L' (in particular, compile against L' and run with L).</p><p>The chosen strategy is described in some detail in the comments for <code>accessRequirements()</code> and <code>potentiallyPublicized()</code>.
+Documentation at http://lamp.epfl.ch/~magarcia/ScalaCompilerCornerReloaded/2011Q4/Inliner.pdf
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

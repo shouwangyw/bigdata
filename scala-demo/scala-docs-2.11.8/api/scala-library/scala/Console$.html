@@ -1,0 +1,1644 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>Console - Scala Standard Library 2.11.8 - scala.Console</title>
+          <meta name="description" content="Console - Scala Standard Library 2.11.8 - scala.Console" />
+          <meta name="keywords" content="Console Scala Standard Library 2.11.8 scala.Console" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../lib/template.js"></script>
+      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../lib/modernizr.custom.js"></script><script type="text/javascript" src="../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../index.html';
+            var hash = 'scala.Console$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Object" src="../lib/object_big.png" />
+        <p id="owner"><a href="package.html" class="extype" name="scala">scala</a></p>
+        <h1>Console</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="scala">package scala</a>
+          </div></span></h3><span class="permalink">
+      <a href="../index.html#scala.Console$" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Console</span><span class="result"> extends <span class="extype" name="scala.DeprecatedConsole">DeprecatedConsole</span> with <a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Implements functionality for
+ printing Scala values on the terminal as well as reading specific values.
+ Also defines constants for marking up text on ANSI terminals.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/Console.scala#L1" target="_blank">Console.scala</a></dd><dt>Version</dt><dd><p>1.0, 03/09/2003</p></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a>, <span class="extype" name="scala.DeprecatedConsole">DeprecatedConsole</span>, <a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.Console"><span>Console</span></li><li class="in" name="scala.io.AnsiColor"><span>AnsiColor</span></li><li class="in" name="scala.DeprecatedConsole"><span>DeprecatedConsole</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@##():Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#BLACK" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BLACK:String(&quot;\033[30m&quot;)"></a>
+      <a id="BLACK:String(&quot;\033[30m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BLACK</span><span class="result">: String(&quot;\033[30m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@BLACK:String(&quot;\033[30m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Foreground color for ANSI black</p><div class="fullcomment"><div class="comment cmt"><p>Foreground color for ANSI black</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#BLACK_B" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BLACK_B:String(&quot;\033[40m&quot;)"></a>
+      <a id="BLACK_B:String(&quot;\033[40m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BLACK_B</span><span class="result">: String(&quot;\033[40m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@BLACK_B:String(&quot;\033[40m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Background color for ANSI black</p><div class="fullcomment"><div class="comment cmt"><p>Background color for ANSI black</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#BLINK" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BLINK:String(&quot;\033[5m&quot;)"></a>
+      <a id="BLINK:String(&quot;\033[5m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BLINK</span><span class="result">: String(&quot;\033[5m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@BLINK:String(&quot;\033[5m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">ANSI blink</p><div class="fullcomment"><div class="comment cmt"><p>ANSI blink</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#BLUE" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BLUE:String(&quot;\033[34m&quot;)"></a>
+      <a id="BLUE:String(&quot;\033[34m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BLUE</span><span class="result">: String(&quot;\033[34m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@BLUE:String(&quot;\033[34m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Foreground color for ANSI blue</p><div class="fullcomment"><div class="comment cmt"><p>Foreground color for ANSI blue</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#BLUE_B" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BLUE_B:String(&quot;\033[44m&quot;)"></a>
+      <a id="BLUE_B:String(&quot;\033[44m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BLUE_B</span><span class="result">: String(&quot;\033[44m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@BLUE_B:String(&quot;\033[44m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Background color for ANSI blue</p><div class="fullcomment"><div class="comment cmt"><p>Background color for ANSI blue</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#BOLD" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BOLD:String(&quot;\033[1m&quot;)"></a>
+      <a id="BOLD:String(&quot;\033[1m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BOLD</span><span class="result">: String(&quot;\033[1m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@BOLD:String(&quot;\033[1m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">ANSI bold</p><div class="fullcomment"><div class="comment cmt"><p>ANSI bold</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#CYAN" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CYAN:String(&quot;\033[36m&quot;)"></a>
+      <a id="CYAN:String(&quot;\033[36m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CYAN</span><span class="result">: String(&quot;\033[36m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@CYAN:String(&quot;\033[36m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Foreground color for ANSI cyan</p><div class="fullcomment"><div class="comment cmt"><p>Foreground color for ANSI cyan</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#CYAN_B" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CYAN_B:String(&quot;\033[46m&quot;)"></a>
+      <a id="CYAN_B:String(&quot;\033[46m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CYAN_B</span><span class="result">: String(&quot;\033[46m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@CYAN_B:String(&quot;\033[46m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Background color for ANSI cyan</p><div class="fullcomment"><div class="comment cmt"><p>Background color for ANSI cyan</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#GREEN" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GREEN:String(&quot;\033[32m&quot;)"></a>
+      <a id="GREEN:String(&quot;\033[32m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">GREEN</span><span class="result">: String(&quot;\033[32m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@GREEN:String(&quot;\033[32m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Foreground color for ANSI green</p><div class="fullcomment"><div class="comment cmt"><p>Foreground color for ANSI green</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#GREEN_B" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GREEN_B:String(&quot;\033[42m&quot;)"></a>
+      <a id="GREEN_B:String(&quot;\033[42m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">GREEN_B</span><span class="result">: String(&quot;\033[42m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@GREEN_B:String(&quot;\033[42m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Background color for ANSI green</p><div class="fullcomment"><div class="comment cmt"><p>Background color for ANSI green</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#INVISIBLE" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="INVISIBLE:String(&quot;\033[8m&quot;)"></a>
+      <a id="INVISIBLE:String(&quot;\033[8m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">INVISIBLE</span><span class="result">: String(&quot;\033[8m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@INVISIBLE:String(&quot;\033[8m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">ANSI invisible</p><div class="fullcomment"><div class="comment cmt"><p>ANSI invisible</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#MAGENTA" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MAGENTA:String(&quot;\033[35m&quot;)"></a>
+      <a id="MAGENTA:String(&quot;\033[35m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MAGENTA</span><span class="result">: String(&quot;\033[35m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@MAGENTA:String(&quot;\033[35m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Foreground color for ANSI magenta</p><div class="fullcomment"><div class="comment cmt"><p>Foreground color for ANSI magenta</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#MAGENTA_B" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MAGENTA_B:String(&quot;\033[45m&quot;)"></a>
+      <a id="MAGENTA_B:String(&quot;\033[45m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MAGENTA_B</span><span class="result">: String(&quot;\033[45m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@MAGENTA_B:String(&quot;\033[45m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Background color for ANSI magenta</p><div class="fullcomment"><div class="comment cmt"><p>Background color for ANSI magenta</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#RED" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RED:String(&quot;\033[31m&quot;)"></a>
+      <a id="RED:String(&quot;\033[31m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">RED</span><span class="result">: String(&quot;\033[31m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@RED:String(&quot;\033[31m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Foreground color for ANSI red</p><div class="fullcomment"><div class="comment cmt"><p>Foreground color for ANSI red</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#RED_B" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RED_B:String(&quot;\033[41m&quot;)"></a>
+      <a id="RED_B:String(&quot;\033[41m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">RED_B</span><span class="result">: String(&quot;\033[41m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@RED_B:String(&quot;\033[41m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Background color for ANSI red</p><div class="fullcomment"><div class="comment cmt"><p>Background color for ANSI red</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#RESET" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RESET:String(&quot;\033[0m&quot;)"></a>
+      <a id="RESET:String(&quot;\033[0m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">RESET</span><span class="result">: String(&quot;\033[0m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@RESET:String(&quot;\033[0m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reset ANSI styles</p><div class="fullcomment"><div class="comment cmt"><p>Reset ANSI styles</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#REVERSED" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="REVERSED:String(&quot;\033[7m&quot;)"></a>
+      <a id="REVERSED:String(&quot;\033[7m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">REVERSED</span><span class="result">: String(&quot;\033[7m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@REVERSED:String(&quot;\033[7m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">ANSI reversed</p><div class="fullcomment"><div class="comment cmt"><p>ANSI reversed</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#UNDERLINED" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UNDERLINED:String(&quot;\033[4m&quot;)"></a>
+      <a id="UNDERLINED:String(&quot;\033[4m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">UNDERLINED</span><span class="result">: String(&quot;\033[4m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@UNDERLINED:String(&quot;\033[4m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">ANSI underlines</p><div class="fullcomment"><div class="comment cmt"><p>ANSI underlines</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#WHITE" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="WHITE:String(&quot;\033[37m&quot;)"></a>
+      <a id="WHITE:String(&quot;\033[37m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">WHITE</span><span class="result">: String(&quot;\033[37m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@WHITE:String(&quot;\033[37m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Foreground color for ANSI white</p><div class="fullcomment"><div class="comment cmt"><p>Foreground color for ANSI white</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#WHITE_B" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="WHITE_B:String(&quot;\033[47m&quot;)"></a>
+      <a id="WHITE_B:String(&quot;\033[47m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">WHITE_B</span><span class="result">: String(&quot;\033[47m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@WHITE_B:String(&quot;\033[47m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Background color for ANSI white</p><div class="fullcomment"><div class="comment cmt"><p>Background color for ANSI white</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#YELLOW" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="YELLOW:String(&quot;\033[33m&quot;)"></a>
+      <a id="YELLOW:String(&quot;\033[33m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">YELLOW</span><span class="result">: String(&quot;\033[33m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@YELLOW:String(&quot;\033[33m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Foreground color for ANSI yellow</p><div class="fullcomment"><div class="comment cmt"><p>Foreground color for ANSI yellow</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.io.AnsiColor#YELLOW_B" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="YELLOW_B:String(&quot;\033[43m&quot;)"></a>
+      <a id="YELLOW_B:String(&quot;\033[43m&quot;)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">YELLOW_B</span><span class="result">: String(&quot;\033[43m&quot;)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@YELLOW_B:String(&quot;\033[43m&quot;)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Background color for ANSI yellow</p><div class="fullcomment"><div class="comment cmt"><p>Background color for ANSI yellow</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@clone():Object" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Console#err" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="err:java.io.PrintStream"></a>
+      <a id="err:PrintStream"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">err</span><span class="result">: <span class="extype" name="java.io.PrintStream">PrintStream</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@err:java.io.PrintStream" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The default error, can be overridden by <code>setErr</code></p>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@finalize():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Console#flush" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="flush():Unit"></a>
+      <a id="flush():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flush</span><span class="params">()</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@flush():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Flushes the output stream.</p><div class="fullcomment"><div class="comment cmt"><p>Flushes the output stream. This function is required when partial
+ output (i.e. output not terminated by a newline character) has
+ to be made visible on the terminal.
+</p></div></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@hashCode():Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Console#in" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="in:java.io.BufferedReader"></a>
+      <a id="in:BufferedReader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">in</span><span class="result">: <span class="extype" name="java.io.BufferedReader">BufferedReader</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@in:java.io.BufferedReader" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The default input, can be overridden by <code>setIn</code></p>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@notify():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Console#out" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="out:java.io.PrintStream"></a>
+      <a id="out:PrintStream"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">out</span><span class="result">: <span class="extype" name="java.io.PrintStream">PrintStream</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@out:java.io.PrintStream" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The default output, can be overridden by <code>setOut</code></p>
+    </li><li name="scala.Console#print" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="print(obj:Any):Unit"></a>
+      <a id="print(Any):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">print</span><span class="params">(<span name="obj">obj: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@print(obj:Any):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Prints an object to <code>out</code> using its <code>toString</code> method.</p><div class="fullcomment"><div class="comment cmt"><p>Prints an object to <code>out</code> using its <code>toString</code> method.
+</p></div><dl class="paramcmts block"><dt class="param">obj</dt><dd class="cmt"><p>the object to print; may be null.</p></dd></dl></div>
+    </li><li name="scala.Console#printf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="printf(text:String,args:Any*):Unit"></a>
+      <a id="printf(String,Any*):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">printf</span><span class="params">(<span name="text">text: <a href="Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>, <span name="args">args: <a href="Any.html" class="extype" name="scala.Any">Any</a>*</span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@printf(text:String,args:Any*):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Prints its arguments as a formatted string to the default output,
+ based on a string pattern (in a fashion similar to printf in C).</p><div class="fullcomment"><div class="comment cmt"><p>Prints its arguments as a formatted string to the default output,
+ based on a string pattern (in a fashion similar to printf in C).</p><p> The interpretation of the formatting patterns is described in
+ <a href="" target="contentFrame" class="java/util/Formatter">
+ `java.util.Formatter`</a>.
+</p></div><dl class="paramcmts block"><dt class="param">text</dt><dd class="cmt"><p>the pattern for formatting the arguments.</p></dd><dt class="param">args</dt><dd class="cmt"><p>the arguments used to instantiating the pattern.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="java.lang.IllegalArgumentException"><code>java.lang.IllegalArgumentException</code></span> if there was a problem with the format string or arguments</p></span></dd></dl></div>
+    </li><li name="scala.Console#println" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="println(x:Any):Unit"></a>
+      <a id="println(Any):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">println</span><span class="params">(<span name="x">x: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@println(x:Any):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Prints out an object to the default output, followed by a newline character.</p><div class="fullcomment"><div class="comment cmt"><p>Prints out an object to the default output, followed by a newline character.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>the object to print.</p></dd></dl></div>
+    </li><li name="scala.Console#println" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="println():Unit"></a>
+      <a id="println():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">println</span><span class="params">()</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@println():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Prints a newline character on the default output.</p>
+    </li><li name="scala.Console#setErrDirect" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setErrDirect(err:java.io.PrintStream):Unit"></a>
+      <a id="setErrDirect(PrintStream):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setErrDirect</span><span class="params">(<span name="err">err: <span class="extype" name="java.io.PrintStream">PrintStream</span></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@setErrDirect(err:java.io.PrintStream):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.Console">Console</a> → DeprecatedConsole</dd></dl></div>
+    </li><li name="scala.Console#setInDirect" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setInDirect(in:java.io.BufferedReader):Unit"></a>
+      <a id="setInDirect(BufferedReader):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setInDirect</span><span class="params">(<span name="in">in: <span class="extype" name="java.io.BufferedReader">BufferedReader</span></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@setInDirect(in:java.io.BufferedReader):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.Console">Console</a> → DeprecatedConsole</dd></dl></div>
+    </li><li name="scala.Console#setOutDirect" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setOutDirect(out:java.io.PrintStream):Unit"></a>
+      <a id="setOutDirect(PrintStream):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setOutDirect</span><span class="params">(<span name="out">out: <span class="extype" name="java.io.PrintStream">PrintStream</span></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@setOutDirect(out:java.io.PrintStream):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Internal usage only.</p><div class="fullcomment"><div class="comment cmt"><p>Internal usage only.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.Console">Console</a> → DeprecatedConsole</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@toString():String" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@wait():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="arg1">arg1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Console#withErr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withErr[T](err:java.io.OutputStream)(thunk:=&gt;T):T"></a>
+      <a id="withErr[T](OutputStream)(⇒T):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withErr</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="err">err: <span class="extype" name="java.io.OutputStream">OutputStream</span></span>)</span><span class="params">(<span name="thunk">thunk: ⇒ <span class="extype" name="scala.Console.withErr.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Console.withErr.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@withErr[T](err:java.io.OutputStream)(thunk:=&gt;T):T" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets the default error stream for the duration
+ of execution of one thunk.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the default error stream for the duration
+ of execution of one thunk.
+</p></div><dl class="paramcmts block"><dt class="param">err</dt><dd class="cmt"><p>the new error stream.</p></dd><dt class="param">thunk</dt><dd class="cmt"><p>the code to execute with
+              the new error stream active</p></dd><dt>returns</dt><dd class="cmt"><p>the results of <code>thunk</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><code>withErr[T](err:PrintStream)(thunk: =&gt;T)</code></p></span></dd></dl></div>
+    </li><li name="scala.Console#withErr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withErr[T](err:java.io.PrintStream)(thunk:=&gt;T):T"></a>
+      <a id="withErr[T](PrintStream)(⇒T):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withErr</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="err">err: <span class="extype" name="java.io.PrintStream">PrintStream</span></span>)</span><span class="params">(<span name="thunk">thunk: ⇒ <span class="extype" name="scala.Console.withErr.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Console.withErr.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@withErr[T](err:java.io.PrintStream)(thunk:=&gt;T):T" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Set the default error stream for the duration
+ of execution of one thunk.</p><div class="fullcomment"><div class="comment cmt"><p>Set the default error stream for the duration
+ of execution of one thunk.</p></div><dl class="paramcmts block"><dt class="param">err</dt><dd class="cmt"><p>the new error stream.</p></dd><dt class="param">thunk</dt><dd class="cmt"><p>the code to execute with
+              the new error stream active</p></dd><dt>returns</dt><dd class="cmt"><p>the results of <code>thunk</code></p></dd></dl><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p></p><pre>withErr(<span class="std">Console</span>.out) { println(<span class="lit">"This goes to default _out_"</span>) }</pre></li></ol>
+            </div><dt>See also</dt><dd><span class="cmt"><p><code>withErr[T](err:OutputStream)(thunk: =&gt;T)</code></p></span></dd></dl></div>
+    </li><li name="scala.Console#withIn" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withIn[T](in:java.io.InputStream)(thunk:=&gt;T):T"></a>
+      <a id="withIn[T](InputStream)(⇒T):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withIn</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="in">in: <span class="extype" name="java.io.InputStream">InputStream</span></span>)</span><span class="params">(<span name="thunk">thunk: ⇒ <span class="extype" name="scala.Console.withIn.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Console.withIn.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@withIn[T](in:java.io.InputStream)(thunk:=&gt;T):T" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets the default input stream for the duration
+ of execution of one thunk.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the default input stream for the duration
+ of execution of one thunk.
+</p></div><dl class="paramcmts block"><dt class="param">in</dt><dd class="cmt"><p>the new input stream.</p></dd><dt class="param">thunk</dt><dd class="cmt"><p>the code to execute with
+              the new input stream active</p></dd><dt>returns</dt><dd class="cmt"><p>the results of <code>thunk</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><code>withIn[T](reader:Reader)(thunk: =&gt;T)</code></p></span></dd></dl></div>
+    </li><li name="scala.Console#withIn" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withIn[T](reader:java.io.Reader)(thunk:=&gt;T):T"></a>
+      <a id="withIn[T](Reader)(⇒T):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withIn</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="reader">reader: <span class="extype" name="java.io.Reader">Reader</span></span>)</span><span class="params">(<span name="thunk">thunk: ⇒ <span class="extype" name="scala.Console.withIn.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Console.withIn.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@withIn[T](reader:java.io.Reader)(thunk:=&gt;T):T" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets the default input stream for the duration
+ of execution of one thunk.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the default input stream for the duration
+ of execution of one thunk.
+</p></div><dl class="paramcmts block"><dt class="param">thunk</dt><dd class="cmt"><p>the code to execute with
+              the new input stream active</p></dd><dt>returns</dt><dd class="cmt"><p>the results of <code>thunk</code></p></dd></dl><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p></p><pre><span class="kw">val</span> someFile:Reader = openFile(<span class="lit">"file.txt"</span>)
+withIn(someFile) {
+  <span class="cmt">// Reads a line from file.txt instead of default input</span>
+  println(readLine)
+}</pre></li></ol>
+            </div><dt>See also</dt><dd><span class="cmt"><p><code>withIn[T](in:InputStream)(thunk: =&gt;T)</code></p></span></dd></dl></div>
+    </li><li name="scala.Console#withOut" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withOut[T](out:java.io.OutputStream)(thunk:=&gt;T):T"></a>
+      <a id="withOut[T](OutputStream)(⇒T):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withOut</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="out">out: <span class="extype" name="java.io.OutputStream">OutputStream</span></span>)</span><span class="params">(<span name="thunk">thunk: ⇒ <span class="extype" name="scala.Console.withOut.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Console.withOut.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@withOut[T](out:java.io.OutputStream)(thunk:=&gt;T):T" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets the default output stream for the duration
+ of execution of one thunk.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the default output stream for the duration
+ of execution of one thunk.
+</p></div><dl class="paramcmts block"><dt class="param">out</dt><dd class="cmt"><p>the new output stream.</p></dd><dt class="param">thunk</dt><dd class="cmt"><p>the code to execute with
+              the new output stream active</p></dd><dt>returns</dt><dd class="cmt"><p>the results of <code>thunk</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><code>withOut[T](out:PrintStream)(thunk: =&gt; T)</code></p></span></dd></dl></div>
+    </li><li name="scala.Console#withOut" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withOut[T](out:java.io.PrintStream)(thunk:=&gt;T):T"></a>
+      <a id="withOut[T](PrintStream)(⇒T):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withOut</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="out">out: <span class="extype" name="java.io.PrintStream">PrintStream</span></span>)</span><span class="params">(<span name="thunk">thunk: ⇒ <span class="extype" name="scala.Console.withOut.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Console.withOut.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@withOut[T](out:java.io.PrintStream)(thunk:=&gt;T):T" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets the default output stream for the duration
+ of execution of one thunk.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the default output stream for the duration
+ of execution of one thunk.
+</p></div><dl class="paramcmts block"><dt class="param">out</dt><dd class="cmt"><p>the new output stream.</p></dd><dt class="param">thunk</dt><dd class="cmt"><p>the code to execute with
+              the new output stream active</p></dd><dt>returns</dt><dd class="cmt"><p>the results of <code>thunk</code></p></dd></dl><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p></p><pre>withOut(<span class="std">Console</span>.err) { println(<span class="lit">"This goes to default _error_"</span>) }</pre></li></ol>
+            </div><dt>See also</dt><dd><span class="cmt"><p><code>withOut[T](out:OutputStream)(thunk: =&gt; T)</code></p></span></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="scala.DeprecatedConsole#readBoolean" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readBoolean():Boolean"></a>
+      <a id="readBoolean():Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readBoolean</span><span class="params">()</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readBoolean():Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readByte" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readByte():Byte"></a>
+      <a id="readByte():Byte"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readByte</span><span class="params">()</span><span class="result">: <a href="Byte.html" class="extype" name="scala.Byte">Byte</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readByte():Byte" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readChar" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readChar():Char"></a>
+      <a id="readChar():Char"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readChar</span><span class="params">()</span><span class="result">: <a href="Char.html" class="extype" name="scala.Char">Char</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readChar():Char" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readDouble" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readDouble():Double"></a>
+      <a id="readDouble():Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readDouble</span><span class="params">()</span><span class="result">: <a href="Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readDouble():Double" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readFloat" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readFloat():Float"></a>
+      <a id="readFloat():Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readFloat</span><span class="params">()</span><span class="result">: <a href="Float.html" class="extype" name="scala.Float">Float</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readFloat():Float" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readInt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readInt():Int"></a>
+      <a id="readInt():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readInt</span><span class="params">()</span><span class="result">: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readInt():Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readLine" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readLine(text:String,args:Any*):String"></a>
+      <a id="readLine(String,Any*):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readLine</span><span class="params">(<span name="text">text: <a href="Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>, <span name="args">args: <a href="Any.html" class="extype" name="scala.Any">Any</a>*</span>)</span><span class="result">: <a href="Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readLine(text:String,args:Any*):String" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readLine" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readLine():String"></a>
+      <a id="readLine():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readLine</span><span class="params">()</span><span class="result">: <a href="Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readLine():String" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readLong" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readLong():Long"></a>
+      <a id="readLong():Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readLong</span><span class="params">()</span><span class="result">: <a href="Long.html" class="extype" name="scala.Long">Long</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readLong():Long" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readShort" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readShort():Short"></a>
+      <a id="readShort():Short"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readShort</span><span class="params">()</span><span class="result">: <a href="Short.html" class="extype" name="scala.Short">Short</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readShort():Short" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readf(format:String):List[Any]"></a>
+      <a id="readf(String):List[Any]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readf</span><span class="params">(<span name="format">format: <a href="Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Any.html" class="extype" name="scala.Any">Any</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readf(format:String):List[Any]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readf1" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readf1(format:String):Any"></a>
+      <a id="readf1(String):Any"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readf1</span><span class="params">(<span name="format">format: <a href="Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readf1(format:String):Any" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readf2" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readf2(format:String):(Any,Any)"></a>
+      <a id="readf2(String):(Any,Any)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readf2</span><span class="params">(<span name="format">format: <a href="Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: (<a href="Any.html" class="extype" name="scala.Any">Any</a>, <a href="Any.html" class="extype" name="scala.Any">Any</a>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readf2(format:String):(Any,Any)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#readf3" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readf3(format:String):(Any,Any,Any)"></a>
+      <a id="readf3(String):(Any,Any,Any)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use the method in scala.io.StdIn">readf3</span><span class="params">(<span name="format">format: <a href="Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: (<a href="Any.html" class="extype" name="scala.Any">Any</a>, <a href="Any.html" class="extype" name="scala.Any">Any</a>, <a href="Any.html" class="extype" name="scala.Any">Any</a>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@readf3(format:String):(Any,Any,Any)" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use the method in scala.io.StdIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#setErr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setErr(err:java.io.OutputStream):Unit"></a>
+      <a id="setErr(OutputStream):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use withErr">setErr</span><span class="params">(<span name="err">err: <span class="extype" name="java.io.OutputStream">OutputStream</span></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@setErr(err:java.io.OutputStream):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets the default error stream.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the default error stream.
+</p></div><dl class="paramcmts block"><dt class="param">err</dt><dd class="cmt"><p>the new error stream.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use withErr</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#setErr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setErr(err:java.io.PrintStream):Unit"></a>
+      <a id="setErr(PrintStream):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use withErr">setErr</span><span class="params">(<span name="err">err: <span class="extype" name="java.io.PrintStream">PrintStream</span></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@setErr(err:java.io.PrintStream):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets the default error stream.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the default error stream.
+</p></div><dl class="paramcmts block"><dt class="param">err</dt><dd class="cmt"><p>the new error stream.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use withErr</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#setIn" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setIn(in:java.io.InputStream):Unit"></a>
+      <a id="setIn(InputStream):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use withIn">setIn</span><span class="params">(<span name="in">in: <span class="extype" name="java.io.InputStream">InputStream</span></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@setIn(in:java.io.InputStream):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets the default input stream.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the default input stream.
+</p></div><dl class="paramcmts block"><dt class="param">in</dt><dd class="cmt"><p>the new input stream.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use withIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#setIn" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setIn(reader:java.io.Reader):Unit"></a>
+      <a id="setIn(Reader):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use withIn">setIn</span><span class="params">(<span name="reader">reader: <span class="extype" name="java.io.Reader">Reader</span></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@setIn(reader:java.io.Reader):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets the default input stream.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the default input stream.
+</p></div><dl class="paramcmts block"><dt class="param">reader</dt><dd class="cmt"><p>specifies the new input stream.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use withIn</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#setOut" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setOut(out:java.io.OutputStream):Unit"></a>
+      <a id="setOut(OutputStream):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use withOut">setOut</span><span class="params">(<span name="out">out: <span class="extype" name="java.io.OutputStream">OutputStream</span></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@setOut(out:java.io.OutputStream):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets the default output stream.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the default output stream.
+</p></div><dl class="paramcmts block"><dt class="param">out</dt><dd class="cmt"><p>the new output stream.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use withOut</p></dd></dl></div>
+    </li><li name="scala.DeprecatedConsole#setOut" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setOut(out:java.io.PrintStream):Unit"></a>
+      <a id="setOut(PrintStream):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use withOut">setOut</span><span class="params">(<span name="out">out: <span class="extype" name="java.io.PrintStream">PrintStream</span></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Console$@setOut(out:java.io.PrintStream):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets the default output stream.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the default output stream.
+</p></div><dl class="paramcmts block"><dt class="param">out</dt><dd class="cmt"><p>the new output stream.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>DeprecatedConsole</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use withOut</p></dd></dl></div>
+    </li></ol>
+            </div>
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.io.AnsiColor">
+              <h3>Inherited from <a href="io/AnsiColor.html" class="extype" name="scala.io.AnsiColor">AnsiColor</a></h3>
+            </div><div class="parent" name="scala.DeprecatedConsole">
+              <h3>Inherited from <span class="extype" name="scala.DeprecatedConsole">DeprecatedConsole</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

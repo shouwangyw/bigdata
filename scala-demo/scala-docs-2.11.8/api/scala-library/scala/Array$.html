@@ -1,0 +1,1331 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>Array - Scala Standard Library 2.11.8 - scala.Array</title>
+          <meta name="description" content="Array - Scala Standard Library 2.11.8 - scala.Array" />
+          <meta name="keywords" content="Array Scala Standard Library 2.11.8 scala.Array" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../lib/template.js"></script>
+      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../lib/modernizr.custom.js"></script><script type="text/javascript" src="../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../index.html';
+            var hash = 'scala.Array$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <a href="Array.html" title="See companion class"><img alt="Object/Class" src="../lib/object_to_class_big.png" /></a>
+        <p id="owner"><a href="package.html" class="extype" name="scala">scala</a></p>
+        <h1><a href="Array.html" title="See companion class">Array</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="Array.html" title="See companion class">class Array</a>
+            | <a href="package.html" class="extype" name="scala">package scala</a>
+          </div></span></h3><span class="permalink">
+      <a href="../index.html#scala.Array$" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Array</span><span class="result"> extends <a href="FallbackArrayBuilding.html" class="extype" name="scala.FallbackArrayBuilding">FallbackArrayBuilding</a> with <a href="Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Utility methods for operating on arrays.
+ For example:</p><pre><span class="kw">val</span> a = <span class="std">Array</span>(<span class="num">1</span>, <span class="num">2</span>)
+<span class="kw">val</span> b = <span class="std">Array</span>.ofDim[<span class="std">Int</span>](<span class="num">2</span>)
+<span class="kw">val</span> c = <span class="std">Array</span>.concat(a, b)</pre><p> where the array objects <code>a</code>, <code>b</code> and <code>c</code> have respectively the values
+ <code>Array(1, 2)</code>, <code>Array(0, 0)</code> and <code>Array(1, 2, 0, 0)</code>.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/Array.scala#L1" target="_blank">Array.scala</a></dd><dt>Version</dt><dd><p>1.0</p></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="Serializable.html" class="extype" name="scala.Serializable">Serializable</a>, <span class="extype" name="java.io.Serializable">java.io.Serializable</span>, <a href="FallbackArrayBuilding.html" class="extype" name="scala.FallbackArrayBuilding">FallbackArrayBuilding</a>, <a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.Array"><span>Array</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.FallbackArrayBuilding"><span>FallbackArrayBuilding</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@##():Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Array#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:Unit,xs:Unit*):Array[Unit]"></a>
+      <a id="apply(Unit,Unit*):Array[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>, <span name="xs">xs: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a>*</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Unit.html" class="extype" name="scala.Unit">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@apply(x:Unit,xs:Unit*):Array[Unit]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates an array of <code>Unit</code> objects</p>
+    </li><li name="scala.Array#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:Double,xs:Double*):Array[Double]"></a>
+      <a id="apply(Double,Double*):Array[Double]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="Double.html" class="extype" name="scala.Double">Double</a></span>, <span name="xs">xs: <a href="Double.html" class="extype" name="scala.Double">Double</a>*</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Double.html" class="extype" name="scala.Double">Double</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@apply(x:Double,xs:Double*):Array[Double]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates an array of <code>Double</code> objects</p>
+    </li><li name="scala.Array#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:Float,xs:Float*):Array[Float]"></a>
+      <a id="apply(Float,Float*):Array[Float]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="Float.html" class="extype" name="scala.Float">Float</a></span>, <span name="xs">xs: <a href="Float.html" class="extype" name="scala.Float">Float</a>*</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Float.html" class="extype" name="scala.Float">Float</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@apply(x:Float,xs:Float*):Array[Float]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates an array of <code>Float</code> objects</p>
+    </li><li name="scala.Array#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:Long,xs:Long*):Array[Long]"></a>
+      <a id="apply(Long,Long*):Array[Long]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="xs">xs: <a href="Long.html" class="extype" name="scala.Long">Long</a>*</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Long.html" class="extype" name="scala.Long">Long</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@apply(x:Long,xs:Long*):Array[Long]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates an array of <code>Long</code> objects</p>
+    </li><li name="scala.Array#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:Int,xs:Int*):Array[Int]"></a>
+      <a id="apply(Int,Int*):Array[Int]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="xs">xs: <a href="Int.html" class="extype" name="scala.Int">Int</a>*</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Int.html" class="extype" name="scala.Int">Int</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@apply(x:Int,xs:Int*):Array[Int]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates an array of <code>Int</code> objects</p>
+    </li><li name="scala.Array#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:Char,xs:Char*):Array[Char]"></a>
+      <a id="apply(Char,Char*):Array[Char]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="Char.html" class="extype" name="scala.Char">Char</a></span>, <span name="xs">xs: <a href="Char.html" class="extype" name="scala.Char">Char</a>*</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Char.html" class="extype" name="scala.Char">Char</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@apply(x:Char,xs:Char*):Array[Char]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates an array of <code>Char</code> objects</p>
+    </li><li name="scala.Array#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:Short,xs:Short*):Array[Short]"></a>
+      <a id="apply(Short,Short*):Array[Short]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="Short.html" class="extype" name="scala.Short">Short</a></span>, <span name="xs">xs: <a href="Short.html" class="extype" name="scala.Short">Short</a>*</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Short.html" class="extype" name="scala.Short">Short</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@apply(x:Short,xs:Short*):Array[Short]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates an array of <code>Short</code> objects</p>
+    </li><li name="scala.Array#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:Byte,xs:Byte*):Array[Byte]"></a>
+      <a id="apply(Byte,Byte*):Array[Byte]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="Byte.html" class="extype" name="scala.Byte">Byte</a></span>, <span name="xs">xs: <a href="Byte.html" class="extype" name="scala.Byte">Byte</a>*</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Byte.html" class="extype" name="scala.Byte">Byte</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@apply(x:Byte,xs:Byte*):Array[Byte]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates an array of <code>Byte</code> objects</p>
+    </li><li name="scala.Array#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(x:Boolean,xs:Boolean*):Array[Boolean]"></a>
+      <a id="apply(Boolean,Boolean*):Array[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="x">x: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="xs">xs: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a>*</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@apply(x:Boolean,xs:Boolean*):Array[Boolean]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates an array of <code>Boolean</code> objects</p>
+    </li><li name="scala.Array#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply[T](xs:T*)(implicitevidence$2:scala.reflect.ClassTag[T]):Array[T]"></a>
+      <a id="apply[T](T*)(ClassTag[T]):Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="xs">xs: <span class="extype" name="scala.Array.apply.T">T</span>*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.apply.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.apply.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@apply[T](xs:T*)(implicitevidence$2:scala.reflect.ClassTag[T]):Array[T]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates an array with given elements.</p><div class="fullcomment"><div class="comment cmt"><p>Creates an array with given elements.
+</p></div><dl class="paramcmts block"><dt class="param">xs</dt><dd class="cmt"><p>the elements to put in the array</p></dd><dt>returns</dt><dd class="cmt"><p>an array containing all elements from xs.</p></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.Array#canBuildFrom" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="canBuildFrom[T](implicitt:scala.reflect.ClassTag[T]):scala.collection.generic.CanBuildFrom[Array[_],T,Array[T]]"></a>
+      <a id="canBuildFrom[T](ClassTag[T]):CanBuildFrom[Array[_],T,Array[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">canBuildFrom</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="t">t: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.canBuildFrom.T">T</span>]</span>)</span><span class="result">: <a href="collection/generic/CanBuildFrom.html" class="extype" name="scala.collection.generic.CanBuildFrom">CanBuildFrom</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[_], <span class="extype" name="scala.Array.canBuildFrom.T">T</span>, <a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.canBuildFrom.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@canBuildFrom[T](implicitt:scala.reflect.ClassTag[T]):scala.collection.generic.CanBuildFrom[Array[_],T,Array[T]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@clone():Object" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Array#concat" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="concat[T](xss:Array[T]*)(implicitevidence$8:scala.reflect.ClassTag[T]):Array[T]"></a>
+      <a id="concat[T](Array[T]*)(ClassTag[T]):Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">concat</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="xss">xss: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.concat.T">T</span>]*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.concat.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.concat.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@concat[T](xss:Array[T]*)(implicitevidence$8:scala.reflect.ClassTag[T]):Array[T]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Concatenates all arrays into a single array.</p><div class="fullcomment"><div class="comment cmt"><p>Concatenates all arrays into a single array.
+</p></div><dl class="paramcmts block"><dt class="param">xss</dt><dd class="cmt"><p>the given arrays</p></dd><dt>returns</dt><dd class="cmt"><p>the array created from concatenating <code>xss</code></p></dd></dl></div>
+    </li><li name="scala.Array#copy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="copy(src:AnyRef,srcPos:Int,dest:AnyRef,destPos:Int,length:Int):Unit"></a>
+      <a id="copy(AnyRef,Int,AnyRef,Int,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">copy</span><span class="params">(<span name="src">src: <a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>, <span name="srcPos">srcPos: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="dest">dest: <a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>, <span name="destPos">destPos: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="length">length: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@copy(src:AnyRef,srcPos:Int,dest:AnyRef,destPos:Int,length:Int):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Copy one array to another.</p><div class="fullcomment"><div class="comment cmt"><p>Copy one array to another.
+ Equivalent to Java's
+   <code>System.arraycopy(src, srcPos, dest, destPos, length)</code>,
+ except that this also works for polymorphic and boxed arrays.</p><p> Note that the passed-in <code>dest</code> array will be modified by this call.
+</p></div><dl class="paramcmts block"><dt class="param">src</dt><dd class="cmt"><p>the source array.</p></dd><dt class="param">srcPos</dt><dd class="cmt"><p>starting position in the source array.</p></dd><dt class="param">dest</dt><dd class="cmt"><p>destination array.</p></dd><dt class="param">destPos</dt><dd class="cmt"><p>starting position in the destination array.</p></dd><dt class="param">length</dt><dd class="cmt"><p>the number of array elements to be copied.</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><code>java.lang.System#arraycopy</code></p></span></dd></dl></div>
+    </li><li name="scala.Array#empty" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="empty[T](implicitevidence$1:scala.reflect.ClassTag[T]):Array[T]"></a>
+      <a id="empty[T](ClassTag[T]):Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">empty</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.empty.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.empty.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@empty[T](implicitevidence$1:scala.reflect.ClassTag[T]):Array[T]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns an array of length 0</p>
+    </li><li name="scala.Array#emptyBooleanArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="emptyBooleanArray:Array[Boolean]"></a>
+      <a id="emptyBooleanArray:Array[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emptyBooleanArray</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@emptyBooleanArray:Array[Boolean]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Array#emptyByteArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="emptyByteArray:Array[Byte]"></a>
+      <a id="emptyByteArray:Array[Byte]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emptyByteArray</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Byte.html" class="extype" name="scala.Byte">Byte</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@emptyByteArray:Array[Byte]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Array#emptyCharArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="emptyCharArray:Array[Char]"></a>
+      <a id="emptyCharArray:Array[Char]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emptyCharArray</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Char.html" class="extype" name="scala.Char">Char</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@emptyCharArray:Array[Char]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Array#emptyDoubleArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="emptyDoubleArray:Array[Double]"></a>
+      <a id="emptyDoubleArray:Array[Double]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emptyDoubleArray</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Double.html" class="extype" name="scala.Double">Double</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@emptyDoubleArray:Array[Double]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Array#emptyFloatArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="emptyFloatArray:Array[Float]"></a>
+      <a id="emptyFloatArray:Array[Float]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emptyFloatArray</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Float.html" class="extype" name="scala.Float">Float</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@emptyFloatArray:Array[Float]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Array#emptyIntArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="emptyIntArray:Array[Int]"></a>
+      <a id="emptyIntArray:Array[Int]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emptyIntArray</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Int.html" class="extype" name="scala.Int">Int</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@emptyIntArray:Array[Int]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Array#emptyLongArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="emptyLongArray:Array[Long]"></a>
+      <a id="emptyLongArray:Array[Long]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emptyLongArray</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Long.html" class="extype" name="scala.Long">Long</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@emptyLongArray:Array[Long]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Array#emptyObjectArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="emptyObjectArray:Array[Object]"></a>
+      <a id="emptyObjectArray:Array[AnyRef]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emptyObjectArray</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@emptyObjectArray:Array[Object]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Array#emptyShortArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="emptyShortArray:Array[Short]"></a>
+      <a id="emptyShortArray:Array[Short]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emptyShortArray</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Short.html" class="extype" name="scala.Short">Short</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@emptyShortArray:Array[Short]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.FallbackArrayBuilding#fallbackCanBuildFrom" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fallbackCanBuildFrom[T](implicitm:DummyImplicit):scala.collection.generic.CanBuildFrom[Array[_],T,scala.collection.mutable.ArraySeq[T]]"></a>
+      <a id="fallbackCanBuildFrom[T](DummyImplicit):CanBuildFrom[Array[_],T,ArraySeq[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fallbackCanBuildFrom</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="m">m: <a href="Predef$$DummyImplicit.html" class="extype" name="scala.Predef.DummyImplicit">DummyImplicit</a></span>)</span><span class="result">: <a href="collection/generic/CanBuildFrom.html" class="extype" name="scala.collection.generic.CanBuildFrom">CanBuildFrom</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[_], <span class="extype" name="scala.FallbackArrayBuilding.fallbackCanBuildFrom.T">T</span>, <a href="collection/mutable/ArraySeq.html" class="extype" name="scala.collection.mutable.ArraySeq">ArraySeq</a>[<span class="extype" name="scala.FallbackArrayBuilding.fallbackCanBuildFrom.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@fallbackCanBuildFrom[T](implicitm:DummyImplicit):scala.collection.generic.CanBuildFrom[Array[_],T,scala.collection.mutable.ArraySeq[T]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A builder factory that generates a generic array.</p><div class="fullcomment"><div class="comment cmt"><p>A builder factory that generates a generic array.
+ Called instead of <code>Array.newBuilder</code> if the element type of an array
+ does not have a class tag. Note that fallbackBuilder factory
+ needs an implicit parameter (otherwise it would not be dominated in
+ implicit search by <code>Array.canBuildFrom</code>). We make sure that
+ implicit search is always successful.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="FallbackArrayBuilding.html" class="extype" name="scala.FallbackArrayBuilding">FallbackArrayBuilding</a></dd></dl></div>
+    </li><li name="scala.Array#fill" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fill[T](n1:Int,n2:Int,n3:Int,n4:Int,n5:Int)(elem:=&gt;T)(implicitevidence$13:scala.reflect.ClassTag[T]):Array[Array[Array[Array[Array[T]]]]]"></a>
+      <a id="fill[T](Int,Int,Int,Int,Int)(⇒T)(ClassTag[T]):Array[Array[Array[Array[Array[T]]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fill</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n2">n2: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n3">n3: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n4">n4: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n5">n5: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span name="elem">elem: ⇒ <span class="extype" name="scala.Array.fill.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.fill.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.fill.T">T</span>]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@fill[T](n1:Int,n2:Int,n3:Int,n4:Int,n5:Int)(elem:=&gt;T)(implicitevidence$13:scala.reflect.ClassTag[T]):Array[Array[Array[Array[Array[T]]]]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a five-dimensional array that contains the results of some element
+ computation a number of times.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a five-dimensional array that contains the results of some element
+ computation a number of times.
+</p></div><dl class="paramcmts block"><dt class="param">n1</dt><dd class="cmt"><p>the number of elements in the 1st dimension</p></dd><dt class="param">n2</dt><dd class="cmt"><p>the number of elements in the 2nd dimension</p></dd><dt class="param">n3</dt><dd class="cmt"><p>the number of elements in the 3nd dimension</p></dd><dt class="param">n4</dt><dd class="cmt"><p>the number of elements in the 4th dimension</p></dd><dt class="param">n5</dt><dd class="cmt"><p>the number of elements in the 5th dimension</p></dd><dt class="param">elem</dt><dd class="cmt"><p>the element computation</p></dd></dl></div>
+    </li><li name="scala.Array#fill" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fill[T](n1:Int,n2:Int,n3:Int,n4:Int)(elem:=&gt;T)(implicitevidence$12:scala.reflect.ClassTag[T]):Array[Array[Array[Array[T]]]]"></a>
+      <a id="fill[T](Int,Int,Int,Int)(⇒T)(ClassTag[T]):Array[Array[Array[Array[T]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fill</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n2">n2: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n3">n3: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n4">n4: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span name="elem">elem: ⇒ <span class="extype" name="scala.Array.fill.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.fill.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.fill.T">T</span>]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@fill[T](n1:Int,n2:Int,n3:Int,n4:Int)(elem:=&gt;T)(implicitevidence$12:scala.reflect.ClassTag[T]):Array[Array[Array[Array[T]]]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a four-dimensional array that contains the results of some element
+ computation a number of times.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a four-dimensional array that contains the results of some element
+ computation a number of times.
+</p></div><dl class="paramcmts block"><dt class="param">n1</dt><dd class="cmt"><p>the number of elements in the 1st dimension</p></dd><dt class="param">n2</dt><dd class="cmt"><p>the number of elements in the 2nd dimension</p></dd><dt class="param">n3</dt><dd class="cmt"><p>the number of elements in the 3nd dimension</p></dd><dt class="param">n4</dt><dd class="cmt"><p>the number of elements in the 4th dimension</p></dd><dt class="param">elem</dt><dd class="cmt"><p>the element computation</p></dd></dl></div>
+    </li><li name="scala.Array#fill" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fill[T](n1:Int,n2:Int,n3:Int)(elem:=&gt;T)(implicitevidence$11:scala.reflect.ClassTag[T]):Array[Array[Array[T]]]"></a>
+      <a id="fill[T](Int,Int,Int)(⇒T)(ClassTag[T]):Array[Array[Array[T]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fill</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n2">n2: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n3">n3: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span name="elem">elem: ⇒ <span class="extype" name="scala.Array.fill.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.fill.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.fill.T">T</span>]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@fill[T](n1:Int,n2:Int,n3:Int)(elem:=&gt;T)(implicitevidence$11:scala.reflect.ClassTag[T]):Array[Array[Array[T]]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a three-dimensional array that contains the results of some element
+ computation a number of times.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a three-dimensional array that contains the results of some element
+ computation a number of times.
+</p></div><dl class="paramcmts block"><dt class="param">n1</dt><dd class="cmt"><p>the number of elements in the 1st dimension</p></dd><dt class="param">n2</dt><dd class="cmt"><p>the number of elements in the 2nd dimension</p></dd><dt class="param">n3</dt><dd class="cmt"><p>the number of elements in the 3nd dimension</p></dd><dt class="param">elem</dt><dd class="cmt"><p>the element computation</p></dd></dl></div>
+    </li><li name="scala.Array#fill" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fill[T](n1:Int,n2:Int)(elem:=&gt;T)(implicitevidence$10:scala.reflect.ClassTag[T]):Array[Array[T]]"></a>
+      <a id="fill[T](Int,Int)(⇒T)(ClassTag[T]):Array[Array[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fill</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n2">n2: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span name="elem">elem: ⇒ <span class="extype" name="scala.Array.fill.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.fill.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.fill.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@fill[T](n1:Int,n2:Int)(elem:=&gt;T)(implicitevidence$10:scala.reflect.ClassTag[T]):Array[Array[T]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a two-dimensional array that contains the results of some element
+ computation a number of times.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a two-dimensional array that contains the results of some element
+ computation a number of times.
+</p></div><dl class="paramcmts block"><dt class="param">n1</dt><dd class="cmt"><p>the number of elements in the 1st dimension</p></dd><dt class="param">n2</dt><dd class="cmt"><p>the number of elements in the 2nd dimension</p></dd><dt class="param">elem</dt><dd class="cmt"><p>the element computation</p></dd></dl></div>
+    </li><li name="scala.Array#fill" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fill[T](n:Int)(elem:=&gt;T)(implicitevidence$9:scala.reflect.ClassTag[T]):Array[T]"></a>
+      <a id="fill[T](Int)(⇒T)(ClassTag[T]):Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fill</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n">n: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span name="elem">elem: ⇒ <span class="extype" name="scala.Array.fill.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.fill.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.fill.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@fill[T](n:Int)(elem:=&gt;T)(implicitevidence$9:scala.reflect.ClassTag[T]):Array[T]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns an array that contains the results of some element computation a number
+ of times.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an array that contains the results of some element computation a number
+ of times.</p><p> Note that this means that <code>elem</code> is computed a total of n times:</p><pre>scala&gt; <span class="std">Array</span>.fill(<span class="num">3</span>){ math.random }
+res3: <span class="std">Array</span>[<span class="std">Double</span>] = <span class="std">Array</span>(<span class="num">0.365461167592537</span>, <span class="num">1.550395944913685E-4</span>, <span class="num">0.7907242137333306</span>)</pre></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>the number of elements desired</p></dd><dt class="param">elem</dt><dd class="cmt"><p>the element computation</p></dd><dt>returns</dt><dd class="cmt"><p>an Array of size n, where each element contains the result of computing
+ <code>elem</code>.</p></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@finalize():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@hashCode():Int" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Array#iterate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="iterate[T](start:T,len:Int)(f:T=&gt;T)(implicitevidence$19:scala.reflect.ClassTag[T]):Array[T]"></a>
+      <a id="iterate[T](T,Int)((T)⇒T)(ClassTag[T]):Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">iterate</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="start">start: <span class="extype" name="scala.Array.iterate.T">T</span></span>, <span name="len">len: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Array.iterate.T">T</span>) ⇒ <span class="extype" name="scala.Array.iterate.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.iterate.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.iterate.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@iterate[T](start:T,len:Int)(f:T=&gt;T)(implicitevidence$19:scala.reflect.ClassTag[T]):Array[T]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns an array containing repeated applications of a function to a start value.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an array containing repeated applications of a function to a start value.
+</p></div><dl class="paramcmts block"><dt class="param">start</dt><dd class="cmt"><p>the start value of the array</p></dd><dt class="param">len</dt><dd class="cmt"><p>the number of elements returned by the array</p></dd><dt class="param">f</dt><dd class="cmt"><p>the function that is repeatedly applied</p></dd><dt>returns</dt><dd class="cmt"><p>the array returning <code>len</code> values in the sequence <code>start, f(start), f(f(start)), ...</code></p></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Array#newBuilder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="newBuilder[T](implicitt:scala.reflect.ClassTag[T]):scala.collection.mutable.ArrayBuilder[T]"></a>
+      <a id="newBuilder[T](ClassTag[T]):ArrayBuilder[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">newBuilder</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="t">t: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.newBuilder.T">T</span>]</span>)</span><span class="result">: <a href="collection/mutable/ArrayBuilder.html" class="extype" name="scala.collection.mutable.ArrayBuilder">ArrayBuilder</a>[<span class="extype" name="scala.Array.newBuilder.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@newBuilder[T](implicitt:scala.reflect.ClassTag[T]):scala.collection.mutable.ArrayBuilder[T]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a new <a href="collection/mutable/ArrayBuilder.html" class="extype" name="scala.collection.mutable.ArrayBuilder">scala.collection.mutable.ArrayBuilder</a>.</p>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@notify():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Array#ofDim" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ofDim[T](n1:Int,n2:Int,n3:Int,n4:Int,n5:Int)(implicitevidence$7:scala.reflect.ClassTag[T]):Array[Array[Array[Array[Array[T]]]]]"></a>
+      <a id="ofDim[T](Int,Int,Int,Int,Int)(ClassTag[T]):Array[Array[Array[Array[Array[T]]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ofDim</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n2">n2: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n3">n3: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n4">n4: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n5">n5: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.ofDim.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.ofDim.T">T</span>]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@ofDim[T](n1:Int,n2:Int,n3:Int,n4:Int,n5:Int)(implicitevidence$7:scala.reflect.ClassTag[T]):Array[Array[Array[Array[Array[T]]]]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a 5-dimensional array</p>
+    </li><li name="scala.Array#ofDim" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ofDim[T](n1:Int,n2:Int,n3:Int,n4:Int)(implicitevidence$6:scala.reflect.ClassTag[T]):Array[Array[Array[Array[T]]]]"></a>
+      <a id="ofDim[T](Int,Int,Int,Int)(ClassTag[T]):Array[Array[Array[Array[T]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ofDim</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n2">n2: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n3">n3: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n4">n4: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.ofDim.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.ofDim.T">T</span>]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@ofDim[T](n1:Int,n2:Int,n3:Int,n4:Int)(implicitevidence$6:scala.reflect.ClassTag[T]):Array[Array[Array[Array[T]]]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a 4-dimensional array</p>
+    </li><li name="scala.Array#ofDim" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ofDim[T](n1:Int,n2:Int,n3:Int)(implicitevidence$5:scala.reflect.ClassTag[T]):Array[Array[Array[T]]]"></a>
+      <a id="ofDim[T](Int,Int,Int)(ClassTag[T]):Array[Array[Array[T]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ofDim</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n2">n2: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n3">n3: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.ofDim.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.ofDim.T">T</span>]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@ofDim[T](n1:Int,n2:Int,n3:Int)(implicitevidence$5:scala.reflect.ClassTag[T]):Array[Array[Array[T]]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a 3-dimensional array</p>
+    </li><li name="scala.Array#ofDim" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ofDim[T](n1:Int,n2:Int)(implicitevidence$4:scala.reflect.ClassTag[T]):Array[Array[T]]"></a>
+      <a id="ofDim[T](Int,Int)(ClassTag[T]):Array[Array[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ofDim</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n2">n2: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.ofDim.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.ofDim.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@ofDim[T](n1:Int,n2:Int)(implicitevidence$4:scala.reflect.ClassTag[T]):Array[Array[T]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a 2-dimensional array</p>
+    </li><li name="scala.Array#ofDim" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ofDim[T](n1:Int)(implicitevidence$3:scala.reflect.ClassTag[T]):Array[T]"></a>
+      <a id="ofDim[T](Int)(ClassTag[T]):Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ofDim</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.ofDim.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.ofDim.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@ofDim[T](n1:Int)(implicitevidence$3:scala.reflect.ClassTag[T]):Array[T]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates array with given dimensions</p>
+    </li><li name="scala.Array#range" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="range(start:Int,end:Int,step:Int):Array[Int]"></a>
+      <a id="range(Int,Int,Int):Array[Int]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">range</span><span class="params">(<span name="start">start: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="end">end: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="step">step: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Int.html" class="extype" name="scala.Int">Int</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@range(start:Int,end:Int,step:Int):Array[Int]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns an array containing equally spaced values in some integer interval.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an array containing equally spaced values in some integer interval.
+</p></div><dl class="paramcmts block"><dt class="param">start</dt><dd class="cmt"><p>the start value of the array</p></dd><dt class="param">end</dt><dd class="cmt"><p>the end value of the array, exclusive (in other words, this is the first value <b>not</b> returned)</p></dd><dt class="param">step</dt><dd class="cmt"><p>the increment value of the array (may not be zero)</p></dd><dt>returns</dt><dd class="cmt"><p>the array with values in <code>start, start + step, ...</code> up to, but excluding <code>end</code></p></dd></dl></div>
+    </li><li name="scala.Array#range" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="range(start:Int,end:Int):Array[Int]"></a>
+      <a id="range(Int,Int):Array[Int]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">range</span><span class="params">(<span name="start">start: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="end">end: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Int.html" class="extype" name="scala.Int">Int</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@range(start:Int,end:Int):Array[Int]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns an array containing a sequence of increasing integers in a range.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an array containing a sequence of increasing integers in a range.
+</p></div><dl class="paramcmts block"><dt class="param">start</dt><dd class="cmt"><p>the start value of the array</p></dd><dt class="param">end</dt><dd class="cmt"><p>the end value of the array, exclusive (in other words, this is the first value <b>not</b> returned)</p></dd><dt>returns</dt><dd class="cmt"><p>the array with values in range <code>start, start + 1, ..., end - 1</code>
+ up to, but excluding, <code>end</code>.</p></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Array#tabulate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tabulate[T](n1:Int,n2:Int,n3:Int,n4:Int,n5:Int)(f:(Int,Int,Int,Int,Int)=&gt;T)(implicitevidence$18:scala.reflect.ClassTag[T]):Array[Array[Array[Array[Array[T]]]]]"></a>
+      <a id="tabulate[T](Int,Int,Int,Int,Int)((Int,Int,Int,Int,Int)⇒T)(ClassTag[T]):Array[Array[Array[Array[Array[T]]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tabulate</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n2">n2: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n3">n3: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n4">n4: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n5">n5: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span name="f">f: (<a href="Int.html" class="extype" name="scala.Int">Int</a>, <a href="Int.html" class="extype" name="scala.Int">Int</a>, <a href="Int.html" class="extype" name="scala.Int">Int</a>, <a href="Int.html" class="extype" name="scala.Int">Int</a>, <a href="Int.html" class="extype" name="scala.Int">Int</a>) ⇒ <span class="extype" name="scala.Array.tabulate.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.tabulate.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.tabulate.T">T</span>]]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@tabulate[T](n1:Int,n2:Int,n3:Int,n4:Int,n5:Int)(f:(Int,Int,Int,Int,Int)=&gt;T)(implicitevidence$18:scala.reflect.ClassTag[T]):Array[Array[Array[Array[Array[T]]]]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a five-dimensional array containing values of a given function
+ over ranges of integer values starting from <code>0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a five-dimensional array containing values of a given function
+ over ranges of integer values starting from <code>0</code>.
+</p></div><dl class="paramcmts block"><dt class="param">n1</dt><dd class="cmt"><p>the number of elements in the 1st dimension</p></dd><dt class="param">n2</dt><dd class="cmt"><p>the number of elements in the 2nd dimension</p></dd><dt class="param">n3</dt><dd class="cmt"><p>the number of elements in the 3rd dimension</p></dd><dt class="param">n4</dt><dd class="cmt"><p>the number of elements in the 4th dimension</p></dd><dt class="param">n5</dt><dd class="cmt"><p>the number of elements in the 5th dimension</p></dd><dt class="param">f</dt><dd class="cmt"><p>The function computing element values</p></dd></dl></div>
+    </li><li name="scala.Array#tabulate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tabulate[T](n1:Int,n2:Int,n3:Int,n4:Int)(f:(Int,Int,Int,Int)=&gt;T)(implicitevidence$17:scala.reflect.ClassTag[T]):Array[Array[Array[Array[T]]]]"></a>
+      <a id="tabulate[T](Int,Int,Int,Int)((Int,Int,Int,Int)⇒T)(ClassTag[T]):Array[Array[Array[Array[T]]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tabulate</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n2">n2: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n3">n3: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n4">n4: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span name="f">f: (<a href="Int.html" class="extype" name="scala.Int">Int</a>, <a href="Int.html" class="extype" name="scala.Int">Int</a>, <a href="Int.html" class="extype" name="scala.Int">Int</a>, <a href="Int.html" class="extype" name="scala.Int">Int</a>) ⇒ <span class="extype" name="scala.Array.tabulate.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.tabulate.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.tabulate.T">T</span>]]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@tabulate[T](n1:Int,n2:Int,n3:Int,n4:Int)(f:(Int,Int,Int,Int)=&gt;T)(implicitevidence$17:scala.reflect.ClassTag[T]):Array[Array[Array[Array[T]]]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a four-dimensional array containing values of a given function
+ over ranges of integer values starting from <code>0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a four-dimensional array containing values of a given function
+ over ranges of integer values starting from <code>0</code>.
+</p></div><dl class="paramcmts block"><dt class="param">n1</dt><dd class="cmt"><p>the number of elements in the 1st dimension</p></dd><dt class="param">n2</dt><dd class="cmt"><p>the number of elements in the 2nd dimension</p></dd><dt class="param">n3</dt><dd class="cmt"><p>the number of elements in the 3rd dimension</p></dd><dt class="param">n4</dt><dd class="cmt"><p>the number of elements in the 4th dimension</p></dd><dt class="param">f</dt><dd class="cmt"><p>The function computing element values</p></dd></dl></div>
+    </li><li name="scala.Array#tabulate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tabulate[T](n1:Int,n2:Int,n3:Int)(f:(Int,Int,Int)=&gt;T)(implicitevidence$16:scala.reflect.ClassTag[T]):Array[Array[Array[T]]]"></a>
+      <a id="tabulate[T](Int,Int,Int)((Int,Int,Int)⇒T)(ClassTag[T]):Array[Array[Array[T]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tabulate</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n2">n2: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n3">n3: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span name="f">f: (<a href="Int.html" class="extype" name="scala.Int">Int</a>, <a href="Int.html" class="extype" name="scala.Int">Int</a>, <a href="Int.html" class="extype" name="scala.Int">Int</a>) ⇒ <span class="extype" name="scala.Array.tabulate.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.tabulate.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.tabulate.T">T</span>]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@tabulate[T](n1:Int,n2:Int,n3:Int)(f:(Int,Int,Int)=&gt;T)(implicitevidence$16:scala.reflect.ClassTag[T]):Array[Array[Array[T]]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a three-dimensional array containing values of a given function
+ over ranges of integer values starting from <code>0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a three-dimensional array containing values of a given function
+ over ranges of integer values starting from <code>0</code>.
+</p></div><dl class="paramcmts block"><dt class="param">n1</dt><dd class="cmt"><p>the number of elements in the 1st dimension</p></dd><dt class="param">n2</dt><dd class="cmt"><p>the number of elements in the 2nd dimension</p></dd><dt class="param">n3</dt><dd class="cmt"><p>the number of elements in the 3rd dimension</p></dd><dt class="param">f</dt><dd class="cmt"><p>The function computing element values</p></dd></dl></div>
+    </li><li name="scala.Array#tabulate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tabulate[T](n1:Int,n2:Int)(f:(Int,Int)=&gt;T)(implicitevidence$15:scala.reflect.ClassTag[T]):Array[Array[T]]"></a>
+      <a id="tabulate[T](Int,Int)((Int,Int)⇒T)(ClassTag[T]):Array[Array[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tabulate</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n1">n1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="n2">n2: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span name="f">f: (<a href="Int.html" class="extype" name="scala.Int">Int</a>, <a href="Int.html" class="extype" name="scala.Int">Int</a>) ⇒ <span class="extype" name="scala.Array.tabulate.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.tabulate.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.tabulate.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@tabulate[T](n1:Int,n2:Int)(f:(Int,Int)=&gt;T)(implicitevidence$15:scala.reflect.ClassTag[T]):Array[Array[T]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a two-dimensional array containing values of a given function
+ over ranges of integer values starting from <code>0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a two-dimensional array containing values of a given function
+ over ranges of integer values starting from <code>0</code>.
+</p></div><dl class="paramcmts block"><dt class="param">n1</dt><dd class="cmt"><p>the number of elements in the 1st dimension</p></dd><dt class="param">n2</dt><dd class="cmt"><p>the number of elements in the 2nd dimension</p></dd><dt class="param">f</dt><dd class="cmt"><p>The function computing element values</p></dd></dl></div>
+    </li><li name="scala.Array#tabulate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tabulate[T](n:Int)(f:Int=&gt;T)(implicitevidence$14:scala.reflect.ClassTag[T]):Array[T]"></a>
+      <a id="tabulate[T](Int)((Int)⇒T)(ClassTag[T]):Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tabulate</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="n">n: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="params">(<span name="f">f: (<a href="Int.html" class="extype" name="scala.Int">Int</a>) ⇒ <span class="extype" name="scala.Array.tabulate.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="reflect/ClassTag.html" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="scala.Array.tabulate.T">T</span>]</span>)</span><span class="result">: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.tabulate.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@tabulate[T](n:Int)(f:Int=&gt;T)(implicitevidence$14:scala.reflect.ClassTag[T]):Array[T]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns an array containing values of a given function over a range of integer
+ values starting from 0.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an array containing values of a given function over a range of integer
+ values starting from 0.
+</p></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>The number of elements in the array</p></dd><dt class="param">f</dt><dd class="cmt"><p>The function computing element values</p></dd><dt>returns</dt><dd class="cmt"><p>A traversable consisting of elements <code>f(0),f(1), ..., f(n - 1)</code></p></dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@toString():String" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Array#unapplySeq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unapplySeq[T](x:Array[T]):Option[IndexedSeq[T]]"></a>
+      <a id="unapplySeq[T](Array[T]):Option[IndexedSeq[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unapplySeq</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="x">x: <a href="Array.html" class="extype" name="scala.Array">Array</a>[<span class="extype" name="scala.Array.unapplySeq.T">T</span>]</span>)</span><span class="result">: <a href="Option.html" class="extype" name="scala.Option">Option</a>[<a href="package.html#IndexedSeq[+A]=IndexedSeq[A]" class="extmbr" name="scala.IndexedSeq">IndexedSeq</a>[<span class="extype" name="scala.Array.unapplySeq.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@unapplySeq[T](x:Array[T]):Option[IndexedSeq[T]]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called in a pattern match like <code>{ case Array(x,y,z) =&gt; println('3 elements')}</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Called in a pattern match like <code>{ case Array(x,y,z) =&gt; println('3 elements')}</code>.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>the selector value</p></dd><dt>returns</dt><dd class="cmt"><p>sequence wrapped in a <a href="Some.html" class="extype" name="scala.Some">scala.Some</a>, if <code>x</code> is a Seq, otherwise <code>None</code></p></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@wait():Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="arg1">arg1: <a href="Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#scala.Array$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <a href="Serializable.html" class="extype" name="scala.Serializable">Serializable</a></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">java.io.Serializable</span></h3>
+            </div><div class="parent" name="scala.FallbackArrayBuilding">
+              <h3>Inherited from <a href="FallbackArrayBuilding.html" class="extype" name="scala.FallbackArrayBuilding">FallbackArrayBuilding</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

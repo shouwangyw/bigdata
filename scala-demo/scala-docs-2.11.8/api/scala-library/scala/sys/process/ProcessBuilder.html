@@ -1,0 +1,1536 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>ProcessBuilder - Scala Standard Library 2.11.8 - scala.sys.process.ProcessBuilder</title>
+          <meta name="description" content="ProcessBuilder - Scala Standard Library 2.11.8 - scala.sys.process.ProcessBuilder" />
+          <meta name="keywords" content="ProcessBuilder Scala Standard Library 2.11.8 scala.sys.process.ProcessBuilder" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.sys.process.ProcessBuilder';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <a href="ProcessBuilder$.html" title="See companion object"><img alt="Trait/Object" src="../../../lib/trait_to_object_big.png" /></a>
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.sys">sys</a>.<a href="package.html" class="extype" name="scala.sys.process">process</a></p>
+        <h1><a href="ProcessBuilder$.html" title="See companion object">ProcessBuilder</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="ProcessBuilder$.html" title="See companion object">object ProcessBuilder</a>
+            | <a href="package.html" class="extype" name="scala.sys.process">package process</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ProcessBuilder</span><span class="result"> extends <a href="ProcessBuilder$$Source.html" class="extype" name="scala.sys.process.ProcessBuilder.Source">Source</a> with <a href="ProcessBuilder$$Sink.html" class="extype" name="scala.sys.process.ProcessBuilder.Sink">Sink</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Represents a sequence of one or more external processes that can be
+executed. A <code>ProcessBuilder</code> can be a single external process, or a
+combination of other <code>ProcessBuilder</code>. One can control where a
+the output of an external process will go to, and where its input will come
+from, or leave that decision to whoever starts it.</p><p>One creates a <code>ProcessBuilder</code> through factories provided in
+<a href="Process.html" class="extype" name="scala.sys.process.Process">scala.sys.process.Process</a>'s companion object, or implicit conversions
+based on these factories made available in the package object
+<a href="package.html" class="extype" name="scala.sys.process">scala.sys.process</a>. Here are some examples:</p><pre><span class="kw">import</span> scala.sys.process._
+
+<span class="cmt">// Executes "ls" and sends output to stdout</span>
+<span class="lit">"ls"</span>.!
+
+<span class="cmt">// Execute "ls" and assign a `Stream[String]` of its output to "contents".</span>
+<span class="kw">val</span> contents = Process(<span class="lit">"ls"</span>).lineStream
+
+<span class="cmt">// Here we use a `Seq` to make the parameter whitespace-safe</span>
+<span class="kw">def</span> contentsOf(dir: <span class="std">String</span>): <span class="std">String</span> = <span class="std">Seq</span>(<span class="lit">"ls"</span>, dir).!!</pre><p>The methods of <code>ProcessBuilder</code> are divided in three categories: the ones that
+combine two <code>ProcessBuilder</code> to create a third, the ones that redirect input
+or output of a <code>ProcessBuilder</code>, and the ones that execute
+the external processes associated with it.</p><h4>Combining <code>ProcessBuilder</code></h4><p>Two existing <code>ProcessBuilder</code> can be combined in the following ways:</p><ul><li>They can be executed in parallel, with the output of the first being fed
+    as input to the second, like Unix pipes. This is achieved with the <code>#|</code>
+    method.</li><li>They can be executed in sequence, with the second starting as soon as
+    the first ends. This is done by the <code>###</code> method.</li><li>The execution of the second one can be conditioned by the return code
+    (exit status) of the first, either only when it's zero, or only when it's
+    not zero. The methods <code>#&amp;&amp;</code> and <code>#||</code> accomplish these tasks.</li></ul><h4>Redirecting Input/Output</h4><p>Though control of input and output can be done when executing the process,
+there's a few methods that create a new <code>ProcessBuilder</code> with a
+pre-configured input or output. They are <code>#&lt;</code>, <code>#&gt;</code> and <code>#&gt;&gt;</code>, and may take
+as input either another <code>ProcessBuilder</code> (like the pipe described above), or
+something else such as a <code>java.io.File</code> or a <code>java.io.InputStream</code>.
+For example:</p><pre><span class="kw">new</span> URL(<span class="lit">"http://databinder.net/dispatch/About"</span>) #&gt; <span class="lit">"grep JSON"</span> #&gt;&gt; <span class="kw">new</span> File(<span class="lit">"About_JSON"</span>) !</pre><h4>Starting Processes</h4><p>To execute all external commands associated with a <code>ProcessBuilder</code>, one
+may use one of four groups of methods. Each of these methods have various
+overloads and variations to enable further control over the I/O. These
+methods are:</p><ul><li><code>run</code>: the most general method, it returns a
+    <a href="Process.html" class="extype" name="scala.sys.process.Process">scala.sys.process.Process</a> immediately, and the external command
+    executes concurrently.</li><li><code>!</code>: blocks until all external commands exit, and returns the exit code
+    of the last one in the chain of execution.</li><li><code>!!</code>: blocks until all external commands exit, and returns a <code>String</code>
+    with the output generated.</li><li><code>lineStream</code>: returns immediately like <code>run</code>, and the output being generated
+    is provided through a <code>Stream[String]</code>. Getting the next element of that
+    <code>Stream</code> may block until it becomes available. This method will throw an
+    exception if the return code is different than zero -- if this is not
+    desired, use the <code>lineStream_!</code> method.</li></ul><h4>Handling Input and Output</h4><p>If not specified, the input of the external commands executed with <code>run</code> or
+<code>!</code> will not be tied to anything, and the output will be redirected to the
+stdout and stderr of the Scala process. For the methods <code>!!</code> and <code>lines</code>, no
+input will be provided, and the output will be directed according to the
+semantics of these methods.</p><p>Some methods will cause stdin to be used as input. Output can be controlled
+with a <a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">scala.sys.process.ProcessLogger</a> -- <code>!!</code> and <code>lines</code> will only
+redirect error output when passed a <code>ProcessLogger</code>. If one desires full
+control over input and output, then a <a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">scala.sys.process.ProcessIO</a> can be
+used with <code>run</code>.</p><p>For example, we could silence the error output from <code>lines_!</code> like this:</p><pre><span class="kw">val</span> etcFiles = <span class="lit">"find /etc"</span> lines_! ProcessLogger(line <span class="kw">=&gt;</span> ())</pre><h4>Extended Example</h4><p>Let's examine in detail one example of usage:</p><pre><span class="kw">import</span> scala.sys.process._
+<span class="lit">"find src -name *.scala -exec grep null {} ;"</span>  #|  <span class="lit">"xargs test -z"</span>  #&amp;&amp;  <span class="lit">"echo null-free"</span>  #||  <span class="lit">"echo null detected"</span>  !</pre><p>Note that every <code>String</code> is implicitly converted into a <code>ProcessBuilder</code>
+through the implicits imported from <a href="package.html" class="extype" name="scala.sys.process">scala.sys.process</a>. These <code>ProcessBuilder</code> are then
+combined in three different ways.</p><ol class="decimal"><li><code>#|</code> pipes the output of the first command into the input of the second command. It
+     mirrors a shell pipe (<code>|</code>).</li><li><code>#&amp;&amp;</code> conditionally executes the second command if the previous one finished with
+     exit value 0. It mirrors shell's <code>&amp;&amp;</code>.</li><li><code>#||</code> conditionally executes the third command if the exit value of the previous
+     command is different than zero. It mirrors shell's <code>||</code>.</li></ol><p>Finally, <code>!</code> at the end executes the commands, and returns the exit value.
+Whatever is printed will be sent to the Scala process standard output. If
+we wanted to capture it, we could run that with <code>!!</code> instead.</p><p>Note: though it is not shown above, the equivalent of a shell's <code>;</code> would be
+<code>###</code>. The reason for this name is that <code>;</code> is a reserved token in Scala.</p><p>Note: the <code>lines</code> method, though deprecated, may conflict with the <code>StringLike</code>
+method of the same name.  To avoid this, one may wish to call the builders in
+<code>Process</code> instead of importing <code>scala.sys.process._</code>.  The example above would be</p><pre><span class="kw">import</span> scala.sys.process.Process
+Process(<span class="lit">"find src -name *.scala -exec grep null {} ;"</span>) #| Process(<span class="lit">"xargs test -z"</span>) #&amp;&amp; Process(<span class="lit">"echo null-free"</span>) #|| Process(<span class="lit">"echo null detected"</span>) !</pre></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/sys/process/ProcessBuilder.scala#L1" target="_blank">ProcessBuilder.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="ProcessBuilder$$Sink.html" class="extype" name="scala.sys.process.ProcessBuilder.Sink">Sink</a>, <a href="ProcessBuilder$$Source.html" class="extype" name="scala.sys.process.ProcessBuilder.Source">Source</a>, <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.sys.process.ProcessBuilder"><span>ProcessBuilder</span></li><li class="in" name="scala.sys.process.ProcessBuilder.Sink"><span>Sink</span></li><li class="in" name="scala.sys.process.ProcessBuilder.Source"><span>Source</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="scala.sys.process.ProcessBuilder#!" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="!(log:scala.sys.process.ProcessLogger):Int"></a>
+      <a id="!(ProcessLogger):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang" class="name">!</span><span class="params">(<span name="log">log: <a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a></span>)</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@!(log:scala.sys.process.ProcessLogger):Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder, blocks until it exits, and
+returns the exit code.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder, blocks until it exits, and
+returns the exit code.  Standard output and error are sent to the given
+ProcessLogger.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#!" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="!:Int"></a>
+      <a id="!:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang" class="name">!</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@!:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder, blocks until it exits, and
+returns the exit code.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder, blocks until it exits, and
+returns the exit code.  Standard output and error are sent to the console.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#!!" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="!!(log:scala.sys.process.ProcessLogger):String"></a>
+      <a id="!!(ProcessLogger):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$bang" class="name">!!</span><span class="params">(<span name="log">log: <a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a></span>)</span><span class="result">: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@!!(log:scala.sys.process.ProcessLogger):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder, blocks until it exits, and
+returns the output as a String.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder, blocks until it exits, and
+returns the output as a String.  Standard error is sent to the provided
+ProcessLogger.  If the exit code is non-zero, an exception is thrown.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#!!" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="!!:String"></a>
+      <a id="!!:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$bang" class="name">!!</span><span class="result">: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@!!:String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder, blocks until it exits, and
+returns the output as a String.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder, blocks until it exits, and
+returns the output as a String.  Standard error is sent to the console.  If
+the exit code is non-zero, an exception is thrown.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#!!&lt;" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="!!&lt;(log:scala.sys.process.ProcessLogger):String"></a>
+      <a id="!!&lt;(ProcessLogger):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$bang$less" class="name">!!&lt;</span><span class="params">(<span name="log">log: <a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a></span>)</span><span class="result">: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@!!&lt;(log:scala.sys.process.ProcessLogger):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder, blocks until it exits, and
+returns the output as a String.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder, blocks until it exits, and
+returns the output as a String.  Standard error is sent to the provided
+ProcessLogger.  If the exit code is non-zero, an exception is thrown.  The
+newly started process reads from standard input of the current process.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#!!&lt;" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="!!&lt;:String"></a>
+      <a id="!!&lt;:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$bang$less" class="name">!!&lt;</span><span class="result">: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@!!&lt;:String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder, blocks until it exits, and
+returns the output as a String.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder, blocks until it exits, and
+returns the output as a String.  Standard error is sent to the console.  If
+the exit code is non-zero, an exception is thrown.  The newly started
+process reads from standard input of the current process.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#!&lt;" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="!&lt;(log:scala.sys.process.ProcessLogger):Int"></a>
+      <a id="!&lt;(ProcessLogger):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$less" class="name">!&lt;</span><span class="params">(<span name="log">log: <a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a></span>)</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@!&lt;(log:scala.sys.process.ProcessLogger):Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder, blocks until it exits, and
+returns the exit code.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder, blocks until it exits, and
+returns the exit code.  Standard output and error are sent to the given
+ProcessLogger.  The newly started process reads from standard input of the
+current process.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#!&lt;" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="!&lt;:Int"></a>
+      <a id="!&lt;:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$less" class="name">!&lt;</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@!&lt;:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder, blocks until it exits, and
+returns the exit code.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder, blocks until it exits, and
+returns the exit code.  Standard output and error are sent to the console.
+The newly started process reads from standard input of the current process.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder####" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="###(other:scala.sys.process.ProcessBuilder):scala.sys.process.ProcessBuilder"></a>
+      <a id="###(ProcessBuilder):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash$hash" class="name">###</span><span class="params">(<span name="other">other: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@###(other:scala.sys.process.ProcessBuilder):scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a command that will run this command and then <code>other</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a command that will run this command and then <code>other</code>.  The
+exit code will be the exit code of <code>other</code>.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder##&amp;&amp;" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="#&amp;&amp;(other:scala.sys.process.ProcessBuilder):scala.sys.process.ProcessBuilder"></a>
+      <a id="#&amp;&amp;(ProcessBuilder):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$amp$amp" class="name">#&amp;&amp;</span><span class="params">(<span name="other">other: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@#&amp;&amp;(other:scala.sys.process.ProcessBuilder):scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a command that runs this command first and then <code>other</code> if this
+command succeeds.</p>
+    </li><li name="scala.sys.process.ProcessBuilder##|" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="#|(other:scala.sys.process.ProcessBuilder):scala.sys.process.ProcessBuilder"></a>
+      <a id="#|(ProcessBuilder):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$bar" class="name">#|</span><span class="params">(<span name="other">other: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@#|(other:scala.sys.process.ProcessBuilder):scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a command that will run this command and pipes the output to
+<code>other</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a command that will run this command and pipes the output to
+<code>other</code>.  <code>other</code> must be a simple command.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder##||" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="#||(other:scala.sys.process.ProcessBuilder):scala.sys.process.ProcessBuilder"></a>
+      <a id="#||(ProcessBuilder):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$bar$bar" class="name">#||</span><span class="params">(<span name="other">other: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@#||(other:scala.sys.process.ProcessBuilder):scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a command that runs this command first and then <code>other</code> if this
+command does not succeed.</p>
+    </li><li name="scala.sys.process.ProcessBuilder#canPipeTo" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="canPipeTo:Boolean"></a>
+      <a id="canPipeTo:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">canPipeTo</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@canPipeTo:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">True if this command can be the target of a pipe.</p>
+    </li><li name="scala.sys.process.ProcessBuilder#hasExitValue" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="hasExitValue:Boolean"></a>
+      <a id="hasExitValue:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasExitValue</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@hasExitValue:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">True if this command has an exit code which should be propagated to the
+user.</p><div class="fullcomment"><div class="comment cmt"><p>True if this command has an exit code which should be propagated to the
+user.  Given a pipe between A and B, if B.hasExitValue is true then the
+exit code will be the one from B; if it is false, the one from A.  This
+exists to prevent output redirections (implemented as pipes) from masking
+useful process error codes.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#lineStream" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="lineStream(log:scala.sys.process.ProcessLogger):Stream[String]"></a>
+      <a id="lineStream(ProcessLogger):Stream[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lineStream</span><span class="params">(<span name="log">log: <a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a></span>)</span><span class="result">: <a href="../../package.html#Stream[+A]=scala.collection.immutable.Stream[A]" class="extmbr" name="scala.Stream">Stream</a>[<a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@lineStream(log:scala.sys.process.ProcessLogger):Stream[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder.  The output is returned as
+a Stream that blocks when lines are not available but the process has not
+completed.  Standard error is sent to the provided ProcessLogger.  If the
+process exits with a non-zero value, the Stream will provide all lines up
+to termination and then throw an exception.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#lineStream" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="lineStream:Stream[String]"></a>
+      <a id="lineStream:Stream[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lineStream</span><span class="result">: <a href="../../package.html#Stream[+A]=scala.collection.immutable.Stream[A]" class="extmbr" name="scala.Stream">Stream</a>[<a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@lineStream:Stream[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder.  The output is returned as
+a Stream that blocks when lines are not available but the process has not
+completed.  Standard error is sent to the console.  If the process exits
+with a non-zero value, the Stream will provide all lines up to termination
+and then throw an exception.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#lineStream_!" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="lineStream_!(log:scala.sys.process.ProcessLogger):Stream[String]"></a>
+      <a id="lineStream_!(ProcessLogger):Stream[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: lineStream_$bang" class="name">lineStream_!</span><span class="params">(<span name="log">log: <a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a></span>)</span><span class="result">: <a href="../../package.html#Stream[+A]=scala.collection.immutable.Stream[A]" class="extmbr" name="scala.Stream">Stream</a>[<a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@lineStream_!(log:scala.sys.process.ProcessLogger):Stream[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder.  The output is returned as
+a Stream that blocks when lines are not available but the process has not
+completed.  Standard error is sent to the provided ProcessLogger. If the
+process exits with a non-zero value, the Stream will provide all lines up
+to termination but will not throw an exception.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#lineStream_!" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="lineStream_!:Stream[String]"></a>
+      <a id="lineStream_!:Stream[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: lineStream_$bang" class="name">lineStream_!</span><span class="result">: <a href="../../package.html#Stream[+A]=scala.collection.immutable.Stream[A]" class="extmbr" name="scala.Stream">Stream</a>[<a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@lineStream_!:Stream[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder.  The output is returned as
+a Stream that blocks when lines are not available but the process has not
+completed.  Standard error is sent to the console. If the process exits
+with a non-zero value, the Stream will provide all lines up to termination
+but will not throw an exception.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#run" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="run(log:scala.sys.process.ProcessLogger,connectInput:Boolean):scala.sys.process.Process"></a>
+      <a id="run(ProcessLogger,Boolean):Process"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">run</span><span class="params">(<span name="log">log: <a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a></span>, <span name="connectInput">connectInput: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="Process.html" class="extype" name="scala.sys.process.Process">Process</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@run(log:scala.sys.process.ProcessLogger,connectInput:Boolean):scala.sys.process.Process" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder, blocks until it exits, and
+returns the exit code.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder, blocks until it exits, and
+returns the exit code.  Standard output and error are sent to the given
+ProcessLogger.  The newly started process reads from standard input of the
+current process if <code>connectInput</code> is true.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#run" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="run(connectInput:Boolean):scala.sys.process.Process"></a>
+      <a id="run(Boolean):Process"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">run</span><span class="params">(<span name="connectInput">connectInput: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="Process.html" class="extype" name="scala.sys.process.Process">Process</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@run(connectInput:Boolean):scala.sys.process.Process" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder.  Standard output and error
+are sent to the console.  The newly started process reads from standard
+input of the current process if <code>connectInput</code> is true.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#run" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="run(io:scala.sys.process.ProcessIO):scala.sys.process.Process"></a>
+      <a id="run(ProcessIO):Process"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">run</span><span class="params">(<span name="io">io: <a href="ProcessIO.html" class="extype" name="scala.sys.process.ProcessIO">ProcessIO</a></span>)</span><span class="result">: <a href="Process.html" class="extype" name="scala.sys.process.Process">Process</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@run(io:scala.sys.process.ProcessIO):scala.sys.process.Process" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder.  I/O is handled by the
+given ProcessIO instance.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#run" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="run(log:scala.sys.process.ProcessLogger):scala.sys.process.Process"></a>
+      <a id="run(ProcessLogger):Process"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">run</span><span class="params">(<span name="log">log: <a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a></span>)</span><span class="result">: <a href="Process.html" class="extype" name="scala.sys.process.Process">Process</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@run(log:scala.sys.process.ProcessLogger):scala.sys.process.Process" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder.  Standard output and error
+are sent to the given ProcessLogger.
+</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder#run" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="run():scala.sys.process.Process"></a>
+      <a id="run():Process"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">run</span><span class="params">()</span><span class="result">: <a href="Process.html" class="extype" name="scala.sys.process.Process">Process</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@run():scala.sys.process.Process" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Starts the process represented by this builder.</p><div class="fullcomment"><div class="comment cmt"><p>Starts the process represented by this builder.  Standard output and error
+are sent to the console.</p></div></div>
+    </li><li name="scala.sys.process.ProcessBuilder.Sink#toSink" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="toSink:scala.sys.process.ProcessBuilder"></a>
+      <a id="toSink:ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toSink</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@toSink:scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="ProcessBuilder$$Sink.html" class="extype" name="scala.sys.process.ProcessBuilder.Sink">Sink</a></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder.Source#toSource" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="toSource:scala.sys.process.ProcessBuilder"></a>
+      <a id="toSource:ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toSource</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@toSource:scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="ProcessBuilder$$Source.html" class="extype" name="scala.sys.process.ProcessBuilder.Source">Source</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder.Sink##&lt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="#&lt;(b:scala.sys.process.ProcessBuilder):scala.sys.process.ProcessBuilder"></a>
+      <a id="#&lt;(ProcessBuilder):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$less" class="name">#&lt;</span><span class="params">(<span name="b">b: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@#&lt;(b:scala.sys.process.ProcessBuilder):scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reads the output of a <a href="" class="extype" name="scala.sys.process.ProcessBuilder">scala.sys.process.ProcessBuilder</a> into the input stream of this process.</p><div class="fullcomment"><div class="comment cmt"><p>Reads the output of a <a href="" class="extype" name="scala.sys.process.ProcessBuilder">scala.sys.process.ProcessBuilder</a> into the input stream of this process.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ProcessBuilder$$Sink.html" class="extype" name="scala.sys.process.ProcessBuilder.Sink">Sink</a></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder.Sink##&lt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="#&lt;(in:=&gt;scala.sys.process.processInternal.InputStream):scala.sys.process.ProcessBuilder"></a>
+      <a id="#&lt;(⇒InputStream):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$less" class="name">#&lt;</span><span class="params">(<span name="in">in: ⇒ <span class="extype" name="scala.sys.process.processInternal.InputStream">InputStream</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@#&lt;(in:=&gt;scala.sys.process.processInternal.InputStream):scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reads the given InputStream into the input stream of this process.</p><div class="fullcomment"><div class="comment cmt"><p>Reads the given InputStream into the input stream of this process. The
+argument is call-by-name, so the stream is recreated, read, and closed each
+time this process is executed.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ProcessBuilder$$Sink.html" class="extype" name="scala.sys.process.ProcessBuilder.Sink">Sink</a></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder.Sink##&lt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="#&lt;(f:scala.sys.process.processInternal.URL):scala.sys.process.ProcessBuilder"></a>
+      <a id="#&lt;(URL):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$less" class="name">#&lt;</span><span class="params">(<span name="f">f: <span class="extype" name="scala.sys.process.processInternal.URL">URL</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@#&lt;(f:scala.sys.process.processInternal.URL):scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reads the given URL into the input stream of this process.</p><div class="fullcomment"><div class="comment cmt"><p>Reads the given URL into the input stream of this process.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ProcessBuilder$$Sink.html" class="extype" name="scala.sys.process.ProcessBuilder.Sink">Sink</a></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder.Sink##&lt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="#&lt;(f:scala.sys.process.processInternal.File):scala.sys.process.ProcessBuilder"></a>
+      <a id="#&lt;(File):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$less" class="name">#&lt;</span><span class="params">(<span name="f">f: <span class="extype" name="scala.sys.process.processInternal.File">File</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@#&lt;(f:scala.sys.process.processInternal.File):scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reads the given file into the input stream of this process.</p><div class="fullcomment"><div class="comment cmt"><p>Reads the given file into the input stream of this process.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ProcessBuilder$$Sink.html" class="extype" name="scala.sys.process.ProcessBuilder.Sink">Sink</a></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder.Source##&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="#&gt;(b:scala.sys.process.ProcessBuilder):scala.sys.process.ProcessBuilder"></a>
+      <a id="#&gt;(ProcessBuilder):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$greater" class="name">#&gt;</span><span class="params">(<span name="b">b: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@#&gt;(b:scala.sys.process.ProcessBuilder):scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Writes the output stream of this process to a <a href="" class="extype" name="scala.sys.process.ProcessBuilder">scala.sys.process.ProcessBuilder</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Writes the output stream of this process to a <a href="" class="extype" name="scala.sys.process.ProcessBuilder">scala.sys.process.ProcessBuilder</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ProcessBuilder$$Source.html" class="extype" name="scala.sys.process.ProcessBuilder.Source">Source</a></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder.Source##&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="#&gt;(out:=&gt;scala.sys.process.processInternal.OutputStream):scala.sys.process.ProcessBuilder"></a>
+      <a id="#&gt;(⇒OutputStream):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$greater" class="name">#&gt;</span><span class="params">(<span name="out">out: ⇒ <span class="extype" name="scala.sys.process.processInternal.OutputStream">OutputStream</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@#&gt;(out:=&gt;scala.sys.process.processInternal.OutputStream):scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Writes the output stream of this process to the given OutputStream.</p><div class="fullcomment"><div class="comment cmt"><p>Writes the output stream of this process to the given OutputStream. The
+argument is call-by-name, so the stream is recreated, written, and closed each
+time this process is executed.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ProcessBuilder$$Source.html" class="extype" name="scala.sys.process.ProcessBuilder.Source">Source</a></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder.Source##&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="#&gt;(f:scala.sys.process.processInternal.File):scala.sys.process.ProcessBuilder"></a>
+      <a id="#&gt;(File):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$greater" class="name">#&gt;</span><span class="params">(<span name="f">f: <span class="extype" name="scala.sys.process.processInternal.File">File</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@#&gt;(f:scala.sys.process.processInternal.File):scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Writes the output stream of this process to the given file.</p><div class="fullcomment"><div class="comment cmt"><p>Writes the output stream of this process to the given file.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ProcessBuilder$$Source.html" class="extype" name="scala.sys.process.ProcessBuilder.Source">Source</a></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder.Source##&gt;&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="#&gt;&gt;(f:scala.sys.process.processInternal.File):scala.sys.process.ProcessBuilder"></a>
+      <a id="#&gt;&gt;(File):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$greater$greater" class="name">#&gt;&gt;</span><span class="params">(<span name="f">f: <span class="extype" name="scala.sys.process.processInternal.File">File</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@#&gt;&gt;(f:scala.sys.process.processInternal.File):scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Appends the output stream of this process to the given file.</p><div class="fullcomment"><div class="comment cmt"><p>Appends the output stream of this process to the given file.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ProcessBuilder$$Source.html" class="extype" name="scala.sys.process.ProcessBuilder.Source">Source</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a> to
+            <a href="../../Predef$$any2stringadd.html" class="extype" name="scala.Predef.any2stringadd">any2stringadd</a>[<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>] performed by method any2stringadd in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$any2stringadd.html" class="extype" name="scala.Predef.any2stringadd">any2stringadd</a></dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(ProcessBuilder,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a> to
+            <a href="../../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a>[<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>] performed by method ArrowAssoc in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../inline.html" class="extype" name="scala.inline">inline</a></span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder.Source#cat" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cat:scala.sys.process.ProcessBuilder"></a>
+      <a id="cat:ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cat</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@cat:scala.sys.process.ProcessBuilder" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returnes a <a href="" class="extype" name="scala.sys.process.ProcessBuilder">scala.sys.process.ProcessBuilder</a> representing this <code>Source</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returnes a <a href="" class="extype" name="scala.sys.process.ProcessBuilder">scala.sys.process.ProcessBuilder</a> representing this <code>Source</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ProcessBuilder$$Source.html" class="extype" name="scala.sys.process.ProcessBuilder.Source">Source</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((ProcessBuilder)⇒Boolean,⇒Any):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>) ⇒ <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a> to
+            <a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>] performed by method Ensuring in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((ProcessBuilder)⇒Boolean):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>) ⇒ <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a> to
+            <a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>] performed by method Ensuring in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a> to
+            <a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>] performed by method Ensuring in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):ProcessBuilder"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a> to
+            <a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>] performed by method Ensuring in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>)</span><span class="result">: <a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns string formatted according to given <code>format</code> string.</p><div class="fullcomment"><div class="comment cmt"><p>Returns string formatted according to given <code>format</code> string.
+ Format strings are as for <code>String.format</code>
+ (@see java.lang.String.format).
+</p></div><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a> to
+            <a href="../../Predef$$StringFormat.html" class="extype" name="scala.Predef.StringFormat">StringFormat</a>[<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>] performed by method StringFormat in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$StringFormat.html" class="extype" name="scala.Predef.StringFormat">StringFormat</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../inline.html" class="extype" name="scala.inline">inline</a></span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <a href="../../Boolean.html" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="../../Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="arg1">arg1: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="../../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="../../Unit.html" class="extype" name="scala.Unit">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../throws.html" class="extype" name="scala.throws">throws</a></span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(ProcessBuilder,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a> to
+            <a href="../../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a>[<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>] performed by method ArrowAssoc in <a href="../../Predef$.html" class="extype" name="scala.Predef">scala.Predef</a>.
+            
+          </dd><dt>Definition Classes</dt><dd><a href="../../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="scala.sys.process.ProcessBuilder#lines" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lines(log:scala.sys.process.ProcessLogger):Stream[String]"></a>
+      <a id="lines(ProcessLogger):Stream[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use stream instead.">lines</span><span class="params">(<span name="log">log: <a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a></span>)</span><span class="result">: <a href="../../package.html#Stream[+A]=scala.collection.immutable.Stream[A]" class="extmbr" name="scala.Stream">Stream</a>[<a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@lines(log:scala.sys.process.ProcessLogger):Stream[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Deprecated (renamed).</p><div class="fullcomment"><div class="comment cmt"><p>Deprecated (renamed).  Use <code>lineStream(log: ProcessLogger)</code> instead.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use stream instead.</p></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder#lines" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lines:Stream[String]"></a>
+      <a id="lines:Stream[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use lineStream instead.">lines</span><span class="result">: <a href="../../package.html#Stream[+A]=scala.collection.immutable.Stream[A]" class="extmbr" name="scala.Stream">Stream</a>[<a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@lines:Stream[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Deprecated (renamed).</p><div class="fullcomment"><div class="comment cmt"><p>Deprecated (renamed). Use <code>lineStream</code> instead.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use lineStream instead.</p></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder#lines_!" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lines_!(log:scala.sys.process.ProcessLogger):Stream[String]"></a>
+      <a id="lines_!(ProcessLogger):Stream[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: lines_$bang. Deprecated: (Since version 2.11.0) Use stream_! instead." class="name deprecated">lines_!</span><span class="params">(<span name="log">log: <a href="ProcessLogger.html" class="extype" name="scala.sys.process.ProcessLogger">ProcessLogger</a></span>)</span><span class="result">: <a href="../../package.html#Stream[+A]=scala.collection.immutable.Stream[A]" class="extmbr" name="scala.Stream">Stream</a>[<a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@lines_!(log:scala.sys.process.ProcessLogger):Stream[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Deprecated (renamed).</p><div class="fullcomment"><div class="comment cmt"><p>Deprecated (renamed).  Use <code>lineStream_!(log: ProcessLogger)</code> instead.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use stream_! instead.</p></dd></dl></div>
+    </li><li name="scala.sys.process.ProcessBuilder#lines_!" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lines_!:Stream[String]"></a>
+      <a id="lines_!:Stream[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: lines_$bang. Deprecated: (Since version 2.11.0) Use lineStream_! instead." class="name deprecated">lines_!</span><span class="result">: <a href="../../package.html#Stream[+A]=scala.collection.immutable.Stream[A]" class="extmbr" name="scala.Stream">Stream</a>[<a href="../../Predef$.html#String=String" class="extmbr" name="scala.Predef.String">String</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.sys.process.ProcessBuilder@lines_!:Stream[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Deprecated (renamed).</p><div class="fullcomment"><div class="comment cmt"><p>Deprecated (renamed).  Use <code>lineStream_!</code> instead.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use lineStream_! instead.</p></dd></dl></div>
+    </li></ol>
+            </div>
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.sys.process.ProcessBuilder.Sink">
+              <h3>Inherited from <a href="ProcessBuilder$$Sink.html" class="extype" name="scala.sys.process.ProcessBuilder.Sink">Sink</a></h3>
+            </div><div class="parent" name="scala.sys.process.ProcessBuilder.Source">
+              <h3>Inherited from <a href="ProcessBuilder$$Source.html" class="extype" name="scala.sys.process.ProcessBuilder.Source">Source</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a> to <a href="../../Predef$$any2stringadd.html" class="extype" name="scala.Predef.any2stringadd">any2stringadd</a>[<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a> to <a href="../../Predef$$StringFormat.html" class="extype" name="scala.Predef.StringFormat">StringFormat</a>[<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a> to <a href="../../Predef$$Ensuring.html" class="extype" name="scala.Predef.Ensuring">Ensuring</a>[<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a> to <a href="../../Predef$$ArrowAssoc.html" class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</a>[<a href="" class="extype" name="scala.sys.process.ProcessBuilder">ProcessBuilder</a>]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

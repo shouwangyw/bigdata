@@ -1,0 +1,132 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>whitebox - Scala Reflection Library 2.11.8 - scala.reflect.macros.whitebox</title>
+          <meta name="description" content="whitebox - Scala Reflection Library 2.11.8 - scala.reflect.macros.whitebox" />
+          <meta name="keywords" content="whitebox Scala Reflection Library 2.11.8 scala.reflect.macros.whitebox" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'scala.reflect.macros.whitebox.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="scala">scala</a>.<a href="../../package.html" class="extype" name="scala.reflect">reflect</a>.<a href="../package.html" class="extype" name="scala.reflect.macros">macros</a></p>
+        <h1>whitebox</h1><span class="permalink">
+      <a href="../../../../index.html#scala.reflect.macros.whitebox.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">whitebox</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.reflect.macros.whitebox.Context" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ContextextendsContext"></a>
+      <a id="Context:Context"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Context.html"><span class="name">Context</span></a><span class="result"> extends <a href="../blackbox/Context.html" class="extype" name="scala.reflect.macros.blackbox.Context">blackbox.Context</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.reflect.macros.whitebox.package@ContextextendsContext" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span> </span></p><div class="fullcomment"><div class="comment cmt"><p><span class="badge badge-red" style="float: right;">EXPERIMENTAL</span></p><p> The whitebox Scala macros context.</p><p> See <a href="../package.html" class="extype" name="scala.reflect.macros">the overview page</a> for a description of how macros work. This documentation
+ entry provides information on the API available to macro writers.</p><p> A macro context wraps a compiler universe exposed in <code>universe</code> and having type <a href="../Universe.html" class="extype" name="scala.reflect.macros.Universe">scala.reflect.macros.Universe</a>.
+ This type is a refinement over the generic reflection API provided in <a href="../../api/Universe.html" class="extype" name="scala.reflect.api.Universe">scala.reflect.api.Universe</a>. The
+ extended Universe provides mutability for reflection artifacts (e.g. macros can change types of compiler trees,
+ add annotation to symbols representing definitions, etc) and exposes some internal compiler functionality
+ such as <code>Symbol.deSkolemize</code> or <code>Tree.attachments</code>.</p><p> Another fundamental part of a macro context is <code>macroApplication</code>, which provides access to the tree undergoing
+ macro expansion. Parts of this tree can be found in arguments of the corresponding macro implementations and
+ in <code>prefix</code>, but <code>macroApplication</code> gives the full picture.</p><p> Other than that, macro contexts provide facilities for typechecking, exploring the compiler's symbol table and
+ enclosing trees and compilation units, evaluating trees, logging warnings/errors and much more.
+ Refer to the documentation of top-level traits in this package to learn the details.</p><p> If a macro def refers to a macro impl that uses <code>whitebox.Context</code>, then this macro def becomes a whitebox macro,
+ gaining the ability to refine the type of its expansion beyond its official return type, which enables a number of important use cases.
+ Blackbox macros, i.e. the ones defined with <code>blackbox.Context</code>, can't do that, so they are less powerful.
+ However blackbox macros are also going to enjoy better support than whitebox macros, so choose wisely.
+ See the <a href="http://docs.scala-lang.org/overviews/macros/overview.html" target="_blank">Macros Guide</a> for more information.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><code>scala.reflect.macros.blackbox.Context</code></p></span></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

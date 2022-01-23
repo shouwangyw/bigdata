@@ -1,0 +1,1666 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>Run - Scala Compiler 2.11.8 - scala.tools.nsc.Global.Run</title>
+          <meta name="description" content="Run - Scala Compiler 2.11.8 - scala.tools.nsc.Global.Run" />
+          <meta name="keywords" content="Run Scala Compiler 2.11.8 scala.tools.nsc.Global.Run" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.tools.nsc.Global$Run';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../lib/class_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.tools">tools</a>.<a href="package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="Global.html" class="extype" name="scala.tools.nsc.Global">Global</a></p>
+        <h1>Run</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="Global.html" class="extype" name="scala.tools.nsc.Global">package Global</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Run</span><span class="result"> extends <a href="Global.html#RunContextApiextendsAnyRef" class="extmbr" name="scala.tools.nsc.Global.RunContextApi">RunContextApi</a> with <a href="Global.html#RunReportingextendsAnyRef" class="extmbr" name="scala.tools.nsc.Global.RunReporting">RunReporting</a> with <a href="Global.html#RunParsingextendsAnyRef" class="extmbr" name="scala.tools.nsc.Parsing.RunParsing">RunParsing</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A Run is a single execution of the compiler on a set of units.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/compiler/scala/tools/nsc/Global.scala#L1" target="_blank">Global.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="Global.html#RunParsingextendsAnyRef" class="extmbr" name="scala.tools.nsc.Parsing.RunParsing">Global.RunParsing</a>, <a href="Global.html#RunReportingextendsAnyRef" class="extmbr" name="scala.tools.nsc.Global.RunReporting">Global.RunReporting</a>, <a href="Global.html#RunContextApiextendsAnyRef" class="extmbr" name="scala.tools.nsc.Global.RunContextApi">Global.RunContextApi</a>, <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 352.50 118.00" height="118pt" width="353pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="graph0"><polygon points="-4,4 -4,-114 348.5,-114 348.5,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="scala.tools.nsc.Global.Run (this class)" xlink:href="#inheritance-diagram"><polygon points="211,-49 149,-49 149,-24 211,-24 211,-49" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-43.5" x="159" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-33.5" x="180" text-anchor="start">Run</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="scala.tools.nsc.Global.RunContextApi"><polygon points="110,-110 0,-110 0,-85 110,-85 110,-110" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-104.5" x="10" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-94.5" x="31" text-anchor="start">RunContextApi</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="Run is a subtype of RunContextApi"><path d="M84.1565,-82.7381C105.726,-72.5571 134.788,-58.8399 155.236,-49.1884" stroke="#d4d4d4" fill="none"></path><polygon points="83.1726,-81.2673 79.398,-84.9841 84.6666,-84.4325 83.1726,-81.2673" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="scala.tools.nsc.Global.RunReporting"><polygon points="231.5,-110 128.5,-110 128.5,-85 231.5,-85 231.5,-110" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-104.5" x="139" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-94.5" x="160" text-anchor="start">RunReporting</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="Run is a subtype of RunReporting"><path d="M180,-79.6874C180,-69.9173 180,-57.8534 180,-49.1323" stroke="#d4d4d4" fill="none"></path><polygon points="178.25,-79.8435 180,-84.8435 181.75,-79.8435 178.25,-79.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.tools.nsc.Parsing.RunParsing" xlink:href="Parsing$RunParsing.html#inheritance-diagram"><polygon points="344.5,-110 249.5,-110 249.5,-85 344.5,-85 344.5,-110" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-104.5" x="260" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-94.5" x="281" text-anchor="start">RunParsing</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="Run is a subtype of RunParsing"><path d="M269.455,-82.6096C249.292,-72.4419 222.238,-58.7994 203.179,-49.1884" stroke="#d4d4d4" fill="none"></path><polygon points="268.911,-84.2953 274.163,-84.9841 270.487,-81.1702 268.911,-84.2953" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.tools.nsc.Global.Run"><span>Run</span></li><li class="in" name="scala.tools.nsc.Parsing.RunParsing"><span>RunParsing</span></li><li class="in" name="scala.reflect.internal.Reporting.RunReporting"><span>RunReporting</span></li><li class="in" name="scala.reflect.macros.Universe.RunContextApi"><span>RunContextApi</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="scala.tools.nsc.Global.Run#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;():Global.this.Run"></a>
+      <a id="&lt;init&gt;:Run"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Run</span><span class="params">()</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@&lt;init&gt;():Global.this.Run" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>] performed by method any2stringadd in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(Run,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#advancePhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="advancePhase():Unit"></a>
+      <a id="advancePhase():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">advancePhase</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@advancePhase():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">take note that phase is completed
+ (for progress reporting)
+</p>
+    </li><li name="scala.tools.nsc.Global.Run#advanceUnit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="advanceUnit():Unit"></a>
+      <a id="advanceUnit():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">advanceUnit</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@advanceUnit():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">take note that a phase on a unit is completed
+ (for progress reporting)
+</p>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#canRedefine" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="canRedefine(sym:Global.this.Symbol):Boolean"></a>
+      <a id="canRedefine(Global.Symbol):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">canRedefine</span><span class="params">(<span name="sym">sym: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@canRedefine(sym:Global.this.Symbol):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Is this run allowed to redefine the given symbol? Usually this is true
+ if the run does not already compile <code>sym</code>, but for interactive mode
+ we have a more liberal interpretation.</p>
+    </li><li name="scala.tools.nsc.Global.Run#cancel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cancel():Unit"></a>
+      <a id="cancel():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cancel</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@cancel():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#cleanupPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cleanupPhase:scala.tools.nsc.Phase"></a>
+      <a id="cleanupPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cleanupPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@cleanupPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#closelimPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="closelimPhase:scala.tools.nsc.Phase"></a>
+      <a id="closelimPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">closelimPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@closelimPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#compile" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="compile(filenames:List[String]):Unit"></a>
+      <a id="compile(List[String]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compile</span><span class="params">(<span name="filenames">filenames: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@compile(filenames:List[String]):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compile list of files given by their names</p>
+    </li><li name="scala.tools.nsc.Global.Run#compileFiles" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="compileFiles(files:List[scala.tools.nsc.io.AbstractFile]):Unit"></a>
+      <a id="compileFiles(List[AbstractFile]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compileFiles</span><span class="params">(<span name="files">files: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="io/package.html#AbstractFile=scala.reflect.io.AbstractFile" class="extmbr" name="scala.tools.nsc.io.AbstractFile">AbstractFile</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@compileFiles(files:List[scala.tools.nsc.io.AbstractFile]):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compile list of abstract files.</p>
+    </li><li name="scala.tools.nsc.Global.Run#compileLate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="compileLate(unit:Global.this.CompilationUnit):Unit"></a>
+      <a id="compileLate(Global.CompilationUnit):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compileLate</span><span class="params">(<span name="unit">unit: <a href="Global.html#CompilationUnitextendsCompilationUnits.this.CompilationUnitContextApi" class="extmbr" name="scala.tools.nsc.CompilationUnits.CompilationUnit">Global.CompilationUnit</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@compileLate(unit:Global.this.CompilationUnit):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compile abstract file until <code>globalPhase</code>, but at least to phase &quot;namer&quot;.</p>
+    </li><li name="scala.tools.nsc.Global.Run#compileLate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="compileLate(file:scala.tools.nsc.io.AbstractFile):Unit"></a>
+      <a id="compileLate(AbstractFile):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compileLate</span><span class="params">(<span name="file">file: <a href="io/package.html#AbstractFile=scala.reflect.io.AbstractFile" class="extmbr" name="scala.tools.nsc.io.AbstractFile">AbstractFile</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@compileLate(file:scala.tools.nsc.io.AbstractFile):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compile abstract file until <code>globalPhase</code>, but at least
+ to phase &quot;namer&quot;.</p>
+    </li><li name="scala.tools.nsc.Global.Run#compileSources" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="compileSources(sources:List[scala.reflect.internal.util.SourceFile]):Unit"></a>
+      <a id="compileSources(List[SourceFile]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compileSources</span><span class="params">(<span name="sources">sources: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="scala.reflect.internal.util.SourceFile">SourceFile</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@compileSources(sources:List[scala.reflect.internal.util.SourceFile]):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compile list of source files,
+ unless there is a problem already,
+ such as a plugin was passed a bad option.</p>
+    </li><li name="scala.tools.nsc.Global.Run#compileUnits" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="compileUnits(units:List[Global.this.CompilationUnit],fromPhase:scala.tools.nsc.Phase):Unit"></a>
+      <a id="compileUnits(List[Global.CompilationUnit],Phase):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compileUnits</span><span class="params">(<span name="units">units: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Global.html#CompilationUnitextendsCompilationUnits.this.CompilationUnitContextApi" class="extmbr" name="scala.tools.nsc.CompilationUnits.CompilationUnit">Global.CompilationUnit</a>]</span>, <span name="fromPhase">fromPhase: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@compileUnits(units:List[Global.this.CompilationUnit],fromPhase:scala.tools.nsc.Phase):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#compiledFiles" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="compiledFiles:scala.collection.mutable.HashSet[String]"></a>
+      <a id="compiledFiles:HashSet[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compiledFiles</span><span class="result">: <span class="extype" name="scala.collection.mutable.HashSet">HashSet</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@compiledFiles:scala.collection.mutable.HashSet[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#compiles" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="compiles(sym:Global.this.Symbol):Boolean"></a>
+      <a id="compiles(Global.Symbol):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compiles</span><span class="params">(<span name="sym">sym: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@compiles(sym:Global.this.Symbol):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">does this run compile given class, module, or case factory?</p>
+    </li><li name="scala.tools.nsc.Global.Run#currentUnit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="currentUnit:Global.this.CompilationUnit"></a>
+      <a id="currentUnit:Global.CompilationUnit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">currentUnit</span><span class="result">: <a href="Global.html#CompilationUnitextendsCompilationUnits.this.CompilationUnitContextApi" class="extmbr" name="scala.tools.nsc.CompilationUnits.CompilationUnit">Global.CompilationUnit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@currentUnit:Global.this.CompilationUnit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The currently compiled unit; set from GlobalPhase</p><div class="fullcomment"><div class="comment cmt"><p>The currently compiled unit; set from GlobalPhase</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> → RunContextApi</dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#dcePhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="dcePhase:scala.tools.nsc.Phase"></a>
+      <a id="dcePhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">dcePhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@dcePhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#delambdafyPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="delambdafyPhase:scala.tools.nsc.Phase"></a>
+      <a id="delambdafyPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">delambdafyPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@delambdafyPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#deprecationWarnings" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="deprecationWarnings:List[(Global.this.Position,String)]"></a>
+      <a id="deprecationWarnings:List[(Global.Position,String)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">deprecationWarnings</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[(<a href="Global.html#Position=scala.reflect.internal.util.Position" class="extmbr" name="scala.tools.nsc.Global.Position">Global.Position</a>, <span class="extype" name="scala.Predef.String">String</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@deprecationWarnings:List[(Global.this.Position,String)]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((Run)⇒Boolean,⇒Any):Run"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((Run)⇒Boolean):Run"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):Run"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):Run"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#erasurePhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="erasurePhase:scala.tools.nsc.Phase"></a>
+      <a id="erasurePhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">erasurePhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@erasurePhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#explicitouterPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="explicitouterPhase:scala.tools.nsc.Phase"></a>
+      <a id="explicitouterPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">explicitouterPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@explicitouterPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#flattenPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="flattenPhase:scala.tools.nsc.Phase"></a>
+      <a id="flattenPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flattenPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@flattenPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>] performed by method StringFormat in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#icodePhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="icodePhase:scala.tools.nsc.Phase"></a>
+      <a id="icodePhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">icodePhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@icodePhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#informUnitStarting" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="informUnitStarting(phase:scala.tools.nsc.Phase,unit:Global.this.CompilationUnit):Unit"></a>
+      <a id="informUnitStarting(Phase,Global.CompilationUnit):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">informUnitStarting</span><span class="params">(<span name="phase">phase: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>, <span name="unit">unit: <a href="Global.html#CompilationUnitextendsCompilationUnits.this.CompilationUnitContextApi" class="extmbr" name="scala.tools.nsc.CompilationUnits.CompilationUnit">Global.CompilationUnit</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@informUnitStarting(phase:scala.tools.nsc.Phase,unit:Global.this.CompilationUnit):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">For subclasses to override.</p><div class="fullcomment"><div class="comment cmt"><p>For subclasses to override. Called when <code>phase</code> is about to be run on <code>unit</code>.
+Variables are passed explicitly to indicate that <code>globalPhase</code> and <code>currentUnit</code> have been set.
+</p></div></div>
+    </li><li name="scala.tools.nsc.Global.Run#inlineExceptionHandlersPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="inlineExceptionHandlersPhase:scala.tools.nsc.Phase"></a>
+      <a id="inlineExceptionHandlersPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inlineExceptionHandlersPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@inlineExceptionHandlersPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#inlinerPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="inlinerPhase:scala.tools.nsc.Phase"></a>
+      <a id="inlinerPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inlinerPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@inlinerPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#isDefined" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isDefined:Boolean"></a>
+      <a id="isDefined:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isDefined</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@isDefined:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Have been running into too many init order issues with Run
+ during erroneous conditions.</p><div class="fullcomment"><div class="comment cmt"><p>Have been running into too many init order issues with Run
+ during erroneous conditions.  Moved all these vals up to the
+ top of the file so at least they're not trivially null.
+</p></div></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#lambdaliftPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="lambdaliftPhase:scala.tools.nsc.Phase"></a>
+      <a id="lambdaliftPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lambdaliftPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@lambdaliftPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#mixinPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="mixinPhase:scala.tools.nsc.Phase"></a>
+      <a id="mixinPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mixinPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@mixinPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#namerPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="namerPhase:scala.tools.nsc.Phase"></a>
+      <a id="namerPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">namerPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@namerPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#parserPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="parserPhase:scala.tools.nsc.Phase"></a>
+      <a id="parserPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parserPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@parserPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">All phases as of 3/2012 here for handiness; the ones in
+ active use uncommented.</p>
+    </li><li name="scala.tools.nsc.Parsing.RunParsing#parsing" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parsing:Parsing.this.PerRunParsing"></a>
+      <a id="parsing:Global.PerRunParsing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parsing</span><span class="result">: <a href="Global.html#PerRunParsingextendsAnyRef" class="extmbr" name="scala.tools.nsc.Parsing.PerRunParsing">Global.PerRunParsing</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@parsing:Parsing.this.PerRunParsing" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Parsing$RunParsing.html" class="extype" name="scala.tools.nsc.Parsing.RunParsing">RunParsing</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#phaseNamed" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="phaseNamed(name:String):scala.tools.nsc.Phase"></a>
+      <a id="phaseNamed(String):Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phaseNamed</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@phaseNamed(name:String):scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#picklerPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="picklerPhase:scala.tools.nsc.Phase"></a>
+      <a id="picklerPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">picklerPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@picklerPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#posterasurePhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="posterasurePhase:scala.tools.nsc.Phase"></a>
+      <a id="posterasurePhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">posterasurePhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@posterasurePhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#progress" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="progress(current:Int,total:Int):Unit"></a>
+      <a id="progress(Int,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">progress</span><span class="params">(<span name="current">current: <span class="extype" name="scala.Int">Int</span></span>, <span name="total">total: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@progress(current:Int,total:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Progress tracking.</p><div class="fullcomment"><div class="comment cmt"><p>Progress tracking.  Measured in &quot;progress units&quot; which are 1 per
+ compilation unit per phase completed.
+</p></div><dl class="paramcmts block"><dt class="param">current</dt><dd class="cmt"><p>number of &quot;progress units&quot; completed</p></dd><dt class="param">total</dt><dd class="cmt"><p>total number of &quot;progress units&quot; in run</p></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#refchecksPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="refchecksPhase:scala.tools.nsc.Phase"></a>
+      <a id="refchecksPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">refchecksPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@refchecksPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#registerPickle" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="registerPickle(sym:Global.this.Symbol):Unit"></a>
+      <a id="registerPickle(Global.Symbol):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">registerPickle</span><span class="params">(<span name="sym">sym: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@registerPickle(sym:Global.this.Symbol):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.reflect.internal.Reporting.RunReporting#reporting" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="reporting:Reporting.this.PerRunReporting"></a>
+      <a id="reporting:Global.PerRunReporting"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reporting</span><span class="result">: <a href="Global.html#PerRunReportingextendsReporting.this.PerRunReportingBase" class="extmbr" name="scala.tools.nsc.Reporting.PerRunReporting">Global.PerRunReporting</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@reporting:Reporting.this.PerRunReporting" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RunReporting</dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#runCheckers" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="runCheckers():Unit"></a>
+      <a id="runCheckers():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runCheckers</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@runCheckers():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#runDefinitions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="runDefinitions:Global.this.definitions.RunDefinitions"></a>
+      <a id="runDefinitions:reflect.internal.Definitions.definitions.RunDefinitions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runDefinitions</span><span class="result">: <span class="extype" name="scala.reflect.internal.Definitions.DefinitionsClass.RunDefinitions">reflect.internal.Definitions.definitions.RunDefinitions</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@runDefinitions:Global.this.definitions.RunDefinitions" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Caching member symbols that are def-s in Definitions because they might change from Run to Run.</p>
+    </li><li name="scala.tools.nsc.Global.Run#runIsAt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="runIsAt(ph:scala.tools.nsc.Phase):Boolean"></a>
+      <a id="runIsAt(Phase):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runIsAt</span><span class="params">(<span name="ph">ph: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@runIsAt(ph:scala.tools.nsc.Phase):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#runIsAtOptimiz" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="runIsAtOptimiz:Boolean"></a>
+      <a id="runIsAtOptimiz:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runIsAtOptimiz</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@runIsAtOptimiz:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#size" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="size:Int"></a>
+      <a id="size:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">size</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@size:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#skipPhase" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="skipPhase(name:String):Boolean"></a>
+      <a id="skipPhase(String):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">skipPhase</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@skipPhase(name:String):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Should we skip the given phase?</p><div class="fullcomment"><div class="comment cmt"><p>Should we skip the given phase?</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#specializePhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="specializePhase:scala.tools.nsc.Phase"></a>
+      <a id="specializePhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializePhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@specializePhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#stopPhase" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="stopPhase(name:String):Boolean"></a>
+      <a id="stopPhase(String):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">stopPhase</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@stopPhase(name:String):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Should we stop right before entering the given phase?</p><div class="fullcomment"><div class="comment cmt"><p>Should we stop right before entering the given phase?</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#symData" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="symData:scala.collection.mutable.HashMap[Global.this.Symbol,scala.reflect.internal.pickling.PickleBuffer]"></a>
+      <a id="symData:HashMap[Global.Symbol,PickleBuffer]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">symData</span><span class="result">: <span class="extype" name="scala.collection.mutable.HashMap">HashMap</span>[<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>, <span class="extype" name="scala.reflect.internal.pickling.PickleBuffer">PickleBuffer</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@symData:scala.collection.mutable.HashMap[Global.this.Symbol,scala.reflect.internal.pickling.PickleBuffer]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A map from compiled top-level symbols to their picklers</p>
+    </li><li name="scala.tools.nsc.Global.Run#symSource" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="symSource:scala.collection.mutable.HashMap[Global.this.Symbol,scala.tools.nsc.io.AbstractFile]"></a>
+      <a id="symSource:HashMap[Global.Symbol,AbstractFile]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">symSource</span><span class="result">: <span class="extype" name="scala.collection.mutable.HashMap">HashMap</span>[<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>, <a href="io/package.html#AbstractFile=scala.reflect.io.AbstractFile" class="extmbr" name="scala.tools.nsc.io.AbstractFile">AbstractFile</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@symSource:scala.collection.mutable.HashMap[Global.this.Symbol,scala.tools.nsc.io.AbstractFile]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A map from compiled top-level symbols to their source files</p>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> → AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.Run.trackerFactory" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="trackerFactory"></a>
+      <a id="trackerFactory:trackerFactory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Global$Run$trackerFactory$.html"><span class="name">trackerFactory</span></a><span class="result"> extends <a href="symtab/SymbolTrackers.html" class="extype" name="scala.tools.nsc.symtab.SymbolTrackers">SymbolTrackers</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@trackerFactory" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#typerPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="typerPhase:scala.tools.nsc.Phase"></a>
+      <a id="typerPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">typerPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@typerPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#uncheckedWarnings" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="uncheckedWarnings:List[(Global.this.Position,String)]"></a>
+      <a id="uncheckedWarnings:List[(Global.Position,String)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">uncheckedWarnings</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[(<a href="Global.html#Position=scala.reflect.internal.util.Position" class="extmbr" name="scala.tools.nsc.Global.Position">Global.Position</a>, <span class="extype" name="scala.Predef.String">String</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@uncheckedWarnings:List[(Global.this.Position,String)]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#uncurryPhase" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="uncurryPhase:scala.tools.nsc.Phase"></a>
+      <a id="uncurryPhase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">uncurryPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@uncurryPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.Global.Run#units" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="units:Iterator[Global.this.CompilationUnit]"></a>
+      <a id="units:Iterator[Global.CompilationUnit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">units</span><span class="result">: <a href="../../package.html#Iterator[+A]=Iterator[A]" class="extmbr" name="scala.Iterator">Iterator</a>[<a href="Global.html#CompilationUnitextendsCompilationUnits.this.CompilationUnitContextApi" class="extmbr" name="scala.tools.nsc.CompilationUnits.CompilationUnit">Global.CompilationUnit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@units:Iterator[Global.this.CompilationUnit]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> → RunContextApi</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(Run,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$Run@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.tools.nsc.Parsing.RunParsing">
+              <h3>Inherited from <a href="Global.html#RunParsingextendsAnyRef" class="extmbr" name="scala.tools.nsc.Parsing.RunParsing">Global.RunParsing</a></h3>
+            </div><div class="parent" name="scala.reflect.internal.Reporting.RunReporting">
+              <h3>Inherited from <a href="Global.html#RunReportingextendsAnyRef" class="extmbr" name="scala.tools.nsc.Global.RunReporting">Global.RunReporting</a></h3>
+            </div><div class="parent" name="scala.reflect.macros.Universe.RunContextApi">
+              <h3>Inherited from <a href="Global.html#RunContextApiextendsAnyRef" class="extmbr" name="scala.tools.nsc.Global.RunContextApi">Global.RunContextApi</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.Global.Run">Run</a>]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

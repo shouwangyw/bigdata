@@ -1,0 +1,1493 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>generic - Scala Standard Library 2.11.8 - scala.collection.generic</title>
+          <meta name="description" content="generic - Scala Standard Library 2.11.8 - scala.collection.generic" />
+          <meta name="keywords" content="generic Scala Standard Library 2.11.8 scala.collection.generic" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.collection.generic.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.collection">collection</a></p>
+        <h1>generic</h1><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">generic</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/collection/generic/package.scala#L1" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 4279.50 277.00" height="277pt" width="4280pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 273)" class="graph" id="graph0"><polygon points="-4,4 -4,-273 4275.5,-273 4275.5,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node default" id="graph1_0"><g id="a_default|graph1_0"><a xlink:title="scala.collection.generic.GenericClassManifestTraversableTemplate"><polygon points="238,-208 0,-208 0,-183 238,-183 238,-208" stroke="#ababab" fill="#e1e1e1"></polygon><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-192.5" x="11" text-anchor="start">GenericClassManifestTraversableTemplate[A, CC]</text></a></g></g><!-- node1 --><g class="node default" id="graph1_1"><g id="a_default|graph1_1"><a xlink:title="scala.collection.generic.ClassManifestTraversableFactory"><polygon points="1342.5,-208 1157.5,-208 1157.5,-183 1342.5,-183 1342.5,-208" stroke="#ababab" fill="#e1e1e1"></polygon><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-192.5" x="1169" text-anchor="start">ClassManifestTraversableFactory[CC]</text></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="scala.collection.generic.GenericCompanion" xlink:href="GenericCompanion.html#inheritance-diagram"><polygon points="1901.5,-269 1754.5,-269 1754.5,-244 1901.5,-244 1901.5,-269" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-263.5" x="1765" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="1786" text-anchor="start">GenericCompanion[CC]</text></a></g></g><!-- node8 --><g class="node trait" id="graph1_8"><g id="a_trait|graph1_8"><a xlink:title="scala.collection.generic.GenericSeqCompanion" xlink:href="GenericSeqCompanion.html#inheritance-diagram"><polygon points="1910,-208 1746,-208 1746,-183 1910,-183 1910,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="1756" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="1777" text-anchor="start">GenericSeqCompanion[CC]</text></a></g></g><!-- node2&#45;&gt;node8 --><g class="edge inheritance" id="graph1_2_8"><g id="a_inheritance|graph1_2_8"><a xlink:title="GenericSeqCompanion[CC] is a subtype of GenericCompanion[CC]"><path d="M1828,-238.687C1828,-228.917 1828,-216.853 1828,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="1826.25,-238.843 1828,-243.843 1829.75,-238.844 1826.25,-238.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node20 --><g class="node class" id="graph1_20"><g id="a_class|graph1_20"><a xlink:title="scala.collection.generic.GenSetFactory" xlink:href="GenSetFactory.html#inheritance-diagram"><polygon points="2238,-208 2108,-208 2108,-183 2238,-183 2238,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-202.5" x="2118" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="2139" text-anchor="start">GenSetFactory[CC]</text></a></g></g><!-- node2&#45;&gt;node20 --><g class="edge inheritance" id="graph1_2_20"><g id="a_inheritance|graph1_2_20"><a xlink:title="GenSetFactory[CC] is a subtype of GenericCompanion[CC]"><path d="M1900.44,-243.111C1961.73,-232.63 2048.77,-217.745 2107.88,-207.637" stroke="#d4d4d4" fill="none"></path><polygon points="1899.97,-241.416 1895.34,-243.984 1900.56,-244.866 1899.97,-241.416" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node49 --><g class="node class" id="graph1_49"><g id="a_class|graph1_49"><a xlink:title="scala.collection.generic.GenTraversableFactory" xlink:href="GenTraversableFactory.html#inheritance-diagram"><polygon points="1728,-208 1564,-208 1564,-183 1728,-183 1728,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-202.5" x="1574" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="1595" text-anchor="start">GenTraversableFactory[CC]</text></a></g></g><!-- node2&#45;&gt;node49 --><g class="edge inheritance" id="graph1_2_49"><g id="a_inheritance|graph1_2_49"><a xlink:title="GenTraversableFactory[CC] is a subtype of GenericCompanion[CC]"><path d="M1787.5,-242.37C1755.8,-232.095 1712.15,-217.945 1681.74,-208.087" stroke="#d4d4d4" fill="none"></path><polygon points="1787.18,-244.107 1792.48,-243.984 1788.26,-240.777 1787.18,-244.107" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.collection.generic.GenericClassTagTraversableTemplate" xlink:href="GenericClassTagTraversableTemplate.html#inheritance-diagram"><polygon points="494,-208 256,-208 256,-183 494,-183 494,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="266" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="287" text-anchor="start">GenericClassTagTraversableTemplate[A, CC]</text></a></g></g><!-- node4 --><g class="node class" id="graph1_4"><g id="a_class|graph1_4"><a xlink:title="scala.collection.generic.SetFactory" xlink:href="SetFactory.html#inheritance-diagram"><polygon points="2091,-147 1979,-147 1979,-122 2091,-122 2091,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-141.5" x="1989" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="2010" text-anchor="start">SetFactory[CC]</text></a></g></g><!-- node43 --><g class="node class" id="graph1_43"><g id="a_class|graph1_43"><a xlink:title="scala.collection.generic.MutableSetFactory" xlink:href="MutableSetFactory.html#inheritance-diagram"><polygon points="1987.5,-86 1840.5,-86 1840.5,-61 1987.5,-61 1987.5,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-80.5" x="1851" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="1872" text-anchor="start">MutableSetFactory[CC]</text></a></g></g><!-- node4&#45;&gt;node43 --><g class="edge inheritance" id="graph1_4_43"><g id="a_inheritance|graph1_4_43"><a xlink:title="MutableSetFactory[CC] is a subtype of SetFactory[CC]"><path d="M2006.78,-119.738C1985.9,-109.557 1957.76,-95.8399 1937.97,-86.1884" stroke="#d4d4d4" fill="none"></path><polygon points="2006.12,-121.366 2011.38,-121.984 2007.66,-118.22 2006.12,-121.366" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node53 --><g class="node class" id="graph1_53"><g id="a_class|graph1_53"><a xlink:title="scala.collection.generic.ImmutableSetFactory" xlink:href="ImmutableSetFactory.html#inheritance-diagram"><polygon points="2162.5,-86 2005.5,-86 2005.5,-61 2162.5,-61 2162.5,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-80.5" x="2016" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="2037" text-anchor="start">ImmutableSetFactory[CC]</text></a></g></g><!-- node4&#45;&gt;node53 --><g class="edge inheritance" id="graph1_4_53"><g id="a_inheritance|graph1_4_53"><a xlink:title="ImmutableSetFactory[CC] is a subtype of SetFactory[CC]"><path d="M2048.07,-117.763C2056.33,-107.815 2066.83,-95.1764 2074.34,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="2046.53,-116.879 2044.68,-121.843 2049.22,-119.115 2046.53,-116.879" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="scala.collection.generic.GenericOrderedTraversableTemplate" xlink:href="GenericOrderedTraversableTemplate.html#inheritance-diagram"><polygon points="745.5,-208 512.5,-208 512.5,-183 745.5,-183 745.5,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="523" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="544" text-anchor="start">GenericOrderedTraversableTemplate[A, CC]</text></a></g></g><!-- node6 --><g class="node trait" id="graph1_6"><g id="a_trait|graph1_6"><a xlink:title="scala.collection.generic.GenericSetTemplate" xlink:href="GenericSetTemplate.html#inheritance-diagram"><polygon points="945.5,-147 780.5,-147 780.5,-122 945.5,-122 945.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="791" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="812" text-anchor="start">GenericSetTemplate[A, CC]</text></a></g></g><!-- node7 --><g class="node class" id="graph1_7"><g id="a_class|graph1_7"><a xlink:title="scala.collection.generic.DefaultSignalling" xlink:href="DefaultSignalling.html#inheritance-diagram"><polygon points="2448.5,-147 2331.5,-147 2331.5,-122 2448.5,-122 2448.5,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-141.5" x="2342" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="2363" text-anchor="start">DefaultSignalling</text></a></g></g><!-- node12 --><g class="node object" id="graph1_12"><g id="a_object|graph1_12"><a xlink:title="scala.collection.generic.IdleSignalling" xlink:href="IdleSignalling$.html#inheritance-diagram"><polygon points="2441,-86 2339,-86 2339,-61 2441,-61 2441,-86" stroke="#102966" fill="#3556a7"></polygon><image xlink:href="../../../lib/object_diagram.png" y="-80.5" x="2349" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="2370" text-anchor="start">IdleSignalling</text></a></g></g><!-- node7&#45;&gt;node12 --><g class="edge inheritance" id="graph1_7_12"><g id="a_inheritance|graph1_7_12"><a xlink:title="IdleSignalling is a subtype of DefaultSignalling"><path d="M2390,-116.687C2390,-106.917 2390,-94.8534 2390,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="2388.25,-116.843 2390,-121.843 2391.75,-116.844 2388.25,-116.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8&#45;&gt;node4 --><g class="edge inheritance" id="graph1_8_4"><g id="a_inheritance|graph1_8_4"><a xlink:title="SetFactory[CC] is a subtype of GenericSeqCompanion[CC]"><path d="M1873.62,-181.496C1909.71,-171.212 1959.62,-156.985 1994.35,-147.087" stroke="#d4d4d4" fill="none"></path><polygon points="1872.73,-179.931 1868.4,-182.984 1873.69,-183.297 1872.73,-179.931" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node17 --><g class="node trait" id="graph1_17"><g id="a_trait|graph1_17"><a xlink:title="scala.collection.generic.TraversableFactory" xlink:href="TraversableFactory.html#inheritance-diagram"><polygon points="1831,-147 1685,-147 1685,-122 1831,-122 1831,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1695" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1716" text-anchor="start">TraversableFactory[CC]</text></a></g></g><!-- node8&#45;&gt;node17 --><g class="edge inheritance" id="graph1_8_17"><g id="a_inheritance|graph1_8_17"><a xlink:title="TraversableFactory[CC] is a subtype of GenericSeqCompanion[CC]"><path d="M1810.27,-179.557C1798.33,-169.495 1782.82,-156.419 1771.8,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="1809.22,-180.959 1814.17,-182.843 1811.47,-178.283 1809.22,-180.959" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node9 --><g class="node class" id="graph1_9"><g id="a_class|graph1_9"><a xlink:title="scala.collection.generic.MutableMapFactory" xlink:href="MutableMapFactory.html#inheritance-diagram"><polygon points="2918,-147 2768,-147 2768,-122 2918,-122 2918,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-141.5" x="2778" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="2799" text-anchor="start">MutableMapFactory[CC]</text></a></g></g><!-- node10 --><g class="node class" id="graph1_10"><g id="a_class|graph1_10"><a xlink:title="scala.collection.generic.GenericClassTagCompanion" xlink:href="GenericClassTagCompanion.html#inheritance-diagram"><polygon points="1444,-269 1258,-269 1258,-244 1444,-244 1444,-269" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-263.5" x="1268" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="1289" text-anchor="start">GenericClassTagCompanion[CC]</text></a></g></g><!-- node10&#45;&gt;node1 --><g class="edge inheritance" id="graph1_10_1"><g id="a_inheritance|graph1_10_1"><a xlink:title="ClassManifestTraversableFactory[CC] is a subtype of GenericClassTagCompanion[CC]"><path d="M1326.31,-241.079C1308.98,-230.951 1286.09,-217.58 1269.91,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="1325.85,-242.833 1331.05,-243.843 1327.61,-239.81 1325.85,-242.833" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node15 --><g class="node class" id="graph1_15"><g id="a_class|graph1_15"><a xlink:title="scala.collection.generic.ClassTagTraversableFactory" xlink:href="ClassTagTraversableFactory.html#inheritance-diagram"><polygon points="1546,-208 1360,-208 1360,-183 1546,-183 1546,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-202.5" x="1370" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="1391" text-anchor="start">ClassTagTraversableFactory[CC]</text></a></g></g><!-- node10&#45;&gt;node15 --><g class="edge inheritance" id="graph1_10_15"><g id="a_inheritance|graph1_10_15"><a xlink:title="ClassTagTraversableFactory[CC] is a subtype of GenericClassTagCompanion[CC]"><path d="M1375.48,-241.338C1393.04,-231.18 1416.42,-217.661 1432.89,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="1374.6,-239.825 1371.15,-243.843 1376.36,-242.855 1374.6,-239.825" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11 --><g class="node class" id="graph1_11"><g id="a_class|graph1_11"><a xlink:title="scala.collection.generic.GenSeqFactory" xlink:href="GenSeqFactory.html#inheritance-diagram"><polygon points="1667,-147 1535,-147 1535,-122 1667,-122 1667,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-141.5" x="1545" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1566" text-anchor="start">GenSeqFactory[CC]</text></a></g></g><!-- node52 --><g class="node class" id="graph1_52"><g id="a_class|graph1_52"><a xlink:title="scala.collection.generic.SeqFactory" xlink:href="SeqFactory.html#inheritance-diagram"><polygon points="1765,-86 1651,-86 1651,-61 1765,-61 1765,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-80.5" x="1661" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="1682" text-anchor="start">SeqFactory[CC]</text></a></g></g><!-- node11&#45;&gt;node52 --><g class="edge inheritance" id="graph1_11_52"><g id="a_inheritance|graph1_11_52"><a xlink:title="SeqFactory[CC] is a subtype of GenSeqFactory[CC]"><path d="M1626.42,-119.481C1644.84,-109.327 1669.45,-95.7588 1686.8,-86.1884" stroke="#d4d4d4" fill="none"></path><polygon points="1625.42,-118.037 1621.88,-121.984 1627.11,-121.102 1625.42,-118.037" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13 --><g class="node trait" id="graph1_13"><g id="a_trait|graph1_13"><a xlink:title="scala.collection.generic.Clearable" xlink:href="Clearable.html#inheritance-diagram"><polygon points="3089.5,-269 3004.5,-269 3004.5,-244 3089.5,-244 3089.5,-269" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-263.5" x="3015" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="3036" text-anchor="start">Clearable</text></a></g></g><!-- node22 --><g class="node trait" id="graph1_22"><g id="a_trait|graph1_22"><a xlink:title="scala.collection.generic.Growable" xlink:href="Growable.html#inheritance-diagram"><polygon points="3096,-208 2998,-208 2998,-183 3096,-183 3096,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="3008" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="3029" text-anchor="start">Growable[A]</text></a></g></g><!-- node13&#45;&gt;node22 --><g class="edge inheritance" id="graph1_13_22"><g id="a_inheritance|graph1_13_22"><a xlink:title="Growable[A] is a subtype of Clearable"><path d="M3047,-238.687C3047,-228.917 3047,-216.853 3047,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="3045.25,-238.843 3047,-243.843 3048.75,-238.844 3045.25,-238.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node14 --><g class="node class" id="graph1_14"><g id="a_class|graph1_14"><a xlink:title="scala.collection.generic.SortedSetFactory" xlink:href="SortedSetFactory.html#inheritance-diagram"><polygon points="3376.5,-269 3235.5,-269 3235.5,-244 3376.5,-244 3376.5,-269" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-263.5" x="3246" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="3267" text-anchor="start">SortedSetFactory[CC]</text></a></g></g><!-- node21 --><g class="node class" id="graph1_21"><g id="a_class|graph1_21"><a xlink:title="scala.collection.generic.ImmutableSortedSetFactory" xlink:href="ImmutableSortedSetFactory.html#inheritance-diagram"><polygon points="3300,-208 3114,-208 3114,-183 3300,-183 3300,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-202.5" x="3124" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="3145" text-anchor="start">ImmutableSortedSetFactory[CC]</text></a></g></g><!-- node14&#45;&gt;node21 --><g class="edge inheritance" id="graph1_14_21"><g id="a_inheritance|graph1_14_21"><a xlink:title="ImmutableSortedSetFactory[CC] is a subtype of SortedSetFactory[CC]"><path d="M3281.8,-241.079C3264.81,-230.951 3242.37,-217.58 3226.52,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="3281.25,-242.787 3286.44,-243.843 3283.04,-239.78 3281.25,-242.787" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node23 --><g class="node class" id="graph1_23"><g id="a_class|graph1_23"><a xlink:title="scala.collection.generic.MutableSortedSetFactory" xlink:href="MutableSortedSetFactory.html#inheritance-diagram"><polygon points="3493.5,-208 3318.5,-208 3318.5,-183 3493.5,-183 3493.5,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-202.5" x="3329" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="3350" text-anchor="start">MutableSortedSetFactory[CC]</text></a></g></g><!-- node14&#45;&gt;node23 --><g class="edge inheritance" id="graph1_14_23"><g id="a_inheritance|graph1_14_23"><a xlink:title="MutableSortedSetFactory[CC] is a subtype of SortedSetFactory[CC]"><path d="M3330.44,-241.079C3347.61,-230.951 3370.27,-217.58 3386.28,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="3329.17,-239.795 3325.76,-243.843 3330.95,-242.81 3329.17,-239.795" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node16 --><g class="node trait" id="graph1_16"><g id="a_trait|graph1_16"><a xlink:title="scala.collection.generic.GenericParMapCompanion" xlink:href="GenericParMapCompanion.html#inheritance-diagram"><polygon points="2834,-269 2654,-269 2654,-244 2834,-244 2834,-269" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-263.5" x="2664" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="2685" text-anchor="start">GenericParMapCompanion[CC]</text></a></g></g><!-- node24 --><g class="node class" id="graph1_24"><g id="a_class|graph1_24"><a xlink:title="scala.collection.generic.ParMapFactory" xlink:href="ParMapFactory.html#inheritance-diagram"><polygon points="2826.5,-208 2695.5,-208 2695.5,-183 2826.5,-183 2826.5,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-202.5" x="2706" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="2727" text-anchor="start">ParMapFactory[CC]</text></a></g></g><!-- node16&#45;&gt;node24 --><g class="edge inheritance" id="graph1_16_24"><g id="a_inheritance|graph1_16_24"><a xlink:title="ParMapFactory[CC] is a subtype of GenericParMapCompanion[CC]"><path d="M2748.77,-238.958C2751.59,-229.141 2755.11,-216.934 2757.65,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="2747.06,-238.554 2747.36,-243.843 2750.42,-239.524 2747.06,-238.554" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node17&#45;&gt;node52 --><g class="edge inheritance" id="graph1_17_52"><g id="a_inheritance|graph1_17_52"><a xlink:title="SeqFactory[CC] is a subtype of TraversableFactory[CC]"><path d="M1744.66,-117.763C1736.23,-107.815 1725.52,-95.1764 1717.86,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1743.55,-119.16 1748.12,-121.843 1746.22,-116.898 1743.55,-119.16" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node18 --><g class="node trait" id="graph1_18"><g id="a_trait|graph1_18"><a xlink:title="scala.collection.generic.AtomicIndexFlag" xlink:href="AtomicIndexFlag.html#inheritance-diagram"><polygon points="2411.5,-208 2294.5,-208 2294.5,-183 2411.5,-183 2411.5,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="2305" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="2326" text-anchor="start">AtomicIndexFlag</text></a></g></g><!-- node19 --><g class="node trait" id="graph1_19"><g id="a_trait|graph1_19"><a xlink:title="scala.collection.generic.CanCombineFrom" xlink:href="CanCombineFrom.html#inheritance-diagram"><polygon points="3706.5,-208 3511.5,-208 3511.5,-183 3706.5,-183 3706.5,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="3522" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="3543" text-anchor="start">CanCombineFrom[From, Elem, To]</text></a></g></g><!-- node20&#45;&gt;node4 --><g class="edge inheritance" id="graph1_20_4"><g id="a_inheritance|graph1_20_4"><a xlink:title="SetFactory[CC] is a subtype of GenSetFactory[CC]"><path d="M2141.41,-180.994C2117.54,-170.788 2085.1,-156.921 2062.34,-147.188" stroke="#d4d4d4" fill="none"></path><polygon points="2140.78,-182.628 2146.06,-182.984 2142.16,-179.409 2140.78,-182.628" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node27 --><g class="node class" id="graph1_27"><g id="a_class|graph1_27"><a xlink:title="scala.collection.generic.ParSetFactory" xlink:href="ParSetFactory.html#inheritance-diagram"><polygon points="2236.5,-147 2109.5,-147 2109.5,-122 2236.5,-122 2236.5,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-141.5" x="2120" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="2141" text-anchor="start">ParSetFactory[CC]</text></a></g></g><!-- node20&#45;&gt;node27 --><g class="edge inheritance" id="graph1_20_27"><g id="a_inheritance|graph1_20_27"><a xlink:title="ParSetFactory[CC] is a subtype of GenSetFactory[CC]"><path d="M2173,-177.687C2173,-167.917 2173,-155.853 2173,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="2171.25,-177.843 2173,-182.843 2174.75,-177.844 2171.25,-177.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node25 --><g class="node class" id="graph1_25"><g id="a_class|graph1_25"><a xlink:title="scala.collection.generic.DelegatedContext" xlink:href="DelegatedContext.html#inheritance-diagram"><polygon points="2673,-147 2551,-147 2551,-122 2673,-122 2673,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-141.5" x="2561" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="2582" text-anchor="start">DelegatedContext</text></a></g></g><!-- node29 --><g class="node class" id="graph1_29"><g id="a_class|graph1_29"><a xlink:title="scala.collection.generic.TaggedDelegatedContext" xlink:href="TaggedDelegatedContext.html#inheritance-diagram"><polygon points="2688.5,-86 2535.5,-86 2535.5,-61 2688.5,-61 2688.5,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-80.5" x="2546" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="2567" text-anchor="start">TaggedDelegatedContext</text></a></g></g><!-- node25&#45;&gt;node29 --><g class="edge inheritance" id="graph1_25_29"><g id="a_inheritance|graph1_25_29"><a xlink:title="TaggedDelegatedContext is a subtype of DelegatedContext"><path d="M2612,-116.687C2612,-106.917 2612,-94.8534 2612,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="2610.25,-116.843 2612,-121.843 2613.75,-116.844 2610.25,-116.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node26 --><g class="node class" id="graph1_26"><g id="a_class|graph1_26"><a xlink:title="scala.collection.generic.MapFactory" xlink:href="MapFactory.html#inheritance-diagram"><polygon points="2977,-208 2861,-208 2861,-183 2977,-183 2977,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-202.5" x="2871" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="2892" text-anchor="start">MapFactory[CC]</text></a></g></g><!-- node26&#45;&gt;node9 --><g class="edge inheritance" id="graph1_26_9"><g id="a_inheritance|graph1_26_9"><a xlink:title="MutableMapFactory[CC] is a subtype of MapFactory[CC]"><path d="M2899.75,-179.557C2886.79,-169.495 2869.95,-156.419 2857.98,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="2898.96,-181.16 2903.98,-182.843 2901.11,-178.395 2898.96,-181.16" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node31 --><g class="node class" id="graph1_31"><g id="a_class|graph1_31"><a xlink:title="scala.collection.generic.ImmutableMapFactory" xlink:href="ImmutableMapFactory.html#inheritance-diagram"><polygon points="3097.5,-147 2936.5,-147 2936.5,-122 3097.5,-122 3097.5,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-141.5" x="2947" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="2968" text-anchor="start">ImmutableMapFactory[CC]</text></a></g></g><!-- node26&#45;&gt;node31 --><g class="edge inheritance" id="graph1_26_31"><g id="a_inheritance|graph1_26_31"><a xlink:title="ImmutableMapFactory[CC] is a subtype of MapFactory[CC]"><path d="M2942.95,-180.079C2959.78,-169.951 2981.99,-156.58 2997.68,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="2941.74,-178.765 2938.36,-182.843 2943.55,-181.764 2941.74,-178.765" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node28 --><g class="node trait" id="graph1_28"><g id="a_trait|graph1_28"><a xlink:title="scala.collection.generic.CanBuildFrom" xlink:href="CanBuildFrom.html#inheritance-diagram"><polygon points="3698.5,-269 3519.5,-269 3519.5,-244 3698.5,-244 3698.5,-269" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-263.5" x="3530" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="3551" text-anchor="start">CanBuildFrom[From, Elem, To]</text></a></g></g><!-- node28&#45;&gt;node19 --><g class="edge inheritance" id="graph1_28_19"><g id="a_inheritance|graph1_28_19"><a xlink:title="CanCombineFrom[From, Elem, To] is a subtype of CanBuildFrom[From, Elem, To]"><path d="M3609,-238.687C3609,-228.917 3609,-216.853 3609,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="3607.25,-238.843 3609,-243.843 3610.75,-238.844 3607.25,-238.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node30 --><g class="node trait" id="graph1_30"><g id="a_trait|graph1_30"><a xlink:title="scala.collection.generic.SeqForwarder" xlink:href="SeqForwarder.html#inheritance-diagram"><polygon points="3849.5,-147 3732.5,-147 3732.5,-122 3849.5,-122 3849.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="3743" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="3764" text-anchor="start">SeqForwarder[A]</text></a></g></g><!-- node32 --><g class="node trait" id="graph1_32"><g id="a_trait|graph1_32"><a xlink:title="scala.collection.generic.HasNewCombiner" xlink:href="HasNewCombiner.html#inheritance-diagram"><polygon points="1139.5,-208 980.5,-208 980.5,-183 1139.5,-183 1139.5,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="991" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="1012" text-anchor="start">HasNewCombiner[T, Repr]</text></a></g></g><!-- node36 --><g class="node trait" id="graph1_36"><g id="a_trait|graph1_36"><a xlink:title="scala.collection.generic.GenericParTemplate" xlink:href="GenericParTemplate.html#inheritance-diagram"><polygon points="1135.5,-147 970.5,-147 970.5,-122 1135.5,-122 1135.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="981" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1002" text-anchor="start">GenericParTemplate[A, CC]</text></a></g></g><!-- node32&#45;&gt;node36 --><g class="edge inheritance" id="graph1_32_36"><g id="a_inheritance|graph1_32_36"><a xlink:title="GenericParTemplate[A, CC] is a subtype of HasNewCombiner[T, Repr]"><path d="M1058.01,-177.687C1056.85,-167.917 1055.41,-155.853 1054.38,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="1056.29,-178.085 1058.62,-182.843 1059.77,-177.672 1056.29,-178.085" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node33 --><g class="node class" id="graph1_33"><g id="a_class|graph1_33"><a xlink:title="scala.collection.generic.OrderedTraversableFactory" xlink:href="OrderedTraversableFactory.html#inheritance-diagram"><polygon points="4064,-208 3884,-208 3884,-183 4064,-183 4064,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-202.5" x="3894" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="3915" text-anchor="start">OrderedTraversableFactory[CC]</text></a></g></g><!-- node34 --><g class="node class" id="graph1_34"><g id="a_class|graph1_34"><a xlink:title="scala.collection.generic.SortedMapFactory" xlink:href="SortedMapFactory.html#inheritance-diagram"><polygon points="4249,-269 4105,-269 4105,-244 4249,-244 4249,-269" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-263.5" x="4115" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="4136" text-anchor="start">SortedMapFactory[CC]</text></a></g></g><!-- node40 --><g class="node class" id="graph1_40"><g id="a_class|graph1_40"><a xlink:title="scala.collection.generic.ImmutableSortedMapFactory" xlink:href="ImmutableSortedMapFactory.html#inheritance-diagram"><polygon points="4271.5,-208 4082.5,-208 4082.5,-183 4271.5,-183 4271.5,-208" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-202.5" x="4093" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="4114" text-anchor="start">ImmutableSortedMapFactory[CC]</text></a></g></g><!-- node34&#45;&gt;node40 --><g class="edge inheritance" id="graph1_34_40"><g id="a_inheritance|graph1_34_40"><a xlink:title="ImmutableSortedMapFactory[CC] is a subtype of SortedMapFactory[CC]"><path d="M4177,-238.687C4177,-228.917 4177,-216.853 4177,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="4175.25,-238.843 4177,-243.843 4178.75,-238.844 4175.25,-238.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node35 --><g class="node class" id="graph1_35"><g id="a_class|graph1_35"><a xlink:title="scala.collection.generic.GenMapFactory" xlink:href="GenMapFactory.html#inheritance-diagram"><polygon points="2986,-269 2852,-269 2852,-244 2986,-244 2986,-269" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-263.5" x="2862" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="2883" text-anchor="start">GenMapFactory[CC]</text></a></g></g><!-- node35&#45;&gt;node24 --><g class="edge inheritance" id="graph1_35_24"><g id="a_inheritance|graph1_35_24"><a xlink:title="ParMapFactory[CC] is a subtype of GenMapFactory[CC]"><path d="M2883.16,-242.115C2855.7,-231.863 2818.21,-217.863 2792.03,-208.087" stroke="#d4d4d4" fill="none"></path><polygon points="2882.86,-243.874 2888.16,-243.984 2884.09,-240.596 2882.86,-243.874" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node35&#45;&gt;node26 --><g class="edge inheritance" id="graph1_35_26"><g id="a_inheritance|graph1_35_26"><a xlink:title="MapFactory[CC] is a subtype of GenMapFactory[CC]"><path d="M2919,-238.687C2919,-228.917 2919,-216.853 2919,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="2917.25,-238.843 2919,-243.843 2920.75,-238.844 2917.25,-238.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node39 --><g class="node trait" id="graph1_39"><g id="a_trait|graph1_39"><a xlink:title="scala.collection.generic.GenericParMapTemplate" xlink:href="GenericParMapTemplate.html#inheritance-diagram"><polygon points="1150.5,-86 955.5,-86 955.5,-61 1150.5,-61 1150.5,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-80.5" x="966" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="987" text-anchor="start">GenericParMapTemplate[K, V, CC]</text></a></g></g><!-- node36&#45;&gt;node39 --><g class="edge inheritance" id="graph1_36_39"><g id="a_inheritance|graph1_36_39"><a xlink:title="GenericParMapTemplate[K, V, CC] is a subtype of GenericParTemplate[A, CC]"><path d="M1053,-116.687C1053,-106.917 1053,-94.8534 1053,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1051.25,-116.843 1053,-121.843 1054.75,-116.844 1051.25,-116.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node37 --><g class="node class" id="graph1_37"><g id="a_class|graph1_37"><a xlink:title="scala.collection.generic.GenericOrderedCompanion" xlink:href="GenericOrderedCompanion.html#inheritance-diagram"><polygon points="4064.5,-269 3883.5,-269 3883.5,-244 4064.5,-244 4064.5,-269" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-263.5" x="3894" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="3915" text-anchor="start">GenericOrderedCompanion[CC]</text></a></g></g><!-- node37&#45;&gt;node33 --><g class="edge inheritance" id="graph1_37_33"><g id="a_inheritance|graph1_37_33"><a xlink:title="OrderedTraversableFactory[CC] is a subtype of GenericOrderedCompanion[CC]"><path d="M3974,-238.687C3974,-228.917 3974,-216.853 3974,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="3972.25,-238.843 3974,-243.843 3975.75,-238.844 3972.25,-238.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node38 --><g class="node trait" id="graph1_38"><g id="a_trait|graph1_38"><a xlink:title="scala.collection.generic.DelegatedSignalling" xlink:href="DelegatedSignalling.html#inheritance-diagram"><polygon points="2677,-208 2547,-208 2547,-183 2677,-183 2677,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="2557" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="2578" text-anchor="start">DelegatedSignalling</text></a></g></g><!-- node38&#45;&gt;node25 --><g class="edge inheritance" id="graph1_38_25"><g id="a_inheritance|graph1_38_25"><a xlink:title="DelegatedContext is a subtype of DelegatedSignalling"><path d="M2612,-177.687C2612,-167.917 2612,-155.853 2612,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="2610.25,-177.843 2612,-182.843 2613.75,-177.844 2610.25,-177.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node41 --><g class="node class" id="graph1_41"><g id="a_class|graph1_41"><a xlink:title="scala.collection.generic.ParFactory" xlink:href="ParFactory.html#inheritance-diagram"><polygon points="1961,-147 1849,-147 1849,-122 1961,-122 1961,-147" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-141.5" x="1859" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1880" text-anchor="start">ParFactory[CC]</text></a></g></g><!-- node42 --><g class="node trait" id="graph1_42"><g id="a_trait|graph1_42"><a xlink:title="scala.collection.generic.GenericParCompanion" xlink:href="GenericParCompanion.html#inheritance-diagram"><polygon points="2090,-208 1928,-208 1928,-183 2090,-183 2090,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="1938" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="1959" text-anchor="start">GenericParCompanion[CC]</text></a></g></g><!-- node42&#45;&gt;node27 --><g class="edge inheritance" id="graph1_42_27"><g id="a_inheritance|graph1_42_27"><a xlink:title="ParSetFactory[CC] is a subtype of GenericParCompanion[CC]"><path d="M2045.85,-181.243C2074.38,-170.979 2113.5,-156.904 2140.79,-147.087" stroke="#d4d4d4" fill="none"></path><polygon points="2045.12,-179.645 2041.01,-182.984 2046.31,-182.938 2045.12,-179.645" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node42&#45;&gt;node41 --><g class="edge inheritance" id="graph1_42_41"><g id="a_inheritance|graph1_42_41"><a xlink:title="ParFactory[CC] is a subtype of GenericParCompanion[CC]"><path d="M1984.04,-180.338C1966.13,-170.18 1942.3,-156.661 1925.5,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="1983.24,-181.898 1988.45,-182.843 1984.97,-178.854 1983.24,-181.898" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node44 --><g class="node trait" id="graph1_44"><g id="a_trait|graph1_44"><a xlink:title="scala.collection.generic.Signalling" xlink:href="Signalling.html#inheritance-diagram"><polygon points="2459.5,-269 2372.5,-269 2372.5,-244 2459.5,-244 2459.5,-269" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-263.5" x="2383" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="2404" text-anchor="start">Signalling</text></a></g></g><!-- node44&#45;&gt;node7 --><g class="edge inheritance" id="graph1_44_7"><g id="a_inheritance|graph1_44_7"><a xlink:title="DefaultSignalling is a subtype of Signalling"><path d="M2367.32,-251.42C2338.26,-246.188 2303.51,-234.403 2285,-208 2265.16,-179.704 2308.49,-158.972 2345.37,-147.092" stroke="#d4d4d4" fill="none"></path><polygon points="2367.08,-253.155 2372.3,-252.264 2367.66,-249.704 2367.08,-253.155" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node44&#45;&gt;node18 --><g class="edge inheritance" id="graph1_44_18"><g id="a_inheritance|graph1_44_18"><a xlink:title="AtomicIndexFlag is a subtype of Signalling"><path d="M2399.76,-240.294C2389.06,-230.268 2375.25,-217.338 2365.42,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="2398.71,-241.703 2403.55,-243.843 2401.1,-239.148 2398.71,-241.703" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node44&#45;&gt;node38 --><g class="edge inheritance" id="graph1_44_38"><g id="a_inheritance|graph1_44_38"><a xlink:title="DelegatedSignalling is a subtype of Signalling"><path d="M2459.2,-242.496C2493.36,-232.212 2540.63,-217.985 2573.51,-208.087" stroke="#d4d4d4" fill="none"></path><polygon points="2458.54,-240.867 2454.26,-243.984 2459.55,-244.219 2458.54,-240.867" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node45 --><g class="node trait" id="graph1_45"><g id="a_trait|graph1_45"><a xlink:title="scala.collection.generic.VolatileAbort" xlink:href="VolatileAbort.html#inheritance-diagram"><polygon points="2528.5,-208 2429.5,-208 2429.5,-183 2528.5,-183 2528.5,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="2440" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="2461" text-anchor="start">VolatileAbort</text></a></g></g><!-- node44&#45;&gt;node45 --><g class="edge inheritance" id="graph1_44_45"><g id="a_inheritance|graph1_44_45"><a xlink:title="VolatileAbort is a subtype of Signalling"><path d="M2432.24,-240.294C2442.94,-230.268 2456.75,-217.338 2466.58,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="2430.9,-239.148 2428.45,-243.843 2433.29,-241.703 2430.9,-239.148" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node45&#45;&gt;node7 --><g class="edge inheritance" id="graph1_45_7"><g id="a_inheritance|graph1_45_7"><a xlink:title="DefaultSignalling is a subtype of VolatileAbort"><path d="M2457.25,-180.079C2441.97,-169.951 2421.8,-156.58 2407.55,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="2456.28,-181.539 2461.42,-182.843 2458.22,-178.622 2456.28,-181.539" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node46 --><g class="node class" id="graph1_46"><g id="a_class|graph1_46"><a xlink:title="scala.collection.generic.IndexedSeqFactory" xlink:href="IndexedSeqFactory.html#inheritance-diagram"><polygon points="1782,-25 1634,-25 1634,-0 1782,-0 1782,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="1644" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="1665" text-anchor="start">IndexedSeqFactory[CC]</text></a></g></g><!-- node47 --><g class="node trait" id="graph1_47"><g id="a_trait|graph1_47"><a xlink:title="scala.collection.generic.GenericTraversableTemplate" xlink:href="GenericTraversableTemplate.html#inheritance-diagram"><polygon points="962,-208 764,-208 764,-183 962,-183 962,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="774" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="795" text-anchor="start">GenericTraversableTemplate[A, CC]</text></a></g></g><!-- node47&#45;&gt;node6 --><g class="edge inheritance" id="graph1_47_6"><g id="a_inheritance|graph1_47_6"><a xlink:title="GenericSetTemplate[A, CC] is a subtype of GenericTraversableTemplate[A, CC]"><path d="M863,-177.687C863,-167.917 863,-155.853 863,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="861.25,-177.843 863,-182.843 864.75,-177.844 861.25,-177.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node47&#45;&gt;node36 --><g class="edge inheritance" id="graph1_47_36"><g id="a_inheritance|graph1_47_36"><a xlink:title="GenericParTemplate[A, CC] is a subtype of GenericTraversableTemplate[A, CC]"><path d="M904.876,-181.496C937.996,-171.212 983.811,-156.985 1015.68,-147.087" stroke="#d4d4d4" fill="none"></path><polygon points="904.341,-179.83 900.085,-182.984 905.379,-183.173 904.341,-179.83" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node48 --><g class="node trait" id="graph1_48"><g id="a_trait|graph1_48"><a xlink:title="scala.collection.generic.IterableForwarder" xlink:href="IterableForwarder.html#inheritance-diagram"><polygon points="3857,-208 3725,-208 3725,-183 3857,-183 3857,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="3735" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="3756" text-anchor="start">IterableForwarder[A]</text></a></g></g><!-- node48&#45;&gt;node30 --><g class="edge inheritance" id="graph1_48_30"><g id="a_inheritance|graph1_48_30"><a xlink:title="SeqForwarder[A] is a subtype of IterableForwarder[A]"><path d="M3791,-177.687C3791,-167.917 3791,-155.853 3791,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="3789.25,-177.843 3791,-182.843 3792.75,-177.844 3789.25,-177.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node49&#45;&gt;node11 --><g class="edge inheritance" id="graph1_49_11"><g id="a_inheritance|graph1_49_11"><a xlink:title="GenSeqFactory[CC] is a subtype of GenTraversableFactory[CC]"><path d="M1634,-178.763C1626.41,-168.815 1616.77,-156.176 1609.87,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="1632.69,-179.929 1637.11,-182.843 1635.47,-177.807 1632.69,-179.929" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node49&#45;&gt;node17 --><g class="edge inheritance" id="graph1_49_17"><g id="a_inheritance|graph1_49_17"><a xlink:title="TraversableFactory[CC] is a subtype of GenTraversableFactory[CC]"><path d="M1672.61,-180.481C1691.89,-170.327 1717.64,-156.759 1735.81,-147.188" stroke="#d4d4d4" fill="none"></path><polygon points="1671.47,-179.105 1667.86,-182.984 1673.1,-182.202 1671.47,-179.105" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node49&#45;&gt;node41 --><g class="edge inheritance" id="graph1_49_41"><g id="a_inheritance|graph1_49_41"><a xlink:title="ParFactory[CC] is a subtype of GenTraversableFactory[CC]"><path d="M1701.7,-181.811C1746.95,-171.504 1810.24,-157.087 1854.13,-147.087" stroke="#d4d4d4" fill="none"></path><polygon points="1701.04,-180.167 1696.55,-182.984 1701.82,-183.58 1701.04,-180.167" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node50 --><g class="node trait" id="graph1_50"><g id="a_trait|graph1_50"><a xlink:title="scala.collection.generic.TraversableForwarder" xlink:href="TraversableForwarder.html#inheritance-diagram"><polygon points="3865.5,-269 3716.5,-269 3716.5,-244 3865.5,-244 3865.5,-269" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-263.5" x="3727" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="3748" text-anchor="start">TraversableForwarder[A]</text></a></g></g><!-- node50&#45;&gt;node48 --><g class="edge inheritance" id="graph1_50_48"><g id="a_inheritance|graph1_50_48"><a xlink:title="IterableForwarder[A] is a subtype of TraversableForwarder[A]"><path d="M3791,-238.687C3791,-228.917 3791,-216.853 3791,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="3789.25,-238.843 3791,-243.843 3792.75,-238.844 3789.25,-238.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node51 --><g class="node trait" id="graph1_51"><g id="a_trait|graph1_51"><a xlink:title="scala.collection.generic.HasNewBuilder" xlink:href="HasNewBuilder.html#inheritance-diagram"><polygon points="577,-269 427,-269 427,-244 577,-244 577,-269" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-263.5" x="437" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="458" text-anchor="start">HasNewBuilder[A, Repr]</text></a></g></g><!-- node51&#45;&gt;node0 --><g class="edge inheritance" id="graph1_51_0"><g id="a_inheritance|graph1_51_0"><a xlink:title="GenericClassManifestTraversableTemplate[A, CC] is a subtype of HasNewBuilder[A, Repr]"><path d="M422.053,-243.184C354.883,-232.837 259.601,-218.159 193.893,-208.037" stroke="#d4d4d4" fill="none"></path><polygon points="422.036,-244.952 427.245,-243.984 422.569,-241.493 422.036,-244.952" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node51&#45;&gt;node3 --><g class="edge inheritance" id="graph1_51_3"><g id="a_inheritance|graph1_51_3"><a xlink:title="GenericClassTagTraversableTemplate[A, CC] is a subtype of HasNewBuilder[A, Repr]"><path d="M472.653,-241.866C450.71,-231.672 421.022,-217.88 400.16,-208.188" stroke="#d4d4d4" fill="none"></path><polygon points="471.94,-243.465 477.212,-243.984 473.414,-240.29 471.94,-243.465" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node51&#45;&gt;node5 --><g class="edge inheritance" id="graph1_51_5"><g id="a_inheritance|graph1_51_5"><a xlink:title="GenericOrderedTraversableTemplate[A, CC] is a subtype of HasNewBuilder[A, Repr]"><path d="M531.347,-241.866C553.29,-231.672 582.978,-217.88 603.84,-208.188" stroke="#d4d4d4" fill="none"></path><polygon points="530.586,-240.29 526.788,-243.984 532.06,-243.465 530.586,-240.29" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node51&#45;&gt;node47 --><g class="edge inheritance" id="graph1_51_47"><g id="a_inheritance|graph1_51_47"><a xlink:title="GenericTraversableTemplate[A, CC] is a subtype of HasNewBuilder[A, Repr]"><path d="M577.736,-243.122C641.026,-232.778 730.6,-218.139 792.409,-208.037" stroke="#d4d4d4" fill="none"></path><polygon points="577.114,-241.451 572.461,-243.984 577.678,-244.905 577.114,-241.451" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node52&#45;&gt;node46 --><g class="edge inheritance" id="graph1_52_46"><g id="a_inheritance|graph1_52_46"><a xlink:title="IndexedSeqFactory[CC] is a subtype of SeqFactory[CC]"><path d="M1708,-55.6874C1708,-45.9173 1708,-33.8534 1708,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1706.25,-55.8435 1708,-60.8435 1709.75,-55.8435 1706.25,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.collection.generic"><span>generic</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.collection.generic.AtomicIndexFlag" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="AtomicIndexFlagextendsSignalling"></a>
+      <a id="AtomicIndexFlag:AtomicIndexFlag"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="AtomicIndexFlag.html"><span class="name">AtomicIndexFlag</span></a><span class="result"> extends <a href="Signalling.html" class="extype" name="scala.collection.generic.Signalling">Signalling</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@AtomicIndexFlagextendsSignalling" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A mixin trait that implements index flag behaviour using atomic integers.</p><div class="fullcomment"><div class="comment cmt"><p>A mixin trait that implements index flag behaviour using atomic integers.
+The <code>setIndex</code> operation is wait-free, while conditional set operations <code>setIndexIfGreater</code>
+and <code>setIndexIfLesser</code> are lock-free and support only monotonic changes.
+</p></div></div>
+    </li><li name="scala.collection.generic.BitSetFactory" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BitSetFactory[Coll&lt;:scala.collection.BitSetwithscala.collection.BitSetLike[Coll]]extendsAnyRef"></a>
+      <a id="BitSetFactory[Coll&lt;:BitSetwithBitSetLike[Coll]]:BitSetFactory[Coll]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BitSetFactory.html"><span class="name">BitSetFactory</span></a><span class="tparams">[<span name="Coll">Coll &lt;: <a href="../BitSet.html" class="extype" name="scala.collection.BitSet">BitSet</a> with <a href="../BitSetLike.html" class="extype" name="scala.collection.BitSetLike">BitSetLike</a>[<span class="extype" name="scala.collection.generic.BitSetFactory.Coll">Coll</span>]</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@BitSetFactory[Coll&lt;:scala.collection.BitSetwithscala.collection.BitSetLike[Coll]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="scala.collection.generic.CanBuild" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CanBuild[-Elem,+To]=scala.collection.generic.CanBuildFrom[Nothing,Elem,To]"></a>
+      <a id="CanBuild[-Elem,+To]:CanBuild[Elem,To]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CanBuild</span><span class="tparams">[<span name="Elem">-Elem</span>, <span name="To">+To</span>]</span><span class="result"> = <a href="CanBuildFrom.html" class="extype" name="scala.collection.generic.CanBuildFrom">CanBuildFrom</a>[<a href="../../Nothing.html" class="extype" name="scala.Nothing">Nothing</a>, <span class="extype" name="scala.collection.generic.CanBuild.Elem">Elem</span>, <span class="extype" name="scala.collection.generic.CanBuild.To">To</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@CanBuild[-Elem,+To]=scala.collection.generic.CanBuildFrom[Nothing,Elem,To]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.CanBuildFrom" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CanBuildFrom[-From,-Elem,+To]extendsAnyRef"></a>
+      <a id="CanBuildFrom[-From,-Elem,+To]:CanBuildFrom[From,Elem,To]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CanBuildFrom.html"><span class="name">CanBuildFrom</span></a><span class="tparams">[<span name="From">-From</span>, <span name="Elem">-Elem</span>, <span name="To">+To</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@CanBuildFrom[-From,-Elem,+To]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A base trait for builder factories.</p><div class="fullcomment"><div class="comment cmt"><p>A base trait for builder factories.
+</p></div><dl class="paramcmts block"><dt class="tparam">From</dt><dd class="cmt"><p>the type of the underlying collection that requests
+               a builder to be created.</p></dd><dt class="tparam">Elem</dt><dd class="cmt"><p>the element type of the collection to be created.</p></dd><dt class="tparam">To</dt><dd class="cmt"><p>the type of the collection to be created.</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../annotation/implicitNotFound.html" class="extype" name="scala.annotation.implicitNotFound">implicitNotFound</a></span><span class="args">(<span>
+      msg = 
+      <span class="defval" name="&quot;Cannot construct a collection of type ${To} with elements of type ${Elem} based on a collection of type ${From}.&quot;">...</span>
+    </span>)</span>
+              
+        </dd><dt>Since</dt><dd><p>2.8</p></dd><dt>See also</dt><dd><span class="cmt"><p><a href="../mutable/Builder.html" class="extype" name="scala.collection.mutable.Builder">scala.collection.mutable.Builder</a></p></span></dd></dl></div>
+    </li><li name="scala.collection.generic.CanCombineFrom" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CanCombineFrom[-From,-Elem,+To]extendsCanBuildFrom[From,Elem,To]withParallel"></a>
+      <a id="CanCombineFrom[-From,-Elem,+To]:CanCombineFrom[From,Elem,To]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CanCombineFrom.html"><span class="name">CanCombineFrom</span></a><span class="tparams">[<span name="From">-From</span>, <span name="Elem">-Elem</span>, <span name="To">+To</span>]</span><span class="result"> extends <a href="CanBuildFrom.html" class="extype" name="scala.collection.generic.CanBuildFrom">CanBuildFrom</a>[<span class="extype" name="scala.collection.generic.CanCombineFrom.From">From</span>, <span class="extype" name="scala.collection.generic.CanCombineFrom.Elem">Elem</span>, <span class="extype" name="scala.collection.generic.CanCombineFrom.To">To</span>] with <a href="../Parallel.html" class="extype" name="scala.collection.Parallel">Parallel</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@CanCombineFrom[-From,-Elem,+To]extendsCanBuildFrom[From,Elem,To]withParallel" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A base trait for parallel builder factories.</p><div class="fullcomment"><div class="comment cmt"><p>A base trait for parallel builder factories.
+</p></div><dl class="paramcmts block"><dt class="tparam">From</dt><dd class="cmt"><p>the type of the underlying collection that requests a
+               builder to be created.</p></dd><dt class="tparam">Elem</dt><dd class="cmt"><p>the element type of the collection to be created.</p></dd><dt class="tparam">To</dt><dd class="cmt"><p>the type of the collection to be created.</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.ClassTagTraversableFactory" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ClassTagTraversableFactory[CC[X]&lt;:Traversable[X]withscala.collection.generic.GenericClassTagTraversableTemplate[X,CC]]extendsGenericClassTagCompanion[CC]"></a>
+      <a id="ClassTagTraversableFactory[CC[X]&lt;:Traversable[X]withGenericClassTagTraversableTemplate[X,CC]]:ClassTagTraversableFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ClassTagTraversableFactory.html"><span class="name">ClassTagTraversableFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>[<span class="extype" name="scala.collection.generic.ClassTagTraversableFactory.CC.X">X</span>] with <a href="GenericClassTagTraversableTemplate.html" class="extype" name="scala.collection.generic.GenericClassTagTraversableTemplate">GenericClassTagTraversableTemplate</a>[<span class="extype" name="scala.collection.generic.ClassTagTraversableFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.ClassTagTraversableFactory.CC">CC</span>]</span>]</span><span class="result"> extends <a href="GenericClassTagCompanion.html" class="extype" name="scala.collection.generic.GenericClassTagCompanion">GenericClassTagCompanion</a>[<span class="extype" name="scala.collection.generic.ClassTagTraversableFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@ClassTagTraversableFactory[CC[X]&lt;:Traversable[X]withscala.collection.generic.GenericClassTagTraversableTemplate[X,CC]]extendsGenericClassTagCompanion[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of <code>ClassTagTraversable</code> and
+ subclasses thereof.</p>
+    </li><li name="scala.collection.generic.Clearable" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ClearableextendsAnyRef"></a>
+      <a id="Clearable:Clearable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Clearable.html"><span class="name">Clearable</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@ClearableextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait forms part of collections that can be cleared
+ with a clear() call.</p><div class="fullcomment"><div class="comment cmt"><p>This trait forms part of collections that can be cleared
+ with a clear() call.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>2.10</p></dd><dt>Since</dt><dd><p>2.10</p></dd></dl></div>
+    </li><li name="scala.collection.generic.DefaultSignalling" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DefaultSignallingextendsSignallingwithVolatileAbort"></a>
+      <a id="DefaultSignalling:DefaultSignalling"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DefaultSignalling.html"><span class="name">DefaultSignalling</span></a><span class="result"> extends <a href="Signalling.html" class="extype" name="scala.collection.generic.Signalling">Signalling</a> with <a href="VolatileAbort.html" class="extype" name="scala.collection.generic.VolatileAbort">VolatileAbort</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@DefaultSignallingextendsSignallingwithVolatileAbort" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This signalling implementation returns default values and ignores received signals.</p>
+    </li><li name="scala.collection.generic.DelegatedContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DelegatedContextextendsDelegatedSignalling"></a>
+      <a id="DelegatedContext:DelegatedContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DelegatedContext.html"><span class="name">DelegatedContext</span></a><span class="result"> extends <a href="DelegatedSignalling.html" class="extype" name="scala.collection.generic.DelegatedSignalling">DelegatedSignalling</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@DelegatedContextextendsDelegatedSignalling" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Class implementing delegated signalling.</p>
+    </li><li name="scala.collection.generic.DelegatedSignalling" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DelegatedSignallingextendsSignalling"></a>
+      <a id="DelegatedSignalling:DelegatedSignalling"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DelegatedSignalling.html"><span class="name">DelegatedSignalling</span></a><span class="result"> extends <a href="Signalling.html" class="extype" name="scala.collection.generic.Signalling">Signalling</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@DelegatedSignallingextendsSignalling" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An implementation of the signalling interface using delegates.</p>
+    </li><li name="scala.collection.generic.FilterMonadic" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FilterMonadic[+A,+Repr]extendsAny"></a>
+      <a id="FilterMonadic[+A,+Repr]:FilterMonadic[A,Repr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FilterMonadic.html"><span class="name">FilterMonadic</span></a><span class="tparams">[<span name="A">+A</span>, <span name="Repr">+Repr</span>]</span><span class="result"> extends <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@FilterMonadic[+A,+Repr]extendsAny" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template trait that contains just the <code>map</code>, <code>flatMap</code>, <code>foreach</code> and <code>withFilter</code> methods
+ of trait <code>TraversableLike</code>.</p>
+    </li><li name="scala.collection.generic.GenMapFactory" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GenMapFactory[CC[A,B]&lt;:scala.collection.GenMap[A,B]withscala.collection.GenMapLike[A,B,CC[A,B]]]extendsAnyRef"></a>
+      <a id="GenMapFactory[CC[A,B]&lt;:GenMap[A,B]withGenMapLike[A,B,CC[A,B]]]:GenMapFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenMapFactory.html"><span class="name">GenMapFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span> &lt;: <a href="../GenMap.html" class="extype" name="scala.collection.GenMap">GenMap</a>[<span class="extype" name="scala.collection.generic.GenMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.GenMapFactory.CC.B">B</span>] with <a href="../GenMapLike.html" class="extype" name="scala.collection.GenMapLike">GenMapLike</a>[<span class="extype" name="scala.collection.generic.GenMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.GenMapFactory.CC.B">B</span>, <span class="extype" name="scala.collection.generic.GenMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.GenMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.GenMapFactory.CC.B">B</span>]]</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenMapFactory[CC[A,B]&lt;:scala.collection.GenMap[A,B]withscala.collection.GenMapLike[A,B,CC[A,B]]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of <code>Map</code> and subclasses thereof.</p>
+    </li><li name="scala.collection.generic.GenSeqFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="GenSeqFactory[CC[X]&lt;:scala.collection.GenSeq[X]withscala.collection.generic.GenericTraversableTemplate[X,CC]]extendsGenTraversableFactory[CC]"></a>
+      <a id="GenSeqFactory[CC[X]&lt;:GenSeq[X]withGenericTraversableTemplate[X,CC]]:GenSeqFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenSeqFactory.html"><span class="name">GenSeqFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../GenSeq.html" class="extype" name="scala.collection.GenSeq">GenSeq</a>[<span class="extype" name="scala.collection.generic.GenSeqFactory.CC.X">X</span>] with <a href="GenericTraversableTemplate.html" class="extype" name="scala.collection.generic.GenericTraversableTemplate">GenericTraversableTemplate</a>[<span class="extype" name="scala.collection.generic.GenSeqFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.GenSeqFactory.CC">CC</span>]</span>]</span><span class="result"> extends <a href="GenTraversableFactory.html" class="extype" name="scala.collection.generic.GenTraversableFactory">GenTraversableFactory</a>[<span class="extype" name="scala.collection.generic.GenSeqFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenSeqFactory[CC[X]&lt;:scala.collection.GenSeq[X]withscala.collection.generic.GenericTraversableTemplate[X,CC]]extendsGenTraversableFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of Seq and subclasses thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template for companion objects of Seq and subclasses thereof.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.GenSetFactory" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GenSetFactory[CC[X]&lt;:scala.collection.GenSet[X]withscala.collection.GenSetLike[X,CC[X]]]extendsGenericCompanion[CC]"></a>
+      <a id="GenSetFactory[CC[X]&lt;:GenSet[X]withGenSetLike[X,CC[X]]]:GenSetFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenSetFactory.html"><span class="name">GenSetFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../GenSet.html" class="extype" name="scala.collection.GenSet">GenSet</a>[<span class="extype" name="scala.collection.generic.GenSetFactory.CC.X">X</span>] with <a href="../GenSetLike.html" class="extype" name="scala.collection.GenSetLike">GenSetLike</a>[<span class="extype" name="scala.collection.generic.GenSetFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.GenSetFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.GenSetFactory.CC.X">X</span>]]</span>]</span><span class="result"> extends <a href="GenericCompanion.html" class="extype" name="scala.collection.generic.GenericCompanion">GenericCompanion</a>[<span class="extype" name="scala.collection.generic.GenSetFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenSetFactory[CC[X]&lt;:scala.collection.GenSet[X]withscala.collection.GenSetLike[X,CC[X]]]extendsGenericCompanion[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of <code>Set</code> and subclasses thereof.</p>
+    </li><li name="scala.collection.generic.GenTraversableFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="GenTraversableFactory[CC[X]&lt;:scala.collection.GenTraversable[X]withscala.collection.generic.GenericTraversableTemplate[X,CC]]extendsGenericCompanion[CC]"></a>
+      <a id="GenTraversableFactory[CC[X]&lt;:GenTraversable[X]withGenericTraversableTemplate[X,CC]]:GenTraversableFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenTraversableFactory.html"><span class="name">GenTraversableFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../GenTraversable.html" class="extype" name="scala.collection.GenTraversable">GenTraversable</a>[<span class="extype" name="scala.collection.generic.GenTraversableFactory.CC.X">X</span>] with <a href="GenericTraversableTemplate.html" class="extype" name="scala.collection.generic.GenericTraversableTemplate">GenericTraversableTemplate</a>[<span class="extype" name="scala.collection.generic.GenTraversableFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.GenTraversableFactory.CC">CC</span>]</span>]</span><span class="result"> extends <a href="GenericCompanion.html" class="extype" name="scala.collection.generic.GenericCompanion">GenericCompanion</a>[<span class="extype" name="scala.collection.generic.GenTraversableFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenTraversableFactory[CC[X]&lt;:scala.collection.GenTraversable[X]withscala.collection.generic.GenericTraversableTemplate[X,CC]]extendsGenericCompanion[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of <code>Traversable</code> and subclasses thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template for companion objects of <code>Traversable</code> and subclasses thereof.
+ This class provides a set of operations to create <code><code>Traversable</code></code> objects.
+ It is typically inherited by companion objects of subclasses of <code>Traversable</code>.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.GenericClassTagCompanion" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GenericClassTagCompanion[+CC[X]&lt;:Traversable[X]]extendsAnyRef"></a>
+      <a id="GenericClassTagCompanion[+CC[X]&lt;:Traversable[X]]:GenericClassTagCompanion[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenericClassTagCompanion.html"><span class="name">GenericClassTagCompanion</span></a><span class="tparams">[<span name="CC">+CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>[<span class="extype" name="scala.collection.generic.GenericClassTagCompanion.CC.X">X</span>]</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericClassTagCompanion[+CC[X]&lt;:Traversable[X]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents companions of classes which require ClassTags
+ for their element types.</p>
+    </li><li name="scala.collection.generic.GenericClassTagTraversableTemplate" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="GenericClassTagTraversableTemplate[+A,+CC[X]&lt;:Traversable[X]]extendsHasNewBuilder[A,CC[A]@scala.annotation.unchecked.uncheckedVariance]"></a>
+      <a id="GenericClassTagTraversableTemplate[+A,+CC[X]&lt;:Traversable[X]]:GenericClassTagTraversableTemplate[A,CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GenericClassTagTraversableTemplate.html"><span class="name">GenericClassTagTraversableTemplate</span></a><span class="tparams">[<span name="A">+A</span>, <span name="CC">+CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>[<span class="extype" name="scala.collection.generic.GenericClassTagTraversableTemplate.CC.X">X</span>]</span>]</span><span class="result"> extends <a href="HasNewBuilder.html" class="extype" name="scala.collection.generic.HasNewBuilder">HasNewBuilder</a>[<span class="extype" name="scala.collection.generic.GenericClassTagTraversableTemplate.A">A</span>, <span class="extype" name="scala.collection.generic.GenericClassTagTraversableTemplate.CC">CC</span>[<span class="extype" name="scala.collection.generic.GenericClassTagTraversableTemplate.A">A</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericClassTagTraversableTemplate[+A,+CC[X]&lt;:Traversable[X]]extendsHasNewBuilder[A,CC[A]@scala.annotation.unchecked.uncheckedVariance]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait represents collections classes which require class
+ tags for their element types.</p><div class="fullcomment"><div class="comment cmt"><p>This trait represents collections classes which require class
+ tags for their element types.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.GenericCompanion" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="GenericCompanion[+CC[X]&lt;:scala.collection.GenTraversable[X]]extendsAnyRef"></a>
+      <a id="GenericCompanion[+CC[X]&lt;:GenTraversable[X]]:GenericCompanion[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenericCompanion.html"><span class="name">GenericCompanion</span></a><span class="tparams">[<span name="CC">+CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../GenTraversable.html" class="extype" name="scala.collection.GenTraversable">GenTraversable</a>[<span class="extype" name="scala.collection.generic.GenericCompanion.CC.X">X</span>]</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericCompanion[+CC[X]&lt;:scala.collection.GenTraversable[X]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template class for companion objects of &quot;regular&quot; collection classes
+ represent an unconstrained higher-kinded type.</p><div class="fullcomment"><div class="comment cmt"><p>A template class for companion objects of &quot;regular&quot; collection classes
+ represent an unconstrained higher-kinded type. Typically
+ such classes inherit from trait <code>GenericTraversableTemplate</code>.</p></div><dl class="paramcmts block"><dt class="tparam">CC</dt><dd class="cmt"><p>The type constructor representing the collection class.</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd><dt>See also</dt><dd><span class="cmt"><p><a href="GenericTraversableTemplate.html" class="extype" name="scala.collection.generic.GenericTraversableTemplate">scala.collection.generic.GenericTraversableTemplate</a></p></span></dd></dl></div>
+    </li><li name="scala.collection.generic.GenericOrderedCompanion" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="GenericOrderedCompanion[+CC[X]&lt;:Traversable[X]]extendsAnyRef"></a>
+      <a id="GenericOrderedCompanion[+CC[X]&lt;:Traversable[X]]:GenericOrderedCompanion[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GenericOrderedCompanion.html"><span class="name">GenericOrderedCompanion</span></a><span class="tparams">[<span name="CC">+CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>[<span class="extype" name="scala.collection.generic.GenericOrderedCompanion.CC.X">X</span>]</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericOrderedCompanion[+CC[X]&lt;:Traversable[X]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class represents companions of classes which require the ordered trait
+ for their element types.</p><div class="fullcomment"><div class="comment cmt"><p>This class represents companions of classes which require the ordered trait
+ for their element types.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.GenericOrderedTraversableTemplate" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GenericOrderedTraversableTemplate[+A,+CC[X]&lt;:Traversable[X]]extendsHasNewBuilder[A,CC[A]@scala.annotation.unchecked.uncheckedVariance]"></a>
+      <a id="GenericOrderedTraversableTemplate[+A,+CC[X]&lt;:Traversable[X]]:GenericOrderedTraversableTemplate[A,CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GenericOrderedTraversableTemplate.html"><span class="name">GenericOrderedTraversableTemplate</span></a><span class="tparams">[<span name="A">+A</span>, <span name="CC">+CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>[<span class="extype" name="scala.collection.generic.GenericOrderedTraversableTemplate.CC.X">X</span>]</span>]</span><span class="result"> extends <a href="HasNewBuilder.html" class="extype" name="scala.collection.generic.HasNewBuilder">HasNewBuilder</a>[<span class="extype" name="scala.collection.generic.GenericOrderedTraversableTemplate.A">A</span>, <span class="extype" name="scala.collection.generic.GenericOrderedTraversableTemplate.CC">CC</span>[<span class="extype" name="scala.collection.generic.GenericOrderedTraversableTemplate.A">A</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericOrderedTraversableTemplate[+A,+CC[X]&lt;:Traversable[X]]extendsHasNewBuilder[A,CC[A]@scala.annotation.unchecked.uncheckedVariance]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait represents collections classes which require
+ ordered element types.</p>
+    </li><li name="scala.collection.generic.GenericParCompanion" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="GenericParCompanion[+CC[X]&lt;:scala.collection.parallel.ParIterable[X]]extendsAnyRef"></a>
+      <a id="GenericParCompanion[+CC[X]&lt;:ParIterable[X]]:GenericParCompanion[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GenericParCompanion.html"><span class="name">GenericParCompanion</span></a><span class="tparams">[<span name="CC">+CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../parallel/ParIterable.html" class="extype" name="scala.collection.parallel.ParIterable">ParIterable</a>[<span class="extype" name="scala.collection.generic.GenericParCompanion.CC.X">X</span>]</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericParCompanion[+CC[X]&lt;:scala.collection.parallel.ParIterable[X]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template class for companion objects of parallel collection classes.</p><div class="fullcomment"><div class="comment cmt"><p>A template class for companion objects of parallel collection classes.
+ They should be mixed in together with <code>GenericCompanion</code> type.</p></div></div>
+    </li><li name="scala.collection.generic.GenericParMapCompanion" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GenericParMapCompanion[+CC[P,Q]&lt;:scala.collection.parallel.ParMap[P,Q]]extendsAnyRef"></a>
+      <a id="GenericParMapCompanion[+CC[P,Q]&lt;:ParMap[P,Q]]:GenericParMapCompanion[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GenericParMapCompanion.html"><span class="name">GenericParMapCompanion</span></a><span class="tparams">[<span name="CC">+CC<span class="tparams">[<span name="P">P</span>, <span name="Q">Q</span>]</span> &lt;: <a href="../parallel/ParMap.html" class="extype" name="scala.collection.parallel.ParMap">ParMap</a>[<span class="extype" name="scala.collection.generic.GenericParMapCompanion.CC.P">P</span>, <span class="extype" name="scala.collection.generic.GenericParMapCompanion.CC.Q">Q</span>]</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericParMapCompanion[+CC[P,Q]&lt;:scala.collection.parallel.ParMap[P,Q]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.GenericParMapTemplate" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GenericParMapTemplate[K,+V,+CC[X,Y]&lt;:scala.collection.parallel.ParMap[X,Y]]extendsGenericParTemplate[(K,V),scala.collection.parallel.ParIterable]"></a>
+      <a id="GenericParMapTemplate[K,+V,+CC[X,Y]&lt;:ParMap[X,Y]]:GenericParMapTemplate[K,V,CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GenericParMapTemplate.html"><span class="name">GenericParMapTemplate</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">+V</span>, <span name="CC">+CC<span class="tparams">[<span name="X">X</span>, <span name="Y">Y</span>]</span> &lt;: <a href="../parallel/ParMap.html" class="extype" name="scala.collection.parallel.ParMap">ParMap</a>[<span class="extype" name="scala.collection.generic.GenericParMapTemplate.CC.X">X</span>, <span class="extype" name="scala.collection.generic.GenericParMapTemplate.CC.Y">Y</span>]</span>]</span><span class="result"> extends <a href="GenericParTemplate.html" class="extype" name="scala.collection.generic.GenericParTemplate">GenericParTemplate</a>[(<span class="extype" name="scala.collection.generic.GenericParMapTemplate.K">K</span>, <span class="extype" name="scala.collection.generic.GenericParMapTemplate.V">V</span>), <a href="../parallel/ParIterable.html" class="extype" name="scala.collection.parallel.ParIterable">ParIterable</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericParMapTemplate[K,+V,+CC[X,Y]&lt;:scala.collection.parallel.ParMap[X,Y]]extendsGenericParTemplate[(K,V),scala.collection.parallel.ParIterable]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.GenericParTemplate" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="GenericParTemplate[+A,+CC[X]&lt;:scala.collection.parallel.ParIterable[X]]extendsGenericTraversableTemplate[A,CC]withHasNewCombiner[A,CC[A]@scala.annotation.unchecked.uncheckedVariance]"></a>
+      <a id="GenericParTemplate[+A,+CC[X]&lt;:ParIterable[X]]:GenericParTemplate[A,CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GenericParTemplate.html"><span class="name">GenericParTemplate</span></a><span class="tparams">[<span name="A">+A</span>, <span name="CC">+CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../parallel/ParIterable.html" class="extype" name="scala.collection.parallel.ParIterable">ParIterable</a>[<span class="extype" name="scala.collection.generic.GenericParTemplate.CC.X">X</span>]</span>]</span><span class="result"> extends <a href="GenericTraversableTemplate.html" class="extype" name="scala.collection.generic.GenericTraversableTemplate">GenericTraversableTemplate</a>[<span class="extype" name="scala.collection.generic.GenericParTemplate.A">A</span>, <span class="extype" name="scala.collection.generic.GenericParTemplate.CC">CC</span>] with <a href="HasNewCombiner.html" class="extype" name="scala.collection.generic.HasNewCombiner">HasNewCombiner</a>[<span class="extype" name="scala.collection.generic.GenericParTemplate.A">A</span>, <span class="extype" name="scala.collection.generic.GenericParTemplate.CC">CC</span>[<span class="extype" name="scala.collection.generic.GenericParTemplate.A">A</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericParTemplate[+A,+CC[X]&lt;:scala.collection.parallel.ParIterable[X]]extendsGenericTraversableTemplate[A,CC]withHasNewCombiner[A,CC[A]@scala.annotation.unchecked.uncheckedVariance]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template trait for collections having a companion.</p><div class="fullcomment"><div class="comment cmt"><p>A template trait for collections having a companion.
+</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>the element type of the collection</p></dd><dt class="tparam">CC</dt><dd class="cmt"><p>the type constructor representing the collection class</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.GenericSeqCompanion" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GenericSeqCompanion[CC[X]&lt;:Traversable[X]]extendsGenericCompanion[CC]"></a>
+      <a id="GenericSeqCompanion[CC[X]&lt;:Traversable[X]]:GenericSeqCompanion[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GenericSeqCompanion.html"><span class="name">GenericSeqCompanion</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>[<span class="extype" name="scala.collection.generic.GenericSeqCompanion.CC.X">X</span>]</span>]</span><span class="result"> extends <a href="GenericCompanion.html" class="extype" name="scala.collection.generic.GenericCompanion">GenericCompanion</a>[<span class="extype" name="scala.collection.generic.GenericSeqCompanion.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericSeqCompanion[CC[X]&lt;:Traversable[X]]extendsGenericCompanion[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.GenericSetTemplate" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="GenericSetTemplate[A,+CC[X]&lt;:scala.collection.GenSet[X]]extendsGenericTraversableTemplate[A,CC]"></a>
+      <a id="GenericSetTemplate[A,+CC[X]&lt;:GenSet[X]]:GenericSetTemplate[A,CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GenericSetTemplate.html"><span class="name">GenericSetTemplate</span></a><span class="tparams">[<span name="A">A</span>, <span name="CC">+CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../GenSet.html" class="extype" name="scala.collection.GenSet">GenSet</a>[<span class="extype" name="scala.collection.generic.GenericSetTemplate.CC.X">X</span>]</span>]</span><span class="result"> extends <a href="GenericTraversableTemplate.html" class="extype" name="scala.collection.generic.GenericTraversableTemplate">GenericTraversableTemplate</a>[<span class="extype" name="scala.collection.generic.GenericSetTemplate.A">A</span>, <span class="extype" name="scala.collection.generic.GenericSetTemplate.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericSetTemplate[A,+CC[X]&lt;:scala.collection.GenSet[X]]extendsGenericTraversableTemplate[A,CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.GenericTraversableTemplate" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="GenericTraversableTemplate[+A,+CC[X]&lt;:scala.collection.GenTraversable[X]]extendsHasNewBuilder[A,CC[A]@scala.annotation.unchecked.uncheckedVariance]"></a>
+      <a id="GenericTraversableTemplate[+A,+CC[X]&lt;:GenTraversable[X]]:GenericTraversableTemplate[A,CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GenericTraversableTemplate.html"><span class="name">GenericTraversableTemplate</span></a><span class="tparams">[<span name="A">+A</span>, <span name="CC">+CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../GenTraversable.html" class="extype" name="scala.collection.GenTraversable">GenTraversable</a>[<span class="extype" name="scala.collection.generic.GenericTraversableTemplate.CC.X">X</span>]</span>]</span><span class="result"> extends <a href="HasNewBuilder.html" class="extype" name="scala.collection.generic.HasNewBuilder">HasNewBuilder</a>[<span class="extype" name="scala.collection.generic.GenericTraversableTemplate.A">A</span>, <span class="extype" name="scala.collection.generic.GenericTraversableTemplate.CC">CC</span>[<span class="extype" name="scala.collection.generic.GenericTraversableTemplate.A">A</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericTraversableTemplate[+A,+CC[X]&lt;:scala.collection.GenTraversable[X]]extendsHasNewBuilder[A,CC[A]@scala.annotation.unchecked.uncheckedVariance]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template class for companion objects of <code><code>regular</code></code> collection classes
+ that represent an unconstrained higher-kinded type.</p><div class="fullcomment"><div class="comment cmt"><p>A template class for companion objects of <code><code>regular</code></code> collection classes
+ that represent an unconstrained higher-kinded type.
+</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>The type of the collection elements.</p></dd><dt class="tparam">CC</dt><dd class="cmt"><p>The type constructor representing the collection class.</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.Growable" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Growable[-A]extendsClearable"></a>
+      <a id="Growable[-A]:Growable[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Growable.html"><span class="name">Growable</span></a><span class="tparams">[<span name="A">-A</span>]</span><span class="result"> extends <a href="Clearable.html" class="extype" name="scala.collection.generic.Clearable">Clearable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@Growable[-A]extendsClearable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait forms part of collections that can be augmented
+ using a <code>+=</code> operator and that can be cleared of all elements using
+ a <code>clear</code> method.</p><div class="fullcomment"><div class="comment cmt"><p>This trait forms part of collections that can be augmented
+ using a <code>+=</code> operator and that can be cleared of all elements using
+ a <code>clear</code> method.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>2.8</p></dd><dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.HasNewBuilder" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="HasNewBuilder[+A,+Repr]extendsAny"></a>
+      <a id="HasNewBuilder[+A,+Repr]:HasNewBuilder[A,Repr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="HasNewBuilder.html"><span class="name">HasNewBuilder</span></a><span class="tparams">[<span name="A">+A</span>, <span name="Repr">+Repr</span>]</span><span class="result"> extends <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@HasNewBuilder[+A,+Repr]extendsAny" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.HasNewCombiner" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="HasNewCombiner[+T,+Repr]extendsAnyRef"></a>
+      <a id="HasNewCombiner[+T,+Repr]:HasNewCombiner[T,Repr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="HasNewCombiner.html"><span class="name">HasNewCombiner</span></a><span class="tparams">[<span name="T">+T</span>, <span name="Repr">+Repr</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@HasNewCombiner[+T,+Repr]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.ImmutableMapFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ImmutableMapFactory[CC[A,+B]&lt;:scala.collection.immutable.Map[A,B]withscala.collection.immutable.MapLike[A,B,CC[A,B]]]extendsMapFactory[CC]"></a>
+      <a id="ImmutableMapFactory[CC[A,+B]&lt;:immutable.Map[A,B]withimmutable.MapLike[A,B,CC[A,B]]]:ImmutableMapFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ImmutableMapFactory.html"><span class="name">ImmutableMapFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="A">A</span>, <span name="B">+B</span>]</span> &lt;: <a href="../immutable/Map.html" class="extype" name="scala.collection.immutable.Map">immutable.Map</a>[<span class="extype" name="scala.collection.generic.ImmutableMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.ImmutableMapFactory.CC.B">B</span>] with <a href="../immutable/MapLike.html" class="extype" name="scala.collection.immutable.MapLike">immutable.MapLike</a>[<span class="extype" name="scala.collection.generic.ImmutableMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.ImmutableMapFactory.CC.B">B</span>, <span class="extype" name="scala.collection.generic.ImmutableMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.ImmutableMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.ImmutableMapFactory.CC.B">B</span>]]</span>]</span><span class="result"> extends <a href="MapFactory.html" class="extype" name="scala.collection.generic.MapFactory">MapFactory</a>[<span class="extype" name="scala.collection.generic.ImmutableMapFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@ImmutableMapFactory[CC[A,+B]&lt;:scala.collection.immutable.Map[A,B]withscala.collection.immutable.MapLike[A,B,CC[A,B]]]extendsMapFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of <code>immutable.Map</code> and subclasses thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template for companion objects of <code>immutable.Map</code> and subclasses thereof.</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>2.8</p></dd><dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.ImmutableSetFactory" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ImmutableSetFactory[CC[X]&lt;:scala.collection.immutable.Set[X]withscala.collection.SetLike[X,CC[X]]]extendsSetFactory[CC]"></a>
+      <a id="ImmutableSetFactory[CC[X]&lt;:immutable.Set[X]withSetLike[X,CC[X]]]:ImmutableSetFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ImmutableSetFactory.html"><span class="name">ImmutableSetFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../immutable/Set.html" class="extype" name="scala.collection.immutable.Set">immutable.Set</a>[<span class="extype" name="scala.collection.generic.ImmutableSetFactory.CC.X">X</span>] with <a href="../SetLike.html" class="extype" name="scala.collection.SetLike">SetLike</a>[<span class="extype" name="scala.collection.generic.ImmutableSetFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.ImmutableSetFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.ImmutableSetFactory.CC.X">X</span>]]</span>]</span><span class="result"> extends <a href="SetFactory.html" class="extype" name="scala.collection.generic.SetFactory">SetFactory</a>[<span class="extype" name="scala.collection.generic.ImmutableSetFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@ImmutableSetFactory[CC[X]&lt;:scala.collection.immutable.Set[X]withscala.collection.SetLike[X,CC[X]]]extendsSetFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.ImmutableSortedMapFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ImmutableSortedMapFactory[CC[A,B]&lt;:scala.collection.immutable.SortedMap[A,B]withscala.collection.SortedMapLike[A,B,CC[A,B]]]extendsSortedMapFactory[CC]"></a>
+      <a id="ImmutableSortedMapFactory[CC[A,B]&lt;:immutable.SortedMap[A,B]withSortedMapLike[A,B,CC[A,B]]]:ImmutableSortedMapFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ImmutableSortedMapFactory.html"><span class="name">ImmutableSortedMapFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span> &lt;: <a href="../immutable/SortedMap.html" class="extype" name="scala.collection.immutable.SortedMap">immutable.SortedMap</a>[<span class="extype" name="scala.collection.generic.ImmutableSortedMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.ImmutableSortedMapFactory.CC.B">B</span>] with <a href="../SortedMapLike.html" class="extype" name="scala.collection.SortedMapLike">SortedMapLike</a>[<span class="extype" name="scala.collection.generic.ImmutableSortedMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.ImmutableSortedMapFactory.CC.B">B</span>, <span class="extype" name="scala.collection.generic.ImmutableSortedMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.ImmutableSortedMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.ImmutableSortedMapFactory.CC.B">B</span>]]</span>]</span><span class="result"> extends <a href="SortedMapFactory.html" class="extype" name="scala.collection.generic.SortedMapFactory">SortedMapFactory</a>[<span class="extype" name="scala.collection.generic.ImmutableSortedMapFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@ImmutableSortedMapFactory[CC[A,B]&lt;:scala.collection.immutable.SortedMap[A,B]withscala.collection.SortedMapLike[A,B,CC[A,B]]]extendsSortedMapFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of <code>SortedMap</code> and subclasses thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template for companion objects of <code>SortedMap</code> and subclasses thereof.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.ImmutableSortedSetFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ImmutableSortedSetFactory[CC[A]&lt;:scala.collection.immutable.SortedSet[A]withscala.collection.SortedSetLike[A,CC[A]]]extendsSortedSetFactory[CC]"></a>
+      <a id="ImmutableSortedSetFactory[CC[A]&lt;:immutable.SortedSet[A]withSortedSetLike[A,CC[A]]]:ImmutableSortedSetFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ImmutableSortedSetFactory.html"><span class="name">ImmutableSortedSetFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="A">A</span>]</span> &lt;: <a href="../immutable/SortedSet.html" class="extype" name="scala.collection.immutable.SortedSet">immutable.SortedSet</a>[<span class="extype" name="scala.collection.generic.ImmutableSortedSetFactory.CC.A">A</span>] with <a href="../SortedSetLike.html" class="extype" name="scala.collection.SortedSetLike">SortedSetLike</a>[<span class="extype" name="scala.collection.generic.ImmutableSortedSetFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.ImmutableSortedSetFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.ImmutableSortedSetFactory.CC.A">A</span>]]</span>]</span><span class="result"> extends <a href="SortedSetFactory.html" class="extype" name="scala.collection.generic.SortedSetFactory">SortedSetFactory</a>[<span class="extype" name="scala.collection.generic.ImmutableSortedSetFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@ImmutableSortedSetFactory[CC[A]&lt;:scala.collection.immutable.SortedSet[A]withscala.collection.SortedSetLike[A,CC[A]]]extendsSortedSetFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of <code>SortedSet</code> and subclasses thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template for companion objects of <code>SortedSet</code> and subclasses thereof.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.IndexedSeqFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="IndexedSeqFactory[CC[X]&lt;:IndexedSeq[X]withscala.collection.generic.GenericTraversableTemplate[X,CC]]extendsSeqFactory[CC]"></a>
+      <a id="IndexedSeqFactory[CC[X]&lt;:IndexedSeq[X]withGenericTraversableTemplate[X,CC]]:IndexedSeqFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="IndexedSeqFactory.html"><span class="name">IndexedSeqFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../IndexedSeq.html" class="extype" name="scala.collection.IndexedSeq">IndexedSeq</a>[<span class="extype" name="scala.collection.generic.IndexedSeqFactory.CC.X">X</span>] with <a href="GenericTraversableTemplate.html" class="extype" name="scala.collection.generic.GenericTraversableTemplate">GenericTraversableTemplate</a>[<span class="extype" name="scala.collection.generic.IndexedSeqFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.IndexedSeqFactory.CC">CC</span>]</span>]</span><span class="result"> extends <a href="SeqFactory.html" class="extype" name="scala.collection.generic.SeqFactory">SeqFactory</a>[<span class="extype" name="scala.collection.generic.IndexedSeqFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@IndexedSeqFactory[CC[X]&lt;:IndexedSeq[X]withscala.collection.generic.GenericTraversableTemplate[X,CC]]extendsSeqFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of IndexedSeq and subclasses thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template for companion objects of IndexedSeq and subclasses thereof.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.11</p></dd></dl></div>
+    </li><li name="scala.collection.generic.IsSeqLike" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="IsSeqLike[Repr]extendsAnyRef"></a>
+      <a id="IsSeqLike[Repr]:IsSeqLike[Repr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IsSeqLike.html"><span class="name">IsSeqLike</span></a><span class="tparams">[<span name="Repr">Repr</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@IsSeqLike[Repr]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Type class witnessing that a collection representation type <code>Repr</code> has
+elements of type <code>A</code> and has a conversion to <code>SeqLike[A, Repr]</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Type class witnessing that a collection representation type <code>Repr</code> has
+elements of type <code>A</code> and has a conversion to <code>SeqLike[A, Repr]</code>.</p><p>This type enables simple enrichment of <code>Seq</code>s with extension methods which
+can make full use of the mechanics of the Scala collections framework in
+their implementation.</p><p>Example usage:</p><pre><span class="kw">class</span> FilterMapImpl[A, Repr](<span class="kw">val</span> r: SeqLike[A, Repr]) {
+  <span class="kw">final</span> <span class="kw">def</span> filterMap[B, That](f: A <span class="kw">=&gt;</span> <span class="std">Option</span>[B])(<span class="kw">implicit</span> cbf: CanBuildFrom[Repr, B, That]): That =
+    r.flatMap(f(_))
+}
+<span class="kw">implicit</span> <span class="kw">def</span> filterMap[Repr, A](r: Repr)(<span class="kw">implicit</span> fr: IsSeqLike[Repr]): FilterMapImpl[fr.A,Repr] =
+  <span class="kw">new</span> FilterMapImpl(fr.conversion(r))
+
+<span class="kw">val</span> l = <span class="std">List</span>(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>)
+<span class="std">List</span>(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>) filterMap (i <span class="kw">=&gt;</span> <span class="kw">if</span>(i % <span class="num">2</span> == <span class="num">0</span>) <span class="std">Some</span>(i) <span class="kw">else</span> <span class="std">None</span>)
+<span class="cmt">// == List(2, 4)</span></pre></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="IsTraversableLike.html" class="extype" name="scala.collection.generic.IsTraversableLike">scala.collection.generic.IsTraversableLike</a></p></span><span class="cmt"><p><a href="../Seq.html" class="extype" name="scala.collection.Seq">scala.collection.Seq</a></p></span></dd></dl></div>
+    </li><li name="scala.collection.generic.IsTraversableLike" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="IsTraversableLike[Repr]extendsAnyRef"></a>
+      <a id="IsTraversableLike[Repr]:IsTraversableLike[Repr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IsTraversableLike.html"><span class="name">IsTraversableLike</span></a><span class="tparams">[<span name="Repr">Repr</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@IsTraversableLike[Repr]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A trait which can be used to avoid code duplication when defining extension
+ methods that should be applicable both to existing Scala collections (i.e.,
+ types extending <code>GenTraversableLike</code>) as well as other (potentially user-defined)
+ types that could be converted to a Scala collection type.</p><div class="fullcomment"><div class="comment cmt"><p>A trait which can be used to avoid code duplication when defining extension
+ methods that should be applicable both to existing Scala collections (i.e.,
+ types extending <code>GenTraversableLike</code>) as well as other (potentially user-defined)
+ types that could be converted to a Scala collection type. This trait
+ makes it possible to treat Scala collections and types that can be implicitly
+ converted to a collection type uniformly. For example, one can provide
+ extension methods that work both on collection types and on <code>String</code>s (<code>String</code>s
+ do not extend <code>GenTraversableLike</code>, but can be converted to <code>GenTraversableLike</code>)</p><p><code>IsTraversable</code> provides two members:</p><ol class="decimal"><li>type member <code>A</code>, which represents the element type of the target <code>GenTraversableLike[A, Repr]</code></li><li>value member <code>conversion</code>, which provides a way to convert between the type we wish to add extension methods to, <code>Repr</code>, and <code>GenTraversableLike[A, Repr]</code>.</li></ol><h5>Usage</h5><p>One must provide <code>IsTraversableLike</code> as an implicit parameter type of an implicit
+conversion. Its usage is shown below. Our objective in the following example
+is to provide a generic extension method <code>mapReduce</code> to any type that extends
+or can be converted to <code>GenTraversableLike</code>. In our example, this includes
+<code>String</code>.</p><pre>  <span class="kw">import</span> scala.collection.GenTraversableLike
+  <span class="kw">import</span> scala.collection.generic.IsTraversableLike
+
+  <span class="kw">class</span> ExtensionMethods[A, Repr](coll: GenTraversableLike[A, Repr]) {
+    <span class="kw">def</span> mapReduce[B](mapper: A <span class="kw">=&gt;</span> B)(reducer: (B, B) <span class="kw">=&gt;</span> B): B = {
+      <span class="kw">val</span> iter = coll.toIterator
+      <span class="kw">var</span> res = mapper(iter.next())
+      <span class="kw">while</span> (iter.hasNext)
+        res = reducer(res, mapper(iter.next()))
+      res
+    }
+  }
+
+  <span class="kw">implicit</span> <span class="kw">def</span> withExtensions[Repr](coll: Repr)(<span class="kw">implicit</span> traversable: IsTraversableLike[Repr]) =
+    <span class="kw">new</span> ExtensionMethods(traversable.conversion(coll))
+
+<span class="cmt">// See it in action!</span>
+<span class="std">List</span>(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>).mapReduce(_ * <span class="num">2</span>)(_ + _) <span class="cmt">// res0: Int = 12</span>
+<span class="lit">"Yeah, well, you know, that's just, like, your opinion, man."</span>.mapReduce(x <span class="kw">=&gt;</span> <span class="num">1</span>)(_ + _) <span class="cmt">// res1: Int = 59</span></pre><p>Here, we begin by creating a class <code>ExtensionMethods</code> which contains our
+<code>mapReduce</code> extension method. Note that <code>ExtensionMethods</code> takes a constructor
+argument <code>coll</code> of type <code>GenTraversableLike[A, Repr]</code>, where <code>A</code> represents the
+element type and <code>Repr</code> represents (typically) the collection type. The
+implementation of <code>mapReduce</code> itself is straightforward.</p><p>The interesting bit is the implicit conversion <code>withExtensions</code>, which
+returns an instance of <code>ExtensionMethods</code>. This implicit conversion can
+only be applied if there is an implicit value <code>traversable</code> of type
+<code>IsTraversableLike[Repr]</code> in scope. Since <code>IsTraversableLike</code> provides
+value member <code>conversion</code>, which gives us a way to convert between whatever
+type we wish to add an extension method to (in this case, <code>Repr</code>) and
+<code>GenTraversableLike[A, Repr]</code>, we can now convert <code>coll</code> from type <code>Repr</code>
+to <code>GenTraversableLike[A, Repr]</code>. This allows us to create an instance of
+the <code>ExtensionMethods</code> class, which we pass our new
+<code>GenTraversableLike[A, Repr]</code> to.</p><p>When the <code>mapReduce</code> method is called on some type of which it is not
+a member, implicit search is triggered. Because implicit conversion
+<code>withExtensions</code> is generic, it will be applied as long as an implicit
+value of type <code>IsTraversableLike[Repr]</code> can be found. Given that
+<code>IsTraversableLike</code> contains implicit members that return values of type
+<code>IsTraversableLike</code>, this requirement is typically satisfied, and the chain
+of interactions described in the previous paragraph is set into action.
+(See the <code>IsTraversableLike</code> companion object, which contains a precise
+specification of the available implicits.)</p><p><i>Note</i>: Currently, it's not possible to combine the implicit conversion and
+the class with the extension methods into an implicit class due to
+limitations of type inference.</p><h5>Implementing <code>IsTraversableLike</code> for New Types</h5><p>One must simply provide an implicit value of type <code>IsTraversableLike</code>
+specific to the new type, or an implicit conversion which returns an
+instance of <code>IsTraversableLike</code> specific to the new type.</p><p>Below is an example of an implementation of the <code>IsTraversableLike</code> trait
+where the <code>Repr</code> type is <code>String</code>.</p><pre><span class="kw">implicit</span> <span class="kw">val</span> stringRepr: IsTraversableLike[<span class="std">String</span>] { <span class="kw">type</span> A = <span class="std">Char</span> } =
+  <span class="kw">new</span> IsTraversableLike[<span class="std">String</span>] {
+    <span class="kw">type</span> A = <span class="std">Char</span>
+    <span class="kw">val</span> conversion = implicitly[<span class="std">String</span> <span class="kw">=&gt;</span> GenTraversableLike[<span class="std">Char</span>, <span class="std">String</span>]]
+  }</pre></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.10</p></dd></dl></div>
+    </li><li name="scala.collection.generic.IsTraversableOnce" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="IsTraversableOnce[Repr]extendsAnyRef"></a>
+      <a id="IsTraversableOnce[Repr]:IsTraversableOnce[Repr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IsTraversableOnce.html"><span class="name">IsTraversableOnce</span></a><span class="tparams">[<span name="Repr">Repr</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@IsTraversableOnce[Repr]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Type class witnessing that a collection representation type <code>Repr</code> has
+ elements of type <code>A</code> and has a conversion to <code>GenTraversableOnce[A]</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Type class witnessing that a collection representation type <code>Repr</code> has
+ elements of type <code>A</code> and has a conversion to <code>GenTraversableOnce[A]</code>.</p><p> This type enables simple enrichment of <code>GenTraversableOnce</code>s with extension
+ methods which can make full use of the mechanics of the Scala collections
+ framework in their implementation.</p><p> Example usage,</p><pre><span class="kw">class</span> FilterMapImpl[A, Repr](<span class="kw">val</span> r: GenTraversableOnce[A]) {
+  <span class="kw">final</span> <span class="kw">def</span> filterMap[B, That](f: A <span class="kw">=&gt;</span> <span class="std">Option</span>[B])(<span class="kw">implicit</span> cbf: CanBuildFrom[Repr, B, That]): That = {
+    <span class="kw">val</span> b = cbf()
+    <span class="kw">for</span>(e <span class="kw">&lt;-</span> r.seq) f(e) foreach (b +=)
+    b.result
+  }
+}
+<span class="kw">implicit</span> <span class="kw">def</span> filterMap[Repr, A](r: Repr)(<span class="kw">implicit</span> fr: IsTraversableOnce[Repr]): FilterMapImpl[fr.A,Repr] =
+  <span class="kw">new</span> FilterMapImpl[fr.A, Repr](fr.conversion(r))
+
+<span class="kw">val</span> l = <span class="std">List</span>(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>)
+<span class="std">List</span>(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>) filterMap (i <span class="kw">=&gt;</span> <span class="kw">if</span>(i % <span class="num">2</span> == <span class="num">0</span>) <span class="std">Some</span>(i) <span class="kw">else</span> <span class="std">None</span>)
+<span class="cmt">// == List(2, 4)</span></pre></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.10</p></dd></dl></div>
+    </li><li name="scala.collection.generic.MapFactory" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MapFactory[CC[A,B]&lt;:scala.collection.Map[A,B]withscala.collection.MapLike[A,B,CC[A,B]]]extendsGenMapFactory[CC]"></a>
+      <a id="MapFactory[CC[A,B]&lt;:Map[A,B]withMapLike[A,B,CC[A,B]]]:MapFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MapFactory.html"><span class="name">MapFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span> &lt;: <a href="../Map.html" class="extype" name="scala.collection.Map">Map</a>[<span class="extype" name="scala.collection.generic.MapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.MapFactory.CC.B">B</span>] with <a href="../MapLike.html" class="extype" name="scala.collection.MapLike">MapLike</a>[<span class="extype" name="scala.collection.generic.MapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.MapFactory.CC.B">B</span>, <span class="extype" name="scala.collection.generic.MapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.MapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.MapFactory.CC.B">B</span>]]</span>]</span><span class="result"> extends <a href="GenMapFactory.html" class="extype" name="scala.collection.generic.GenMapFactory">GenMapFactory</a>[<span class="extype" name="scala.collection.generic.MapFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@MapFactory[CC[A,B]&lt;:scala.collection.Map[A,B]withscala.collection.MapLike[A,B,CC[A,B]]]extendsGenMapFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of <code>Map</code> and subclasses thereof.</p>
+    </li><li name="scala.collection.generic.MutableMapFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MutableMapFactory[CC[A,B]&lt;:scala.collection.mutable.Map[A,B]withscala.collection.mutable.MapLike[A,B,CC[A,B]]]extendsMapFactory[CC]"></a>
+      <a id="MutableMapFactory[CC[A,B]&lt;:mutable.Map[A,B]withmutable.MapLike[A,B,CC[A,B]]]:MutableMapFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MutableMapFactory.html"><span class="name">MutableMapFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span> &lt;: <a href="../mutable/Map.html" class="extype" name="scala.collection.mutable.Map">mutable.Map</a>[<span class="extype" name="scala.collection.generic.MutableMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.MutableMapFactory.CC.B">B</span>] with <a href="../mutable/MapLike.html" class="extype" name="scala.collection.mutable.MapLike">mutable.MapLike</a>[<span class="extype" name="scala.collection.generic.MutableMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.MutableMapFactory.CC.B">B</span>, <span class="extype" name="scala.collection.generic.MutableMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.MutableMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.MutableMapFactory.CC.B">B</span>]]</span>]</span><span class="result"> extends <a href="MapFactory.html" class="extype" name="scala.collection.generic.MapFactory">MapFactory</a>[<span class="extype" name="scala.collection.generic.MutableMapFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@MutableMapFactory[CC[A,B]&lt;:scala.collection.mutable.Map[A,B]withscala.collection.mutable.MapLike[A,B,CC[A,B]]]extendsMapFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of <code>mutable.Map</code> and subclasses thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template for companion objects of <code>mutable.Map</code> and subclasses thereof.</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>2.8</p></dd><dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.MutableSetFactory" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MutableSetFactory[CC[X]&lt;:scala.collection.mutable.Set[X]withscala.collection.mutable.SetLike[X,CC[X]]]extendsSetFactory[CC]"></a>
+      <a id="MutableSetFactory[CC[X]&lt;:mutable.Set[X]withmutable.SetLike[X,CC[X]]]:MutableSetFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MutableSetFactory.html"><span class="name">MutableSetFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../mutable/Set.html" class="extype" name="scala.collection.mutable.Set">mutable.Set</a>[<span class="extype" name="scala.collection.generic.MutableSetFactory.CC.X">X</span>] with <a href="../mutable/SetLike.html" class="extype" name="scala.collection.mutable.SetLike">mutable.SetLike</a>[<span class="extype" name="scala.collection.generic.MutableSetFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.MutableSetFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.MutableSetFactory.CC.X">X</span>]]</span>]</span><span class="result"> extends <a href="SetFactory.html" class="extype" name="scala.collection.generic.SetFactory">SetFactory</a>[<span class="extype" name="scala.collection.generic.MutableSetFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@MutableSetFactory[CC[X]&lt;:scala.collection.mutable.Set[X]withscala.collection.mutable.SetLike[X,CC[X]]]extendsSetFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.MutableSortedSetFactory" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MutableSortedSetFactory[CC[A]&lt;:scala.collection.mutable.SortedSet[A]withscala.collection.SortedSetLike[A,CC[A]]withscala.collection.mutable.Set[A]withscala.collection.mutable.SetLike[A,CC[A]]]extendsSortedSetFactory[CC]"></a>
+      <a id="MutableSortedSetFactory[CC[A]&lt;:mutable.SortedSet[A]withSortedSetLike[A,CC[A]]withmutable.Set[A]withmutable.SetLike[A,CC[A]]]:MutableSortedSetFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MutableSortedSetFactory.html"><span class="name">MutableSortedSetFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="A">A</span>]</span> &lt;: <a href="../mutable/SortedSet.html" class="extype" name="scala.collection.mutable.SortedSet">mutable.SortedSet</a>[<span class="extype" name="scala.collection.generic.MutableSortedSetFactory.CC.A">A</span>] with <a href="../SortedSetLike.html" class="extype" name="scala.collection.SortedSetLike">SortedSetLike</a>[<span class="extype" name="scala.collection.generic.MutableSortedSetFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.MutableSortedSetFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.MutableSortedSetFactory.CC.A">A</span>]] with <a href="../mutable/Set.html" class="extype" name="scala.collection.mutable.Set">mutable.Set</a>[<span class="extype" name="scala.collection.generic.MutableSortedSetFactory.CC.A">A</span>] with <a href="../mutable/SetLike.html" class="extype" name="scala.collection.mutable.SetLike">mutable.SetLike</a>[<span class="extype" name="scala.collection.generic.MutableSortedSetFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.MutableSortedSetFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.MutableSortedSetFactory.CC.A">A</span>]]</span>]</span><span class="result"> extends <a href="SortedSetFactory.html" class="extype" name="scala.collection.generic.SortedSetFactory">SortedSetFactory</a>[<span class="extype" name="scala.collection.generic.MutableSortedSetFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@MutableSortedSetFactory[CC[A]&lt;:scala.collection.mutable.SortedSet[A]withscala.collection.SortedSetLike[A,CC[A]]withscala.collection.mutable.Set[A]withscala.collection.mutable.SetLike[A,CC[A]]]extendsSortedSetFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="scala.collection.generic.OrderedTraversableFactory" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OrderedTraversableFactory[CC[X]&lt;:Traversable[X]withscala.collection.generic.GenericOrderedTraversableTemplate[X,CC]]extendsGenericOrderedCompanion[CC]"></a>
+      <a id="OrderedTraversableFactory[CC[X]&lt;:Traversable[X]withGenericOrderedTraversableTemplate[X,CC]]:OrderedTraversableFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="OrderedTraversableFactory.html"><span class="name">OrderedTraversableFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>[<span class="extype" name="scala.collection.generic.OrderedTraversableFactory.CC.X">X</span>] with <a href="GenericOrderedTraversableTemplate.html" class="extype" name="scala.collection.generic.GenericOrderedTraversableTemplate">GenericOrderedTraversableTemplate</a>[<span class="extype" name="scala.collection.generic.OrderedTraversableFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.OrderedTraversableFactory.CC">CC</span>]</span>]</span><span class="result"> extends <a href="GenericOrderedCompanion.html" class="extype" name="scala.collection.generic.GenericOrderedCompanion">GenericOrderedCompanion</a>[<span class="extype" name="scala.collection.generic.OrderedTraversableFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@OrderedTraversableFactory[CC[X]&lt;:Traversable[X]withscala.collection.generic.GenericOrderedTraversableTemplate[X,CC]]extendsGenericOrderedCompanion[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.ParFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParFactory[CC[X]&lt;:scala.collection.parallel.ParIterable[X]withscala.collection.generic.GenericParTemplate[X,CC]]extendsGenTraversableFactory[CC]withGenericParCompanion[CC]"></a>
+      <a id="ParFactory[CC[X]&lt;:ParIterable[X]withGenericParTemplate[X,CC]]:ParFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ParFactory.html"><span class="name">ParFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../parallel/ParIterable.html" class="extype" name="scala.collection.parallel.ParIterable">ParIterable</a>[<span class="extype" name="scala.collection.generic.ParFactory.CC.X">X</span>] with <a href="GenericParTemplate.html" class="extype" name="scala.collection.generic.GenericParTemplate">GenericParTemplate</a>[<span class="extype" name="scala.collection.generic.ParFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.ParFactory.CC">CC</span>]</span>]</span><span class="result"> extends <a href="GenTraversableFactory.html" class="extype" name="scala.collection.generic.GenTraversableFactory">GenTraversableFactory</a>[<span class="extype" name="scala.collection.generic.ParFactory.CC">CC</span>] with <a href="GenericParCompanion.html" class="extype" name="scala.collection.generic.GenericParCompanion">GenericParCompanion</a>[<span class="extype" name="scala.collection.generic.ParFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@ParFactory[CC[X]&lt;:scala.collection.parallel.ParIterable[X]withscala.collection.generic.GenericParTemplate[X,CC]]extendsGenTraversableFactory[CC]withGenericParCompanion[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template class for companion objects of <code>ParIterable</code> and subclasses
+ thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template class for companion objects of <code>ParIterable</code> and subclasses
+ thereof. This class extends <code>TraversableFactory</code> and provides a set of
+ operations to create <code><code>ParIterable</code></code> objects.</p></div></div>
+    </li><li name="scala.collection.generic.ParMapFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParMapFactory[CC[X,Y]&lt;:scala.collection.parallel.ParMap[X,Y]withscala.collection.parallel.ParMapLike[X,Y,CC[X,Y],_]]extendsGenMapFactory[CC]withGenericParMapCompanion[CC]"></a>
+      <a id="ParMapFactory[CC[X,Y]&lt;:ParMap[X,Y]withParMapLike[X,Y,CC[X,Y],_]]:ParMapFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ParMapFactory.html"><span class="name">ParMapFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>, <span name="Y">Y</span>]</span> &lt;: <a href="../parallel/ParMap.html" class="extype" name="scala.collection.parallel.ParMap">ParMap</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.CC.Y">Y</span>] with <a href="../parallel/ParMapLike.html" class="extype" name="scala.collection.parallel.ParMapLike">ParMapLike</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.CC.Y">Y</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.ParMapFactory.CC.Y">Y</span>], _]</span>]</span><span class="result"> extends <a href="GenMapFactory.html" class="extype" name="scala.collection.generic.GenMapFactory">GenMapFactory</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>] with <a href="GenericParMapCompanion.html" class="extype" name="scala.collection.generic.GenericParMapCompanion">GenericParMapCompanion</a>[<span class="extype" name="scala.collection.generic.ParMapFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@ParMapFactory[CC[X,Y]&lt;:scala.collection.parallel.ParMap[X,Y]withscala.collection.parallel.ParMapLike[X,Y,CC[X,Y],_]]extendsGenMapFactory[CC]withGenericParMapCompanion[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template class for companion objects of <code>ParMap</code> and subclasses thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template class for companion objects of <code>ParMap</code> and subclasses thereof.
+ This class extends <code>TraversableFactory</code> and provides a set of operations
+ to create <code><code>ParMap</code></code> objects.</p></div></div>
+    </li><li name="scala.collection.generic.ParSetFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParSetFactory[CC[X]&lt;:scala.collection.parallel.ParSet[X]withscala.collection.parallel.ParSetLike[X,CC[X],_]withscala.collection.generic.GenericParTemplate[X,CC]]extendsGenSetFactory[CC]withGenericParCompanion[CC]"></a>
+      <a id="ParSetFactory[CC[X]&lt;:ParSet[X]withParSetLike[X,CC[X],_]withGenericParTemplate[X,CC]]:ParSetFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ParSetFactory.html"><span class="name">ParSetFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../parallel/ParSet.html" class="extype" name="scala.collection.parallel.ParSet">ParSet</a>[<span class="extype" name="scala.collection.generic.ParSetFactory.CC.X">X</span>] with <a href="../parallel/ParSetLike.html" class="extype" name="scala.collection.parallel.ParSetLike">ParSetLike</a>[<span class="extype" name="scala.collection.generic.ParSetFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.ParSetFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.ParSetFactory.CC.X">X</span>], _] with <a href="GenericParTemplate.html" class="extype" name="scala.collection.generic.GenericParTemplate">GenericParTemplate</a>[<span class="extype" name="scala.collection.generic.ParSetFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.ParSetFactory.CC">CC</span>]</span>]</span><span class="result"> extends <a href="GenSetFactory.html" class="extype" name="scala.collection.generic.GenSetFactory">GenSetFactory</a>[<span class="extype" name="scala.collection.generic.ParSetFactory.CC">CC</span>] with <a href="GenericParCompanion.html" class="extype" name="scala.collection.generic.GenericParCompanion">GenericParCompanion</a>[<span class="extype" name="scala.collection.generic.ParSetFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@ParSetFactory[CC[X]&lt;:scala.collection.parallel.ParSet[X]withscala.collection.parallel.ParSetLike[X,CC[X],_]withscala.collection.generic.GenericParTemplate[X,CC]]extendsGenSetFactory[CC]withGenericParCompanion[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.SeqFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SeqFactory[CC[X]&lt;:Seq[X]withscala.collection.generic.GenericTraversableTemplate[X,CC]]extendsGenSeqFactory[CC]withTraversableFactory[CC]"></a>
+      <a id="SeqFactory[CC[X]&lt;:Seq[X]withGenericTraversableTemplate[X,CC]]:SeqFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SeqFactory.html"><span class="name">SeqFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Seq.html" class="extype" name="scala.collection.Seq">Seq</a>[<span class="extype" name="scala.collection.generic.SeqFactory.CC.X">X</span>] with <a href="GenericTraversableTemplate.html" class="extype" name="scala.collection.generic.GenericTraversableTemplate">GenericTraversableTemplate</a>[<span class="extype" name="scala.collection.generic.SeqFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.SeqFactory.CC">CC</span>]</span>]</span><span class="result"> extends <a href="GenSeqFactory.html" class="extype" name="scala.collection.generic.GenSeqFactory">GenSeqFactory</a>[<span class="extype" name="scala.collection.generic.SeqFactory.CC">CC</span>] with <a href="TraversableFactory.html" class="extype" name="scala.collection.generic.TraversableFactory">TraversableFactory</a>[<span class="extype" name="scala.collection.generic.SeqFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@SeqFactory[CC[X]&lt;:Seq[X]withscala.collection.generic.GenericTraversableTemplate[X,CC]]extendsGenSeqFactory[CC]withTraversableFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of Seq and subclasses thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template for companion objects of Seq and subclasses thereof.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.SetFactory" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SetFactory[CC[X]&lt;:scala.collection.Set[X]withscala.collection.SetLike[X,CC[X]]]extendsGenSetFactory[CC]withGenericSeqCompanion[CC]"></a>
+      <a id="SetFactory[CC[X]&lt;:Set[X]withSetLike[X,CC[X]]]:SetFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SetFactory.html"><span class="name">SetFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Set.html" class="extype" name="scala.collection.Set">Set</a>[<span class="extype" name="scala.collection.generic.SetFactory.CC.X">X</span>] with <a href="../SetLike.html" class="extype" name="scala.collection.SetLike">SetLike</a>[<span class="extype" name="scala.collection.generic.SetFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.SetFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.SetFactory.CC.X">X</span>]]</span>]</span><span class="result"> extends <a href="GenSetFactory.html" class="extype" name="scala.collection.generic.GenSetFactory">GenSetFactory</a>[<span class="extype" name="scala.collection.generic.SetFactory.CC">CC</span>] with <a href="GenericSeqCompanion.html" class="extype" name="scala.collection.generic.GenericSeqCompanion">GenericSeqCompanion</a>[<span class="extype" name="scala.collection.generic.SetFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@SetFactory[CC[X]&lt;:scala.collection.Set[X]withscala.collection.SetLike[X,CC[X]]]extendsGenSetFactory[CC]withGenericSeqCompanion[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.Shrinkable" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Shrinkable[-A]extendsAnyRef"></a>
+      <a id="Shrinkable[-A]:Shrinkable[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Shrinkable.html"><span class="name">Shrinkable</span></a><span class="tparams">[<span name="A">-A</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@Shrinkable[-A]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait forms part of collections that can be reduced
+ using a <code>-=</code> operator.</p><div class="fullcomment"><div class="comment cmt"><p>This trait forms part of collections that can be reduced
+ using a <code>-=</code> operator.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>2.8</p></dd><dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.Signalling" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SignallingextendsAnyRef"></a>
+      <a id="Signalling:Signalling"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Signalling.html"><span class="name">Signalling</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@SignallingextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A message interface serves as a unique interface to the
+part of the collection capable of receiving messages from
+a different task.</p><div class="fullcomment"><div class="comment cmt"><p>A message interface serves as a unique interface to the
+part of the collection capable of receiving messages from
+a different task.</p><p>One example of use of this is the <code>find</code> method, which can use the
+signalling interface to inform worker threads that an element has
+been found and no further search is necessary.
+</p></div></div>
+    </li><li name="scala.collection.generic.Sizing" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SizingextendsAnyRef"></a>
+      <a id="Sizing:Sizing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Sizing.html"><span class="name">Sizing</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@SizingextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A trait for objects which have a size.</p>
+    </li><li name="scala.collection.generic.Sorted" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Sorted[K,+This&lt;:scala.collection.generic.Sorted[K,This]]extendsAnyRef"></a>
+      <a id="Sorted[K,+This&lt;:Sorted[K,This]]:Sorted[K,This]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Sorted.html"><span class="name">Sorted</span></a><span class="tparams">[<span name="K">K</span>, <span name="This">+This &lt;: <a href="Sorted.html" class="extype" name="scala.collection.generic.Sorted">Sorted</a>[<span class="extype" name="scala.collection.generic.Sorted.K">K</span>, <span class="extype" name="scala.collection.generic.Sorted.This">This</span>]</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@Sorted[K,+This&lt;:scala.collection.generic.Sorted[K,This]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Any collection (including maps) whose keys (or elements) are ordered.</p><div class="fullcomment"><div class="comment cmt"><p>Any collection (including maps) whose keys (or elements) are ordered.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.SortedMapFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SortedMapFactory[CC[A,B]&lt;:scala.collection.SortedMap[A,B]withscala.collection.SortedMapLike[A,B,CC[A,B]]]extendsAnyRef"></a>
+      <a id="SortedMapFactory[CC[A,B]&lt;:SortedMap[A,B]withSortedMapLike[A,B,CC[A,B]]]:SortedMapFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SortedMapFactory.html"><span class="name">SortedMapFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span> &lt;: <a href="../SortedMap.html" class="extype" name="scala.collection.SortedMap">SortedMap</a>[<span class="extype" name="scala.collection.generic.SortedMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.SortedMapFactory.CC.B">B</span>] with <a href="../SortedMapLike.html" class="extype" name="scala.collection.SortedMapLike">SortedMapLike</a>[<span class="extype" name="scala.collection.generic.SortedMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.SortedMapFactory.CC.B">B</span>, <span class="extype" name="scala.collection.generic.SortedMapFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.SortedMapFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.SortedMapFactory.CC.B">B</span>]]</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@SortedMapFactory[CC[A,B]&lt;:scala.collection.SortedMap[A,B]withscala.collection.SortedMapLike[A,B,CC[A,B]]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of mutable.Map and subclasses thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template for companion objects of mutable.Map and subclasses thereof.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.SortedSetFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SortedSetFactory[CC[A]&lt;:scala.collection.SortedSet[A]withscala.collection.SortedSetLike[A,CC[A]]]extendsAnyRef"></a>
+      <a id="SortedSetFactory[CC[A]&lt;:SortedSet[A]withSortedSetLike[A,CC[A]]]:SortedSetFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SortedSetFactory.html"><span class="name">SortedSetFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="A">A</span>]</span> &lt;: <a href="../SortedSet.html" class="extype" name="scala.collection.SortedSet">SortedSet</a>[<span class="extype" name="scala.collection.generic.SortedSetFactory.CC.A">A</span>] with <a href="../SortedSetLike.html" class="extype" name="scala.collection.SortedSetLike">SortedSetLike</a>[<span class="extype" name="scala.collection.generic.SortedSetFactory.CC.A">A</span>, <span class="extype" name="scala.collection.generic.SortedSetFactory.CC">CC</span>[<span class="extype" name="scala.collection.generic.SortedSetFactory.CC.A">A</span>]]</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@SortedSetFactory[CC[A]&lt;:scala.collection.SortedSet[A]withscala.collection.SortedSetLike[A,CC[A]]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of Set and subclasses thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template for companion objects of Set and subclasses thereof.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.Subtractable" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Subtractable[A,+Repr&lt;:scala.collection.generic.Subtractable[A,Repr]]extendsAnyRef"></a>
+      <a id="Subtractable[A,+Repr&lt;:Subtractable[A,Repr]]:Subtractable[A,Repr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Subtractable.html"><span class="name">Subtractable</span></a><span class="tparams">[<span name="A">A</span>, <span name="Repr">+Repr &lt;: <a href="Subtractable.html" class="extype" name="scala.collection.generic.Subtractable">Subtractable</a>[<span class="extype" name="scala.collection.generic.Subtractable.A">A</span>, <span class="extype" name="scala.collection.generic.Subtractable.Repr">Repr</span>]</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@Subtractable[A,+Repr&lt;:scala.collection.generic.Subtractable[A,Repr]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait represents collection-like objects that can be reduced
+ using a '+' operator.</p><div class="fullcomment"><div class="comment cmt"><p>This trait represents collection-like objects that can be reduced
+ using a '+' operator. It defines variants of <code>-</code> and <code>--</code>
+ as convenience methods in terms of single-element removal <code>-</code>.</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>the type of the elements of the collection.</p></dd><dt class="tparam">Repr</dt><dd class="cmt"><p>the type of the collection itself</p></dd></dl><dl class="attributes block"> <dt>Version</dt><dd><p>2.8</p></dd><dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.TaggedDelegatedContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TaggedDelegatedContextextendsDelegatedContext"></a>
+      <a id="TaggedDelegatedContext:TaggedDelegatedContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="TaggedDelegatedContext.html"><span class="name">TaggedDelegatedContext</span></a><span class="result"> extends <a href="DelegatedContext.html" class="extype" name="scala.collection.generic.DelegatedContext">DelegatedContext</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@TaggedDelegatedContextextendsDelegatedContext" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Class implementing delegated signalling, but having its own distinct <code>tag</code>.</p>
+    </li><li name="scala.collection.generic.TraversableFactory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TraversableFactory[CC[X]&lt;:Traversable[X]withscala.collection.generic.GenericTraversableTemplate[X,CC]]extendsGenTraversableFactory[CC]withGenericSeqCompanion[CC]"></a>
+      <a id="TraversableFactory[CC[X]&lt;:Traversable[X]withGenericTraversableTemplate[X,CC]]:TraversableFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="TraversableFactory.html"><span class="name">TraversableFactory</span></a><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>[<span class="extype" name="scala.collection.generic.TraversableFactory.CC.X">X</span>] with <a href="GenericTraversableTemplate.html" class="extype" name="scala.collection.generic.GenericTraversableTemplate">GenericTraversableTemplate</a>[<span class="extype" name="scala.collection.generic.TraversableFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.TraversableFactory.CC">CC</span>]</span>]</span><span class="result"> extends <a href="GenTraversableFactory.html" class="extype" name="scala.collection.generic.GenTraversableFactory">GenTraversableFactory</a>[<span class="extype" name="scala.collection.generic.TraversableFactory.CC">CC</span>] with <a href="GenericSeqCompanion.html" class="extype" name="scala.collection.generic.GenericSeqCompanion">GenericSeqCompanion</a>[<span class="extype" name="scala.collection.generic.TraversableFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@TraversableFactory[CC[X]&lt;:Traversable[X]withscala.collection.generic.GenericTraversableTemplate[X,CC]]extendsGenTraversableFactory[CC]withGenericSeqCompanion[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template for companion objects of <code>Traversable</code> and subclasses thereof.</p><div class="fullcomment"><div class="comment cmt"><p>A template for companion objects of <code>Traversable</code> and subclasses thereof.
+ This class provides a set of operations to create <code>Traversable</code> objects.
+ It is typically inherited by companion objects of subclasses of <code>Traversable</code>.
+</p></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.VolatileAbort" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="VolatileAbortextendsSignalling"></a>
+      <a id="VolatileAbort:VolatileAbort"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="VolatileAbort.html"><span class="name">VolatileAbort</span></a><span class="result"> extends <a href="Signalling.html" class="extype" name="scala.collection.generic.Signalling">Signalling</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@VolatileAbortextendsSignalling" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A mixin trait that implements abort flag behaviour using volatile variables.</p>
+    </li><li name="scala.collection.generic.ClassManifestTraversableFactory" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ClassManifestTraversableFactory[CC[X]&lt;:Traversable[X]withscala.collection.generic.package.GenericClassManifestTraversableTemplate[X,CC]]=scala.collection.generic.ClassTagTraversableFactory[CC]"></a>
+      <a id="ClassManifestTraversableFactory[CC[X]&lt;:Traversable[X]withGenericClassManifestTraversableTemplate[X,CC]]:ClassManifestTraversableFactory[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.10.0) use ClassTagTraversableFactory instead">ClassManifestTraversableFactory</span><span class="tparams">[<span name="CC">CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>[<span class="extype" name="scala.collection.generic.ClassManifestTraversableFactory.CC.X">X</span>] with <a href="#GenericClassManifestTraversableTemplate[+A,+CC[X]&lt;:Traversable[X]]=scala.collection.generic.GenericClassTagTraversableTemplate[A,CC]" class="extmbr" name="scala.collection.generic.GenericClassManifestTraversableTemplate">GenericClassManifestTraversableTemplate</a>[<span class="extype" name="scala.collection.generic.ClassManifestTraversableFactory.CC.X">X</span>, <span class="extype" name="scala.collection.generic.ClassManifestTraversableFactory.CC">CC</span>]</span>]</span><span class="result"> = <a href="ClassTagTraversableFactory.html" class="extype" name="scala.collection.generic.ClassTagTraversableFactory">ClassTagTraversableFactory</a>[<span class="extype" name="scala.collection.generic.ClassManifestTraversableFactory.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@ClassManifestTraversableFactory[CC[X]&lt;:Traversable[X]withscala.collection.generic.package.GenericClassManifestTraversableTemplate[X,CC]]=scala.collection.generic.ClassTagTraversableFactory[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> use ClassTagTraversableFactory instead</p></dd></dl></div>
+    </li><li name="scala.collection.generic.GenericClassManifestCompanion" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GenericClassManifestCompanion[+CC[X]&lt;:Traversable[X]]=scala.collection.generic.GenericClassTagCompanion[CC]"></a>
+      <a id="GenericClassManifestCompanion[+CC[X]&lt;:Traversable[X]]:GenericClassManifestCompanion[CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.10.0) use GenericClassTagCompanion instead">GenericClassManifestCompanion</span><span class="tparams">[<span name="CC">+CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>[<span class="extype" name="scala.collection.generic.GenericClassManifestCompanion.CC.X">X</span>]</span>]</span><span class="result"> = <a href="GenericClassTagCompanion.html" class="extype" name="scala.collection.generic.GenericClassTagCompanion">GenericClassTagCompanion</a>[<span class="extype" name="scala.collection.generic.GenericClassManifestCompanion.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericClassManifestCompanion[+CC[X]&lt;:Traversable[X]]=scala.collection.generic.GenericClassTagCompanion[CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> use GenericClassTagCompanion instead</p></dd></dl></div>
+    </li><li name="scala.collection.generic.GenericClassManifestTraversableTemplate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GenericClassManifestTraversableTemplate[+A,+CC[X]&lt;:Traversable[X]]=scala.collection.generic.GenericClassTagTraversableTemplate[A,CC]"></a>
+      <a id="GenericClassManifestTraversableTemplate[+A,+CC[X]&lt;:Traversable[X]]:GenericClassManifestTraversableTemplate[A,CC]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.10.0) use GenericClassTagTraversableTemplate instead">GenericClassManifestTraversableTemplate</span><span class="tparams">[<span name="A">+A</span>, <span name="CC">+CC<span class="tparams">[<span name="X">X</span>]</span> &lt;: <a href="../Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>[<span class="extype" name="scala.collection.generic.GenericClassManifestTraversableTemplate.CC.X">X</span>]</span>]</span><span class="result"> = <a href="GenericClassTagTraversableTemplate.html" class="extype" name="scala.collection.generic.GenericClassTagTraversableTemplate">GenericClassTagTraversableTemplate</a>[<span class="extype" name="scala.collection.generic.GenericClassManifestTraversableTemplate.A">A</span>, <span class="extype" name="scala.collection.generic.GenericClassManifestTraversableTemplate.CC">CC</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@GenericClassManifestTraversableTemplate[+A,+CC[X]&lt;:Traversable[X]]=scala.collection.generic.GenericClassTagTraversableTemplate[A,CC]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> use GenericClassTagTraversableTemplate instead</p></dd></dl></div>
+    </li><li name="scala.collection.generic.IterableForwarder" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="IterableForwarder[+A]extendsIterable[A]withTraversableForwarder[A]"></a>
+      <a id="IterableForwarder[+A]:IterableForwarder[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IterableForwarder.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Forwarding is inherently unreliable since it is not automated and methods can be forgotten.">IterableForwarder</span></a><span class="tparams">[<span name="A">+A</span>]</span><span class="result"> extends <a href="../Iterable.html" class="extype" name="scala.collection.Iterable">Iterable</a>[<span class="extype" name="scala.collection.generic.IterableForwarder.A">A</span>] with <a href="TraversableForwarder.html" class="extype" name="scala.collection.generic.TraversableForwarder">TraversableForwarder</a>[<span class="extype" name="scala.collection.generic.IterableForwarder.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@IterableForwarder[+A]extendsIterable[A]withTraversableForwarder[A]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait implements a forwarder for iterable objects.</p><div class="fullcomment"><div class="comment cmt"><p>This trait implements a forwarder for iterable objects. It forwards
+ all calls to a different iterable object, except for</p><ul><li><code>toString</code>, <code>hashCode</code>, <code>equals</code>, <code>stringPrefix</code></li><li><code>newBuilder</code>, <code>view</code></li><li>all calls creating a new iterable object of the same kind</li></ul><p> The above methods are forwarded by subclass <a href="../IterableProxy.html"
+ target="ContentFrame">`IterableProxy`</a>.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Forwarding is inherently unreliable since it is not automated and methods can be forgotten.</p></dd><dt>Version</dt><dd><p>2.8</p></dd><dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.SeqForwarder" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SeqForwarder[+A]extendsSeq[A]withIterableForwarder[A]"></a>
+      <a id="SeqForwarder[+A]:SeqForwarder[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SeqForwarder.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Forwarding is inherently unreliable since it is not automated and new methods can be forgotten.">SeqForwarder</span></a><span class="tparams">[<span name="A">+A</span>]</span><span class="result"> extends <a href="../Seq.html" class="extype" name="scala.collection.Seq">Seq</a>[<span class="extype" name="scala.collection.generic.SeqForwarder.A">A</span>] with <a href="IterableForwarder.html" class="extype" name="scala.collection.generic.IterableForwarder">IterableForwarder</a>[<span class="extype" name="scala.collection.generic.SeqForwarder.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@SeqForwarder[+A]extendsSeq[A]withIterableForwarder[A]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class implements a forwarder for sequences.</p><div class="fullcomment"><div class="comment cmt"><p>This class implements a forwarder for sequences. It forwards
+ all calls to a different sequence object except for</p><ul><li><code>toString</code>, <code>hashCode</code>, <code>equals</code>, <code>stringPrefix</code></li><li><code>newBuilder</code>, <code>view</code>, <code>toSeq</code></li><li>all calls creating a new sequence of the same kind</li></ul><p> The above methods are forwarded by subclass <code>SeqProxy</code>.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Forwarding is inherently unreliable since it is not automated and new methods can be forgotten.</p></dd><dt>Version</dt><dd><p>2.8</p></dd><dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.collection.generic.TraversableForwarder" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TraversableForwarder[+A]extendsTraversable[A]"></a>
+      <a id="TraversableForwarder[+A]:TraversableForwarder[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="TraversableForwarder.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Forwarding is inherently unreliable since it is not automated and new methods can be forgotten.">TraversableForwarder</span></a><span class="tparams">[<span name="A">+A</span>]</span><span class="result"> extends <a href="../Traversable.html" class="extype" name="scala.collection.Traversable">Traversable</a>[<span class="extype" name="scala.collection.generic.TraversableForwarder.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@TraversableForwarder[+A]extendsTraversable[A]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait implements a forwarder for traversable objects.</p><div class="fullcomment"><div class="comment cmt"><p>This trait implements a forwarder for traversable objects. It forwards
+ all calls to a different traversable, except for:</p><ul><li><code>toString</code>, <code>hashCode</code>, <code>equals</code>, <code>stringPrefix</code></li><li><code>newBuilder</code>, <code>view</code></li></ul><p> All calls creating a new traversable of the same kind.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Forwarding is inherently unreliable since it is not automated and new methods can be forgotten.</p></dd><dt>Version</dt><dd><p>2.8</p></dd><dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.collection.generic.IdleSignalling" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IdleSignalling"></a>
+      <a id="IdleSignalling:IdleSignalling"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IdleSignalling$.html"><span class="name">IdleSignalling</span></a><span class="result"> extends <a href="DefaultSignalling.html" class="extype" name="scala.collection.generic.DefaultSignalling">DefaultSignalling</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@IdleSignalling" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An object that returns default values and ignores received signals.</p>
+    </li><li name="scala.collection.generic.IsSeqLike" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IsSeqLike"></a>
+      <a id="IsSeqLike:IsSeqLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IsSeqLike$.html"><span class="name">IsSeqLike</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@IsSeqLike" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.IsTraversableLike" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IsTraversableLike"></a>
+      <a id="IsTraversableLike:IsTraversableLike"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IsTraversableLike$.html"><span class="name">IsTraversableLike</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@IsTraversableLike" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.IsTraversableOnce" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IsTraversableOnce"></a>
+      <a id="IsTraversableOnce:IsTraversableOnce"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IsTraversableOnce$.html"><span class="name">IsTraversableOnce</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@IsTraversableOnce" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.generic.SliceInterval" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SliceInterval"></a>
+      <a id="SliceInterval:SliceInterval"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SliceInterval$.html"><span class="name">SliceInterval</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.generic.package@SliceInterval" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

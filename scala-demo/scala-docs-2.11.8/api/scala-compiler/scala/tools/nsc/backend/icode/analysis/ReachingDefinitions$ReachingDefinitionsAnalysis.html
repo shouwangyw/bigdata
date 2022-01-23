@@ -1,0 +1,1145 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>ReachingDefinitionsAnalysis - Scala Compiler 2.11.8 - scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis</title>
+          <meta name="description" content="ReachingDefinitionsAnalysis - Scala Compiler 2.11.8 - scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis" />
+          <meta name="keywords" content="ReachingDefinitionsAnalysis Scala Compiler 2.11.8 scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../../index.html';
+            var hash = 'scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc.backend">backend</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.backend.icode">icode</a>.<a href="package.html" class="extype" name="scala.tools.nsc.backend.icode.analysis">analysis</a>.<a href="ReachingDefinitions.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions">ReachingDefinitions</a></p>
+        <h1>ReachingDefinitionsAnalysis</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="ReachingDefinitions.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions">package ReachingDefinitions</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ReachingDefinitionsAnalysis</span><span class="result"> extends <a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a>[<a href="ReachingDefinitions$rdefLattice$.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice">rdefLattice</a>.type]</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/compiler/scala/tools/nsc/backend/icode/analysis/ReachingDefinitions.scala#L1" target="_blank">ReachingDefinitions.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a>[<a href="ReachingDefinitions$rdefLattice$.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice">rdefLattice</a>.type], <a href="../../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">Type Hierarchy</span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 224.00 118.00" height="118pt" width="224pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="graph0"><polygon points="-4,4 -4,-114 220,-114 220,4 -4,4" stroke="none" fill="white"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis (this class)" xlink:href="#inheritance-diagram"><polygon points="192,-49 24,-49 24,-24 192,-24 192,-49" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../../../../lib/class_diagram.png" y="-43.5" x="34" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-33.5" x="55" text-anchor="start">ReachingDefinitionsAnalysis</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis" xlink:href="DataFlowAnalysis.html#inheritance-diagram"><polygon points="205.5,-110 10.5,-110 10.5,-85 205.5,-85 205.5,-110" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../../lib/trait_diagram.png" y="-104.5" x="21" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-94.5" x="42" text-anchor="start">DataFlowAnalysis[rdefLattice.type]</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="ReachingDefinitionsAnalysis is a subtype of DataFlowAnalysis[rdefLattice.type]"><path d="M108,-79.6874C108,-69.9173 108,-57.8534 108,-49.1323" stroke="#d4d4d4" fill="none"></path><polygon points="106.25,-79.8435 108,-84.8435 109.75,-79.8435 106.25,-79.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis"><span>ReachingDefinitionsAnalysis</span></li><li class="in" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis"><span>DataFlowAnalysis</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+                <span class="filtertype">Implicitly<br />
+                </span>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;():ReachingDefinitions.this.ReachingDefinitionsAnalysis"></a>
+      <a id="&lt;init&gt;:ReachingDefinitionsAnalysis"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ReachingDefinitionsAnalysis</span><span class="params">()</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@&lt;init&gt;():ReachingDefinitions.this.ReachingDefinitionsAnalysis" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis.P" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="P=ReachingDefinitions.this.global.icodes.BasicBlock"></a>
+      <a id="P:P"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">P</span><span class="result"> = <a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@P=ReachingDefinitions.this.global.icodes.BasicBlock" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A type for program points.</p><div class="fullcomment"><div class="comment cmt"><p>A type for program points.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> → <a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@##():Int" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a>
+      <a id="+(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>] performed by method any2stringadd in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a>
+      <a id="-&gt;[B](B):(ReachingDefinitionsAnalysis,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../../../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis#backwardAnalysis" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="backwardAnalysis(f:(DataFlowAnalysis.this.P,DataFlowAnalysis.this.lattice.Elem)=&gt;DataFlowAnalysis.this.lattice.Elem):Unit"></a>
+      <a id="backwardAnalysis((P,Elem)⇒Elem):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">backwardAnalysis</span><span class="params">(<span name="f">f: (<a href="#P=ReachingDefinitions.this.global.icodes.BasicBlock" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis.P">P</a>, <a href="ReachingDefinitions$rdefLattice$.html#Elem=scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.IState[scala.collection.immutable.ListSet[scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Definition],scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Stack]" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Elem">Elem</a>) ⇒ <a href="ReachingDefinitions$rdefLattice$.html#Elem=scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.IState[scala.collection.immutable.ListSet[scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Definition],scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Stack]" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Elem">Elem</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@backwardAnalysis(f:(DataFlowAnalysis.this.P,DataFlowAnalysis.this.lattice.Elem)=&gt;DataFlowAnalysis.this.lattice.Elem):Unit" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#drops" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="drops:scala.collection.mutable.Map[ReachingDefinitions.this.global.icodes.BasicBlock,Int]"></a>
+      <a id="drops:Map[Global.icodes.BasicBlock,Int]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">drops</span><span class="result">: <span class="extype" name="scala.collection.mutable.Map">Map</span>[<a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a>, <span class="extype" name="scala.Int">Int</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@drops:scala.collection.mutable.Map[ReachingDefinitions.this.global.icodes.BasicBlock,Int]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring((ReachingDefinitionsAnalysis)⇒Boolean,⇒Any):ReachingDefinitionsAnalysis"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a>
+      <a id="ensuring((ReachingDefinitionsAnalysis)⇒Boolean):ReachingDefinitionsAnalysis"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
+      <a id="ensuring(Boolean,⇒Any):ReachingDefinitionsAnalysis"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a>
+      <a id="ensuring(Boolean):ReachingDefinitionsAnalysis"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#findDefs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="findDefs(bb:ReachingDefinitions.this.global.icodes.BasicBlock,idx:Int,m:Int):List[(ReachingDefinitions.this.global.icodes.BasicBlock,Int)]"></a>
+      <a id="findDefs(Global.icodes.BasicBlock,Int,Int):List[(Global.icodes.BasicBlock,Int)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findDefs</span><span class="params">(<span name="bb">bb: <a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a></span>, <span name="idx">idx: <span class="extype" name="scala.Int">Int</span></span>, <span name="m">m: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="../../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[(<a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@findDefs(bb:ReachingDefinitions.this.global.icodes.BasicBlock,idx:Int,m:Int):List[(ReachingDefinitions.this.global.icodes.BasicBlock,Int)]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return the definitions that produced the topmost 'm' elements on the stack,
+ and that reach the instruction at index 'idx' in basic block 'bb'.</p>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#findDefs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="findDefs(bb:ReachingDefinitions.this.global.icodes.BasicBlock,idx:Int,m:Int,depth:Int):List[(ReachingDefinitions.this.global.icodes.BasicBlock,Int)]"></a>
+      <a id="findDefs(Global.icodes.BasicBlock,Int,Int,Int):List[(Global.icodes.BasicBlock,Int)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findDefs</span><span class="params">(<span name="bb">bb: <a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a></span>, <span name="idx">idx: <span class="extype" name="scala.Int">Int</span></span>, <span name="m">m: <span class="extype" name="scala.Int">Int</span></span>, <span name="depth">depth: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="../../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[(<a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a>, <span class="extype" name="scala.Int">Int</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@findDefs(bb:ReachingDefinitions.this.global.icodes.BasicBlock,idx:Int,m:Int,depth:Int):List[(ReachingDefinitions.this.global.icodes.BasicBlock,Int)]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return the instructions that produced the 'm' elements on the stack, below given 'depth'.</p><div class="fullcomment"><div class="comment cmt"><p>Return the instructions that produced the 'm' elements on the stack, below given 'depth'.
+ for instance, findefs(bb, idx, 1, 1) returns the instructions that might have produced the
+ value found below the topmost element of the stack.
+</p></div></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a>
+      <a id="formatted(String):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>] performed by method StringFormat in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis#forwardAnalysis" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="forwardAnalysis(f:(DataFlowAnalysis.this.P,DataFlowAnalysis.this.lattice.Elem)=&gt;DataFlowAnalysis.this.lattice.Elem):Unit"></a>
+      <a id="forwardAnalysis((P,Elem)⇒Elem):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">forwardAnalysis</span><span class="params">(<span name="f">f: (<a href="#P=ReachingDefinitions.this.global.icodes.BasicBlock" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis.P">P</a>, <a href="ReachingDefinitions$rdefLattice$.html#Elem=scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.IState[scala.collection.immutable.ListSet[scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Definition],scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Stack]" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Elem">Elem</a>) ⇒ <a href="ReachingDefinitions$rdefLattice$.html#Elem=scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.IState[scala.collection.immutable.ListSet[scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Definition],scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Stack]" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Elem">Elem</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@forwardAnalysis(f:(DataFlowAnalysis.this.P,DataFlowAnalysis.this.lattice.Elem)=&gt;DataFlowAnalysis.this.lattice.Elem):Unit" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements forward dataflow analysis: the transfer function is
+ applied when inputs to a Program point change, to obtain the new
+ output value.</p><div class="fullcomment"><div class="comment cmt"><p>Implements forward dataflow analysis: the transfer function is
+ applied when inputs to a Program point change, to obtain the new
+ output value.
+</p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>the transfer function.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#gen" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="gen:scala.collection.mutable.Map[ReachingDefinitions.this.global.icodes.BasicBlock,scala.collection.immutable.ListSet[(ReachingDefinitions.this.global.icodes.Local,ReachingDefinitions.this.global.icodes.BasicBlock,Int)]]"></a>
+      <a id="gen:Map[Global.icodes.BasicBlock,ListSet[(Global.icodes.Local,Global.icodes.BasicBlock,Int)]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">gen</span><span class="result">: <span class="extype" name="scala.collection.mutable.Map">Map</span>[<a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a>, <span class="extype" name="scala.collection.immutable.ListSet">ListSet</span>[(<a href="../../../Global$icodes$.html#LocalextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.Members.Local">Global.icodes.Local</a>, <a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a>, <span class="extype" name="scala.Int">Int</span>)]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@gen:scala.collection.mutable.Map[ReachingDefinitions.this.global.icodes.BasicBlock,scala.collection.immutable.ListSet[(ReachingDefinitions.this.global.icodes.Local,ReachingDefinitions.this.global.icodes.BasicBlock,Int)]]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#genAndKill" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="genAndKill(b:ReachingDefinitions.this.global.icodes.BasicBlock):(scala.collection.immutable.ListSet[ReachingDefinitionsAnalysis.this.lattice.Definition],scala.collection.immutable.ListSet[ReachingDefinitions.this.global.icodes.Local])"></a>
+      <a id="genAndKill(Global.icodes.BasicBlock):(ListSet[Definition],ListSet[Global.icodes.Local])"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">genAndKill</span><span class="params">(<span name="b">b: <a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a></span>)</span><span class="result">: (<span class="extype" name="scala.collection.immutable.ListSet">ListSet</span>[<a href="ReachingDefinitions$rdefLattice$.html#Definition=(ReachingDefinitions.this.global.icodes.Local,ReachingDefinitions.this.global.icodes.BasicBlock,Int)" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Definition">Definition</a>], <span class="extype" name="scala.collection.immutable.ListSet">ListSet</span>[<a href="../../../Global$icodes$.html#LocalextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.Members.Local">Global.icodes.Local</a>])</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@genAndKill(b:ReachingDefinitions.this.global.icodes.BasicBlock):(scala.collection.immutable.ListSet[ReachingDefinitionsAnalysis.this.lattice.Definition],scala.collection.immutable.ListSet[ReachingDefinitions.this.global.icodes.Local])" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis#in" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="in:scala.collection.mutable.Map[DataFlowAnalysis.this.P,DataFlowAnalysis.this.lattice.Elem]"></a>
+      <a id="in:Map[P,Elem]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">in</span><span class="result">: <span class="extype" name="scala.collection.mutable.Map">Map</span>[<a href="#P=ReachingDefinitions.this.global.icodes.BasicBlock" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis.P">P</a>, <a href="ReachingDefinitions$rdefLattice$.html#Elem=scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.IState[scala.collection.immutable.ListSet[scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Definition],scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Stack]" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Elem">Elem</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@in:scala.collection.mutable.Map[DataFlowAnalysis.this.P,DataFlowAnalysis.this.lattice.Elem]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#init" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="init(m:ReachingDefinitions.this.global.icodes.IMethod):Unit"></a>
+      <a id="init(Global.icodes.IMethod):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">init</span><span class="params">(<span name="m">m: <a href="../../../Global$icodes$.html#IMethodextendsMembers.this.IMember" class="extmbr" name="scala.tools.nsc.backend.icode.Members.IMethod">Global.icodes.IMethod</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@init(m:ReachingDefinitions.this.global.icodes.IMethod):Unit" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis#init" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="init(f:=&gt;Unit):Unit"></a>
+      <a id="init(⇒Unit):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">init</span><span class="params">(<span name="f">f: ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@init(f:=&gt;Unit):Unit" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#interpret" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="interpret(b:ReachingDefinitions.this.global.icodes.BasicBlock,idx:Int,in:ReachingDefinitionsAnalysis.this.lattice.Elem):ReachingDefinitionsAnalysis.this.lattice.Elem"></a>
+      <a id="interpret(Global.icodes.BasicBlock,Int,Elem):Elem"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">interpret</span><span class="params">(<span name="b">b: <a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a></span>, <span name="idx">idx: <span class="extype" name="scala.Int">Int</span></span>, <span name="in">in: <a href="ReachingDefinitions$rdefLattice$.html#Elem=scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.IState[scala.collection.immutable.ListSet[scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Definition],scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Stack]" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Elem">Elem</a></span>)</span><span class="result">: <a href="ReachingDefinitions$rdefLattice$.html#Elem=scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.IState[scala.collection.immutable.ListSet[scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Definition],scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Stack]" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Elem">Elem</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@interpret(b:ReachingDefinitions.this.global.icodes.BasicBlock,idx:Int,in:ReachingDefinitionsAnalysis.this.lattice.Elem):ReachingDefinitionsAnalysis.this.lattice.Elem" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return the reaching definitions corresponding to the point after idx.</p>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis#iterations" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="iterations:Int"></a>
+      <a id="iterations:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">iterations</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@iterations:Int" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">the number of times we iterated before reaching a fixpoint.</p><div class="fullcomment"><div class="comment cmt"><p>the number of times we iterated before reaching a fixpoint.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#kill" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="kill:scala.collection.mutable.Map[ReachingDefinitions.this.global.icodes.BasicBlock,scala.collection.immutable.ListSet[ReachingDefinitions.this.global.icodes.Local]]"></a>
+      <a id="kill:Map[Global.icodes.BasicBlock,ListSet[Global.icodes.Local]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">kill</span><span class="result">: <span class="extype" name="scala.collection.mutable.Map">Map</span>[<a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a>, <span class="extype" name="scala.collection.immutable.ListSet">ListSet</span>[<a href="../../../Global$icodes$.html#LocalextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.Members.Local">Global.icodes.Local</a>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@kill:scala.collection.mutable.Map[ReachingDefinitions.this.global.icodes.BasicBlock,scala.collection.immutable.ListSet[ReachingDefinitions.this.global.icodes.Local]]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#lattice" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lattice:ReachingDefinitions.this.rdefLattice.type"></a>
+      <a id="lattice:rdefLattice.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lattice</span><span class="result">: <a href="ReachingDefinitions$rdefLattice$.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice">rdefLattice</a>.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@lattice:ReachingDefinitions.this.rdefLattice.type" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> → <a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#method" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="method:ReachingDefinitions.this.global.icodes.IMethod"></a>
+      <a id="method:Global.icodes.IMethod"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">method</span><span class="result">: <a href="../../../Global$icodes$.html#IMethodextendsMembers.this.IMember" class="extmbr" name="scala.tools.nsc.backend.icode.Members.IMethod">Global.icodes.IMethod</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@method:ReachingDefinitions.this.global.icodes.IMethod" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis#out" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="out:scala.collection.mutable.Map[DataFlowAnalysis.this.P,DataFlowAnalysis.this.lattice.Elem]"></a>
+      <a id="out:Map[P,Elem]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">out</span><span class="result">: <span class="extype" name="scala.collection.mutable.Map">Map</span>[<a href="#P=ReachingDefinitions.this.global.icodes.BasicBlock" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis.P">P</a>, <a href="ReachingDefinitions$rdefLattice$.html#Elem=scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.IState[scala.collection.immutable.ListSet[scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Definition],scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Stack]" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Elem">Elem</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@out:scala.collection.mutable.Map[DataFlowAnalysis.this.P,DataFlowAnalysis.this.lattice.Elem]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#outStack" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="outStack:scala.collection.mutable.Map[ReachingDefinitions.this.global.icodes.BasicBlock,List[scala.collection.immutable.ListSet[(ReachingDefinitions.this.global.icodes.BasicBlock,Int)]]]"></a>
+      <a id="outStack:Map[Global.icodes.BasicBlock,collection.immutable.List[ListSet[(Global.icodes.BasicBlock,Int)]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">outStack</span><span class="result">: <span class="extype" name="scala.collection.mutable.Map">Map</span>[<a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a>, <span class="extype" name="scala.collection.immutable.List">collection.immutable.List</span>[<span class="extype" name="scala.collection.immutable.ListSet">ListSet</span>[(<a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a>, <span class="extype" name="scala.Int">Int</span>)]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@outStack:scala.collection.mutable.Map[ReachingDefinitions.this.global.icodes.BasicBlock,List[scala.collection.immutable.ListSet[(ReachingDefinitions.this.global.icodes.BasicBlock,Int)]]]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#run" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="run():Unit"></a>
+      <a id="run():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">run</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@run():Unit" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> → <a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis#stat" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="stat:Boolean"></a>
+      <a id="stat:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">stat</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@stat:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">collect statistics?</p><div class="fullcomment"><div class="comment cmt"><p>collect statistics?</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@toString():String" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> → AnyRef → <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis#updateReachingDefinition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="updateReachingDefinition(b:ReachingDefinitions.this.global.icodes.BasicBlock,idx:Int,rd:scala.collection.immutable.ListSet[ReachingDefinitionsAnalysis.this.lattice.Definition]):scala.collection.immutable.ListSet[ReachingDefinitionsAnalysis.this.lattice.Definition]"></a>
+      <a id="updateReachingDefinition(Global.icodes.BasicBlock,Int,ListSet[Definition]):ListSet[Definition]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">updateReachingDefinition</span><span class="params">(<span name="b">b: <a href="../../../Global$icodes$.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">Global.icodes.BasicBlock</a></span>, <span name="idx">idx: <span class="extype" name="scala.Int">Int</span></span>, <span name="rd">rd: <span class="extype" name="scala.collection.immutable.ListSet">ListSet</span>[<a href="ReachingDefinitions$rdefLattice$.html#Definition=(ReachingDefinitions.this.global.icodes.Local,ReachingDefinitions.this.global.icodes.BasicBlock,Int)" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Definition">Definition</a>]</span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.ListSet">ListSet</span>[<a href="ReachingDefinitions$rdefLattice$.html#Definition=(ReachingDefinitions.this.global.icodes.Local,ReachingDefinitions.this.global.icodes.BasicBlock,Int)" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice.Definition">Definition</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@updateReachingDefinition(b:ReachingDefinitions.this.global.icodes.BasicBlock,idx:Int,rd:scala.collection.immutable.ListSet[ReachingDefinitionsAnalysis.this.lattice.Definition]):scala.collection.immutable.ListSet[ReachingDefinitionsAnalysis.this.lattice.Definition]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis#visited" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="visited:scala.collection.mutable.HashSet[DataFlowAnalysis.this.P]"></a>
+      <a id="visited:HashSet[P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">visited</span><span class="result">: <span class="extype" name="scala.collection.mutable.HashSet">HashSet</span>[<a href="#P=ReachingDefinitions.this.global.icodes.BasicBlock" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis.P">P</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@visited:scala.collection.mutable.HashSet[DataFlowAnalysis.this.P]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis#worklist" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="worklist:scala.collection.mutable.Set[DataFlowAnalysis.this.P]"></a>
+      <a id="worklist:Set[P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">worklist</span><span class="result">: <span class="extype" name="scala.collection.mutable.Set">Set</span>[<a href="#P=ReachingDefinitions.this.global.icodes.BasicBlock" class="extmbr" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis.P">P</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@worklist:scala.collection.mutable.Set[DataFlowAnalysis.this.P]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a></dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a>
+      <a id="→[B](B):(ReachingDefinitionsAnalysis,B)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#scala.tools.nsc.backend.icode.analysis.ReachingDefinitions$ReachingDefinitionsAnalysis@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">
+              <h3>Inherited from <a href="DataFlowAnalysis.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.DataFlowAnalysis">DataFlowAnalysis</a>[<a href="ReachingDefinitions$rdefLattice$.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.rdefLattice">rdefLattice</a>.type]</h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../../../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="scala.tools.nsc.backend.icode.analysis.ReachingDefinitions.ReachingDefinitionsAnalysis">ReachingDefinitionsAnalysis</a>]
+              </h3>
+            </div>
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

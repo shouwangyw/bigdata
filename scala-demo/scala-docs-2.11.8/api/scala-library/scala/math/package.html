@@ -1,0 +1,1496 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>math - Scala Standard Library 2.11.8 - scala.math</title>
+          <meta name="description" content="math - Scala Standard Library 2.11.8 - scala.math" />
+          <meta name="keywords" content="math Scala Standard Library 2.11.8 scala.math" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'scala.math.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="scala">scala</a></p>
+        <h1>math</h1><span class="permalink">
+      <a href="../../index.html#scala.math.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">math</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>The package object <code>scala.math</code> contains methods for performing basic
+numeric operations such as elementary exponential, logarithmic, root and
+trigonometric functions.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/math/package.scala#L1" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.math"><span>math</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.math.BigDecimal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BigDecimalextendsScalaNumberwithScalaNumericConversionswithSerializable"></a>
+      <a id="BigDecimal:BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BigDecimal.html"><span class="name">BigDecimal</span></a><span class="result"> extends <span class="extype" name="scala.math.ScalaNumber">ScalaNumber</span> with <a href="ScalaNumericConversions.html" class="extype" name="scala.math.ScalaNumericConversions">ScalaNumericConversions</a> with <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@BigDecimalextendsScalaNumberwithScalaNumericConversionswithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"> <code>BigDecimal</code> represents decimal floating-point numbers of arbitrary precision.</p><div class="fullcomment"><div class="comment cmt"><p> <code>BigDecimal</code> represents decimal floating-point numbers of arbitrary precision.
+ By default, the precision approximately matches that of IEEE 128-bit floating
+ point numbers (34 decimal digits, <code>HALF_EVEN</code> rounding mode).  Within the range
+ of IEEE binary128 numbers, <code>BigDecimal</code> will agree with <code>BigInt</code> for both
+ equality and hash codes (and will agree with primitive types as well).  Beyond
+ that range--numbers with more than 4934 digits when written out in full--the
+ <code>hashCode</code> of <code>BigInt</code> and <code>BigDecimal</code> is allowed to diverge due to difficulty
+ in efficiently computing both the decimal representation in <code>BigDecimal</code> and the
+ binary representation in <code>BigInt</code>.</p><p> When creating a <code>BigDecimal</code> from a <code>Double</code> or <code>Float</code>, care must be taken as
+ the binary fraction representation of <code>Double</code> and <code>Float</code> does not easily
+ convert into a decimal representation.  Three explicit schemes are available
+ for conversion.  <code>BigDecimal.decimal</code> will convert the floating-point number
+ to a decimal text representation, and build a <code>BigDecimal</code> based on that.
+ <code>BigDecimal.binary</code> will expand the binary fraction to the requested or default
+ precision.  <code>BigDecimal.exact</code> will expand the binary fraction to the
+ full number of digits, thus producing the exact decimal value corresponding to
+ the binary fraction of that floating-point number.  <code>BigDecimal</code> equality
+ matches the decimal expansion of <code>Double</code>: <code>BigDecimal.decimal(0.1) == 0.1</code>.
+ Note that since <code>0.1f != 0.1</code>, the same is not true for <code>Float</code>.  Instead,
+ <code>0.1f == BigDecimal.decimal((0.1f).toDouble)</code>.</p><p> To test whether a <code>BigDecimal</code> number can be converted to a <code>Double</code> or
+ <code>Float</code> and then back without loss of information by using one of these
+ methods, test with <code>isDecimalDouble</code>, <code>isBinaryDouble</code>, or <code>isExactDouble</code>
+ or the corresponding <code>Float</code> versions.  Note that <code>BigInt</code>'s <code>isValidDouble</code>
+ will agree with <code>isExactDouble</code>, not the <code>isDecimalDouble</code> used by default.</p><p> <code>BigDecimal</code> uses the decimal representation of binary floating-point numbers
+ to determine equality and hash codes.  This yields different answers than
+ conversion between <code>Long</code> and <code>Double</code> values, where the exact form is used.
+ As always, since floating-point is a lossy representation, it is advisable to
+ take care when assuming identity will be maintained across multiple conversions.</p><p> <code>BigDecimal</code> maintains a <code>MathContext</code> that determines the rounding that
+ is applied to certain calculations.  In most cases, the value of the
+ <code>BigDecimal</code> is also rounded to the precision specified by the <code>MathContext</code>.
+ To create a <code>BigDecimal</code> with a different precision than its <code>MathContext</code>,
+ use <code>new BigDecimal(new java.math.BigDecimal(...), mc)</code>.  Rounding will
+ be applied on those mathematical operations that can dramatically change the
+ number of digits in a full representation, namely multiplication, division,
+ and powers.  The left-hand argument's <code>MathContext</code> always determines the
+ degree of rounding, if any, and is the one propagated through arithmetic
+ operations that do not apply rounding themselves.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.1</p></dd></dl></div>
+    </li><li name="scala.math.BigInt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BigIntextendsScalaNumberwithScalaNumericConversionswithSerializable"></a>
+      <a id="BigInt:BigInt"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BigInt.html"><span class="name">BigInt</span></a><span class="result"> extends <span class="extype" name="scala.math.ScalaNumber">ScalaNumber</span> with <a href="ScalaNumericConversions.html" class="extype" name="scala.math.ScalaNumericConversions">ScalaNumericConversions</a> with <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@BigIntextendsScalaNumberwithScalaNumericConversionswithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.0, 15/07/2003</p></dd></dl></div>
+    </li><li name="scala.math.Equiv" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Equiv[T]extendsAnywithSerializable"></a>
+      <a id="Equiv[T]:Equiv[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Equiv.html"><span class="name">Equiv</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Equiv[T]extendsAnywithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A trait for representing equivalence relations.</p><div class="fullcomment"><div class="comment cmt"><p>A trait for representing equivalence relations.  It is important to
+ distinguish between a type that can be compared for equality or
+ equivalence and a representation of equivalence on some type. This
+ trait is for representing the latter.</p><p> An <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a>
+ is a binary relation on a type. This relation is exposed as
+ the <code>equiv</code> method of the <code>Equiv</code> trait.  The relation must be:</p><ol class="decimal"><li>reflexive: <code>equiv(x, x) == true</code> for any x of type <code>T</code>.</li><li>symmetric: <code>equiv(x, y) == equiv(y, x)</code> for any <code>x</code> and <code>y</code> of type <code>T</code>.</li><li>transitive: if <code>equiv(x, y) == true</code> and <code>equiv(y, z) == true</code>, then
+      <code>equiv(x, z) == true</code> for any <code>x</code>, <code>y</code>, and <code>z</code> of type <code>T</code>.
+</li></ol></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.0, 2008-04-03</p></dd><dt>Since</dt><dd><p>2.7</p></dd></dl></div>
+    </li><li name="scala.math.Fractional" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Fractional[T]extendsNumeric[T]"></a>
+      <a id="Fractional[T]:Fractional[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Fractional.html"><span class="name">Fractional</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Numeric.html" class="extype" name="scala.math.Numeric">Numeric</a>[<span class="extype" name="scala.math.Fractional.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Fractional[T]extendsNumeric[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.math.Integral" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Integral[T]extendsNumeric[T]"></a>
+      <a id="Integral[T]:Integral[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Integral.html"><span class="name">Integral</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Numeric.html" class="extype" name="scala.math.Numeric">Numeric</a>[<span class="extype" name="scala.math.Integral.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Integral[T]extendsNumeric[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.math.LowPriorityEquiv" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LowPriorityEquivextendsAnyRef"></a>
+      <a id="LowPriorityEquiv:LowPriorityEquiv"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="LowPriorityEquiv.html"><span class="name">LowPriorityEquiv</span></a><span class="result"> extends <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@LowPriorityEquivextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.LowPriorityOrderingImplicits" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LowPriorityOrderingImplicitsextendsAnyRef"></a>
+      <a id="LowPriorityOrderingImplicits:LowPriorityOrderingImplicits"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="LowPriorityOrderingImplicits.html"><span class="name">LowPriorityOrderingImplicits</span></a><span class="result"> extends <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@LowPriorityOrderingImplicitsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Numeric" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Numeric[T]extendsOrdering[T]"></a>
+      <a id="Numeric[T]:Numeric[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Numeric.html"><span class="name">Numeric</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Ordering.html" class="extype" name="scala.math.Ordering">Ordering</a>[<span class="extype" name="scala.math.Numeric.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Numeric[T]extendsOrdering[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordered" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Ordered[A]extendsAnywithComparable[A]"></a>
+      <a id="Ordered[A]:Ordered[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordered.html"><span class="name">Ordered</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="scala.math.Ordered.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Ordered[A]extendsAnywithComparable[A]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A trait for data that have a single, natural ordering.</p><div class="fullcomment"><div class="comment cmt"><p>A trait for data that have a single, natural ordering.  See
+ <a href="Ordering.html" class="extype" name="scala.math.Ordering">scala.math.Ordering</a> before using this trait for
+ more information about whether to use <a href="Ordering.html" class="extype" name="scala.math.Ordering">scala.math.Ordering</a> instead.</p><p> Classes that implement this trait can be sorted with
+ <a href="../util/Sorting$.html" class="extype" name="scala.util.Sorting">scala.util.Sorting</a> and can be compared with standard comparison operators
+ (e.g. &gt; and &lt;).</p><p> Ordered should be used for data with a single, natural ordering (like
+ integers) while Ordering allows for multiple ordering implementations.
+ An Ordering instance will be implicitly created if necessary.</p><p> <a href="Ordering.html" class="extype" name="scala.math.Ordering">scala.math.Ordering</a> is an alternative to this trait that allows multiple orderings to be
+ defined for the same type.</p><p> <a href="PartiallyOrdered.html" class="extype" name="scala.math.PartiallyOrdered">scala.math.PartiallyOrdered</a> is an alternative to this trait for partially ordered data.</p><p> For example, create a simple class that implements <code>Ordered</code> and then sort it with <a href="../util/Sorting$.html" class="extype" name="scala.util.Sorting">scala.util.Sorting</a>:</p><pre><span class="kw">case</span> <span class="kw">class</span> OrderedClass(n:<span class="std">Int</span>) <span class="kw">extends</span> Ordered[OrderedClass] {
+	<span class="kw">def</span> compare(that: OrderedClass) =  <span class="kw">this</span>.n - that.n
+}
+
+<span class="kw">val</span> x = <span class="std">Array</span>(OrderedClass(<span class="num">1</span>), OrderedClass(<span class="num">5</span>), OrderedClass(<span class="num">3</span>))
+scala.util.Sorting.quickSort(x)
+x</pre><p> It is important that the <code>equals</code> method for an instance of <code>Ordered[A]</code> be consistent with the
+ compare method. However, due to limitations inherent in the type erasure semantics, there is no
+ reasonable way to provide a default implementation of equality for instances of <code>Ordered[A]</code>.
+ Therefore, if you need to be able to use equality on an instance of <code>Ordered[A]</code> you must
+ provide it yourself either when inheriting or instantiating.</p><p> It is important that the <code>hashCode</code> method for an instance of <code>Ordered[A]</code> be consistent with
+ the <code>compare</code> method. However, it is not possible to provide a sensible default implementation.
+ Therefore, if you need to be able compute the hash of an instance of <code>Ordered[A]</code> you must
+ provide it yourself either when inheriting or instantiating.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.1, 2006-07-24</p></dd><dt>See also</dt><dd><span class="cmt"><p><a href="Ordering.html" class="extype" name="scala.math.Ordering">scala.math.Ordering</a>, <a href="PartiallyOrdered.html" class="extype" name="scala.math.PartiallyOrdered">scala.math.PartiallyOrdered</a></p></span></dd></dl></div>
+    </li><li name="scala.math.Ordering" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Ordering[T]extendsComparator[T]withPartialOrdering[T]withSerializable"></a>
+      <a id="Ordering[T]:Ordering[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering.html"><span class="name">Ordering</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="java.util.Comparator">Comparator</span>[<span class="extype" name="scala.math.Ordering.T">T</span>] with <a href="PartialOrdering.html" class="extype" name="scala.math.PartialOrdering">PartialOrdering</a>[<span class="extype" name="scala.math.Ordering.T">T</span>] with <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Ordering[T]extendsComparator[T]withPartialOrdering[T]withSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Ordering is a trait whose instances each represent a strategy for sorting
+instances of a type.</p><div class="fullcomment"><div class="comment cmt"><p>Ordering is a trait whose instances each represent a strategy for sorting
+instances of a type.</p><p>Ordering's companion object defines many implicit objects to deal with
+subtypes of AnyVal (e.g. Int, Double), String, and others.</p><p>To sort instances by one or more member variables, you can take advantage
+of these built-in orderings using Ordering.by and Ordering.on:</p><pre><span class="kw">import</span> scala.util.Sorting
+<span class="kw">val</span> pairs = <span class="std">Array</span>((<span class="lit">"a"</span>, <span class="num">5</span>, <span class="num">2</span>), (<span class="lit">"c"</span>, <span class="num">3</span>, <span class="num">1</span>), (<span class="lit">"b"</span>, <span class="num">1</span>, <span class="num">3</span>))
+
+<span class="cmt">// sort by 2nd element</span>
+Sorting.quickSort(pairs)(Ordering.by[(<span class="std">String</span>, <span class="std">Int</span>, <span class="std">Int</span>), <span class="std">Int</span>](_._2))
+
+<span class="cmt">// sort by the 3rd element, then 1st</span>
+Sorting.quickSort(pairs)(Ordering[(<span class="std">Int</span>, <span class="std">String</span>)].on(x <span class="kw">=&gt;</span> (x._3, x._1)))</pre><p>An Ordering[T] is implemented by specifying compare(a:T, b:T), which
+decides how to order two instances a and b. Instances of Ordering[T] can be
+used by things like scala.util.Sorting to sort collections like Array[T].</p><p>For example:</p><pre><span class="kw">import</span> scala.util.Sorting
+
+<span class="kw">case</span> <span class="kw">class</span> Person(name:<span class="std">String</span>, age:<span class="std">Int</span>)
+<span class="kw">val</span> people = <span class="std">Array</span>(Person(<span class="lit">"bob"</span>, <span class="num">30</span>), Person(<span class="lit">"ann"</span>, <span class="num">32</span>), Person(<span class="lit">"carl"</span>, <span class="num">19</span>))
+
+<span class="cmt">// sort by age</span>
+<span class="kw">object</span> AgeOrdering <span class="kw">extends</span> Ordering[Person] {
+  <span class="kw">def</span> compare(a:Person, b:Person) = a.age compare b.age
+}
+Sorting.quickSort(people)(AgeOrdering)</pre><p>This trait and scala.math.Ordered both provide this same functionality, but
+in different ways. A type T can be given a single way to order itself by
+extending Ordered. Using Ordering, this same type may be sorted in many
+other ways. Ordered and Ordering both provide implicits allowing them to be
+used interchangeably.</p><p>You can import scala.math.Ordering.Implicits to gain access to other
+implicit orderings.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../annotation/implicitNotFound.html" class="extype" name="scala.annotation.implicitNotFound">implicitNotFound</a></span><span class="args">(<span>
+      msg = 
+      <span class="defval" name="&quot;No implicit Ordering defined for ${T}.&quot;">...</span>
+    </span>)</span>
+              
+        </dd><dt>Version</dt><dd><p>0.9.5, 2008-04-15</p></dd><dt>Since</dt><dd><p>2.7</p></dd><dt>See also</dt><dd><span class="cmt"><p><a href="Ordered.html" class="extype" name="scala.math.Ordered">scala.math.Ordered</a>, <a href="../util/Sorting$.html" class="extype" name="scala.util.Sorting">scala.util.Sorting</a></p></span></dd></dl></div>
+    </li><li name="scala.math.PartialOrdering" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="PartialOrdering[T]extendsEquiv[T]"></a>
+      <a id="PartialOrdering[T]:PartialOrdering[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PartialOrdering.html"><span class="name">PartialOrdering</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Equiv.html" class="extype" name="scala.math.Equiv">Equiv</a>[<span class="extype" name="scala.math.PartialOrdering.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@PartialOrdering[T]extendsEquiv[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A trait for representing partial orderings.</p><div class="fullcomment"><div class="comment cmt"><p>A trait for representing partial orderings.  It is important to
+ distinguish between a type that has a partial order and a representation
+ of partial ordering on some type.  This trait is for representing the
+ latter.</p><p> A <a href="http://en.wikipedia.org/wiki/Partial_order" target="_blank">partial ordering</a> is a
+ binary relation on a type <code>T</code>, exposed as the <code>lteq</code> method of this trait.
+ This relation must be:</p><ul><li>reflexive: <code>lteq(x, x) == <b>true</b></code>, for any <code>x</code> of type <code>T</code>.</li><li>anti-symmetric: if <code>lteq(x, y) == <b>true</b></code> and
+   <code>lteq(y, x) == <b>true</b></code>
+   then <code>equiv(x, y) == <b>true</b></code>, for any <code>x</code> and <code>y</code> of type <code>T</code>.</li><li>transitive: if <code>lteq(x, y) == <b>true</b></code> and
+   <code>lteq(y, z) == <b>true</b></code> then <code>lteq(x, z) == <b>true</b></code>,
+   for any <code>x</code>, <code>y</code>, and <code>z</code> of type <code>T</code>.</li></ul><p> Additionally, a partial ordering induces an
+ <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a>
+ on a type <code>T</code>: <code>x</code> and <code>y</code> of type <code>T</code> are equivalent if and only if
+ <code>lteq(x, y) &amp;&amp; lteq(y, x) == <b>true</b></code>. This equivalence relation is
+ exposed as the <code>equiv</code> method, inherited from the
+ <a href="Equiv.html" class="extype" name="scala.math.Equiv">Equiv</a> trait.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.0, 2008-04-0-3</p></dd><dt>Since</dt><dd><p>2.7</p></dd></dl></div>
+    </li><li name="scala.math.PartiallyOrdered" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="PartiallyOrdered[+A]extendsAnyRef"></a>
+      <a id="PartiallyOrdered[+A]:PartiallyOrdered[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PartiallyOrdered.html"><span class="name">PartiallyOrdered</span></a><span class="tparams">[<span name="A">+A</span>]</span><span class="result"> extends <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@PartiallyOrdered[+A]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A class for partially ordered data.</p><div class="fullcomment"><div class="comment cmt"><p>A class for partially ordered data.
+</p></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.0, 23/04/2004</p></dd></dl></div>
+    </li><li name="scala.math.ScalaNumericAnyConversions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ScalaNumericAnyConversionsextendsAny"></a>
+      <a id="ScalaNumericAnyConversions:ScalaNumericAnyConversions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalaNumericAnyConversions.html"><span class="name">ScalaNumericAnyConversions</span></a><span class="result"> extends <a href="../Any.html" class="extype" name="scala.Any">Any</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@ScalaNumericAnyConversionsextendsAny" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Conversions which present a consistent conversion interface
+ across all the numeric types, suitable for use in value classes.</p>
+    </li><li name="scala.math.ScalaNumericConversions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ScalaNumericConversionsextendsScalaNumberwithScalaNumericAnyConversions"></a>
+      <a id="ScalaNumericConversions:ScalaNumericConversions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalaNumericConversions.html"><span class="name">ScalaNumericConversions</span></a><span class="result"> extends <span class="extype" name="scala.math.ScalaNumber">ScalaNumber</span> with <a href="ScalaNumericAnyConversions.html" class="extype" name="scala.math.ScalaNumericAnyConversions">ScalaNumericAnyConversions</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@ScalaNumericConversionsextendsScalaNumberwithScalaNumericAnyConversions" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A slightly more specific conversion trait for classes which
+ extend ScalaNumber (which excludes value classes.)
+</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.math.BigDecimal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BigDecimal"></a>
+      <a id="BigDecimal:BigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BigDecimal$.html"><span class="name">BigDecimal</span></a><span class="result"> extends <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@BigDecimal" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.1</p></dd><dt>Since</dt><dd><p>2.7</p></dd></dl></div>
+    </li><li name="scala.math.BigInt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BigInt"></a>
+      <a id="BigInt:BigInt"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BigInt$.html"><span class="name">BigInt</span></a><span class="result"> extends <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@BigInt" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Version</dt><dd><p>1.0, 15/07/2003</p></dd><dt>Since</dt><dd><p>2.1</p></dd></dl></div>
+    </li><li name="scala.math#E" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="E:Double(2.718281828459045)"></a>
+      <a id="E:Double(2.718281828459045)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">E</span><span class="result">: Double(2.718281828459045)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@E:Double(2.718281828459045)" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The <code>double</code> value that is closer than any other to <code>e</code>, the base of
+ the natural logarithms.</p>
+    </li><li name="scala.math.Equiv" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Equiv"></a>
+      <a id="Equiv:Equiv"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Equiv$.html"><span class="name">Equiv</span></a><span class="result"> extends <a href="LowPriorityEquiv.html" class="extype" name="scala.math.LowPriorityEquiv">LowPriorityEquiv</a> with <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Equiv" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Fractional" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Fractional"></a>
+      <a id="Fractional:Fractional"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Fractional$.html"><span class="name">Fractional</span></a><span class="result"> extends <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Fractional" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#IEEEremainder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IEEEremainder(x:Double,y:Double):Double"></a>
+      <a id="IEEEremainder(Double,Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">IEEEremainder</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>, <span name="y">y: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@IEEEremainder(x:Double,y:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Integral" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Integral"></a>
+      <a id="Integral:Integral"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Integral$.html"><span class="name">Integral</span></a><span class="result"> extends <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Integral" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Numeric" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Numeric"></a>
+      <a id="Numeric:Numeric"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Numeric$.html"><span class="name">Numeric</span></a><span class="result"> extends <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Numeric" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Since</dt><dd><p>2.8</p></dd></dl></div>
+    </li><li name="scala.math.Ordered" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Ordered"></a>
+      <a id="Ordered:Ordered"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordered$.html"><span class="name">Ordered</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Ordered" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math.Ordering" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Ordering"></a>
+      <a id="Ordering:Ordering"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ordering$.html"><span class="name">Ordering</span></a><span class="result"> extends <a href="LowPriorityOrderingImplicits.html" class="extype" name="scala.math.LowPriorityOrderingImplicits">LowPriorityOrderingImplicits</a> with <a href="../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Ordering" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This is the companion object for the <a href="Ordering.html" class="extype" name="scala.math.Ordering">scala.math.Ordering</a> trait.</p><div class="fullcomment"><div class="comment cmt"><p>This is the companion object for the <a href="Ordering.html" class="extype" name="scala.math.Ordering">scala.math.Ordering</a> trait.</p><p>It contains many implicit orderings as well as well as methods to construct
+new orderings.
+</p></div></div>
+    </li><li name="scala.math#Pi" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Pi:Double(3.141592653589793)"></a>
+      <a id="Pi:Double(3.141592653589793)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Pi</span><span class="result">: Double(3.141592653589793)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@Pi:Double(3.141592653589793)" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The <code>double</code> value that is closer than any other to <code>pi</code>, the ratio of
+ the circumference of a circle to its diameter.</p>
+    </li><li name="scala.math#abs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="abs(x:Double):Double"></a>
+      <a id="abs(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">abs</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@abs(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#abs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="abs(x:Float):Float"></a>
+      <a id="abs(Float):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">abs</span><span class="params">(<span name="x">x: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>)</span><span class="result">: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@abs(x:Float):Float" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#abs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="abs(x:Long):Long"></a>
+      <a id="abs(Long):Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">abs</span><span class="params">(<span name="x">x: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@abs(x:Long):Long" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#abs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="abs(x:Int):Int"></a>
+      <a id="abs(Int):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">abs</span><span class="params">(<span name="x">x: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@abs(x:Int):Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#acos" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="acos(x:Double):Double"></a>
+      <a id="acos(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">acos</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@acos(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#asin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="asin(x:Double):Double"></a>
+      <a id="asin(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asin</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@asin(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#atan" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="atan(x:Double):Double"></a>
+      <a id="atan(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">atan</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@atan(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#atan2" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="atan2(y:Double,x:Double):Double"></a>
+      <a id="atan2(Double,Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">atan2</span><span class="params">(<span name="y">y: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>, <span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@atan2(y:Double,x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Converts rectangular coordinates <code>(x, y)</code> to polar <code>(r, theta)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Converts rectangular coordinates <code>(x, y)</code> to polar <code>(r, theta)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">y</dt><dd class="cmt"><p>the abscissa coordinate</p></dd><dt class="param">x</dt><dd class="cmt"><p>the ordinate coordinate</p></dd><dt>returns</dt><dd class="cmt"><p>the <i>theta</i> component of the point <code>(r, theta)</code> in polar
+         coordinates that corresponds to the point <code>(x, y)</code> in
+         Cartesian coordinates.</p></dd></dl></div>
+    </li><li name="scala.math#cbrt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cbrt(x:Double):Double"></a>
+      <a id="cbrt(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cbrt</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@cbrt(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the cube root of the given <code>Double</code> value.</p>
+    </li><li name="scala.math#ceil" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ceil(x:Double):Double"></a>
+      <a id="ceil(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ceil</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@ceil(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#cos" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cos(x:Double):Double"></a>
+      <a id="cos(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cos</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@cos(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#cosh" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cosh(x:Double):Double"></a>
+      <a id="cosh(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cosh</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@cosh(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the hyperbolic cosine of the given <code>Double</code> value.</p>
+    </li><li name="scala.math#exp" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exp(x:Double):Double"></a>
+      <a id="exp(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exp</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@exp(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns Euler's number <code>e</code> raised to the power of a <code>double</code> value.</p><div class="fullcomment"><div class="comment cmt"><p>Returns Euler's number <code>e</code> raised to the power of a <code>double</code> value.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>the exponent to raise <code>e</code> to.</p></dd><dt>returns</dt><dd class="cmt"><p>the value <code>e<sup>a</sup></code>, where <code>e</code> is the base of the natural
+         logarithms.</p></dd></dl></div>
+    </li><li name="scala.math#expm1" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="expm1(x:Double):Double"></a>
+      <a id="expm1(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">expm1</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@expm1(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns <code>exp(x) - 1</code>.</p>
+    </li><li name="scala.math#floor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="floor(x:Double):Double"></a>
+      <a id="floor(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">floor</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@floor(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#hypot" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="hypot(x:Double,y:Double):Double"></a>
+      <a id="hypot(Double,Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hypot</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>, <span name="y">y: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@hypot(x:Double,y:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the square root of the sum of the squares of both given <code>Double</code>
+values without intermediate underflow or overflow.</p>
+    </li><li name="scala.math#log" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="log(x:Double):Double"></a>
+      <a id="log(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@log(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the natural logarithm of a <code>double</code> value.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the natural logarithm of a <code>double</code> value.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>the number to take the natural logarithm of</p></dd><dt>returns</dt><dd class="cmt"><p>the value <code>logₑ(x)</code> where <code>e</code> is Eulers number</p></dd></dl></div>
+    </li><li name="scala.math#log10" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="log10(x:Double):Double"></a>
+      <a id="log10(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log10</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@log10(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the base 10 logarithm of the given <code>Double</code> value.</p>
+    </li><li name="scala.math#log1p" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="log1p(x:Double):Double"></a>
+      <a id="log1p(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log1p</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@log1p(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the natural logarithm of the sum of the given <code>Double</code> value and 1.</p>
+    </li><li name="scala.math#max" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="max(x:Double,y:Double):Double"></a>
+      <a id="max(Double,Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">max</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>, <span name="y">y: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@max(x:Double,y:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#max" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="max(x:Float,y:Float):Float"></a>
+      <a id="max(Float,Float):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">max</span><span class="params">(<span name="x">x: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>, <span name="y">y: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>)</span><span class="result">: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@max(x:Float,y:Float):Float" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#max" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="max(x:Long,y:Long):Long"></a>
+      <a id="max(Long,Long):Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">max</span><span class="params">(<span name="x">x: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="y">y: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@max(x:Long,y:Long):Long" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#max" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="max(x:Int,y:Int):Int"></a>
+      <a id="max(Int,Int):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">max</span><span class="params">(<span name="x">x: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="y">y: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@max(x:Int,y:Int):Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#min" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="min(x:Double,y:Double):Double"></a>
+      <a id="min(Double,Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">min</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>, <span name="y">y: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@min(x:Double,y:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#min" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="min(x:Float,y:Float):Float"></a>
+      <a id="min(Float,Float):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">min</span><span class="params">(<span name="x">x: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>, <span name="y">y: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>)</span><span class="result">: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@min(x:Float,y:Float):Float" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#min" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="min(x:Long,y:Long):Long"></a>
+      <a id="min(Long,Long):Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">min</span><span class="params">(<span name="x">x: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>, <span name="y">y: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@min(x:Long,y:Long):Long" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#min" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="min(x:Int,y:Int):Int"></a>
+      <a id="min(Int,Int):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">min</span><span class="params">(<span name="x">x: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="y">y: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@min(x:Int,y:Int):Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#pow" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="pow(x:Double,y:Double):Double"></a>
+      <a id="pow(Double,Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pow</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>, <span name="y">y: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@pow(x:Double,y:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the value of the first argument raised to the power of the
+ second argument.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the value of the first argument raised to the power of the
+ second argument.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>the base.</p></dd><dt class="param">y</dt><dd class="cmt"><p>the exponent.</p></dd><dt>returns</dt><dd class="cmt"><p>the value <code>x<sup>y</sup></code>.</p></dd></dl></div>
+    </li><li name="scala.math#random" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="random:Double"></a>
+      <a id="random:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">random</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@random:Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a <code>double</code> value with a positive sign, greater than or equal
+ to <code>0.0</code> and less than <code>1.0</code>.</p>
+    </li><li name="scala.math#rint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rint(x:Double):Double"></a>
+      <a id="rint(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rint</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@rint(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the <code>double</code> value that is closest in value to the
+ argument and is equal to a mathematical integer.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the <code>double</code> value that is closest in value to the
+ argument and is equal to a mathematical integer.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>a <code>double</code> value</p></dd><dt>returns</dt><dd class="cmt"><p>the closest floating-point value to a that is equal to a
+         mathematical integer.</p></dd></dl></div>
+    </li><li name="scala.math#round" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="round(x:Double):Long"></a>
+      <a id="round(Double):Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">round</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@round(x:Double):Long" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the closest <code>Long</code> to the argument.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the closest <code>Long</code> to the argument.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>a floating-point value to be rounded to a <code>Long</code>.</p></dd><dt>returns</dt><dd class="cmt"><p>the value of the argument rounded to the nearest<code>long</code> value.</p></dd></dl></div>
+    </li><li name="scala.math#round" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="round(x:Float):Int"></a>
+      <a id="round(Float):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">round</span><span class="params">(<span name="x">x: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>)</span><span class="result">: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@round(x:Float):Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the closest <code>Int</code> to the argument.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the closest <code>Int</code> to the argument.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>a floating-point value to be rounded to a <code>Int</code>.</p></dd><dt>returns</dt><dd class="cmt"><p>the value of the argument rounded to the nearest <code>Int</code> value.</p></dd></dl></div>
+    </li><li name="scala.math#signum" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="signum(x:Double):Double"></a>
+      <a id="signum(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">signum</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@signum(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#signum" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="signum(x:Float):Float"></a>
+      <a id="signum(Float):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">signum</span><span class="params">(<span name="x">x: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>)</span><span class="result">: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@signum(x:Float):Float" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#signum" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="signum(x:Long):Long"></a>
+      <a id="signum(Long):Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">signum</span><span class="params">(<span name="x">x: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@signum(x:Long):Long" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#signum" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="signum(x:Int):Int"></a>
+      <a id="signum(Int):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">signum</span><span class="params">(<span name="x">x: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@signum(x:Int):Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Note that these are not pure forwarders to the java versions.</p><div class="fullcomment"><div class="comment cmt"><p>Note that these are not pure forwarders to the java versions.
+ In particular, the return type of java.lang.Long.signum is Int,
+ but here it is widened to Long so that each overloaded variant
+ will return the same numeric type it is passed.
+</p></div></div>
+    </li><li name="scala.math#sin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sin(x:Double):Double"></a>
+      <a id="sin(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sin</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@sin(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#sinh" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sinh(x:Double):Double"></a>
+      <a id="sinh(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sinh</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@sinh(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the hyperbolic sine of the given <code>Double</code> value.</p>
+    </li><li name="scala.math#sqrt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="sqrt(x:Double):Double"></a>
+      <a id="sqrt(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sqrt</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@sqrt(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the square root of a <code>double</code> value.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the square root of a <code>double</code> value.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>the number to take the square root of</p></dd><dt>returns</dt><dd class="cmt"><p>the value √x</p></dd></dl></div>
+    </li><li name="scala.math#tan" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="tan(x:Double):Double"></a>
+      <a id="tan(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tan</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@tan(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.math#tanh" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="tanh(x:Double):Double"></a>
+      <a id="tanh(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tanh</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@tanh(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the hyperbolic tangent of the given <code>Double</code> value.</p>
+    </li><li name="scala.math#toDegrees" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toDegrees(x:Double):Double"></a>
+      <a id="toDegrees(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toDegrees</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@toDegrees(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Converts an angle measured in radians to an approximately equivalent
+ angle measured in degrees.</p><div class="fullcomment"><div class="comment cmt"><p>Converts an angle measured in radians to an approximately equivalent
+ angle measured in degrees.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>angle, in radians</p></dd><dt>returns</dt><dd class="cmt"><p>the measurement of the angle <code>x</code> in degrees.</p></dd></dl></div>
+    </li><li name="scala.math#toRadians" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toRadians(x:Double):Double"></a>
+      <a id="toRadians(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toRadians</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@toRadians(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Converts an angle measured in degrees to an approximately equivalent
+ angle measured in radians.</p><div class="fullcomment"><div class="comment cmt"><p>Converts an angle measured in degrees to an approximately equivalent
+ angle measured in radians.
+</p></div><dl class="paramcmts block"><dt class="param">x</dt><dd class="cmt"><p>an angle, in degrees</p></dd><dt>returns</dt><dd class="cmt"><p>the measurement of the angle <code>x</code> in radians.</p></dd></dl></div>
+    </li><li name="scala.math#ulp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ulp(x:Float):Float"></a>
+      <a id="ulp(Float):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ulp</span><span class="params">(<span name="x">x: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>)</span><span class="result">: <a href="../Float.html" class="extype" name="scala.Float">Float</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@ulp(x:Float):Float" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the size of an ulp of the given <code>Float</code> value.</p>
+    </li><li name="scala.math#ulp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ulp(x:Double):Double"></a>
+      <a id="ulp(Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ulp</span><span class="params">(<span name="x">x: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>)</span><span class="result">: <a href="../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@ulp(x:Double):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the size of an ulp of the given <code>Double</code> value.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="scala.math#round" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="round(x:Long):Long"></a>
+      <a id="round(Long):Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 2.11.0) This is an integer type; there is no reason to round it.  Perhaps you meant to call this with a floating-point value?">round</span><span class="params">(<span name="x">x: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>)</span><span class="result">: <a href="../Long.html" class="extype" name="scala.Long">Long</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#scala.math.package@round(x:Long):Long" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">There is no reason to round a <code>Long</code>, but this method prevents unintended conversion to <code>Float</code> followed by rounding to <code>Int</code>.</p><div class="fullcomment"><div class="comment cmt"><p>There is no reason to round a <code>Long</code>, but this method prevents unintended conversion to <code>Float</code> followed by rounding to <code>Int</code>.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> This is an integer type; there is no reason to round it.  Perhaps you meant to call this with a floating-point value?</p></dd></dl></div>
+    </li></ol>
+            </div>
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

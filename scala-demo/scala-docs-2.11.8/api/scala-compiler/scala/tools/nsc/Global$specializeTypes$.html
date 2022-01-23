@@ -1,0 +1,1744 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>specializeTypes - Scala Compiler 2.11.8 - scala.tools.nsc.Global.specializeTypes</title>
+          <meta name="description" content="specializeTypes - Scala Compiler 2.11.8 - scala.tools.nsc.Global.specializeTypes" />
+          <meta name="keywords" content="specializeTypes Scala Compiler 2.11.8 scala.tools.nsc.Global.specializeTypes" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.tools.nsc.Global$specializeTypes$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Object" src="../../../lib/object_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.tools">tools</a>.<a href="package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="Global.html" class="extype" name="scala.tools.nsc.Global">Global</a></p>
+        <h1>specializeTypes</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="Global.html" class="extype" name="scala.tools.nsc.Global">package Global</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializeTypes</span><span class="result"> extends <a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/compiler/scala/tools/nsc/Global.scala#L1" target="_blank">Global.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a>, <a href="transform/TypingTransformers.html" class="extype" name="scala.tools.nsc.transform.TypingTransformers">TypingTransformers</a>, <a href="transform/InfoTransform.html" class="extype" name="scala.tools.nsc.transform.InfoTransform">InfoTransform</a>, <a href="transform/Transform.html" class="extype" name="scala.tools.nsc.transform.Transform">Transform</a>, <a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a>, <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 1520.00 94.00" height="94pt" width="1520pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 90)" class="graph" id="graph0"><polygon points="-4,4 -4,-90 1516,-90 1516,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node outside class" id="graph1_0"><g id="a_outside class|graph1_0"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.SpecializationDuplicator" xlink:href="transform/SpecializeTypes$SpecializationDuplicator.html#inheritance-diagram"><polygon points="149,-25 1.42109e-14,-25 1.42109e-14,-0 149,-0 149,-25" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-9.5" x="31.5" text-anchor="start">SpecializationDuplicator</text></a></g></g><!-- node1 --><g class="node outside class" id="graph1_1"><g id="a_outside class|graph1_1"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.Duplicator" xlink:href="transform/SpecializeTypes$Duplicator.html#inheritance-diagram"><polygon points="118.5,-86 30.5,-86 30.5,-61 118.5,-61 118.5,-86" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-80.5" x="40.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-70.5" x="61.5" text-anchor="start">Duplicator</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="SpecializationDuplicator is a subtype of Duplicator"><path d="M74.5,-55.6874C74.5,-45.9173 74.5,-33.8534 74.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="72.7501,-55.8435 74.5,-60.8435 76.2501,-55.8435 72.7501,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node outside class" id="graph1_2"><g id="a_outside class|graph1_2"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.NormalizedMember" xlink:href="transform/SpecializeTypes$NormalizedMember.html#inheritance-diagram"><polygon points="296,-25 167,-25 167,-0 296,-0 296,-25" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="177.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-9.5" x="198.5" text-anchor="start">NormalizedMember</text></a></g></g><!-- node3 --><g class="node outside class" id="graph1_3"><g id="a_outside class|graph1_3"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.SpecializedInnerClass" xlink:href="transform/SpecializeTypes$SpecializedInnerClass.html#inheritance-diagram"><polygon points="455,-25 314,-25 314,-0 455,-0 455,-25" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="324.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-9.5" x="345.5" text-anchor="start">SpecializedInnerClass</text></a></g></g><!-- node4 --><g class="node outside class" id="graph1_4"><g id="a_outside class|graph1_4"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.SpecialOverride" xlink:href="transform/SpecializeTypes$SpecialOverride.html#inheritance-diagram"><polygon points="585.5,-25 473.5,-25 473.5,-0 585.5,-0 585.5,-25" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="483.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-9.5" x="504.5" text-anchor="start">SpecialOverride</text></a></g></g><!-- node5 --><g class="node outside class" id="graph1_5"><g id="a_outside class|graph1_5"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.Implementation" xlink:href="transform/SpecializeTypes$Implementation.html#inheritance-diagram"><polygon points="715,-25 604,-25 604,-0 715,-0 715,-25" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="614.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-9.5" x="635.5" text-anchor="start">Implementation</text></a></g></g><!-- node6 --><g class="node outside class" id="graph1_6"><g id="a_outside class|graph1_6"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.SpecializedAccessor" xlink:href="transform/SpecializeTypes$SpecializedAccessor.html#inheritance-diagram"><polygon points="869.5,-25 733.5,-25 733.5,-0 869.5,-0 869.5,-25" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="743.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-9.5" x="764.5" text-anchor="start">SpecializedAccessor</text></a></g></g><!-- node7 --><g class="node outside class" id="graph1_7"><g id="a_outside class|graph1_7"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.SpecialSuperAccessor" xlink:href="transform/SpecializeTypes$SpecialSuperAccessor.html#inheritance-diagram"><polygon points="1031.5,-25 887.5,-25 887.5,-0 1031.5,-0 1031.5,-25" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="897.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-9.5" x="918.5" text-anchor="start">SpecialSuperAccessor</text></a></g></g><!-- node8 --><g class="node outside class" id="graph1_8"><g id="a_outside class|graph1_8"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.Abstract" xlink:href="transform/SpecializeTypes$Abstract.html#inheritance-diagram"><polygon points="1131,-25 1050,-25 1050,-0 1131,-0 1131,-25" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="1060.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-9.5" x="1081.5" text-anchor="start">Abstract</text></a></g></g><!-- node9 --><g class="node outside class" id="graph1_9"><g id="a_outside class|graph1_9"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.Forward" xlink:href="transform/SpecializeTypes$Forward.html#inheritance-diagram"><polygon points="1228,-25 1149,-25 1149,-0 1228,-0 1228,-25" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="1159.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-9.5" x="1180.5" text-anchor="start">Forward</text></a></g></g><!-- node10 --><g class="node outside class" id="graph1_10"><g id="a_outside class|graph1_10"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.SpecialOverload" xlink:href="transform/SpecializeTypes$SpecialOverload.html#inheritance-diagram"><polygon points="1360.5,-25 1246.5,-25 1246.5,-0 1360.5,-0 1360.5,-25" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="1256.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-9.5" x="1277.5" text-anchor="start">SpecialOverload</text></a></g></g><!-- node11 --><g class="node outside class" id="graph1_11"><g id="a_outside class|graph1_11"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.SpecializedInfo" xlink:href="transform/SpecializeTypes$SpecializedInfo.html#inheritance-diagram"><polygon points="856.5,-86 746.5,-86 746.5,-61 856.5,-61 856.5,-86" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-80.5" x="756.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-70.5" x="777.5" text-anchor="start">SpecializedInfo</text></a></g></g><!-- node11&#45;&gt;node2 --><g class="edge inheritance" id="graph1_11_2"><g id="a_inheritance|graph1_11_2"><a xlink:title="NormalizedMember is a subtype of SpecializedInfo"><path d="M741.004,-67.9147C647.298,-60.5424 461.48,-44.8476 304.5,-25 301.827,-24.662 299.101,-24.3021 296.35,-23.9262" stroke="#d4d4d4" fill="none"></path><polygon points="741.098,-69.6773 746.219,-68.3238 741.372,-66.188 741.098,-69.6773" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node3 --><g class="edge inheritance" id="graph1_11_3"><g id="a_inheritance|graph1_11_3"><a xlink:title="SpecializedInnerClass is a subtype of SpecializedInfo"><path d="M741.152,-64.0448C673.713,-54.5843 561.275,-38.7759 464.5,-25 461.444,-24.565 458.322,-24.1198 455.169,-23.6694" stroke="#d4d4d4" fill="none"></path><polygon points="741.135,-65.8096 746.33,-64.7712 741.622,-62.3435 741.135,-65.8096" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node4 --><g class="edge inheritance" id="graph1_11_4"><g id="a_inheritance|graph1_11_4"><a xlink:title="SpecialOverride is a subtype of SpecializedInfo"><path d="M743.292,-59.8739C695.754,-49.5624 629.111,-35.1068 582.92,-25.0875" stroke="#d4d4d4" fill="none"></path><polygon points="743.153,-61.6344 748.41,-60.9841 743.895,-58.2139 743.153,-61.6344" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node5 --><g class="edge inheritance" id="graph1_11_5"><g id="a_inheritance|graph1_11_5"><a xlink:title="Implementation is a subtype of SpecializedInfo"><path d="M768.994,-58.9941C744.43,-48.788 711.056,-34.921 687.632,-25.1884" stroke="#d4d4d4" fill="none"></path><polygon points="768.495,-60.6817 773.784,-60.9841 769.838,-57.4496 768.495,-60.6817" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node6 --><g class="edge inheritance" id="graph1_11_6"><g id="a_inheritance|graph1_11_6"><a xlink:title="SpecializedAccessor is a subtype of SpecializedInfo"><path d="M801.5,-55.6874C801.5,-45.9173 801.5,-33.8534 801.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="799.75,-55.8435 801.5,-60.8435 803.25,-55.8435 799.75,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node7 --><g class="edge inheritance" id="graph1_11_7"><g id="a_inheritance|graph1_11_7"><a xlink:title="SpecialSuperAccessor is a subtype of SpecializedInfo"><path d="M837.344,-59.1152C864.8,-48.8627 902.29,-34.8634 928.469,-25.0875" stroke="#d4d4d4" fill="none"></path><polygon points="836.411,-57.5955 832.339,-60.9841 837.635,-60.8744 836.411,-57.5955" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node8 --><g class="edge inheritance" id="graph1_11_8"><g id="a_inheritance|graph1_11_8"><a xlink:title="Abstract is a subtype of SpecializedInfo"><path d="M861.857,-61.0216C910.241,-51.6956 979.835,-38.0018 1040.5,-25 1043.55,-24.3467 1046.7,-23.657 1049.86,-22.9532" stroke="#d4d4d4" fill="none"></path><polygon points="861.233,-59.3595 856.654,-62.0234 861.895,-62.7964 861.233,-59.3595" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node9 --><g class="edge inheritance" id="graph1_11_9"><g id="a_inheritance|graph1_11_9"><a xlink:title="Forward is a subtype of SpecializedInfo"><path d="M861.991,-65.6811C929.83,-57.644 1043,-43.0665 1139.5,-25 1142.59,-24.4211 1145.78,-23.7777 1148.99,-23.0992" stroke="#d4d4d4" fill="none"></path><polygon points="861.543,-63.9718 856.782,-66.2959 861.953,-67.4477 861.543,-63.9718" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node10 --><g class="edge inheritance" id="graph1_11_10"><g id="a_inheritance|graph1_11_10"><a xlink:title="SpecialOverload is a subtype of SpecializedInfo"><path d="M861.754,-67.0965C945.854,-59.2871 1103.12,-43.711 1236.5,-25 1239.66,-24.5573 1242.89,-24.0801 1246.15,-23.5805" stroke="#d4d4d4" fill="none"></path><polygon points="861.386,-65.373 856.569,-67.5768 861.709,-68.8581 861.386,-65.373" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node12 --><g class="node outside class" id="graph1_12"><g id="a_outside class|graph1_12"><a xlink:title="scala.tools.nsc.transform.SpecializeTypes.SpecializationPhase" xlink:href="transform/SpecializeTypes$SpecializationPhase.html#inheritance-diagram"><polygon points="1512,-25 1379,-25 1379,-0 1512,-0 1512,-25" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="1389.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-9.5" x="1410.5" text-anchor="start">SpecializationPhase</text></a></g></g><!-- node13 --><g class="node outside class" id="graph1_13"><g id="a_outside class|graph1_13"><a xlink:title="scala.tools.nsc.transform.InfoTransform.Phase" xlink:href="transform/InfoTransform$Phase.html#inheritance-diagram"><polygon points="1481.5,-86 1409.5,-86 1409.5,-61 1481.5,-61 1481.5,-86" stroke="#ababab" fill="#e1e1e1"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-80.5" x="1419.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#7d7d7d" font-size="10.00" font-family="Arial" y="-70.5" x="1440.5" text-anchor="start">Phase</text></a></g></g><!-- node13&#45;&gt;node12 --><g class="edge inheritance" id="graph1_13_12"><g id="a_inheritance|graph1_13_12"><a xlink:title="SpecializationPhase is a subtype of Phase"><path d="M1445.5,-55.6874C1445.5,-45.9173 1445.5,-33.8534 1445.5,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1443.75,-55.8435 1445.5,-60.8435 1447.25,-55.8435 1443.75,-55.8435" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.tools.nsc.Global.specializeTypes"><span>specializeTypes</span></li><li class="in" name="scala.tools.nsc.transform.SpecializeTypes"><span>SpecializeTypes</span></li><li class="in" name="scala.tools.nsc.transform.TypingTransformers"><span>TypingTransformers</span></li><li class="in" name="scala.tools.nsc.transform.InfoTransform"><span>InfoTransform</span></li><li class="in" name="scala.tools.nsc.transform.Transform"><span>Transform</span></li><li class="in" name="scala.tools.nsc.SubComponent"><span>SubComponent</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.tools.nsc.transform.SpecializeTypes.Abstract" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AbstractextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable"></a>
+      <a id="Abstract:Abstract"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$Abstract.html"><span class="name">Abstract</span></a><span class="params">(<span name="t">t: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result"> extends <a href="transform/SpecializeTypes$SpecializedInfo.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes.SpecializedInfo">SpecializedInfo</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@AbstractextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Symbol is a specialized abstract method, either specialized or original.</p><div class="fullcomment"><div class="comment cmt"><p>Symbol is a specialized abstract method, either specialized or original. The original <code>t</code> is abstract.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.Duplicator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DuplicatorextendsDuplicators"></a>
+      <a id="Duplicator:Duplicator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$Duplicator.html"><span class="name">Duplicator</span></a><span class="result"> extends <a href="typechecker/Duplicators.html" class="extype" name="scala.tools.nsc.typechecker.Duplicators">Duplicators</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@DuplicatorextendsDuplicators" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This duplicator additionally performs casts of expressions if that is allowed by the <code>casts</code> map.</p><div class="fullcomment"><div class="comment cmt"><p>This duplicator additionally performs casts of expressions if that is allowed by the <code>casts</code> map.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.Forward" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ForwardextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable"></a>
+      <a id="Forward:Forward"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$Forward.html"><span class="name">Forward</span></a><span class="params">(<span name="t">t: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result"> extends <a href="transform/SpecializeTypes$SpecializedInfo.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes.SpecializedInfo">SpecializedInfo</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@ForwardextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Symbol is a method that should be forwarded to 't'</p><div class="fullcomment"><div class="comment cmt"><p>Symbol is a method that should be forwarded to 't'</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.Implementation" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ImplementationextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable"></a>
+      <a id="Implementation:Implementation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$Implementation.html"><span class="name">Implementation</span></a><span class="params">(<span name="target">target: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result"> extends <a href="transform/SpecializeTypes$SpecializedInfo.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes.SpecializedInfo">SpecializedInfo</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@ImplementationextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Symbol is a specialized method whose body should be the target's method body.</p><div class="fullcomment"><div class="comment cmt"><p>Symbol is a specialized method whose body should be the target's method body.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.ImplementationAdapter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ImplementationAdapterextendsSpecializeTypes.this.global.TreeSymSubstituter"></a>
+      <a id="ImplementationAdapter:ImplementationAdapter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$ImplementationAdapter.html"><span class="name">ImplementationAdapter</span></a><span class="result"> extends <a href="Global.html#TreeSymSubstituterextendsTrees.this.Transformer" class="extmbr" name="scala.tools.nsc.Global.TreeSymSubstituter">Global.TreeSymSubstituter</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@ImplementationAdapterextendsSpecializeTypes.this.global.TreeSymSubstituter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A tree symbol substituter that substitutes on type skolems.</p><div class="fullcomment"><div class="comment cmt"><p>A tree symbol substituter that substitutes on type skolems.
+ If a type parameter is a skolem, it looks for the original
+ symbol in the 'from' and maps it to the corresponding new
+ symbol. The new symbol should probably be a type skolem as
+ well (not enforced).</p><p> All private members are made protected in order to be accessible from
+ specialized classes.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.NormalizedMember" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NormalizedMemberextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable"></a>
+      <a id="NormalizedMember:NormalizedMember"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$NormalizedMember.html"><span class="name">NormalizedMember</span></a><span class="params">(<span name="target">target: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result"> extends <a href="transform/SpecializeTypes$SpecializedInfo.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes.SpecializedInfo">SpecializedInfo</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@NormalizedMemberextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Symbol is a normalized member obtained by specializing 'target'.</p><div class="fullcomment"><div class="comment cmt"><p>Symbol is a normalized member obtained by specializing 'target'.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.Overload" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="OverloadextendsProductwithSerializable"></a>
+      <a id="Overload:Overload"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$Overload.html"><span class="name">Overload</span></a><span class="params">(<span name="sym">sym: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="env">env: <a href="transform/SpecializeTypes.html#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.transform.SpecializeTypes.TypeEnv">TypeEnv</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@OverloadextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.InfoTransform.Phase" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PhaseextendsInfoTransform.this.Phase"></a>
+      <a id="Phase:Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/InfoTransform$Phase.html"><span class="name">Phase</span></a><span class="result"> extends <span class="extype" name="scala.tools.nsc.transform.Transform.Phase">InfoTransform.Phase</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.InfoTransform@PhaseextendsInfoTransform.this.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/InfoTransform.html" class="extype" name="scala.tools.nsc.transform.InfoTransform">InfoTransform</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.SpecialOverload" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SpecialOverloadextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable"></a>
+      <a id="SpecialOverload:SpecialOverload"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$SpecialOverload.html"><span class="name">SpecialOverload</span></a><span class="params">(<span name="original">original: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="env">env: <a href="transform/SpecializeTypes.html#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.transform.SpecializeTypes.TypeEnv">TypeEnv</a></span>)</span><span class="result"> extends <a href="transform/SpecializeTypes$SpecializedInfo.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes.SpecializedInfo">SpecializedInfo</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@SpecialOverloadextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Symbol is a special overloaded method of 'original', in the environment env.</p><div class="fullcomment"><div class="comment cmt"><p>Symbol is a special overloaded method of 'original', in the environment env.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.SpecialOverride" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SpecialOverrideextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable"></a>
+      <a id="SpecialOverride:SpecialOverride"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$SpecialOverride.html"><span class="name">SpecialOverride</span></a><span class="params">(<span name="target">target: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result"> extends <a href="transform/SpecializeTypes$SpecializedInfo.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes.SpecializedInfo">SpecializedInfo</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@SpecialOverrideextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Symbol is a specialized override paired with <code>target</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Symbol is a specialized override paired with <code>target</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.SpecialSuperAccessor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SpecialSuperAccessorextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable"></a>
+      <a id="SpecialSuperAccessor:SpecialSuperAccessor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$SpecialSuperAccessor.html"><span class="name">SpecialSuperAccessor</span></a><span class="params">(<span name="t">t: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result"> extends <a href="transform/SpecializeTypes$SpecializedInfo.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes.SpecializedInfo">SpecializedInfo</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@SpecialSuperAccessorextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Symbol is a special overload of the super accessor.</p><div class="fullcomment"><div class="comment cmt"><p>Symbol is a special overload of the super accessor.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.SpecializationDuplicator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SpecializationDuplicatorextendsSpecializeTypes.this.Duplicator"></a>
+      <a id="SpecializationDuplicator:SpecializationDuplicator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$SpecializationDuplicator.html"><span class="name">SpecializationDuplicator</span></a><span class="result"> extends <a href="transform/SpecializeTypes$Duplicator.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes.Duplicator">Duplicator</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@SpecializationDuplicatorextendsSpecializeTypes.this.Duplicator" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Introduced to fix SI-7343: Phase ordering problem between Duplicators and Specialization.</p><div class="fullcomment"><div class="comment cmt"><p>Introduced to fix SI-7343: Phase ordering problem between Duplicators and Specialization.
+brief explanation: specialization rewires class parents during info transformation, and
+the new info then guides the tree changes. But if a symbol is created during duplication,
+which runs after specialization, its info is not visited and thus the corresponding tree
+is not specialized. One manifestation is the following:
+<code><code><code>
+object Test {
+  class Parent[@specialized(Int) T]</code></code></code></p><p>  def spec_method[@specialized(Int) T](t: T, expectedXSuper: String) = {
+    class X extends Parent[T]()
+    // even in the specialized variant, the local X class
+    // doesn't extend Parent$mcI$sp, since its symbol has
+    // been created after specialization and was not seen
+    // by specialization's info transformer.
+    ...
+  }
+}
+<code><code><code>
+We fix this by forcing duplication to take place before specialization.</code></code></code></p><p>Note: The constructors phase (which also uses duplication) comes after erasure and uses the
+post-erasure typer =&gt; we must protect it from the beforeSpecialization phase shifting.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.SpecializationPhase" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SpecializationPhaseextendsSpecializeTypes.this.Phase"></a>
+      <a id="SpecializationPhase:SpecializationPhase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$SpecializationPhase.html"><span class="name">SpecializationPhase</span></a><span class="result"> extends <a href="transform/SpecializeTypes.html#PhaseextendsInfoTransform.this.Phase" class="extmbr" name="scala.tools.nsc.transform.InfoTransform.Phase">Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@SpecializationPhaseextendsSpecializeTypes.this.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.SpecializationTransformer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SpecializationTransformerextendsSpecializeTypes.this.global.Transformer"></a>
+      <a id="SpecializationTransformer:SpecializationTransformer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$SpecializationTransformer.html"><span class="name">SpecializationTransformer</span></a><span class="result"> extends <a href="Global.html#TransformerextendsTrees.this.Transformer" class="extmbr" name="scala.tools.nsc.ast.Trees.Transformer">Global.Transformer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@SpecializationTransformerextendsSpecializeTypes.this.global.Transformer" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.SpecializedAccessor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SpecializedAccessorextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable"></a>
+      <a id="SpecializedAccessor:SpecializedAccessor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$SpecializedAccessor.html"><span class="name">SpecializedAccessor</span></a><span class="params">(<span name="target">target: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result"> extends <a href="transform/SpecializeTypes$SpecializedInfo.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes.SpecializedInfo">SpecializedInfo</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@SpecializedAccessorextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Symbol is a specialized accessor for the <code>target</code> field.</p><div class="fullcomment"><div class="comment cmt"><p>Symbol is a specialized accessor for the <code>target</code> field.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.SpecializedInfo" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SpecializedInfoextendsAnyRef"></a>
+      <a id="SpecializedInfo:SpecializedInfo"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$SpecializedInfo.html"><span class="name">SpecializedInfo</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@SpecializedInfoextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.SpecializedInnerClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SpecializedInnerClassextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable"></a>
+      <a id="SpecializedInnerClass:SpecializedInnerClass"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$SpecializedInnerClass.html"><span class="name">SpecializedInnerClass</span></a><span class="params">(<span name="target">target: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="env">env: <a href="transform/SpecializeTypes.html#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.transform.SpecializeTypes.TypeEnv">TypeEnv</a></span>)</span><span class="result"> extends <a href="transform/SpecializeTypes$SpecializedInfo.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes.SpecializedInfo">SpecializedInfo</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@SpecializedInnerClassextendsSpecializeTypes.this.SpecializedInfowithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A specialized inner class that specializes original inner class <code>target</code> on a type parameter of the enclosing class, in the typeenv <code>env</code>.</p><div class="fullcomment"><div class="comment cmt"><p>A specialized inner class that specializes original inner class <code>target</code> on a type parameter of the enclosing class, in the typeenv <code>env</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent.StdPhase" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="StdPhaseextendsSubComponent.this.global.GlobalPhase"></a>
+      <a id="StdPhase:StdPhase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SubComponent$StdPhase.html"><span class="name">StdPhase</span></a><span class="result"> extends <a href="Global$GlobalPhase.html" class="extype" name="scala.tools.nsc.Global.GlobalPhase">GlobalPhase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.SubComponent@StdPhaseextendsSubComponent.this.global.GlobalPhase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A standard phase template</p><div class="fullcomment"><div class="comment cmt"><p>A standard phase template</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.TypeEnv" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]"></a>
+      <a id="TypeEnv:TypeEnv"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TypeEnv</span><span class="result"> = <span class="extype" name="scala.collection.immutable.Map">Map</span>[<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>, <a href="Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.TypingTransformers.TypingTransformer" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TypingTransformerextendsTypingTransformers.this.global.Transformer"></a>
+      <a id="TypingTransformer:TypingTransformer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/TypingTransformers$TypingTransformer.html"><span class="name">TypingTransformer</span></a><span class="result"> extends <a href="Global.html#TransformerextendsTrees.this.Transformer" class="extmbr" name="scala.tools.nsc.ast.Trees.Transformer">Global.Transformer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.TypingTransformers@TypingTransformerextendsTypingTransformers.this.global.Transformer" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/TypingTransformers.html" class="extype" name="scala.tools.nsc.transform.TypingTransformers">TypingTransformers</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.TypeEnv" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TypeEnv"></a>
+      <a id="TypeEnv:TypeEnv"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$TypeEnv$.html"><span class="name">TypeEnv</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@TypeEnv" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes.UnifyError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnifyError"></a>
+      <a id="UnifyError:UnifyError"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="transform/SpecializeTypes$UnifyError$.html"><span class="name">UnifyError</span></a><span class="result"> extends <a href="../../package.html#Throwable=Throwable" class="extmbr" name="scala.Throwable">Throwable</a> with <span class="extype" name="scala.util.control.ControlThrowable">ControlThrowable</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#scala.tools.nsc.transform.SpecializeTypes@UnifyError" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#addConcreteSpecMethod" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="addConcreteSpecMethod(m:SpecializeTypes.this.global.Symbol):Unit"></a>
+      <a id="addConcreteSpecMethod(Global.Symbol):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addConcreteSpecMethod</span><span class="params">(<span name="m">m: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@addConcreteSpecMethod(m:SpecializeTypes.this.global.Symbol):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Add method m to the set of symbols for which we need an implementation tree
+ in the tree transformer.</p><div class="fullcomment"><div class="comment cmt"><p>Add method m to the set of symbols for which we need an implementation tree
+ in the tree transformer.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd><dt>Note</dt><dd><span class="cmt"><p>This field is part of the specializeTypes subcomponent, so any symbols
+       that here are not garbage collected at the end of a compiler run!</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#afterOwnPhase" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="afterOwnPhase[T](op:=&gt;T):T"></a>
+      <a id="afterOwnPhase[T](⇒T):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">afterOwnPhase</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="op">op: ⇒ <span class="extype" name="scala.tools.nsc.SubComponent.afterOwnPhase.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.tools.nsc.SubComponent.afterOwnPhase.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@afterOwnPhase[T](op:=&gt;T):T" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#beforeOwnPhase" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="beforeOwnPhase[T](op:=&gt;T):T"></a>
+      <a id="beforeOwnPhase[T](⇒T):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">beforeOwnPhase</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="op">op: ⇒ <span class="extype" name="scala.tools.nsc.SubComponent.beforeOwnPhase.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.tools.nsc.SubComponent.beforeOwnPhase.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@beforeOwnPhase[T](op:=&gt;T):T" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#changesBaseClasses" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="changesBaseClasses:Boolean"></a>
+      <a id="changesBaseClasses:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">changesBaseClasses</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@changesBaseClasses:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This phase changes base classes.</p><div class="fullcomment"><div class="comment cmt"><p>This phase changes base classes.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a> → <a href="transform/InfoTransform.html" class="extype" name="scala.tools.nsc.transform.InfoTransform">InfoTransform</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#concreteTypes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="concreteTypes(sym:SpecializeTypes.this.global.Symbol):List[SpecializeTypes.this.global.Type]"></a>
+      <a id="concreteTypes(Global.Symbol):List[Global.Type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">concreteTypes</span><span class="params">(<span name="sym">sym: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@concreteTypes(sym:SpecializeTypes.this.global.Symbol):List[SpecializeTypes.this.global.Type]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return the types <code>sym</code> should be specialized at.</p><div class="fullcomment"><div class="comment cmt"><p>Return the types <code>sym</code> should be specialized at. This may be some of the primitive types
+ or AnyRef. AnyRef means that a new type parameter T will be generated later, known to be a
+ subtype of AnyRef (T &lt;: AnyRef).
+ These are in a meaningful order for stability purposes.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#emptyEnv" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="emptyEnv:SpecializeTypes.this.TypeEnv"></a>
+      <a id="emptyEnv:TypeEnv"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emptyEnv</span><span class="result">: <a href="#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.Global.specializeTypes.TypeEnv">TypeEnv</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@emptyEnv:SpecializeTypes.this.TypeEnv" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#enabled" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enabled:Boolean"></a>
+      <a id="enabled:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enabled</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@enabled:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Is this component enabled? Default is true.</p><div class="fullcomment"><div class="comment cmt"><p>Is this component enabled? Default is true.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.specializeTypes#global" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="global:Global.this.type"></a>
+      <a id="global:Global.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">global</span><span class="result">: <a href="Global.html" class="extype" name="scala.tools.nsc.Global">Global</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@global:Global.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The global environment; overridden by instantiation in Global.</p><div class="fullcomment"><div class="comment cmt"><p>The global environment; overridden by instantiation in Global.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.Global.specializeTypes">specializeTypes</a> → <a href="transform/TypingTransformers.html" class="extype" name="scala.tools.nsc.transform.TypingTransformers">TypingTransformers</a> → <a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#hasSpecializedParams" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hasSpecializedParams(clazz:SpecializeTypes.this.global.Symbol):Boolean"></a>
+      <a id="hasSpecializedParams(Global.Symbol):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasSpecializedParams</span><span class="params">(<span name="clazz">clazz: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@hasSpecializedParams(clazz:SpecializeTypes.this.global.Symbol):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Has <code>clazz</code> any type parameters that need be specialized?</p><div class="fullcomment"><div class="comment cmt"><p>Has <code>clazz</code> any type parameters that need be specialized?</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">SubComponent are added to a HashSet and two phases are the same if they have the same name</p><div class="fullcomment"><div class="comment cmt"><p>SubComponent are added to a HashSet and two phases are the same if they have the same name</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a> → AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#illegalSpecializedInheritance" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="illegalSpecializedInheritance(clazz:SpecializeTypes.this.global.Symbol):Boolean"></a>
+      <a id="illegalSpecializedInheritance(Global.Symbol):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">illegalSpecializedInheritance</span><span class="params">(<span name="clazz">clazz: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@illegalSpecializedInheritance(clazz:SpecializeTypes.this.global.Symbol):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#initial" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="initial:Boolean"></a>
+      <a id="initial:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">initial</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@initial:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">True if this phase runs before all other phases.</p><div class="fullcomment"><div class="comment cmt"><p>True if this phase runs before all other phases. Usually, <code>parser</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#internal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="internal:Boolean"></a>
+      <a id="internal:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">internal</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@internal:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">True if this phase is not provided by a plug-in.</p><div class="fullcomment"><div class="comment cmt"><p>True if this phase is not provided by a plug-in.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#isNormalizedMember" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isNormalizedMember(m:SpecializeTypes.this.global.Symbol):Boolean"></a>
+      <a id="isNormalizedMember(Global.Symbol):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isNormalizedMember</span><span class="params">(<span name="m">m: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@isNormalizedMember(m:SpecializeTypes.this.global.Symbol):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#keepsTypeParams" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="keepsTypeParams:Boolean"></a>
+      <a id="keepsTypeParams:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">keepsTypeParams</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@keepsTypeParams:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a> → <a href="transform/InfoTransform.html" class="extype" name="scala.tools.nsc.transform.InfoTransform">InfoTransform</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#newPhase" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="newPhase(prev:tools.nsc.Phase):SpecializeTypes.this.StdPhase"></a>
+      <a id="newPhase(nsc.Phase):StdPhase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">newPhase</span><span class="params">(<span name="prev">prev: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">nsc.Phase</a></span>)</span><span class="result">: <a href="#StdPhaseextendsSubComponent.this.global.GlobalPhase" class="extmbr" name="scala.tools.nsc.SubComponent.StdPhase">StdPhase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@newPhase(prev:tools.nsc.Phase):SpecializeTypes.this.StdPhase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Just to mark uncheckable</p><div class="fullcomment"><div class="comment cmt"><p>Just to mark uncheckable</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a> → <a href="transform/InfoTransform.html" class="extype" name="scala.tools.nsc.transform.InfoTransform">InfoTransform</a> → <a href="transform/Transform.html" class="extype" name="scala.tools.nsc.transform.Transform">Transform</a> → <a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#newTransformer" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="newTransformer(unit:SpecializeTypes.this.global.CompilationUnit):SpecializeTypes.this.global.Transformer"></a>
+      <a id="newTransformer(Global.CompilationUnit):Global.Transformer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">newTransformer</span><span class="params">(<span name="unit">unit: <a href="Global.html#CompilationUnitextendsCompilationUnits.this.CompilationUnitContextApi" class="extmbr" name="scala.tools.nsc.CompilationUnits.CompilationUnit">Global.CompilationUnit</a></span>)</span><span class="result">: <a href="Global.html#TransformerextendsTrees.this.Transformer" class="extmbr" name="scala.tools.nsc.ast.Trees.Transformer">Global.Transformer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@newTransformer(unit:SpecializeTypes.this.global.CompilationUnit):SpecializeTypes.this.global.Transformer" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The transformer factory</p><div class="fullcomment"><div class="comment cmt"><p>The transformer factory</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a> → <a href="transform/Transform.html" class="extype" name="scala.tools.nsc.transform.Transform">Transform</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#nonConflicting" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nonConflicting(env:SpecializeTypes.this.TypeEnv):Boolean"></a>
+      <a id="nonConflicting(TypeEnv):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nonConflicting</span><span class="params">(<span name="env">env: <a href="#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.Global.specializeTypes.TypeEnv">TypeEnv</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@nonConflicting(env:SpecializeTypes.this.TypeEnv):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Is any type variable in <code>env</code> conflicting with any if its type bounds, when
+ type bindings in <code>env</code> are taken into account?</p><div class="fullcomment"><div class="comment cmt"><p>Is any type variable in <code>env</code> conflicting with any if its type bounds, when
+ type bindings in <code>env</code> are taken into account?</p><p> A conflicting type environment could still be satisfiable.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#originalClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="originalClass(clazz:SpecializeTypes.this.global.Symbol):SpecializeTypes.this.global.Symbol"></a>
+      <a id="originalClass(Global.Symbol):Global.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">originalClass</span><span class="params">(<span name="clazz">clazz: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@originalClass(clazz:SpecializeTypes.this.global.Symbol):SpecializeTypes.this.global.Symbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return the generic class corresponding to this specialized class.</p><div class="fullcomment"><div class="comment cmt"><p>Return the generic class corresponding to this specialized class.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#ownPhase" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ownPhase:scala.tools.nsc.Phase"></a>
+      <a id="ownPhase:nsc.Phase"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ownPhase</span><span class="result">: <a href="package.html#Phase=scala.reflect.internal.Phase" class="extmbr" name="scala.tools.nsc.Phase">nsc.Phase</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@ownPhase:scala.tools.nsc.Phase" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The phase corresponding to this subcomponent in the current compiler run</p><div class="fullcomment"><div class="comment cmt"><p>The phase corresponding to this subcomponent in the current compiler run</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#phaseName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="phaseName:String"></a>
+      <a id="phaseName:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phaseName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@phaseName:String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">the name of the phase:</p><div class="fullcomment"><div class="comment cmt"><p>the name of the phase:</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a> → <a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#phaseNewFlags" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="phaseNewFlags:Long"></a>
+      <a id="phaseNewFlags:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phaseNewFlags</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@phaseNewFlags:Long" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The following flags may be set by this phase:</p><div class="fullcomment"><div class="comment cmt"><p>The following flags may be set by this phase:</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a> → <a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#phaseNextFlags" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="phaseNextFlags:Long"></a>
+      <a id="phaseNextFlags:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phaseNextFlags</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@phaseNextFlags:Long" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">New flags defined by the phase which are not valid until immediately after it</p><div class="fullcomment"><div class="comment cmt"><p>New flags defined by the phase which are not valid until immediately after it</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#produceTypeParameters" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="produceTypeParameters(syms:List[SpecializeTypes.this.global.Symbol],nowner:SpecializeTypes.this.global.Symbol,env:SpecializeTypes.this.TypeEnv):List[SpecializeTypes.this.global.Symbol]"></a>
+      <a id="produceTypeParameters(List[Global.Symbol],Global.Symbol,TypeEnv):collection.immutable.List[Global.Symbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">produceTypeParameters</span><span class="params">(<span name="syms">syms: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="nowner">nowner: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="env">env: <a href="#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.Global.specializeTypes.TypeEnv">TypeEnv</a></span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">collection.immutable.List</span>[<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@produceTypeParameters(syms:List[SpecializeTypes.this.global.Symbol],nowner:SpecializeTypes.this.global.Symbol,env:SpecializeTypes.this.TypeEnv):List[SpecializeTypes.this.global.Symbol]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Produces the symbols from type parameters <code>syms</code> of the original owner,
+ in the given type environment <code>env</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Produces the symbols from type parameters <code>syms</code> of the original owner,
+ in the given type environment <code>env</code>. The new owner is <code>nowner</code>.</p><p> Non-specialized type parameters are cloned into new ones.
+ Type parameters specialized on AnyRef have preexisting symbols.</p><p> For instance, a @specialized(AnyRef) T, will become T$sp &lt;: AnyRef.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#requires" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="requires:List[String]"></a>
+      <a id="requires:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">requires</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@requires:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Names of phases required by this component.</p><div class="fullcomment"><div class="comment cmt"><p>Names of phases required by this component. Default is <code>Nil</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.specializeTypes#runsAfter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="runsAfter:List[String]"></a>
+      <a id="runsAfter:collection.immutable.List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runsAfter</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">collection.immutable.List</span>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@runsAfter:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Names of phases that must run before this phase.</p><div class="fullcomment"><div class="comment cmt"><p>Names of phases that must run before this phase.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.Global.specializeTypes">specializeTypes</a> → <a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#runsBefore" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="runsBefore:List[String]"></a>
+      <a id="runsBefore:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runsBefore</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@runsBefore:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Names of phases that must run after this phase.</p><div class="fullcomment"><div class="comment cmt"><p>Names of phases that must run after this phase. Default is <code>Nil</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.Global.specializeTypes#runsRightAfter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="runsRightAfter:Some[String]"></a>
+      <a id="runsRightAfter:Some[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runsRightAfter</span><span class="result">: <span class="extype" name="scala.Some">Some</span>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@runsRightAfter:Some[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Name of the phase that this phase must follow immediately.</p><div class="fullcomment"><div class="comment cmt"><p>Name of the phase that this phase must follow immediately.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="scala.tools.nsc.Global.specializeTypes">specializeTypes</a> → <a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#satisfiabilityConstraints" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="satisfiabilityConstraints(env:SpecializeTypes.this.TypeEnv):Option[SpecializeTypes.this.TypeEnv]"></a>
+      <a id="satisfiabilityConstraints(TypeEnv):Option[TypeEnv]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">satisfiabilityConstraints</span><span class="params">(<span name="env">env: <a href="#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.Global.specializeTypes.TypeEnv">TypeEnv</a></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.Global.specializeTypes.TypeEnv">TypeEnv</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@satisfiabilityConstraints(env:SpecializeTypes.this.TypeEnv):Option[SpecializeTypes.this.TypeEnv]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#satisfiable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="satisfiable(env:SpecializeTypes.this.TypeEnv,warnings:Boolean):Boolean"></a>
+      <a id="satisfiable(TypeEnv,Boolean):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">satisfiable</span><span class="params">(<span name="env">env: <a href="#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.Global.specializeTypes.TypeEnv">TypeEnv</a></span>, <span name="warnings">warnings: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@satisfiable(env:SpecializeTypes.this.TypeEnv,warnings:Boolean):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#satisfiable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="satisfiable(env:SpecializeTypes.this.TypeEnv):Boolean"></a>
+      <a id="satisfiable(TypeEnv):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">satisfiable</span><span class="params">(<span name="env">env: <a href="#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.Global.specializeTypes.TypeEnv">TypeEnv</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@satisfiable(env:SpecializeTypes.this.TypeEnv):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type environment is sound w.r.t.</p><div class="fullcomment"><div class="comment cmt"><p>The type environment is sound w.r.t. to all type bounds or only soft
+ conflicts appear. An environment is sound if all bindings are within
+ the bounds of the given type variable. A soft conflict is a binding
+ that does not fall within the bounds, but whose bounds contain
+ type variables that are @specialized, (that could become satisfiable).
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#specializableTypes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="specializableTypes:List[SpecializeTypes.this.global.Type]"></a>
+      <a id="specializableTypes:collection.immutable.List[Global.Type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializableTypes</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">collection.immutable.List</span>[<a href="Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@specializableTypes:List[SpecializeTypes.this.global.Type]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#specializeCalls" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="specializeCalls(unit:SpecializeTypes.this.global.CompilationUnit):SpecializeTypes.this.TypingTransformer{valbody:scala.collection.mutable.HashMap[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Tree];valparameters:scala.collection.mutable.HashMap[SpecializeTypes.this.global.Symbol,List[SpecializeTypes.this.global.Symbol]];typeCollectMethodBodies&lt;:SpecializeTypes.this.global.Traverser;defdoesConform(origSymbol:SpecializeTypes.this.global.Symbol,treeType:SpecializeTypes.this.global.Type,memberType:SpecializeTypes.this.global.Type,env:SpecializeTypes.this.TypeEnv):Boolean;defreportError[T](body:=&gt;T)(handler:SpecializeTypes.this.global.TypeError=&gt;T):T;deftransform1(tree:SpecializeTypes.this.global.Tree):SpecializeTypes.this.global.analyzer.global.Tree;defimplSpecClasses(trees:List[SpecializeTypes.this.global.Tree]):List[SpecializeTypes.this.global.Tree]}"></a>
+      <a id="specializeCalls(Global.CompilationUnit):TypingTransformer{.../*7definitionsintyperefinement*/}"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializeCalls</span><span class="params">(<span name="unit">unit: <a href="Global.html#CompilationUnitextendsCompilationUnits.this.CompilationUnitContextApi" class="extmbr" name="scala.tools.nsc.CompilationUnits.CompilationUnit">Global.CompilationUnit</a></span>)</span><span class="result">: <a href="#TypingTransformerextendsTypingTransformers.this.global.Transformer" class="extmbr" name="scala.tools.nsc.transform.TypingTransformers.TypingTransformer">TypingTransformer</a> { ... /* 7 definitions in type refinement */ }</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@specializeCalls(unit:SpecializeTypes.this.global.CompilationUnit):SpecializeTypes.this.TypingTransformer{valbody:scala.collection.mutable.HashMap[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Tree];valparameters:scala.collection.mutable.HashMap[SpecializeTypes.this.global.Symbol,List[SpecializeTypes.this.global.Symbol]];typeCollectMethodBodies&lt;:SpecializeTypes.this.global.Traverser;defdoesConform(origSymbol:SpecializeTypes.this.global.Symbol,treeType:SpecializeTypes.this.global.Type,memberType:SpecializeTypes.this.global.Type,env:SpecializeTypes.this.TypeEnv):Boolean;defreportError[T](body:=&gt;T)(handler:SpecializeTypes.this.global.TypeError=&gt;T):T;deftransform1(tree:SpecializeTypes.this.global.Tree):SpecializeTypes.this.global.analyzer.global.Tree;defimplSpecClasses(trees:List[SpecializeTypes.this.global.Tree]):List[SpecializeTypes.this.global.Tree]}" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#specializeClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="specializeClass(clazz:SpecializeTypes.this.global.Symbol,outerEnv:SpecializeTypes.this.TypeEnv):List[SpecializeTypes.this.global.Symbol]"></a>
+      <a id="specializeClass(Global.Symbol,TypeEnv):List[Global.Symbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializeClass</span><span class="params">(<span name="clazz">clazz: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="outerEnv">outerEnv: <a href="#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.Global.specializeTypes.TypeEnv">TypeEnv</a></span>)</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@specializeClass(clazz:SpecializeTypes.this.global.Symbol,outerEnv:SpecializeTypes.this.TypeEnv):List[SpecializeTypes.this.global.Symbol]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Specialize 'clazz', in the environment <code>outerEnv</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Specialize 'clazz', in the environment <code>outerEnv</code>. The outer
+ environment contains bindings for specialized types of enclosing
+ classes.</p><p> A class C is specialized w.r.t to its own specialized type params
+ <code>stps</code>, by specializing its members, and creating a new class for
+ each combination of <code>stps</code>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#specializedClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="specializedClass:scala.collection.mutable.HashMap[(SpecializeTypes.this.global.Symbol,SpecializeTypes.this.TypeEnv),SpecializeTypes.this.global.Symbol]"></a>
+      <a id="specializedClass:HashMap[(Global.Symbol,TypeEnv),Global.Symbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializedClass</span><span class="result">: <span class="extype" name="scala.collection.mutable.HashMap">HashMap</span>[(<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>, <a href="#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.Global.specializeTypes.TypeEnv">TypeEnv</a>), <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@specializedClass:scala.collection.mutable.HashMap[(SpecializeTypes.this.global.Symbol,SpecializeTypes.this.TypeEnv),SpecializeTypes.this.global.Symbol]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">For a given class and concrete type arguments, give its specialized class</p><div class="fullcomment"><div class="comment cmt"><p>For a given class and concrete type arguments, give its specialized class</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#specializedFunctionName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="specializedFunctionName(sym:SpecializeTypes.this.global.Symbol,args:List[SpecializeTypes.this.global.Type]):SpecializeTypes.this.global.Symbol#NameType"></a>
+      <a id="specializedFunctionName(Global.Symbol,List[Global.Type]):reflect.internal.Symbols.Symbol.NameType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializedFunctionName</span><span class="params">(<span name="sym">sym: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="args">args: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>)</span><span class="result">: <span class="extype" name="scala.reflect.api.Symbols.SymbolApi.NameType">reflect.internal.Symbols.Symbol.NameType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@specializedFunctionName(sym:SpecializeTypes.this.global.Symbol,args:List[SpecializeTypes.this.global.Type]):SpecializeTypes.this.global.Symbol#NameType" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#specializedParams" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="specializedParams(sym:SpecializeTypes.this.global.Symbol):List[SpecializeTypes.this.global.Symbol]"></a>
+      <a id="specializedParams(Global.Symbol):List[Global.Symbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializedParams</span><span class="params">(<span name="sym">sym: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@specializedParams(sym:SpecializeTypes.this.global.Symbol):List[SpecializeTypes.this.global.Symbol]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return specialized type parameters.</p><div class="fullcomment"><div class="comment cmt"><p>Return specialized type parameters.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#specializedType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="specializedType:SpecializeTypes.this.global.TypeMap"></a>
+      <a id="specializedType:Global.TypeMap"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializedType</span><span class="result">: <a href="Global.html#TypeMapextendsTypeMaps.this.Type=&gt;TypeMaps.this.Type" class="extmbr" name="scala.tools.nsc.Global.TypeMap">Global.TypeMap</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@specializedType:SpecializeTypes.this.global.TypeMap" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#specializedTypeVars" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="specializedTypeVars(tpe:SpecializeTypes.this.global.Type):scala.collection.immutable.Set[SpecializeTypes.this.global.Symbol]"></a>
+      <a id="specializedTypeVars(Global.Type):Set[Global.Symbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializedTypeVars</span><span class="params">(<span name="tpe">tpe: <a href="Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.Set">Set</span>[<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@specializedTypeVars(tpe:SpecializeTypes.this.global.Type):scala.collection.immutable.Set[SpecializeTypes.this.global.Symbol]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return the set of @specialized type variables mentioned by the given type.</p><div class="fullcomment"><div class="comment cmt"><p>Return the set of @specialized type variables mentioned by the given type.
+ It only counts type variables that appear:</p><ul><li>naked</li><li>as arguments to type constructors in @specialized positions
+     (arrays are considered as Array[@specialized T])
+</li></ul></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#specializedTypeVars" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="specializedTypeVars(sym:SpecializeTypes.this.global.Symbol):scala.collection.immutable.Set[SpecializeTypes.this.global.Symbol]"></a>
+      <a id="specializedTypeVars(Global.Symbol):Set[Global.Symbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializedTypeVars</span><span class="params">(<span name="sym">sym: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.Set">Set</span>[<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@specializedTypeVars(sym:SpecializeTypes.this.global.Symbol):scala.collection.immutable.Set[SpecializeTypes.this.global.Symbol]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#specializedTypeVars" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="specializedTypeVars(tpes:List[SpecializeTypes.this.global.Type]):scala.collection.immutable.Set[SpecializeTypes.this.global.Symbol]"></a>
+      <a id="specializedTypeVars(List[Global.Type]):Set[Global.Symbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializedTypeVars</span><span class="params">(<span name="tpes">tpes: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.Set">Set</span>[<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@specializedTypeVars(tpes:List[SpecializeTypes.this.global.Type]):scala.collection.immutable.Set[SpecializeTypes.this.global.Symbol]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#specializesClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="specializesClass(sym:SpecializeTypes.this.global.Symbol):SpecializeTypes.this.global.Symbol"></a>
+      <a id="specializesClass(Global.Symbol):Global.Symbol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">specializesClass</span><span class="params">(<span name="sym">sym: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>)</span><span class="result">: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@specializesClass(sym:SpecializeTypes.this.global.Symbol):SpecializeTypes.this.global.Symbol" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">If the symbol is the companion of a value class, the value class.</p><div class="fullcomment"><div class="comment cmt"><p>If the symbol is the companion of a value class, the value class.
+ Otherwise, AnyRef.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#survivingArgs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="survivingArgs(sym:SpecializeTypes.this.global.Symbol,args:List[SpecializeTypes.this.global.Type]):List[SpecializeTypes.this.global.Type]"></a>
+      <a id="survivingArgs(Global.Symbol,List[Global.Type]):List[Global.Type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">survivingArgs</span><span class="params">(<span name="sym">sym: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="args">args: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>)</span><span class="result">: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@survivingArgs(sym:SpecializeTypes.this.global.Symbol,args:List[SpecializeTypes.this.global.Type]):List[SpecializeTypes.this.global.Type]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Given an original class symbol and a list of types its type parameters are instantiated at
+ returns a list of type parameters that should remain in the TypeRef when instantiating a
+ specialized type.</p><div class="fullcomment"><div class="comment cmt"><p>Given an original class symbol and a list of types its type parameters are instantiated at
+ returns a list of type parameters that should remain in the TypeRef when instantiating a
+ specialized type.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#survivingParams" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="survivingParams(params:List[SpecializeTypes.this.global.Symbol],env:SpecializeTypes.this.TypeEnv):List[SpecializeTypes.this.global.Symbol]"></a>
+      <a id="survivingParams(List[Global.Symbol],TypeEnv):collection.immutable.List[Global.Symbol]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">survivingParams</span><span class="params">(<span name="params">params: <a href="../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>, <span name="env">env: <a href="#TypeEnv=scala.collection.immutable.Map[SpecializeTypes.this.global.Symbol,SpecializeTypes.this.global.Type]" class="extmbr" name="scala.tools.nsc.Global.specializeTypes.TypeEnv">TypeEnv</a></span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">collection.immutable.List</span>[<a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@survivingParams(params:List[SpecializeTypes.this.global.Symbol],env:SpecializeTypes.this.TypeEnv):List[SpecializeTypes.this.global.Symbol]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Type parameters that survive when specializing in the specified environment.</p><div class="fullcomment"><div class="comment cmt"><p>Type parameters that survive when specializing in the specified environment.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.tools.nsc.SubComponent#terminal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="terminal:Boolean"></a>
+      <a id="terminal:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">terminal</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@terminal:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">True if this phase runs after all other phases.</p><div class="fullcomment"><div class="comment cmt"><p>True if this phase runs after all other phases. Usually, <code>terminal</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.transform.SpecializeTypes#transformInfo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="transformInfo(sym:SpecializeTypes.this.global.Symbol,tpe:SpecializeTypes.this.global.Type):SpecializeTypes.this.global.Type"></a>
+      <a id="transformInfo(Global.Symbol,Global.Type):Global.Type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">transformInfo</span><span class="params">(<span name="sym">sym: <a href="Global.html#SymbolextendsSymbols.this.SymbolContextApiImplwithHasFlagswithSymbols.this.Annotatable[Symbols.this.Symbol]withSymbols.this.Attachable" class="extmbr" name="scala.tools.nsc.Global.Symbol">Global.Symbol</a></span>, <span name="tpe">tpe: <a href="Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>)</span><span class="result">: <a href="Global.html#TypeextendsTypes.this.TypeApiImplwithTypes.this.Annotatable[Types.this.Type]" class="extmbr" name="scala.tools.nsc.Global.Type">Global.Type</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@transformInfo(sym:SpecializeTypes.this.global.Symbol,tpe:SpecializeTypes.this.global.Type):SpecializeTypes.this.global.Type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Type transformation.</p><div class="fullcomment"><div class="comment cmt"><p>Type transformation. It is applied to all symbols, compiled or loaded.
+ If it is a 'no-specialization' run, it is applied only to loaded symbols.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a> → <a href="transform/InfoTransform.html" class="extype" name="scala.tools.nsc.transform.InfoTransform">InfoTransform</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.tools.nsc.Global$specializeTypes$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.tools.nsc.transform.SpecializeTypes">
+              <h3>Inherited from <a href="transform/SpecializeTypes.html" class="extype" name="scala.tools.nsc.transform.SpecializeTypes">SpecializeTypes</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.TypingTransformers">
+              <h3>Inherited from <a href="transform/TypingTransformers.html" class="extype" name="scala.tools.nsc.transform.TypingTransformers">TypingTransformers</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.InfoTransform">
+              <h3>Inherited from <a href="transform/InfoTransform.html" class="extype" name="scala.tools.nsc.transform.InfoTransform">InfoTransform</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.transform.Transform">
+              <h3>Inherited from <a href="transform/Transform.html" class="extype" name="scala.tools.nsc.transform.Transform">Transform</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.SubComponent">
+              <h3>Inherited from <a href="SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

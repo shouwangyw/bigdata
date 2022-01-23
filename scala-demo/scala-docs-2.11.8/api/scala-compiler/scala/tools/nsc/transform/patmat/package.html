@@ -1,0 +1,468 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>patmat - Scala Compiler 2.11.8 - scala.tools.nsc.transform.patmat</title>
+          <meta name="description" content="patmat - Scala Compiler 2.11.8 - scala.tools.nsc.transform.patmat" />
+          <meta name="keywords" content="patmat Scala Compiler 2.11.8 scala.tools.nsc.transform.patmat" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'scala.tools.nsc.transform.patmat.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.transform">transform</a></p>
+        <h1>patmat</h1><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">patmat</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 1004.00 399.00" height="399pt" width="1004pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 395)" class="graph" id="graph0"><polygon points="-4,4 -4,-395 1000,-395 1000,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node trait" id="graph1_0"><g id="a_trait|graph1_0"><a xlink:title="scala.tools.nsc.transform.patmat.Logic" xlink:href="Logic.html#inheritance-diagram"><polygon points="412.5,-330 344.5,-330 344.5,-305 412.5,-305 412.5,-330" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-324.5" x="354.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-314.5" x="375.5" text-anchor="start">Logic</text></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.tools.nsc.transform.patmat.Solving" xlink:href="Solving.html#inheritance-diagram"><polygon points="416,-208 341,-208 341,-183 416,-183 416,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-202.5" x="351.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="372.5" text-anchor="start">Solving</text></a></g></g><!-- node0&#45;&gt;node3 --><g class="edge inheritance" id="graph1_0_3"><g id="a_inheritance|graph1_0_3"><a xlink:title="Solving is a subtype of Logic"><path d="M378.5,-299.771C378.5,-275.086 378.5,-229.524 378.5,-208.148" stroke="#d4d4d4" fill="none"></path><polygon points="376.75,-299.994 378.5,-304.994 380.25,-299.994 376.75,-299.994" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8 --><g class="node trait" id="graph1_8"><g id="a_trait|graph1_8"><a xlink:title="scala.tools.nsc.transform.patmat.ScalaLogic" xlink:href="ScalaLogic.html#inheritance-diagram"><polygon points="511,-269 418,-269 418,-244 511,-244 511,-269" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-263.5" x="428.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="449.5" text-anchor="start">ScalaLogic</text></a></g></g><!-- node0&#45;&gt;node8 --><g class="edge inheritance" id="graph1_0_8"><g id="a_inheritance|graph1_0_8"><a xlink:title="ScalaLogic is a subtype of Logic"><path d="M399.9,-301.819C414.616,-291.723 433.891,-278.499 447.544,-269.132" stroke="#d4d4d4" fill="none"></path><polygon points="398.624,-300.572 395.491,-304.843 400.604,-303.458 398.624,-300.572" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="scala.tools.nsc.transform.patmat.MatchWarnings" xlink:href="MatchWarnings.html#inheritance-diagram"><polygon points="113,-86 0,-86 0,-61 113,-61 113,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="31.5" text-anchor="start">MatchWarnings</text></a></g></g><!-- node5 --><g class="node trait" id="graph1_5"><g id="a_trait|graph1_5"><a xlink:title="scala.tools.nsc.transform.patmat.PatternMatching" xlink:href="PatternMatching.html#inheritance-diagram"><polygon points="559.5,-25 443.5,-25 443.5,-0 559.5,-0 559.5,-25" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-19.5" x="453.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="474.5" text-anchor="start">PatternMatching</text></a></g></g><!-- node1&#45;&gt;node5 --><g class="edge inheritance" id="graph1_1_5"><g id="a_inheritance|graph1_1_5"><a xlink:title="PatternMatching is a subtype of MatchWarnings"><path d="M118.157,-61.5114C119.28,-61.3373 120.395,-61.1667 121.5,-61 235.233,-43.842 368.787,-28.1818 443.434,-19.8307" stroke="#d4d4d4" fill="none"></path><polygon points="117.858,-59.7869 113.192,-62.2952 118.404,-63.2441 117.858,-59.7869" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="scala.tools.nsc.transform.patmat.ScalacPatternExpanders" xlink:href="ScalacPatternExpanders.html#inheritance-diagram"><polygon points="284,-86 131,-86 131,-61 284,-61 284,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="141.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="162.5" text-anchor="start">ScalacPatternExpanders</text></a></g></g><!-- node2&#45;&gt;node5 --><g class="edge inheritance" id="graph1_2_5"><g id="a_inheritance|graph1_2_5"><a xlink:title="PatternMatching is a subtype of ScalacPatternExpanders"><path d="M269.801,-59.9973C321.309,-49.6608 393.875,-35.0983 444.01,-25.0371" stroke="#d4d4d4" fill="none"></path><polygon points="269.442,-58.2845 264.884,-60.9841 270.131,-61.7161 269.442,-58.2845" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3&#45;&gt;node5 --><g class="edge inheritance" id="graph1_3_5"><g id="a_inheritance|graph1_3_5"><a xlink:title="PatternMatching is a subtype of Solving"><path d="M381.577,-177.944C387.271,-150.987 401.601,-97.0084 430.5,-61 442.939,-45.5012 461.809,-33.2134 476.969,-25.0215" stroke="#d4d4d4" fill="none"></path><polygon points="379.838,-177.713 380.551,-182.962 383.267,-178.414 379.838,-177.713" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="scala.tools.nsc.transform.patmat.MatchCodeGen" xlink:href="MatchCodeGen.html#inheritance-diagram"><polygon points="797.5,-330 685.5,-330 685.5,-305 797.5,-305 797.5,-330" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-324.5" x="695.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-314.5" x="716.5" text-anchor="start">MatchCodeGen</text></a></g></g><!-- node4&#45;&gt;node5 --><g class="edge inheritance" id="graph1_4_5"><g id="a_inheritance|graph1_4_5"><a xlink:title="PatternMatching is a subtype of MatchCodeGen"><path d="M757.488,-301.075C777.871,-279.674 810.5,-238.806 810.5,-196.5 810.5,-196.5 810.5,-196.5 810.5,-133.5 810.5,-100.19 816.134,-83.4219 791.5,-61 758.392,-30.8654 634.386,-19.7244 559.671,-15.6975" stroke="#d4d4d4" fill="none"></path><polygon points="756.061,-300.033 753.836,-304.841 758.573,-302.47 756.061,-300.033" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11 --><g class="node trait" id="graph1_11"><g id="a_trait|graph1_11"><a xlink:title="scala.tools.nsc.transform.patmat.MatchTreeMaking" xlink:href="MatchTreeMaking.html#inheritance-diagram"><polygon points="695.5,-269 573.5,-269 573.5,-244 695.5,-244 695.5,-269" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-263.5" x="583.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-253.5" x="604.5" text-anchor="start">MatchTreeMaking</text></a></g></g><!-- node4&#45;&gt;node11 --><g class="edge inheritance" id="graph1_4_11"><g id="a_inheritance|graph1_4_11"><a xlink:title="MatchTreeMaking is a subtype of MatchCodeGen"><path d="M716.075,-302.481C697.661,-292.327 673.054,-278.759 655.698,-269.188" stroke="#d4d4d4" fill="none"></path><polygon points="715.392,-304.102 720.615,-304.984 717.082,-301.037 715.392,-304.102" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6 --><g class="node trait" id="graph1_6"><g id="a_trait|graph1_6"><a xlink:title="scala.tools.nsc.transform.patmat.Debugging" xlink:href="Debugging.html#inheritance-diagram"><polygon points="483.5,-391 393.5,-391 393.5,-366 483.5,-366 483.5,-391" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-385.5" x="403.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-375.5" x="424.5" text-anchor="start">Debugging</text></a></g></g><!-- node6&#45;&gt;node0 --><g class="edge inheritance" id="graph1_6_0"><g id="a_inheritance|graph1_6_0"><a xlink:title="Logic is a subtype of Debugging"><path d="M423.036,-362.294C412.84,-352.268 399.691,-339.338 390.329,-330.132" stroke="#d4d4d4" fill="none"></path><polygon points="421.854,-363.586 426.646,-365.843 424.308,-361.09 421.854,-363.586" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6&#45;&gt;node5 --><g class="edge inheritance" id="graph1_6_5"><g id="a_inheritance|graph1_6_5"><a xlink:title="PatternMatching is a subtype of Debugging"><path d="M389.062,-364.19C370.047,-356.865 349.552,-345.927 335.5,-330 313.135,-304.651 312.5,-291.305 312.5,-257.5 312.5,-257.5 312.5,-257.5 312.5,-133.5 312.5,-70.7289 387.719,-39.3992 443.252,-24.8226" stroke="#d4d4d4" fill="none"></path><polygon points="388.563,-365.872 393.859,-365.976 389.784,-362.592 388.563,-365.872" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10 --><g class="node trait" id="graph1_10"><g id="a_trait|graph1_10"><a xlink:title="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis" xlink:href="TreeAndTypeAnalysis.html#inheritance-diagram"><polygon points="568.5,-330 430.5,-330 430.5,-305 568.5,-305 568.5,-330" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-324.5" x="440.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-314.5" x="461.5" text-anchor="start">TreeAndTypeAnalysis</text></a></g></g><!-- node6&#45;&gt;node10 --><g class="edge inheritance" id="graph1_6_10"><g id="a_inheritance|graph1_6_10"><a xlink:title="TreeAndTypeAnalysis is a subtype of Debugging"><path d="M454.222,-362.294C464.587,-352.268 477.956,-339.338 487.473,-330.132" stroke="#d4d4d4" fill="none"></path><polygon points="452.929,-361.109 450.552,-365.843 455.362,-363.625 452.929,-361.109" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node6&#45;&gt;node11 --><g class="edge inheritance" id="graph1_6_11"><g id="a_inheritance|graph1_6_11"><a xlink:title="MatchTreeMaking is a subtype of Debugging"><path d="M488.942,-367.68C516.873,-360.502 551.161,-348.68 577.5,-330 600.616,-313.605 619.015,-285.223 628.17,-269.268" stroke="#d4d4d4" fill="none"></path><polygon points="488.229,-366.054 483.804,-368.967 489.08,-369.45 488.229,-366.054" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7 --><g class="node trait" id="graph1_7"><g id="a_trait|graph1_7"><a xlink:title="scala.tools.nsc.transform.patmat.MatchAnalysis" xlink:href="MatchAnalysis.html#inheritance-diagram"><polygon points="594,-147 485,-147 485,-122 594,-122 594,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-141.5" x="495.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="516.5" text-anchor="start">MatchAnalysis</text></a></g></g><!-- node7&#45;&gt;node5 --><g class="edge inheritance" id="graph1_7_5"><g id="a_inheritance|graph1_7_5"><a xlink:title="PatternMatching is a subtype of MatchAnalysis"><path d="M525.185,-117.588C518.252,-108.893 510.564,-97.5602 506.5,-86 499.304,-65.5273 499.52,-39.8371 500.437,-25.1822" stroke="#d4d4d4" fill="none"></path><polygon points="523.983,-118.881 528.509,-121.634 526.687,-116.659 523.983,-118.881" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node14 --><g class="node trait" id="graph1_14"><g id="a_trait|graph1_14"><a xlink:title="scala.tools.nsc.transform.patmat.MatchOptimization" xlink:href="MatchOptimization.html#inheritance-diagram"><polygon points="782.5,-86 656.5,-86 656.5,-61 782.5,-61 782.5,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="666.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="687.5" text-anchor="start">MatchOptimization</text></a></g></g><!-- node7&#45;&gt;node14 --><g class="edge inheritance" id="graph1_7_14"><g id="a_inheritance|graph1_7_14"><a xlink:title="MatchOptimization is a subtype of MatchAnalysis"><path d="M579.559,-120.37C610.904,-110.095 654.076,-95.9445 684.148,-86.0875" stroke="#d4d4d4" fill="none"></path><polygon points="578.839,-118.764 574.633,-121.984 579.929,-122.09 578.839,-118.764" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node8&#45;&gt;node5 --><g class="edge inheritance" id="graph1_8_5"><g id="a_inheritance|graph1_8_5"><a xlink:title="PatternMatching is a subtype of ScalaLogic"><path d="M464.061,-238.733C463.845,-229.639 463.607,-218.204 463.5,-208 463.383,-196.89 462.423,-194.059 463.5,-183 469.378,-122.669 489.452,-52.5848 497.806,-25.2552" stroke="#d4d4d4" fill="none"></path><polygon points="462.313,-238.833 464.185,-243.789 465.812,-238.747 462.313,-238.833" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node12 --><g class="node trait" id="graph1_12"><g id="a_trait|graph1_12"><a xlink:title="scala.tools.nsc.transform.patmat.MatchApproximation" xlink:href="MatchApproximation.html#inheritance-diagram"><polygon points="606.5,-208 472.5,-208 472.5,-183 606.5,-183 606.5,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-202.5" x="482.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="503.5" text-anchor="start">MatchApproximation</text></a></g></g><!-- node8&#45;&gt;node12 --><g class="edge inheritance" id="graph1_8_12"><g id="a_inheritance|graph1_8_12"><a xlink:title="MatchApproximation is a subtype of ScalaLogic"><path d="M483.496,-240.557C496.286,-230.495 512.908,-217.419 524.713,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="482.165,-239.377 479.318,-243.843 484.329,-242.127 482.165,-239.377" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node9 --><g class="node trait" id="graph1_9"><g id="a_trait|graph1_9"><a xlink:title="scala.tools.nsc.transform.patmat.MatchCps" xlink:href="MatchCps.html#inheritance-diagram"><polygon points="638,-86 549,-86 549,-61 638,-61 638,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="559.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="580.5" text-anchor="start">MatchCps</text></a></g></g><!-- node9&#45;&gt;node5 --><g class="edge inheritance" id="graph1_9_5"><g id="a_inheritance|graph1_9_5"><a xlink:title="PatternMatching is a subtype of MatchCps"><path d="M571.013,-58.0789C555.22,-47.9511 534.371,-34.5802 519.638,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="570.17,-59.6174 575.324,-60.8435 572.06,-56.6712 570.17,-59.6174" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10&#45;&gt;node8 --><g class="edge inheritance" id="graph1_10_8"><g id="a_inheritance|graph1_10_8"><a xlink:title="ScalaLogic is a subtype of TreeAndTypeAnalysis"><path d="M490.006,-300.496C484.13,-290.59 476.718,-278.096 471.401,-269.132" stroke="#d4d4d4" fill="none"></path><polygon points="488.529,-301.436 492.585,-304.843 491.539,-299.65 488.529,-301.436" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10&#45;&gt;node12 --><g class="edge inheritance" id="graph1_10_12"><g id="a_inheritance|graph1_10_12"><a xlink:title="MatchApproximation is a subtype of TreeAndTypeAnalysis"><path d="M506.984,-300.189C510.99,-291.117 515.839,-279.557 519.5,-269 526.816,-247.905 533.282,-222.644 536.769,-208.194" stroke="#d4d4d4" fill="none"></path><polygon points="505.299,-299.672 504.858,-304.951 508.495,-301.099 505.299,-299.672" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node5 --><g class="edge inheritance" id="graph1_11_5"><g id="a_inheritance|graph1_11_5"><a xlink:title="PatternMatching is a subtype of MatchTreeMaking"><path d="M634.592,-238.805C633.918,-211.65 629.043,-157.394 602.5,-122 583.152,-96.1999 561.885,-109.214 539.5,-86 522.139,-67.9956 510.688,-40.4797 505.227,-25.0405" stroke="#d4d4d4" fill="none"></path><polygon points="632.844,-238.891 634.676,-243.861 636.343,-238.833 632.844,-238.891" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node12 --><g class="edge inheritance" id="graph1_11_12"><g id="a_inheritance|graph1_11_12"><a xlink:title="MatchApproximation is a subtype of MatchTreeMaking"><path d="M611.28,-241.079C594.972,-230.951 573.443,-217.58 558.23,-208.132" stroke="#d4d4d4" fill="none"></path><polygon points="610.56,-242.692 615.731,-243.843 612.407,-239.719 610.56,-242.692" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node14 --><g class="edge inheritance" id="graph1_11_14"><g id="a_inheritance|graph1_11_14"><a xlink:title="MatchOptimization is a subtype of MatchTreeMaking"><path d="M642.279,-238.935C659.264,-202.768 699.316,-117.48 713.989,-86.2354" stroke="#d4d4d4" fill="none"></path><polygon points="640.488,-238.633 639.946,-243.902 643.656,-240.12 640.488,-238.633" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node12&#45;&gt;node7 --><g class="edge inheritance" id="graph1_12_7"><g id="a_inheritance|graph1_12_7"><a xlink:title="MatchAnalysis is a subtype of MatchApproximation"><path d="M539.5,-177.687C539.5,-167.917 539.5,-155.853 539.5,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="537.75,-177.843 539.5,-182.843 541.25,-177.844 537.75,-177.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13 --><g class="node trait" id="graph1_13"><g id="a_trait|graph1_13"><a xlink:title="scala.tools.nsc.transform.patmat.Interface" xlink:href="Interface.html#inheritance-diagram"><polygon points="782,-391 701,-391 701,-366 782,-366 782,-391" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-385.5" x="711.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-375.5" x="732.5" text-anchor="start">Interface</text></a></g></g><!-- node13&#45;&gt;node4 --><g class="edge inheritance" id="graph1_13_4"><g id="a_inheritance|graph1_13_4"><a xlink:title="MatchCodeGen is a subtype of Interface"><path d="M741.5,-360.687C741.5,-350.917 741.5,-338.853 741.5,-330.132" stroke="#d4d4d4" fill="none"></path><polygon points="739.75,-360.843 741.5,-365.843 743.25,-360.844 739.75,-360.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13&#45;&gt;node5 --><g class="edge inheritance" id="graph1_13_5"><g id="a_inheritance|graph1_13_5"><a xlink:title="PatternMatching is a subtype of Interface"><path d="M767.692,-363.223C799.37,-343.819 848.5,-305.92 848.5,-257.5 848.5,-257.5 848.5,-257.5 848.5,-133.5 848.5,-97.9104 843.015,-82.2952 814.5,-61 775.251,-31.6894 638.911,-20.1673 559.716,-15.872" stroke="#d4d4d4" fill="none"></path><polygon points="766.537,-361.875 763.153,-365.951 768.34,-364.875 766.537,-361.875" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13&#45;&gt;node8 --><g class="edge inheritance" id="graph1_13_8"><g id="a_inheritance|graph1_13_8"><a xlink:title="ScalaLogic is a subtype of Interface"><path d="M711.021,-363.826C678.146,-349.125 624.227,-325.147 577.5,-305 548.578,-292.53 515.329,-278.602 492.423,-269.071" stroke="#d4d4d4" fill="none"></path><polygon points="710.437,-365.482 715.716,-365.927 711.866,-362.287 710.437,-365.482" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node14&#45;&gt;node5 --><g class="edge inheritance" id="graph1_14_5"><g id="a_inheritance|graph1_14_5"><a xlink:title="PatternMatching is a subtype of MatchOptimization"><path d="M671.919,-59.6226C633.884,-49.3286 581.036,-35.0257 544.315,-25.0875" stroke="#d4d4d4" fill="none"></path><polygon points="671.666,-61.3671 676.95,-60.9841 672.581,-57.9886 671.666,-61.3671" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node15 --><g class="node trait" id="graph1_15"><g id="a_trait|graph1_15"><a xlink:title="scala.tools.nsc.transform.patmat.MatchTranslation" xlink:href="MatchTranslation.html#inheritance-diagram"><polygon points="996,-86 877,-86 877,-61 996,-61 996,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../../../lib/trait_diagram.png" y="-80.5" x="887.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="908.5" text-anchor="start">MatchTranslation</text></a></g></g><!-- node15&#45;&gt;node5 --><g class="edge inheritance" id="graph1_15_5"><g id="a_inheritance|graph1_15_5"><a xlink:title="PatternMatching is a subtype of MatchTranslation"><path d="M871.79,-62.354C868.65,-61.8899 865.54,-61.4362 862.5,-61 755.813,-45.6934 631.105,-29.7057 559.705,-20.7339" stroke="#d4d4d4" fill="none"></path><polygon points="871.54,-64.0861 876.743,-63.091 872.055,-60.6242 871.54,-64.0861" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.tools.nsc.transform.patmat.Debugging" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DebuggingextendsAnyRef"></a>
+      <a id="Debugging:Debugging"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Debugging.html"><span class="name">Debugging</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@DebuggingextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.transform.patmat.Interface" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="InterfaceextendsTreeDSL"></a>
+      <a id="Interface:Interface"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Interface.html"><span class="name">Interface</span></a><span class="result"> extends <a href="../../ast/TreeDSL.html" class="extype" name="scala.tools.nsc.ast.TreeDSL">TreeDSL</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@InterfaceextendsTreeDSL" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.transform.patmat.Lit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LitextendsAnyVal"></a>
+      <a id="Lit:Lit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Lit.html"><span class="name">Lit</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@LitextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.transform.patmat.Logic" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LogicextendsDebugging"></a>
+      <a id="Logic:Logic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Logic.html"><span class="name">Logic</span></a><span class="result"> extends <a href="Debugging.html" class="extype" name="scala.tools.nsc.transform.patmat.Debugging">Debugging</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@LogicextendsDebugging" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.transform.patmat.MatchAnalysis" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MatchAnalysisextendsMatchApproximation"></a>
+      <a id="MatchAnalysis:MatchAnalysis"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchAnalysis.html"><span class="name">MatchAnalysis</span></a><span class="result"> extends <a href="MatchApproximation.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchApproximation">MatchApproximation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@MatchAnalysisextendsMatchApproximation" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.transform.patmat.MatchApproximation" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MatchApproximationextendsTreeAndTypeAnalysiswithScalaLogicwithMatchTreeMaking"></a>
+      <a id="MatchApproximation:MatchApproximation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchApproximation.html"><span class="name">MatchApproximation</span></a><span class="result"> extends <a href="TreeAndTypeAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis">TreeAndTypeAnalysis</a> with <a href="ScalaLogic.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalaLogic">ScalaLogic</a> with <a href="MatchTreeMaking.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTreeMaking">MatchTreeMaking</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@MatchApproximationextendsTreeAndTypeAnalysiswithScalaLogicwithMatchTreeMaking" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.transform.patmat.MatchCodeGen" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MatchCodeGenextendsInterface"></a>
+      <a id="MatchCodeGen:MatchCodeGen"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchCodeGen.html"><span class="name">MatchCodeGen</span></a><span class="result"> extends <a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@MatchCodeGenextendsInterface" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory methods used by TreeMakers to make the actual trees.</p><div class="fullcomment"><div class="comment cmt"><p>Factory methods used by TreeMakers to make the actual trees.</p><p>We have two modes in which to emit trees: optimized (the default)
+and pure (aka &quot;virtualized&quot;: match is parametric in its monad).
+</p></div></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchCps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MatchCpsextendsAnyRef"></a>
+      <a id="MatchCps:MatchCps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchCps.html"><span class="name">MatchCps</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@MatchCpsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Segregating this super hacky CPS code.</p>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchOptimization" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MatchOptimizationextendsMatchTreeMakingwithMatchAnalysis"></a>
+      <a id="MatchOptimization:MatchOptimization"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchOptimization.html"><span class="name">MatchOptimization</span></a><span class="result"> extends <a href="MatchTreeMaking.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTreeMaking">MatchTreeMaking</a> with <a href="MatchAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchAnalysis">MatchAnalysis</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@MatchOptimizationextendsMatchTreeMakingwithMatchAnalysis" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Optimize and analyze matches based on their TreeMaker-representation.</p><div class="fullcomment"><div class="comment cmt"><p>Optimize and analyze matches based on their TreeMaker-representation.</p><p>The patmat translation doesn't rely on this, so it could be disabled in principle.</p><ul><li>well, not quite: the backend crashes if we emit duplicates in switches (e.g. SI-7290)
+</li></ul></div></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchTranslation" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MatchTranslationextendsAnyRef"></a>
+      <a id="MatchTranslation:MatchTranslation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchTranslation.html"><span class="name">MatchTranslation</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@MatchTranslationextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Translate typed Trees that represent pattern matches into the patternmatching IR, defined by TreeMakers.</p>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchTreeMaking" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MatchTreeMakingextendsMatchCodeGenwithDebugging"></a>
+      <a id="MatchTreeMaking:MatchTreeMaking"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchTreeMaking.html"><span class="name">MatchTreeMaking</span></a><span class="result"> extends <a href="MatchCodeGen.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCodeGen">MatchCodeGen</a> with <a href="Debugging.html" class="extype" name="scala.tools.nsc.transform.patmat.Debugging">Debugging</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@MatchTreeMakingextendsMatchCodeGenwithDebugging" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Translate our IR (TreeMakers) into actual Scala Trees using the factory methods in MatchCodeGen.</p><div class="fullcomment"><div class="comment cmt"><p>Translate our IR (TreeMakers) into actual Scala Trees using the factory methods in MatchCodeGen.</p><p>The IR is mostly concerned with sequencing, substitution, and rendering all necessary conditions,
+mostly agnostic to whether we're in optimized/pure (virtualized) mode.
+</p></div></div>
+    </li><li name="scala.tools.nsc.transform.patmat.MatchWarnings" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MatchWarningsextendsAnyRef"></a>
+      <a id="MatchWarnings:MatchWarnings"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MatchWarnings.html"><span class="name">MatchWarnings</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@MatchWarningsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.transform.patmat.PatternExpander" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="PatternExpander[Pattern,Type]extendsAnyRef"></a>
+      <a id="PatternExpander[Pattern,Type]:PatternExpander[Pattern,Type]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PatternExpander.html"><span class="name">PatternExpander</span></a><span class="tparams">[<span name="Pattern">Pattern</span>, <span name="Type">Type</span>]</span><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@PatternExpander[Pattern,Type]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An extractor returns: F1, F2, ..., Fi, opt[Seq[E] or E*]
+       A case matches: P1, P2, ..., Pj, opt[Seq[E]]
+         Put together: P1/F1, P2/F2, ...</p><div class="fullcomment"><div class="comment cmt"><p>An extractor returns: F1, F2, ..., Fi, opt[Seq[E] or E*]
+       A case matches: P1, P2, ..., Pj, opt[Seq[E]]
+         Put together: P1/F1, P2/F2, ... Pi/Fi, Pi+1/E, Pi+2/E, ... Pj/E, opt[Seq[E]]</p><p> Here Pm/Fi is the last pattern to match the fixed arity section.</p><p>   productArity: the value of i, i.e. the number of non-sequence types in the extractor
+   nonStarArity: the value of j, i.e. the number of non-star patterns in the case definition
+   elementArity: j - i, i.e. the number of non-star patterns which must match sequence elements
+      starArity: 1 or 0 based on whether there is a star (sequence-absorbing) pattern
+     totalArity: nonStarArity + starArity, i.e. the number of patterns in the case definition</p><p> Note that productArity is a function only of the extractor, and
+ nonStar/star/totalArity are all functions of the patterns. The key
+ value for aligning and typing the patterns is elementArity, as it
+ is derived from both sets of information.
+</p></div></div>
+    </li><li name="scala.tools.nsc.transform.patmat.PatternMatching" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="PatternMatchingextendsSubComponentwithTransformwithTypingTransformerswithDebuggingwithInterfacewithMatchTranslationwithMatchTreeMakingwithMatchCodeGenwithMatchCpswithScalaLogicwithSolvingwithMatchAnalysiswithMatchOptimizationwithMatchWarningswithScalacPatternExpanders"></a>
+      <a id="PatternMatching:PatternMatching"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PatternMatching.html"><span class="name">PatternMatching</span></a><span class="result"> extends <a href="../../SubComponent.html" class="extype" name="scala.tools.nsc.SubComponent">SubComponent</a> with <a href="../Transform.html" class="extype" name="scala.tools.nsc.transform.Transform">Transform</a> with <a href="../TypingTransformers.html" class="extype" name="scala.tools.nsc.transform.TypingTransformers">TypingTransformers</a> with <a href="Debugging.html" class="extype" name="scala.tools.nsc.transform.patmat.Debugging">Debugging</a> with <a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a> with <a href="MatchTranslation.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTranslation">MatchTranslation</a> with <a href="MatchTreeMaking.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchTreeMaking">MatchTreeMaking</a> with <a href="MatchCodeGen.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCodeGen">MatchCodeGen</a> with <a href="MatchCps.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchCps">MatchCps</a> with <a href="ScalaLogic.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalaLogic">ScalaLogic</a> with <a href="Solving.html" class="extype" name="scala.tools.nsc.transform.patmat.Solving">Solving</a> with <a href="MatchAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchAnalysis">MatchAnalysis</a> with <a href="MatchOptimization.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchOptimization">MatchOptimization</a> with <a href="MatchWarnings.html" class="extype" name="scala.tools.nsc.transform.patmat.MatchWarnings">MatchWarnings</a> with <a href="ScalacPatternExpanders.html" class="extype" name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders">ScalacPatternExpanders</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@PatternMatchingextendsSubComponentwithTransformwithTypingTransformerswithDebuggingwithInterfacewithMatchTranslationwithMatchTreeMakingwithMatchCodeGenwithMatchCpswithScalaLogicwithSolvingwithMatchAnalysiswithMatchOptimizationwithMatchWarningswithScalacPatternExpanders" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Translate pattern matching.</p><div class="fullcomment"><div class="comment cmt"><p>Translate pattern matching.</p><p>Either into optimized if/then/else's, or virtualized as method calls (these methods form a zero-plus monad),
+similar in spirit to how for-comprehensions are compiled.</p><p>For each case, express all patterns as extractor calls, guards as 0-ary extractors, and sequence them using <code>flatMap</code>
+(lifting the body of the case into the monad using <code>one</code>).</p><p>Cases are combined into a pattern match using the <code>orElse</code> combinator (the implicit failure case is expressed using the monad's <code>zero</code>).</p><p>TODO:</p><ul><li>DCE (on irrefutable patterns)</li><li>update spec and double check it's implemented correctly (see TODO's)</li></ul><p>(longer-term) TODO:</p><ul><li>user-defined unapplyProd</li><li>recover GADT typing by locally inserting implicit witnesses to type equalities derived from the current case, and considering these witnesses during subtyping (?)</li><li>recover exhaustivity/unreachability of user-defined extractors by partitioning the types they match on using an HList or similar type-level structure
+</li></ul></div></div>
+    </li><li name="scala.tools.nsc.transform.patmat.ScalaLogic" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ScalaLogicextendsInterfacewithLogicwithTreeAndTypeAnalysis"></a>
+      <a id="ScalaLogic:ScalaLogic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalaLogic.html"><span class="name">ScalaLogic</span></a><span class="result"> extends <a href="Interface.html" class="extype" name="scala.tools.nsc.transform.patmat.Interface">Interface</a> with <a href="Logic.html" class="extype" name="scala.tools.nsc.transform.patmat.Logic">Logic</a> with <a href="TreeAndTypeAnalysis.html" class="extype" name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis">TreeAndTypeAnalysis</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@ScalaLogicextendsInterfacewithLogicwithTreeAndTypeAnalysis" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.transform.patmat.ScalacPatternExpanders" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ScalacPatternExpandersextendsAnyRef"></a>
+      <a id="ScalacPatternExpanders:ScalacPatternExpanders"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalacPatternExpanders.html"><span class="name">ScalacPatternExpanders</span></a><span class="result"> extends <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@ScalacPatternExpandersextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This is scalac-specific logic layered on top of the scalac-agnostic
+ &quot;matching products to patterns&quot; logic defined in PatternExpander.</p>
+    </li><li name="scala.tools.nsc.transform.patmat.Solving" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SolvingextendsLogic"></a>
+      <a id="Solving:Solving"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Solving.html"><span class="name">Solving</span></a><span class="result"> extends <a href="Logic.html" class="extype" name="scala.tools.nsc.transform.patmat.Logic">Logic</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@SolvingextendsLogic" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Solve pattern matcher exhaustivity problem via DPLL.</p>
+    </li><li name="scala.tools.nsc.transform.patmat.TreeAndTypeAnalysis" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TreeAndTypeAnalysisextendsDebugging"></a>
+      <a id="TreeAndTypeAnalysis:TreeAndTypeAnalysis"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="TreeAndTypeAnalysis.html"><span class="name">TreeAndTypeAnalysis</span></a><span class="result"> extends <a href="Debugging.html" class="extype" name="scala.tools.nsc.transform.patmat.Debugging">Debugging</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@TreeAndTypeAnalysisextendsDebugging" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.tools.nsc.transform.patmat.Lit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Lit"></a>
+      <a id="Lit:Lit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Lit$.html"><span class="name">Lit</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@Lit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.tools.nsc.transform.patmat.PatternMatchingStats" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PatternMatchingStats"></a>
+      <a id="PatternMatchingStats:PatternMatchingStats"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PatternMatchingStats$.html"><span class="name">PatternMatchingStats</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.transform.patmat.package@PatternMatchingStats" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

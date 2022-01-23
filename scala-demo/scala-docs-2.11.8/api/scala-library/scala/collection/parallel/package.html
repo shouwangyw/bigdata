@@ -1,0 +1,1156 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>parallel - Scala Standard Library 2.11.8 - scala.collection.parallel</title>
+          <meta name="description" content="parallel - Scala Standard Library 2.11.8 - scala.collection.parallel" />
+          <meta name="keywords" content="parallel Scala Standard Library 2.11.8 scala.collection.parallel" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'scala.collection.parallel.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="scala">scala</a>.<a href="../package.html" class="extype" name="scala.collection">collection</a></p>
+        <h1>parallel</h1><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parallel</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Package object for parallel collections.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/library/scala/collection/parallel/package.scala#L1" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">Content Hierarchy</span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 1728.00 216.00" height="216pt" width="1728pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 212)" class="graph" id="graph0"><polygon points="-4,4 -4,-212 1724,-212 1724,4 -4,4" stroke="none" fill="white"></polygon><!-- node0 --><g class="node trait" id="graph1_0"><g id="a_trait|graph1_0"><a xlink:title="scala.collection.parallel.ParMapLike" xlink:href="ParMapLike.html#inheritance-diagram"><polygon points="198,-147 0,-147 0,-122 198,-122 198,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="10" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="31" text-anchor="start">ParMapLike[K, V, Repr, Sequential]</text></a></g></g><!-- node14 --><g class="node trait" id="graph1_14"><g id="a_trait|graph1_14"><a xlink:title="scala.collection.parallel.ParMap" xlink:href="ParMap.html#inheritance-diagram"><polygon points="178,-86 74,-86 74,-61 178,-61 178,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-80.5" x="84" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="105" text-anchor="start">ParMap[K, V]</text></a></g></g><!-- node0&#45;&gt;node14 --><g class="edge inheritance" id="graph1_0_14"><g id="a_inheritance|graph1_0_14"><a xlink:title="ParMap[K, V] is a subtype of ParMapLike[K, V, Repr, Sequential]"><path d="M106.447,-117.228C110.96,-107.365 116.612,-95.0149 120.677,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="104.824,-116.569 104.334,-121.843 108.006,-118.025 104.824,-116.569" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="scala.collection.parallel.ParSetLike" xlink:href="ParSetLike.html#inheritance-diagram"><polygon points="718,-147 538,-147 538,-122 718,-122 718,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="548" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="569" text-anchor="start">ParSetLike[T, Repr, Sequential]</text></a></g></g><!-- node23 --><g class="node trait" id="graph1_23"><g id="a_trait|graph1_23"><a xlink:title="scala.collection.parallel.ParSet" xlink:href="ParSet.html#inheritance-diagram"><polygon points="607,-86 521,-86 521,-61 607,-61 607,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-80.5" x="531" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="552" text-anchor="start">ParSet[T]</text></a></g></g><!-- node1&#45;&gt;node23 --><g class="edge inheritance" id="graph1_1_23"><g id="a_inheritance|graph1_1_23"><a xlink:title="ParSet[T] is a subtype of ParSetLike[T, Repr, Sequential]"><path d="M611.505,-118.294C600.63,-108.268 586.604,-95.338 576.618,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="610.493,-119.741 615.356,-121.843 612.866,-117.168 610.493,-119.741" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks" xlink:href="AdaptiveWorkStealingForkJoinTasks.html#inheritance-diagram"><polygon points="1444,-86 1242,-86 1242,-61 1444,-61 1444,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-80.5" x="1252" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="1273" text-anchor="start">AdaptiveWorkStealingForkJoinTasks</text></a></g></g><!-- node5 --><g class="node class" id="graph1_5"><g id="a_class|graph1_5"><a xlink:title="scala.collection.parallel.ForkJoinTaskSupport" xlink:href="ForkJoinTaskSupport.html#inheritance-diagram"><polygon points="1350.5,-25 1215.5,-25 1215.5,-0 1350.5,-0 1350.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="1226" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="1247" text-anchor="start">ForkJoinTaskSupport</text></a></g></g><!-- node2&#45;&gt;node5 --><g class="edge inheritance" id="graph1_2_5"><g id="a_inheritance|graph1_2_5"><a xlink:title="ForkJoinTaskSupport is a subtype of AdaptiveWorkStealingForkJoinTasks"><path d="M1327.54,-57.2936C1317.34,-47.268 1304.19,-34.338 1294.83,-25.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1326.35,-58.5856 1331.15,-60.8435 1328.81,-56.09 1326.35,-58.5856" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node trait" id="graph1_3"><g id="a_trait|graph1_3"><a xlink:title="scala.collection.parallel.ExecutionContextTasks" xlink:href="ExecutionContextTasks.html#inheritance-diagram"><polygon points="883.5,-147 736.5,-147 736.5,-122 883.5,-122 883.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="747" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="768" text-anchor="start">ExecutionContextTasks</text></a></g></g><!-- node6 --><g class="node class" id="graph1_6"><g id="a_class|graph1_6"><a xlink:title="scala.collection.parallel.ExecutionContextTaskSupport" xlink:href="ExecutionContextTaskSupport.html#inheritance-diagram"><polygon points="904,-86 728,-86 728,-61 904,-61 904,-86" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-80.5" x="738" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="759" text-anchor="start">ExecutionContextTaskSupport</text></a></g></g><!-- node3&#45;&gt;node6 --><g class="edge inheritance" id="graph1_3_6"><g id="a_inheritance|graph1_3_6"><a xlink:title="ExecutionContextTaskSupport is a subtype of ExecutionContextTasks"><path d="M811.71,-116.687C812.703,-106.917 813.93,-94.8534 814.817,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="809.95,-116.692 811.185,-121.843 813.432,-117.046 809.95,-116.692" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="scala.collection.parallel.ParIterableLike" xlink:href="ParIterableLike.html#inheritance-diagram"><polygon points="445.5,-208 248.5,-208 248.5,-183 445.5,-183 445.5,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="259" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="280" text-anchor="start">ParIterableLike[T, Repr, Sequential]</text></a></g></g><!-- node4&#45;&gt;node0 --><g class="edge inheritance" id="graph1_4_0"><g id="a_inheritance|graph1_4_0"><a xlink:title="ParMapLike[K, V, Repr, Sequential] is a subtype of ParIterableLike[T, Repr, Sequential]"><path d="M293.664,-181.811C250.338,-171.504 189.737,-157.087 147.707,-147.087" stroke="#d4d4d4" fill="none"></path><polygon points="293.325,-183.529 298.594,-182.984 294.135,-180.124 293.325,-183.529" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4&#45;&gt;node1 --><g class="edge inheritance" id="graph1_4_1"><g id="a_inheritance|graph1_4_1"><a xlink:title="ParSetLike[T, Repr, Sequential] is a subtype of ParIterableLike[T, Repr, Sequential]"><path d="M406.836,-181.936C455.966,-171.621 524.996,-157.127 572.812,-147.087" stroke="#d4d4d4" fill="none"></path><polygon points="406.38,-180.244 401.847,-182.984 407.1,-183.669 406.38,-180.244" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node18 --><g class="node trait" id="graph1_18"><g id="a_trait|graph1_18"><a xlink:title="scala.collection.parallel.ParIterable" xlink:href="ParIterable.html#inheritance-diagram"><polygon points="318,-147 216,-147 216,-122 318,-122 318,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="226" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="247" text-anchor="start">ParIterable[T]</text></a></g></g><!-- node4&#45;&gt;node18 --><g class="edge inheritance" id="graph1_4_18"><g id="a_inheritance|graph1_4_18"><a xlink:title="ParIterable[T] is a subtype of ParIterableLike[T, Repr, Sequential]"><path d="M327.093,-179.819C313.404,-169.723 295.474,-156.499 282.773,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="326.132,-181.284 331.195,-182.843 328.209,-178.467 326.132,-181.284" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node20 --><g class="node trait" id="graph1_20"><g id="a_trait|graph1_20"><a xlink:title="scala.collection.parallel.ParSeqLike" xlink:href="ParSeqLike.html#inheritance-diagram"><polygon points="519.5,-147 336.5,-147 336.5,-122 519.5,-122 519.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="347" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="368" text-anchor="start">ParSeqLike[T, Repr, Sequential]</text></a></g></g><!-- node4&#45;&gt;node20 --><g class="edge inheritance" id="graph1_4_20"><g id="a_inheritance|graph1_4_20"><a xlink:title="ParSeqLike[T, Repr, Sequential] is a subtype of ParIterableLike[T, Repr, Sequential]"><path d="M367.156,-179.819C381.016,-169.723 399.17,-156.499 412.03,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="366.014,-178.485 363.003,-182.843 368.075,-181.314 366.014,-178.485" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node7 --><g class="node trait" id="graph1_7"><g id="a_trait|graph1_7"><a xlink:title="scala.collection.parallel.SeqSplitter" xlink:href="SeqSplitter.html#inheritance-diagram"><polygon points="1643,-86 1539,-86 1539,-61 1643,-61 1643,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-80.5" x="1549" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="1570" text-anchor="start">SeqSplitter[T]</text></a></g></g><!-- node8 --><g class="node trait" id="graph1_8"><g id="a_trait|graph1_8"><a xlink:title="scala.collection.parallel.HavingForkJoinPool" xlink:href="HavingForkJoinPool.html#inheritance-diagram"><polygon points="1456.5,-208 1327.5,-208 1327.5,-183 1456.5,-183 1456.5,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="1338" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="1359" text-anchor="start">HavingForkJoinPool</text></a></g></g><!-- node13 --><g class="node trait" id="graph1_13"><g id="a_trait|graph1_13"><a xlink:title="scala.collection.parallel.ForkJoinTasks" xlink:href="ForkJoinTasks.html#inheritance-diagram"><polygon points="1445.5,-147 1338.5,-147 1338.5,-122 1445.5,-122 1445.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1349" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1370" text-anchor="start">ForkJoinTasks</text></a></g></g><!-- node8&#45;&gt;node13 --><g class="edge inheritance" id="graph1_8_13"><g id="a_inheritance|graph1_8_13"><a xlink:title="ForkJoinTasks is a subtype of HavingForkJoinPool"><path d="M1392,-177.687C1392,-167.917 1392,-155.853 1392,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="1390.25,-177.843 1392,-182.843 1393.75,-177.844 1390.25,-177.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node9 --><g class="node trait" id="graph1_9"><g id="a_trait|graph1_9"><a xlink:title="scala.collection.parallel.Splitter" xlink:href="Splitter.html#inheritance-diagram"><polygon points="1634.5,-208 1547.5,-208 1547.5,-183 1634.5,-183 1634.5,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="1558" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="1579" text-anchor="start">Splitter[T]</text></a></g></g><!-- node11 --><g class="node trait" id="graph1_11"><g id="a_trait|graph1_11"><a xlink:title="scala.collection.parallel.IterableSplitter" xlink:href="IterableSplitter.html#inheritance-diagram"><polygon points="1582,-147 1464,-147 1464,-122 1582,-122 1582,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1474" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1495" text-anchor="start">IterableSplitter[T]</text></a></g></g><!-- node9&#45;&gt;node11 --><g class="edge inheritance" id="graph1_9_11"><g id="a_inheritance|graph1_9_11"><a xlink:title="IterableSplitter[T] is a subtype of Splitter[T]"><path d="M1573.78,-179.557C1562.18,-169.495 1547.11,-156.419 1536.41,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="1572.64,-180.889 1577.57,-182.843 1574.94,-178.245 1572.64,-180.889" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node19 --><g class="node trait" id="graph1_19"><g id="a_trait|graph1_19"><a xlink:title="scala.collection.parallel.PreciseSplitter" xlink:href="PreciseSplitter.html#inheritance-diagram"><polygon points="1720,-147 1600,-147 1600,-122 1720,-122 1720,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1610" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1631" text-anchor="start">PreciseSplitter[T]</text></a></g></g><!-- node9&#45;&gt;node19 --><g class="edge inheritance" id="graph1_9_19"><g id="a_inheritance|graph1_9_19"><a xlink:title="PreciseSplitter[T] is a subtype of Splitter[T]"><path d="M1608.48,-179.557C1620.24,-169.495 1635.54,-156.419 1646.4,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="1607.3,-178.264 1604.63,-182.843 1609.57,-180.924 1607.3,-178.264" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node10 --><g class="node trait" id="graph1_10"><g id="a_trait|graph1_10"><a xlink:title="scala.collection.parallel.AdaptiveWorkStealingTasks" xlink:href="AdaptiveWorkStealingTasks.html#inheritance-diagram"><polygon points="1320.5,-147 1155.5,-147 1155.5,-122 1320.5,-122 1320.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1166" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1187" text-anchor="start">AdaptiveWorkStealingTasks</text></a></g></g><!-- node10&#45;&gt;node2 --><g class="edge inheritance" id="graph1_10_2"><g id="a_inheritance|graph1_10_2"><a xlink:title="AdaptiveWorkStealingForkJoinTasks is a subtype of AdaptiveWorkStealingTasks"><path d="M1262.95,-119.481C1281.02,-109.327 1305.17,-95.7588 1322.2,-86.1884" stroke="#d4d4d4" fill="none"></path><polygon points="1262,-118.009 1258.49,-121.984 1263.71,-121.06 1262,-118.009" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node21 --><g class="node trait" id="graph1_21"><g id="a_trait|graph1_21"><a xlink:title="scala.collection.parallel.AdaptiveWorkStealingThreadPoolTasks" xlink:href="AdaptiveWorkStealingThreadPoolTasks.html#inheritance-diagram"><polygon points="1224,-86 1010,-86 1010,-61 1224,-61 1224,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-80.5" x="1020" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="1041" text-anchor="start">AdaptiveWorkStealingThreadPoolTasks</text></a></g></g><!-- node10&#45;&gt;node21 --><g class="edge inheritance" id="graph1_10_21"><g id="a_inheritance|graph1_10_21"><a xlink:title="AdaptiveWorkStealingThreadPoolTasks is a subtype of AdaptiveWorkStealingTasks"><path d="M1209.78,-119.738C1188.9,-109.557 1160.76,-95.8399 1140.97,-86.1884" stroke="#d4d4d4" fill="none"></path><polygon points="1209.12,-121.366 1214.38,-121.984 1210.66,-118.22 1209.12,-121.366" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node11&#45;&gt;node7 --><g class="edge inheritance" id="graph1_11_7"><g id="a_inheritance|graph1_11_7"><a xlink:title="SeqSplitter[T] is a subtype of IterableSplitter[T]"><path d="M1540.22,-118.557C1551.82,-108.495 1566.89,-95.4187 1577.59,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1539.06,-117.245 1536.43,-121.843 1541.36,-119.889 1539.06,-117.245" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node12 --><g class="node trait" id="graph1_12"><g id="a_trait|graph1_12"><a xlink:title="scala.collection.parallel.Tasks" xlink:href="Tasks.html#inheritance-diagram"><polygon points="1113,-208 1043,-208 1043,-183 1113,-183 1113,-208" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-202.5" x="1053" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-192.5" x="1074" text-anchor="start">Tasks</text></a></g></g><!-- node12&#45;&gt;node3 --><g class="edge inheritance" id="graph1_12_3"><g id="a_inheritance|graph1_12_3"><a xlink:title="ExecutionContextTasks is a subtype of Tasks"><path d="M1037.99,-185.691C991.327,-175.419 914.038,-158.404 862.569,-147.073" stroke="#d4d4d4" fill="none"></path><polygon points="1037.7,-187.421 1042.96,-186.787 1038.46,-184.003 1037.7,-187.421" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node12&#45;&gt;node10 --><g class="edge inheritance" id="graph1_12_10"><g id="a_inheritance|graph1_12_10"><a xlink:title="AdaptiveWorkStealingTasks is a subtype of Tasks"><path d="M1113.95,-181.243C1141.79,-170.979 1179.96,-156.904 1206.58,-147.087" stroke="#d4d4d4" fill="none"></path><polygon points="1113.32,-179.612 1109.23,-182.984 1114.53,-182.896 1113.32,-179.612" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node12&#45;&gt;node13 --><g class="edge inheritance" id="graph1_12_13"><g id="a_inheritance|graph1_12_13"><a xlink:title="ForkJoinTasks is a subtype of Tasks"><path d="M1118.05,-186.975C1174.02,-176.459 1275.78,-157.338 1338.28,-145.594" stroke="#d4d4d4" fill="none"></path><polygon points="1117.7,-185.26 1113.11,-187.904 1118.34,-188.7 1117.7,-185.26" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node17 --><g class="node trait" id="graph1_17"><g id="a_trait|graph1_17"><a xlink:title="scala.collection.parallel.TaskSupport" xlink:href="TaskSupport.html#inheritance-diagram"><polygon points="1000.5,-147 901.5,-147 901.5,-122 1000.5,-122 1000.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="912" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="933" text-anchor="start">TaskSupport</text></a></g></g><!-- node12&#45;&gt;node17 --><g class="edge inheritance" id="graph1_12_17"><g id="a_inheritance|graph1_12_17"><a xlink:title="TaskSupport is a subtype of Tasks"><path d="M1048.65,-180.866C1026.71,-170.672 997.022,-156.88 976.16,-147.188" stroke="#d4d4d4" fill="none"></path><polygon points="1047.94,-182.465 1053.21,-182.984 1049.41,-179.29 1047.94,-182.465" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node22 --><g class="node trait" id="graph1_22"><g id="a_trait|graph1_22"><a xlink:title="scala.collection.parallel.ThreadPoolTasks" xlink:href="ThreadPoolTasks.html#inheritance-diagram"><polygon points="1137.5,-147 1018.5,-147 1018.5,-122 1137.5,-122 1137.5,-147" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-141.5" x="1029" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-131.5" x="1050" text-anchor="start">ThreadPoolTasks</text></a></g></g><!-- node12&#45;&gt;node22 --><g class="edge inheritance" id="graph1_12_22"><g id="a_inheritance|graph1_12_22"><a xlink:title="ThreadPoolTasks is a subtype of Tasks"><path d="M1078,-177.687C1078,-167.917 1078,-155.853 1078,-147.132" stroke="#d4d4d4" fill="none"></path><polygon points="1076.25,-177.843 1078,-182.843 1079.75,-177.844 1076.25,-177.843" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node13&#45;&gt;node2 --><g class="edge inheritance" id="graph1_13_2"><g id="a_inheritance|graph1_13_2"><a xlink:title="AdaptiveWorkStealingForkJoinTasks is a subtype of ForkJoinTasks"><path d="M1378.93,-117.763C1370.67,-107.815 1360.17,-95.1764 1352.66,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1377.78,-119.115 1382.32,-121.843 1380.47,-116.879 1377.78,-119.115" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node15 --><g class="node trait" id="graph1_15"><g id="a_trait|graph1_15"><a xlink:title="scala.collection.parallel.ParSeq" xlink:href="ParSeq.html#inheritance-diagram"><polygon points="375,-86 287,-86 287,-61 375,-61 375,-86" stroke="#37657d" fill="#498aad"></polygon><image xlink:href="../../../lib/trait_diagram.png" y="-80.5" x="297" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-70.5" x="318" text-anchor="start">ParSeq[T]</text></a></g></g><!-- node16 --><g class="node class" id="graph1_16"><g id="a_class|graph1_16"><a xlink:title="scala.collection.parallel.ThreadPoolTaskSupport" xlink:href="ThreadPoolTaskSupport.html#inheritance-diagram"><polygon points="1077.5,-25 930.5,-25 930.5,-0 1077.5,-0 1077.5,-25" stroke="#115f3b" fill="#0a955b"></polygon><image xlink:href="../../../lib/class_diagram.png" y="-19.5" x="941" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="10.00" font-family="Arial" y="-9.5" x="962" text-anchor="start">ThreadPoolTaskSupport</text></a></g></g><!-- node17&#45;&gt;node5 --><g class="edge inheritance" id="graph1_17_5"><g id="a_inheritance|graph1_17_5"><a xlink:title="ForkJoinTaskSupport is a subtype of TaskSupport"><path d="M957.79,-116.803C965.594,-99.871 980.078,-74.321 1001,-61 1035.66,-38.9352 1143.36,-25.5472 1215.18,-18.839" stroke="#d4d4d4" fill="none"></path><polygon points="956.019,-116.479 955.583,-121.758 959.216,-117.903 956.019,-116.479" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node17&#45;&gt;node6 --><g class="edge inheritance" id="graph1_17_6"><g id="a_inheritance|graph1_17_6"><a xlink:title="ExecutionContextTaskSupport is a subtype of TaskSupport"><path d="M919.804,-119.866C896.479,-109.672 864.921,-95.8805 842.745,-86.1884" stroke="#d4d4d4" fill="none"></path><polygon points="919.368,-121.585 924.65,-121.984 920.769,-118.378 919.368,-121.585" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node17&#45;&gt;node16 --><g class="edge inheritance" id="graph1_17_16"><g id="a_inheritance|graph1_17_16"><a xlink:title="ThreadPoolTaskSupport is a subtype of TaskSupport"><path d="M952.909,-116.747C955.094,-101.617 959.526,-79.0271 968,-61 974.339,-47.5154 984.937,-34.1717 992.997,-25.077" stroke="#d4d4d4" fill="none"></path><polygon points="951.139,-116.772 952.202,-121.962 954.608,-117.242 951.139,-116.772" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node18&#45;&gt;node14 --><g class="edge inheritance" id="graph1_18_14"><g id="a_inheritance|graph1_18_14"><a xlink:title="ParMap[K, V] is a subtype of ParIterable[T]"><path d="M234.723,-119.994C210.332,-109.788 177.193,-95.921 153.933,-86.1884" stroke="#d4d4d4" fill="none"></path><polygon points="234.191,-121.668 239.479,-121.984 235.542,-118.44 234.191,-121.668" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node18&#45;&gt;node15 --><g class="edge inheritance" id="graph1_18_15"><g id="a_inheritance|graph1_18_15"><a xlink:title="ParSeq[T] is a subtype of ParIterable[T]"><path d="M283.495,-118.294C294.37,-108.268 308.396,-95.338 318.382,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="282.134,-117.168 279.644,-121.843 284.507,-119.741 282.134,-117.168" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node18&#45;&gt;node23 --><g class="edge inheritance" id="graph1_18_23"><g id="a_inheritance|graph1_18_23"><a xlink:title="ParSet[T] is a subtype of ParIterable[T]"><path d="M323.172,-122.341C380.62,-110.929 468.628,-93.446 520.835,-83.0749" stroke="#d4d4d4" fill="none"></path><polygon points="322.619,-120.667 318.056,-123.358 323.301,-124.1 322.619,-120.667" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node19&#45;&gt;node7 --><g class="edge inheritance" id="graph1_19_7"><g id="a_inheritance|graph1_19_7"><a xlink:title="SeqSplitter[T] is a subtype of PreciseSplitter[T]"><path d="M1642.52,-118.557C1630.76,-108.495 1615.46,-95.4187 1604.6,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1641.43,-119.924 1646.37,-121.843 1643.7,-117.264 1641.43,-119.924" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node20&#45;&gt;node15 --><g class="edge inheritance" id="graph1_20_15"><g id="a_inheritance|graph1_20_15"><a xlink:title="ParSeq[T] is a subtype of ParSeqLike[T, Repr, Sequential]"><path d="M404.291,-119.079C387.64,-108.951 365.657,-95.5802 350.124,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="403.655,-120.74 408.836,-121.843 405.473,-117.75 403.655,-120.74" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node21&#45;&gt;node16 --><g class="edge inheritance" id="graph1_21_16"><g id="a_inheritance|graph1_21_16"><a xlink:title="ThreadPoolTaskSupport is a subtype of AdaptiveWorkStealingThreadPoolTasks"><path d="M1090.15,-58.4807C1070.7,-48.3269 1044.72,-34.7588 1026.39,-25.1884" stroke="#d4d4d4" fill="none"></path><polygon points="1089.7,-60.2212 1094.94,-60.9841 1091.32,-57.1186 1089.7,-60.2212" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node22&#45;&gt;node21 --><g class="edge inheritance" id="graph1_22_21"><g id="a_inheritance|graph1_22_21"><a xlink:title="AdaptiveWorkStealingThreadPoolTasks is a subtype of ThreadPoolTasks"><path d="M1088.58,-117.496C1095.13,-107.59 1103.39,-95.0957 1109.31,-86.1323" stroke="#d4d4d4" fill="none"></path><polygon points="1087,-116.707 1085.71,-121.843 1089.92,-118.637 1087,-116.707" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+              </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.collection.parallel"><span>parallel</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AdaptiveWorkStealingForkJoinTasksextendsForkJoinTaskswithAdaptiveWorkStealingTasks"></a>
+      <a id="AdaptiveWorkStealingForkJoinTasks:AdaptiveWorkStealingForkJoinTasks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="AdaptiveWorkStealingForkJoinTasks.html"><span class="name">AdaptiveWorkStealingForkJoinTasks</span></a><span class="result"> extends <a href="ForkJoinTasks.html" class="extype" name="scala.collection.parallel.ForkJoinTasks">ForkJoinTasks</a> with <a href="AdaptiveWorkStealingTasks.html" class="extype" name="scala.collection.parallel.AdaptiveWorkStealingTasks">AdaptiveWorkStealingTasks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@AdaptiveWorkStealingForkJoinTasksextendsForkJoinTaskswithAdaptiveWorkStealingTasks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.AdaptiveWorkStealingTasks" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AdaptiveWorkStealingTasksextendsTasks"></a>
+      <a id="AdaptiveWorkStealingTasks:AdaptiveWorkStealingTasks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="AdaptiveWorkStealingTasks.html"><span class="name">AdaptiveWorkStealingTasks</span></a><span class="result"> extends <a href="Tasks.html" class="extype" name="scala.collection.parallel.Tasks">Tasks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@AdaptiveWorkStealingTasksextendsTasks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This trait implements scheduling by employing
+ an adaptive work stealing technique.</p>
+    </li><li name="scala.collection.parallel.CollectionsHaveToParArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CollectionsHaveToParArray[C,T]extendsAnyRef"></a>
+      <a id="CollectionsHaveToParArray[C,T]:CollectionsHaveToParArray[C,T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$CollectionsHaveToParArray.html"><span class="name">CollectionsHaveToParArray</span></a><span class="tparams">[<span name="C">C</span>, <span name="T">T</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@CollectionsHaveToParArray[C,T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Adds toParArray method to collection classes.</p>
+    </li><li name="scala.collection.parallel.Combiner" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Combiner[-Elem,+To]extendsBuilder[Elem,To]withSizingwithParallel"></a>
+      <a id="Combiner[-Elem,+To]:Combiner[Elem,To]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Combiner.html"><span class="name">Combiner</span></a><span class="tparams">[<span name="Elem">-Elem</span>, <span name="To">+To</span>]</span><span class="result"> extends <a href="../mutable/Builder.html" class="extype" name="scala.collection.mutable.Builder">Builder</a>[<span class="extype" name="scala.collection.parallel.Combiner.Elem">Elem</span>, <span class="extype" name="scala.collection.parallel.Combiner.To">To</span>] with <a href="../generic/Sizing.html" class="extype" name="scala.collection.generic.Sizing">Sizing</a> with <a href="../Parallel.html" class="extype" name="scala.collection.Parallel">Parallel</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@Combiner[-Elem,+To]extendsBuilder[Elem,To]withSizingwithParallel" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The base trait for all combiners.</p><div class="fullcomment"><div class="comment cmt"><p>The base trait for all combiners.
+ A combiner incremental collection construction just like
+ a regular builder, but also implements an efficient merge operation of two builders
+ via <code>combine</code> method. Once the collection is constructed, it may be obtained by invoking
+ the <code>result</code> method.</p><p> The complexity of the <code>combine</code> method should be less than linear for best
+ performance. The <code>result</code> method doesn't have to be a constant time operation,
+ but may be performed in parallel.
+</p></div><dl class="paramcmts block"><dt class="tparam">Elem</dt><dd class="cmt"><p>the type of the elements added to the builder</p></dd><dt class="tparam">To</dt><dd class="cmt"><p>the type of the collection the builder produces</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2.9</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.CombinerFactory" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CombinerFactory[U,Repr]extendsAnyRef"></a>
+      <a id="CombinerFactory[U,Repr]:CombinerFactory[U,Repr]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CombinerFactory.html"><span class="name">CombinerFactory</span></a><span class="tparams">[<span name="U">U</span>, <span name="Repr">Repr</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@CombinerFactory[U,Repr]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.ExecutionContextTaskSupport" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ExecutionContextTaskSupportextendsTaskSupportwithExecutionContextTasks"></a>
+      <a id="ExecutionContextTaskSupport:ExecutionContextTaskSupport"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ExecutionContextTaskSupport.html"><span class="name">ExecutionContextTaskSupport</span></a><span class="result"> extends <a href="TaskSupport.html" class="extype" name="scala.collection.parallel.TaskSupport">TaskSupport</a> with <a href="ExecutionContextTasks.html" class="extype" name="scala.collection.parallel.ExecutionContextTasks">ExecutionContextTasks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ExecutionContextTaskSupportextendsTaskSupportwithExecutionContextTasks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A task support that uses an execution context to schedule tasks.</p><div class="fullcomment"><div class="comment cmt"><p>A task support that uses an execution context to schedule tasks.</p><p> It can be used with the default execution context implementation in the
+ <code>scala.concurrent</code> package. It internally forwards the call to either a
+ forkjoin based task support or a thread pool executor one, depending on
+ what the execution context uses.</p><p> By default, parallel collections are parametrized with this task support
+ object, so parallel collections share the same execution context backend
+ as the rest of the <code>scala.concurrent</code> package.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="TaskSupport.html" class="extype" name="scala.collection.parallel.TaskSupport">scala.collection.parallel.TaskSupport</a> for more information.</p></span></dd></dl></div>
+    </li><li name="scala.collection.parallel.ExecutionContextTasks" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ExecutionContextTasksextendsTasks"></a>
+      <a id="ExecutionContextTasks:ExecutionContextTasks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ExecutionContextTasks.html"><span class="name">ExecutionContextTasks</span></a><span class="result"> extends <a href="Tasks.html" class="extype" name="scala.collection.parallel.Tasks">Tasks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ExecutionContextTasksextendsTasks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This tasks implementation uses execution contexts to spawn a parallel computation.</p><div class="fullcomment"><div class="comment cmt"><p>This tasks implementation uses execution contexts to spawn a parallel computation.</p><p> As an optimization, it internally checks whether the execution context is the
+ standard implementation based on fork/join pools, and if it is, creates a
+ <code>ForkJoinTaskSupport</code> that shares the same pool to forward its request to it.</p><p> Otherwise, it uses an execution context exclusive <code>Tasks</code> implementation to
+ divide the tasks into smaller chunks and execute operations on it.
+</p></div></div>
+    </li><li name="scala.collection.parallel.FactoryOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FactoryOps[From,Elem,To]extendsAnyRef"></a>
+      <a id="FactoryOps[From,Elem,To]:FactoryOps[From,Elem,To]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FactoryOps.html"><span class="name">FactoryOps</span></a><span class="tparams">[<span name="From">From</span>, <span name="Elem">Elem</span>, <span name="To">To</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@FactoryOps[From,Elem,To]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.ForkJoinTaskSupport" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ForkJoinTaskSupportextendsTaskSupportwithAdaptiveWorkStealingForkJoinTasks"></a>
+      <a id="ForkJoinTaskSupport:ForkJoinTaskSupport"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ForkJoinTaskSupport.html"><span class="name">ForkJoinTaskSupport</span></a><span class="result"> extends <a href="TaskSupport.html" class="extype" name="scala.collection.parallel.TaskSupport">TaskSupport</a> with <a href="AdaptiveWorkStealingForkJoinTasks.html" class="extype" name="scala.collection.parallel.AdaptiveWorkStealingForkJoinTasks">AdaptiveWorkStealingForkJoinTasks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ForkJoinTaskSupportextendsTaskSupportwithAdaptiveWorkStealingForkJoinTasks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A task support that uses a fork join pool to schedule tasks.</p><div class="fullcomment"><div class="comment cmt"><p>A task support that uses a fork join pool to schedule tasks.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="TaskSupport.html" class="extype" name="scala.collection.parallel.TaskSupport">scala.collection.parallel.TaskSupport</a> for more information.</p></span></dd></dl></div>
+    </li><li name="scala.collection.parallel.ForkJoinTasks" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ForkJoinTasksextendsTaskswithHavingForkJoinPool"></a>
+      <a id="ForkJoinTasks:ForkJoinTasks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ForkJoinTasks.html"><span class="name">ForkJoinTasks</span></a><span class="result"> extends <a href="Tasks.html" class="extype" name="scala.collection.parallel.Tasks">Tasks</a> with <a href="HavingForkJoinPool.html" class="extype" name="scala.collection.parallel.HavingForkJoinPool">HavingForkJoinPool</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ForkJoinTasksextendsTaskswithHavingForkJoinPool" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An implementation trait for parallel tasks based on the fork/join framework.</p>
+    </li><li name="scala.collection.parallel.HavingForkJoinPool" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="HavingForkJoinPoolextendsAnyRef"></a>
+      <a id="HavingForkJoinPool:HavingForkJoinPool"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="HavingForkJoinPool.html"><span class="name">HavingForkJoinPool</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@HavingForkJoinPoolextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A trait describing objects that provide a fork/join pool.</p>
+    </li><li name="scala.collection.parallel.IterableSplitter" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="IterableSplitter[+T]extendsAugmentedIterableIterator[T]withSplitter[T]withSignallingwithDelegatedSignalling"></a>
+      <a id="IterableSplitter[+T]:IterableSplitter[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IterableSplitter.html"><span class="name">IterableSplitter</span></a><span class="tparams">[<span name="T">+T</span>]</span><span class="result"> extends <span class="extype" name="scala.collection.parallel.AugmentedIterableIterator">AugmentedIterableIterator</span>[<span class="extype" name="scala.collection.parallel.IterableSplitter.T">T</span>] with <a href="Splitter.html" class="extype" name="scala.collection.parallel.Splitter">Splitter</a>[<span class="extype" name="scala.collection.parallel.IterableSplitter.T">T</span>] with <a href="../generic/Signalling.html" class="extype" name="scala.collection.generic.Signalling">Signalling</a> with <a href="../generic/DelegatedSignalling.html" class="extype" name="scala.collection.generic.DelegatedSignalling">DelegatedSignalling</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@IterableSplitter[+T]extendsAugmentedIterableIterator[T]withSplitter[T]withSignallingwithDelegatedSignalling" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Parallel iterators allow splitting and provide a <code>remaining</code> method to
+ obtain the number of elements remaining in the iterator.</p><div class="fullcomment"><div class="comment cmt"><p>Parallel iterators allow splitting and provide a <code>remaining</code> method to
+ obtain the number of elements remaining in the iterator.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>type of the elements iterated.</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.ParIterable" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParIterable[+T]extendsGenIterable[T]withGenericParTemplate[T,scala.collection.parallel.ParIterable]withParIterableLike[T,scala.collection.parallel.ParIterable[T],Iterable[T]]"></a>
+      <a id="ParIterable[+T]:ParIterable[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ParIterable.html"><span class="name">ParIterable</span></a><span class="tparams">[<span name="T">+T</span>]</span><span class="result"> extends <a href="../GenIterable.html" class="extype" name="scala.collection.GenIterable">GenIterable</a>[<span class="extype" name="scala.collection.parallel.ParIterable.T">T</span>] with <a href="../generic/GenericParTemplate.html" class="extype" name="scala.collection.generic.GenericParTemplate">GenericParTemplate</a>[<span class="extype" name="scala.collection.parallel.ParIterable.T">T</span>, <a href="ParIterable.html" class="extype" name="scala.collection.parallel.ParIterable">ParIterable</a>] with <a href="ParIterableLike.html" class="extype" name="scala.collection.parallel.ParIterableLike">ParIterableLike</a>[<span class="extype" name="scala.collection.parallel.ParIterable.T">T</span>, <a href="ParIterable.html" class="extype" name="scala.collection.parallel.ParIterable">ParIterable</a>[<span class="extype" name="scala.collection.parallel.ParIterable.T">T</span>], <a href="../../package.html#Iterable[+A]=Iterable[A]" class="extmbr" name="scala.Iterable">scala.Iterable</a>[<span class="extype" name="scala.collection.parallel.ParIterable.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ParIterable[+T]extendsGenIterable[T]withGenericParTemplate[T,scala.collection.parallel.ParIterable]withParIterableLike[T,scala.collection.parallel.ParIterable[T],Iterable[T]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template trait for parallel iterable collections.</p><div class="fullcomment"><div class="comment cmt"><p>A template trait for parallel iterable collections.</p><p> This is a base trait for Scala parallel collections. It defines behaviour
+ common to all parallel collections. Concrete parallel collections should
+ inherit this trait and <code>ParIterable</code> if they want to define specific combiner
+ factories.</p><p> Parallel operations are implemented with divide and conquer style algorithms that
+ parallelize well. The basic idea is to split the collection into smaller parts until
+ they are small enough to be operated on sequentially.</p><p> All of the parallel operations are implemented as tasks within this trait. Tasks rely
+ on the concept of splitters, which extend iterators. Every parallel collection defines:</p><pre><span class="kw">def</span> splitter: IterableSplitter[T]</pre><p> which returns an instance of <code>IterableSplitter[T]</code>, which is a subtype of <code>Splitter[T]</code>.
+ Splitters have a method <code>remaining</code> to check the remaining number of elements,
+ and method <code>split</code> which is defined by splitters. Method <code>split</code> divides the splitters
+ iterate over into disjunct subsets:</p><pre><span class="kw">def</span> split: <span class="std">Seq</span>[Splitter]</pre><p> which splits the splitter into a sequence of disjunct subsplitters. This is typically a
+ very fast operation which simply creates wrappers around the receiver collection.
+ This can be repeated recursively.</p><p> Tasks are scheduled for execution through a
+ <a href="TaskSupport.html" class="extype" name="scala.collection.parallel.TaskSupport">scala.collection.parallel.TaskSupport</a> object, which can be changed
+ through the <code>tasksupport</code> setter of the collection.</p><p> Method <code>newCombiner</code> produces a new combiner. Combiners are an extension of builders.
+ They provide a method <code>combine</code> which combines two combiners and returns a combiner
+ containing elements of both combiners.
+ This method can be implemented by aggressively copying all the elements into the new combiner
+ or by lazily binding their results. It is recommended to avoid copying all of
+ the elements for performance reasons, although that cost might be negligible depending on
+ the use case. Standard parallel collection combiners avoid copying when merging results,
+ relying either on a two-step lazy construction or specific data-structure properties.</p><p> Methods:</p><pre><span class="kw">def</span> seq: Sequential
+<span class="kw">def</span> par: Repr</pre><p> produce the sequential or parallel implementation of the collection, respectively.
+ Method <code>par</code> just returns a reference to this parallel collection.
+ Method <code>seq</code> is efficient - it will not copy the elements. Instead,
+ it will create a sequential version of the collection using the same underlying data structure.
+ Note that this is not the case for sequential collections in general - they may copy the elements
+ and produce a different underlying data structure.</p><p> The combination of methods <code>toMap</code>, <code>toSeq</code> or <code>toSet</code> along with <code>par</code> and <code>seq</code> is a flexible
+ way to change between different collection types.</p><p> Since this trait extends the <code>GenIterable</code> trait, methods like <code>size</code> must also
+ be implemented in concrete collections, while <code>iterator</code> forwards to <code>splitter</code> by
+ default.</p><p> Each parallel collection is bound to a specific fork/join pool, on which dormant worker
+ threads are kept. The fork/join pool contains other information such as the parallelism
+ level, that is, the number of processors used. When a collection is created, it is assigned the
+ default fork/join pool found in the <code>scala.parallel</code> package object.</p><p> Parallel collections are not necessarily ordered in terms of the <code>foreach</code>
+ operation (see <code>Traversable</code>). Parallel sequences have a well defined order for iterators - creating
+ an iterator and traversing the elements linearly will always yield the same order.
+ However, bulk operations such as <code>foreach</code>, <code>map</code> or <code>filter</code> always occur in undefined orders for all
+ parallel collections.</p><p> Existing parallel collection implementations provide strict parallel iterators. Strict parallel iterators are aware
+ of the number of elements they have yet to traverse. It's also possible to provide non-strict parallel iterators,
+ which do not know the number of elements remaining. To do this, the new collection implementation must override
+ <code>isStrictSplitterCollection</code> to <code>false</code>. This will make some operations unavailable.</p><p> To create a new parallel collection, extend the <code>ParIterable</code> trait, and implement <code>size</code>, <code>splitter</code>,
+ <code>newCombiner</code> and <code>seq</code>. Having an implicit combiner factory requires extending this trait in addition, as
+ well as providing a companion object, as with regular collections.</p><p> Method <code>size</code> is implemented as a constant time operation for parallel collections, and parallel collection
+ operations rely on this assumption.</p><p> The higher-order functions passed to certain operations may contain side-effects. Since implementations
+ of bulk operations may not be sequential, this means that side-effects may not be predictable and may
+ produce data-races, deadlocks or invalidation of state if care is not taken. It is up to the programmer
+ to either avoid using side-effects or to use some form of synchronization when accessing mutable data.</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the element type of the collection</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2.9</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.ParIterableLike" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParIterableLike[+T,+Repr&lt;:scala.collection.parallel.ParIterable[T],+Sequential&lt;:Iterable[T]withscala.collection.IterableLike[T,Sequential]]extendsGenIterableLike[T,Repr]withCustomParallelizable[T,Repr]withParallelwithHasNewCombiner[T,Repr]"></a>
+      <a id="ParIterableLike[+T,+Repr&lt;:ParIterable[T],+Sequential&lt;:scala.Iterable[T]withIterableLike[T,Sequential]]:ParIterableLike[T,Repr,Sequential]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ParIterableLike.html"><span class="name">ParIterableLike</span></a><span class="tparams">[<span name="T">+T</span>, <span name="Repr">+Repr &lt;: <a href="ParIterable.html" class="extype" name="scala.collection.parallel.ParIterable">ParIterable</a>[<span class="extype" name="scala.collection.parallel.ParIterableLike.T">T</span>]</span>, <span name="Sequential">+Sequential &lt;: <a href="../../package.html#Iterable[+A]=Iterable[A]" class="extmbr" name="scala.Iterable">scala.Iterable</a>[<span class="extype" name="scala.collection.parallel.ParIterableLike.T">T</span>] with <a href="../IterableLike.html" class="extype" name="scala.collection.IterableLike">IterableLike</a>[<span class="extype" name="scala.collection.parallel.ParIterableLike.T">T</span>, <span class="extype" name="scala.collection.parallel.ParIterableLike.Sequential">Sequential</span>]</span>]</span><span class="result"> extends <a href="../GenIterableLike.html" class="extype" name="scala.collection.GenIterableLike">GenIterableLike</a>[<span class="extype" name="scala.collection.parallel.ParIterableLike.T">T</span>, <span class="extype" name="scala.collection.parallel.ParIterableLike.Repr">Repr</span>] with <a href="../CustomParallelizable.html" class="extype" name="scala.collection.CustomParallelizable">CustomParallelizable</a>[<span class="extype" name="scala.collection.parallel.ParIterableLike.T">T</span>, <span class="extype" name="scala.collection.parallel.ParIterableLike.Repr">Repr</span>] with <a href="../Parallel.html" class="extype" name="scala.collection.Parallel">Parallel</a> with <a href="../generic/HasNewCombiner.html" class="extype" name="scala.collection.generic.HasNewCombiner">HasNewCombiner</a>[<span class="extype" name="scala.collection.parallel.ParIterableLike.T">T</span>, <span class="extype" name="scala.collection.parallel.ParIterableLike.Repr">Repr</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ParIterableLike[+T,+Repr&lt;:scala.collection.parallel.ParIterable[T],+Sequential&lt;:Iterable[T]withscala.collection.IterableLike[T,Sequential]]extendsGenIterableLike[T,Repr]withCustomParallelizable[T,Repr]withParallelwithHasNewCombiner[T,Repr]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template trait for parallel collections of type <code>ParIterable[T]</code>.</p><div class="fullcomment"><div class="comment cmt"><p>A template trait for parallel collections of type <code>ParIterable[T]</code>.</p><p> This is a base trait for Scala parallel collections. It defines behaviour
+ common to all parallel collections. Concrete parallel collections should
+ inherit this trait and <code>ParIterable</code> if they want to define specific combiner
+ factories.</p><p> Parallel operations are implemented with divide and conquer style algorithms that
+ parallelize well. The basic idea is to split the collection into smaller parts until
+ they are small enough to be operated on sequentially.</p><p> All of the parallel operations are implemented as tasks within this trait. Tasks rely
+ on the concept of splitters, which extend iterators. Every parallel collection defines:</p><pre><span class="kw">def</span> splitter: IterableSplitter[T]</pre><p> which returns an instance of <code>IterableSplitter[T]</code>, which is a subtype of <code>Splitter[T]</code>.
+ Splitters have a method <code>remaining</code> to check the remaining number of elements,
+ and method <code>split</code> which is defined by splitters. Method <code>split</code> divides the splitters
+ iterate over into disjunct subsets:</p><pre><span class="kw">def</span> split: <span class="std">Seq</span>[Splitter]</pre><p> which splits the splitter into a sequence of disjunct subsplitters. This is typically a
+ very fast operation which simply creates wrappers around the receiver collection.
+ This can be repeated recursively.</p><p> Tasks are scheduled for execution through a
+ <a href="TaskSupport.html" class="extype" name="scala.collection.parallel.TaskSupport">scala.collection.parallel.TaskSupport</a> object, which can be changed
+ through the <code>tasksupport</code> setter of the collection.</p><p> Method <code>newCombiner</code> produces a new combiner. Combiners are an extension of builders.
+ They provide a method <code>combine</code> which combines two combiners and returns a combiner
+ containing elements of both combiners.
+ This method can be implemented by aggressively copying all the elements into the new combiner
+ or by lazily binding their results. It is recommended to avoid copying all of
+ the elements for performance reasons, although that cost might be negligible depending on
+ the use case. Standard parallel collection combiners avoid copying when merging results,
+ relying either on a two-step lazy construction or specific data-structure properties.</p><p> Methods:</p><pre><span class="kw">def</span> seq: Sequential
+<span class="kw">def</span> par: Repr</pre><p> produce the sequential or parallel implementation of the collection, respectively.
+ Method <code>par</code> just returns a reference to this parallel collection.
+ Method <code>seq</code> is efficient - it will not copy the elements. Instead,
+ it will create a sequential version of the collection using the same underlying data structure.
+ Note that this is not the case for sequential collections in general - they may copy the elements
+ and produce a different underlying data structure.</p><p> The combination of methods <code>toMap</code>, <code>toSeq</code> or <code>toSet</code> along with <code>par</code> and <code>seq</code> is a flexible
+ way to change between different collection types.</p><p> Since this trait extends the <code>GenIterable</code> trait, methods like <code>size</code> must also
+ be implemented in concrete collections, while <code>iterator</code> forwards to <code>splitter</code> by
+ default.</p><p> Each parallel collection is bound to a specific fork/join pool, on which dormant worker
+ threads are kept. The fork/join pool contains other information such as the parallelism
+ level, that is, the number of processors used. When a collection is created, it is assigned the
+ default fork/join pool found in the <code>scala.parallel</code> package object.</p><p> Parallel collections are not necessarily ordered in terms of the <code>foreach</code>
+ operation (see <code>Traversable</code>). Parallel sequences have a well defined order for iterators - creating
+ an iterator and traversing the elements linearly will always yield the same order.
+ However, bulk operations such as <code>foreach</code>, <code>map</code> or <code>filter</code> always occur in undefined orders for all
+ parallel collections.</p><p> Existing parallel collection implementations provide strict parallel iterators. Strict parallel iterators are aware
+ of the number of elements they have yet to traverse. It's also possible to provide non-strict parallel iterators,
+ which do not know the number of elements remaining. To do this, the new collection implementation must override
+ <code>isStrictSplitterCollection</code> to <code>false</code>. This will make some operations unavailable.</p><p> To create a new parallel collection, extend the <code>ParIterable</code> trait, and implement <code>size</code>, <code>splitter</code>,
+ <code>newCombiner</code> and <code>seq</code>. Having an implicit combiner factory requires extending this trait in addition, as
+ well as providing a companion object, as with regular collections.</p><p> Method <code>size</code> is implemented as a constant time operation for parallel collections, and parallel collection
+ operations rely on this assumption.</p><p> The higher-order functions passed to certain operations may contain side-effects. Since implementations
+ of bulk operations may not be sequential, this means that side-effects may not be predictable and may
+ produce data-races, deadlocks or invalidation of state if care is not taken. It is up to the programmer
+ to either avoid using side-effects or to use some form of synchronization when accessing mutable data.</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the element type of the collection</p></dd><dt class="tparam">Repr</dt><dd class="cmt"><p>the type of the actual collection containing the elements</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.ParMap" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParMap[K,+V]extendsGenMap[K,V]withGenericParMapTemplate[K,V,scala.collection.parallel.ParMap]withParIterable[(K,V)]withParMapLike[K,V,scala.collection.parallel.ParMap[K,V],scala.collection.Map[K,V]]"></a>
+      <a id="ParMap[K,+V]:ParMap[K,V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ParMap.html"><span class="name">ParMap</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">+V</span>]</span><span class="result"> extends <a href="../GenMap.html" class="extype" name="scala.collection.GenMap">GenMap</a>[<span class="extype" name="scala.collection.parallel.ParMap.K">K</span>, <span class="extype" name="scala.collection.parallel.ParMap.V">V</span>] with <a href="../generic/GenericParMapTemplate.html" class="extype" name="scala.collection.generic.GenericParMapTemplate">GenericParMapTemplate</a>[<span class="extype" name="scala.collection.parallel.ParMap.K">K</span>, <span class="extype" name="scala.collection.parallel.ParMap.V">V</span>, <a href="ParMap.html" class="extype" name="scala.collection.parallel.ParMap">ParMap</a>] with <a href="ParIterable.html" class="extype" name="scala.collection.parallel.ParIterable">ParIterable</a>[(<span class="extype" name="scala.collection.parallel.ParMap.K">K</span>, <span class="extype" name="scala.collection.parallel.ParMap.V">V</span>)] with <a href="ParMapLike.html" class="extype" name="scala.collection.parallel.ParMapLike">ParMapLike</a>[<span class="extype" name="scala.collection.parallel.ParMap.K">K</span>, <span class="extype" name="scala.collection.parallel.ParMap.V">V</span>, <a href="ParMap.html" class="extype" name="scala.collection.parallel.ParMap">ParMap</a>[<span class="extype" name="scala.collection.parallel.ParMap.K">K</span>, <span class="extype" name="scala.collection.parallel.ParMap.V">V</span>], <a href="../Map.html" class="extype" name="scala.collection.Map">Map</a>[<span class="extype" name="scala.collection.parallel.ParMap.K">K</span>, <span class="extype" name="scala.collection.parallel.ParMap.V">V</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ParMap[K,+V]extendsGenMap[K,V]withGenericParMapTemplate[K,V,scala.collection.parallel.ParMap]withParIterable[(K,V)]withParMapLike[K,V,scala.collection.parallel.ParMap[K,V],scala.collection.Map[K,V]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template trait for parallel maps.</p><div class="fullcomment"><div class="comment cmt"><p>A template trait for parallel maps.</p><p> The higher-order functions passed to certain operations may contain side-effects. Since implementations
+ of bulk operations may not be sequential, this means that side-effects may not be predictable and may
+ produce data-races, deadlocks or invalidation of state if care is not taken. It is up to the programmer
+ to either avoid using side-effects or to use some form of synchronization when accessing mutable data.</p></div><dl class="paramcmts block"><dt class="tparam">K</dt><dd class="cmt"><p>the key type of the map</p></dd><dt class="tparam">V</dt><dd class="cmt"><p>the value type of the map</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2.9</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.ParMapLike" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParMapLike[K,+V,+Repr&lt;:scala.collection.parallel.ParMapLike[K,V,Repr,Sequential]withscala.collection.parallel.ParMap[K,V],+Sequential&lt;:scala.collection.Map[K,V]withscala.collection.MapLike[K,V,Sequential]]extendsGenMapLike[K,V,Repr]withParIterableLike[(K,V),Repr,Sequential]"></a>
+      <a id="ParMapLike[K,+V,+Repr&lt;:ParMapLike[K,V,Repr,Sequential]withParMap[K,V],+Sequential&lt;:Map[K,V]withMapLike[K,V,Sequential]]:ParMapLike[K,V,Repr,Sequential]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ParMapLike.html"><span class="name">ParMapLike</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">+V</span>, <span name="Repr">+Repr &lt;: <a href="ParMapLike.html" class="extype" name="scala.collection.parallel.ParMapLike">ParMapLike</a>[<span class="extype" name="scala.collection.parallel.ParMapLike.K">K</span>, <span class="extype" name="scala.collection.parallel.ParMapLike.V">V</span>, <span class="extype" name="scala.collection.parallel.ParMapLike.Repr">Repr</span>, <span class="extype" name="scala.collection.parallel.ParMapLike.Sequential">Sequential</span>] with <a href="ParMap.html" class="extype" name="scala.collection.parallel.ParMap">ParMap</a>[<span class="extype" name="scala.collection.parallel.ParMapLike.K">K</span>, <span class="extype" name="scala.collection.parallel.ParMapLike.V">V</span>]</span>, <span name="Sequential">+Sequential &lt;: <a href="../Map.html" class="extype" name="scala.collection.Map">Map</a>[<span class="extype" name="scala.collection.parallel.ParMapLike.K">K</span>, <span class="extype" name="scala.collection.parallel.ParMapLike.V">V</span>] with <a href="../MapLike.html" class="extype" name="scala.collection.MapLike">MapLike</a>[<span class="extype" name="scala.collection.parallel.ParMapLike.K">K</span>, <span class="extype" name="scala.collection.parallel.ParMapLike.V">V</span>, <span class="extype" name="scala.collection.parallel.ParMapLike.Sequential">Sequential</span>]</span>]</span><span class="result"> extends <a href="../GenMapLike.html" class="extype" name="scala.collection.GenMapLike">GenMapLike</a>[<span class="extype" name="scala.collection.parallel.ParMapLike.K">K</span>, <span class="extype" name="scala.collection.parallel.ParMapLike.V">V</span>, <span class="extype" name="scala.collection.parallel.ParMapLike.Repr">Repr</span>] with <a href="ParIterableLike.html" class="extype" name="scala.collection.parallel.ParIterableLike">ParIterableLike</a>[(<span class="extype" name="scala.collection.parallel.ParMapLike.K">K</span>, <span class="extype" name="scala.collection.parallel.ParMapLike.V">V</span>), <span class="extype" name="scala.collection.parallel.ParMapLike.Repr">Repr</span>, <span class="extype" name="scala.collection.parallel.ParMapLike.Sequential">Sequential</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ParMapLike[K,+V,+Repr&lt;:scala.collection.parallel.ParMapLike[K,V,Repr,Sequential]withscala.collection.parallel.ParMap[K,V],+Sequential&lt;:scala.collection.Map[K,V]withscala.collection.MapLike[K,V,Sequential]]extendsGenMapLike[K,V,Repr]withParIterableLike[(K,V),Repr,Sequential]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template trait for mutable parallel maps.</p><div class="fullcomment"><div class="comment cmt"><p>A template trait for mutable parallel maps. This trait is to be mixed in
+ with concrete parallel maps to override the representation type.</p><p> The higher-order functions passed to certain operations may contain side-effects. Since implementations
+ of bulk operations may not be sequential, this means that side-effects may not be predictable and may
+ produce data-races, deadlocks or invalidation of state if care is not taken. It is up to the programmer
+ to either avoid using side-effects or to use some form of synchronization when accessing mutable data.</p></div><dl class="paramcmts block"><dt class="tparam">K</dt><dd class="cmt"><p>the key type of the map</p></dd><dt class="tparam">V</dt><dd class="cmt"><p>the value type of the map</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.ParSeq" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParSeq[+T]extendsGenSeq[T]withParIterable[T]withGenericParTemplate[T,scala.collection.parallel.ParSeq]withParSeqLike[T,scala.collection.parallel.ParSeq[T],Seq[T]]"></a>
+      <a id="ParSeq[+T]:ParSeq[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ParSeq.html"><span class="name">ParSeq</span></a><span class="tparams">[<span name="T">+T</span>]</span><span class="result"> extends <a href="../GenSeq.html" class="extype" name="scala.collection.GenSeq">GenSeq</a>[<span class="extype" name="scala.collection.parallel.ParSeq.T">T</span>] with <a href="ParIterable.html" class="extype" name="scala.collection.parallel.ParIterable">ParIterable</a>[<span class="extype" name="scala.collection.parallel.ParSeq.T">T</span>] with <a href="../generic/GenericParTemplate.html" class="extype" name="scala.collection.generic.GenericParTemplate">GenericParTemplate</a>[<span class="extype" name="scala.collection.parallel.ParSeq.T">T</span>, <a href="ParSeq.html" class="extype" name="scala.collection.parallel.ParSeq">ParSeq</a>] with <a href="ParSeqLike.html" class="extype" name="scala.collection.parallel.ParSeqLike">ParSeqLike</a>[<span class="extype" name="scala.collection.parallel.ParSeq.T">T</span>, <a href="ParSeq.html" class="extype" name="scala.collection.parallel.ParSeq">ParSeq</a>[<span class="extype" name="scala.collection.parallel.ParSeq.T">T</span>], <a href="../../package.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">scala.Seq</a>[<span class="extype" name="scala.collection.parallel.ParSeq.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ParSeq[+T]extendsGenSeq[T]withParIterable[T]withGenericParTemplate[T,scala.collection.parallel.ParSeq]withParSeqLike[T,scala.collection.parallel.ParSeq[T],Seq[T]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template trait for parallel sequences.</p><div class="fullcomment"><div class="comment cmt"><p>A template trait for parallel sequences.</p><p> Parallel sequences inherit the <code>Seq</code> trait. Their indexing and length computations
+ are defined to be efficient. Like their sequential counterparts
+ they always have a defined order of elements. This means they will produce resulting
+ parallel sequences in the same way sequential sequences do. However, the order
+ in which they perform bulk operations on elements to produce results is not defined and is generally
+ nondeterministic. If the higher-order functions given to them produce no sideeffects,
+ then this won't be noticeable.</p><p> This trait defines a new, more general <code>split</code> operation and reimplements the <code>split</code>
+ operation of <code>ParallelIterable</code> trait using the new <code>split</code> operation.</p><p> The higher-order functions passed to certain operations may contain side-effects. Since implementations
+ of bulk operations may not be sequential, this means that side-effects may not be predictable and may
+ produce data-races, deadlocks or invalidation of state if care is not taken. It is up to the programmer
+ to either avoid using side-effects or to use some form of synchronization when accessing mutable data.</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the type of the elements in this parallel sequence</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.ParSeqLike" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParSeqLike[+T,+Repr&lt;:scala.collection.parallel.ParSeq[T],+Sequential&lt;:Seq[T]withscala.collection.SeqLike[T,Sequential]]extendsGenSeqLike[T,Repr]withParIterableLike[T,Repr,Sequential]"></a>
+      <a id="ParSeqLike[+T,+Repr&lt;:ParSeq[T],+Sequential&lt;:scala.Seq[T]withSeqLike[T,Sequential]]:ParSeqLike[T,Repr,Sequential]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ParSeqLike.html"><span class="name">ParSeqLike</span></a><span class="tparams">[<span name="T">+T</span>, <span name="Repr">+Repr &lt;: <a href="ParSeq.html" class="extype" name="scala.collection.parallel.ParSeq">ParSeq</a>[<span class="extype" name="scala.collection.parallel.ParSeqLike.T">T</span>]</span>, <span name="Sequential">+Sequential &lt;: <a href="../../package.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">scala.Seq</a>[<span class="extype" name="scala.collection.parallel.ParSeqLike.T">T</span>] with <a href="../SeqLike.html" class="extype" name="scala.collection.SeqLike">SeqLike</a>[<span class="extype" name="scala.collection.parallel.ParSeqLike.T">T</span>, <span class="extype" name="scala.collection.parallel.ParSeqLike.Sequential">Sequential</span>]</span>]</span><span class="result"> extends <a href="../GenSeqLike.html" class="extype" name="scala.collection.GenSeqLike">GenSeqLike</a>[<span class="extype" name="scala.collection.parallel.ParSeqLike.T">T</span>, <span class="extype" name="scala.collection.parallel.ParSeqLike.Repr">Repr</span>] with <a href="ParIterableLike.html" class="extype" name="scala.collection.parallel.ParIterableLike">ParIterableLike</a>[<span class="extype" name="scala.collection.parallel.ParSeqLike.T">T</span>, <span class="extype" name="scala.collection.parallel.ParSeqLike.Repr">Repr</span>, <span class="extype" name="scala.collection.parallel.ParSeqLike.Sequential">Sequential</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ParSeqLike[+T,+Repr&lt;:scala.collection.parallel.ParSeq[T],+Sequential&lt;:Seq[T]withscala.collection.SeqLike[T,Sequential]]extendsGenSeqLike[T,Repr]withParIterableLike[T,Repr,Sequential]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template trait for sequences of type <code>ParSeq[T]</code>, representing
+ parallel sequences with element type <code>T</code>.</p><div class="fullcomment"><div class="comment cmt"><p>A template trait for sequences of type <code>ParSeq[T]</code>, representing
+ parallel sequences with element type <code>T</code>.</p><p> Parallel sequences inherit the <code>Seq</code> trait. Their indexing and length computations
+ are defined to be efficient. Like their sequential counterparts
+ they always have a defined order of elements. This means they will produce resulting
+ parallel sequences in the same way sequential sequences do. However, the order
+ in which they perform bulk operations on elements to produce results is not defined and is generally
+ nondeterministic. If the higher-order functions given to them produce no sideeffects,
+ then this won't be noticeable.</p><p> This trait defines a new, more general <code>split</code> operation and reimplements the <code>split</code>
+ operation of <code>ParallelIterable</code> trait using the new <code>split</code> operation.</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the type of the elements contained in this collection</p></dd><dt class="tparam">Repr</dt><dd class="cmt"><p>the type of the actual collection containing the elements</p></dd><dt class="tparam">Sequential</dt><dd class="cmt"><p>the type of the sequential version of this parallel collection</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.ParSet" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParSet[T]extendsGenSet[T]withGenericParTemplate[T,scala.collection.parallel.ParSet]withParIterable[T]withParSetLike[T,scala.collection.parallel.ParSet[T],scala.collection.Set[T]]"></a>
+      <a id="ParSet[T]:ParSet[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ParSet.html"><span class="name">ParSet</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="../GenSet.html" class="extype" name="scala.collection.GenSet">GenSet</a>[<span class="extype" name="scala.collection.parallel.ParSet.T">T</span>] with <a href="../generic/GenericParTemplate.html" class="extype" name="scala.collection.generic.GenericParTemplate">GenericParTemplate</a>[<span class="extype" name="scala.collection.parallel.ParSet.T">T</span>, <a href="ParSet.html" class="extype" name="scala.collection.parallel.ParSet">ParSet</a>] with <a href="ParIterable.html" class="extype" name="scala.collection.parallel.ParIterable">ParIterable</a>[<span class="extype" name="scala.collection.parallel.ParSet.T">T</span>] with <a href="ParSetLike.html" class="extype" name="scala.collection.parallel.ParSetLike">ParSetLike</a>[<span class="extype" name="scala.collection.parallel.ParSet.T">T</span>, <a href="ParSet.html" class="extype" name="scala.collection.parallel.ParSet">ParSet</a>[<span class="extype" name="scala.collection.parallel.ParSet.T">T</span>], <a href="../Set.html" class="extype" name="scala.collection.Set">Set</a>[<span class="extype" name="scala.collection.parallel.ParSet.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ParSet[T]extendsGenSet[T]withGenericParTemplate[T,scala.collection.parallel.ParSet]withParIterable[T]withParSetLike[T,scala.collection.parallel.ParSet[T],scala.collection.Set[T]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template trait for parallel sets.</p><div class="fullcomment"><div class="comment cmt"><p>A template trait for parallel sets.</p><p> The higher-order functions passed to certain operations may contain side-effects. Since implementations
+ of bulk operations may not be sequential, this means that side-effects may not be predictable and may
+ produce data-races, deadlocks or invalidation of state if care is not taken. It is up to the programmer
+ to either avoid using side-effects or to use some form of synchronization when accessing mutable data.</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the element type of the set</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2.9</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.ParSetLike" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ParSetLike[T,+Repr&lt;:scala.collection.parallel.ParSetLike[T,Repr,Sequential]withscala.collection.parallel.ParSet[T],+Sequential&lt;:scala.collection.Set[T]withscala.collection.SetLike[T,Sequential]]extendsGenSetLike[T,Repr]withParIterableLike[T,Repr,Sequential]"></a>
+      <a id="ParSetLike[T,+Repr&lt;:ParSetLike[T,Repr,Sequential]withParSet[T],+Sequential&lt;:Set[T]withSetLike[T,Sequential]]:ParSetLike[T,Repr,Sequential]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ParSetLike.html"><span class="name">ParSetLike</span></a><span class="tparams">[<span name="T">T</span>, <span name="Repr">+Repr &lt;: <a href="ParSetLike.html" class="extype" name="scala.collection.parallel.ParSetLike">ParSetLike</a>[<span class="extype" name="scala.collection.parallel.ParSetLike.T">T</span>, <span class="extype" name="scala.collection.parallel.ParSetLike.Repr">Repr</span>, <span class="extype" name="scala.collection.parallel.ParSetLike.Sequential">Sequential</span>] with <a href="ParSet.html" class="extype" name="scala.collection.parallel.ParSet">ParSet</a>[<span class="extype" name="scala.collection.parallel.ParSetLike.T">T</span>]</span>, <span name="Sequential">+Sequential &lt;: <a href="../Set.html" class="extype" name="scala.collection.Set">Set</a>[<span class="extype" name="scala.collection.parallel.ParSetLike.T">T</span>] with <a href="../SetLike.html" class="extype" name="scala.collection.SetLike">SetLike</a>[<span class="extype" name="scala.collection.parallel.ParSetLike.T">T</span>, <span class="extype" name="scala.collection.parallel.ParSetLike.Sequential">Sequential</span>]</span>]</span><span class="result"> extends <a href="../GenSetLike.html" class="extype" name="scala.collection.GenSetLike">GenSetLike</a>[<span class="extype" name="scala.collection.parallel.ParSetLike.T">T</span>, <span class="extype" name="scala.collection.parallel.ParSetLike.Repr">Repr</span>] with <a href="ParIterableLike.html" class="extype" name="scala.collection.parallel.ParIterableLike">ParIterableLike</a>[<span class="extype" name="scala.collection.parallel.ParSetLike.T">T</span>, <span class="extype" name="scala.collection.parallel.ParSetLike.Repr">Repr</span>, <span class="extype" name="scala.collection.parallel.ParSetLike.Sequential">Sequential</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ParSetLike[T,+Repr&lt;:scala.collection.parallel.ParSetLike[T,Repr,Sequential]withscala.collection.parallel.ParSet[T],+Sequential&lt;:scala.collection.Set[T]withscala.collection.SetLike[T,Sequential]]extendsGenSetLike[T,Repr]withParIterableLike[T,Repr,Sequential]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A template trait for parallel sets.</p><div class="fullcomment"><div class="comment cmt"><p>A template trait for parallel sets. This trait is mixed in with concrete
+ parallel sets to override the representation type.</p><p> The higher-order functions passed to certain operations may contain side-effects. Since implementations
+ of bulk operations may not be sequential, this means that side-effects may not be predictable and may
+ produce data-races, deadlocks or invalidation of state if care is not taken. It is up to the programmer
+ to either avoid using side-effects or to use some form of synchronization when accessing mutable data.</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the element type of the set</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.PreciseSplitter" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="PreciseSplitter[+T]extendsSplitter[T]"></a>
+      <a id="PreciseSplitter[+T]:PreciseSplitter[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PreciseSplitter.html"><span class="name">PreciseSplitter</span></a><span class="tparams">[<span name="T">+T</span>]</span><span class="result"> extends <a href="Splitter.html" class="extype" name="scala.collection.parallel.Splitter">Splitter</a>[<span class="extype" name="scala.collection.parallel.PreciseSplitter.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@PreciseSplitter[+T]extendsSplitter[T]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A precise splitter (or a precise split iterator) can be split into arbitrary number of splitters
+ that traverse disjoint subsets of arbitrary sizes.</p><div class="fullcomment"><div class="comment cmt"><p>A precise splitter (or a precise split iterator) can be split into arbitrary number of splitters
+ that traverse disjoint subsets of arbitrary sizes.</p><p> Implementors might want to override the parameterless <code>split</code> method for efficiency.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>type of the elements this splitter traverses</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2.9</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.SeqSplitter" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SeqSplitter[+T]extendsIterableSplitter[T]withAugmentedSeqIterator[T]withPreciseSplitter[T]"></a>
+      <a id="SeqSplitter[+T]:SeqSplitter[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SeqSplitter.html"><span class="name">SeqSplitter</span></a><span class="tparams">[<span name="T">+T</span>]</span><span class="result"> extends <a href="IterableSplitter.html" class="extype" name="scala.collection.parallel.IterableSplitter">IterableSplitter</a>[<span class="extype" name="scala.collection.parallel.SeqSplitter.T">T</span>] with <span class="extype" name="scala.collection.parallel.AugmentedSeqIterator">AugmentedSeqIterator</span>[<span class="extype" name="scala.collection.parallel.SeqSplitter.T">T</span>] with <a href="PreciseSplitter.html" class="extype" name="scala.collection.parallel.PreciseSplitter">PreciseSplitter</a>[<span class="extype" name="scala.collection.parallel.SeqSplitter.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@SeqSplitter[+T]extendsIterableSplitter[T]withAugmentedSeqIterator[T]withPreciseSplitter[T]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Parallel sequence iterators allow splitting into arbitrary subsets.</p><div class="fullcomment"><div class="comment cmt"><p>Parallel sequence iterators allow splitting into arbitrary subsets.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>type of the elements iterated.</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.Splitter" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Splitter[+T]extendsIterator[T]"></a>
+      <a id="Splitter[+T]:Splitter[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Splitter.html"><span class="name">Splitter</span></a><span class="tparams">[<span name="T">+T</span>]</span><span class="result"> extends <a href="../Iterator.html" class="extype" name="scala.collection.Iterator">Iterator</a>[<span class="extype" name="scala.collection.parallel.Splitter.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@Splitter[+T]extendsIterator[T]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A splitter (or a split iterator) can be split into more splitters that traverse over
+ disjoint subsets of elements.</p><div class="fullcomment"><div class="comment cmt"><p>A splitter (or a split iterator) can be split into more splitters that traverse over
+ disjoint subsets of elements.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>type of the elements this splitter traverses</p></dd></dl><dl class="attributes block"> <dt>Since</dt><dd><p>2.9</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.Task" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Task[R,+Tp]extendsAnyRef"></a>
+      <a id="Task[R,+Tp]:Task[R,Tp]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Task.html"><span class="name">Task</span></a><span class="tparams">[<span name="R">R</span>, <span name="Tp">+Tp</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@Task[R,+Tp]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.TaskSupport" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="TaskSupportextendsTasks"></a>
+      <a id="TaskSupport:TaskSupport"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="TaskSupport.html"><span class="name">TaskSupport</span></a><span class="result"> extends <a href="Tasks.html" class="extype" name="scala.collection.parallel.Tasks">Tasks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@TaskSupportextendsTasks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A trait implementing the scheduling of a parallel collection operation.</p><div class="fullcomment"><div class="comment cmt"><p>A trait implementing the scheduling of a parallel collection operation.</p><p> Parallel collections are modular in the way operations are scheduled. Each
+ parallel collection is parametrized with a task support object which is
+ responsible for scheduling and load-balancing tasks to processors.</p><p> A task support object can be changed in a parallel collection after it has
+ been created, but only during a quiescent period, i.e. while there are no
+ concurrent invocations to parallel collection methods.</p><p> There are currently a few task support implementations available for
+ parallel collections. The <a href="ForkJoinTaskSupport.html" class="extype" name="scala.collection.parallel.ForkJoinTaskSupport">scala.collection.parallel.ForkJoinTaskSupport</a>
+ uses a fork-join pool internally.</p><p> The <a href="ExecutionContextTaskSupport.html" class="extype" name="scala.collection.parallel.ExecutionContextTaskSupport">scala.collection.parallel.ExecutionContextTaskSupport</a> uses the
+ default execution context implementation found in scala.concurrent, and it
+ reuses the thread pool used in scala.concurrent.</p><p> The execution context task support is set to each parallel collection by
+ default, so parallel collections reuse the same fork-join pool as the
+ future API.</p><p> Here is a way to change the task support of a parallel collection:</p><pre><span class="kw">import</span> scala.collection.parallel._
+<span class="kw">val</span> pc = mutable.ParArray(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>)
+pc.tasksupport = <span class="kw">new</span> ForkJoinTaskSupport(
+  <span class="kw">new</span> scala.concurrent.forkjoin.ForkJoinPool(<span class="num">2</span>))</pre></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="http://docs.scala-lang.org/overviews/parallel-collections/configuration.html" target="_blank">Configuring Parallel Collections</a> section
+   on the parallel collection's guide for more information.</p></span></dd></dl></div>
+    </li><li name="scala.collection.parallel.Tasks" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TasksextendsAnyRef"></a>
+      <a id="Tasks:Tasks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Tasks.html"><span class="name">Tasks</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@TasksextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A trait that declares task execution capabilities used
+ by parallel collections.</p>
+    </li><li name="scala.collection.parallel.TraversableOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TraversableOps[T]extendsAnyRef"></a>
+      <a id="TraversableOps[T]:TraversableOps[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="TraversableOps.html"><span class="name">TraversableOps</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@TraversableOps[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.AdaptiveWorkStealingThreadPoolTasks" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="AdaptiveWorkStealingThreadPoolTasksextendsThreadPoolTaskswithAdaptiveWorkStealingTasks"></a>
+      <a id="AdaptiveWorkStealingThreadPoolTasks:AdaptiveWorkStealingThreadPoolTasks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="AdaptiveWorkStealingThreadPoolTasks.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use AdaptiveWorkStealingForkJoinTasks instead.">AdaptiveWorkStealingThreadPoolTasks</span></a><span class="result"> extends <a href="ThreadPoolTasks.html" class="extype" name="scala.collection.parallel.ThreadPoolTasks">ThreadPoolTasks</a> with <a href="AdaptiveWorkStealingTasks.html" class="extype" name="scala.collection.parallel.AdaptiveWorkStealingTasks">AdaptiveWorkStealingTasks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@AdaptiveWorkStealingThreadPoolTasksextendsThreadPoolTaskswithAdaptiveWorkStealingTasks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>AdaptiveWorkStealingForkJoinTasks</code> instead.</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.CompositeThrowable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CompositeThrowableextendsExceptionwithProductwithSerializable"></a>
+      <a id="CompositeThrowable:CompositeThrowable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CompositeThrowable.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) This class will be removed.">CompositeThrowable</span></a><span class="params">(<span name="throwables">throwables: <a href="../Set.html" class="extype" name="scala.collection.Set">Set</a>[<a href="../../package.html#Throwable=Throwable" class="extmbr" name="scala.Throwable">Throwable</a>]</span>)</span><span class="result"> extends <a href="../../package.html#Exception=Exception" class="extmbr" name="scala.Exception">Exception</a> with <a href="../../Product.html" class="extype" name="scala.Product">Product</a> with <a href="../../Serializable.html" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@CompositeThrowableextendsExceptionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Composite throwable - thrown when multiple exceptions are thrown at the same time.</p><div class="fullcomment"><div class="comment cmt"><p>Composite throwable - thrown when multiple exceptions are thrown at the same time.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> This class will be removed.</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.ThreadPoolTaskSupport" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ThreadPoolTaskSupportextendsTaskSupportwithAdaptiveWorkStealingThreadPoolTasks"></a>
+      <a id="ThreadPoolTaskSupport:ThreadPoolTaskSupport"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ThreadPoolTaskSupport.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use ForkJoinTaskSupport instead.">ThreadPoolTaskSupport</span></a><span class="result"> extends <a href="TaskSupport.html" class="extype" name="scala.collection.parallel.TaskSupport">TaskSupport</a> with <a href="AdaptiveWorkStealingThreadPoolTasks.html" class="extype" name="scala.collection.parallel.AdaptiveWorkStealingThreadPoolTasks">AdaptiveWorkStealingThreadPoolTasks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ThreadPoolTaskSupportextendsTaskSupportwithAdaptiveWorkStealingThreadPoolTasks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A task support that uses a thread pool executor to schedule tasks.</p><div class="fullcomment"><div class="comment cmt"><p>A task support that uses a thread pool executor to schedule tasks.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>ForkJoinTaskSupport</code> instead.</p></dd><dt>See also</dt><dd><span class="cmt"><p><a href="TaskSupport.html" class="extype" name="scala.collection.parallel.TaskSupport">scala.collection.parallel.TaskSupport</a> for more information.</p></span></dd></dl></div>
+    </li><li name="scala.collection.parallel.ThreadPoolTasks" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ThreadPoolTasksextendsTasks"></a>
+      <a id="ThreadPoolTasks:ThreadPoolTasks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ThreadPoolTasks.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use ForkJoinTasks instead.">ThreadPoolTasks</span></a><span class="result"> extends <a href="Tasks.html" class="extype" name="scala.collection.parallel.Tasks">Tasks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ThreadPoolTasksextendsTasks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An implementation of tasks objects based on the Java thread pooling API.</p><div class="fullcomment"><div class="comment cmt"><p>An implementation of tasks objects based on the Java thread pooling API.</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>ForkJoinTasks</code> instead.</p></dd></dl></div>
+    </li><li name="scala.collection.parallel.ThrowableOps" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ThrowableOpsextendsAnyRef"></a>
+      <a id="ThrowableOps:ThrowableOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ThrowableOps.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) This trait will be removed.">ThrowableOps</span></a><span class="result"> extends <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ThrowableOpsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> This trait will be removed.</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.collection.parallel#CHECK_RATE" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CHECK_RATE:Int"></a>
+      <a id="CHECK_RATE:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CHECK_RATE</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@CHECK_RATE:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.ForkJoinTasks" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ForkJoinTasks"></a>
+      <a id="ForkJoinTasks:ForkJoinTasks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ForkJoinTasks$.html"><span class="name">ForkJoinTasks</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ForkJoinTasks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.FutureThreadPoolTasks" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FutureThreadPoolTasks"></a>
+      <a id="FutureThreadPoolTasks:FutureThreadPoolTasks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FutureThreadPoolTasks$.html"><span class="name">FutureThreadPoolTasks</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@FutureThreadPoolTasks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel#MIN_FOR_COPY" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MIN_FOR_COPY:Int"></a>
+      <a id="MIN_FOR_COPY:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MIN_FOR_COPY</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@MIN_FOR_COPY:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.ParIterable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ParIterable"></a>
+      <a id="ParIterable:ParIterable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ParIterable$.html"><span class="name">ParIterable</span></a><span class="result"> extends <a href="../generic/ParFactory.html" class="extype" name="scala.collection.generic.ParFactory">ParFactory</a>[<a href="ParIterable.html" class="extype" name="scala.collection.parallel.ParIterable">ParIterable</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ParIterable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">   This object provides a set of operations to create <code><code>ParIterable</code></code> values.</p>
+    </li><li name="scala.collection.parallel.ParMap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ParMap"></a>
+      <a id="ParMap:ParMap"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ParMap$.html"><span class="name">ParMap</span></a><span class="result"> extends <a href="../generic/ParMapFactory.html" class="extype" name="scala.collection.generic.ParMapFactory">ParMapFactory</a>[<a href="ParMap.html" class="extype" name="scala.collection.parallel.ParMap">ParMap</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ParMap" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.ParSeq" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ParSeq"></a>
+      <a id="ParSeq:ParSeq"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ParSeq$.html"><span class="name">ParSeq</span></a><span class="result"> extends <a href="../generic/ParFactory.html" class="extype" name="scala.collection.generic.ParFactory">ParFactory</a>[<a href="ParSeq.html" class="extype" name="scala.collection.parallel.ParSeq">ParSeq</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ParSeq" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.ParSet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ParSet"></a>
+      <a id="ParSet:ParSet"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ParSet$.html"><span class="name">ParSet</span></a><span class="result"> extends <a href="../generic/ParSetFactory.html" class="extype" name="scala.collection.generic.ParSetFactory">ParSetFactory</a>[<a href="ParSet.html" class="extype" name="scala.collection.parallel.ParSet">ParSet</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ParSet" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel#SQRT2" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SQRT2:Double"></a>
+      <a id="SQRT2:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">SQRT2</span><span class="result">: <a href="../../Double.html" class="extype" name="scala.Double">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@SQRT2:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.Splitter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Splitter"></a>
+      <a id="Splitter:Splitter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Splitter$.html"><span class="name">Splitter</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@Splitter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel#availableProcessors" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="availableProcessors:Int"></a>
+      <a id="availableProcessors:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">availableProcessors</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@availableProcessors:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel#defaultTaskSupport" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="defaultTaskSupport:scala.collection.parallel.TaskSupport"></a>
+      <a id="defaultTaskSupport:TaskSupport"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">defaultTaskSupport</span><span class="result">: <a href="TaskSupport.html" class="extype" name="scala.collection.parallel.TaskSupport">TaskSupport</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@defaultTaskSupport:scala.collection.parallel.TaskSupport" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.immutable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="immutable"></a>
+      <a id="immutable:immutable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="immutable/package.html"><span class="name">immutable</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@immutable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel.mutable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="mutable"></a>
+      <a id="mutable:mutable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="mutable/package.html"><span class="name">mutable</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@mutable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel#setTaskSupport" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="setTaskSupport[Coll](c:Coll,t:scala.collection.parallel.TaskSupport):Coll"></a>
+      <a id="setTaskSupport[Coll](Coll,TaskSupport):Coll"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setTaskSupport</span><span class="tparams">[<span name="Coll">Coll</span>]</span><span class="params">(<span name="c">c: <span class="extype" name="scala.collection.parallel.setTaskSupport.Coll">Coll</span></span>, <span name="t">t: <a href="TaskSupport.html" class="extype" name="scala.collection.parallel.TaskSupport">TaskSupport</a></span>)</span><span class="result">: <span class="extype" name="scala.collection.parallel.setTaskSupport.Coll">Coll</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@setTaskSupport[Coll](c:Coll,t:scala.collection.parallel.TaskSupport):Coll" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.collection.parallel#thresholdFromSize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="thresholdFromSize(sz:Int,parallelismLevel:Int):Int"></a>
+      <a id="thresholdFromSize(Int,Int):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">thresholdFromSize</span><span class="params">(<span name="sz">sz: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>, <span name="parallelismLevel">parallelismLevel: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <a href="../../Int.html" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@thresholdFromSize(sz:Int,parallelismLevel:Int):Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Computes threshold from the size of the collection and the parallelism level.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="scala.collection.parallel.ThreadPoolTasks" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ThreadPoolTasks"></a>
+      <a id="ThreadPoolTasks:ThreadPoolTasks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ThreadPoolTasks$.html"><span class="name deprecated" title="Deprecated: (Since version 2.11.0) Use ForkJoinTasks instead.">ThreadPoolTasks</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#scala.collection.parallel.package@ThreadPoolTasks" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@<a href="../../deprecated.html" class="extype" name="scala.deprecated">deprecated</a></span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.11.0)</i> Use <code>ForkJoinTasks</code> instead.</p></dd></dl></div>
+    </li></ol>
+            </div>
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>

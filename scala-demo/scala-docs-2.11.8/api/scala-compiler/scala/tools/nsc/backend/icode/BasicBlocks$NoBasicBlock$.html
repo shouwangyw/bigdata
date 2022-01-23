@@ -1,0 +1,1536 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>NoBasicBlock - Scala Compiler 2.11.8 - scala.tools.nsc.backend.icode.BasicBlocks.NoBasicBlock</title>
+          <meta name="description" content="NoBasicBlock - Scala Compiler 2.11.8 - scala.tools.nsc.backend.icode.BasicBlocks.NoBasicBlock" />
+          <meta name="keywords" content="NoBasicBlock Scala Compiler 2.11.8 scala.tools.nsc.backend.icode.BasicBlocks.NoBasicBlock" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <script type="text/javascript" src="../../../../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../../../../lib/diagrams.js" id="diagrams-js"></script>
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Object" src="../../../../../lib/object_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="scala">scala</a>.<a href="../../../package.html" class="extype" name="scala.tools">tools</a>.<a href="../../package.html" class="extype" name="scala.tools.nsc">nsc</a>.<a href="../package.html" class="extype" name="scala.tools.nsc.backend">backend</a>.<a href="package.html" class="extype" name="scala.tools.nsc.backend.icode">icode</a>.<a href="BasicBlocks.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks">BasicBlocks</a></p>
+        <h1>NoBasicBlock</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="BasicBlocks.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks">package BasicBlocks</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">NoBasicBlock</span><span class="result"> extends <a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/scala/scala/tree/v2.11.8/src/compiler/scala/tools/nsc/backend/icode/BasicBlocks.scala#L1" target="_blank">BasicBlocks.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a>, <a href="analysis/ProgramPoint.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.ProgramPoint">ProgramPoint</a>[<a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a>], <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="scala.tools.nsc.backend.icode.BasicBlocks.NoBasicBlock"><span>NoBasicBlock</span></li><li class="in" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock"><span>BasicBlock</span></li><li class="in" name="scala.tools.nsc.backend.icode.analysis.ProgramPoint"><span>ProgramPoint</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test two objects for inequality.</p><div class="fullcomment"><div class="comment cmt"><p>Test two objects for inequality.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if !(this == that), false otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@##():Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>x.hashCode</code> except for boxed numeric types and <code>null</code>.
+ For numerics, it returns a hash value which is consistent
+ with value equality: if two value type instances compare
+ as true, then ## will produce the same hash value for each
+ of them.
+ For <code>null</code> returns a hashcode where <code>null.hashCode</code> throws a
+ <code>NullPointerException</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a hash value consistent with ==</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The expression <code>x == that</code> is equivalent to <code>if (x eq null) that eq null else x.equals(that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(n:Int):BasicBlocks.this.Instruction"></a>
+      <a id="apply(Int):ICodes.Instruction"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@apply(n:Int):BasicBlocks.this.Instruction" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return the n-th instruction.</p><div class="fullcomment"><div class="comment cmt"><p>Return the n-th instruction.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cast the receiver object to be of type <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Cast the receiver object to be of type <code>T0</code>.</p><p> Note that the success of a cast at runtime is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at
+ runtime, while the expression <code>List(1).asInstanceOf[List[String]]</code> will not.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the requested type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><a href="../../../../package.html#ClassCastException=ClassCastException" class="extmbr" name="scala.ClassCastException"><code>ClassCastException</code></a> if the receiver object is not an instance of the erasure of type <code>T0</code>.</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#blockContents" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="blockContents:String"></a>
+      <a id="blockContents:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">blockContents</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@blockContents:String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#clear" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clear():Unit"></a>
+      <a id="clear():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clear</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@clear():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a copy of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>Create a copy of the receiver object.</p><p> The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#close" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="close():Unit"></a>
+      <a id="close():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">close</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@close():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Close the block</p><div class="fullcomment"><div class="comment cmt"><p>Close the block</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#closeWith" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="closeWith(instr:BasicBlocks.this.Instruction,pos:BasicBlocks.this.global.Position):Unit"></a>
+      <a id="closeWith(ICodes.Instruction,Global.Position):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">closeWith</span><span class="params">(<span name="instr">instr: <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a></span>, <span name="pos">pos: <a href="../../Global.html#Position=scala.reflect.internal.util.Position" class="extmbr" name="scala.tools.nsc.Global.Position">Global.Position</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@closeWith(instr:BasicBlocks.this.Instruction,pos:BasicBlocks.this.global.Position):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#closeWith" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="closeWith(instr:BasicBlocks.this.Instruction):Unit"></a>
+      <a id="closeWith(ICodes.Instruction):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">closeWith</span><span class="params">(<span name="instr">instr: <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@closeWith(instr:BasicBlocks.this.Instruction):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">do nothing if block is already closed</p><div class="fullcomment"><div class="comment cmt"><p>do nothing if block is already closed</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#closed" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="closed:Boolean"></a>
+      <a id="closed:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">closed</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@closed:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Is this block closed?</p><div class="fullcomment"><div class="comment cmt"><p>Is this block closed?</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#closed_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="closed_=(b:Boolean):Unit"></a>
+      <a id="closed_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: closed_$eq" class="name">closed_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@closed_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#code" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="code:BasicBlocks.this.Code"></a>
+      <a id="code:ICodes.Code"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">code</span><span class="result">: <a href="ICodes.html#CodeextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.Members.Code">ICodes.Code</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@code:BasicBlocks.this.Code" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#directSuccessors" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="directSuccessors:List[BasicBlocks.this.BasicBlock]"></a>
+      <a id="directSuccessors:List[ICodes.BasicBlock]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">directSuccessors</span><span class="result">: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@directSuccessors:List[BasicBlocks.this.BasicBlock]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#emit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="emit(is:Seq[BasicBlocks.this.Instruction]):Unit"></a>
+      <a id="emit(Seq[ICodes.Instruction]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emit</span><span class="params">(<span name="is">is: <a href="../../../../package.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@emit(is:Seq[BasicBlocks.this.Instruction]):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#emit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="emit(instr:BasicBlocks.this.Instruction,pos:BasicBlocks.this.global.Position):Unit"></a>
+      <a id="emit(ICodes.Instruction,Global.Position):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emit</span><span class="params">(<span name="instr">instr: <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a></span>, <span name="pos">pos: <a href="../../Global.html#Position=scala.reflect.internal.util.Position" class="extmbr" name="scala.tools.nsc.Global.Position">Global.Position</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@emit(instr:BasicBlocks.this.Instruction,pos:BasicBlocks.this.global.Position):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Emitting does not set touched to true.</p><div class="fullcomment"><div class="comment cmt"><p>Emitting does not set touched to true. During code generation this is a hotspot and
+ setting the flag for each emit is a waste. Caching should happen only after a block
+ is closed, which sets the DIRTYSUCCS flag.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#emit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="emit(instr:BasicBlocks.this.Instruction):Unit"></a>
+      <a id="emit(ICodes.Instruction):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emit</span><span class="params">(<span name="instr">instr: <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@emit(instr:BasicBlocks.this.Instruction):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Add a new instruction at the end of the block,
+ using the same source position as the last emitted instruction
+</p><div class="fullcomment"><div class="comment cmt"><p>Add a new instruction at the end of the block,
+ using the same source position as the last emitted instruction
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#emitOnly" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="emitOnly(is:BasicBlocks.this.Instruction*):Unit"></a>
+      <a id="emitOnly(ICodes.Instruction*):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">emitOnly</span><span class="params">(<span name="is">is: <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a>*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@emitOnly(is:BasicBlocks.this.Instruction*):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The semantics of this are a little odd but it's designed to work
+ seamlessly with the existing code.</p><div class="fullcomment"><div class="comment cmt"><p>The semantics of this are a little odd but it's designed to work
+ seamlessly with the existing code.  It emits each supplied instruction,
+ then closes the block.  The odd part is that if the instruction has
+ pos == NoPosition, it calls the 1-arg emit, but otherwise it calls
+ the 2-arg emit.  This way I could retain existing behavior exactly by
+ calling setPos on any instruction using the two arg version which
+ I wanted to include in a call to emitOnly.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#enterIgnoreMode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enterIgnoreMode():Unit"></a>
+      <a id="enterIgnoreMode():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enterIgnoreMode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@enterIgnoreMode():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enter ignore mode: new 'emit'ted instructions will not be
+ added to this basic block.</p><div class="fullcomment"><div class="comment cmt"><p>Enter ignore mode: new 'emit'ted instructions will not be
+ added to this basic block. It makes the generation of THROW
+ and RETURNs easier.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Tests whether the argument (<code>that</code>) is a reference to the receiver object (<code>this</code>).</p><p> The <code>eq</code> method implements an <a href="http://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relation</a> on
+ non-null instances of <code>AnyRef</code>, and has three additional properties:</p><ul><li>It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+    <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.</li><li>For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.</li><li><code>null.eq(null)</code> returns <code>true</code>.</li></ul><p> When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+ consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+ should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(other:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="other">other: <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@equals(other:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The equality method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The equality method for reference types.  Default implementation delegates to <code>eq</code>.</p><p> See also <code>equals</code> in <a href="../../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a> → AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#exceptionHandlerStart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exceptionHandlerStart:Boolean"></a>
+      <a id="exceptionHandlerStart:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exceptionHandlerStart</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@exceptionHandlerStart:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Is this block the start block of an exception handler?</p><div class="fullcomment"><div class="comment cmt"><p>Is this block the start block of an exception handler?</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a> → <a href="analysis/ProgramPoint.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.ProgramPoint">ProgramPoint</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#exceptionHandlerStart_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exceptionHandlerStart_=(b:Boolean):Unit"></a>
+      <a id="exceptionHandlerStart_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: exceptionHandlerStart_$eq" class="name">exceptionHandlerStart_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@exceptionHandlerStart_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#exceptionSuccessors" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exceptionSuccessors:List[BasicBlocks.this.BasicBlock]"></a>
+      <a id="exceptionSuccessors:List[ICodes.BasicBlock]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exceptionSuccessors</span><span class="result">: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@exceptionSuccessors:List[BasicBlocks.this.BasicBlock]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#exceptionSuccessorsForBlock" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exceptionSuccessorsForBlock(block:BasicBlocks.this.BasicBlock):List[BasicBlocks.this.BasicBlock]"></a>
+      <a id="exceptionSuccessorsForBlock(ICodes.BasicBlock):List[ICodes.BasicBlock]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exceptionSuccessorsForBlock</span><span class="params">(<span name="block">block: <a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a></span>)</span><span class="result">: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@exceptionSuccessorsForBlock(block:BasicBlocks.this.BasicBlock):List[BasicBlocks.this.BasicBlock]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><div class="fullcomment"><div class="comment cmt"><p>Called by the garbage collector on the receiver object when there
+ are no more references to the object.</p><p> The details of when and if the <code>finalize</code> method is invoked, as
+ well as the interaction between <code>finalize</code> and non-local returns
+ and exceptions, are all platform dependent.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#flagsString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="flagsString:String"></a>
+      <a id="flagsString:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flagsString</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@flagsString:String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#foreach" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="foreach[U](f:BasicBlocks.this.Instruction=&gt;U):Unit"></a>
+      <a id="foreach[U]((ICodes.Instruction)⇒U):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">foreach</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a>) ⇒ <span class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock.foreach.U">U</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@foreach[U](f:BasicBlocks.this.Instruction=&gt;U):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Apply a function to all the instructions of the block.</p><div class="fullcomment"><div class="comment cmt"><p>Apply a function to all the instructions of the block.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#fromList" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fromList(is:List[BasicBlocks.this.Instruction]):Unit"></a>
+      <a id="fromList(List[ICodes.Instruction]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fromList</span><span class="params">(<span name="is">is: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@fromList(is:List[BasicBlocks.this.Instruction]):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#fullString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fullString:String"></a>
+      <a id="fullString:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fullString</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@fullString:String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#getArray" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getArray:Array[BasicBlocks.this.Instruction]"></a>
+      <a id="getArray:Array[ICodes.Instruction]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getArray</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@getArray:Array[BasicBlocks.this.Instruction]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">return the underlying array of instructions</p><div class="fullcomment"><div class="comment cmt"><p>return the underlying array of instructions</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation that corresponds to the dynamic class of the receiver object.</p><div class="fullcomment"><div class="comment cmt"><p>A representation that corresponds to the dynamic class of the receiver object.</p><p> The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#hasFlag" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hasFlag(flag:Int):Boolean"></a>
+      <a id="hasFlag(Int):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasFlag</span><span class="params">(<span name="flag">flag: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@hasFlag(flag:Int):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Does this block have the given flag?</p><div class="fullcomment"><div class="comment cmt"><p>Does this block have the given flag?</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The hashCode method for reference types.</p><div class="fullcomment"><div class="comment cmt"><p>The hashCode method for reference types.  See hashCode in <a href="../../../../Any.html" class="extype" name="scala.Any">scala.Any</a>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for this object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a> → AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#ignore" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ignore:Boolean"></a>
+      <a id="ignore:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ignore</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@ignore:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">When set, the <code>emit</code> methods will be ignored.</p><div class="fullcomment"><div class="comment cmt"><p>When set, the <code>emit</code> methods will be ignored.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#ignore_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ignore_=(b:Boolean):Unit"></a>
+      <a id="ignore_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: ignore_$eq" class="name">ignore_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@ignore_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#indexOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="indexOf(inst:BasicBlocks.this.Instruction):Int"></a>
+      <a id="indexOf(ICodes.Instruction):Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">indexOf</span><span class="params">(<span name="inst">inst: <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@indexOf(inst:BasicBlocks.this.Instruction):Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return the index of inst.</p><div class="fullcomment"><div class="comment cmt"><p>Return the index of inst. Uses reference equality.
+ Returns -1 if not found.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#isEmpty" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isEmpty:Boolean"></a>
+      <a id="isEmpty:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isEmpty</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@isEmpty:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test whether the dynamic type of the receiver object is <code>T0</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Test whether the dynamic type of the receiver object is <code>T0</code>.</p><p> Note that the result of the test is modulo Scala's erasure semantics.
+ Therefore the expression <code>1.isInstanceOf[String]</code> will return <code>false</code>, while the
+ expression <code>List(1).isInstanceOf[List[String]]</code> will return <code>true</code>.
+ In the latter example, because the type argument is erased as part of compilation it is
+ not possible to check whether the contents of the list are of the specified type.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#iterator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="iterator:Iterator[BasicBlocks.this.Instruction]"></a>
+      <a id="iterator:Iterator[ICodes.Instruction]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">iterator</span><span class="result">: <a href="../../../../package.html#Iterator[+A]=Iterator[A]" class="extmbr" name="scala.Iterator">Iterator</a>[<a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@iterator:Iterator[BasicBlocks.this.Instruction]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return an iterator over the instructions in this basic block.</p><div class="fullcomment"><div class="comment cmt"><p>Return an iterator over the instructions in this basic block.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#killIf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="killIf(cond:Boolean):Unit"></a>
+      <a id="killIf(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">killIf</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@killIf(cond:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">if cond is true, closes this block, entersIgnoreMode, and removes the block from
+its list of blocks.</p><div class="fullcomment"><div class="comment cmt"><p>if cond is true, closes this block, entersIgnoreMode, and removes the block from
+its list of blocks. Used to allow a block to be started and then cancelled when it
+is discovered to be unreachable.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#killUnless" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="killUnless(cond:Boolean):Unit"></a>
+      <a id="killUnless(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">killUnless</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@killUnless(cond:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Same as killIf but with the logic of the condition reversed
+</p><div class="fullcomment"><div class="comment cmt"><p>Same as killIf but with the logic of the condition reversed
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#label" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="label:Int"></a>
+      <a id="label:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">label</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@label:Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#lastInstruction" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lastInstruction:BasicBlocks.this.Instruction"></a>
+      <a id="lastInstruction:ICodes.Instruction"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lastInstruction</span><span class="result">: <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@lastInstruction:BasicBlocks.this.Instruction" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return the last instruction of this basic block.</p><div class="fullcomment"><div class="comment cmt"><p>Return the last instruction of this basic block.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#length" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="length:Int"></a>
+      <a id="length:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">length</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@length:Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The number of instructions in this basic block so far.</p><div class="fullcomment"><div class="comment cmt"><p>The number of instructions in this basic block so far.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#loopHeader" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loopHeader:Boolean"></a>
+      <a id="loopHeader:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loopHeader</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@loopHeader:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Is this block the head of a while?</p><div class="fullcomment"><div class="comment cmt"><p>Is this block the head of a while?</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#loopHeader_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loopHeader_=(b:Boolean):Unit"></a>
+      <a id="loopHeader_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: loopHeader_$eq" class="name">loopHeader_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@loopHeader_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#method" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="method:BasicBlocks.this.IMethod"></a>
+      <a id="method:ICodes.IMethod"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">method</span><span class="result">: <a href="ICodes.html#IMethodextendsMembers.this.IMember" class="extmbr" name="scala.tools.nsc.backend.icode.Members.IMethod">ICodes.IMethod</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@method:BasicBlocks.this.IMethod" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Equivalent to <code>!(this eq that)</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Equivalent to <code>!(this eq that)</code>.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is not a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#nonEmpty" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nonEmpty:Boolean"></a>
+      <a id="nonEmpty:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nonEmpty</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@nonEmpty:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p><div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Note</dt><dd><span class="cmt"><p>not specified by SLS as a member of AnyRef</p></span></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#open" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="open():Unit"></a>
+      <a id="open():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">open</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@open():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#predContents" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="predContents:String"></a>
+      <a id="predContents:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">predContents</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@predContents:String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#predecessors" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="predecessors:List[BasicBlocks.this.BasicBlock]"></a>
+      <a id="predecessors:List[ICodes.BasicBlock]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">predecessors</span><span class="result">: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@predecessors:List[BasicBlocks.this.BasicBlock]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns the predecessors of this block.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the predecessors of this block.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a> → <a href="analysis/ProgramPoint.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.ProgramPoint">ProgramPoint</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#preds" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="preds:List[BasicBlocks.this.BasicBlock]"></a>
+      <a id="preds:List[ICodes.BasicBlock]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">preds</span><span class="result">: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@preds:List[BasicBlocks.this.BasicBlock]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cached predecessors.</p><div class="fullcomment"><div class="comment cmt"><p>Cached predecessors.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#removeInstructionsAt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="removeInstructionsAt(positions:Int*):Unit"></a>
+      <a id="removeInstructionsAt(Int*):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">removeInstructionsAt</span><span class="params">(<span name="positions">positions: <span class="extype" name="scala.Int">Int</span>*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@removeInstructionsAt(positions:Int*):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Removes instructions found at the given positions.</p><div class="fullcomment"><div class="comment cmt"><p>Removes instructions found at the given positions.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#removeLastInstruction" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="removeLastInstruction():Unit"></a>
+      <a id="removeLastInstruction():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">removeLastInstruction</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@removeLastInstruction():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Remove the last instruction of this basic block.</p><div class="fullcomment"><div class="comment cmt"><p>Remove the last instruction of this basic block. It is
+ fast for an open block, but slower when the block is closed.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#replaceInstruction" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="replaceInstruction(oldInstr:BasicBlocks.this.Instruction,is:List[BasicBlocks.this.Instruction]):Boolean"></a>
+      <a id="replaceInstruction(ICodes.Instruction,List[ICodes.Instruction]):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">replaceInstruction</span><span class="params">(<span name="oldInstr">oldInstr: <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a></span>, <span name="is">is: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@replaceInstruction(oldInstr:BasicBlocks.this.Instruction,is:List[BasicBlocks.this.Instruction]):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Replaces <code>oldInstr</code> with <code>is</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Replaces <code>oldInstr</code> with <code>is</code>. It does not update
+ the position field in the newly inserted instructions, so it behaves
+ differently than the one-instruction versions of this function.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#replaceInstruction" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="replaceInstruction(oldInstr:BasicBlocks.this.Instruction,newInstr:BasicBlocks.this.Instruction):Boolean"></a>
+      <a id="replaceInstruction(ICodes.Instruction,ICodes.Instruction):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">replaceInstruction</span><span class="params">(<span name="oldInstr">oldInstr: <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a></span>, <span name="newInstr">newInstr: <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@replaceInstruction(oldInstr:BasicBlocks.this.Instruction,newInstr:BasicBlocks.this.Instruction):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Replace the given instruction with the new one.</p><div class="fullcomment"><div class="comment cmt"><p>Replace the given instruction with the new one.
+Returns <code>true</code> if it actually changed something.
+The replacing instruction is given the nsc.util.Position of the instruction it replaces.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#replaceInstruction" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="replaceInstruction(pos:Int,instr:BasicBlocks.this.Instruction):Boolean"></a>
+      <a id="replaceInstruction(Int,ICodes.Instruction):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">replaceInstruction</span><span class="params">(<span name="pos">pos: <span class="extype" name="scala.Int">Int</span></span>, <span name="instr">instr: <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@replaceInstruction(pos:Int,instr:BasicBlocks.this.Instruction):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Replace the instruction at the given position.</p><div class="fullcomment"><div class="comment cmt"><p>Replace the instruction at the given position. Used by labels when they are anchored.
+The replacing instruction is given the nsc.util.Position of the instruction it replaces.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#size" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="size:Int"></a>
+      <a id="size:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">size</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@size:Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#subst" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="subst(map:Map[BasicBlocks.this.Instruction,BasicBlocks.this.Instruction]):Unit"></a>
+      <a id="subst(Map[ICodes.Instruction,ICodes.Instruction]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">subst</span><span class="params">(<span name="map">map: <span class="extype" name="scala.Predef.Map">Map</span>[<a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a>, <a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@subst(map:Map[BasicBlocks.this.Instruction,BasicBlocks.this.Instruction]):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Replaces all instructions found in the map.</p><div class="fullcomment"><div class="comment cmt"><p>Replaces all instructions found in the map.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#succContents" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="succContents:String"></a>
+      <a id="succContents:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">succContents</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@succContents:String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#successors" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="successors:List[BasicBlocks.this.BasicBlock]"></a>
+      <a id="successors:List[ICodes.BasicBlock]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">successors</span><span class="result">: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@successors:List[BasicBlocks.this.BasicBlock]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a> → <a href="analysis/ProgramPoint.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.ProgramPoint">ProgramPoint</a></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#take" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="take(n:Int):Seq[BasicBlocks.this.Instruction]"></a>
+      <a id="take(Int):Seq[ICodes.Instruction]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">take</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="../../../../package.html#Seq[+A]=Seq[A]" class="extmbr" name="scala.Seq">Seq</a>[<a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@take(n:Int):Seq[BasicBlocks.this.Instruction]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#toList" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toList:List[BasicBlocks.this.Instruction]"></a>
+      <a id="toList:List[ICodes.Instruction]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toList</span><span class="result">: <a href="../../../../package.html#List[+A]=List[A]" class="extmbr" name="scala.List">List</a>[<a href="ICodes.html#InstructionextendsCloneable" class="extmbr" name="scala.tools.nsc.backend.icode.Opcodes.Instruction">ICodes.Instruction</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@toList:List[BasicBlocks.this.Instruction]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@toString():String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a String representation of this object.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a String representation of this object.  The default
+ representation is platform dependent.  On the java platform it
+ is the concatenation of the class name, &quot;@&quot;, and the object's
+ hashcode in hexadecimal.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a String representation of the object.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a> → AnyRef → <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#touched" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="touched:Boolean"></a>
+      <a id="touched:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">touched</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@touched:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Has this basic block been modified since the last call to 'successors'?</p><div class="fullcomment"><div class="comment cmt"><p>Has this basic block been modified since the last call to 'successors'?</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#touched_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="touched_=(b:Boolean):Unit"></a>
+      <a id="touched_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: touched_$eq" class="name">touched_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@touched_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock#varsInScope" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="varsInScope:scala.collection.mutable.Set[BasicBlocks.this.Local]"></a>
+      <a id="varsInScope:Set[ICodes.Local]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">varsInScope</span><span class="result">: <span class="extype" name="scala.collection.mutable.Set">Set</span>[<a href="ICodes.html#LocalextendsAnyRef" class="extmbr" name="scala.tools.nsc.backend.icode.Members.Local">ICodes.Local</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@varsInScope:scala.collection.mutable.Set[BasicBlocks.this.Local]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Local variables that are in scope at entry of this basic block.</p><div class="fullcomment"><div class="comment cmt"><p>Local variables that are in scope at entry of this basic block. Used
+ for debugging information.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BasicBlocks$BasicBlock.html" class="extype" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">BasicBlock</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#scala.tools.nsc.backend.icode.BasicBlocks$NoBasicBlock$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">
+              <h3>Inherited from <a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a></h3>
+            </div><div class="parent" name="scala.tools.nsc.backend.icode.analysis.ProgramPoint">
+              <h3>Inherited from <a href="analysis/ProgramPoint.html" class="extype" name="scala.tools.nsc.backend.icode.analysis.ProgramPoint">ProgramPoint</a>[<a href="ICodes.html#BasicBlockextendsProgramPoint[BasicBlocks.this.BasicBlock]" class="extmbr" name="scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock">ICodes.BasicBlock</a>]</h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="../../../../AnyRef.html" class="extype" name="scala.AnyRef">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="../../../../Any.html" class="extype" name="scala.Any">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">Scala programming documentation. Copyright (c) 2003-2016 <a href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a href="http://www.lightbend.com" target="_top">Lightbend</a>.</div>
+
+
+    </body>
+      </html>
