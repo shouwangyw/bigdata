@@ -36,3 +36,4 @@ mvnw.cmd
 *.gz
 
 tmp
+output/
