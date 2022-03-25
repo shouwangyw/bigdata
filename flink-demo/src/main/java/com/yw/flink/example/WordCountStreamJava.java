@@ -17,7 +17,8 @@ import java.util.Objects;
 public class WordCountStreamJava {
     public static void main(String[] args) throws Exception {
         // 1. 构建流处理环境
-        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment()
+                .setParallelism(2);
 
         // 2. 从socket获取数据
         DataStreamSource<String> streamSource = env.socketTextStream("node01", 9999);
@@ -25,12 +26,11 @@ public class WordCountStreamJava {
         // 3. 对数据进行处理
         DataStream<Tuple2<String, Integer>> resultStream = streamSource
                 .flatMap((FlatMapFunction<String, Tuple2<String, Integer>>) (line, collector) -> {
-                    String[] words = line.split(" ");
-                    Arrays.stream(words).filter(Objects::nonNull)
+                    Arrays.stream(line.split(" ")).filter(Objects::nonNull)
                             .forEach(word -> collector.collect(new Tuple2<>(word, 1)));
                 }).returns(Types.TUPLE(Types.STRING, Types.INT))
                 .keyBy((KeySelector<Tuple2<String, Integer>, String>) tuple2 -> tuple2.f0)
-                .sum(1);
+                .sum(1).setParallelism(4);
         // 4. 打印输出, sink
         resultStream.print();
 
