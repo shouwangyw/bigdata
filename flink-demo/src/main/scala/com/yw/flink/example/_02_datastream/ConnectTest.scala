@@ -1,4 +1,4 @@
-package com.yw.flink.example
+package com.yw.flink.example._02_datastream
 
 import org.apache.flink.api.scala._
 import org.apache.flink.streaming.api.functions.co.CoFlatMapFunction

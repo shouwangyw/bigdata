@@ -1,4 +1,4 @@
-package com.yw.flink.example
+package com.yw.flink.example._02_datastream
 
 import org.apache.flink.api.scala._
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
@@ -13,10 +13,10 @@ object FlatMapSumTest {
     val sourceStream = env.socketTextStream("node01", 9999)
 
     val resultStream = sourceStream
-          .flatMap(x => x.split(" "))
-          .map(x => (x, 1))
-          .keyBy(0)
-          .sum(1)
+      .flatMap(x => x.split(" "))
+      .map(x => (x, 1))
+      .keyBy(0)
+      .sum(1)
 
     resultStream.print()
 

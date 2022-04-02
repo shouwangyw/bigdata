@@ -1,4 +1,4 @@
-package com.yw.flink.example
+package com.yw.flink.example._01_datasource_sink
 
 import org.apache.flink.api.scala._
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}

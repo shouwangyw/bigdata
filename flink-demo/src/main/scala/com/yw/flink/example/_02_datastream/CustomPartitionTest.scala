@@ -1,4 +1,4 @@
-package com.yw.flink.example
+package com.yw.flink.example._02_datastream
 
 import org.apache.flink.api.common.functions.Partitioner
 import org.apache.flink.api.scala._
