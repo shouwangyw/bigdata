@@ -7,7 +7,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   *
   * @author yangwei
   */
-object Case2_VisitTopN {
+object Case02_VisitTopN {
   def main(args: Array[String]): Unit = {
     // 1. 创建 SparkConf 对象
     val conf = new SparkConf().setAppName(this.getClass.getSimpleName).setMaster("local[2]")
