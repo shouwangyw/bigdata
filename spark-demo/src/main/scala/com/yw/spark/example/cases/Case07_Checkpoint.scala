@@ -7,7 +7,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   *
   * @author yangwei
   */
-object Case07_checkpoint {
+object Case07_Checkpoint {
   def main(args: Array[String]): Unit = {
     // 设置当前用户
     System.setProperty("HADOOP_USER_NAME", "hdfs")

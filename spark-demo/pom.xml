@@ -21,6 +21,7 @@
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-core_2.11</artifactId>
       <version>2.3.3</version>
+<!--      <version>1.2.0</version>-->
     </dependency>
     <!--如果插件下不下来则将这个打开-->
     <!--        <dependency>-->

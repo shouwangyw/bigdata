@@ -1,0 +1,6 @@
+1,userid1,itemid1,128.00
+2,userid2,itemid2,135.00
+3,userid3,itemid3,147.00
+4,userid4,itemid4,196.00
+5,userid5,itemid5,178.00
+6,userid6,itemid6,108.00
