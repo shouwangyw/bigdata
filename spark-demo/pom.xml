@@ -16,12 +16,21 @@
     <hadoop.version>3.1.4</hadoop.version>
   </properties>
 
+  <repositories>
+    <!-- spark on hbase是cloudera提供的，所以这个地方添加了cdh仓库地址 -->
+    <repository>
+      <id>cloudera</id>
+      <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+<!--      <url>https://mvnrepository.com/artifact/org.apache.hbase/hbase-spark</url>-->
+    </repository>
+  </repositories>
+
   <dependencies>
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-core_2.11</artifactId>
       <version>2.3.3</version>
-<!--      <version>1.2.0</version>-->
+      <!--      <version>1.2.0</version>-->
     </dependency>
     <!--如果插件下不下来则将这个打开-->
     <!--        <dependency>-->
@@ -35,6 +44,51 @@
     <!--            <artifactId>maven-shade-plugin</artifactId>-->
     <!--            <version>2.4.3</version>-->
     <!--        </dependency>-->
+
+    <!-- hadoop-core 2009、7月更名为hadoop-common -->
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-common</artifactId>
+<!--      <version>2.6.0-mr1-cdh5.14.2</version>-->
+      <version>3.1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hbase</groupId>
+      <artifactId>hbase-server</artifactId>
+<!--      <version>1.2.0-cdh5.14.2</version>-->
+      <version>2.2.6</version>
+    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.apache.hbase</groupId>-->
+<!--      <artifactId>hbase-common</artifactId>-->
+<!--      <version>1.2.0-cdh5.14.2</version>-->
+<!--&lt;!&ndash;      <version>2.2.6</version>&ndash;&gt;-->
+<!--    </dependency>-->
+    <dependency>
+      <groupId>org.apache.hbase</groupId>
+      <artifactId>hbase-client</artifactId>
+<!--      <version>1.2.0-cdh5.14.2</version>-->
+      <version>2.2.6</version>
+    </dependency>
+    <!-- 添加此依赖，解决spark hbase集成，低版本时报Base64找不到的问题 -->
+    <dependency>
+      <groupId>org.apache.hbase</groupId>
+      <artifactId>hbase-mapreduce</artifactId>
+      <version>2.2.6</version>
+    </dependency>
+    <!-- 为了让它与apache hbase 2.2.2兼容，使用cdh6.2版本的；具体dependency可以去https://mvnrepository.com/查找 -->
+    <dependency>
+      <groupId>org.apache.hbase</groupId>
+      <artifactId>hbase-spark</artifactId>
+<!--      <version>1.2.0-cdh5.14.2</version>-->
+      <version>2.1.0-cdh6.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-streaming_2.11</artifactId>
+      <version>2.3.3</version>
+    </dependency>
+
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
@@ -52,6 +106,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
     <plugins>
       <!-- 限制jdk版本插件 -->
