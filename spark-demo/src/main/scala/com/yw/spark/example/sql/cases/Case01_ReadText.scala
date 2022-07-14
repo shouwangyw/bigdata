@@ -9,12 +9,12 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
 object Case01_ReadText {
   def main(args: Array[String]): Unit = {
     // 创建 SparkSession
-    val ss = SparkSession.builder().appName(this.getClass.getSimpleName)
+    val spark = SparkSession.builder().appName(this.getClass.getSimpleName)
       .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
       .master("local[*]")
       .getOrCreate()
 
-    val df: DataFrame = ss.read.text(this.getClass.getClassLoader.getResource("person.txt").getPath)
+    val df: DataFrame = spark.read.text(this.getClass.getClassLoader.getResource("person.txt").getPath)
 
     /**
       * 打印schema信息
@@ -39,6 +39,6 @@ object Case01_ReadText {
     println("----------------")
     df.show()
 
-    ss.stop()
+    spark.stop()
   }
 }
