@@ -8,8 +8,6 @@ import org.apache.spark.sql.SparkSession
   *
   * @author yangwei
   */
-case class Person(id: String, name: String, age: Int)
-
 object Case02_ReadTextV2 {
   def main(args: Array[String]): Unit = {
     // 创建 SparkSession

@@ -7,9 +7,6 @@ import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
   *
   * @author yangwei
   */
-// 定义一个样例类
-case class Person(id: String, name: String, age: Int)
-
 object Case06_SparkConversion {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().setAppName(this.getClass.getSimpleName).setMaster("local[*]")
