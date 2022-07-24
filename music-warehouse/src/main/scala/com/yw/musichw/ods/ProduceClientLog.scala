@@ -37,12 +37,12 @@ object ProduceClientLog {
     if (localRun) {
       sparkSession = SparkSession.builder()
         .master("local")
-        .appName(ProduceClientLog.getClass.getSimpleName)
+        .appName(this.getClass.getSimpleName)
         .config("hive.metastore.uris", hiveMetaStoreUris).enableHiveSupport().getOrCreate()
       sc = sparkSession.sparkContext
       clientLogInfos = sc.textFile("/Volumes/F/MyGitHub/bigdata/music-warehouse/data/currentday_clientlog.tar.gz")
     } else {
-      sparkSession = SparkSession.builder().appName(ProduceClientLog.getClass.getSimpleName)
+      sparkSession = SparkSession.builder().appName(this.getClass.getSimpleName)
         .enableHiveSupport().getOrCreate()
       sc = sparkSession.sparkContext
       clientLogInfos = sc.textFile(s"${hdfsClientLogPath}/currentday_clientlog.tar.gz")

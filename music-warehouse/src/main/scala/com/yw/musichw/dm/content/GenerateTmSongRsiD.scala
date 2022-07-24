@@ -27,14 +27,14 @@ object GenerateTmSongRsiD {
     }
     if (localRun) {
       sparkSession = SparkSession.builder().master("local")
-        .appName(GenerateTmSongRsiD.getClass.getSimpleName)
+        .appName(this.getClass.getSimpleName)
         .config("spark.sql.shuffle.partitions", "1")
         .config("hive.metastore.uris", hiveMetastoreUris)
         .enableHiveSupport()
         .getOrCreate()
       sparkSession.sparkContext.setLogLevel("Error")
     } else {
-      sparkSession = SparkSession.builder().appName(GenerateTmSongRsiD.getClass.getSimpleName)
+      sparkSession = SparkSession.builder().appName(this.getClass.getSimpleName)
         .enableHiveSupport().getOrCreate()
     }
 

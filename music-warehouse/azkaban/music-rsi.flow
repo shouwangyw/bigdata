@@ -1,0 +1,33 @@
+nodes:
+  - name: Job1_ProduceClientLog
+    type: command
+    config:
+      command: sh 1_produce_clientlog.sh ${mydate}
+
+  - name: Job2_ExtractMySQLDataToODS
+    type: command
+    config:
+      command: sh 2_extract_mysqldata_to_ods.sh
+
+  - name: Job3_GenerateTwSongBaseinfo
+    type: command
+    config:
+      command: sh 3_generate_tw_song_baseinfo.sh
+    dependsOn:
+      - Job2_ExtractMySQLDataToODS
+
+  - name: Job4_GenerateTwSongFtur
+    type: command
+    config:
+      command: sh 4_generate_tw_song_ftur.sh ${mydate}
+    dependsOn:
+      - Job1_ProduceClientLog
+      - Job3_GenerateTwSongBaseinfo
+
+  - name: Job5_GenerateTmSingerAndSongRsi
+    type: command
+    config:
+      command: sh 5_generate_tm_singer_rsi.sh ${mydate}
+      command.1: sh 6_generate_tm_song_rsi.sh ${mydate}
+    dependsOn:
+      - Job4_GenerateTwSongFtur

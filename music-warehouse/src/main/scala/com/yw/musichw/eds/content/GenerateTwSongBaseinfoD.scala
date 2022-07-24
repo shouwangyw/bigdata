@@ -100,11 +100,12 @@ object GenerateTwSongBaseinfoD {
 
   def main(args: Array[String]): Unit = {
     if (localRun) { // 本地运行
-      sparkSession = SparkSession.builder().master("local")
+      sparkSession = SparkSession.builder().master("local").appName(this.getClass.getSimpleName)
         .config("hive.metastore.uris", hiveMetaStoreUris)
         .enableHiveSupport().getOrCreate()
     } else { // 集群运行
-      sparkSession = SparkSession.builder().enableHiveSupport().getOrCreate()
+      sparkSession = SparkSession.builder().appName(this.getClass.getSimpleName)
+        .enableHiveSupport().getOrCreate()
     }
 
     import org.apache.spark.sql.functions._ //导入函数，可以使用 udf、col 方法
