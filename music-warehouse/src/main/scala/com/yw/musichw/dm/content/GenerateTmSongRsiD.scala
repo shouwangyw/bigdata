@@ -78,21 +78,21 @@ object GenerateTmSongRsiD {
     val rsi_1d = sparkSession.sql(
       s"""
          | select
-         |    "1" as PERIOD, NBR, NAME, RSI_1D AS RSI,
+         |    1 as PERIOD, NBR, NAME, RSI_1D AS RSI,
          |    row_number() over(partition by data_dt order by RSI_1D desc) as RSI_RANK
          | from TEMP_TW_SONG_FTUR_D
        """.stripMargin)
     val rsi_7d = sparkSession.sql(
       s"""
          | select
-         |    "7" as PERIOD, NBR, NAME, RSI_7D AS RSI,
+         |    7 as PERIOD, NBR, NAME, RSI_7D AS RSI,
          |    row_number() over(partition by data_dt order by RSI_7D desc) as RSI_RANK
          | from TEMP_TW_SONG_FTUR_D
        """.stripMargin)
     val rsi_30d = sparkSession.sql(
       s"""
          | select
-         |    "30" as PERIOD, NBR, NAME, RSI_30D AS RSI,
+         |    30 as PERIOD, NBR, NAME, RSI_30D AS RSI,
          |    row_number() over(partition by data_dt order by RSI_30D desc) as RSI_RANK
          | from TEMP_TW_SONG_FTUR_D
        """.stripMargin)
