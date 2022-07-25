@@ -1,0 +1,34 @@
+CREATE EXTERNAL TABLE `TW_SONG_FTUR_D`(
+ `NBR` string, 
+ `NAME` string,
+ `SOURCE` int, 
+ `ALBUM` string, 
+ `PRDCT` string, 
+ `LANG` string, 
+ `VIDEO_FORMAT` string, 
+ `DUR` int, 
+ `SINGER1` string, 
+ `SINGER2` string, 
+ `SINGER1ID` string, 
+ `SINGER2ID` string, 
+ `MAC_TIME` int,
+ `SING_CNT` int,
+ `SUPP_CNT` int, 
+ `USR_CNT` int, 
+ `ORDR_CNT` int, 
+ `RCT_7_SING_CNT` int, 
+ `RCT_7_SUPP_CNT` int, 
+ `RCT_7_TOP_SING_CNT` int, 
+ `RCT_7_TOP_SUPP_CNT` int, 
+ `RCT_7_USR_CNT` int, 
+ `RCT_7_ORDR_CNT` int, 
+ `RCT_30_SING_CNT` int, 
+ `RCT_30_SUPP_CNT` int, 
+ `RCT_30_TOP_SING_CNT` int, 
+ `RCT_30_TOP_SUPP_CNT` int, 
+ `RCT_30_USR_CNT` int, 
+ `RCT_30_ORDR_CNT` int
+ )
+PARTITIONED BY (data_dt string)
+ROW FORMAT DELIMITED  FIELDS TERMINATED BY '\t' 
+LOCATION 'hdfs://mycluster/user/hive/warehouse/data/song/TW_SONG_FTUR_D';
