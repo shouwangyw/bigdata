@@ -102,7 +102,7 @@ object ProduceClientLog {
         |)
         |partitioned by (data_dt string)
         |ROW FORMAT DELIMITED  FIELDS TERMINATED BY '\t'
-        |LOCATION 'hdfs://node01/user/hive/warehouse/data/song/TO_CLIENT_SONG_PLAY_OPERATE_REQ_D'
+        |LOCATION 'hdfs://node01/user/hive/warehouse/music.db/TO_CLIENT_SONG_PLAY_OPERATE_REQ_D'
       """.stripMargin)
 
     sparkSession.sql(

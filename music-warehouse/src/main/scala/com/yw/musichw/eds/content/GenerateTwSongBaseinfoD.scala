@@ -99,6 +99,10 @@ object GenerateTwSongBaseinfoD {
   }
 
   def main(args: Array[String]): Unit = {
+    if (args.length < 1) {
+      println(s"请输入数据日期,格式例如：年月日(20221230)")
+      System.exit(1)
+    }
     if (localRun) { // 本地运行
       sparkSession = SparkSession.builder().master("local").appName(this.getClass.getSimpleName)
         .config("hive.metastore.uris", hiveMetaStoreUris)
@@ -107,6 +111,8 @@ object GenerateTwSongBaseinfoD {
       sparkSession = SparkSession.builder().appName(this.getClass.getSimpleName)
         .enableHiveSupport().getOrCreate()
     }
+
+    val currentDate = args(0)
 
     import org.apache.spark.sql.functions._ //导入函数，可以使用 udf、col 方法
 
@@ -176,10 +182,16 @@ object GenerateTwSongBaseinfoD {
         |       SONG_VER,
         |       AUTH_CO,
         |       STATE,
-        |       case when size(PRDCT_TYPE) = 0 then NULL else PRDCT_TYPE  end as PRDCT_TYPE
+        |       case when size(PRDCT_TYPE) = 0 then NULL else PRDCT_TYPE end as PRDCT_TYPE
         |    from TEMP_TO_SONG_INFO_D
         |    where NBR != ''
-      """.stripMargin).write.format("Hive").mode(SaveMode.Overwrite).saveAsTable("TW_SONG_BASEINFO_D")
+      """.stripMargin)
+      .createTempView("result")
+
+    sparkSession.sql(
+      s"""
+         | insert overwrite table TW_SONG_BASEINFO_D partition(data_dt = ${currentDate}) select * from result
+       """.stripMargin)
 
     println("**** all finished ****")
   }

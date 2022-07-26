@@ -40,4 +40,4 @@ CREATE EXTERNAL TABLE `TO_SONG_INFO_D`(
  `STATE` int, 
  `PRDCT_TYPE` string)
 ROW FORMAT DELIMITED  FIELDS TERMINATED BY '\t' 
-LOCATION 'hdfs://mycluster/user/hive/warehouse/data/song/TO_SONG_INFO_D';
+LOCATION 'hdfs://mycluster/user/hive/warehouse/music.db/TO_SONG_INFO_D';

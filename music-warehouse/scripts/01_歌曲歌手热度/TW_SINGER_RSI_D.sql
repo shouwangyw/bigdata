@@ -7,4 +7,4 @@ CREATE EXTERNAL TABLE `TW_SINGER_RSI_D`(
  )
 PARTITIONED BY (data_dt string)
 ROW FORMAT DELIMITED  FIELDS TERMINATED BY '\t' 
-LOCATION 'hdfs://mycluster/user/hive/warehouse/data/song/TW_SINGER_RSI_D';
+LOCATION 'hdfs://mycluster/user/hive/warehouse/music.db/TW_SINGER_RSI_D';
