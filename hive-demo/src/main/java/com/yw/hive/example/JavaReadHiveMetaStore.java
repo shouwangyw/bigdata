@@ -15,7 +15,7 @@ import java.util.List;
 public class JavaReadHiveMetaStore {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
-        conf.set("hive.metastore.uris", "thrift://192.168.254.132:9083");
+        conf.set("hive.metastore.uris", "thrift://node03:9083");
         IMetaStoreClient client = init(conf);
 
         System.out.println("---------- 1. 获取所有catalogs ----------");
