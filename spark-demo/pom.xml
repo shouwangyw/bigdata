@@ -14,6 +14,8 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <hadoop.version>3.1.4</hadoop.version>
+    <spark.version>3.2.1</spark.version>
+    <scala.version>2.13</scala.version>
   </properties>
 
   <repositories>
@@ -28,8 +30,8 @@
   <dependencies>
     <dependency>
       <groupId>org.apache.spark</groupId>
-      <artifactId>spark-core_2.11</artifactId>
-      <version>2.3.3</version>
+      <artifactId>spark-core_${scala.version}</artifactId>
+      <version>${spark.version}</version>
 <!--      <version>1.2.0</version>-->
     </dependency>
     <!--如果插件下不下来则将这个打开-->
@@ -85,18 +87,28 @@
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
-      <artifactId>spark-sql_2.11</artifactId>
-      <version>2.3.3</version>
+      <artifactId>spark-sql_${scala.version}</artifactId>
+      <version>${spark.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
-      <artifactId>spark-hive_2.11</artifactId>
-      <version>2.3.3</version>
+      <artifactId>spark-hive_${scala.version}</artifactId>
+      <version>${spark.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
-      <artifactId>spark-streaming_2.11</artifactId>
-      <version>2.3.3</version>
+      <artifactId>spark-streaming_${scala.version}</artifactId>
+      <version>${spark.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-streaming-kafka-0-10_${scala.version}</artifactId>
+      <version>${spark.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-sql-kafka-0-10_${scala.version}</artifactId>
+      <version>${spark.version}</version>
     </dependency>
 
     <dependency>
