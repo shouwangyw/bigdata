@@ -25,6 +25,11 @@
       <version>${hive.version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.apache.hive</groupId>
+      <artifactId>hive-jdbc</artifactId>
+      <version>${hive.version}</version>
+    </dependency>
     <!-- Scala 包-->
     <dependency>
       <groupId>org.scala-lang</groupId>

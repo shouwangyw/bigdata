@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author yangwei
  */
-public class JavaReadHiveMetaStore {
+public class HiveMetaStoreTool {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         conf.set("hive.metastore.uris", "thrift://node03:9083");
