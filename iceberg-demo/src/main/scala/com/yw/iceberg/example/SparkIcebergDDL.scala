@@ -192,15 +192,15 @@ object SparkIcebergDDL {
     +---+----+----+----+
      */
     /******************** case10 ********************/
-//    // 创建普通表
-//    spark.sql("create table if not exists hadoop_prod.default.my_tab(id int,name string,loc string,ts timestamp) using iceberg")
-//    // 向表中插入数据，并查询
-//    spark.sql("insert into hadoop_prod.default.my_tab values (1,'zs','shenzhen',cast(1608469830 as timestamp))")
-//    spark.sql("select * from hadoop_prod.default.my_tab").show()
-//    // 将表loc列添加为分区列，并插入数据，再查询
-//    spark.sql("alter table hadoop_prod.default.my_tab add partition field loc")
-//    spark.sql("insert into hadoop_prod.default.my_tab values (2,'li','wuhan',cast(1634559630 as timestamp))")
-//    spark.sql("select * from hadoop_prod.default.my_tab").show()
+    // 创建普通表
+    spark.sql("create table if not exists hadoop_prod.default.my_tab(id int,name string,loc string,ts timestamp) using iceberg")
+    // 向表中插入数据，并查询
+    spark.sql("insert into hadoop_prod.default.my_tab values (1,'zs','shenzhen',cast(1608469830 as timestamp))")
+    spark.sql("select * from hadoop_prod.default.my_tab").show()
+    // 将表loc列添加为分区列，并插入数据，再查询
+    spark.sql("alter table hadoop_prod.default.my_tab add partition field loc")
+    spark.sql("insert into hadoop_prod.default.my_tab values (2,'li','wuhan',cast(1634559630 as timestamp))")
+    spark.sql("select * from hadoop_prod.default.my_tab").show()
 //    // 将ts列进行转换作为分区列，插入数据并查询
 //    spark.sql("alter table hadoop_prod.default.my_tab add partition field years(ts)")
 //    spark.sql("insert into hadoop_prod.default.my_tab values (3,'ww','beijing',cast(1576843830 as timestamp))")
