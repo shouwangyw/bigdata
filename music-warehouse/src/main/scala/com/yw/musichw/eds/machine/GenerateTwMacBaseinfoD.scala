@@ -2,7 +2,6 @@ package com.yw.musichw.eds.machine
 
 import java.util.Properties
 
-import com.yw.musichw.dm.content.GenerateTmSingerRsiD.{mysqlPassword, mysqlUser}
 import com.yw.musichw.util.{ConfigUtils, StringUtils}
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 
@@ -129,7 +128,7 @@ object GenerateTwMacBaseinfoD {
         |   STORE.SUB_SCENE_CATGY_NM,	  -- 子场景分类名称
         |   STORE.SUB_SCENE_NM,	        -- 子场景名称
         |   STORE.BRND_NM,	            -- 品牌名称
-        |   STORE.SUB_BRND_NM,	        -- 子品牌名称
+        |   STORE.SUB_BRND_NM 	        -- 子品牌名称
         | from TEMP_MAC_ALL as TEMP
         | left join TO_YCBK_MAC_ADMIN_MAP_D as MA on TEMP.MID = MA.MID
         | left join TO_YCBK_PRVC_D as PRVC on MA.SCENE_PRVC_ID = PRVC.PRVC_ID
@@ -152,10 +151,10 @@ object GenerateTwMacBaseinfoD {
         |   YCAK.SALE_TM,	                                          -- 销售时间
         |   YCAK.REV_TM,		                                        -- 运营时间
         |   YCBK.STORE_NM as OPER_NM,                               -- 运营商名称
-        |   if (YCAK.PRVC is null,YCBK.PRVC,YCAK.PRVC) as PRVC,	    -- 机器所在省
-        |   if (YCAK.CTY is null,YCBK.CTY,YCAK.CTY) as CTY,		      -- 机器所在市
+        |   if (YCAK.PRVC is null, YCBK.PRVC,YCAK.PRVC) as PRVC,	    -- 机器所在省
+        |   if (YCAK.CTY is null, YCBK.CTY,YCAK.CTY) as CTY,		      -- 机器所在市
         |   YCBK.AREA,				                                      -- 机器所在区域
-        |   if (YCAK.ADDR_FMT is null,YCBK.ADDR,YCAK.ADDR_FMT) as ADDR, --机器详细地址
+        |   if (YCAK.ADDR_FMT is null, YCBK.ADDR, YCAK.ADDR_FMT) as ADDR, --机器详细地址
         |   YCBK.STORE_NM,	                                        -- 门店名称
         |   YCBK.TAG_NM as SCENCE_CATGY,                            -- 主场景名称
         |   YCBK.SUB_SCENE_CATGY_NM as SUB_SCENCE_CATGY,            -- 子场景分类名称
@@ -172,9 +171,9 @@ object GenerateTwMacBaseinfoD {
         |   YCBK.AGE_RATE,	                                        -- 代理人、联盟人分成比例
         |   YCBK.COM_RATE,	                                        -- 公司分成比例
         |   YCBK.PAR_RATE,	                                        -- 合作方分成比例
-        |   if (YCAK.STS is null ,YCBK.IS_ACTV,YCAK.STS) as IS_ACTV,-- 是否激活
+        |   if (YCAK.STS is null, YCBK.IS_ACTV,YCAK.STS) as IS_ACTV,-- 是否激活
         |   YCBK.ACTV_TM,	                                          -- 激活时间
-        |   if (YCAK.PAY_SW is null ,YCBK.PAY_SW,YCAK.PAY_SW) as PAY_SW,  -- 是否开通移动支付
+        |   if (YCAK.PAY_SW is null, YCBK.PAY_SW, YCAK.PAY_SW) as PAY_SW,  -- 是否开通移动支付
         |   YCBK.STORE_NM as PRTN_NM,	                              -- 代理人姓名，这里获取门店名称
         |   YCAK.CUR_LOGIN_TM	                                      -- 最近登录时间
         | from TEMP_YCAK_MAC_INFO as YCAK
@@ -237,6 +236,7 @@ object GenerateTwMacBaseinfoD {
       if (addr != null) getCity(addr)
       else ""
     }
+    else ""
   }
 
   def getCity(addr: String): String = {

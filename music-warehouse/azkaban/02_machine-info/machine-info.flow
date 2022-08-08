@@ -1,0 +1,12 @@
+nodes:
+  - name: Job1_ExtractMySQLDataToODS
+    type: command
+    config:
+      command: sh 1_extract_mysqldata_to_ods.sh
+
+  - name: Job2_GenerateTwMacBaseinfo
+    type: command
+    config:
+      command: sh 2_generate_tw_mac_baseinfo.sh ${mydate}
+    dependsOn:
+      - Job1_ExtractMySQLDataToODS
