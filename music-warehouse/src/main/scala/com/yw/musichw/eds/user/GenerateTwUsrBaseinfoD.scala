@@ -2,7 +2,6 @@ package com.yw.musichw.eds.user
 
 import java.util.Properties
 
-import com.yw.musichw.eds.machine.GenerateTwMacBaseinfoD.{mysqlPassword, mysqlUser}
 import com.yw.musichw.util.{ConfigUtils, DateUtils}
 import org.apache.spark.sql.{SaveMode, SparkSession}
 
@@ -43,7 +42,7 @@ object GenerateTwUsrBaseinfoD {
         .enableHiveSupport()
         .getOrCreate()
     } else {
-      sparkSession = SparkSession.builder()
+      sparkSession = SparkSession.builder().config("spark.sql.shuffle.partitions", "1")
         .appName(this.getClass.getSimpleName).enableHiveSupport().getOrCreate()
     }
 
@@ -71,7 +70,7 @@ object GenerateTwUsrBaseinfoD {
         |   LEVEL,                          -- 用户等级
         |   "2" AS USR_TYPE,                -- 用户类型 1-企业 2-个人
         |   NULL AS IS_CERT,                -- 实名认证
-        |   NULL AS IS_STDNT,               -- 是否是学生
+        |   NULL AS IS_STDNT                -- 是否是学生
         | from TO_YCAK_USR_D
       """.stripMargin)
 
@@ -163,7 +162,7 @@ object GenerateTwUsrBaseinfoD {
     // 7. 将以上当日计算得到的活跃用户信息保存至 TW_USR_BASEINFO_D 日增量表中
     sparkSession.sql(
       s"""
-        | insert overwrite table TW_USR_BASEINFO_D partition (data_dt = ${currentDate})
+        | insert overwrite table tw_usr_baseinfo_d partition (data_dt = ${currentDate})
         | select * from TEMP_USR_ACTV
       """.stripMargin)
 
@@ -176,7 +175,7 @@ object GenerateTwUsrBaseinfoD {
     props.setProperty("driver", "com.mysql.jdbc.Driver")
 
     sparkSession.sql(
-      """
+      s"""
         | select
         |   A.UID,                                  -- 用户ID
         |   case when B.REG_CHNL = '1' THEN '微信'
@@ -196,7 +195,7 @@ object GenerateTwUsrBaseinfoD {
         | from (
         |   select UID, count(*) as c from TW_USR_BASEINFO_D
         |   where data_dt between ${pre7Date} and ${currentDate}
-        |   group by UID having c = 7
+        |   group by UID having c = 1
         | ) A, TW_USR_BASEINFO_D B
         | where B.data_dt = ${currentDate} and A.UID = B.UID
       """.stripMargin).write.mode(SaveMode.Overwrite).jdbc(mysqlUrl, "user_7days_active", props)

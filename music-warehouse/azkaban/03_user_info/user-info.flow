@@ -1,0 +1,13 @@
+nodes:
+  - name: Job1_ExtractMySQLDataToODS
+    type: command
+    config:
+      command: sh 1_extract_mysqldata_to_ods.sh
+      command.1: sh 2_incr_extract_mysqldata_to_ods.sh ${mydate}
+
+  - name: Job2_GenerateTwUsrBaseinfo
+    type: command
+    config:
+      command: sh 3_generate_tw_usr_baseinfo_d.sh ${mydate}
+    dependsOn:
+      - Job1_ExtractMySQLDataToODS
