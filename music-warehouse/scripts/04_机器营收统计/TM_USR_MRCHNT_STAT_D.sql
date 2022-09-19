@@ -1,15 +1,14 @@
 CREATE EXTERNAL TABLE `TM_USR_MRCHNT_STAT_D`(
- `ADMIN_ID` string, 
- `PAY_TYPE` int, 
- `REV_ORDR_CNT` int, 
- `REF_ORDR_CNT` int,
- `TOT_REV` double,
- `TOT_REF` double,
- `TOT_INV_REV` DECIMAL(10,2),
- `TOT_AGE_REV` DECIMAL(10,2),
- `TOT_COM_REV` DECIMAL(10,2),
- `TOT_PAR_REV` DECIMAL(10,2)
- )
-PARTITIONED BY (DATA_DT string)
+    `ADMIN_ID` string,
+    `PAY_TYPE` int,
+    `REV_ORDR_CNT` int,
+    `REF_ORDR_CNT` int,
+    `TOT_REV` double,
+    `TOT_REF` double,
+    `TOT_INV_REV` DECIMAL(10,2),
+    `TOT_AGE_REV` DECIMAL(10,2),
+    `TOT_COM_REV` DECIMAL(10,2),
+    `TOT_PAR_REV` DECIMAL(10,2)
+) PARTITIONED BY (DATA_DT string)
 ROW FORMAT DELIMITED  FIELDS TERMINATED BY '\t' 
-LOCATION 'hdfs://mycluster/user/hive/warehouse/data/user/TM_USR_MRCHNT_STAT_D';
+LOCATION 'hdfs://node01/user/hive/warehouse/music.db/TM_USR_MRCHNT_STAT_D';
