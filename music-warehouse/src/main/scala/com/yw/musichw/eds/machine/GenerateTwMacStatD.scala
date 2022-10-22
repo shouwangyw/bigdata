@@ -123,11 +123,15 @@ object GenerateTwMacStatD {
         |  nvl(B.PRVC, A.PRVC) as PRVC,               -- 省份
         |  nvl(B.CTY, A.CTY) as CTY,                  -- 城市
         |  nvl(B.DISTRICT, A.AREA) as AREA,           -- 区县
-        |  A.PRTN_NM as AGE_ID,                       -- 代理人ID
-        |  A.INV_RATE,                                -- 投资人分成比例
-        |  A.AGE_RATE,                                -- 代理人、联盟人分成比例
-        |  A.COM_RATE,                                -- 公司分成比例
-        |  A.PAR_RATE,                                -- 合作方分成比例
+        |  nvl(A.PRTN_NM, A.ADDR) as AGE_ID,          -- 代理人ID
+        |  case when (A.INV_RATE+A.AGE_RATE+A.COM_RATE+A.PAR_RATE) is null then 25
+        |    else A.INV_RATE end as INV_RATE,         -- 投资人分成比例
+        |  case when (A.INV_RATE+A.AGE_RATE+A.COM_RATE+A.PAR_RATE) is null then 25
+        |    else A.AGE_RATE end as AGE_RATE,         -- 代理人、联盟人分成比例
+        |  case when (A.INV_RATE+A.AGE_RATE+A.COM_RATE+A.PAR_RATE) is null then 25
+        |    else A.COM_RATE end as COM_RATE,         -- 公司分成比例
+        |  case when (A.INV_RATE+A.AGE_RATE+A.COM_RATE+A.PAR_RATE) is null then 25
+        |    else A.PAR_RATE end as PAR_RATE,         -- 合作方分成比例
         |  C.PKG_ID,                                  -- 套餐ID
         |  C.PAY_TYPE,                                -- 支付类型
         |  nvl(C.CNSM_USR_CNT, 0) as CNSM_USR_CNT,    -- 总消费用户数
