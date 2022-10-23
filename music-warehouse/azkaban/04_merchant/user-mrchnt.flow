@@ -1,0 +1,28 @@
+nodes:
+  - name: Job1_ExtractMySQLDataToODS
+    type: command
+    config:
+      command: sh 1_incr_extract_mysqldata_to_ods.sh ${mydate}
+      command.1: sh 2_incr_extract_mysqldata_to_ods.sh ${mydate}
+
+  - name: Job2_GenerateTwMacLocAndCnsmBrirfToEDS
+    type: command
+    config:
+      command: sh 3_generate_tw_mac_loc_d.sh ${mydate}
+      command.1: sh 4_generate_tw_cnsm_brief_d.sh ${mydate}
+    dependsOn:
+      - Job1_ExtractMySQLDataToODS
+
+  - name: Job3_GenerateTwMacStatToEDS
+    type: command
+    config:
+      command: sh 5_generate_tw_mac_stat_d.sh ${mydate}
+    dependsOn:
+      - Job2_GenerateTwMacLocAndCnsmBrirfToEDS
+
+  - name: Job4_GenerateTmUsrMrchntStatToDM
+    type: command
+    config:
+      command: sh 6_generate_tm_usr_mrchnt_stat_d.sh ${mydate}
+    dependsOn:
+      - Job3_GenerateTwMacStatToEDS
