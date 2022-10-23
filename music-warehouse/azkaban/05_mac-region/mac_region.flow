@@ -1,0 +1,5 @@
+nodes:
+  - name: Job1_GenerateTmMacRegionStatToDM
+    type: command
+    config:
+      command: sh 1_generate_tm_mac_region_stat_d.sh ${mydate}
