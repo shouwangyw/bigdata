@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
   <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-  <property name="LOG_SYSTEM" value="/data/logs/log-collector/system"/>
-  <property name="LOG_COMMON" value="/data/logs/log-collector/common"/>
-  <property name="LOG_USER_PLAY_SONG" value="/data/logs/log-collector/user_play_song"/>
+  <property name="LOG_PATH" value="/data/logs/log-collector"/>
 
   <!-- %m输出的信息, %p日志级别, %t线程名, %d日期, %c类的全名, %i索引 -->
   <!-- appender是configuration的子节点,是负责写日志的组件 -->
@@ -22,7 +20,7 @@
   <!-- 按照每天生成系统日志文件 -->
   <appender name="SYSTEM_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-      <FileNamePattern>${LOG_SYSTEM}/system_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
+      <FileNamePattern>${LOG_PATH}/system_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
       <MaxHistory>15</MaxHistory>
       <maxFileSize>256MB</maxFileSize>
     </rollingPolicy>
@@ -38,7 +36,7 @@
   <appender name="COMMON_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
       <!-- 活动文件的名字会根据fileNamePattern的值，每隔一段时间改变一次 -->
-      <FileNamePattern>${LOG_COMMON}/log_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
+      <FileNamePattern>${LOG_PATH}/common_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
       <!-- 每产生一个日志文件，该日志文件的保存期限为15天 -->
       <MaxHistory>15</MaxHistory>
       <!-- maxFileSize:这是活动文件的大小，默认值是10MB,这里设置256M -->
@@ -55,7 +53,7 @@
   <appender name="USER_PLAY_SONG_LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
       <!-- 活动文件的名字会根据fileNamePattern的值，每隔一段时间改变一次 -->
-      <FileNamePattern>${LOG_USER_PLAY_SONG}/log_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
+      <FileNamePattern>${LOG_PATH}/user_play_song_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
       <!-- 每产生一个日志文件，该日志文件的保存期限为15天 -->
       <MaxHistory>15</MaxHistory>
       <!-- maxFileSize:这是活动文件的大小，默认值是10MB,这里设置256M -->

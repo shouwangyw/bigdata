@@ -1,5 +1,6 @@
 package com.yw.log.collector.controller;
 
+import com.yw.log.collector.common.constant.LogType;
 import com.yw.log.collector.common.response.RespCode;
 import com.yw.log.collector.common.response.Result;
 import com.yw.log.collector.service.LogService;
@@ -26,9 +27,9 @@ public class LogController {
 
     @PostMapping("/common/{logType}")
     public Result<Void> collect(@PathVariable("logType") String logType, HttpServletRequest request) throws Exception {
-        if (StringUtils.equals(logType, "userPlaySongLog")) {
+        if (StringUtils.equals(logType, LogType.LOG_TYPE_USER_PLAY_SONG)) {
             userPlaySongLogService.process(request, logType);
-        } else if (StringUtils.equals(logType, "userLoginLog")) {
+        } else if (StringUtils.equals(logType, LogType.LOG_TYPE_USER_LOGIN)) {
             commonLogService.process(request, logType);
         } else {
             return Result.failure(RespCode.ERR_UPLOAD_LOG_TYPE);
