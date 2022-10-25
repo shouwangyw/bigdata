@@ -37,3 +37,5 @@ mvnw.cmd
 
 tmp
 output/
+
+logs/

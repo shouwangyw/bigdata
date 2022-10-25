@@ -6,8 +6,8 @@ import com.yw.log.collector.common.exception.CustomException;
 import com.yw.log.collector.common.response.RespCode;
 import com.yw.log.collector.service.LogService;
 import com.yw.log.collector.utils.CommonUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
-import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedInputStream;
@@ -22,7 +22,7 @@ public class AbstractLogServiceImpl implements LogService {
 
     @Override
     public void process(HttpServletRequest request, String logType) {
-        if (StringUtils.isEmpty(logType)) {
+        if (StringUtils.isBlank(logType)) {
             throw new CustomException(RespCode.ERR_UPLOAD_LOG_TYPE);
         }
         int contentLength = request.getContentLength();
