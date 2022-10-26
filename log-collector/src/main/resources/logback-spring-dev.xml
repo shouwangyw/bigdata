@@ -20,7 +20,7 @@
   <!-- 按照每天生成系统日志文件 -->
   <appender name="SYSTEM_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-      <FileNamePattern>${LOG_PATH}/system_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
+      <FileNamePattern>${LOG_PATH}/system/log_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
       <MaxHistory>15</MaxHistory>
       <maxFileSize>256MB</maxFileSize>
     </rollingPolicy>
@@ -36,7 +36,7 @@
   <appender name="COMMON_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
       <!-- 活动文件的名字会根据fileNamePattern的值，每隔一段时间改变一次 -->
-      <FileNamePattern>${LOG_PATH}/common_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
+      <FileNamePattern>${LOG_PATH}/common/log_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
       <!-- 每产生一个日志文件，该日志文件的保存期限为15天 -->
       <MaxHistory>15</MaxHistory>
       <!-- maxFileSize:这是活动文件的大小，默认值是10MB,这里设置256M -->
@@ -53,7 +53,7 @@
   <appender name="USER_PLAY_SONG_LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
       <!-- 活动文件的名字会根据fileNamePattern的值，每隔一段时间改变一次 -->
-      <FileNamePattern>${LOG_PATH}/user_play_song_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
+      <FileNamePattern>${LOG_PATH}/user_play_song/log_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
       <!-- 每产生一个日志文件，该日志文件的保存期限为15天 -->
       <MaxHistory>15</MaxHistory>
       <!-- maxFileSize:这是活动文件的大小，默认值是10MB,这里设置256M -->
