@@ -20,6 +20,8 @@ import java.util.concurrent.TimeUnit;
 public class AbstractLogServiceImpl implements LogService {
     protected Logger log;
 
+    private static final int MAX_TRY_TIMES = 100;
+
     @Override
     public void process(HttpServletRequest request, String logType) {
         if (StringUtils.isBlank(logType)) {
@@ -32,12 +34,11 @@ public class AbstractLogServiceImpl implements LogService {
         byte[] bytes = new byte[contentLength];
         try (BufferedInputStream bis = new BufferedInputStream(request.getInputStream())){
             // 最大尝试读取次数
-            int tryTime = 0;
+            int tryTimes = 0;
             // 最大尝试读取次数内最终读取数据长度
             int totalReadLength = 0;
             // 保证读取输入流里所有数据，最大尝试读取数据时长为20s
-            int maxTryTime = 100;
-            while (totalReadLength < contentLength && tryTime < maxTryTime) {
+            while (totalReadLength < contentLength && tryTimes < MAX_TRY_TIMES) {
                 int readLength = bis.read(bytes, totalReadLength, contentLength - totalReadLength);
                 if (readLength < 0) {
                     throw new CustomException(RespCode.BAD_NETWORK, logType);
@@ -46,7 +47,7 @@ public class AbstractLogServiceImpl implements LogService {
                 if (totalReadLength == contentLength) {
                     break;
                 }
-                tryTime++;
+                tryTimes++;
                 // 每次尝试后延时200ms，最大尝试时长为(100*200)ms
                 TimeUnit.MILLISECONDS.sleep(200);
             }
@@ -70,10 +71,10 @@ public class AbstractLogServiceImpl implements LogService {
         StringBuilder sb = new StringBuilder();
         for (int i = 0, size = jsonArray.size(); i < size; i++) {
             JSONObject ele = jsonArray.getJSONObject(i);
-            sb.append(ele.toString()).append(",");
+            sb.append(ele.toString()).append(i == size - 1 ? StringUtils.EMPTY : ",");
         }
         try {
-            log.info(sb.toString().substring(0, sb.length() - 1));
+            log.info("{}", sb);
         } catch (Exception e) {
             throw new CustomException(RespCode.LOG_FAIL, logType);
         }

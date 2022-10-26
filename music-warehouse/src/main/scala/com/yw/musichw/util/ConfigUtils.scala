@@ -18,4 +18,11 @@ object ConfigUtils {
   val MYSQL_URL = load.getString("mysql.url")
   val MYSQL_USER = load.getString("mysql.user")
   val MYSQL_PASSWORD = load.getString("mysql.password")
+  val KAFKA_CLUSTER = load.getString("kafka.cluster")
+  val KAFKA_TOPIC_USER_LOGIN = load.getString("kafka.topic.userLogin")
+  val KAFKA_TOPIC_USER_PLAY_SONG = load.getString("kafka.topic.userPlaySong")
+  val REDIS_HOST = load.getString("redis.host")
+  val REDIS_PORT = load.getInt("redis.port")
+  val REDIS_DB = load.getInt("redis.db")
+  val REDIS_OFFSET_DB = load.getInt("redis.offset.db")
 }
