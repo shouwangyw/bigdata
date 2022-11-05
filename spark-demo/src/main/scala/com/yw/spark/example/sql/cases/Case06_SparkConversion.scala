@@ -1,5 +1,6 @@
 package com.yw.spark.example.sql.cases
 
+import com.yw.spark.example.sql.Person
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 

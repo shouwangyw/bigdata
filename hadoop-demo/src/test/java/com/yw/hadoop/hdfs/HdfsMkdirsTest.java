@@ -10,7 +10,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.net.URI;
 
-import static org.testng.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author yangwei
