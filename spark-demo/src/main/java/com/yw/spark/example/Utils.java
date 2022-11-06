@@ -47,7 +47,7 @@ public class Utils {
 ////            download(PATH + v + "/", json);
 //        });
 
-        System.out.println(Utils.getPlayUrlFromDetail("media-853926875693056"));
+        System.out.println(Utils.getPlayUrlFromDetail("media-853927018856448"));
     }
 
     public static Map<Integer, String> getCourseList() {
