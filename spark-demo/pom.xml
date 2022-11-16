@@ -16,6 +16,7 @@
     <hadoop.version>3.1.4</hadoop.version>
     <spark.version>3.2.1</spark.version>
 <!--    <scala.version>2.13</scala.version>-->
+    <scalikejdbc.version>3.5.0</scalikejdbc.version>
     <scala.version>2.12</scala.version>
     <iceberg.version>0.13.2</iceberg.version>
   </properties>
@@ -117,6 +118,16 @@
       <artifactId>spark-sql-kafka-0-10_${scala.version}</artifactId>
       <version>${spark.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.scalikejdbc</groupId>
+      <artifactId>scalikejdbc_${scala.version}</artifactId>
+      <version>${scalikejdbc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scalikejdbc</groupId>
+      <artifactId>scalikejdbc-config_${scala.version}</artifactId>
+      <version>${scalikejdbc.version}</version>
+    </dependency>
     <!-- Spark与Iceberg整合的依赖包-->
     <dependency>
       <groupId>org.apache.iceberg</groupId>
@@ -150,7 +161,7 @@
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.38</version>
+      <version>5.1.39</version>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
