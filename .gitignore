@@ -9,6 +9,9 @@
 .settings
 .springBeans
 .sts4-cache
+.checkpoint
+.tmp
+.data
 
 ### eclipse ###
 .eclipse
