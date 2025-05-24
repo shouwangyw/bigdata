@@ -1,16 +1,18 @@
-package com.yw.flink.example.scalacases
+package com.yw.flink.example.scalacases.case00
 
+import org.apache.flink.api.common.RuntimeExecutionMode
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 
 /**
-  * Flink 流处理 Scala WordCount
+  * Flink DataStream Batch WordCount
   *
   * @author yangwei
   */
-object Case02_StreamWordCount {
+object Case03_StreamBatchWordCount {
   def main(args: Array[String]): Unit = {
     // 1. 准备环境
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
+    env.setRuntimeMode(RuntimeExecutionMode.BATCH)
     // 2. 导入隐式转换
     import org.apache.flink.streaming.api.scala._
     // 3. 读取数据文件

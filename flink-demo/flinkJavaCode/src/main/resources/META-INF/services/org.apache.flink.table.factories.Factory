@@ -1,0 +1,2 @@
+com.mashibing.flinkjava.code.chapter9.userdefinedconnector.source.SocketDynamicTableSourceFactory
+com.mashibing.flinkjava.code.chapter9.userdefinedconnector.sink.RedisDynamicTableSinkFactory
