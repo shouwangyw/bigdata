@@ -1,4 +1,4 @@
-package com.yw.flink.example.scalacases
+package com.yw.flink.example.scalacases.case00
 
 import org.apache.flink.api.scala.ExecutionEnvironment
 
@@ -18,7 +18,9 @@ object Case01_BatchWordCount {
     // 4. 切分单词
     val wordsDs: DataSet[String] = linesDs.flatMap(line => line.split(" "))
     // 5. 对数据进行计数、分组、聚合统计
-    wordsDs.map(word => {(word, 1)})
+    wordsDs.map(word => {
+      (word, 1)
+    })
       .groupBy(0)
       .sum(1)
       .print()

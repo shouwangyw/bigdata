@@ -1,4 +1,4 @@
-package com.yw.flink.example.javacases;
+package com.yw.flink.example.javacases.case00;
 
 import org.apache.flink.api.common.typeinfo.Types;
 import org.apache.flink.api.java.ExecutionEnvironment;
