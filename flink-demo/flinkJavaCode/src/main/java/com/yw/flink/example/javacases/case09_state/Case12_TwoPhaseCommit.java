@@ -79,9 +79,9 @@ public class Case12_TwoPhaseCommit {
             //获取连接
             PreparedStatement pst = jdbcCommonUtils.getConnect().prepareStatement("insert into user (id,name,age) values (?,?,?)");
             //设置pst数据
-            pst.setInt(1, Integer.valueOf(split[0]));
+            pst.setInt(1, Integer.parseInt(split[0]));
             pst.setString(2, split[1]);
-            pst.setInt(3, Integer.valueOf(split[2]));
+            pst.setInt(3, Integer.parseInt(split[2]));
 
             //执行插入操作
             pst.execute();
@@ -121,7 +121,6 @@ public class Case12_TwoPhaseCommit {
             jdbcCommonUtils.rollback();
             //关闭对象
             jdbcCommonUtils.close();
-
         }
     }
 }
