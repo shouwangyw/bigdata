@@ -81,7 +81,7 @@ public class Case04_GlobalWindowWithKey {
      */
     private static class MyCountTrigger extends Trigger<StationLog, GlobalWindow> {
         //定义状态描述器
-        private ValueStateDescriptor<Long> eventCountDescriptor = new ValueStateDescriptor<Long>("event-count", Long.class);
+        private ValueStateDescriptor<Long> eventCountDescriptor = new ValueStateDescriptor<>("event-count", Long.class);
 
         //每来一条数据，调用一次
         @Override

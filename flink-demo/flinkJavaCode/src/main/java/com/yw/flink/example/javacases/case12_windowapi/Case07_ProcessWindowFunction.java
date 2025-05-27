@@ -1,27 +1,25 @@
-package com.yw.flink.example.javacases.case11_windows;
+package com.yw.flink.example.javacases.case12_windowapi;
 
 import com.yw.flink.example.StationLog;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.MapFunction;
-import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
-import org.apache.flink.streaming.api.datastream.KeyedStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.windowing.ProcessWindowFunction;
-import org.apache.flink.streaming.api.windowing.assigners.EventTimeSessionWindows;
-import org.apache.flink.streaming.api.windowing.assigners.SessionWindowTimeGapExtractor;
+import org.apache.flink.streaming.api.windowing.assigners.TumblingEventTimeWindows;
+import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 import org.apache.flink.util.Collector;
 
 import java.time.Duration;
 
 /**
- * Flink - 对KeyedStream使用会话窗口，动态设置gap间隙时间
- * 案例：读取基站日志数据，当基站为001时设置gap为3秒，其他为4s,没有通话数据时，生成窗口统计通话时长
+ * Flink : Flink Window 窗口函数 - ProcessWindowFunction
+ * 案例：读取socket基站日志数据，每隔5s统计每个基站通话总时长
  */
-public class Case03_SessionWindowWithKey2 {
+public class Case07_ProcessWindowFunction {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //读取socket中数据
@@ -46,17 +44,9 @@ public class Case03_SessionWindowWithKey2 {
                         .withIdleness(Duration.ofSeconds(5))
         );
 
-        //设置key
-        KeyedStream<StationLog, String> keyedStream = dsWithWatermark.keyBy((KeySelector<StationLog, String>) stationLog -> stationLog.sid);
-
-        //设置会话窗口
-        keyedStream.window(EventTimeSessionWindows.withDynamicGap((SessionWindowTimeGapExtractor<StationLog>) stationLog -> {
-                    if ("001".equals(stationLog.sid)) {
-                        return 3000;
-                    } else {
-                        return 4000;
-                    }
-                }))
+        //设置按照基站ID 分组,设置滚动窗口
+        dsWithWatermark.keyBy(stationLog -> stationLog.sid)
+                .window(TumblingEventTimeWindows.of(Time.seconds(5)))
                 .process(new ProcessWindowFunction<StationLog, String, String, TimeWindow>() {
                     @Override
                     public void process(String key,
@@ -66,17 +56,15 @@ public class Case03_SessionWindowWithKey2 {
                         //获取窗口的起始时间
                         long startTime = context.window().getStart();
                         long endTime = context.window().getEnd();
-
-                        //该基站读取数据的总通话时长
+                        //统计该基站通话时长
                         long totalDurationTime = 0L;
                         for (StationLog element : elements) {
                             totalDurationTime += element.duration;
                         }
-                        collector.collect("窗口范围：[" + startTime + "~" + endTime + "),基站ID:" + key + ",通话时长：" + totalDurationTime);
+
+                        collector.collect("窗口起始时间：[" + startTime + "~" + endTime + "),基站：" + key + ",通话总时长：" + totalDurationTime);
                     }
                 }).print();
-
         env.execute();
-
     }
 }
