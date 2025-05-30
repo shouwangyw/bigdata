@@ -4,7 +4,7 @@ import com.yw.flink.example.StationLog
 import org.apache.flink.api.common.eventtime.{SerializableTimestampAssigner, WatermarkStrategy}
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 import org.apache.flink.table.api.bridge.scala.StreamTableEnvironment
-import org.apache.flink.table.api.{DataTypes, Schema, Table}
+import org.apache.flink.table.api._
 import org.apache.flink.table.connector.ChangelogMode
 import org.apache.flink.types.Row
 

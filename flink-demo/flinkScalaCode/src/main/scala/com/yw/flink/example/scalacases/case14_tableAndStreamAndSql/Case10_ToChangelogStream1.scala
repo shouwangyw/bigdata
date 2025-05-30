@@ -5,7 +5,7 @@ import org.apache.flink.api.common.eventtime.{SerializableTimestampAssigner, Wat
 import org.apache.flink.streaming.api.functions.ProcessFunction
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 import org.apache.flink.table.api.bridge.scala.StreamTableEnvironment
-import org.apache.flink.table.api.{Schema, Table}
+import org.apache.flink.table.api._
 import org.apache.flink.types.Row
 import org.apache.flink.util.Collector
 

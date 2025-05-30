@@ -3,7 +3,7 @@ package com.yw.flink.example.scalacases.case14_tableAndStreamAndSql
 import com.yw.flink.example.StationLog
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 import org.apache.flink.table.api.bridge.scala.StreamTableEnvironment
-import org.apache.flink.table.api.{Schema, Table, Tumble}
+import org.apache.flink.table.api._
 
 /**
   * Flink Table API - 窗口使用

@@ -1,6 +1,6 @@
 package com.yw.flink.example.scalacases.case14_tableAndStreamAndSql
 
-import org.apache.flink.table.api.{DataTypes, EnvironmentSettings, Schema, Table, TableDescriptor, TableEnvironment}
+import org.apache.flink.table.api._
 
 /**
   * 使用Table API 查询表
