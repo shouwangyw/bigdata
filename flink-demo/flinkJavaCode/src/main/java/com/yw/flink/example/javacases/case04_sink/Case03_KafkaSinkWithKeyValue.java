@@ -52,18 +52,19 @@ public class Case03_KafkaSinkWithKeyValue {
         env.execute();
     }
 
-}
+    private static class MyKeySerializationSchema implements SerializationSchema<Tuple2<String, Integer>> {
+        @Override
+        public byte[] serialize(Tuple2<String, Integer> tp) {
+            return tp.f0.getBytes();
+        }
+    }
 
-class MyKeySerializationSchema implements SerializationSchema<Tuple2<String, Integer>> {
-    @Override
-    public byte[] serialize(Tuple2<String, Integer> tp) {
-        return tp.f0.getBytes();
+    private static class MyValueSerializationSchema implements SerializationSchema<Tuple2<String, Integer>> {
+        @Override
+        public byte[] serialize(Tuple2<String, Integer> tp) {
+            return tp.f1.toString().getBytes();
+        }
     }
 }
 
-class MyValueSerializationSchema implements SerializationSchema<Tuple2<String, Integer>> {
-    @Override
-    public byte[] serialize(Tuple2<String, Integer> tp) {
-        return tp.f1.toString().getBytes();
-    }
-}
+
