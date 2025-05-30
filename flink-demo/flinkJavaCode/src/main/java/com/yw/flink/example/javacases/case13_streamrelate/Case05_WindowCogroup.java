@@ -44,7 +44,8 @@ public class Case05_WindowCogroup {
                 .where((KeySelector<String, String>) s -> s.split(",")[0])
                 .equalTo((KeySelector<String, String>) s -> s.split(",")[0])
                 .window(TumblingEventTimeWindows.of(Time.seconds(5)))
-                .apply((CoGroupFunction<String, String, String>) (left, right, collector) -> collector.collect(left + " ==== " + right)).print();
+                .apply((CoGroupFunction<String, String, String>) (left, right, collector) -> collector.collect(left + " ==== " + right))
+                .print();
 
         env.execute();
     }

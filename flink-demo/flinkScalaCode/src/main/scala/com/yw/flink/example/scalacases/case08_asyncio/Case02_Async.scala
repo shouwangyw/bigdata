@@ -18,17 +18,14 @@ object AsyncTest2 {
     val ds: DataStream[Int] = env.fromCollection(List[Int](1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 
     //异步方式查询mysql
-    val result: DataStream[String] = AsyncDataStream.orderedWait(ds, new AsyncDatabaseRequest(),
+    val result: DataStream[String] = AsyncDataStream.orderedWait(ds, new AsyncDatabaseRequest1(),
       5000, TimeUnit.MILLISECONDS, 10)
     result.print()
     env.execute()
-
-
   }
-
 }
 
-class AsyncDatabaseRequest extends RichAsyncFunction[Int, String] {
+class AsyncDatabaseRequest1 extends RichAsyncFunction[Int, String] {
   //准备线程池
   var executorService: ExecutorService = null
 
