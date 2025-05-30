@@ -2,7 +2,7 @@ package com.yw.flink.example.scalacases.case14_tableAndStreamAndSql
 
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 import org.apache.flink.table.api.bridge.scala.StreamTableEnvironment
-import org.apache.flink.table.api.{DataTypes, Schema, Table}
+import org.apache.flink.table.api._
 
 /**
   * Flink Table API - Interval Join
