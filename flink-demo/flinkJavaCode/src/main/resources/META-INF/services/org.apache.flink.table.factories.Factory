@@ -1,2 +1,2 @@
-com.yw.flink.example.javacases.case16_udf.SocketDynamicTableSourceFactory
-com.yw.flink.example.javacases.case16_udf.RedisDynamicTableSinkFactory
+com.yw.flink.example.javacases.case17_connector.SocketDynamicTableSourceFactory
+com.yw.flink.example.javacases.case17_connector.RedisDynamicTableSinkFactory
