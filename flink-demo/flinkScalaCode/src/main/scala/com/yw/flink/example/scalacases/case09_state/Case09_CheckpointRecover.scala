@@ -17,7 +17,7 @@ object Case09_CheckpointRecover {
     env.getCheckpointConfig.setCheckpointStorage("hdfs://mycluster/flink-checkpoints")
     env.getCheckpointConfig.setExternalizedCheckpointCleanup(ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION)
 
-    env.socketTextStream("node5",9999)
+    env.socketTextStream("nc_server",9999)
       .flatMap(_.split(","))
       .map((_,1))
       .keyBy(_._1)

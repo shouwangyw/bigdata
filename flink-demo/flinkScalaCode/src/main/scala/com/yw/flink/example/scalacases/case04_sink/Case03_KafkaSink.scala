@@ -12,7 +12,7 @@ object Case03_KafkaSink {
   def main(args: Array[String]): Unit = {
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
     import org.apache.flink.streaming.api.scala._
-    val result: DataStream[String] = env.socketTextStream("node5", 9999)
+    val result: DataStream[String] = env.socketTextStream("nc_server", 9999)
       .flatMap(_.split(","))
       .map((_, 1))
       .keyBy(_._1)

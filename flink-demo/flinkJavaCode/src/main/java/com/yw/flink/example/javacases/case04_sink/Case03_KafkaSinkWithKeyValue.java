@@ -19,7 +19,7 @@ public class Case03_KafkaSinkWithKeyValue {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //hello,flink
-        DataStreamSource<String> ds1 = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> ds1 = env.socketTextStream("nc_server", 9999);
         SingleOutputStreamOperator<Tuple2<String, Integer>> result = ds1.flatMap(new FlatMapFunction<String, String>() {
                     @Override
                     public void flatMap(String s, Collector<String> collector) throws Exception {

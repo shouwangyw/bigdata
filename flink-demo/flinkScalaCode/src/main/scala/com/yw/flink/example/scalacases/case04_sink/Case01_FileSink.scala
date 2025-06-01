@@ -16,7 +16,7 @@ object Case01_FileSink {
   def main(args: Array[String]): Unit = {
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
     import org.apache.flink.streaming.api.scala._
-    val ds: DataStream[String] = env.socketTextStream("node5", 9999)
+    val ds: DataStream[String] = env.socketTextStream("nc_server", 9999)
 
     //准备file Sink
     val fileSink: FileSink[String] = FileSink.forRowFormat(new Path(".tmp/scala-file-out"), new SimpleStringEncoder[String]("UTF-8"))

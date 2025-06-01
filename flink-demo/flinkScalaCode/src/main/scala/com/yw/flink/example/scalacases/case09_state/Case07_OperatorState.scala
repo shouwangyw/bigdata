@@ -27,7 +27,7 @@ object OperatorStateTest {
     //导入隐式转换
     import org.apache.flink.streaming.api.scala._
     //读取socket数据
-    val ds: DataStream[String] = env.socketTextStream("node5", 9999)
+    val ds: DataStream[String] = env.socketTextStream("nc_server", 9999)
     ds.map(new MyRichMapAndCheckpointFunction()).print()
     env.execute()
   }

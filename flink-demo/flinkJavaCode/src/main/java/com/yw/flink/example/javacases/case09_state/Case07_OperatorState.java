@@ -29,7 +29,7 @@ public class Case07_OperatorState {
         //设置并行度为2
         env.setParallelism(2);
         //读取socket数据
-        DataStreamSource<String> ds = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> ds = env.socketTextStream("nc_server", 9999);
         //将数据每3条拼接打印，这里需要通过实现checkpointFunction接口来保证数据处理一致性
         ds.map(new MyRichMapAndCheckpointFunction()).print();
         env.execute();

@@ -21,7 +21,7 @@ object Case08_BroadCast {
     import org.apache.flink.streaming.api.scala._
 
     //主流
-    val mainDS: DataStream[StationLog] = env.socketTextStream("node5", 8888)
+    val mainDS: DataStream[StationLog] = env.socketTextStream("nc_server", 8888)
       .map(line => {
         val split: Array[String] = line.split(",")
         StationLog(split(0), split(1), split(2), split(3), split(4).toLong, split(5).toLong)
@@ -30,7 +30,7 @@ object Case08_BroadCast {
     //mapstate 状态描述器
     val mapStateDescriptor = new MapStateDescriptor[String, PersonInfo]("mapState", classOf[String], classOf[PersonInfo])
     //广播流
-    val broadCastStream: BroadcastStream[PersonInfo] = env.socketTextStream("node5", 9999)
+    val broadCastStream: BroadcastStream[PersonInfo] = env.socketTextStream("nc_server", 9999)
       .map(line => {
         val split: Array[String] = line.split(",")
         PersonInfo(split(0), split(1), split(2))

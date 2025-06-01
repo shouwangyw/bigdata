@@ -16,7 +16,7 @@ public class WCTest {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         //source ,socket:hello flink
-        DataStreamSource<String> ds = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> ds = env.socketTextStream("nc_server", 9999);
         //transformation
         SingleOutputStreamOperator<Tuple2<String, Long>> tuple2DS =
                 ds.flatMap( (String s, Collector<Tuple2<String,Long>> collector) -> {

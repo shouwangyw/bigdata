@@ -18,7 +18,7 @@ object Case05_CountWindowWithoutKey {
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
     //导入隐式转换
     import org.apache.flink.streaming.api.scala._
-    val sourceDS: DataStream[String] = env.socketTextStream("node5", 9999)
+    val sourceDS: DataStream[String] = env.socketTextStream("nc_server", 9999)
 
     //转换数据
     val stationLogDS: DataStream[StationLog] = sourceDS.map(line => {

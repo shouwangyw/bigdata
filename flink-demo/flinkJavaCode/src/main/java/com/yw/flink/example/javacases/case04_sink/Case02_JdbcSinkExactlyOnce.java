@@ -27,7 +27,7 @@
 //        env.enableCheckpointing(1000);
 //
 //        //socket :005,188,187,busy,5000,50
-//        DataStreamSource<String> ds = env.socketTextStream("node5", 9999);
+//        DataStreamSource<String> ds = env.socketTextStream("nc_server", 9999);
 //        //对ds进行转换
 //        SingleOutputStreamOperator<StationLog> ds2 = ds.map(new MapFunction<String, StationLog>() {
 //            @Override

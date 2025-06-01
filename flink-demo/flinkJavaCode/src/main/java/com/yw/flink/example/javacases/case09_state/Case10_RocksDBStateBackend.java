@@ -19,7 +19,7 @@ public class Case10_RocksDBStateBackend {
         //设置checkpoint清理策略
         env.getCheckpointConfig().setExternalizedCheckpointCleanup(CheckpointConfig.ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);
         //读取socket数据实现wc
-        env.socketTextStream("node5",9999)
+        env.socketTextStream("nc_server",9999)
                 .flatMap(new FlatMapFunction<String, Tuple2<String,Integer>>() {
                     @Override
                     public void flatMap(String line, Collector<Tuple2<String, Integer>> collector) throws Exception {

@@ -15,8 +15,8 @@ public class Case05_FlinkAppWithMultiJobs {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
-        DataStreamSource<String> ds1 = env.socketTextStream("node5", 8888);
-        DataStreamSource<String> ds2 = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> ds1 = env.socketTextStream("nc_server", 8888);
+        DataStreamSource<String> ds2 = env.socketTextStream("nc_server", 9999);
 
         //针对ds1进行处理
         SingleOutputStreamOperator<Tuple2<String, Integer>> tupleWords =

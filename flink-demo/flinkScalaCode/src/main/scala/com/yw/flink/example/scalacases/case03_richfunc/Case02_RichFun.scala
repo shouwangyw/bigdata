@@ -14,7 +14,7 @@ object RichFunTest {
   def main(args: Array[String]): Unit = {
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
     import org.apache.flink.streaming.api.scala._
-    val ds: DataStream[String] = env.socketTextStream("node5", 9999)
+    val ds: DataStream[String] = env.socketTextStream("nc_server", 9999)
     val result: DataStream[String] = ds.map(new MyRichMapFun())
     result.print()
     env.execute()

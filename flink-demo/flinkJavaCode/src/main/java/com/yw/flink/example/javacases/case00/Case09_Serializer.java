@@ -16,7 +16,7 @@ public class Case09_Serializer {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.getConfig().registerTypeWithKryoSerializer(Student.class, StudentSerializer.class);
 
-        DataStreamSource<String> ds = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> ds = env.socketTextStream("nc_server", 9999);
 
         ds.map((MapFunction<String, Object>) s -> {
             String[] slice = s.split(",");

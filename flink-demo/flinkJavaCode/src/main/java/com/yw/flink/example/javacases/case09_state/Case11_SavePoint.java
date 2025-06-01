@@ -11,7 +11,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 public class Case11_SavePoint {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.socketTextStream("node5", 9999).uid("socket-source")
+        env.socketTextStream("nc_server", 9999).uid("socket-source")
                 .flatMap((FlatMapFunction<String, Tuple2<String, Integer>>) (s, collector) -> {
                     String[] splits = s.split(",");
                     for (String word : splits) {

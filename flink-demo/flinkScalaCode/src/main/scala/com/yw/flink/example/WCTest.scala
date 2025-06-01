@@ -13,7 +13,7 @@ object WCTest {
     //导入隐式转换
     import org.apache.flink.streaming.api.scala._
 
-    val ds: DataStream[String] = env.socketTextStream("node5", 9999)
+    val ds: DataStream[String] = env.socketTextStream("nc_server", 9999)
     ds.flatMap(one => {
       val arr: Array[String] = one.split(" ")
       val listBuffer = new ListBuffer[Tuple2[String, Int]]

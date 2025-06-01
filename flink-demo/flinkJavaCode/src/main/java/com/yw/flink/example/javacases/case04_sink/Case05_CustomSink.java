@@ -21,7 +21,7 @@ public class Case05_CustomSink {
     public static void main(String[] args) throws Exception {
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        DataStreamSource<String> result = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> result = env.socketTextStream("nc_server", 9999);
         //自定义Sink 写出到HBase 中
         result.addSink(new RichSinkFunction<String>() {
             Connection conn = null;
