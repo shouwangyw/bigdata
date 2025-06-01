@@ -49,24 +49,24 @@ public class Case03_AggregateFunction {
 
     /**
      * AggregateFunction<T,ACC>
-     *     T:最终聚合结果返回的类型
-     *     ACC:聚合过程中累加器类型
+     * T:最终聚合结果返回的类型
+     * ACC:聚合过程中累加器类型
      */
-    public class AvgDurationUDAF extends AggregateFunction<Double, Tuple2<Long,Integer>> {
+    public class AvgDurationUDAF extends AggregateFunction<Double, Tuple2<Long, Integer>> {
 
         /**
          * 创建聚合中间结果状态
          */
         @Override
         public Tuple2<Long, Integer> createAccumulator() {
-            return Tuple2.of(0L,0);
+            return Tuple2.of(0L, 0);
         }
 
         /**
          * 计算过程
          * accumulate
          */
-        public void accumulate(Tuple2<Long,Integer> acc,Long duration){
+        public void accumulate(Tuple2<Long, Integer> acc, Long duration) {
             //给累加器中的通话时长加上该duration ,给累加器中的通话次数加上1
             acc.f0 += duration;
             acc.f1 += 1;
@@ -77,10 +77,10 @@ public class Case03_AggregateFunction {
          */
         @Override
         public Double getValue(Tuple2<Long, Integer> acc) {
-            if(acc.f1 ==0 ){
-                return  null;
-            }else{
-                return acc.f0*1.0/acc.f1;
+            if (acc.f1 == 0) {
+                return null;
+            } else {
+                return acc.f0 * 1.0 / acc.f1;
             }
         }
     }
