@@ -14,7 +14,7 @@ object Case05_CustomSink {
   def main(args: Array[String]): Unit = {
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
     import org.apache.flink.streaming.api.scala._
-    val ds: DataStream[String] = env.socketTextStream("node5", 9999)
+    val ds: DataStream[String] = env.socketTextStream("nc_server", 9999)
     ds.addSink(new RichSinkFunction[String] {
 
       var conf: org.apache.hadoop.conf.Configuration = _

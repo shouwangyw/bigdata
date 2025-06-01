@@ -1,4 +1,4 @@
-package com.yw.flink.example.javacases.case17_connector.hive;
+package com.yw.flink.example.javacases.case17_connector;
 
 import org.apache.flink.table.api.EnvironmentSettings;
 import org.apache.flink.table.api.SqlDialect;
@@ -8,7 +8,7 @@ import org.apache.flink.table.api.TableEnvironment;
  * Flink SQL  - 实时数据写入Hive 分区表
  * 案例：读取Kafka 基站日志数据，写入Hive 分区表
  */
-public class FlinkRTWriteHive {
+public class Case10_FlinkRTWriteHive {
     public static void main(String[] args) {
         TableEnvironment tableEnv = TableEnvironment.create(EnvironmentSettings.newInstance().inStreamingMode().build());
 

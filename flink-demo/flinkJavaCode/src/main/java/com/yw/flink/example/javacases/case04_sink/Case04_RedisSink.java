@@ -17,7 +17,7 @@ import org.apache.flink.util.Collector;
 public class Case04_RedisSink {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        SingleOutputStreamOperator<Tuple2<String, Integer>> result = env.socketTextStream("node5", 9999)
+        SingleOutputStreamOperator<Tuple2<String, Integer>> result = env.socketTextStream("nc_server", 9999)
                 .flatMap((String line, Collector<String> collector) -> {
                     String[] split = line.split(",");
                     for (String word : split) {

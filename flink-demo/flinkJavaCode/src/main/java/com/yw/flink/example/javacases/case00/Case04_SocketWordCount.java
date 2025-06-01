@@ -16,7 +16,7 @@ public class Case04_SocketWordCount {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         //2.读取Socket数据 hello,flink
-        DataStreamSource<String> ds = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> ds = env.socketTextStream("nc_server", 9999);
 
         //3.进行数据转换
 //        SingleOutputStreamOperator<Tuple2<String, Integer>> tupleWords = ds.flatMap(new FlatMapFunction<String, Tuple2<String, Integer>>() {

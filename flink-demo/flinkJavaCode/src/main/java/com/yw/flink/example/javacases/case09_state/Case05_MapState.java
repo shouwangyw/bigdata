@@ -25,7 +25,7 @@ public class Case05_MapState {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //读取socket数据
-        DataStreamSource<String> ds = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> ds = env.socketTextStream("nc_server", 9999);
         //转换数据 ds -> StationLog
         SingleOutputStreamOperator<StationLog> stationLogDS = ds.map((MapFunction<String, StationLog>) line -> {
             String[] split = line.split(",");

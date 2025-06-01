@@ -21,7 +21,7 @@ public class Case04_SocketWordCountWithWebUI {
 //        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         //2.读取Socket数据 hello,flink
-        DataStreamSource<String> ds = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> ds = env.socketTextStream("nc_server", 9999);
 
         SingleOutputStreamOperator<Tuple2<String, Integer>> tupleWords = ds.flatMap((String line, Collector<Tuple2<String, Integer>> collector) -> {
             String[] words = line.split(",");

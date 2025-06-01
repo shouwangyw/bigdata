@@ -19,7 +19,7 @@ object Case03_OutOfOrderStreamWatermark {
     import org.apache.flink.streaming.api.scala._
 
     //读取socket数据 ，格式：001,181,182,busy,1000,10
-    val sourceDS: DataStream[String] = env.socketTextStream("node5", 9999)
+    val sourceDS: DataStream[String] = env.socketTextStream("nc_server", 9999)
 
     //转换成StationLog对象流
     val stationLogDS: DataStream[StationLog] = sourceDS.map(line => {

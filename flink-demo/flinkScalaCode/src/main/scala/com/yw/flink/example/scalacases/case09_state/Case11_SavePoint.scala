@@ -11,7 +11,7 @@ object Case11_SavePoint {
     //导入隐式转换
     import org.apache.flink.streaming.api.scala._
 
-    env.socketTextStream("node5",9999).uid("socket-source")
+    env.socketTextStream("nc_server",9999).uid("socket-source")
       .flatMap(_.split(",")).uid("flatMap")
       .map((_,1)).uid("map")
       .keyBy(_._1)

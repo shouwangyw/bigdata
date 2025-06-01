@@ -17,7 +17,7 @@ object Case02_JdbcSink {
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
     import org.apache.flink.streaming.api.scala._
     //003,186,188,busy,3000,30
-    val ds1: DataStream[String] = env.socketTextStream("node5", 9999)
+    val ds1: DataStream[String] = env.socketTextStream("nc_server", 9999)
     val ds2: DataStream[StationLog] = ds1.map(one => {
       val split: Array[String] = one.split(",")
       val sid: String = split(0)

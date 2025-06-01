@@ -21,7 +21,7 @@ public class Case06_OperatorChains {
         //禁用算子链合并
 //        env.disableOperatorChaining();
 
-        DataStreamSource<String> ds1 = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> ds1 = env.socketTextStream("nc_server", 9999);
 
         SingleOutputStreamOperator<String> ds2 = ds1.filter(line -> line.startsWith("a"));
 

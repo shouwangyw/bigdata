@@ -22,7 +22,7 @@ public class Case08_BroadCast {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //获取基站通话日志数据
-        SingleOutputStreamOperator<StationLog> mainDS = env.socketTextStream("node5", 8888).map((MapFunction<String, StationLog>) line -> {
+        SingleOutputStreamOperator<StationLog> mainDS = env.socketTextStream("nc_server", 8888).map((MapFunction<String, StationLog>) line -> {
             String[] split = line.split(",");
             return new StationLog(split[0], split[1], split[2], split[3], Long.valueOf(split[4]), Long.valueOf(split[5]));
 
@@ -30,7 +30,7 @@ public class Case08_BroadCast {
 
 
         //获取通话人员的基本信息 187,张三,北京
-        SingleOutputStreamOperator<PersonInfo> personInfoDS = env.socketTextStream("node5", 9999).map((MapFunction<String, PersonInfo>) line -> {
+        SingleOutputStreamOperator<PersonInfo> personInfoDS = env.socketTextStream("nc_server", 9999).map((MapFunction<String, PersonInfo>) line -> {
             String[] split = line.split(",");
             return new PersonInfo(split[0], split[1], split[2]);
         });

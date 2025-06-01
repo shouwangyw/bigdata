@@ -18,7 +18,7 @@ public class Case01_FileSink {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 //        env.enableCheckpointing(1000);
         env.setParallelism(1);
-        DataStreamSource<String> ds = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> ds = env.socketTextStream("nc_server", 9999);
 
         //写出到文件
         FileSink<String> fileSink = FileSink.forRowFormat(new Path(".tmp/java-file-result"),

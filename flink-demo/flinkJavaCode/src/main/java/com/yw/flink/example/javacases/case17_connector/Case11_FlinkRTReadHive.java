@@ -1,4 +1,4 @@
-package com.yw.flink.example.javacases.case17_connector.hive;
+package com.yw.flink.example.javacases.case17_connector;
 
 import org.apache.flink.table.api.EnvironmentSettings;
 import org.apache.flink.table.api.TableEnvironment;
@@ -6,7 +6,7 @@ import org.apache.flink.table.api.TableEnvironment;
 /**
  * Flink SQL - 流式读取Hive分区数据
  */
-public class FlinkRTReadHive {
+public class Case11_FlinkRTReadHive {
     public static void main(String[] args) {
         TableEnvironment tableEnv = TableEnvironment.create(EnvironmentSettings.newInstance().inStreamingMode().build());
 

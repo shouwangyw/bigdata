@@ -21,7 +21,7 @@ public class Case07_SSG {
         //设置并行度
         env.setParallelism(6);
 
-        DataStreamSource<String> ds1 = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> ds1 = env.socketTextStream("nc_server", 9999);
 
         SingleOutputStreamOperator<String> ds2 = ds1.filter(line -> line.startsWith("a"));
 

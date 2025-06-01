@@ -22,7 +22,7 @@ object Case03_ReducingState {
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
     //导入隐式转换
     import org.apache.flink.streaming.api.scala._
-    val ds: DataStream[String] = env.socketTextStream("node5", 9999)
+    val ds: DataStream[String] = env.socketTextStream("nc_server", 9999)
     val ds2: DataStream[StationLog] = ds.map(line => {
       val arr: Array[String] = line.split(",")
       StationLog(arr(0), arr(1), arr(2), arr(3), arr(4).toLong, arr(5).toLong)

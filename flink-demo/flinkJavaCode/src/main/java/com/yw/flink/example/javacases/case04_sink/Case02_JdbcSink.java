@@ -21,7 +21,7 @@ public class Case02_JdbcSink {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //socket :005,188,187,busy,5000,50 
-        DataStreamSource<String> ds = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> ds = env.socketTextStream("nc_server", 9999);
         //对ds进行转换
         SingleOutputStreamOperator<StationLog> ds2 = ds.map(new MapFunction<String, StationLog>() {
             @Override

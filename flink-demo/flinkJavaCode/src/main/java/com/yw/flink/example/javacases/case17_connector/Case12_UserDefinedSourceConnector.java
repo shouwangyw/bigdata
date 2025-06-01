@@ -1,13 +1,14 @@
 package com.yw.flink.example.javacases.case17_connector;
 
 import org.apache.flink.table.api.EnvironmentSettings;
-import org.apache.flink.table.api.Table;
 import org.apache.flink.table.api.TableEnvironment;
+import org.apache.flink.table.api.TableResult;
 
 /**
- * 用户自定义Sink Connector测试类 - RedisSinkConnector
+ * 用户自定义Soruce Connector测试类 - SocketSource
+ * 注意Socket Source只能是单线程方式运行
  */
-public class Case10_UserDefinedSinkConnector {
+public class Case12_UserDefinedSourceConnector {
     public static void main(String[] args) {
         //创建TableEnvironment
         EnvironmentSettings settings = EnvironmentSettings.newInstance()
@@ -15,7 +16,6 @@ public class Case10_UserDefinedSinkConnector {
                 .build();
         TableEnvironment tableEnv = TableEnvironment.create(settings);
 
-        //通过自定义SocketConnector创建表
         tableEnv.executeSql("CREATE TABLE SocketSource (" +
                 "   sid string," +
                 "   call_out string," +
@@ -27,27 +27,17 @@ public class Case10_UserDefinedSinkConnector {
                 "   WATERMARK FOR time_ltz AS time_ltz - INTERVAL '2' SECOND" +
                 ") WITH (" +
                 "  'connector' = 'socket'," +
-                "  'hostname' = 'node5'," +
+                "  'hostname' = 'nc_server'," +
                 "  'port' = '9999'," +
                 "  'byte-delimiter' = '10'," +
                 "  'format' = 'csv'" +
                 ");");
 
-        //通过自定义RedisConnector创建表
-        tableEnv.executeSql("CREATE TABLE RedisSink (" +
-                "   sid string," +
-                "   window_start string," +
-                "   window_end string," +
-                "   total_dur bigint" +
-                ") WITH (" +
-                "  'connector' = 'redis'," +
-                "  'hostname' = 'node4'," +
-                "  'port' = '6379'," +
-                "  'db-num' = '0'" +
-                ");");
+        //打印表结构
+        tableEnv.executeSql("desc SocketSource").print();
 
         //设置5秒的窗口计算
-        Table result = tableEnv.sqlQuery("select " +
+        TableResult result = tableEnv.executeSql("select " +
                 "sid," +
                 "window_start," +
                 "window_end," +
@@ -57,15 +47,7 @@ public class Case10_UserDefinedSinkConnector {
                 ") " +
                 "group by sid,window_start,window_end");
 
-        //打印result的表结构
-//        tableEnv.executeSql("desc " + result).print();
-        //将结果写入到Redis中
-        tableEnv.executeSql("insert into RedisSink " +
-                "select sid," +
-                "DATE_FORMAT(window_start,'yyyy-MM-dd HH:mm:ss') as window_start," +
-                "DATE_FORMAT(window_end,'yyyy-MM-dd HH:mm:ss') as window_end," +
-                "total_dur " +
-                "from " + result);
+        result.print();
 
     }
 }

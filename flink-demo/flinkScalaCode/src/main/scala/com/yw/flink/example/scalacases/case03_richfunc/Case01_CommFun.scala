@@ -12,7 +12,7 @@ object CommFunTest {
   def main(args: Array[String]): Unit = {
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
     import org.apache.flink.streaming.api.scala._
-    val ds1: DataStream[String] = env.socketTextStream("node5", 9999)
+    val ds1: DataStream[String] = env.socketTextStream("nc_server", 9999)
     ds1.map(new MyMapFunction()).print()
     env.execute()
 

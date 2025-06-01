@@ -19,7 +19,7 @@ public class Case08_FineGrainedResourceManagent {
 //                .setTaskHeapMemoryMB(20)
 //                .build();
 
-        SingleOutputStreamOperator<String> ds1 = env.socketTextStream("node5", 9999).slotSharingGroup("ssg");
+        SingleOutputStreamOperator<String> ds1 = env.socketTextStream("nc_server", 9999).slotSharingGroup("ssg");
 
         SingleOutputStreamOperator<String> ds3 = ds1.flatMap((String line, Collector<String> collector) -> {
             String[] words = line.split(",");

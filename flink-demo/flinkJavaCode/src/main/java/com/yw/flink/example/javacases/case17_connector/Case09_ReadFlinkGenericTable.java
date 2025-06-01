@@ -24,6 +24,5 @@ public class Case09_ReadFlinkGenericTable {
         //查询数据
         tableEnv.executeSql("select * from flink_kafka_tbl " +
                 "/*+ OPTIONS('scan.startup.mode'='earliest-offset') */").print();
-
     }
 }

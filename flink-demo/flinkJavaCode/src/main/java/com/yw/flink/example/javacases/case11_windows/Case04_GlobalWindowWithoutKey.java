@@ -27,7 +27,7 @@ public class Case04_GlobalWindowWithoutKey {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //读取socket中数据
         //001,181,182,busy,1000,10
-        DataStreamSource<String> sourceDs = env.socketTextStream("node5", 9999);
+        DataStreamSource<String> sourceDs = env.socketTextStream("nc_server", 9999);
 
         //将String DataStream转换成StationLog类型的DataStream
         SingleOutputStreamOperator<StationLog> stationLogDS = sourceDs.map((MapFunction<String, StationLog>) s -> {
