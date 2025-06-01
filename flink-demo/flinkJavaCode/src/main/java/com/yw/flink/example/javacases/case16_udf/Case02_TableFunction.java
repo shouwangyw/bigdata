@@ -45,15 +45,14 @@ public class Case02_TableFunction {
         tableEnv.executeSql("select id,str,len" +
                 " from station_log_tbl , lateral table (my_split(strs)) as T(str,len)").print();
 
-
     }
 
     @FunctionHint(output = @DataTypeHint("ROW<word STRING, length INT>"))
     public class SplitStringUDTF extends TableFunction<Row> {
-        public void eval(String str){
+        public void eval(String str) {
             String[] split = str.split("\\|");
             for (String s : split) {
-                collect(Row.of(s,s.length()));
+                collect(Row.of(s, s.length()));
             }
         }
     }

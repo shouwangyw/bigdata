@@ -41,9 +41,7 @@ object TableFunctionTest {
     //    //SQL 方式调用自定义表函数
     tableEnv.executeSql("select id,str,len" +
       " from station_log_tbl , lateral table (my_split(strs)) as T(str,len)").print()
-
   }
-
 }
 
 @FunctionHint(output = new DataTypeHint("ROW<word STRING, length INT>"))
@@ -52,7 +50,6 @@ class SplitStringUDTF extends TableFunction[Row] {
     strs.split("\\|").foreach(s => {
       collect(Row.of(s, Int.box(s.length)))
     })
-
   }
 
 }

@@ -7,6 +7,9 @@ import org.apache.flink.table.api.Table;
 import org.apache.flink.table.api.TableEnvironment;
 import org.apache.flink.table.functions.ScalarFunction;
 
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import static org.apache.flink.table.api.Expressions.$;
 import static org.apache.flink.table.api.Expressions.call;
 
@@ -66,11 +69,7 @@ public class Case01_ScalarFunction {
      */
     public static class ConcatStringUDF extends ScalarFunction {
         public String eval(@DataTypeHint(inputGroup = InputGroup.ANY) Object... args){
-            StringBuilder builder = new StringBuilder();
-            for (Object arg : args) {
-                builder.append(arg.toString()).append("|");
-            }
-            return builder.substring(0,builder.toString().length()-1);
+            return Stream.of(args).map(Object::toString).collect(Collectors.joining("|"));
         }
     }
 }
