@@ -7,9 +7,9 @@ import org.apache.flink.table.api.TableResult;
 /**
  * Flink中勉强模式和贪婪模式
  * 案例:Pattern（A B* C）匹配通话事件，
- *  A模式表示通话时间大于10秒事件，
- *  B模式表示通话时间小于15秒事件，
- *  C模式表示通话时长大于12秒事件
+ * A模式表示通话时间大于10秒事件，
+ * B模式表示通话时间小于15秒事件，
+ * C模式表示通话时长大于12秒事件
  */
 public class Case15_SqlGreedy {
     public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class Case15_SqlGreedy {
         TableEnvironment tableEnv = TableEnvironment.create(settings);
 
         //设置自动watermark推进
-        tableEnv.getConfig().set("table.exec.source.idle-timeout","5000");
+        tableEnv.getConfig().set("table.exec.source.idle-timeout", "5000");
 
         //读取Kafka 基站日志数据，通过SQL DDL方式
         //001,181,182,busy,1000,1
