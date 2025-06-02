@@ -10,11 +10,12 @@ import org.apache.flink.table.api.TableResult;
  */
 public class Case14_DefinedWithAvg {
     public static void main(String[] args) {
-        EnvironmentSettings settings = EnvironmentSettings.newInstance().inStreamingMode().build();
-        TableEnvironment tableEnv = TableEnvironment.create(settings);
+        TableEnvironment tableEnv = TableEnvironment.create(
+                EnvironmentSettings.newInstance().inStreamingMode().build()
+        );
 
         //设置自动watermark推进
-        tableEnv.getConfig().set("table.exec.source.idle-timeout","5000");
+        tableEnv.getConfig().set("table.exec.source.idle-timeout", "5000");
 
         //读取Kafka 基站日志数据，通过SQL DDL方式
         //001,181,182,busy,1000,1

@@ -30,29 +30,16 @@ public class Case11_LoginDetect {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //1.定义事件流 ,uid1,zs,1000,fail1
         KeyedStream<LoginInfo, String> ds = env.socketTextStream("nc_server", 9999)
-                .map(new MapFunction<String, LoginInfo>() {
-                    @Override
-                    public LoginInfo map(String s) throws Exception {
-                        String[] split = s.split(",");
-                        return new LoginInfo(split[0], split[1], Long.valueOf(split[2]), split[3]);
-                    }
+                .map((MapFunction<String, LoginInfo>) s -> {
+                    String[] split = s.split(",");
+                    return new LoginInfo(split[0], split[1], Long.valueOf(split[2]), split[3]);
                 })
                 .assignTimestampsAndWatermarks(
                         WatermarkStrategy.<LoginInfo>forBoundedOutOfOrderness(Duration.ofSeconds(2))
-                                .withTimestampAssigner(new SerializableTimestampAssigner<LoginInfo>() {
-                                    @Override
-                                    public long extractTimestamp(LoginInfo loginInfo, long l) {
-                                        return loginInfo.getLoginTime();
-                                    }
-                                })
+                                .withTimestampAssigner((SerializableTimestampAssigner<LoginInfo>) (loginInfo, l) -> loginInfo.getLoginTime())
                                 .withIdleness(Duration.ofSeconds(5))
                 )
-                .keyBy(new KeySelector<LoginInfo, String>() {
-                    @Override
-                    public String getKey(LoginInfo loginInfo) throws Exception {
-                        return loginInfo.getUid();
-                    }
-                });
+                .keyBy((KeySelector<LoginInfo, String>) LoginInfo::getUid);
 
         //2.定义模式匹配规则
         Pattern<LoginInfo, LoginInfo> pattern = Pattern.<LoginInfo>begin("first")

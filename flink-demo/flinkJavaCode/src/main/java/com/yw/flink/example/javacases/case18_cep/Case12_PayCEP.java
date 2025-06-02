@@ -27,7 +27,6 @@ import java.util.Map;
  * 案例：读取Socket基站用户订单数据，
  * 如果用户在下订单后的一定时间内进行了支付，提示订单支付成功发货。 - 主流
  * 如果用户在下订单后的一定时间内没有支付，提示订单支付超时。- 侧流
- *
  */
 public class Case12_PayCEP {
     public static void main(String[] args) throws Exception {
@@ -75,11 +74,12 @@ public class Case12_PayCEP {
         env.execute();
     }
 
-    private static class MyPatternProcessFunction extends PatternProcessFunction<OrderInfo,String> implements TimedOutPartialMatchHandler<OrderInfo>{
+    private static class MyPatternProcessFunction extends PatternProcessFunction<OrderInfo, String>
+            implements TimedOutPartialMatchHandler<OrderInfo> {
 
         private OutputTag<String> outputTag;
 
-        public MyPatternProcessFunction(OutputTag<String> outputTag){
+        public MyPatternProcessFunction(OutputTag<String> outputTag) {
             this.outputTag = outputTag;
         }
 
@@ -91,8 +91,7 @@ public class Case12_PayCEP {
                 Collector<String> collector) throws Exception {
             //获取订单
             String orderId = map.get("second").get(0).getOrderId();
-            collector.collect("订单："+orderId+" 支付成功，待发货！");
-
+            collector.collect("订单：" + orderId + " 支付成功，待发货！");
         }
 
         //处理超时事件
@@ -100,8 +99,8 @@ public class Case12_PayCEP {
         public void processTimedOutMatch(
                 Map<String, List<OrderInfo>> map,
                 Context context) throws Exception {
-            String orderID = map.get("first").get(0).getOrderId();
-            context.output(outputTag,"订单："+orderID+" 支付超时！");
+            String orderId = map.get("first").get(0).getOrderId();
+            context.output(outputTag, "订单：" + orderId + " 支付超时！");
         }
     }
 }
