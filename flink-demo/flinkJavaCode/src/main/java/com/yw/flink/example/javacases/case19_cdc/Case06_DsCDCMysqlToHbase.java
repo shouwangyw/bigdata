@@ -43,12 +43,7 @@ public class Case06_DsCDCMysqlToHbase {
         //{"before":{"id":10,"name":"zhangsan","age":30},"after":{"id":10,"name":"zhangsan","age":30},"source":...,"op":"u","ts_ms":1697424054674,"transaction":null}
         //{"before":{"id":11,"name":"lisi","age":31},"after":null,"source":...,"op":"d","ts_ms":1697424054686,"transaction":null}
         SingleOutputStreamOperator<JSONObject> ds = env.fromSource(mySqlSource, WatermarkStrategy.noWatermarks(), "MySQL CDC Source")
-                .map(new MapFunction<String, JSONObject>() {
-                    @Override
-                    public JSONObject map(String value) throws Exception {
-                        return new JSONObject(value);
-                    }
-                });
+                .map((MapFunction<String, JSONObject>) JSONObject::new);
 
         //将数据通过SinkFunction写出到Hbase
         ds.addSink(new RichSinkFunction<JSONObject>() {
@@ -64,9 +59,7 @@ public class Case06_DsCDCMysqlToHbase {
 
                 //创建连接
                 connection = ConnectionFactory.createConnection(conf);
-
             }
-
 
             //sink数据，每条数据调用一次
             @Override
@@ -126,9 +119,7 @@ public class Case06_DsCDCMysqlToHbase {
 
                     //关闭对象
                     table.close();
-
                 }
-
             }
 
             //释放资源
