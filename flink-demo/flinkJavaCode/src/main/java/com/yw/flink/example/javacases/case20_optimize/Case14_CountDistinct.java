@@ -14,9 +14,9 @@ import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 import java.util.Random;
 
 /**
- * FlinkSQL 优化 - 开启Local-Global 优化
+ * 拆分Distinct优化
  */
-public class Case12_LocalGlobal {
+public class Case14_CountDistinct {
     public static void main(String[] args) {
         //1.使用本地模式
         Configuration conf = new Configuration();
@@ -31,7 +31,6 @@ public class Case12_LocalGlobal {
         //2.创建TableEnv
         StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
 
-        //3.开启Local-Global 聚合
         //通过flink configuration进行参数设置
         TableConfig configuration = tableEnv.getConfig();
         //开启MiniBatch 优化，默认false
@@ -42,6 +41,8 @@ public class Case12_LocalGlobal {
         configuration.set("table.exec.mini-batch.size", "5000");
         //设置Local-Global 聚合
         configuration.set("table.optimizer.agg-phase-strategy", "TWO_PHASE");
+        //开启拆分distinct 聚合
+        configuration.set("table.optimizer.distinct-agg.split.enabled", "true");
 
         DataStreamSource<StationLog> ds1 = env.addSource(new RichParallelSourceFunction<StationLog>() {
             Boolean flag = true;
@@ -106,7 +107,12 @@ public class Case12_LocalGlobal {
         Table table = tableEnv.from("station_log_tbl");
         table.printSchema();
 
-        TableResult result = tableEnv.executeSql("select sid,sum(duration) as totalDuration from station_log_tbl group by sid");
+        TableResult result = tableEnv.executeSql("" +
+                "select " +
+                "   sid,count(distinct callType) as total_callType " +
+                "from station_log_tbl " +
+                "group by sid");
+
         result.print();
     }
 }

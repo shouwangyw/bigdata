@@ -102,17 +102,21 @@ public class Case09_Skew2 {
         //设置watermark
         SingleOutputStreamOperator<StationLog> ds2 = ds1.assignTimestampsAndWatermarks(
                 WatermarkStrategy.<StationLog>forBoundedOutOfOrderness(Duration.ofSeconds(2))
-                        .withTimestampAssigner((SerializableTimestampAssigner<StationLog>) (element, recordTimestamp) -> element.callTime).withIdleness(Duration.ofSeconds(5))
+                        .withTimestampAssigner((SerializableTimestampAssigner<StationLog>) (element, recordTimestamp) -> element.callTime)
+                        .withIdleness(Duration.ofSeconds(5))
         );
 
         //过滤通话状态不为fail的数据
-        SingleOutputStreamOperator<StationLog> ds3 = ds2.shuffle().filter((FilterFunction<StationLog>) value -> !"fail".equals(value.callType));
+        SingleOutputStreamOperator<StationLog> ds3 = ds2.shuffle()
+                .filter((FilterFunction<StationLog>) value -> !"fail".equals(value.callType));
 
         //转换数据
-        SingleOutputStreamOperator<Tuple2<String, Long>> ds4 = ds3.map((MapFunction<StationLog, Tuple2<String, Long>>) value -> new Tuple2<>(value.sid, value.duration));
+        SingleOutputStreamOperator<Tuple2<String, Long>> ds4 = ds3
+                .map((MapFunction<StationLog, Tuple2<String, Long>>) value -> new Tuple2<>(value.sid, value.duration));
 
         //分组
-        KeyedStream<Tuple2<String, Long>, String> ds5 = ds4.keyBy((KeySelector<Tuple2<String, Long>, String>) value -> value.f0);
+        KeyedStream<Tuple2<String, Long>, String> ds5 = ds4
+                .keyBy((KeySelector<Tuple2<String, Long>, String>) value -> value.f0);
 
         //设置窗口
         WindowedStream<Tuple2<String, Long>, String, TimeWindow> ds6 =

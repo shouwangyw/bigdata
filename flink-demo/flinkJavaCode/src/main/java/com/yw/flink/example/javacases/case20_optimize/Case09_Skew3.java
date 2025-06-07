@@ -104,7 +104,8 @@ public class Case09_Skew3 {
         //设置watermark
         SingleOutputStreamOperator<StationLog> ds2 = ds1.assignTimestampsAndWatermarks(
                 WatermarkStrategy.<StationLog>forBoundedOutOfOrderness(Duration.ofSeconds(2))
-                        .withTimestampAssigner((SerializableTimestampAssigner<StationLog>) (element, recordTimestamp) -> element.callTime).withIdleness(Duration.ofSeconds(5))
+                        .withTimestampAssigner((SerializableTimestampAssigner<StationLog>) (element, recordTimestamp) -> element.callTime)
+                        .withIdleness(Duration.ofSeconds(5))
         );
 
         //过滤通话状态不为fail的数据

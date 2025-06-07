@@ -10,7 +10,7 @@ import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 /**
  * SQL中设置TTL
  */
-public class Case01_TTL {
+public class Case10_TTL {
     public static void main(String[] args) {
         //获取DataStream的运行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();

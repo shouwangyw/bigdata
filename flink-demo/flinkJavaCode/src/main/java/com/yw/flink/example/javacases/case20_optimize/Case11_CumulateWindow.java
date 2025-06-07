@@ -7,7 +7,7 @@ import org.apache.flink.table.api.TableEnvironment;
 /**
  * 累积窗口使用
  */
-public class Case10_CumulateWindow {
+public class Case11_CumulateWindow {
     public static void main(String[] args) {
         //创建TableEnvironment
         EnvironmentSettings settings = EnvironmentSettings.newInstance()
