@@ -16,7 +16,7 @@ import java.util.Random;
 /**
  * Fliter 修饰符替换CASE ... WHEN
  */
-public class Case14_Filter {
+public class Case15_Filter {
     public static void main(String[] args) {
         //1.使用本地模式
         Configuration conf = new Configuration();

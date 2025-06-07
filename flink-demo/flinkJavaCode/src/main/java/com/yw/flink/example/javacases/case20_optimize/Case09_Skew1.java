@@ -119,7 +119,7 @@ public class Case09_Skew1 {
             private int count = 0;
 
             //创建map存储数据统计结果
-            private Map<String, Long> dataMap = new HashMap<String, Long>();
+            private Map<String, Long> dataMap = new HashMap<>();
 
             @Override
             public void flatMap(Tuple2<String, Long> value, Collector<Tuple2<String, Long>> out) throws Exception {

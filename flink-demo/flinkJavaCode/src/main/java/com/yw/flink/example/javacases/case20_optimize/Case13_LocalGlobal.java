@@ -14,9 +14,9 @@ import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 import java.util.Random;
 
 /**
- * Flink SQL优化 - MiniBatch优化
+ * FlinkSQL 优化 - 开启Local-Global 优化
  */
-public class Case11_MiniBatch {
+public class Case13_LocalGlobal {
     public static void main(String[] args) {
         //1.使用本地模式
         Configuration conf = new Configuration();
@@ -31,7 +31,7 @@ public class Case11_MiniBatch {
         //2.创建TableEnv
         StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
 
-        //3.开启minibatch
+        //3.开启Local-Global 聚合
         //通过flink configuration进行参数设置
         TableConfig configuration = tableEnv.getConfig();
         //开启MiniBatch 优化，默认false
@@ -40,17 +40,37 @@ public class Case11_MiniBatch {
         configuration.set("table.exec.mini-batch.allow-latency", "5 s");
         //设置每个聚合操作可以缓冲的最大记录数,默认-1，开启MiniBatch后必须设置为正值
         configuration.set("table.exec.mini-batch.size", "5000");
+        //设置Local-Global 聚合
+        configuration.set("table.optimizer.agg-phase-strategy", "TWO_PHASE");
 
         DataStreamSource<StationLog> ds1 = env.addSource(new RichParallelSourceFunction<StationLog>() {
             Boolean flag = true;
 
+            /**
+             * 主要方法:启动一个Source，大部分情况下都需要在run方法中实现一个循环产生数据
+             * 这里计划1s 产生1条基站数据，由于是并行，当前节点有几个core就会有几条数据
+             */
             @Override
             public void run(SourceContext<StationLog> ctx) throws Exception {
                 Random random = new Random();
                 String[] callTypes = {"fail", "success", "busy", "barring"};
+
+                // 获取当前子任务的索引
+                int subtaskIndex = getRuntimeContext().getIndexOfThisSubtask();
+
                 while (flag) {
                     String sid = "sid_" + random.nextInt(10);
-                    generateData(ctx, random, sid, callTypes);
+
+                    // 如果是0号子任务，生成更多数据
+                    if (subtaskIndex == 0) {
+                        for (int i = 0; i < 100; i++) {
+                            // 数据生成逻辑
+                            generateData(ctx, random, sid, callTypes);
+                        }
+                    } else {
+                        // 数据生成逻辑
+                        generateData(ctx, random, sid, callTypes);
+                    }
                     Thread.sleep(50);
 
                 }
@@ -63,6 +83,12 @@ public class Case11_MiniBatch {
                 String callType = callTypes[random.nextInt(4)];
                 Long callTime = System.currentTimeMillis();
                 Long durations = Long.valueOf(random.nextInt(50) + "");
+                if (sid.equals("sid_0")) {
+                    for (int i = 0; i < 100; i++) {
+                        ctx.collect(new StationLog(sid, callOut, callIn, callType, callTime, durations));
+
+                    }
+                }
                 ctx.collect(new StationLog(sid, callOut, callIn, callType, callTime, durations));
             }
 
