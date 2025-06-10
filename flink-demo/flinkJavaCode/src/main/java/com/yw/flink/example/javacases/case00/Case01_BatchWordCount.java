@@ -23,8 +23,7 @@ public class Case01_BatchWordCount {
         // 3. 对数据进行切分单词，并转成Tuple2 KV 类型
         FlatMapOperator<String, Tuple2<String, Long>> kvWordsDs =
                 lineDs.flatMap((String line, Collector<Tuple2<String, Long>> collector) -> {
-                    String[] words = line.split(" ");
-                    for (String word : words) {
+                    for (String word : line.split(" ")) {
                         collector.collect(Tuple2.of(word, 1L));
                     }
                 }).returns(Types.TUPLE(Types.STRING, Types.LONG));
