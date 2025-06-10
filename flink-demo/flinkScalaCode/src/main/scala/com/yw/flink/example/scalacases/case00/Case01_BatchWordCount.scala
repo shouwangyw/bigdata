@@ -20,8 +20,7 @@ object Case01_BatchWordCount {
     // 5. 对数据进行计数、分组、聚合统计
     wordsDs.map(word => {
       (word, 1)
-    })
-      .groupBy(0)
+    }).groupBy(0)
       .sum(1)
       .print()
   }
