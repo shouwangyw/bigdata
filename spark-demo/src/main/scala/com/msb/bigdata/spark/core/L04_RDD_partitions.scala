@@ -1,15 +1,14 @@
-package com.msb.bigdata.spark
+package com.msb.bigdata.spark.core
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
 import scala.collection.mutable.ListBuffer
 
-object lesson04_rdd_partitions {
+object L04_RDD_partitions {
 
   def main(args: Array[String]): Unit = {
-    val conf: SparkConf = new SparkConf().setMaster("local").setAppName("partitions")
-    val sc = new SparkContext(conf)
+    val sc = new SparkContext(new SparkConf().setMaster("local").setAppName(this.getClass.getSimpleName))
     sc.setLogLevel("ERROR")
 
     val data: RDD[Int] = sc.parallelize(1 to 10,2)
@@ -32,7 +31,7 @@ object lesson04_rdd_partitions {
 
       (pindex, piter) => {
         val lb = new ListBuffer[String]  //致命的！！！！  根据之前源码发现  spark就是一个pipeline，迭代器嵌套的模式
-        //数据不会再内存积压
+        //数据不会在内存积压
         println(s"--$pindex----conn--mysql----")
         while (piter.hasNext) {
           val value: Int = piter.next()
@@ -57,7 +56,7 @@ object lesson04_rdd_partitions {
         new Iterator[String] {
           println(s"---$pindex--conn--mysql------")
 
-          override def hasNext = if (piter.hasNext == false) {
+          override def hasNext = if (!piter.hasNext) {
             println(s"---$pindex---close--mysql"); false
           } else true
 
