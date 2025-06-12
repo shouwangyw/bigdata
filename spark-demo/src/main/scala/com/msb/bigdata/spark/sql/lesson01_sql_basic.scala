@@ -39,7 +39,7 @@ object lesson01_sql_basic {
 
     println("-----------------------------")
 
-    val df: DataFrame = session.read.json("./bigdata-spark/data/json")
+    val df: DataFrame = session.read.json("./spark-demo/data/json")
 
     df.show()
     df.printSchema()

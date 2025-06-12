@@ -66,12 +66,12 @@ object lesson02_sql_api01 {
          */
     println("-------------------------------")
 
-    res.write.mode(SaveMode.Append).parquet("./bigdata-spark/data/out/ooxx")
+    res.write.mode(SaveMode.Append).parquet("./spark-demo/data/out/ooxx")
 
     println("-------------------------------")
 
 
-    val frame: DataFrame = session.read.parquet("./bigdata-spark/data/out/ooxx")
+    val frame: DataFrame = session.read.parquet("./spark-demo/data/out/ooxx")
 
     frame.show()
     frame.printSchema()
@@ -117,7 +117,7 @@ object lesson02_sql_api01 {
      * 文件格式类型？
      * 分区/分桶
     */
-//    val ds01: Dataset[String] = session.read.textFile("./bigdata-spark/data/person.txt")
+//    val ds01: Dataset[String] = session.read.textFile("./spark-demo/data/person.txt")
 //    val person: Dataset[(String, Int)] = ds01.map(
 //      line => {
 //        val strs: Array[String] = line.split(" ")
@@ -132,7 +132,7 @@ object lesson02_sql_api01 {
 
 
 
-//    val rdd: RDD[String] = sc.textFile("./bigdata-spark/data/person.txt")
+//    val rdd: RDD[String] = sc.textFile("./spark-demo/data/person.txt")
 
     //第二种方式： bean类型的rdd + javabean
     //数据+元数据  ==  df   就是一张表！！！！

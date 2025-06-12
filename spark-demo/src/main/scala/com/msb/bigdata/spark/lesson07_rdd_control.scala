@@ -14,7 +14,7 @@ object lesson07_rdd_control {
     sc.setLogLevel("ERROR")
 
 //    sc.setCheckpointDir("hdfs://mycluster/ooxx/tmp/")
-    sc.setCheckpointDir("./bigdata-spark/data/ckp")
+    sc.setCheckpointDir("./spark-demo/data/ckp")
     //贴源数据RDD
 
     val data: RDD[Int] = sc.parallelize( 1 to 10)

@@ -1,4 +1,4 @@
-// Generated from D:/Github/bigdata/bigdata-spark/src/main/scala/com/msb/bigdata/sql/g4\Ooxx.g4 by ANTLR 4.7.2
+// Generated from D:/Github/bigdata/spark-demo/src/main/scala/com/msb/bigdata/sql/g4\Ooxx.g4 by ANTLR 4.7.2
 package com.msb.bigdata.sql.parser;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.atn.ATN;

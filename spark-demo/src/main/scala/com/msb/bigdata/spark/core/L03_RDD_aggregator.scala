@@ -1,15 +1,12 @@
-package com.msb.bigdata.spark
+package com.msb.bigdata.spark.core
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
-object lesson03_rdd_aggregator {
+object L03_RDD_aggregator {
 
   def main(args: Array[String]): Unit = {
-
-
-    val conf: SparkConf = new SparkConf().setMaster("local").setAppName("test")
-    val sc = new SparkContext(conf)
+    val sc = new SparkContext(new SparkConf().setMaster("local").setAppName(this.getClass.getSimpleName))
     sc.setLogLevel("ERROR")
 
     val data: RDD[(String, Int)] = sc.parallelize(List(

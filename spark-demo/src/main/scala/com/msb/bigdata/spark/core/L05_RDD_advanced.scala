@@ -1,13 +1,12 @@
-package com.msb.bigdata.spark
+package com.msb.bigdata.spark.core
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
-object lesson05_rdd_gaoji {
+object L05_RDD_advanced {
 
   def main(args: Array[String]): Unit = {
-    val conf: SparkConf = new SparkConf().setMaster("local").setAppName("test")
-    val sc = new SparkContext(conf)
+    val sc = new SparkContext(new SparkConf().setMaster("local").setAppName(this.getClass.getSimpleName))
     sc.setLogLevel("ERROR")
 
     val data: RDD[Int] = sc.parallelize(1 to 10,5)
@@ -48,23 +47,6 @@ object lesson05_rdd_gaoji {
 
 
     while(true){}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   }
 

@@ -1,21 +1,20 @@
-package com.msb.bigdata.spark
+package com.msb.bigdata.spark.core
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
-object lesson02_rdd_api_sort {
+object L02_RDD_API_sort {
 
   def main(args: Array[String]): Unit = {
 
-    val conf: SparkConf = new SparkConf().setMaster("local").setAppName("sort")
-    val sc = new SparkContext(conf)
+    val sc = new SparkContext(new SparkConf().setMaster("local").setAppName(this.getClass.getSimpleName))
     sc.setLogLevel("ERROR")
 
     //PV,UV
     //需求：根据数据计算各网站的PV,UV，同时，只显示top5
     //解题：要按PV值，或者UV值排序，取前5名
 
-    val file: RDD[String] = sc.textFile("bigdata-spark/data/pvuvdata",5)
+    val file: RDD[String] = sc.textFile("spark-demo/data/pvuvdata",5)
 
     //pv：
     //  187.144.73.116	浙江	2018-11-12	1542011090255	3079709729743411785	www.jd.com	Comment
