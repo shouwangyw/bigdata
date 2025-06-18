@@ -1,10 +1,10 @@
-package com.msb.bigdata.spark
+package com.msb.bigdata.spark.core
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.storage.StorageLevel
 import org.apache.spark.{SparkConf, SparkContext}
 
-object lesson07_rdd_control {
+object L07_RDD_control {
 
 
   def main(args: Array[String]): Unit = {

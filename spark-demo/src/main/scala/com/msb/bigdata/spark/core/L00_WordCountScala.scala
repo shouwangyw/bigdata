@@ -1,9 +1,9 @@
-package com.msb.bigdata.spark
+package com.msb.bigdata.spark.core
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
-object WordCountScala {
+object L00_WordCountScala {
 
 
   def main(args: Array[String]): Unit = {

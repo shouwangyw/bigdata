@@ -1,11 +1,10 @@
-package com.msb.bigdata.spark
+package com.msb.bigdata.spark.core
 
 import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.rdd.RDD
-import org.apache.spark.util.LongAccumulator
 import org.apache.spark.{SparkConf, SparkContext}
 
-object lesson08_other {
+object L08_other {
 
 
   def main(args: Array[String]): Unit = {

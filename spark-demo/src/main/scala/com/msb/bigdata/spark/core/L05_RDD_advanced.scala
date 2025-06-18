@@ -6,7 +6,8 @@ import org.apache.spark.{SparkConf, SparkContext}
 object L05_RDD_advanced {
 
   def main(args: Array[String]): Unit = {
-    val sc = new SparkContext(new SparkConf().setMaster("local").setAppName(this.getClass.getSimpleName))
+    val sc = new SparkContext(
+      new SparkConf().setMaster("local").setAppName(this.getClass.getSimpleName))
     sc.setLogLevel("ERROR")
 
     val data: RDD[Int] = sc.parallelize(1 to 10,5)
