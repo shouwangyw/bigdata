@@ -20,7 +20,7 @@
     <dependency>
       <groupId>org.apache.kafka</groupId>
       <artifactId>kafka_2.12</artifactId>
-      <version>1.1.1</version>
+      <version>2.1.0</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -33,9 +33,9 @@
       <version>1.7.25</version>
     </dependency>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>RELEASE</version>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>

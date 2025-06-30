@@ -11,11 +11,7 @@ import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-/**
- * @author: 马士兵教育
- * @create: 2021-01-26 05:13
- */
-public class Lesson02_producer {
+public class L02_Producer {
 
     public static String brokers = "node01:9092,node02:9092,node03:9092";
 
@@ -30,10 +26,8 @@ public class Lesson02_producer {
         conf.setProperty(ProducerConfig.BATCH_SIZE_CONFIG, "16384"); //16k 要调整的,分析我们msg的大小，尽量触发批次发送，减少内存碎片，和系统调用的复杂度
         conf.setProperty(ProducerConfig.LINGER_MS_CONFIG, "0");  //
 
-
         conf.setProperty(ProducerConfig.MAX_REQUEST_SIZE_CONFIG, "1048576");
         //message.max.bytes
-
 
         conf.setProperty(ProducerConfig.BUFFER_MEMORY_CONFIG, "33554432");//32M
         conf.setProperty(ProducerConfig.MAX_BLOCK_MS_CONFIG, "60000"); //60秒
