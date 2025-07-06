@@ -18,26 +18,21 @@
     <scala.version>2.12</scala.version>
     <hudi.version>0.15.0</hudi.version>
     <hive.version>3.1.2</hive.version>
+    <parquet.version>1.10.1</parquet.version>
   </properties>
 
   <dependencies>
+    <!-- Spark与Hudi整合的依赖包-->
+    <dependency>
+      <groupId>org.apache.hudi</groupId>
+      <artifactId>hudi-spark3.2-bundle_2.12</artifactId>
+      <version>${hudi.version}</version>
+    </dependency>
+    <!-- Spark相关依赖 -->
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-core_${scala.version}</artifactId>
       <version>${spark.version}</version>
-    </dependency>
-    
-    <dependency>
-      <groupId>org.apache.hive</groupId>
-      <artifactId>hive-jdbc</artifactId>
-      <version>${hive.version}</version>
-    </dependency>
-
-    <!-- hadoop-core 2009、7月更名为hadoop-common -->
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-common</artifactId>
-      <version>${hadoop.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
@@ -49,81 +44,45 @@
       <artifactId>spark-hive_${scala.version}</artifactId>
       <version>${spark.version}</version>
     </dependency>
+    <!-- Hive相关依赖 -->
     <dependency>
-      <groupId>org.apache.spark</groupId>
-      <artifactId>spark-streaming_${scala.version}</artifactId>
-      <version>${spark.version}</version>
+      <groupId>org.apache.hive</groupId>
+      <artifactId>hive-jdbc</artifactId>
+      <version>${hive.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.spark</groupId>
-      <artifactId>spark-streaming-kafka-0-10_${scala.version}</artifactId>
-      <version>${spark.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.spark</groupId>
-      <artifactId>spark-sql-kafka-0-10_${scala.version}</artifactId>
-      <version>${spark.version}</version>
-    </dependency>
-    <!-- Spark与Hudi整合的依赖包-->
-    <dependency>
-      <groupId>org.apache.hudi</groupId>
-      <artifactId>hudi-spark3.2-bundle_2.12</artifactId>
-      <version>${hudi.version}</version>
-    </dependency>
-    <!-- Hive与Hudi整合的依赖包-->
-
-    <!-- avro格式 依赖包 -->
-    <dependency>
-      <groupId>org.apache.avro</groupId>
-      <artifactId>avro</artifactId>
-      <version>1.10.2</version>
-    </dependency>
-    <!-- parquet格式 依赖包 -->
-    <dependency>
-      <groupId>org.apache.parquet</groupId>
-      <artifactId>parquet-hadoop</artifactId>
-      <version>1.12.0</version>
+      <groupId>org.apache.hive</groupId>
+      <artifactId>hive-service</artifactId>
+      <version>${hive.version}</version>
     </dependency>
 
-    <!-- Scala 包-->
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-common</artifactId>
+      <version>${hadoop.version}</version>
+    </dependency>
+    <!-- Scala包 -->
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
       <version>2.12.14</version>
     </dependency>
-
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-compiler</artifactId>
       <version>2.12.14</version>
     </dependency>
-
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-reflect</artifactId>
       <version>2.12.14</version>
     </dependency>
-
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.38</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.7</version>
-    </dependency>
+    <!-- junit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.75</version>
     </dependency>
   </dependencies>
 
