@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class SparkIceberg {
     public static void main(String[] args) {
-        SparkSession spark = SparkSession.builder().appName(SparkIceberg.class.getSimpleName())
+        SparkSession spark = SparkSession.builder().master("local[*]").appName(SparkIceberg.class.getSimpleName())
                 // 指定hive catalog, catalog名称为hive_prod
                 .config("spark.sql.catalog.hive_prod", "org.apache.iceberg.spark.SparkCatalog")
                 .config("spark.sql.catalog.hive_prod.type", "hive")
@@ -19,8 +19,7 @@ public class SparkIceberg {
                 // 指定hadoop catalog，catalog名称为hadoop_prod
                 .config("spark.sql.catalog.hadoop_prod", "org.apache.iceberg.spark.SparkCatalog")
                 .config("spark.sql.catalog.hadoop_prod.type", "hadoop")
-                .config("spark.sql.catalog.hadoop_prod.warehouse", "hdfs://node01:8020/spark_iceberg")
-                .master("local[*]")
+                .config("spark.sql.catalog.hadoop_prod.warehouse", "hdfs://mycluster/spark_iceberg")
                 .enableHiveSupport()
                 .getOrCreate();
 

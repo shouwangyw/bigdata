@@ -6,13 +6,15 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
   *
   * @author yangwei
   */
-object SparkIcebergDML {
+object Case05_SparkIcebergDML {
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession.builder().appName(this.getClass.getSimpleName).master("local[*]")
+    System.setProperty("HADOOP_USER_NAME", "root")
+
+    val spark = SparkSession.builder().master("local").appName(this.getClass.getSimpleName)
       // 指定hadoop catalog，catalog名称为hadoop_prod
       .config("spark.sql.catalog.hadoop_prod", "org.apache.iceberg.spark.SparkCatalog")
       .config("spark.sql.catalog.hadoop_prod.type", "hadoop")
-      .config("spark.sql.catalog.hadoop_prod.warehouse", "hdfs://node01:8020/spark_iceberg")
+      .config("spark.sql.catalog.hadoop_prod.warehouse", "hdfs://mycluster/spark_iceberg")
       .getOrCreate()
 
     // 1.准备数据，使用DataFrame Api 写入Iceberg表及分区表

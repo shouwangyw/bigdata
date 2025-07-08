@@ -1,18 +1,29 @@
+package com.yw.iceberg.example
+
 import org.apache.spark.sql.SparkSession
 
 /**
+  * Spark与iceberg整合DDL操作
   *
+  * 报错：java.lang.IllegalStateException: Incoming records violate the writer assumption that records are clustered by spec and by partition within each spec. Either cluster the incoming records or switch to fanout writers.
+Encountered records that belong to already closed files:
+partition 'register_ts_year=2020' in spec [
+  1000: register_ts_year: year(4)
+]
   * @author yangwei
   */
-object SparkIcebergDDL {
+object Case02_SparkIcebergDDL {
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession.builder().appName(this.getClass.getSimpleName).master("local[*]")
+    System.setProperty("HADOOP_USER_NAME", "root")
+
+    val spark = SparkSession.builder().master("local").appName(this.getClass.getSimpleName)
       // 指定hadoop catalog，catalog名称为hadoop_prod
       .config("spark.sql.catalog.hadoop_prod", "org.apache.iceberg.spark.SparkCatalog")
       .config("spark.sql.catalog.hadoop_prod.type", "hadoop")
-      .config("spark.sql.catalog.hadoop_prod.warehouse", "hdfs://node01:8020/spark_iceberg")
+      .config("spark.sql.catalog.hadoop_prod.warehouse", "hdfs://mycluster/spark_iceberg")
       .config("spark.sql.extensions", "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions")
       .getOrCreate()
+
     /******************** case01 ********************/
 //    // 1. 创建普通表
 //    spark.sql(
@@ -47,19 +58,19 @@ object SparkIcebergDDL {
 //    spark.sql(
 //      """
 //        | insert into hadoop_prod.default.partition_tbl1 values
-//        | (1,'zs',18,cast(1608469830 as timestamp)),
-//        | (2,'ls',19,cast(1634559630 as timestamp)),
-//        | (3,'ww',20,cast(1603096230 as timestamp)),
+//        | (1,'zs',18,cast(1508469830 as timestamp)),
+//        | (2,'ls',19,cast(1604559630 as timestamp)),
+//        | (3,'ww',20,cast(1606096230 as timestamp)),
 //        | (4,'ml',21,cast(1639920630 as timestamp)),
-//        | (5,'tq',22,cast(1608279630 as timestamp)),
-//        | (6,'gb',23,cast(1576843830 as timestamp))
+//        | (5,'tq',22,cast(1648279630 as timestamp)),
+//        | (6,'gb',23,cast(1676843830 as timestamp))
 //      """.stripMargin)
 //
 //    // 查询
 //    spark.sql("select * from hadoop_prod.default.partition_tbl1").show()
 
     /******************** case03 ********************/
-//    // 创建分区表 partition_tbl2，指定分区为months，会按照“年-月”分区
+    // 创建分区表 partition_tbl2，指定分区为months，会按照“年-月”分区
 //    spark.sql(
 //      """
 //        | create table if not exists hadoop_prod.default.partition_tbl2(id int ,name string,age int,register_ts timestamp) using iceberg
@@ -70,12 +81,12 @@ object SparkIcebergDDL {
 //    spark.sql(
 //      """
 //        | insert into hadoop_prod.default.partition_tbl2 values
-//        | (1,'zs',18,cast(1608469830 as timestamp)),
-//        | (2,'ls',19,cast(1634559630 as timestamp)),
-//        | (3,'ww',20,cast(1603096230 as timestamp)),
-//        | (4,'ml',21,cast(1639920630 as timestamp)),
-//        | (5,'tq',22,cast(1608279630 as timestamp)),
-//        | (6,'gb',23,cast(1576843830 as timestamp))
+//        | (1,'zs',18,cast(1578469830 as timestamp)),
+//        | (2,'ls',19,cast(1604559630 as timestamp)),
+//        | (3,'ww',20,cast(1623096230 as timestamp)),
+//        | (4,'ml',21,cast(1638920630 as timestamp)),
+//        | (5,'tq',22,cast(1639279630 as timestamp)),
+//        | (6,'gb',23,cast(1676843830 as timestamp))
 //      """.stripMargin)
 //
 //    // 查询
@@ -93,12 +104,12 @@ object SparkIcebergDDL {
 //    spark.sql(
 //      """
 //        | insert into hadoop_prod.default.partition_tbl3 values
-//        | (1,'zs',18,cast(1608469830 as timestamp)),
-//        | (2,'ls',19,cast(1634559630 as timestamp)),
-//        | (3,'ww',20,cast(1603096230 as timestamp)),
-//        | (4,'ml',21,cast(1639920630 as timestamp)),
-//        | (5,'tq',22,cast(1608279630 as timestamp)),
-//        | (6,'gb',23,cast(1576843830 as timestamp))
+//        | (1,'zs',18,cast(1578469830 as timestamp)),
+//        | (2,'ls',19,cast(1604559630 as timestamp)),
+//        | (3,'ww',20,cast(1623096230 as timestamp)),
+//        | (4,'ml',21,cast(1638920630 as timestamp)),
+//        | (5,'tq',22,cast(1639279630 as timestamp)),
+//        | (6,'gb',23,cast(1676843830 as timestamp))
 //      """.stripMargin)
 //
 //    // 查询
@@ -116,18 +127,18 @@ object SparkIcebergDDL {
 //    spark.sql(
 //      """
 //        | insert into hadoop_prod.default.partition_tbl4 values
-//        | (1,'zs',18,cast(1608469830 as timestamp)),
-//        | (2,'ls',19,cast(1634559630 as timestamp)),
-//        | (3,'ww',20,cast(1603096230 as timestamp)),
-//        | (4,'ml',21,cast(1639920630 as timestamp)),
-//        | (5,'tq',22,cast(1608279630 as timestamp)),
-//        | (6,'gb',23,cast(1576843830 as timestamp))
+//        | (1,'zs',18,cast(1578469830 as timestamp)),
+//        | (2,'ls',19,cast(1604559630 as timestamp)),
+//        | (3,'ww',20,cast(1623096230 as timestamp)),
+//        | (4,'ml',21,cast(1638920630 as timestamp)),
+//        | (5,'tq',22,cast(1639279630 as timestamp)),
+//        | (6,'gb',23,cast(1676843830 as timestamp))
 //      """.stripMargin)
 //
 //    // 查询
 //    spark.sql("select * from hadoop_prod.default.partition_tbl4").show()
 
-    /******************** case06 ********************/
+    /******************** case06 create table ... as select ... ********************/
 //    // 创建表
 //    spark.sql("create table hadoop_prod.default.my_tb1(id int,name string,age int) using iceberg")
 //    // 向表中插入数据
@@ -139,7 +150,7 @@ object SparkIcebergDDL {
 //    // 查询
 //    spark.sql("select * from hadoop_prod.default.my_tb2").show()
 
-    /******************** case07 ********************/
+    /******************** case07 replace table ... as select ... ********************/
 //    // 创建表
 //    spark.sql("create table hadoop_prod.default.my_tb3(id int,name string,age int) using iceberg")
 //    // 向表中插入数据
@@ -151,8 +162,16 @@ object SparkIcebergDDL {
 //    // 查询
 //    spark.sql("select * from hadoop_prod.default.my_tb2").show()
 
-    /******************** case08 ********************/
-//    spark.sql("drop table hadoop_prod.default.mytb1")
+    /******************** case08 drop table ********************/
+//    spark.sql("drop table if exists hadoop_prod.default.my_tb1")
+//    spark.sql("drop table if exists hadoop_prod.default.my_tb2")
+//    spark.sql("drop table if exists hadoop_prod.default.my_tb3")
+//    spark.sql("drop table if exists hadoop_prod.default.normal_tbl")
+//    spark.sql("drop table if exists hadoop_prod.default.partition_tbl")
+//    spark.sql("drop table if exists hadoop_prod.default.partition_tbl1")
+//    spark.sql("drop table if exists hadoop_prod.default.partition_tbl2")
+//    spark.sql("drop table if exists hadoop_prod.default.partition_tbl3")
+//    spark.sql("drop table if exists hadoop_prod.default.partition_tbl4")
 
     /******************** case09 ********************/
 //    // 创建表
