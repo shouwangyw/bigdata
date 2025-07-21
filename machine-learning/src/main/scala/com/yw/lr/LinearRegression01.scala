@@ -4,13 +4,13 @@ import org.apache.spark.SparkConf
 import org.apache.spark.ml.regression.{LinearRegression, LinearRegressionModel}
 import org.apache.spark.sql.SparkSession
 
-
 object LinearRegression01 {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf()
     conf.setMaster("local")
 
-    val spark = SparkSession.builder().config(conf).appName("LinearRegression").getOrCreate()
+    val spark = SparkSession.builder().config(conf).appName(this.getClass.getSimpleName)
+      .getOrCreate()
 
     val data = spark.read.format("libsvm")
       .load("machine-learning/data/sample_linear_regression_data.txt")
@@ -31,14 +31,13 @@ object LinearRegression01 {
      */
     //      .setElasticNetParam(0.8)
 
-
     // Fit the model
     val lrModel = lr.fit(training)
 
     // 打印模型参数w1...wn和截距w0
     println(s"Coefficients: ${lrModel.coefficients} Intercept: ${lrModel.intercept}")
 
-    //使用模型来预测
+    // 使用模型来预测
     val predictionAndLabel = lrModel.setFeaturesCol("features").setPredictionCol("test_prediction").transform(test)
     val loss = predictionAndLabel.rdd.map(row => {
       val label = row.getAs[Double]("label")
@@ -48,16 +47,15 @@ object LinearRegression01 {
     val error = loss / test.count
     println("Test RMSE = " + error)
 
-
-    //模型保存
-    val saveModelPath = "hdfs://node1:9000/mllib/model/lrmodel"
+    // 模型保存
+    val saveModelPath = "hdfs://mycluster/mllib/model/lrmodel"
     lrModel.write.overwrite().save(saveModelPath)
 
-    //模型加载
+    // 模型加载
     val regressionModel = LinearRegressionModel.load(saveModelPath)
     regressionModel.transform(test)
 
-    //模型一探究竟
+    // 模型一探究竟
     spark.read.parquet(saveModelPath + "/data").show(false)
   }
 }

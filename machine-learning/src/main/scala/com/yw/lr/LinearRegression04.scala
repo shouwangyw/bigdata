@@ -10,7 +10,8 @@ object LinearRegression04 {
     val conf = new SparkConf()
     conf.setMaster("local")
 
-    val spark = SparkSession.builder().config(conf).appName("LinearRegression").getOrCreate()
+    val spark = SparkSession.builder().config(conf).appName(this.getClass.getSimpleName)
+      .getOrCreate()
 
     val data = spark.read.format("libsvm")
       .load("machine-learning/data/sample_linear_regression_data.txt")
@@ -57,7 +58,7 @@ object LinearRegression04 {
 
 
     //模型保存
-    val saveModelPath = "hdfs://node1:9000/mllib/model/lrmodel"
+    val saveModelPath = "hdfs://mycluster/mllib/model/lrmodel"
     lrModel.write.overwrite().save(saveModelPath)
 
     //模型加载

@@ -10,7 +10,7 @@ object LinearRegression02 {
     val conf = new SparkConf()
     conf.setMaster("local")
 
-    val spark = SparkSession.builder().config(conf).appName(this.getClass.getName)
+    val spark = SparkSession.builder().config(conf).appName(this.getClass.getSimpleName)
       .getOrCreate()
 
     var data = spark.read.format("libsvm")
@@ -67,6 +67,5 @@ object LinearRegression02 {
     println(s"RMSE: ${trainingSummary.rootMeanSquaredError}")
 
     spark.close()
-
   }
 }

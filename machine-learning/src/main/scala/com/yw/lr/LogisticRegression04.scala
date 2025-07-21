@@ -7,23 +7,26 @@ import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
 
 /**
-  *正负样本采样失衡
-  * 上采样:少量类别的样本增加
-  * 下采样:大量类别的样本减少
+  * 正负样本采样失衡
+  *   上采样:少量类别的样本增加
+  *   下采样:大量类别的样本减少
   */
-
 object LogisticRegression04 {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf()
     conf.setMaster("local")
-    val spark = SparkSession.builder().config(conf).appName("LinearRegression").getOrCreate()
+    val spark = SparkSession.builder().config(conf).appName(this.getClass.getSimpleName)
+      .getOrCreate()
+
+    spark.sparkContext.setLogLevel("Error")
+
     val data = spark.read.format("libsvm")
-      .load("data/健康状况训练集.txt")
+      .load("machine-learning/data/健康状况训练集.txt")
 
     val splits = data.randomSplit(Array(0.7, 0.3), seed = 11L)
     val (trainingData, testData) = (splits(0), splits(1))
 
-    //数据发生了严重的失衡    癌症样本只有1条   非癌症样本
+    // 数据发生了严重的失衡    癌症样本只有1条   非癌症样本
 //    val training = trainingData.filter(col("label")===1).union(trainingData.filter(col("label")===0).limit(1))
     /**
       * 样本均衡
@@ -38,13 +41,13 @@ object LogisticRegression04 {
 
     println(s"Coefficients: ${lrModel.coefficients} Intercept: ${lrModel.intercept}")
 
-    //测试集验证正确率
+    // 测试集验证正确率
     val testRest = lrModel.transform(testData)
-    //打印结果
+    // 打印结果
     testRest.show(false)
     testRest.printSchema()
 
-    //计算正确率
+    // 计算正确率
     val mean = testRest.rdd.map(row => {
       val label = row.getAs[Double]("label")
       val prediction = row.getAs[Double]("prediction")

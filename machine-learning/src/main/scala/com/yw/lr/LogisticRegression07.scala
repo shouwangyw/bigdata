@@ -10,9 +10,13 @@ object LogisticRegression07 {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf()
     conf.setMaster("local")
-    val spark = SparkSession.builder().config(conf).appName("LinearRegression").getOrCreate()
+    val spark = SparkSession.builder().config(conf).appName(this.getClass.getSimpleName)
+      .getOrCreate()
+
+    spark.sparkContext.setLogLevel("Error")
+
     val data = spark.read.format("libsvm")
-      .load("data/环境分类数据.txt")
+      .load("machine-learning/data/环境分类数据.txt")
 
     val minMaxScalerModel = new MinMaxScaler()
       .setInputCol("features")
