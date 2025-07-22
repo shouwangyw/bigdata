@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
-	<property>
-		<!-- 为Hadoop 客户端配置默认的高可用路径  -->
-		<name>fs.defaultFS</name>
-		<value>hdfs://mycluster</value>
-	</property>
+	<!-- 本地调试代码时，若读取本地文件，需要将这个注释掉 -->
+<!--	<property>-->
+<!--		&lt;!&ndash; 为Hadoop 客户端配置默认的高可用路径  &ndash;&gt;-->
+<!--		<name>fs.defaultFS</name>-->
+<!--		<value>hdfs://mycluster</value>-->
+<!--	</property>-->
 	<property>
 		<!-- Hadoop 数据存放的路径，namenode,datanode 数据存放路径都依赖本路径，不要使用 file:/ 开头，使用绝对路径即可
 		     			namenode 默认存放路径 ：file://${hadoop.tmp.dir}/dfs/name
