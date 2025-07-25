@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+  <!-- 指定当前工程在Monitor中显示的名称，一般与工程名相同 -->
+  <dubbo:application name="01-provider"/>
+  <!-- 指定服务注册中心：不指定注册中心 -->
+  <dubbo:registry address="zookeeper://node3:2181"/>
+  <dubbo:registry address="zookeeper://node4:2181"/>
+  <dubbo:registry address="zookeeper://node5:2181"/>
+
+  <!-- 用dubbo协议在20880端口暴露服务 -->
+  <dubbo:protocol name="dubbo" port="20880"/>
+
+  <!-- 注册服务执行对象 -->
+  <bean id="demoService" class="com.yw.recommend.service.impl.DemoServiceImpl"/>
+  <bean id="rcmdService" class="com.yw.recommend.service.impl.RcmdServiceImpl"/>
+  <!-- 服务暴露 -->
+  <dubbo:service interface="com.yw.recommend.service.DemoService" ref="demoService" protocol="dubbo"/>
+  <dubbo:service interface="com.yw.recommend.service.RcmdService" ref="rcmdService" protocol="dubbo"/>
+</beans>

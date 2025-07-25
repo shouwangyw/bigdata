@@ -5,8 +5,8 @@ import redis
 pool = redis.ConnectionPool(host='node4', port='6379', db=2)
 r = redis.Redis(connection_pool=pool)
 f = open('../../../data/recommend/ModelFile.txt', encoding='UTF-8')
-# f = open('../data/UserItemsHistory.txt', encoding='UTF-8')
-# f = open('../data/ItemList.txt', encoding='UTF-8')
+# f = open('../../../data/recommend/UserItemsHistory.txt', encoding='UTF-8')
+# f = open('../../../data/recommend/ItemList.txt', encoding='UTF-8')
 while True:
     lines = f.readlines()
     if not lines:

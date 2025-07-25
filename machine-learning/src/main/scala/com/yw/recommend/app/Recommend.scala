@@ -83,10 +83,10 @@ object Recommend {
 //    lr.optimizer.setRegParam(0.4)
     // 最大迭代次数
     lr.optimizer.setNumIterations(10)
-//    // 设置梯度下降的步长,学习率
-//    lr.optimizer.setStepSize(0.1)
+    // 设置梯度下降的步长,学习率
+    lr.optimizer.setStepSize(0.1)
 
-    // 权重
+    // 特征对应的权重
     val model: LogisticRegressionModel = lr.run(la)
 
     // 模型结果权重
