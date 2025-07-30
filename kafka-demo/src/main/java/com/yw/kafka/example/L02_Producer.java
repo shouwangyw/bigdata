@@ -13,7 +13,7 @@ import java.util.concurrent.Future;
 
 public class L02_Producer {
 
-    public static String brokers = "node01:9092,node02:9092,node03:9092";
+    public static String brokers = "node1:9092,node2:9092,node3:9092";
 
     public static Properties initConf() {
         Properties conf = new Properties();
