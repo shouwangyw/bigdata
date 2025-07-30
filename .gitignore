@@ -42,3 +42,5 @@ tmp
 output/
 
 logs/
+machine-learning/data/recommend/program/user_info.sql
+machine-learning/data/recommend/program/item_info.sql
