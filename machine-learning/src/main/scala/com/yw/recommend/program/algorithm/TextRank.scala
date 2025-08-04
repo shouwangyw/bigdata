@@ -43,7 +43,7 @@ class TextRank extends Serializable {
   def rank(document: mutable.HashMap[String, mutable.HashSet[String]]): mutable.HashMap[String, Double] = {
     var score = mutable.HashMap.empty[String, Double]
     breakable ({
-      for (iter <- 1 to max_iter) {
+      for (_ <- 1 to max_iter) {
         val tmpScore = mutable.HashMap.empty[String, Double]
         var max_diff: Double = 0f
         for (word <- document) {

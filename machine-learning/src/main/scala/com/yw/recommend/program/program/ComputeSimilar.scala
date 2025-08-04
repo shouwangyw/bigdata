@@ -15,23 +15,22 @@ import scala.collection.mutable.ArrayBuffer
   * ntpdate ntp1.aliyun.com
   */
 object ComputeSimilar {
-
-
   def main(args: Array[String]): Unit = {
+    System.setProperty("HADOOP_USER_NAME", "root")
 
-    val session = SparkSessionBase.createSparkSession()
-    session.sql("use tmp_program")
-    import session.implicits._
+    val spark = SparkSessionBase.createSparkSession()
+    spark.sql("use program")
+    import spark.implicits._
 
     //    val keyWord2WeightDF = session.table("keyword_tr").limit(1000)
-    val keyWord2WeightDF = session.table("keyword_tfidf")
+    val keyWord2WeightDF = spark.table("keyword_tfidf")
     val word2Weight = keyWord2WeightDF.rdd.map(row => {
       val itemID = row.getAs[Int]("item_id")
       val word = row.getAs[String]("word")
       val tr = row.getAs[Double]("tfidf")
       (itemID + "_" + word, tr)
     }).collect().toMap
-    val word2WeightBroad = session.sparkContext.broadcast(word2Weight)
+    val word2WeightBroad = spark.sparkContext.broadcast(word2Weight)
 
 
     val word2VecModel = Word2VecModel.load("hdfs://node01:9000/recommend/program/models/w2v.model")
@@ -40,19 +39,18 @@ object ComputeSimilar {
       val word = row.getAs[String]("word")
       (word, vector)
     }).toMap
-    val word2VecMapBroad = session.sparkContext.broadcast(word2VecMap)
+    val word2VecMapBroad = spark.sparkContext.broadcast(word2VecMap)
 
-
-    val word2Index = session.table("keyword_idf").rdd.map(row => {
+    val word2Index = spark.table("keyword_idf").rdd.map(row => {
       val index = row.getAs[Int]("index")
       val word = row.getAs[String]("word")
       (word, index)
     }).collectAsMap()
 
-    val word2IndexBroad = session.sparkContext.broadcast(word2Index)
+    val word2IndexBroad = spark.sparkContext.broadcast(word2Index)
 
     //    val keyWordDF = session.table("item_keyword")
-    val keyWordDF = session.sql("select * from item_keyword limit 1000")
+    val keyWordDF = spark.sql("select * from item_keyword limit 1000")
     val featuresDF = keyWordDF.map(row => {
       val map = mutable.HashMap[String, Double]()
       val word2VecMap = word2VecMapBroad.value
@@ -134,6 +132,6 @@ object ComputeSimilar {
           }
         }
       })
-    session.close()
+    spark.close()
   }
 }

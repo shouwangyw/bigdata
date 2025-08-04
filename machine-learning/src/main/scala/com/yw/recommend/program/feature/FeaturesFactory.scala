@@ -143,7 +143,7 @@ object FeaturesFactory {
     val itemFeatureDF = session.sql("" +
       "select a.sn,a.item_id,a.duration,b.features " +
       "from program.user_action a join " +
-      "tmp_program.tmp_keyword_weight b " +
+      "program.tmp_keyword_weight b " +
       "on (a.item_id = b.item_id) ")
     itemFeatureDF.show()
 

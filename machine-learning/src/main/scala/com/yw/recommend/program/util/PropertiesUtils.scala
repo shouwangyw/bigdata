@@ -1,10 +1,11 @@
 package com.yw.recommend.program.util
 
+import java.io.InputStream
 import java.util.Properties
 
 object PropertiesUtils {
   val prop = new Properties()
-  val inputStream = PropertiesUtils.getClass.getClassLoader.getResourceAsStream("spark-conf.properties")
+  val inputStream: InputStream = PropertiesUtils.getClass.getClassLoader.getResourceAsStream("spark-conf.properties")
   prop.load(inputStream)
 
   def getProp(name:String): String ={

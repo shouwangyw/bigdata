@@ -23,21 +23,21 @@ import scala.collection.mutable.ListBuffer
   * is_3d               	string              	is_3d
   */
 class SegmentWordUtil extends Serializable {
-  def segeFun(itera: Iterator[Row]) = {
+  def segeFun(itera: Iterator[Row]): Iterator[(Long, List[String])] = {
     val rest = new ListBuffer[(Long, List[String])]
     val analyzer = new IKAnalyzer()
     while (itera.hasNext) {
       val row = itera.next()
       val item_id = row.getAs[Long]("id")
-      val desc = row.getAs[String]("desc")
+      val desc = row.getAs[String]("des")
       val title = row.getAs[String]("title")
       val name = row.getAs[String]("name")
 
-      //将节目的描述、标题、名字等信息合并
-      val itemConten = desc + " " + title + " " + name
+      // 将节目的描述、标题、名字等信息合并
+      val itemContent = desc + " " + title + " " + name
 
-      //对合并的信息进行分词
-      val words = analyzer.segmentation(itemConten).toSeq.toList
+      // 对合并的信息进行分词
+      val words = analyzer.segmentation(itemContent).toSeq.toList
       rest += ((item_id,  words))
     }
     rest.iterator

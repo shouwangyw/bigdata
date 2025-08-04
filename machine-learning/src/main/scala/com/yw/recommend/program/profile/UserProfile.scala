@@ -1,47 +1,40 @@
 package com.yw.recommend.program.profile
 
-import org.apache.hadoop.hbase.client.Put
-import org.apache.hadoop.hbase.mapreduce.TableOutputFormat
-import org.apache.hadoop.hbase.util.Bytes
-import org.apache.spark.sql.Row
 import com.yw.recommend.program.util.{DataUtils, HBaseUtil, PropertiesUtils, SparkSessionBase}
-import java.util
+import org.apache.hadoop.hbase.client.Put
+import org.apache.hadoop.hbase.util.Bytes
 
 import scala.collection.mutable.ListBuffer
 
+/**
+ * 绘制用户画像
+ * 通过用户喜欢的节目来给用户打标签
+ */
 object UserProfile {
-
   def main(args: Array[String]): Unit = {
-
-    val session = SparkSessionBase.createSparkSession()
-    import session.implicits._
+    val spark = SparkSessionBase.createSparkSession()
+    import spark.implicits._
 
     val TOTAL_SCORE = 10
 
-    /**
-     * 绘制用户画像
-     * 通过用户喜欢的节目来给用户打标签
-     */
-    val userAction = session.table("program.user_action").limit(1000)
-    val itemKeyWord = session.table("tmp_program.item_keyword")
-    val userInfo = session.table("program.user_info")
-    val itemInfo = session.table("program.item_info")
+    val itemID2ActionRDD = spark.table("program.user_action")
+      // 方便测试，只取1000条
+      .limit(1000)
+      .map(row => {
+        val userID = row.getAs[String]("sn")
+        val itemID = row.getAs[Int]("item_id")
+        val duration = row.getAs[Long]("duration")
+        val time = row.getAs[String]("ts")
+        (itemID, (userID, duration, time))
+      }).rdd
 
-    val itemID2ActionRDD = userAction.map(row => {
-      val userID = row.getAs[String]("sn")
-      val itemID = row.getAs[Int]("item_id")
-      val duration = row.getAs[Long]("duration")
-      val time = row.getAs[String]("time")
-      (itemID, (userID, duration, time))
-    }).rdd
-
-    val itemID2KeyWordRDD = itemKeyWord.map(row => {
+    val itemID2KeyWordRDD = spark.table("program.item_keyword").map(row => {
       val itemID = row.getAs[Int]("item_id")
       val keywords = row.getAs[Seq[String]]("keyword")
       (itemID, keywords)
     }).rdd
 
-    val userID2InfoRDD = userInfo.map(row => {
+    val userID2InfoRDD = spark.table("program.user_info").map(row => {
       val userID = row.getAs[String]("sn")
       val province = row.getAs[String]("province")
       val city = row.getAs[String]("city")
@@ -55,24 +48,23 @@ object UserProfile {
      * （1）根据停留的时长与总时长的比例 打分值，满分10分
      * （2）添加时间衰减因子  时间衰减:1/(log(t)+1)
      */
-    //获取每一个节目的总时长
-    val itemID2LengthMap = itemInfo.map(row => {
-      val itemID = row.getAs[Int]("item_id")
+    // 获取每一个节目的总时长
+    val itemID2LengthMap = spark.table("program.item_info").map(row => {
+      val itemID = row.getAs[Long]("id").toInt
       val length = row.getAs[Long]("length")
       (itemID, length)
     }).collect().toMap
 
-    //由于节目信息数据量并不是很大，完全可以放入在广播变量中保存
-    val itemID2LengthMapBroad = session.sparkContext.broadcast(itemID2LengthMap)
+    // 由于节目信息数据量并不是很大，完全可以放入在广播变量中保存
+    val itemID2LengthMapBroad = spark.sparkContext.broadcast(itemID2LengthMap)
 
     /* *
-     *调优点：
+     * 调优点：
      * 如果存在某一些黑客用户 疯狂点击视频，势必会造成在数据计算的过程，产生数据倾斜问题
      * （1）从源头上根据duration来筛选
      * （2）在join计算的通过技术手段解决数据倾斜问题
      * */
-    val userID2LabelRDD = itemID2ActionRDD
-      .join(itemID2KeyWordRDD)
+    val userID2LabelRDD = itemID2ActionRDD.join(itemID2KeyWordRDD)
       .map(item => {
         val itemID = item._1
         val userID = item._2._1._1
@@ -80,13 +72,13 @@ object UserProfile {
         val time = item._2._1._3
         val keywords = item._2._2
         val itemID2LengthMap = itemID2LengthMapBroad.value
-        val length = itemID2LengthMap.get(itemID).get
+        val length = itemID2LengthMap(itemID)
         // TODO: 数据需要修改
         val score = if (duration < length) {
           val durationScale = (duration * 1.0) / length
           val scalaScore = durationScale * TOTAL_SCORE
           val days = DataUtils.getDayDiff(time)
-          //衰减系数计算公式：1/(log(t)+1)
+          // 衰减系数计算公式：1/(log(t)+1)
           val attenCoeff = 1 / (math.log(days) + 1)
           attenCoeff * scalaScore
         } else 0.0
@@ -98,10 +90,10 @@ object UserProfile {
         var keywords = new ListBuffer[String]()
         var score = 0.0
         for (elem <- item._2.iterator) {
-          if ("".equals(time)) time = elem._2.toString
-          else time = DataUtils.getMaxDate(elem._2.toString, time)
+          if ("".equals(time)) time = elem._2
+          else time = DataUtils.getMaxDate(elem._2, time)
           if (score < elem._4) score = elem._4
-          if (keywords.length == 0) keywords.++=(elem._3)
+          if (keywords.isEmpty) keywords.++=(elem._3)
         }
         (userID, (itemID, time, keywords, score))
       })
@@ -166,14 +158,13 @@ object UserProfile {
      * }
      * }).groupByKey()
      */
-    session.close()
+    spark.close()
   }
-
 
   /**
    * 用户画像数据插入到HBase数据库中
-   * ((userID), (itemID,time, keywords, score, province, city))
-   *
+   * ((userID), (itemID, time, keywords, score, province, city))
+   * create 'user_profile', {NAME => 'label', VERSIONS => 1}, {NAME => 'info', VERSIONS => 1}
    * itemID: Int, keywords: ListBuffer[String], score: Double, province: String, city: String
    */
   def saveUserProfileToHBase(userID: String, profiles: Iterable[(Int, String, ListBuffer[String], Double, String, String)]): Unit = {
@@ -193,7 +184,7 @@ object UserProfile {
       put.addColumn(Bytes.toBytes("label"), Bytes.toBytes("itemID:" + itemID), Bytes.toBytes("keyWord:" + keyWord + "|score:" + score))
     }
     put.addColumn(Bytes.toBytes("info"), Bytes.toBytes("province"), Bytes.toBytes(province))
-    //    put.addColumn(Bytes.toBytes("label"), Bytes.toBytes("score"), Bytes.toBytes(itemID + ":" + score))
+//    put.addColumn(Bytes.toBytes("label"), Bytes.toBytes("score"), Bytes.toBytes(itemID + ":" + score))
     put.addColumn(Bytes.toBytes("info"), Bytes.toBytes("city"), Bytes.toBytes(city))
     htable.put(put)
   }
