@@ -12,13 +12,12 @@ import com.yw.recommend.program.util.{HBaseUtil, PropertiesUtils, SparkSessionBa
 
 import scala.collection.mutable.ListBuffer
 
-
 object ALSRecall {
 
   case class item(userID: Int, itemID: Int, score: Float)
 
   def main(args: Array[String]): Unit = {
-      val session = SparkSessionBase.createSparkSession()
+      val spark = SparkSessionBase.createSparkSession()
       val table = PropertiesUtils.getProp("user.profile.hbase.table")
       val conf = HBaseConfiguration.create()
       conf.set("hbase.zookeeper.property.clientPort", PropertiesUtils.getProp("hbase.zookeeper.property.clientPort"))
@@ -26,25 +25,25 @@ object ALSRecall {
       conf.set("zookeeper.znode.parent", PropertiesUtils.getProp("zookeeper.znode.parent"))
       conf.set(TableInputFormat.INPUT_TABLE, table)
 
-      val hbaseRdd: RDD[(ImmutableBytesWritable, Result)] = session.sparkContext.newAPIHadoopRDD(conf, classOf[TableInputFormat],
+      val hbaseRdd: RDD[(ImmutableBytesWritable, Result)] = spark.sparkContext.newAPIHadoopRDD(
+        conf, classOf[TableInputFormat],
         classOf[ImmutableBytesWritable],
         classOf[Result])
 
-    import session.implicits._
+    import spark.implicits._
 
-
-    //读取hbase信息,扫描信息
-    var trainRDD = hbaseRdd.flatMap(data => {
-      val list = new ListBuffer[(String,(Int, Double))]()
+    // 读取hbase信息,扫描信息
+    val trainRDD = hbaseRdd.flatMap(data => {
+      val list = new ListBuffer[(String, (Int, Double))]()
       val result = data._2
       for (rowKv <- result.rawCells()) {
         val userID = new String(rowKv.getRowArray, rowKv.getRowOffset, rowKv.getRowLength, "UTF-8")
         val colName = new String(rowKv.getQualifierArray, rowKv.getQualifierOffset, rowKv.getQualifierLength, "UTF-8")
-        if(colName.contains("itemID")){
+        if (colName.contains("itemID")) {
           val itemID = colName.split(":")(1).toInt
           val value = new String(rowKv.getValueArray, rowKv.getValueOffset, rowKv.getValueLength, "UTF-8")
           val score = value.split("\\|")(1).split(":")(1).toDouble
-          list.+=((userID, (itemID.toInt,score)))
+          list.+=((userID, (itemID.toInt, score)))
         }
       }
 //      val userID: String = Bytes.toString(result.getRow)
@@ -58,13 +57,11 @@ object ALSRecall {
       (data._2.toInt, data._1._1)
     }).collect().toMap
 
-
-
-    val fictIndex2itemIDMapBroad = session.sparkContext.broadcast(fictIndex2itemIDMap)
+    val fictIndex2itemIDMapBroad = spark.sparkContext.broadcast(fictIndex2itemIDMap)
 
     val trainDF = trainRDD.map(data => {
       val userID = data._1
-      val itemID = data._1._2._1.toInt
+      val itemID = data._1._2._1
       val score = data._1._2._2.toFloat
       val fictIndex = data._2.toInt
       item(fictIndex, itemID, score)
@@ -80,15 +77,15 @@ object ALSRecall {
     val model = als.fit(trainDF)
     trainDF.show(10)
 
-    val recommondRest = model
+    val recommendRest = model
       .recommendForAllUsers(10)
       .withColumn("itemID", explode(col("recommendations")))
       .drop(col("recommendations"))
       .select(col("userID"), col("itemID").getField("itemID").alias("itemID"))
 
 
-    recommondRest.printSchema()
-    recommondRest.show(10)
+    recommendRest.printSchema()
+    recommendRest.show(10)
 
     /**
       * create 'recall', {NAME=>'als', TTL=>2592000, VERSIONS=>999999}
@@ -97,9 +94,8 @@ object ALSRecall {
       *
       * Spark  scala.reflect.api.TypeTags$PredefTypeCreat版本问题
       */
-
-    recommondRest.rdd.map(row => {
-      val userID = fictIndex2itemIDMapBroad.value.get(row.getAs[Int]("userID")).get
+    recommendRest.rdd.map(row => {
+      val userID = fictIndex2itemIDMapBroad.value(row.getAs[Int]("userID"))
       println(userID)
       val itemID = row.getAs[Int]("itemID")
       (userID, itemID)
@@ -107,7 +103,7 @@ object ALSRecall {
       .foreachPartition(partition => {
         val tableName = PropertiesUtils.getProp("user.recall.hbase.table")
         val hisTableName = PropertiesUtils.getProp("user.history.recall.hbase.table")
-        val conf = HBaseUtil.getHBaseConfiguration()
+        val conf = HBaseUtil.getHBaseConfiguration
         val conn = ConnectionFactory.createConnection(conf)
         val htable = HBaseUtil.getTable(conf,tableName)
         val histable = HBaseUtil.getTable(conf,hisTableName)
@@ -122,16 +118,15 @@ object ALSRecall {
           val itemIDs = elem._2.map(_.toInt).toSet
           val diff = itemIDs -- hisRecalls
 
-          if(diff.size > 0) {
-
+          if(diff.nonEmpty) {
             val recall = diff.mkString("|")
-            //添加找到recall
+            // 添加找到recall
             val put = new Put(Bytes.toBytes(userID))
             put.addColumn(Bytes.toBytes("als"), Bytes.toBytes("item"), Bytes.toBytes(recall))
             htable.put(put)
-            //添加到历史recall表
+            // 添加到历史recall表
             val hput = new Put(Bytes.toBytes(userID))
-            hput.addColumn(Bytes.toBytes("recommond"), Bytes.toBytes("recommond"), Bytes.toBytes(recall))
+            hput.addColumn(Bytes.toBytes("recommend"), Bytes.toBytes("recommend"), Bytes.toBytes(recall))
             histable.put(hput)
           }
         }
@@ -139,7 +134,6 @@ object ALSRecall {
         htable.close()
         histable.close()
       })
-    session.close()
+    spark.close()
   }
-
 }

@@ -1,37 +1,37 @@
-package com.yw.recommend.program.sort
-
-import org.apache.hadoop.hbase.HBaseConfiguration
-import org.apache.hadoop.hbase.client.Result
-import org.apache.hadoop.hbase.io.ImmutableBytesWritable
-import org.apache.hadoop.hbase.mapreduce.TableInputFormat
-import org.apache.hadoop.hbase.util.Bytes
-import org.apache.spark.ml.classification.{LogisticRegression, LogisticRegressionModel}
-import org.apache.spark.ml.feature.VectorAssembler
-import org.apache.spark.ml.linalg.{DenseVector, SparseVector}
-import org.apache.spark.rdd.RDD
-import com.yw.recommend.program.util.{PropertiesUtils, SparkSessionBase}
-import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics
-
-import scala.collection.mutable.ListBuffer
-
-
-/**
-  * 离线排序模型  CTR预估
-  *
-  * 给定一条用户行为数据，预估该节目被观看的概率
-  *
-  * 预估需要训练一个逻辑回归算法模型
-  * （1）构建训练集
-  * （2）依据模型来预估
-  */
-object SortByLR {
-  def main(args: Array[String]): Unit = {
-
-    /*val lr = new LogisticRegression()
-    val model = lr.setFeaturesCol("features").setLabelCol("label").fit(trainDF)
-    model.save("hdfs://node01:9000/recommend/program/models/lrModel.model")*/
-
-//    val online_model = LogisticRegressionModel.load("hdfs://node01:9000/recommend/program/models/lrModel.model")
+//package com.yw.recommend.program.sort
+//
+//import org.apache.hadoop.hbase.HBaseConfiguration
+//import org.apache.hadoop.hbase.client.Result
+//import org.apache.hadoop.hbase.io.ImmutableBytesWritable
+//import org.apache.hadoop.hbase.mapreduce.TableInputFormat
+//import org.apache.hadoop.hbase.util.Bytes
+//import org.apache.spark.ml.classification.{LogisticRegression, LogisticRegressionModel}
+//import org.apache.spark.ml.feature.VectorAssembler
+//import org.apache.spark.ml.linalg.{DenseVector, SparseVector}
+//import org.apache.spark.rdd.RDD
+//import com.yw.recommend.program.util.{PropertiesUtils, SparkSessionBase}
+//import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics
+//
+//import scala.collection.mutable.ListBuffer
+//
+//
+///**
+//  * 离线排序模型  CTR预估
+//  *
+//  * 给定一条用户行为数据，预估该节目被观看的概率
+//  *
+//  * 预估需要训练一个逻辑回归算法模型
+//  * （1）构建训练集
+//  * （2）依据模型来预估
+//  */
+//object SortByLR {
+//  def main(args: Array[String]): Unit = {
+//
+//    val lr = new LogisticRegression()
+//    val model = lr.setFeaturesCol("features").setLabelCol("label").fit(trainDF)
+//    model.save("/recommend/program/models/lrModel.model")
+//
+//    val online_model = LogisticRegressionModel.load("/recommend/program/models/lrModel.model")
 //
 //    val res_transfrom = online_model
 //      .transform(trainDF)
@@ -64,5 +64,5 @@ object SortByLR {
 //    val metrics = new BinaryClassificationMetrics(scoreLabelRDD)
 //    val auc = metrics.areaUnderROC()
 //    println("auc:" + auc )
-  }
-}
+//  }
+//}

@@ -8,7 +8,7 @@ import com.yw.recommend.program.util.{HBaseUtil, PropertiesUtils}
 
 object FeatureCentor {
 
-  def updateFeatureCentor={
+  def updateFeatureCentor()={
 
     val features = FeaturesFactory.getLRFeatures
 
@@ -31,7 +31,7 @@ object FeatureCentor {
 
     val tableName = PropertiesUtils.getProp("user.item.feature.centor")
     features.rdd.foreachPartition(partition => {
-      val conf = HBaseUtil.getHBaseConfiguration()
+      val conf = HBaseUtil.getHBaseConfiguration
 //      conf.set(TableOutputFormat.OUTPUT_TABLE, tableName)
       val htable = HBaseUtil.getTable(conf,tableName)
       partition.foreach(row => {
@@ -47,6 +47,6 @@ object FeatureCentor {
   }
 
   def main(args: Array[String]): Unit = {
-    FeatureCentor.updateFeatureCentor
+    FeatureCentor.updateFeatureCentor()
   }
 }

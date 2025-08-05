@@ -8,14 +8,15 @@ import org.apache.hadoop.hbase.mapreduce.TableInputFormat
 import org.apache.spark.ml.feature.VectorAssembler
 import org.apache.spark.ml.linalg.{DenseVector, SparseVector}
 import org.apache.spark.rdd.RDD
-
 import com.yw.recommend.program.util.{PropertiesUtils, SparkSessionBase}
+import org.apache.spark.sql.DataFrame
+
 import scala.collection.mutable.ListBuffer
 
 object FeaturesFactory {
 
-  //构建特征工程
-  def getLRFeatures = {
+  // 构建特征工程
+  def getLRFeatures: DataFrame = {
     /**
       * 构建训练集-特征工程
       */
@@ -203,7 +204,4 @@ object FeaturesFactory {
         .transform(featuresDF)
     trainDF
   }
-
-
-
 }

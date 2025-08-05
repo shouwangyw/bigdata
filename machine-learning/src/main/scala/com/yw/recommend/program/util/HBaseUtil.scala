@@ -14,10 +14,9 @@ object HBaseUtil {
   /**
    * 设置HBaseConfiguration
    */
-  def getHBaseConfiguration(): Configuration = {
+  def getHBaseConfiguration: Configuration = {
     val prop = new Properties()
-    val inputStream = SparkSessionBase.getClass.getClassLoader.getResourceAsStream("spark-conf.properties")
-    prop.load(inputStream)
+    prop.load(SparkSessionBase.getClass.getClassLoader.getResourceAsStream("spark-conf.properties"))
 
     val conf = HBaseConfiguration.create()
     conf.set("hbase.zookeeper.quorum", prop.getProperty("hbase.zookeeper.quorum"))
@@ -26,7 +25,7 @@ object HBaseUtil {
   }
 
   def getConn(tableName: String): Connection = {
-    val conf = HBaseUtil.getHBaseConfiguration()
+    val conf = HBaseUtil.getHBaseConfiguration
     conf.set(TableOutputFormat.OUTPUT_TABLE, tableName)
     ConnectionFactory.createConnection(conf)
   }
@@ -62,13 +61,13 @@ object HBaseUtil {
 
     val list = new ListBuffer[String]()
     for (rowKv <- result.rawCells()) {
-      println("Famiily:" + new String(rowKv.getFamilyArray, rowKv.getFamilyOffset, rowKv.getFamilyLength, "UTF-8"))
+      println("Family:" + new String(rowKv.getFamilyArray, rowKv.getFamilyOffset, rowKv.getFamilyLength, "UTF-8"))
       println("Qualifier:" + new String(rowKv.getQualifierArray, rowKv.getQualifierOffset, rowKv.getQualifierLength, "UTF-8"))
       println("TimeStamp:" + rowKv.getTimestamp)
-      println("rowkey:" + new String(rowKv.getRowArray, rowKv.getRowOffset, rowKv.getRowLength, "UTF-8"))
+      println("rowKey:" + new String(rowKv.getRowArray, rowKv.getRowOffset, rowKv.getRowLength, "UTF-8"))
       val value = new String(rowKv.getValueArray, rowKv.getValueOffset, rowKv.getValueLength, "UTF-8")
       println("Value:" + value)
-      if (value.length > 0)
+      if (value.nonEmpty)
         list.++=(value.split("\\|"))
     }
     list
@@ -111,7 +110,7 @@ object HBaseUtil {
       //      println("rowkey:" + new String(rowKv.getRowArray, rowKv.getRowOffset, rowKv.getRowLength, "UTF-8"))
       val value = new String(rowKv.getValueArray, rowKv.getValueOffset, rowKv.getValueLength, "UTF-8")
       //      println("Value:" + value)
-      if (colName.length > 0)
+      if (colName.nonEmpty)
         list.+=(colName)
     }
     list
@@ -120,7 +119,7 @@ object HBaseUtil {
   /**
    * 返回或新建HBaseAdmin
    */
-  def getHBaseAdmin(conf: Configuration, tableName: String) = {
+  def getHBaseAdmin(conf: Configuration, tableName: String): HBaseAdmin = {
     val admin = new HBaseAdmin(conf)
     if (!admin.isTableAvailable(tableName)) {
       val tableDesc = new HTableDescriptor(TableName.valueOf(tableName))
@@ -140,7 +139,7 @@ object HBaseUtil {
   }
 
   def getUserProfileTable(tableName: String): HTable = {
-    val conf = HBaseUtil.getHBaseConfiguration()
+    val conf = HBaseUtil.getHBaseConfiguration
     conf.set(TableOutputFormat.OUTPUT_TABLE, tableName)
     new HTable(conf, tableName)
   }
@@ -155,7 +154,7 @@ object HBaseUtil {
   }
 
   def main(args: Array[String]): Unit = {
-    val conf = getHBaseConfiguration()
+    val conf = getHBaseConfiguration
     val conn = ConnectionFactory.createConnection(conf)
     //    println(getRecord("article_similar","337747",conn))
     val htable = HBaseUtil.getTable(conf, "program_similar")
