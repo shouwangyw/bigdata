@@ -18,9 +18,21 @@ object RedisUtil {
       jedis.close()
       true
     } catch {
-      case e: Exception => {
+      case _: Exception =>
         false
-      }
+    }
+  }
+
+  def insertValue(dbIndex: Int, key: String, field: String, value: String): Boolean = {
+    try {
+      val jedis = jedisPool.getResource
+      jedis.select(dbIndex)
+      jedis.hset(key, field, value)
+      jedis.close()
+      true
+    } catch {
+      case _: Exception =>
+        false
     }
   }
 }

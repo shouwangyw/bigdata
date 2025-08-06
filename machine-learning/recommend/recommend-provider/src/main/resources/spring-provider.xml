@@ -18,7 +18,9 @@
   <!-- 注册服务执行对象 -->
   <bean id="demoService" class="com.yw.recommend.service.impl.DemoServiceImpl"/>
   <bean id="rcmdService" class="com.yw.recommend.service.impl.RcmdServiceImpl"/>
+  <bean id="programRcmdService" class="com.yw.recommend.service.impl.ProgramRcmdServiceImpl"/>
   <!-- 服务暴露 -->
   <dubbo:service interface="com.yw.recommend.service.DemoService" ref="demoService" protocol="dubbo"/>
   <dubbo:service interface="com.yw.recommend.service.RcmdService" ref="rcmdService" protocol="dubbo"/>
+  <dubbo:service interface="com.yw.recommend.service.ProgramRcmdService" ref="programRcmdService" protocol="dubbo"/>
 </beans>

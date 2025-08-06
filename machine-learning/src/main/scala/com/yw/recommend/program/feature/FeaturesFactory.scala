@@ -8,19 +8,16 @@ import org.apache.hadoop.hbase.mapreduce.TableInputFormat
 import org.apache.spark.ml.feature.VectorAssembler
 import org.apache.spark.ml.linalg.{DenseVector, SparseVector}
 import org.apache.spark.rdd.RDD
-import com.yw.recommend.program.util.{PropertiesUtils, SparkSessionBase}
 import org.apache.spark.sql.DataFrame
 
 import scala.collection.mutable.ListBuffer
 
+/**
+ * 构建训练集-特征工程
+ */
 object FeaturesFactory {
-
-  // 构建特征工程
   def getLRFeatures: DataFrame = {
-    /**
-      * 构建训练集-特征工程
-      */
-    val session = SparkSessionBase.createSparkSession()
+    val spark = SparkSessionBase.createSparkSession()
     val table = PropertiesUtils.getProp("user.profile.hbase.table")
     val conf = HBaseConfiguration.create()
     conf.set("hbase.zookeeper.property.clientPort", PropertiesUtils.getProp("hbase.zookeeper.property.clientPort"))
@@ -28,16 +25,18 @@ object FeaturesFactory {
     conf.set("zookeeper.znode.parent", PropertiesUtils.getProp("zookeeper.znode.parent"))
     conf.set(TableInputFormat.INPUT_TABLE, table)
 
-    var hbaseRdd: RDD[(ImmutableBytesWritable, Result)] = session.sparkContext.newAPIHadoopRDD(conf, classOf[TableInputFormat],
+    var hbaseRdd: RDD[(ImmutableBytesWritable, Result)] = spark.sparkContext.newAPIHadoopRDD(
+      conf, classOf[TableInputFormat],
       classOf[ImmutableBytesWritable],
       classOf[Result])
 
+    // cache 可能并不会将所有的数据全部放入内存，怎么知道是否全部缓存到内存？
+    // 级别：memory_only、memory_only_ser、memory_and_disk
     hbaseRdd = hbaseRdd.cache()
-    import session.implicits._
-
+    import spark.implicits._
 
     //读取hbase信息,扫描信息
-    var distinctWords = hbaseRdd.flatMap(data => {
+    val distinctWords = hbaseRdd.flatMap(data => {
       val list = new ListBuffer[String]
       val result = data._2
       for (rowKv <- result.rawCells()) {
@@ -60,10 +59,10 @@ object FeaturesFactory {
       }
       list.iterator
     }).distinct()
+      // zipWithUniqueId: 不连续但唯一，zipWithIndex: 连续且唯一
       .zipWithIndex()
       .collectAsMap()
-
-    val distinctWordsBroad = session.sparkContext.broadcast(distinctWords)
+    val distinctWordsBroad = spark.sparkContext.broadcast(distinctWords)
 
     val labelFeatures = hbaseRdd.flatMap(data => {
       val result = data._2
@@ -87,16 +86,13 @@ object FeaturesFactory {
               x
             }
           })
-
-          val indexs = words.map(dict.get(_).get.toInt).sorted
-
-          val vector = new SparseVector(dict.size, indexs, Array.fill(indexs.length)(score))
+          val indexes = words.map(dict(_).toInt).sorted
+          val vector = new SparseVector(dict.size, indexes, Array.fill(indexes.length)(score))
           list.+=(((userID, itemID), vector.toDense))
         }
       }
       list.iterator
     })
-
 
     val provinceWithCity = hbaseRdd.map(data => {
       val result = data._2
@@ -119,42 +115,44 @@ object FeaturesFactory {
 
     val provinceMap = provinceWithCity.map(_._2._1).distinct().zipWithIndex().collectAsMap()
     val cityMap = provinceWithCity.map(_._2._2).distinct().zipWithIndex().collectAsMap()
-    val provinceMapBroad = session.sparkContext.broadcast(provinceMap)
-    val cityMapBroad = session.sparkContext.broadcast(cityMap)
+    val provinceMapBroad = spark.sparkContext.broadcast(provinceMap)
+    val cityMapBroad = spark.sparkContext.broadcast(cityMap)
 
     val provinceWithCityFeatures = provinceWithCity.map(data => {
       val userID = data._1
       val province = data._2._1
       val provinceMap = provinceMapBroad.value
       val cityMap = cityMapBroad.value
-      val provinceIndex = Array(provinceMap.get(province).get.toInt)
+      val provinceIndex = Array(provinceMap(province).toInt)
       val provinceFeatures = new SparseVector(provinceMap.size, provinceIndex, Array.fill(provinceIndex.length)(1.0))
       val city = data._2._2
       println(city)
-      val cityIndex = Array(cityMap.get(city).get.toInt)
+      val cityIndex = Array(cityMap(city).toInt)
       val cityFeatures = new SparseVector(cityMap.size, cityIndex, Array.fill(cityIndex.length)(1.0))
       (userID, (provinceFeatures.toDense, cityFeatures.toDense))
     })
 
     /**
-      * 用户特征已经准备完毕
-      *
-      * 获取用户行为数据，关联特征
-      */
-    val itemFeatureDF = session.sql("" +
-      "select a.sn,a.item_id,a.duration,b.features " +
-      "from program.user_action a join " +
-      "program.tmp_keyword_weight b " +
-      "on (a.item_id = b.item_id) ")
+     * 用户特征已经准备完毕
+     *
+     * 获取用户行为数据，关联特征
+     */
+    val itemFeatureDF = spark.sql(
+      """
+        |select a.sn,a.item_id,a.duration,b.features
+        |from program.user_action a
+        |join program.tmp_keyword_weight b
+        |on (a.item_id = b.item_id)
+        |""".stripMargin)
     itemFeatureDF.show()
 
     /**
-      * root
-      * |-- sn: string (nullable = true)
-      * |-- item_id: integer (nullable = true)
-      * |-- duration: long (nullable = true)
-      * |-- features: vector (nullable = true)
-      */
+     * root
+     * |-- sn: string (nullable = true)
+     * |-- item_id: integer (nullable = true)
+     * |-- duration: long (nullable = true)
+     * |-- features: vector (nullable = true)
+     */
     val userID2ActionRDD = itemFeatureDF.rdd.map(row => {
       val sn = row.getAs[String]("sn")
       val itemID = row.getAs[Int]("item_id")
@@ -164,15 +162,15 @@ object FeaturesFactory {
     })
 
 
-    val itemInfo = session.table("program.item_info")
+    val itemInfo = spark.table("program.item_info")
     val itemID2LengthMap = itemInfo.map(row => {
       val itemID = row.getAs[Int]("item_id")
       val length = row.getAs[Long]("length")
       (itemID, length)
     }).collect().toMap
 
-    //由于节目信息数据量并不是很大，完全可以放入在广播变量中保存
-    val itemID2LengthMapBroad = session.sparkContext.broadcast(itemID2LengthMap)
+    // 由于节目信息数据量并不是很大，完全可以放入在广播变量中保存
+    val itemID2LengthMapBroad = spark.sparkContext.broadcast(itemID2LengthMap)
 
     val featuresDF = userID2ActionRDD.join(provinceWithCityFeatures).map(row => {
       val userID = row._1
@@ -186,7 +184,7 @@ object FeaturesFactory {
         val userLabelVector = row._2._2
 
         val itemID2LengthMap = itemID2LengthMapBroad.value
-        val length = itemID2LengthMap.get(itemID).get
+        val length = itemID2LengthMap(itemID)
         // TODO: 数据需要修改
         val label = if (duration < length) {
           val durationScale = (duration * 1.0) / length
@@ -197,8 +195,7 @@ object FeaturesFactory {
 
 
     val assem = new VectorAssembler()
-    val trainDF =
-      assem
+    val trainDF = assem
         .setInputCols(Array("program_features", "province_Vector", "city_Vector", "userLabel_Vector"))
         .setOutputCol("features")
         .transform(featuresDF)

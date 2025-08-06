@@ -7,7 +7,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.concurrent.TimeUnit;
 
-public class ConsumerRun {
+/**
+ * @author yangwei
+ */
+public class AppRcmdConsumerRun {
     public static void main(String[] args) throws InterruptedException {
         ApplicationContext ac = new ClassPathXmlApplicationContext("spring-consumer.xml");
         DemoService service = ac.getBean(DemoService.class);

@@ -15,17 +15,56 @@
 	<packaging>jar</packaging>
 	<name>RecommendProvider</name>
 
+	<properties>
+		<spark.version>3.2.1</spark.version>
+		<hbase.version>1.3.3</hbase.version>
+		<redis.version>3.2.0</redis.version>
+		<scala.version>2.12</scala.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.yw</groupId>
 			<artifactId>recommend-api</artifactId>
 			<version>1.0</version>
 		</dependency>
-
+		<!-- spark -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_${scala.version}</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_${scala.version}</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-mllib_${scala.version}</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+		<!-- hbase -->
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase-client</artifactId>
+			<version>${hbase.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase-common</artifactId>
+			<version>${hbase.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase-server</artifactId>
+			<version>${hbase.version}</version>
+		</dependency>
+		<!-- redis -->
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
-			<version>2.4.2</version>
+			<version>${redis.version}</version>
 		</dependency>
 	</dependencies>
 </project>

@@ -10,14 +10,17 @@ import org.apache.spark.streaming.{Durations, StreamingContext}
 
 import java.util.Properties
 
+/**
+ * 在线召回 + 热门召回
+ */
 object OnlineRecall {
   def main(args: Array[String]): Unit = {
     val prop = new Properties()
     prop.load(SparkSessionBase.getClass.getClassLoader
       .getResourceAsStream("spark-conf.properties"))
 
-    val session = SparkSessionBase.createSparkSession()
-    val sc = session.sparkContext
+    val spark = SparkSessionBase.createSparkSession()
+    val sc = spark.sparkContext
     val streamingContext = new StreamingContext(sc, Durations.seconds(3))
 
     val bootstrapServers = prop.getProperty("bootstrap.servers")
@@ -39,7 +42,7 @@ object OnlineRecall {
     val kafkaTopicDS = KafkaUtils.createDirectStream(streamingContext, LocationStrategies.PreferBrokers,
       ConsumerStrategies.Subscribe[String, String](Set(topicName), kafkaParams))
 
-    val itemInfo = session.table("program.item_info")
+    val itemInfo = spark.table("program.item_info")
     // 获取每一个节目的总时长
     val itemID2LengthMap = itemInfo.rdd.map(row => {
       val itemID = row.getAs[Int]("item_id")
@@ -53,8 +56,8 @@ object OnlineRecall {
         rdd.foreachPartition(row => {
           val itemID2LengthMap = itemID2LengthMapBroad.value
           val conn = HBaseUtil.getConn("program_similar")
-          val htable = HBaseUtil.getTable(conn.getConfiguration, "recall")
-          val histable = HBaseUtil.getTable(conn.getConfiguration, "history_recall")
+          val recallTable = HBaseUtil.getTable(conn.getConfiguration, "recall")
+          val hisRecallTable = HBaseUtil.getTable(conn.getConfiguration, "history_recall")
 
           for (elem <- row) {
             println(elem)
@@ -69,18 +72,18 @@ object OnlineRecall {
             val score = duration.toInt / (itemID2LengthMap(itemID.toInt) * 1.0) * 10
             if (diff.nonEmpty && score > 5) {
               // 将召回的相似节目写入在HBase中
-              saveAsHBase(elem, htable, histable, conn)
+              saveAsHBase(elem, recallTable, hisRecallTable, conn)
             }
-            println("itemID2LengthMap.get(itemID.toInt).get" + itemID2LengthMap(itemID.toInt))
+            println("itemID2LengthMap(itemID.toInt)" + itemID2LengthMap(itemID.toInt))
             if (score > 5) {
-              println("itemID2LengthMap.get(itemID.toInt).get" + itemID2LengthMap(itemID.toInt))
+              println("itemID2LengthMap(itemID.toInt)" + itemID2LengthMap(itemID.toInt))
               // 将节目的热度+1
               RedisUtil.init(redisHost, redisPort.toInt)
-              RedisUtil.updateHot(1, "hot", itemID)
+              RedisUtil.updateHot(dbIndex.toInt, "hot", itemID)
             }
           }
-          htable.close()
-          histable.close()
+          recallTable.close()
+          hisRecallTable.close()
           conn.close()
         })
       })

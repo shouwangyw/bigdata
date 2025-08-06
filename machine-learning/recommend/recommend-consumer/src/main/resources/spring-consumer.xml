@@ -14,4 +14,5 @@
 
   <dubbo:reference id="rcmdService" interface="com.yw.recommend.service.RcmdService" timeout="1200000"/>
   <dubbo:reference id="demoService" interface="com.yw.recommend.service.DemoService" timeout="1200000"/>
+  <dubbo:reference id="programRcmdService" interface="com.yw.recommend.service.ProgramRcmdService" timeout="1200000"/>
 </beans>
